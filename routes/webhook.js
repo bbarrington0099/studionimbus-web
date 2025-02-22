@@ -33,7 +33,7 @@ router.post("/gitpush", verifyGitHubSignature, (req, res) => {
 
   // Check if the pushed branch is "main"
   if (branch === "refs/heads/main") {
-    const scriptPath = path.resolve(os.homedir(), "mohc-web", "refresh-repo.sh");     const command = `${scriptPath} -t "Webhook"`;     exec(command, (error, stdout, stderr) => {
+    const scriptPath = path.resolve(os.homedir(), "studionimbus-web", "refresh-repo.sh");     const command = `${scriptPath} -t "Webhook"`;     exec(command, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error: ${error.message}`);
         return res.status(500).send("Error executing script");
@@ -45,7 +45,7 @@ router.post("/gitpush", verifyGitHubSignature, (req, res) => {
       res.status(200).send("Update pulled");
 
       // Now execute pm2 restart in the background (after the response is sent)
-      exec("pm2 restart mohc-web", (error, stdout, stderr) => {
+      exec("pm2 restart studionimbus-web", (error, stdout, stderr) => {
         if (error) {
           console.error(`Error restarting app: ${error.message}`);
           return;
