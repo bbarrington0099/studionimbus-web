@@ -21,13 +21,13 @@ while getopts "rt:" opt; do
 done
 
 # Define log file path
-LOG_FILE="$HOME/mohc-web/logs/git.log"
+LOG_FILE="$HOME/studionimbus-web/logs/git.log"
 
 # Get current date
 CURRENT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
 
 echo "$TRIGGER - Refreshing Repo" >> "$LOG_FILE"
-cd $HOME/mohc-web
+cd $HOME/studionimbus-web
 #
 # Write current date and echo statements to log file
 echo "$CURRENT_DATE - Fetching updates from GitHub..." >> "$LOG_FILE"
@@ -46,9 +46,6 @@ sleep 2
 echo "App will restart" >> "$LOG_FILE"
 
 if [ "$RESTART_APP" = true ]; then
-  pm2 restart mohc-web
+  pm2 restart studionimbus-web
 fi
 echo "" >> "$LOG_FILE"
-
-
-chmod +x /path/to/refresh-repo.sh
