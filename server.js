@@ -4,11 +4,11 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-
 const webhookRouter = require('./routes/webhook');
 const apiRouter = require('./routes/api');
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/webhook', webhookRouter);
 app.use('/api', apiRouter);
