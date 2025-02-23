@@ -1,0 +1,103 @@
+body {
+    background-color: grey;
+  
+  }
+  
+  .intro {
+    border: 5px solid darkblue;
+    border-bottom-color: black; 
+    border-radius: 20px 20px 0 0;
+    background-color: bisque;
+    color: darkblue;
+    text-align: center;
+  }
+  
+  .main{
+    text-align: center;
+    margin: 0 0 50px 0;
+    padding: 25px 0 25px 0;
+    border: 5px solid darkblue;
+    border-top: transparent;
+    border-radius: 0 0 20px 20px;
+    background-color: lightcyan;
+    color: darkBlue;
+  }
+  
+  .section {
+    border-bottom: solid;
+    font-weight: bold;
+  }
+  
+  #toCheck {
+    font-style: italic;
+    border-radius: 45px;
+    max-width: 85%;
+  }
+  
+  #range {
+    font-style: italic;
+    border-radius: 45px;
+    width: 65px;
+  }
+  
+  #answer {
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  
+  #answer2 {
+    padding: 10px;
+    text-transform: uppercase;
+  }
+  
+  #answer3 {
+    padding: 10px;
+    text-align: justify;
+    margin: 0 15% 20px 15%;
+    border: 1px dashed darkblue;
+  }
+  
+  summary {
+    padding: 10px 0 20px 0;
+  }
+  
+  button {
+    color: white;
+    background-color: green;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .primeList {
+    color: black;
+  }
+  
+  .next {
+    text-align: center;
+  }
+  
+  #nextNumber {
+    color: green;
+  }
+  
+  #warn {
+    color: red;
+    font-weight: bolder;
+    text-align: center;
+    margin: 0;
+    padding-top: 15px;
+  }
+
+  @media (max-width: 600px) {
+    .main {
+      min-height: 70vh;
+    }
+  }
