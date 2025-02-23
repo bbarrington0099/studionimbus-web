@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Prime Check</title>
+  <link rel="stylesheet"
+   href="style.css?v=1">
+   <link rel="icon" type="image/x-icon" href="\Imgs\Logos\SNlogoVector.png">
+ </head>
+ <body>
+  <header class="intro">
+   <h1>Prime Check</h1>
+  </header>
+  <main>
+   <div class="main">
+    <section class="section">
+     <label for="toCheck">Check
+      Number:<label>
+       <input id="toCheck" type="text"
+        placeholder="Number to Check">
+       <p>The Number is Prime? </p>
+       <p id="answer"></p>
+    </section>
+    <section class="section">
+     <p>
+      How Many Primes from
+      <input id="range" type="text"
+       placeholder="Default: 0">
+      to The Number?
+     </p>
+     <p id="answer2"></p>
+    </section>
+    <section class="section"
+     id="listArea">
+     <details id="list">
+      <summary>List of Selected Primes:
+      </summary>
+      <p id="answer3"></p>
+     </details>
+    </section>
+    <button id="check"
+     onclick="button()">Check</button>
+    <p id="warn"></p>
+   </div>
+  </main>
+  <script src="script.js?v=1"> </script>
+ </body>
+</html>
