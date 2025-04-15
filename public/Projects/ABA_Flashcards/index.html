@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Learning System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        
+        .category-selector {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .category-checkbox {
+            margin-right: 5px;
+        }
+        
+        .flashcard {
+            height: 300px;
+            perspective: 1000px;
+            margin-bottom: 20px;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flashcard-front {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        .flashcard-back {
+            background-color: #2ecc71;
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 1.2em;
+        }
+        
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #1a252f;
+        }
+        
+        .button-correct {
+            background-color: #27ae60;
+        }
+        
+        .button-incorrect {
+            background-color: #e74c3c;
+        }
+        
+        .stats {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .progress {
+            height: 20px;
+            background-color: #3498db;
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .file-input {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcard Learning System</h1>
+        
+        <!-- <div class="file-input">
+            <input type="file" id="jsonFileInput" accept=".json">
+            <button id="loadFileBtn">Load Flashcards</button>
+        </div> -->
+        
+        <div id="app" class="hidden">
+            <div class="category-selector">
+                <h3>Select Categories:</h3>
+                <div id="categoryCheckboxes" class="controls"></div>
+            </div>
+            
+            <div class="controls">
+                <button id="startBtn">Start Session</button>
+                <button id="resetStatsBtn">Reset Statistics</button>
+            </div>
+            
+            <div id="flashcardContainer" class="hidden">
+                <div id="flashcard" class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front" id="termSide">
+                            Term will appear here
+                        </div>
+                        <div class="flashcard-back" id="definitionSide">
+                            Definition will appear here
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="correctBtn" class="button-correct">Correct</button>
+                    <button id="incorrectBtn" class="button-incorrect">Incorrect</button>
+                    <button id="nextBtn">Next Card</button>
+                </div>
+                
+                <div class="stats">
+                    <p>Session Progress: <span id="cardsRemaining">0</span> cards remaining</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="progressBar"></div>
+                    </div>
+                    <p>Overall Statistics: <span id="correctCount">0</span> correct, <span id="incorrectCount">0</span> incorrect</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM elements
+            const jsonFileInput = document.getElementById('jsonFileInput');
+            const loadFileBtn = document.getElementById('loadFileBtn');
+            const app = document.getElementById('app');
+            const categoryCheckboxes = document.getElementById('categoryCheckboxes');
+            const startBtn = document.getElementById('startBtn');
+            const resetStatsBtn = document.getElementById('resetStatsBtn');
+            const flashcardContainer = document.getElementById('flashcardContainer');
+            const flashcard = document.getElementById('flashcard');
+            const termSide = document.getElementById('termSide');
+            const definitionSide = document.getElementById('definitionSide');
+            const correctBtn = document.getElementById('correctBtn');
+            const incorrectBtn = document.getElementById('incorrectBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const cardsRemaining = document.getElementById('cardsRemaining');
+            const correctCount = document.getElementById('correctCount');
+            const incorrectCount = document.getElementById('incorrectCount');
+            const progressBar = document.getElementById('progressBar');
+            
+            // Application state
+            let flashcards = {};
+            let currentDeck = [];
+            let currentCardIndex = 0;
+            let sessionCards = [];
+            let stats = {};
+            
+            // Initialize the app
+            init();
+            
+            function init() {
+                // Load statistics from local storage
+                loadStats();
+                updateStatsDisplay();
+                
+                // Automatically load flashcards from hardcoded path
+                loadFlashcardsFromHardcodedPath();
+                
+                // Set up event listeners
+                startBtn.addEventListener('click', startSession);
+                resetStatsBtn.addEventListener('click', resetStatistics);
+                correctBtn.addEventListener('click', markCorrect);
+                incorrectBtn.addEventListener('click', markIncorrect);
+                nextBtn.addEventListener('click', showNextCard);
+                flashcard.addEventListener('click', flipCard);
+            }
+
+            function loadFlashcardsFromHardcodedPath() {
+                // Replace this with your actual hardcoded path or URL
+                const hardcodedPath = './ABA-Definitions.json';
+                
+                fetch(hardcodedPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        flashcards = data;
+                        setupCategoryCheckboxes();
+                        app.classList.remove('hidden');
+                    })
+                    .catch(error => {
+                        console.error('Error loading flashcards:', error);
+                        alert('Error loading flashcards: ' + error.message);
+                    });
+            }
+            
+            function setupCategoryCheckboxes() {
+                categoryCheckboxes.innerHTML = '';
+                
+                // Load saved checked categories from localStorage
+                const savedCategories = JSON.parse(localStorage.getItem('checkedCategories') || '{}');
+                
+                Object.keys(flashcards).forEach(category => {
+                    const checkboxId = `category-${category.replace(/\s+/g, '-')}`;
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = checkboxId;
+                    checkbox.className = 'category-checkbox';
+                    checkbox.value = category;
+                    
+                    // Changed this line to default to false if not saved
+                    checkbox.checked = savedCategories[category] || false;
+                    
+                    // Add event listener to save state when changed
+                    checkbox.addEventListener('change', function() {
+                        saveCheckedCategories();
+                    });
+                    
+                    const label = document.createElement('label');
+                    label.htmlFor = checkboxId;
+                    label.textContent = category;
+                    
+                    const container = document.createElement('div');
+                    container.appendChild(checkbox);
+                    container.appendChild(label);
+                    
+                    categoryCheckboxes.appendChild(container);
+                });
+            }
+            
+            function saveCheckedCategories() {
+                const checkboxes = categoryCheckboxes.querySelectorAll('input[type="checkbox"]');
+                const checkedState = {};
+                
+                checkboxes.forEach(checkbox => {
+                    checkedState[checkbox.value] = checkbox.checked;
+                });
+                
+                localStorage.setItem('checkedCategories', JSON.stringify(checkedState));
+            }
+            
+            function getSelectedCategories() {
+                const checkboxes = categoryCheckboxes.querySelectorAll('input[type="checkbox"]:checked');
+                return Array.from(checkboxes).map(checkbox => checkbox.value);
+            }
+            
+            function startSession() {
+                const selectedCategories = getSelectedCategories();
+                if (selectedCategories.length === 0) {
+                    alert('Please select at least one category.');
+                    return;
+                }
+                
+                // Save the current checked state
+                saveCheckedCategories();
+                
+                // Create a deck with all cards from selected categories
+                currentDeck = [];
+                selectedCategories.forEach(category => {
+                    flashcards[category].forEach(card => {
+                        // Add the category to the card for reference
+                        const cardWithCategory = {...card, category};
+                        currentDeck.push(cardWithCategory);
+                    });
+                });
+                
+                if (currentDeck.length === 0) {
+                    alert('No flashcards found in selected categories.');
+                    return;
+                }
+                
+                // Initialize session cards with weighted distribution based on incorrect counts
+                sessionCards = prepareWeightedDeck(currentDeck);
+                
+                currentCardIndex = 0;
+                flashcardContainer.classList.remove('hidden');
+                showCurrentCard();
+                updateSessionProgress();
+            }
+            
+            function prepareWeightedDeck(deck) {
+                // Create a weighted deck where cards with more incorrect answers appear more often
+                const weightedDeck = [];
+                
+                deck.forEach(card => {
+                    const cardKey = getCardKey(card);
+                    const cardStats = stats[cardKey] || { correct: 0, incorrect: 0 };
+                    const weight = Math.max(1, cardStats.incorrect - cardStats.correct + 1);
+                    
+                    // Add the card to the deck multiple times based on its weight
+                    for (let i = 0; i < weight; i++) {
+                        weightedDeck.push(card);
+                    }
+                });
+                
+                // Shuffle the weighted deck
+                return shuffleArray(weightedDeck);
+            }
+            
+            function shuffleArray(array) {
+                const newArray = [...array];
+                for (let i = newArray.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+                }
+                return newArray;
+            }
+            
+            function showCurrentCard() {
+                if (currentCardIndex >= sessionCards.length) {
+                    // Session completed
+                    termSide.textContent = 'Session Complete!';
+                    definitionSide.textContent = 'You have reviewed all cards in this session.';
+                    flashcard.classList.remove('flipped');
+                    correctBtn.disabled = true;
+                    incorrectBtn.disabled = true;
+                    nextBtn.disabled = true;
+                    return;
+                }
+                
+                const currentCard = sessionCards[currentCardIndex];
+                termSide.textContent = currentCard.term;
+                definitionSide.textContent = currentCard.definition;
+                flashcard.classList.remove('flipped');
+                correctBtn.disabled = false;
+                incorrectBtn.disabled = false;
+                nextBtn.disabled = true;
+            }
+            
+            function flipCard() {
+                flashcard.classList.toggle('flipped');
+                if (flashcard.classList.contains('flipped')) {
+                    nextBtn.disabled = false;
+                }
+            }
+            
+            function showNextCard() {
+                currentCardIndex++;
+                showCurrentCard();
+                updateSessionProgress();
+            }
+            
+            function markCorrect() {
+                const currentCard = sessionCards[currentCardIndex];
+                const cardKey = getCardKey(currentCard);
+                
+                // Update statistics
+                if (!stats[cardKey]) {
+                    stats[cardKey] = { correct: 0, incorrect: 0 };
+                }
+                stats[cardKey].correct++;
+                
+                saveStats();
+                updateStatsDisplay();
+                showNextCard();
+            }
+            
+            function markIncorrect() {
+                const currentCard = sessionCards[currentCardIndex];
+                const cardKey = getCardKey(currentCard);
+                
+                // Update statistics
+                if (!stats[cardKey]) {
+                    stats[cardKey] = { correct: 0, incorrect: 0 };
+                }
+                stats[cardKey].incorrect++;
+                
+                saveStats();
+                updateStatsDisplay();
+                showNextCard();
+            }
+            
+            function updateSessionProgress() {
+                const remaining = sessionCards.length - currentCardIndex;
+                const progress = ((sessionCards.length - remaining) / sessionCards.length) * 100;
+                
+                cardsRemaining.textContent = remaining;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            function updateStatsDisplay() {
+                let totalCorrect = 0;
+                let totalIncorrect = 0;
+                
+                Object.values(stats).forEach(stat => {
+                    totalCorrect += stat.correct;
+                    totalIncorrect += stat.incorrect;
+                });
+                
+                correctCount.textContent = totalCorrect;
+                incorrectCount.textContent = totalIncorrect;
+            }
+            
+            function getCardKey(card) {
+                return `${card.category}|${card.term}`;
+            }
+            
+            function loadStats() {
+                const savedStats = localStorage.getItem('flashcardStats');
+                stats = savedStats ? JSON.parse(savedStats) : {};
+            }
+            
+            function saveStats() {
+                localStorage.setItem('flashcardStats', JSON.stringify(stats));
+            }
+            
+            function resetStatistics() {
+                if (confirm('Are you sure you want to reset all statistics? This cannot be undone.')) {
+                    stats = {};
+                    saveStats();
+                    updateStatsDisplay();
+                    
+                    // If in a session, refresh the deck to reflect the reset stats
+                    if (sessionCards.length > 0) {
+                        sessionCards = prepareWeightedDeck(currentDeck);
+                        currentCardIndex = 0;
+                        showCurrentCard();
+                        updateSessionProgress();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

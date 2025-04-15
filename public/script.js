@@ -88,7 +88,7 @@ projectSpace.addProject('Pong', `a clone of the classic game, 'Pong'`, 'Importin
 projectSpace.addProject('Snake', `a clone of the classic game, 'Snake'`, 'Taking User Input to move an object on a grid and give feedback based on actions<strong><span class="mobileDisclaimer"> Not currently supported on Mobile</span></strong>');
 projectSpace.addProject('PasswordGenerator', 'a random password generator with options', 'Reading selected options to output data within the desired parameters', 'Password Generator');
 projectSpace.addProject('LiveUserFilter', 'a searchable user database', 'Pulling random users from a Database to create a filterable UI', 'User Searchbase');
-
+projectSpace.addProject('ABA_Flashcards', 'Flashcards for studying ABA terms', 'A simple flashcard app to help study ABA terms and definitions', 'ABA Flashcards');
 /*
 TO-DO:
     change lorem ipsum to introduction
