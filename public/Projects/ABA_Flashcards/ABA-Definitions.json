@@ -1,0 +1,644 @@
+{
+    "Reinforcement": [
+      {
+        "term": "Positive reinforcement",
+        "definition": "When a behavior is followed immediately by the presentation of a stimulus that increases the future frequency of the behavior in similar conditions"
+      },
+      {
+        "term": "Positive reinforcer",
+        "definition": "A stimulus whose presentation or onset functions as reinforcement (an item may be preferred but does not function as a reinforcer unless it increases the future likelihood of a behavior). 5 types of reinforcers: edible, activity, tangible, social, sensory"
+      },
+      {
+        "term": "Negative reinforcement",
+        "definition": "When a behavior is followed immediately by the removal of a stimulus that increases the future frequency of the behavior in similar conditions"
+      },
+      {
+        "term": "Negative reinforcer",
+        "definition": "A stimulus whose termination (or reduction in intensity) increases the future likelihood of a behavior"
+      },
+      {
+        "term": "Positive punishment",
+        "definition": "A behavior is followed immediately by the presentation of a stimulus that decreases the future frequency of behavior"
+      },
+      {
+        "term": "Negative punishment",
+        "definition": "A behavior is followed immediately by the removal of a stimulus (or decrease in intensity of the stimulus) that decreases the future frequency of similar responses under similar conditions"
+      },
+      {
+        "term": "Unconditioned reinforcer",
+        "definition": "A stimulus change that can increase the future frequency of behavior without prior pairing with any other form of reinforcement. No learning history required. UCRs are a product of biology. Examples: food, water, warmth, sleep. Also called 'primary' or 'unlearned' reinforcer."
+      },
+      {
+        "term": "Conditioned reinforcer",
+        "definition": "When a previously neutral stimulus acquires the ability to function as a reinforcer through stimulus-stimulus pairing with one or more unconditioned or conditioned reinforcers. Learning history is required. CRs are a product of development. Examples: toys, tokens, money, social attention and praise. Also called 'secondary' or 'learned' reinforcer."
+      }
+    ],
+    "Schedules of Reinforcement": [
+      {
+        "term": "Continuous reinforcement",
+        "definition": "Provide reinforcement for every occurrence, or independent response, of the target behavior"
+      },
+      {
+        "term": "Fixed ratio schedule of reinforcement",
+        "definition": "Fixed = constant, set criteria. Ratio = a certain number of occurrences of the behavior have to occur before one response produces reinforcement. Example: Fixed Ratio 4 (FR4) = reinforcement is delivered after every 4th independent response."
+      },
+      {
+        "term": "Variable ratio schedule of reinforcement",
+        "definition": "Variable = changing, variable criteria; average of responses. Ratio = a certain number of occurrences of the behavior have to occur before one response produces reinforcement. Example: Variable Ratio 4 (VR4) = reinforcement is delivered after an average of every 4th independent response."
+      },
+      {
+        "term": "Fixed interval schedule of reinforcement",
+        "definition": "Fixed = constant, set criteria. Interval = Specific amount of time elapses before a single correct response produces reinforcement. Example: Fixed Interval 5 (FI5) = reinforcement is delivered after the first independent response that occurs after 5 minutes."
+      },
+      {
+        "term": "Variable interval schedule of reinforcement",
+        "definition": "Variable = changing, variable criteria; average of responses. Interval = Specific amount of time elapses before a single correct response produces reinforcement. Example: Variable Interval 5 (VI5) = reinforcement is delivered after the first independent response that occurs after an average of 5 minutes."
+      },
+      {
+        "term": "Intermittent Reinforcement",
+        "definition": "Reinforce some, but not all occurrences of the behavior or response"
+      },
+      {
+        "term": "Mass Trial",
+        "definition": "To teach using mass trials means that you will present the same new acquisition SD repeatedly. Example: Delivering the instruction 'Clap hands' back to back up to three times in a row"
+      },
+      {
+        "term": "Random Rotation",
+        "definition": "Also called Interspersing trials; rotating between several targets. Example: You tell the learner to 'Clap hands,' and then on the next trial ask them to 'Touch nose.'"
+      }
+    ],
+    "Token Economies": [
+      {
+        "term": "Token economy",
+        "definition": "Reinforcement system with 3 components: 1. Target behaviors, 2. Generalized conditioned reinforcers (tokens or points), 3. Backup reinforcers"
+      },
+      {
+        "term": "Backup reinforcer",
+        "definition": "Items/activities that can be earned by exchanging tokens"
+      }
+    ],
+    "NET": [
+      {
+        "term": "Natural Environment Training (NET)",
+        "definition": "Teaching target skills within naturally occurring routines and activities (NET is often loosely structured and led by the child's motivation)"
+      },
+      {
+        "term": "Incidental teaching",
+        "definition": "A type of instruction in which a therapist uses naturally occurring 'incidents' or events to provide children with learning opportunities. Example: a therapist has a child fill in a word or phrase of their favorite song when singing together"
+      }
+    ],
+    "Preference Assessments": [
+      {
+        "term": "Free Operant",
+        "definition": "An observation-based method appropriate for children who are unable to select between highly-preferred and low-preferred items, those who engage in behavior targeted for reduction, or when the therapist is unfamiliar with the child. The child is given unrestricted access to a variety of toys and activities. The longer the child engages with an item, the stronger the inference is that the item is preferred."
+      },
+      {
+        "term": "Single Stimulus",
+        "definition": "A trial-based method appropriate for children who have difficulty selecting between two or more stimuli. Also called 'successive choice'. A stimulus is presented and the child's reaction is recorded."
+      },
+      {
+        "term": "Paired Stimulus",
+        "definition": "A trial-based method appropriate for children who can adequately select preferred items from an array of two. Also called 'forced-choice'. Each stimulus is matched randomly with every other item in the set. Data shows how many times an item was chosen and then stimuli are ranked in terms of high, medium, and low preference."
+      },
+      {
+        "term": "Multiple Stimulus Without Replacement",
+        "definition": "A trial-based method appropriate for children who can adequately select preferred items among a sizable array of stimuli. For assessments with tangible items (i.e., toys), it is also appropriate for children who do not engage in behavior targeted for reduction when preferred toys are taken away. All stimuli are presented simultaneously, the selected item is removed from the array, the placement of items is rearranged and the next trial begins with a reduced number of items."
+      },
+      {
+        "term": "Multiple Stimulus With Replacement",
+        "definition": "A trial-based method appropriate for children who can adequately select preferred items among a large array of items. For tangible items (i.e., toys), it is also appropriate for children who do not engage in behavior targeted for reduction when preferred toys are taken away. All stimuli are presented simultaneously, the item selected remains in the array and the items that were not selected are replaced with new stimuli."
+      },
+      {
+        "term": "Satiation",
+        "definition": "When a reinforcer loses its effectiveness due to overuse."
+      }
+    ],
+    "Shaping": [
+      {
+        "term": "Shaping",
+        "definition": "Uses reinforcers to guide behavior closer towards a desired behavior. Shaping occurs through reinforcing successive approximations that guide the target through incremental steps, ultimately leading to the desired goal. Delivering reinforcement will not be black and white, right or wrong, as in DTT."
+      },
+      {
+        "term": "Successive Approximations",
+        "definition": "The gradual and successive criterion change for delivering reinforcement for a behavior that is closer to the terminal behavior than the one that precedes it."
+      }
+    ],
+    "Chaining": [
+      {
+        "term": "Behavior chains",
+        "definition": "Are sequences of individual behaviors that when linked together form a terminal behavior"
+      },
+      {
+        "term": "Task Analysis",
+        "definition": "Involves breaking a complex task into smaller, teachable units; Should be individualized according to the age, skill and prior experience of the learner"
+      },
+      {
+        "term": "Forward chain",
+        "definition": "Forward chaining refers to teaching a behavioral chain beginning with the first step: have the child complete the target step(s), at the beginning of the chain, independently and then prompt all remaining steps."
+      },
+      {
+        "term": "Backward chain",
+        "definition": "Backward chaining refers to teaching a behavioral chain beginning with the last step: you prompt the entire chain of behaviors except the target step(s) at the end of the chain."
+      },
+      {
+        "term": "Total Task",
+        "definition": "A variation of forward chaining in which the learner receives training on each step in the task analysis during every session. The trainer will prompt any steps the learner is unable to perform independently. The chain is trained until the individual independently performs the entire sequence."
+      }
+    ],
+    "ABC Data": [
+      {
+        "term": "Four Functions of Behavior: Escape/Avoidance",
+        "definition": "Behavior results in escaping from or avoiding undesirable activities, people, settings, or situations."
+      },
+      {
+        "term": "Four Functions of Behavior: Attention",
+        "definition": "Behavior results in accessing attention from others."
+      },
+      {
+        "term": "Four Functions of Behavior: Access to Tangible",
+        "definition": "Behavior results in access to a desired item or activity."
+      },
+      {
+        "term": "Four Functions of Behavior: Automatic Reinforcement/Self-Stimulatory/Sensory",
+        "definition": "Behavior that is intrinsically motivating. Occurs independent of the social mediation of others."
+      },
+      {
+        "term": "Antecedent",
+        "definition": "What happens right before the behavior occurs."
+      },
+      {
+        "term": "Consequence",
+        "definition": "What happens immediately after the behavior occurs"
+      }
+    ],
+    "Antecedent Interventions": [
+      {
+        "term": "Antecedent",
+        "definition": "An environmental condition or stimulus change that occurs prior to a behavior"
+      },
+      {
+        "term": "Antecedent Intervention",
+        "definition": "A behavior change strategy that manipulates environmental stimuli so behaviors targeted for reduction are less likely to occur."
+      },
+      {
+        "term": "Functional Communication Training (FCT)",
+        "definition": "Establishes an appropriate communicative behavior to compete with target behaviors evoked by a motivating operation (MO). Use of DRA to teach an alternative communication response that is maintained by the same consequence as the problem behavior."
+      },
+      {
+        "term": "Premack Principle",
+        "definition": "A high probability activity may serve as a positive reinforcer for a low probability activity. Example: Jason does not like to do his homework. He loves to go swimming. His parents tells him that first he must complete his homework, then he can go swimming."
+      },
+      {
+        "term": "Non-Contingent Reinforcement",
+        "definition": "Reinforcement delivered on a schedule independent of the occurrence of the target behavior or response."
+      }
+    ],
+    "Measurement": [
+      {
+        "term": "Duration",
+        "definition": "The measure of the total extent of time in which a behavior occurs"
+      },
+      {
+        "term": "Frequency",
+        "definition": "The number of times a behavior occurs"
+      },
+      {
+        "term": "Rate",
+        "definition": "The number of times a behavior occurs within a specified period of time; Rate = Frequency divided by the time period"
+      },
+      {
+        "term": "Interresponse Time (IRT)",
+        "definition": "The amount of time between two consecutive instances of behavior; measured from the end of the first response to the beginning of the second response"
+      },
+      {
+        "term": "Latency",
+        "definition": "The elapsed time from the onset of a stimulus to the initiation of a response"
+      },
+      {
+        "term": "Momentary Time Sampling",
+        "definition": "A time sampling method measuring whether a behavior occurred or does not occur during specified time period"
+      },
+      {
+        "term": "Partial-Interval Recording",
+        "definition": "A time sampling method measuring whether the target behavior occurred at any time during a specified time period/interval"
+      },
+      {
+        "term": "Whole-interval",
+        "definition": "A time sampling method measuring whether a behavior occurred throughout the entire interval"
+      },
+      {
+        "term": "Permanent Product",
+        "definition": "Refer to the real or concrete objects or outcomes that result from a behavior. Common examples of permanent product measurements are the number of completed items, creative projects, quizzes, homework assignments turned in by a patient"
+      }
+    ],
+    "DTT and Prompting": [
+      {
+        "term": "Discriminative Stimulus",
+        "definition": "A discriminative stimulus is the antecedent stimulus that has stimulus control over behavior because the behavior was reliably reinforced in the presence of that stimulus in the past. Discriminative stimuli set the occasion for behaviors that have been reinforced in their presence in the past."
+      },
+      {
+        "term": "Discrete trial",
+        "definition": "A single cycle of behaviorally-based and systematic instructional routine. Clear beginning and end. Components: SD, prompt (if necessary), response, consequence/reinforcement, inter-trial interval."
+      },
+      {
+        "term": "Prompt",
+        "definition": "Supplementary antecedent stimuli that are used to evoke a desired response. Prompts are provided before or during a response."
+      },
+      {
+        "term": "Inter-trial Interval",
+        "definition": "Time between each discrete trial; The interval should be as short as possible so we can capitalize on opportunities for learning."
+      },
+      {
+        "term": "Most-to-Least Prompting",
+        "definition": "Begins with a prompt known to reliably evoke the behavior and gradually proceeds to less intrusive prompts."
+      },
+      {
+        "term": "Least-to-Most Prompting",
+        "definition": "Prompting begins with minimal cues that systematically and gradually increase in intrusiveness until resulting in the correct response."
+      },
+      {
+        "term": "Errorless Learning",
+        "definition": "Initial trials are presented with full assistance; Designed to prevent learner errors using most-to-least prompting and fading methods."
+      }
+    ],
+    "Stimulus Control Transfer and Discrimination Training": [
+      {
+        "term": "Stimulus Control Transfer",
+        "definition": "Gradually fading stimulus or response prompts so that the naturally occurring stimulus eventually evokes the behavior or response."
+      },
+      {
+        "term": "S-Delta (SΔ)",
+        "definition": "A stimulus in the presence of which a given behavior has not produced reinforcement or has reinforcement of lesser quality in the past. Example: when told to 'touch blue,' a child touches the red card. Touching the red card would not lead to reinforcement."
+      },
+      {
+        "term": "Discrimination Training",
+        "definition": "Reinforcing a behavior or response in the presence of one stimuli and not the other. Reinforce the correct response and never an incorrect response (e.g. a patient accesses reinforcement for touching a red card and not the blue card when given the SD 'Touch red'. Reinforcement for this response paired with that SD will strengthen this response over time)."
+      }
+    ],
+    "Generalization & Maintenance": [
+      {
+        "term": "Baseline",
+        "definition": "Provides the practitioner with data about where the learner is starting, no prompting or reinforcement"
+      },
+      {
+        "term": "Intervention/Skill Acquisition",
+        "definition": "Teaching phase; introduced immediately after the baseline; utilizes prompting, errorless learning and other techniques outlined by the BCBA"
+      },
+      {
+        "term": "Generalization",
+        "definition": "The process of practicing the skill often and thoroughly enough to make sure the learner is able to use the skill when needed, in any situation or environment. This will help the learner to gain the ability to perform a skill/behavior under different conditions, the ability to apply a skill/behavior in a different way and also to continue to use/exhibit a skill/behavior over time."
+      },
+      {
+        "term": "Stimulus Generalization",
+        "definition": "Ability to perform a skill under different conditions (settings, people, stimuli & instructions); Generalization has occurred when the behavior/skill can be done in a setting, with different people, or using different stimuli other than how it was originally taught. Example: Learner will engage in the target behavior when given the instruction 'clap your hands' but also 'clap hands', 'clap' or 'show me clapping'"
+      },
+      {
+        "term": "Response Generalization",
+        "definition": "Learning a skill/target behavior and then successfully demonstrating a variation of it in similar situations. The learner's responses will serve the same function as the original target behavior and achieve the same result. Example: If you teach a child to greet someone by saying 'hi,' and then they begin to say 'hello,' 'hey,' 'what's up?'"
+      },
+      {
+        "term": "Maintenance",
+        "definition": "The extent to which a learner continues to perform a skill after all or part of the intervention has been terminated; A new behavior is not considered 'mastered' until it can be maintained."
+      }
+    ],
+    "Receptive and Expressive Language": [
+      {
+        "term": "Verbal behavior",
+        "definition": "Behavior that is reinforced through the mediation of another person's verbal behavior. Includes vocal (spoken) and non-vocal (non-spoken) behaviors (e.g. signing or writing)."
+      },
+      {
+        "term": "Receptive Language",
+        "definition": "The 'input' of language, the ability to understand and comprehend spoken language that you hear or read (how we receive information from other people)"
+      },
+      {
+        "term": "Expressive Language",
+        "definition": "The 'output' of language, the ability to express your wants and needs through verbal or nonverbal communication (how we express ourselves)"
+      },
+      {
+        "term": "Skinner's 6 types of Elementary Verbal Operants: Echoic",
+        "definition": "The speaker repeats the verbal behavior of another speaker. Vocal imitation."
+      },
+      {
+        "term": "Skinner's 6 types of Elementary Verbal Operants: Mand",
+        "definition": "The speaker asks for (or states, demands, requests) what they want or need. Controlled by motivating operations, not SDs."
+      },
+      {
+        "term": "Skinner's 6 types of Elementary Verbal Operants: Intraverbal",
+        "definition": "The speaker differentially responds to another person's verbal behavior."
+      },
+      {
+        "term": "Skinner's 6 types of Elementary Verbal Operants: Tact",
+        "definition": "The speaker names things and actions in the environment"
+      },
+      {
+        "term": "Skinner's 6 types of Elementary Verbal Operants: Textual",
+        "definition": "Reading written words"
+      },
+      {
+        "term": "Skinner's 6 types of Elementary Verbal Operants: Transcription",
+        "definition": "Writing and spelling words spoken to you. Taking dictation."
+      }
+    ],
+    "Manding and Expanding Language": [
+      {
+        "term": "Mand",
+        "definition": "This is a Verbal Behavior term. A mand is a 'demand', or being able to request something that one wants or needs. Mands can be emitted through any form including sign language, finger spelling, picture/icon selection, facial expressions, eye contact, gestures, verbal approximations, words, and/or sentences."
+      },
+      {
+        "term": "Motivating Operation (MO)",
+        "definition": "An environmental variable that (a) alters (increases or decreases) the reinforcing or punishing effectiveness of some stimulus, object or event; and (b) alters (increases or decreases) the current frequency of all behavior that has been reinforced or punished by that stimulus, object or event."
+      },
+      {
+        "term": "Establishing Operation (EO)",
+        "definition": "A motivating operation that increases the effectiveness of some stimulus, object, or event as a reinforcer (e.g. food deprivation establishes food as an effective reinforcer.)"
+      },
+      {
+        "term": "Abolishing Operation (AO)",
+        "definition": "A motivating operation that decreases the effectiveness of some stimulus, object, or event as a reinforcer (e.g. reinforcing effectiveness of food decreases after a meal)."
+      }
+    ],
+    "PECS": [
+      {
+        "term": "Augmentative and Alternative Communication",
+        "definition": "Any communication made without using vocal speech, such as pictures, sign language, or electronic devices."
+      },
+      {
+        "term": "Picture Exchange Communication System (PECS)",
+        "definition": "PECS is a symbolic communication system for functionally non-verbal individuals. PECS helps individuals with autism initiate requests and communicate their needs."
+      }
+    ],
+    "Pairing": [
+      {
+        "term": "Pairing",
+        "definition": "When two items or activities are consistently experienced together, the perceived value of one will influence the perceived value of the other. A common term that ABA professionals often use to describe the process of building or maintaining rapport with a child. Pairing activities should be led by the child's motivation and should include only non-verbal and declarative language which serve to share your thoughts and feelings - no demands!"
+      }
+    ],
+    "Behavior": [
+      {
+        "term": "Behavior",
+        "definition": "Everything we do. Behavior is observable and measurable."
+      },
+      {
+        "term": "Topography",
+        "definition": "What the behavior looks like."
+      },
+      {
+        "term": "Intensity",
+        "definition": "The magnitude or force of a behavior."
+      },
+      {
+        "term": "Duration",
+        "definition": "The amount of time spent engaging in a behavior."
+      },
+      {
+        "term": "Operational Definition",
+        "definition": "Clearly and concisely describes the targeted behavior in observable and measurable terms. The definition will include the topography, how the behavior will be measured, and examples and non-examples of the behavior"
+      }
+    ],
+    "Differential Reinforcement": [
+      {
+        "term": "Differential reinforcement",
+        "definition": "Reinforcing only those responses or behaviors that meet specific criteria along some dimension (i.e. frequency, topography, duration, latency, etc) and placing all other responses on extinction"
+      },
+      {
+        "term": "Differential reinforcement of alternative behavior",
+        "definition": "Reinforcement is delivered for engaging in a behavior that is alternative to the target behavior. Examples: ask for a break instead of throwing materials, using a chewy instead of mouthing"
+      },
+      {
+        "term": "Differential reinforcement of incompatible behavior",
+        "definition": "Reinforcement is delivered for engaging in a behavior that is incompatible to the target behavior. In other words, it is impossible to engage in the target behavior and incompatible behavior at the same time. Examples: Yelling and drinking, clapping and hitting, squeezing a ball instead of self injury"
+      },
+      {
+        "term": "Differential reinforcement of other behavior",
+        "definition": "Reinforcement is delivered whenever the target behavior has not occurred during or at specific times. Examples: For every 1 min the child engages in any other behavior besides hitting, they receive a reinforcer"
+      },
+      {
+        "term": "Differential reinforcement of low rates",
+        "definition": "Reinforcement is delivered if the target behavior occurs at a number or duration equal to or less than a predetermined criterion. If the target behavior exceeds the specified limit, reinforcement is withheld. Examples: Reinforcement for hand raising 10 or less times, reinforcement for shouting out 5 or less times"
+      },
+      {
+        "term": "Differential reinforcement of high rates",
+        "definition": "Reinforcement is delivered if the target behavior occurs at a number or duration equal to or higher than a predetermined criterion. If the target behavior is less than the specified limit, reinforcement is withheld. Examples: Reinforcement for approaching peers 3 or more time"
+      }
+    ],
+    "Extinction": [
+      {
+        "term": "Extinction",
+        "definition": "A procedure in which reinforcement that is maintaining the target behavior is withheld, and as a result, the occurrences of the behavior will decrease. It is used in conjunction with reinforcement procedures in order to increase appropriate replacement behaviors."
+      },
+      {
+        "term": "Extinction Burst",
+        "definition": "A sudden and dramatic increase in behavior that may occur when the behavior increases in frequency, duration, or intensity when reinforcement for that behavior has been removed. It is a temporary response pattern and will diminish and then stop as the reinforcement for the behavior no longer follows the voluntary action."
+      },
+      {
+        "term": "Spontaneous Recovery",
+        "definition": "When the behavior reappears for a brief period of time even after the behavior has been considered 'extinguished'."
+      }
+    ],
+    "Important Definitions Not Included in Guided Practice": [
+        {
+        "term": "ABLLS Assessment",
+        "definition": "A comprehensive assessment and curriculum planning tool that assesses across 25 domains to get a complete snapshot of a child's functioning level, strengths, and deficits."
+        },
+        {
+        "term": "ABC's of Behavior",
+        "definition": "The three-term contingency consisting of antecedent (precursor/setting event), behavior (what occurs), and consequence (what follows the behavior)."
+        },
+        {
+        "term": "Acquisition Task",
+        "definition": "A target that is in the process of being taught but not yet mastered."
+        },
+        {
+        "term": "Applied Behavior Analysis (ABA)",
+        "definition": "The application of behavioral science principles to create socially significant behavior changes."
+        },
+        {
+        "term": "Apraxia",
+        "definition": "A motor speech disorder affecting muscle movements needed for speech production."
+        },
+        {
+        "term": "Autism Spectrum Disorders",
+        "definition": "Neurodevelopmental disorders characterized by social communication deficits and restricted/repetitive behaviors."
+        },
+        {
+        "term": "BCaBA/BCBA/BCBA-D",
+        "definition": "Board-certified behavior analyst credentials for overseeing ABA programs."
+        },
+        {
+        "term": "Chronological/Developmental Age",
+        "definition": "Difference between actual age and functional ability level."
+        },
+        {
+        "term": "Co-Morbidity",
+        "definition": "Having multiple concurrent diagnoses (e.g., Autism + OCD)."
+        },
+        {
+        "term": "Deprivation",
+        "definition": "State resulting from lack of access to a reinforcer, increasing its effectiveness."
+        },
+        {
+        "term": "Developmentally Delayed (DD)",
+        "definition": "Diagnosis for children not meeting developmental milestones."
+        },
+        {
+        "term": "DSM",
+        "definition": "Diagnostic and Statistical Manual of Mental Disorders published by the APA."
+        },
+        {
+        "term": "Echolalia",
+        "definition": "Immediate repetition of words/phrases heard from others."
+        },
+        {
+        "term": "Environmental Modification",
+        "definition": "Adapting surroundings to reduce barriers to learning/participation."
+        },
+        {
+        "term": "Expressive (Language)",
+        "definition": "Vocal/verbal communication output."
+        },
+        {
+        "term": "Extinction Burst",
+        "definition": "Temporary increase in behavior when reinforcement stops."
+        },
+        {
+        "term": "Fine Motor Skills",
+        "definition": "Coordination of small muscle movements (e.g., writing, buttoning)."
+        },
+        {
+        "term": "Field Size",
+        "definition": "Number of stimuli presented in an array during teaching trials."
+        },
+        {
+        "term": "FBA",
+        "definition": "Functional Behavior Assessment to determine behavior function."
+        },
+        {
+        "term": "Gross Motor Skills",
+        "definition": "Large muscle group movements (e.g., walking, jumping)."
+        },
+        {
+        "term": "Hand Over Hand Prompting",
+        "definition": "Physical guidance to help complete motor tasks."
+        },
+        {
+        "term": "Hypersensitivity",
+        "definition": "Over-reactivity to sensory input."
+        },
+        {
+        "term": "Hyposensitivity",
+        "definition": "Under-reactivity to sensory input."
+        },
+        {
+        "term": "IEP",
+        "definition": "Individualized Education Program for special education students."
+        },
+        {
+        "term": "Inclusive Classroom",
+        "definition": "Classroom mixing typical and special needs students."
+        },
+        {
+        "term": "Intervention",
+        "definition": "Strategy to modify behavior (e.g., teaching replacement skills)."
+        },
+        {
+        "term": "Intraverbal",
+        "definition": "Verbal behavior involving responses to others' speech without visual cues."
+        },
+        {
+        "term": "Least Restrictive Environment",
+        "definition": "Educational setting providing maximum inclusion with needed supports."
+        },
+        {
+        "term": "Mainstreaming",
+        "definition": "Integrating special needs students into general education classrooms."
+        },
+        {
+        "term": "Mouthing",
+        "definition": "Inappropriate oral exploration of non-food items."
+        },
+        {
+        "term": "Neuro-Divergent (ND)",
+        "definition": "Individuals with atypical neurological development."
+        },
+        {
+        "term": "Neuro-Typical (NT)",
+        "definition": "Individuals with typical neurological development."
+        },
+        {
+        "term": "Perseverative Behavior",
+        "definition": "Repetitive, rigid patterns of behavior/communication."
+        },
+        {
+        "term": "Probe Trial",
+        "definition": "Assessment of unprompted skill performance."
+        },
+        {
+        "term": "Prompt Dependency",
+        "definition": "Over-reliance on cues to perform learned skills."
+        },
+        {
+        "term": "Punisher",
+        "definition": "Stimulus that decreases future behavior frequency."
+        },
+        {
+        "term": "Receptive (Language)",
+        "definition": "Understanding of verbal/nonverbal communication."
+        },
+        {
+        "term": "Recovered",
+        "definition": "Individual who has overcome disabling effects of Autism."
+        },
+        {
+        "term": "RBT",
+        "definition": "Registered Behavior Technician credential for ABA practitioners."
+        },
+        {
+        "term": "Scripting",
+        "definition": "Repetition of media phrases/segments verbatim."
+        },
+        {
+        "term": "Scrolling",
+        "definition": "Cycling through multiple responses when uncertain."
+        },
+        {
+        "term": "Sensory Integration",
+        "definition": "Controversial sensory processing interventions."
+        },
+        {
+        "term": "Shadow",
+        "definition": "Classroom aide supporting inclusion of special needs students."
+        },
+        {
+        "term": "SLP/OT/PT",
+        "definition": "Speech, occupational, and physical therapy professionals."
+        },
+        {
+        "term": "Tact",
+        "definition": "Labeling items/events in the environment."
+        },
+        {
+        "term": "Target Behavior",
+        "definition": "Specific behavior selected for intervention."
+        },
+        {
+        "term": "Task Reduction",
+        "definition": "Modifying demands to prevent frustration."
+        },
+        {
+        "term": "Transitions",
+        "definition": "Changes between activities/environments."
+        },
+        {
+        "term": "VB-MAPP",
+        "definition": "Verbal Behavior Milestones Assessment and Placement Program."
+        },
+        {
+        "term": "Verbal Behavior",
+        "definition": "Skinner's analysis of language as operant behavior."
+        },
+        {
+        "term": "Verbal vs Non-Verbal",
+        "definition": "Distinction between communication modalities (vocal vs. other)."
+        }
+    ]
+  }
