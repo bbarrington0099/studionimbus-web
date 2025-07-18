@@ -89,6 +89,7 @@ projectSpace.addProject('Snake', `a clone of the classic game, 'Snake'`, 'Taking
 projectSpace.addProject('PasswordGenerator', 'a random password generator with options', 'Reading selected options to output data within the desired parameters', 'Password Generator');
 projectSpace.addProject('LiveUserFilter', 'a searchable user database', 'Pulling random users from a Database to create a filterable UI', 'User Searchbase');
 projectSpace.addProject('ABA_Flashcards', 'Flashcards for studying ABA terms', 'A simple flashcard app to help study ABA terms and definitions', 'ABA Flashcards');
+projectSpace.addProject('OurExperiencedParty', 'A custom experience system calculator for Dungeons & Dragons (not associated with)', 'Vibe coding to solve a quick need of a group of friends in a way that makes it available for others', 'Our Experienced Party');
 /*
 TO-DO:
     change lorem ipsum to introduction
