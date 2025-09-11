@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imgs/Logos/SNlogoVector.png">
+    <title>Alabastria Character Assistant</title>
+</head>
+<body>
+    <nav class="reverse">
+        <img src="../../Imgs/Logos/SNlogoVector.png" alt="Logo" id="logo" class="reverse">
+        <h1 id="title" class="reverse">Alabastria Character Assistant</h1>
+        <div id="colorModeContainer" class="reverse">
+            <input type="checkbox" id="colorModeCheckbox" onchange="app.changeColorMode()" class="reverse">
+            <label for="colorModeCheckbox" id="colorModeLabel" class="reverse"></label>
+        </div>
+    </nav>
+
+    <main>
+        <div id="container">
+            <!-- Welcome Section -->
+            <section id="welcome-section" class="section active">
+                <div class="welcome-content">
+                    <h2>Welcome to Alabastria</h2>
+                    <div class="world-map">
+                        <img src="continent_images/Alabastria.png" alt="Map of Alabastria" id="world-map-image">
+                    </div>
+                    <p class="world-description" id="world-description">
+                        Loading the world of Alabastria...
+                    </p>
+                    <div class="filter-selection">
+                        <h3>Where shall our journey begin?</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn" onclick="app.setFilter('continent')">
+                                <span class="icon">🗺️</span>
+                                <span class="filter-btn-text">Continent</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.setFilter('race')">
+                                <span class="icon">👥</span>
+                                <span class="filter-btn-text">Race</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.setFilter('class')">
+                                <span class="icon">⚔️</span>
+                                <span class="filter-btn-text">Class</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selection Section -->
+            <section id="selection-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2 id="selection-title"></h2>
+                </div>
+                <div id="selection-grid" class="selection-grid"></div>
+            </section>
+
+            <!-- Details Section -->
+            <section id="details-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2 id="details-title"></h2>
+                </div>
+                <div class="details-content">
+                    <div id="details-info" class="details-info"></div>
+                    <div id="relationships-table" class="relationships-table"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Explore the lands of Alabastria and discover your character's destiny</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            app.initializePage();
+        }
+    </script>
+</body>
+</html> 

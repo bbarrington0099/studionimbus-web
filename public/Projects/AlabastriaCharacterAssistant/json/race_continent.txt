@@ -1,0 +1,235 @@
+Ararkocra (Bulsania – thrive on high mountains and icy peaks)
+
+Aasimar (Skratonia – blend into common city-states, spiritual leaders)
+
+Fallen (Skratonia – outcasts among humans)
+
+Protector (Skratonia – guardians in populous towns)
+
+Scourge (Skratonia – zealots within mercenary guilds)
+
+Genasi (Kuriguer – elementally attuned to its magical forests)
+
+Air (Kuriguer – coastal winds)
+
+Earth (Kuriguer – rooted in enchanted groves)
+
+Fire (Kuriguer – volatile magical hotspots)
+
+Water (Kuriguer – coastal rivers and lakes)
+
+Elf (Kuriguer – native to magic forests and coasts)
+
+Astral (Kuriguer – planar attunement to wild magic zones)
+
+Alandrin (Kuriguer – tied to seasonal magic of forests)
+
+Sea (Kuriguer – coastal dwellers)
+
+Shadar-kai (Kuriguer – shadow-kin in dangerous woods)
+
+Elf (Kuriguer – general elven presence)
+
+Dark (Drow) (Maltman – subterranean mines/caverns)
+
+Eladrin (Kuriguer – fae-tied magic groves)
+
+Mark of Shadow (Kuriguer – thrive in Kuriguer’s secrecy)
+
+Pallid (Kuriguer – eerie twilight forests)
+
+Wood (Kuriguer – deep woodland clans)
+
+Autognome (Alatman – mechanical creations from resource workshops)
+
+Bugbear (Maltman – goblinoids in mountain caverns)
+
+Centaur (Skratonia – nomads of fertile plains)
+
+Changeling (Kuriguer – blend into diverse magic towns)
+
+Dragonborn (Bulsania – hardy and militarized, adapted to harsh cold)
+
+Draconblood/Ravenite (Bulsania – frontier survivalists)
+
+Chromatic (Bulsania – scattered dragon clans in tundra)
+
+Black (Bulsania – marshy coasts)
+
+Blue (Bulsania – frozen wastelands)
+
+Green (Bulsania – forested foothills)
+
+White (Bulsania – icy heartlands)
+
+Red (Bulsania – volcanic slopes near Noxious Mountain)
+
+Metallic (Bulsania – warrior clans in icy citadels)
+
+Brass (Bulsania)
+
+Bronze (Bulsania)
+
+Copper (Bulsania)
+
+Gold (Bulsania)
+
+Silver (Bulsania – most common in the cold)
+
+Gem (Bulsania – reclusive mystics in remote peaks)
+
+Amethyst (Bulsania)
+
+Crystal (Bulsania)
+
+Emerald (Bulsania)
+
+Sapphire (Bulsania)
+
+Topaz (Bulsania)
+
+Gnome (Kuriguer – clever inventors in coastal towns)
+
+Deep (Maltman – underground allies of dwarves)
+
+Gnome (Kuriguer – general gnome settlements)
+
+Dhampir (Alatman – forest edges, tied to vampiric legends)
+
+Dwarf (Maltman – mountain miners and stoneworkers)
+
+Duergar (Maltman – subterranean forges)
+
+Dwarf (Maltman – ruling guilds of the mines)
+
+Fairy (Kuriguer – magical glades and enchanted groves)
+
+Firbolg (Kuriguer – reclusive forest guardians)
+
+Giff (Skratonia – mercenary hippo-warriors among city militias)
+
+Gith (Kuriguer – alien outsiders drawn to unstable magic)
+
+Githyanki (Kuriguer – warlike enclaves)
+
+Githzerai (Kuriguer – isolated monasteries)
+
+Goblin (Skratonia – scavengers on the plains)
+
+Goliath (Bulsania – high mountain tribes)
+
+Hadozee (Kuriguer – coastal sailors and explorers)
+
+Half-human (Skratonia – diverse mixes in cities)
+
+Half-Elf (Skratonia – bridge between human and elf society)
+
+Aquatic (Skratonia – riverfolk traders)
+
+Drow (Maltman – ties to underground Drow clans)
+
+Moon (Skratonia – spiritual scholars)
+
+Sun (Skratonia – charismatic leaders)
+
+Wood (Kuriguer – forest-dwelling kin)
+
+Orc (Katman – swamp frontier clans)
+
+Halfling (Skratonia – farmers and caravan leaders)
+
+Harengon (Skratonia – rabbitfolk in farmlands)
+
+Hexblood (Kuriguer – fey-touched individuals of cursed woods)
+
+Hobgoblin (Bulsania – militarized in icy fortresses)
+
+Human (Skratonia – dominant city-state populace)
+
+Human (Skratonia)
+
+Mark of Finding (Skratonia – trackers and scouts)
+
+Mark of Handling (Skratonia – beast tamers on plains)
+
+Mark of Making (Skratonia – builders of cities)
+
+Mark of Passage (Skratonia – caravan leaders)
+
+Mark of the Sentinel (Skratonia – bodyguards and defenders)
+
+Kalashtar (Skratonia – spiritual dream-walkers in towns)
+
+Kender (Skratonia – curious wanderers in villages)
+
+Kenku (Kuriguer – mimicry thrives in bustling ports)
+
+Kobold (Maltman – underground miners near dwarves)
+
+Leonin (Skratonia – warrior prides on plains)
+
+Lizardfolk (Katman – natural hunters in swamps)
+
+Loxodon (Skratonia – elephantine sages and builders)
+
+Minotaur (Maltman – labyrinthine mine-dwellers)
+
+Orc (Katman – swampy tribal strongholds)
+
+Owlin (Kuriguer – nocturnal forestfolk)
+
+Plasmoid (Alatman – strange oozes near volcanic swamps)
+
+Reborn (Skratonia – souls reborn in populous lands)
+
+Satyr (Kuriguer – revelers of fey glades)
+
+Shifter (Kuriguer – lycan-touched of the wild woods)
+
+Beasthide (Kuriguer – forest brutes)
+
+Longtooth (Kuriguer – feral hunters)
+
+Swiftstride (Kuriguer – elusive scouts)
+
+Wildhunt (Kuriguer – primal trackers)
+
+Simic Hybrid (Kuriguer – magical experiments in labs)
+
+Tabaxi (Skratonia – hunters of the plains)
+
+Thri-kreen (Skratonia – insectoid nomads of open land)
+
+Tiefling (Skratonia – numerous across city-states)
+
+Tiefling (Skratonia)
+
+Baalzebul (Skratonia – corrupted urbanites)
+
+Dispatcher (Skratonia)
+
+Fierna (Skratonia)
+
+Glasya (Skratonia)
+
+Levistus (Skratonia)
+
+Mammon (Skratonia)
+
+Mephistopheles (Skratonia)
+
+Zariel (Skratonia – militant)
+
+Tortle (Katman – turtlefolk in swamp waterways)
+
+Triton (Kuriguer – sea-folk along coasts)
+
+Vedalken (Skratonia – intellectuals in scholarly cities)
+
+Warforged (Alatman – living constructs forged in volcanic forges)
+
+Yuan-ti (Katman – serpentfolk hidden in swamps)
+
+Yuan-ti (Katman)
+
+Pureblood (Katman)
