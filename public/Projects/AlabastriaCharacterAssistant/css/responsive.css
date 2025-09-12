@@ -1,0 +1,380 @@
+/* 
+ * Responsive Design Styles
+ * Contains all mobile and responsive breakpoint styles
+ */
+
+/* ===== TABLET RESPONSIVE (768px and below) ===== */
+@media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 1rem;
+    }
+
+    #title {
+        font-size: 1.2rem;
+    }
+
+    /* Main layout */
+    main {
+        padding: 1rem;
+    }
+
+    /* Welcome section */
+    .welcome-content h2 {
+        font-size: 2rem;
+    }
+
+    #world-map-image {
+        max-height: 250px;
+    }
+
+    /* Filter buttons */
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .filter-btn {
+        min-width: 200px;
+    }
+
+    /* Selection grid */
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Details content */
+    .details-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Section headers */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    /* Continent images */
+    .continent-image {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        margin-bottom: 1rem;
+        opacity: 0.6;
+    }
+
+    .continent-card {
+        min-height: auto;
+    }
+
+    /* Sticky info */
+    .sticky-info {
+        top: 60px;
+        padding: 1.5rem;
+    }
+
+    /* Jump button */
+    .jump-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+
+    /* Navigation buttons */
+    .nav-buttons {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.25rem;
+    }
+
+    .nav-btn {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+        margin-left: 0;
+    }
+
+    /* Relationship headers */
+    .relationship-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    /* Section headers */
+    .section-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .section-header h2 {
+        flex: 1;
+        font-size: 1.5rem;
+    }
+
+    .history-btn {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    /* Timeline */
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-period:nth-child(odd) .timeline-card,
+    .timeline-period:nth-child(even) .timeline-card {
+        margin-left: 60px;
+        margin-right: 0;
+    }
+
+    .timeline-card::before {
+        left: -35px !important;
+        right: auto !important;
+    }
+
+    /* Modal */
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    /* Guild */
+    .guild-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .guild-info {
+        position: relative;
+        top: auto;
+        max-height: none;
+    }
+
+    .rank-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .operations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guild-nav-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .staff-grid,
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rank-card.coal-rank {
+        grid-column: 1;
+    }
+
+    /* Quest reports */
+    .quest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quest-rank-badge {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE (480px and below) ===== */
+@media (max-width: 480px) {
+    /* Welcome section */
+    .welcome-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .world-description {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    /* Filter buttons */
+    .filter-btn {
+        padding: 1.5rem 1rem;
+        min-width: 150px;
+    }
+
+    /* Details and relationships */
+    .details-info,
+    .relationships-table {
+        padding: 1rem;
+    }
+
+    #world-map-image {
+        max-height: 200px;
+    }
+
+    /* Sticky info */
+    .sticky-info {
+        top: 50px;
+        padding: 1rem;
+    }
+
+    /* Jump button */
+    .jump-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    /* Section headers */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .section-header h2 {
+        width: 100%;
+        font-size: 1.3rem;
+    }
+
+    .back-btn,
+    .history-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Subrace variants */
+    .subrace-variants {
+        padding: 0.25rem;
+    }
+
+    .subrace-variants .subrace-item {
+        padding: 0.5rem;
+    }
+
+    /* Navigation buttons */
+    .nav-btn {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.3rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    /* Member rank containers */
+    .member-rank-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    /* Quest participation headers */
+    .quest-participation-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Stats badges */
+    .stats-badge {
+        margin: 0.1rem 0.3rem 0.1rem 0;
+        font-size: 0.7rem;
+    }
+}
+
+/* ===== LARGE SCREEN OPTIMIZATIONS (1200px and above) ===== */
+@media (min-width: 1200px) {
+    /* Ensure content doesn't get too wide on large screens */
+    .timeline-container,
+    .guild-container {
+        max-width: 1400px;
+    }
+
+    /* Optimize grid layouts for larger screens */
+    .staff-grid,
+    .members-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .rank-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    /* Hide interactive elements */
+    nav,
+    .back-btn,
+    .history-btn,
+    .jump-btn,
+    .modal,
+    .filter-buttons {
+        display: none !important;
+    }
+
+    /* Optimize for print */
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .section {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    .timeline-card,
+    .selection-card,
+    .staff-card,
+    .member-card {
+        page-break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.5);
+        --shadow-dark: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .darkMode {
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    .lightMode {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .timeline-card::before,
+    .relationship-item.emphasized::before {
+        animation: none !important;
+    }
+}

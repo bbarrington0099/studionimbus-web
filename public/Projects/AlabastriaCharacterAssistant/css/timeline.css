@@ -1,0 +1,201 @@
+/* 
+ * Timeline and Modal Styles
+ * Contains all timeline display and modal popup styles
+ */
+
+/* ===== TIMELINE CONTAINER ===== */
+.timeline-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* ===== TIMELINE LINE ===== */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--ocean-blue), var(--forest-green));
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* ===== TIMELINE PERIODS ===== */
+.timeline-period {
+    position: relative;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.timeline-period:nth-child(odd) .timeline-card {
+    margin-left: 0;
+    margin-right: 55%;
+}
+
+.timeline-period:nth-child(even) .timeline-card {
+    margin-left: 55%;
+    margin-right: 0;
+}
+
+/* ===== TIMELINE CARDS ===== */
+.timeline-card {
+    border: 2px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.darkMode .timeline-card {
+    background: rgba(44, 36, 22, 0.9);
+    box-shadow: var(--shadow-dark);
+}
+
+.lightMode .timeline-card {
+    background: var(--parchment-light);
+    box-shadow: var(--shadow-light);
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--ocean-blue);
+}
+
+/* Timeline card connection dots */
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--gold-accent);
+    border: 3px solid var(--mountain-brown);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-period:nth-child(odd) .timeline-card::before {
+    right: -35px;
+}
+
+.timeline-period:nth-child(even) .timeline-card::before {
+    left: -35px;
+}
+
+/* ===== TIMELINE CARD CONTENT ===== */
+.timeline-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--ocean-blue);
+}
+
+.timeline-card p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== TIMELINE HIGHLIGHTS ===== */
+.timeline-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.timeline-highlight {
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ===== MODAL STYLES ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: 5% auto;
+    border: 3px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-dark);
+}
+
+.darkMode .modal-content {
+    background: var(--parchment-dark);
+}
+
+.lightMode .modal-content {
+    background: var(--parchment-light);
+}
+
+/* ===== MODAL HEADER ===== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--mountain-brown);
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.6rem;
+}
+
+.modal-close {
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.modal-close:hover {
+    color: var(--gold-accent);
+    transform: scale(1.1);
+}
+
+/* ===== MODAL BODY ===== */
+.modal-body {
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.darkMode .modal-body {
+    color: var(--parchment-light);
+}
+
+.lightMode .modal-body {
+    color: var(--ink-dark);
+}
+
+#modal-title {
+    background: transparent;
+}
