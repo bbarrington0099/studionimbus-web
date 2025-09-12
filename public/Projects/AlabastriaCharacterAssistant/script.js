@@ -79,7 +79,7 @@ const app = {
         this.loadGuildData();
         await this.loadGuildStaffAndMembers();
         this.setupScrollListener();
-        this.setupStickyScrollBehavior();
+        
         this.setupModalListeners();
         this.showSection('welcome-section');
     },
@@ -103,39 +103,7 @@ const app = {
         });
     },
 
-    // Setup independent scrolling for sticky info sections
-    setupStickyScrollBehavior() {
-        // Use event delegation since sticky info sections are dynamically created
-        document.addEventListener('mouseenter', (e) => {
-            if (e.target.closest('.sticky-info')) {
-                // When mouse enters sticky info, allow it to handle scroll events
-                e.target.closest('.sticky-info').style.pointerEvents = 'auto';
-            }
-        }, true);
-
-        document.addEventListener('mouseleave', (e) => {
-            if (e.target.closest('.sticky-info')) {
-                // When mouse leaves, restore normal behavior
-                e.target.closest('.sticky-info').style.pointerEvents = 'auto';
-            }
-        }, true);
-
-        // Handle wheel events on sticky info sections
-        document.addEventListener('wheel', (e) => {
-            const stickyInfo = e.target.closest('.sticky-info');
-            if (stickyInfo) {
-                const { scrollTop, scrollHeight, clientHeight } = stickyInfo;
-                const isScrollingDown = e.deltaY > 0;
-                const isScrollingUp = e.deltaY < 0;
-
-                // Prevent main page scroll if sticky section can still scroll
-                if ((isScrollingDown && scrollTop < scrollHeight - clientHeight) ||
-                    (isScrollingUp && scrollTop > 0)) {
-                    e.stopPropagation();
-                }
-            }
-        }, { passive: false, capture: true });
-    },
+    
 
     // Setup modal event listeners
     setupModalListeners() {
@@ -788,7 +756,17 @@ const app = {
         const title = document.getElementById('selection-title');
         const grid = document.getElementById('selection-grid');
 
-        title.textContent = `Choose a ${this.currentFilter.charAt(0).toUpperCase() + this.currentFilter.slice(1)}`;
+        switch (this.currentFilter) {
+            case 'continent':
+                title.textContent = 'The Lands found across Alabastria';
+                break;
+            case 'race':
+                title.textContent = 'Races that have made new homes in Alabastria';
+                break;
+            case 'class':
+                title.textContent = 'Skills passed down throughout Alabastria';
+                break;
+        }
         grid.innerHTML = '';
 
         if (this.currentFilter === 'continent') {
