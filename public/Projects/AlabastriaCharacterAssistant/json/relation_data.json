@@ -1,0 +1,3831 @@
+[
+    {
+        "class": "Artificer",
+        "suitability_reason": "Artificers excel among races with crafting traditions and mechanical aptitude. Gnomes, Dwarves, and construct races like Warforged naturally gravitate toward this innovative class.",
+        "subclasses": [
+            {
+                "subclass": "Alchemist",
+                "races": [
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "inventive magic and alchemical curiosity",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Deep Gnome",
+                        "subclass_reason": "underground alchemical expertise",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "underground allies of dwarves"
+                    },
+                    {
+                        "name": "Autognome",
+                        "subclass_reason": "mechanical precision in brewing",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "mechanical creations from resource workshops"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable experimenters",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical experimentation and innovation hubs"
+                    },
+                    {
+                        "continent": "Alatman of Kamalatman",
+                        "reason": "resource-rich workshops support alchemical research"
+                    }
+                ]
+            },
+            {
+                "subclass": "Armorer",
+                "races": [
+                    {
+                        "name": "Warforged",
+                        "subclass_reason": "living armor with innate understanding",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "living constructs forged in volcanic forges"
+                    },
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "master smiths and metalworkers",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "mountain miners and stoneworkers"
+                    },
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military engineering expertise",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Maltman of Kamalatman",
+                        "reason": "mining operations provide raw materials for armor crafting"
+                    },
+                    {
+                        "continent": "Alatman of Kamalatman",
+                        "reason": "forge technology and construct creation expertise"
+                    }
+                ]
+            },
+            {
+                "subclass": "Artillerist",
+                "races": [
+                    {
+                        "name": "Rock Gnome",
+                        "subclass_reason": "technological innovation and gadgeteering",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Autognome",
+                        "subclass_reason": "mechanical precision in siege warfare",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "mechanical creations from resource workshops"
+                    },
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military tactical expertise",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical innovation meets technological advancement"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized societies demand siege weaponry"
+                    }
+                ]
+            },
+            {
+                "subclass": "Battle Smith",
+                "races": [
+                    {
+                        "name": "Warforged",
+                        "subclass_reason": "construct expertise and steel defender affinity",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "living constructs forged in volcanic forges"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "inventive combat engineering",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "versatile warrior-inventors",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Alatman of Kamalatman",
+                        "reason": "construct technology and battle automation"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical crafting meets combat innovation"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Barbarian",
+        "suitability_reason": "Barbarians emerge from hardy, tribal cultures that value strength and primal fury. Goliaths, Orcs, and other physically powerful races excel in channeling rage into devastating combat prowess.",
+        "subclasses": [
+            {
+                "subclass": "Ancestral Guardian",
+                "races": [
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "mountain spirit heritage and tribal ancestors",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Orc",
+                        "subclass_reason": "tribal shamanic traditions",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swampy tribal strongholds"
+                    },
+                    {
+                        "name": "Half-Orc",
+                        "subclass_reason": "connection to orcish ancestral spirits",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swamp frontier clans"
+                    },
+                    {
+                        "name": "Lizardfolk",
+                        "subclass_reason": "ancient reptilian ancestor worship",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "natural hunters in swamps"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain tribes with strong ancestral traditions"
+                    },
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "swamp cultures emphasize spiritual guidance from ancestors"
+                    }
+                ]
+            },
+            {
+                "subclass": "Beast",
+                "races": [
+                    {
+                        "name": "Shifter",
+                        "subclass_reason": "natural shapeshifting and beast connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "lycan-touched of the wild woods"
+                    },
+                    {
+                        "name": "Beasthide Shifter",
+                        "subclass_reason": "enhanced beast transformation abilities",
+                        "continent": "Kuriguer",
+                        "continent_reason": "forest brutes"
+                    },
+                    {
+                        "name": "Longtooth Shifter",
+                        "subclass_reason": "feral combat instincts",
+                        "continent": "Kuriguer",
+                        "continent_reason": "feral hunters"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline agility and predatory instincts",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "wild magic enhances primal beast connections"
+                    }
+                ]
+            },
+            {
+                "subclass": "Berserker",
+                "races": [
+                    {
+                        "name": "Orc",
+                        "subclass_reason": "natural bloodthirsty rage",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swampy tribal strongholds"
+                    },
+                    {
+                        "name": "Half-Orc",
+                        "subclass_reason": "inherited orcish fury",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swamp frontier clans"
+                    },
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "mountain-bred endurance and strength",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic pride and fierce temperament",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "swamp warfare breeds relentless fighters"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "harsh conditions forge unbreakable warriors"
+                    }
+                ]
+            },
+            {
+                "subclass": "Storm Herald",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "connection to sky storms and wind",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Air Genasi",
+                        "subclass_reason": "elemental storm affinity",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal winds"
+                    },
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "mountain storm endurance",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Triton",
+                        "subclass_reason": "oceanic tempest mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "sea-folk along coasts"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain storms and harsh weather forge storm warriors"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "coastal storms and elemental forces"
+                    }
+                ]
+            },
+            {
+                "subclass": "Totem Warrior",
+                "races": [
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "mountain totems and giant spirits",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Shifter",
+                        "subclass_reason": "natural beast spirit connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "lycan-touched of the wild woods"
+                    },
+                    {
+                        "name": "Lizardfolk",
+                        "subclass_reason": "reptilian totem traditions",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "natural hunters in swamps"
+                    },
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "horse spirit totems and plains wisdom",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain spirits and totemic traditions"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "wild magic enhances spirit animal bonds"
+                    }
+                ]
+            },
+            {
+                "subclass": "Wild Magic",
+                "races": [
+                    {
+                        "name": "Genasi",
+                        "subclass_reason": "elemental chaos and unpredictable magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "elementally attuned to its magical forests"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal chaos bleeding through",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "luck interacting with chaotic magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "wild magic zones create unpredictable surges"
+                    }
+                ]
+            },
+            {
+                "subclass": "Zealot",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "sky god devotion and divine fury",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial rage and divine purpose",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic pride and religious fervor",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "harsh conditions breed fanatical devotion"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Bard",
+        "suitability_reason": "Bards thrive among charismatic races with cultural traditions. Half-Elves, Tieflings, and other socially adept races excel at inspiring others through performance and magic.",
+        "subclasses": [
+            {
+                "subclass": "College of Creation",
+                "races": [
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "fey creativity and musical inspiration",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile artistic expression",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Fairy",
+                        "subclass_reason": "magical creation and fey artistry",
+                        "continent": "Kuriguer",
+                        "continent_reason": "magical glades and enchanted groves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "fey magic enhances creative expression"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Eloquence",
+                "races": [
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "natural diplomacy and persuasion",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial wisdom and inspiring speech",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable speakers and leaders",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical rhetoric and structured argument",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse city-states require skilled diplomats and orators"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Glamour",
+                "races": [
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "fey glamour and seasonal beauty",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "enchanting fey charisma",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal allure and dark charisma",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "fey influence creates natural glamour magic"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Lore",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "diverse knowledge and adaptable learning",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "cultural bridge and varied experiences",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "scholarly pursuit of knowledge",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "dream memories and ancient wisdom",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse populations and scholarly institutions preserve vast knowledge"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Spirits",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm spirit communication",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "connection to death and lingering spirits",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    },
+                    {
+                        "name": "Hexblood",
+                        "subclass_reason": "hag magic and spirit communication",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fey-touched individuals of cursed woods"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests harbor many spirits and ghostly presences"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Swords",
+                "races": [
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile combat and performance skills",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline agility in blade dancing",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable warrior-performers",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban centers foster dueling arts and performance combat"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Valor",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic honor and martial prowess",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "heroic leadership and battlefield inspiration",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Leonin",
+                        "subclass_reason": "pride-based warrior culture",
+                        "continent": "Skratonia",
+                        "continent_reason": "warrior prides on plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "militarized societies value warrior-poets"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "harsh frontier breeds heroic tales"
+                    }
+                ]
+            },
+            {
+                "subclass": "College of Whispers",
+                "races": [
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "natural deception and identity manipulation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    },
+                    {
+                        "name": "Kenku",
+                        "subclass_reason": "mimicry and information gathering",
+                        "continent": "Kuriguer",
+                        "continent_reason": "mimicry thrives in bustling ports"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal cunning and dark secrets",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical ports and diverse populations breed intrigue"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban politics require masters of secrets"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Cleric",
+        "suitability_reason": "Clerics serve divine powers and often reflect their race's spiritual traditions. Aasimar naturally serve celestial powers, while Dwarves honor forge gods and Dragonborn worship draconic deities.",
+        "subclasses": [
+            {
+                "subclass": "Arcana Domain",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "natural arcane affinity and divine magic fusion",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "magical innovation meets divine study",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical approach to divine arcana",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical saturation creates divine-arcane synthesis"
+                    }
+                ]
+            },
+            {
+                "subclass": "Death Domain",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm death magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "undead heritage and death affinity",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "personal experience with death and rebirth",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "shadow magic and death mysteries"
+                    }
+                ]
+            },
+            {
+                "subclass": "Forge Domain",
+                "races": [
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "natural smithing and forge mastery",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "mountain miners and stoneworkers"
+                    },
+                    {
+                        "name": "Duergar",
+                        "subclass_reason": "underground forge expertise",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "subterranean forges"
+                    },
+                    {
+                        "name": "Warforged",
+                        "subclass_reason": "living embodiment of forge craft",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "living constructs forged in volcanic forges"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Maltman of Kamalatman",
+                        "reason": "mining and smithing culture dominates"
+                    },
+                    {
+                        "continent": "Alatman of Kamalatman",
+                        "reason": "volcanic forges and construct creation"
+                    }
+                ]
+            },
+            {
+                "subclass": "Grave Domain",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial guidance in life-death balance",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "personal understanding of death's boundary",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "straddling life and undeath",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "large populations require death rites and grave tending"
+                    }
+                ]
+            },
+            {
+                "subclass": "Knowledge Domain",
+                "races": [
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical pursuit of divine knowledge",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "long-lived scholarly traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "curious researchers and inventors",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "dream memories and ancient wisdom",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "scholarly cities and diverse knowledge centers"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical research and ancient elven libraries"
+                    }
+                ]
+            },
+            {
+                "subclass": "Life Domain",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial healing powers",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Protector Aasimar",
+                        "subclass_reason": "divine protection and healing focus",
+                        "continent": "Skratonia",
+                        "continent_reason": "guardians in populous towns"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "compassionate healers and community servants",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "nurturing nature and community care",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "large populations require dedicated healers"
+                    }
+                ]
+            },
+            {
+                "subclass": "Light Domain",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "radiant celestial heritage",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "connection to sun magic and illumination",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic light and fire breath",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban centers need light against darkness"
+                    }
+                ]
+            },
+            {
+                "subclass": "Nature Domain",
+                "races": [
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "giant-kin nature guardians",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "deep forest spiritual connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "plains nature worship",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "fey nature reverence",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests are centers of nature worship"
+                    }
+                ]
+            },
+            {
+                "subclass": "Order Domain",
+                "races": [
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military discipline and hierarchical order",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "civic duty and law enforcement",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical order and systematic thinking",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "organized city-states require order and law"
+                    }
+                ]
+            },
+            {
+                "subclass": "Peace Domain",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial peace and harmony",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "peaceful nature and conflict resolution",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic empathy and understanding",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse populations benefit from peaceful mediation"
+                    }
+                ]
+            },
+            {
+                "subclass": "Tempest Domain",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "sky storms and wind mastery",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Air Genasi",
+                        "subclass_reason": "elemental storm connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal winds"
+                    },
+                    {
+                        "name": "Triton",
+                        "subclass_reason": "oceanic tempests and sea storms",
+                        "continent": "Kuriguer",
+                        "continent_reason": "sea-folk along coasts"
+                    },
+                    {
+                        "name": "Sea Elf",
+                        "subclass_reason": "maritime storm worship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal dwellers"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "coastal storms and elemental tempests"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain storms and harsh weather"
+                    }
+                ]
+            },
+            {
+                "subclass": "Trickery Domain",
+                "races": [
+                    {
+                        "name": "Kenku",
+                        "subclass_reason": "mimicry and deceptive abilities",
+                        "continent": "Kuriguer",
+                        "continent_reason": "mimicry thrives in bustling ports"
+                    },
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "natural shapeshifting and deception",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    },
+                    {
+                        "name": "Goblin",
+                        "subclass_reason": "sneaky nature and mischievous pranks",
+                        "continent": "Skratonia",
+                        "continent_reason": "scavengers on the plains"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "luck and small-folk trickery",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical chaos and trickster traditions"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse populations harbor trickster cults"
+                    }
+                ]
+            },
+            {
+                "subclass": "Twilight Domain",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm twilight mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Pallid Elf",
+                        "subclass_reason": "twilight magic and dusk connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "eerie twilight forests"
+                    },
+                    {
+                        "name": "Owlin",
+                        "subclass_reason": "nocturnal wisdom and twilight hunting",
+                        "continent": "Kuriguer",
+                        "continent_reason": "nocturnal forestfolk"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests create perpetual twilight zones"
+                    }
+                ]
+            },
+            {
+                "subclass": "War Domain",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic warrior culture and battle prowess",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military discipline and tactical warfare",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    },
+                    {
+                        "name": "Orc",
+                        "subclass_reason": "tribal warfare and battle fury",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swampy tribal strongholds"
+                    },
+                    {
+                        "name": "Leonin",
+                        "subclass_reason": "pride warrior traditions",
+                        "continent": "Skratonia",
+                        "continent_reason": "warrior prides on plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized frontier societies worship war gods"
+                    },
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "tribal warfare and conflict zones"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Druid",
+        "suitability_reason": "Druids emerge from races with strong nature connections. Wood Elves, Firbolgs, and other forest-dwelling peoples naturally become guardians of the wild places.",
+        "subclasses": [
+            {
+                "subclass": "Circle of Dreams",
+                "races": [
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "giant-kin dream magic and forest mysteries",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    },
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "fey dream realm connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "dream plane mastery",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests connect to dream realms"
+                    }
+                ]
+            },
+            {
+                "subclass": "Circle of the Land",
+                "races": [
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "deep forest attunement",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "ancient forest guardianship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    },
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "plains and grassland connection",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    },
+                    {
+                        "name": "Lizardfolk",
+                        "subclass_reason": "swamp and wetland mastery",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "natural hunters in swamps"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "ancient magical forests hold deep land connections"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "fertile plains and agricultural lands"
+                    }
+                ]
+            },
+            {
+                "subclass": "Circle of the Moon",
+                "races": [
+                    {
+                        "name": "Shifter",
+                        "subclass_reason": "natural shapeshifting abilities",
+                        "continent": "Kuriguer",
+                        "continent_reason": "lycan-touched of the wild woods"
+                    },
+                    {
+                        "name": "Beasthide Shifter",
+                        "subclass_reason": "enhanced beast transformation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "forest brutes"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "forest creature kinship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "giant-kin beast mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "wild magic enhances shapeshifting abilities"
+                    }
+                ]
+            },
+            {
+                "subclass": "Circle of the Shepherd",
+                "races": [
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "natural beast communication and protection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    },
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "herd mentality and animal kinship",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "pastoral care and animal husbandry",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests teem with creatures needing protection"
+                    }
+                ]
+            },
+            {
+                "subclass": "Circle of Spores",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm decay magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "death and decay understanding",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "forest decay cycle knowledge",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests have complex decay and growth cycles"
+                    }
+                ]
+            },
+            {
+                "subclass": "Circle of Stars",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "sky connection and stellar navigation",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "dream plane stellar connection",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial guidance and star wisdom",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "clear mountain skies perfect for stellar observation"
+                    }
+                ]
+            },
+            {
+                "subclass": "Circle of Wildfire",
+                "races": [
+                    {
+                        "name": "Fire Genasi",
+                        "subclass_reason": "elemental fire mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "volatile magical hotspots"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal fire heritage",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic fire breath and flame affinity",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical fire nodes and elemental hotspots"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Fighter",
+        "suitability_reason": "Fighters come from all walks of life but excel among physically capable races. Humans, Dragonborn, and martial cultures produce exceptional warriors across all fighting styles.",
+        "subclasses": [
+            {
+                "subclass": "Arcane Archer",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "magical archery traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "forest archery expertise",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile magical archery",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical archery traditions and elven expertise"
+                    }
+                ]
+            },
+            {
+                "subclass": "Battle Master",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "tactical versatility and adaptability",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military discipline and tactical training",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic tactical prowess",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "disciplined mountain warfare",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "mountain miners and stoneworkers"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "organized military training and tactical schools"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized societies emphasize tactical combat"
+                    }
+                ]
+            },
+            {
+                "subclass": "Cavalier",
+                "races": [
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "natural mounted combat and horse kinship",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "knightly traditions and mounted warfare",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Leonin",
+                        "subclass_reason": "pride-based protective instincts",
+                        "continent": "Skratonia",
+                        "continent_reason": "warrior prides on plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "open plains perfect for cavalry warfare"
+                    }
+                ]
+            },
+            {
+                "subclass": "Champion",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "versatile athletic excellence",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "natural athletic superiority",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic physical excellence",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Orc",
+                        "subclass_reason": "raw physical power and endurance",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swampy tribal strongholds"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse populations and athletic competitions"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "harsh conditions breed physical excellence"
+                    }
+                ]
+            },
+            {
+                "subclass": "Echo Knight",
+                "races": [
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar warrior traditions and astral knowledge",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm manipulation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic echo creation",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability creates planar echoes"
+                    }
+                ]
+            },
+            {
+                "subclass": "Eldritch Knight",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "natural spellsword traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile magic-martial combination",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar warrior-mage traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "magical innovation in combat",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical saturation enables warrior-mage training"
+                    }
+                ]
+            },
+            {
+                "subclass": "Psi Warrior",
+                "races": [
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "innate psionic warrior abilities",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Githzerai",
+                        "subclass_reason": "disciplined psionic combat",
+                        "continent": "Kuriguer",
+                        "continent_reason": "isolated monasteries"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic warrior abilities",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability enhances psionic abilities"
+                    }
+                ]
+            },
+            {
+                "subclass": "Rune Knight",
+                "races": [
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "ancient runic traditions",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "mountain miners and stoneworkers"
+                    },
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "giant-kin rune heritage",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "giant rune magic knowledge",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Maltman of Kamalatman",
+                        "reason": "mountain stone carving preserves ancient runes"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "giant heritage and runic traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "Samurai",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "honorable warrior traditions",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic honor and discipline",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military honor and tactical discipline",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "honor-based warrior cultures in organized societies"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized honor codes and discipline"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Monk",
+        "suitability_reason": "Monks require discipline and inner focus, making them suitable for contemplative races. Aarakocra, with their aerial grace, and Kalashtar, with their mental discipline, excel as monks.",
+        "subclasses": [
+            {
+                "subclass": "Way of the Astral Self",
+                "races": [
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic projection and dream plane connection",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Githzerai",
+                        "subclass_reason": "astral plane mastery and psionic focus",
+                        "continent": "Kuriguer",
+                        "continent_reason": "isolated monasteries"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial astral projection",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban monasteries develop astral projection techniques"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Ascendant Dragon",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "natural draconic heritage and breath weapon",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Kobold",
+                        "subclass_reason": "dragon worship and draconic emulation",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "underground miners near dwarves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "draconic heritage and dragon-worship traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Drunken Master",
+                "races": [
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "festive nature and nimble unpredictability",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "revelry and fey drunken fighting",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "tavern brawling and unconventional fighting",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "tavern culture and festival traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Four Elements",
+                "races": [
+                    {
+                        "name": "Genasi",
+                        "subclass_reason": "natural elemental affinity",
+                        "continent": "Kuriguer",
+                        "continent_reason": "elementally attuned to its magical forests"
+                    },
+                    {
+                        "name": "Air Genasi",
+                        "subclass_reason": "wind and storm manipulation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal winds"
+                    },
+                    {
+                        "name": "Fire Genasi",
+                        "subclass_reason": "flame control and fire mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "volatile magical hotspots"
+                    },
+                    {
+                        "name": "Earth Genasi",
+                        "subclass_reason": "stone and earth manipulation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "rooted in enchanted groves"
+                    },
+                    {
+                        "name": "Water Genasi",
+                        "subclass_reason": "water control and fluid movement",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal rivers and lakes"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "elemental nodes and magical saturation"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Kensei",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "weapon mastery and martial dedication",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "refined weapon artistry",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline grace with weapons",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse weapon traditions and martial schools"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Long Death",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm death mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "undead nature and death resistance",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "personal death experience",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "shadow magic and death mysteries"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of Mercy",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial healing and mercy",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "empathic healing and understanding",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "nurturing nature and community healing",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "large populations benefit from healing monasteries"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Open Hand",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "classic martial arts mastery",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "aerial martial arts and wind techniques",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "graceful combat techniques",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban monasteries and martial arts schools"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of Shadow",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "natural shadow manipulation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Kenku",
+                        "subclass_reason": "stealth and mimicry for infiltration",
+                        "continent": "Kuriguer",
+                        "continent_reason": "mimicry thrives in bustling ports"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline stealth and shadow dancing",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical shadows and stealth traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "Way of the Sun Soul",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "radiant celestial energy",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic fire and radiant breath",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "solar magic and light mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "sun worship and radiant energy traditions"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Paladin",
+        "suitability_reason": "Paladins are oath-bound warriors who combine martial prowess with divine magic. Dragonborn, Aasimar, and other noble-hearted races excel as champions of their chosen oaths.",
+        "subclasses": [
+            {
+                "subclass": "Oath of the Ancients",
+                "races": [
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "ancient forest oaths and nature protection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "giant-kin ancient guardianship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    },
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "plains protection and natural harmony",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "fey oaths and natural joy protection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "ancient magical forests require sworn protectors"
+                    }
+                ]
+            },
+            {
+                "subclass": "Oath of Conquest",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic dominance and conquest drive",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military conquest and tactical domination",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal ambition and ruthless pursuit",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Orc",
+                        "subclass_reason": "tribal conquest and domination",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swampy tribal strongholds"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized frontier societies embrace conquest"
+                    },
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "tribal warfare and territorial expansion"
+                    }
+                ]
+            },
+            {
+                "subclass": "Oath of Devotion",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial devotion and divine purpose",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "pure faith and moral dedication",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic honor and unwavering loyalty",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "organized religions and temple hierarchies"
+                    }
+                ]
+            },
+            {
+                "subclass": "Oath of Glory",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic pride and glory seeking",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial glory and divine radiance",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Leonin",
+                        "subclass_reason": "pride honor and glorious combat",
+                        "continent": "Skratonia",
+                        "continent_reason": "warrior prides on plains"
+                    },
+                    {
+                        "name": "Centaur",
+                        "subclass_reason": "heroic charges and plains glory",
+                        "continent": "Skratonia",
+                        "continent_reason": "nomads of fertile plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "tournament culture and heroic traditions"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "harsh frontier breeds glory-seeking warriors"
+                    }
+                ]
+            },
+            {
+                "subclass": "Oath of Redemption",
+                "races": [
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "seeking redemption from infernal heritage",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Fallen Aasimar",
+                        "subclass_reason": "fallen seeking to return to grace",
+                        "continent": "Skratonia",
+                        "continent_reason": "outcasts among humans"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "overcoming vampiric curse",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    },
+                    {
+                        "name": "Half-Orc",
+                        "subclass_reason": "overcoming savage heritage",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swamp frontier clans"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse populations offer paths to redemption"
+                    }
+                ]
+            },
+            {
+                "subclass": "Oath of Vengeance",
+                "races": [
+                    {
+                        "name": "Half-Orc",
+                        "subclass_reason": "relentless pursuit and savage justice",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swamp frontier clans"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal wrath and dark justice",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "unwavering pursuit of justice",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban injustices breed vengeance seekers"
+                    }
+                ]
+            },
+            {
+                "subclass": "Oath of the Watchers",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "sky watching and aerial vigilance",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar threat awareness",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial vigilance against corruption",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability attracts planar threats"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Ranger",
+        "suitability_reason": "Rangers excel among races with natural instincts and survival skills. Aarakocra make superb aerial scouts, Wood Elves bring forest expertise, and various beast-like races provide tracking abilities.",
+        "subclasses": [
+            {
+                "subclass": "Beast Master",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "aerial scouting with flying companions",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "forest animal bonding",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Shifter",
+                        "subclass_reason": "natural beast kinship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "lycan-touched of the wild woods"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "small creature companionship",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests teem with potential animal companions"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain terrain requires aerial reconnaissance"
+                    }
+                ]
+            },
+            {
+                "subclass": "Drakewarden",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "natural draconic kinship and understanding",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Kobold",
+                        "subclass_reason": "dragon worship and draconic servitude",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "underground miners near dwarves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "draconic heritage and dragon presence"
+                    }
+                ]
+            },
+            {
+                "subclass": "Fey Wanderer",
+                "races": [
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "fey realm connections and seasonal magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "natural fey wandering and revelry",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    },
+                    {
+                        "name": "Fairy",
+                        "subclass_reason": "innate fey magic and wanderlust",
+                        "continent": "Kuriguer",
+                        "continent_reason": "magical glades and enchanted groves"
+                    },
+                    {
+                        "name": "Hexblood",
+                        "subclass_reason": "hag-touched fey connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fey-touched individuals of cursed woods"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "fey presence and magical forest wandering"
+                    }
+                ]
+            },
+            {
+                "subclass": "Gloom Stalker",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "aerial night hunting and mountain stalking",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm stealth and darkness mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Drow",
+                        "subclass_reason": "underdark hunting and darkness adaptation",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "subterranean mines/caverns"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline night hunting instincts",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "dangerous magical forests require skilled stalkers"
+                    },
+                    {
+                        "continent": "Maltman of Kamalatman",
+                        "reason": "underground environments favor darkness specialists"
+                    }
+                ]
+            },
+            {
+                "subclass": "Horizon Walker",
+                "races": [
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar warrior expertise",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "aerial patrol and sky watching",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "fey realm border patrol",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability creates planar boundaries"
+                    }
+                ]
+            },
+            {
+                "subclass": "Hunter",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable hunting techniques",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "forest tracking expertise",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline hunting instincts",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "nimble hunting and tracking",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse hunting grounds and prey"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests require skilled hunters"
+                    }
+                ]
+            },
+            {
+                "subclass": "Monster Slayer",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "dedicated monster hunting expertise",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "aerial monster tracking and hunting",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Half-Orc",
+                        "subclass_reason": "relentless monster hunting drive",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swamp frontier clans"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "populated areas need monster protection"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "harsh wilderness harbors dangerous monsters"
+                    }
+                ]
+            },
+            {
+                "subclass": "Swarmkeeper",
+                "races": [
+                    {
+                        "name": "Fairy",
+                        "subclass_reason": "natural insect and small creature kinship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "magical glades and enchanted groves"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "small creature communication",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "forest swarm guardianship",
+                        "continent": "Kuriguer",
+                        "continent_reason": "reclusive forest guardians"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests harbor diverse swarms and creatures"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Rogue",
+        "suitability_reason": "Rogues thrive among agile and cunning races. Halflings, Kenku, and other dexterous peoples excel at stealth, infiltration, and precise strikes from the shadows.",
+        "subclasses": [
+            {
+                "subclass": "Arcane Trickster",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "natural magic and stealth combination",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "illusion magic and trickery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile magic-thief abilities",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "nimble magic and luck",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical saturation enables arcane thievery"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban environments provide targets and training"
+                    }
+                ]
+            },
+            {
+                "subclass": "Assassin",
+                "races": [
+                    {
+                        "name": "Kenku",
+                        "subclass_reason": "mimicry for infiltration and silent kills",
+                        "continent": "Kuriguer",
+                        "continent_reason": "mimicry thrives in bustling ports"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm stealth and death mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline stealth and precise strikes",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    },
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "perfect disguises for infiltration",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical ports and diverse populations enable infiltration"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban politics breed professional killers"
+                    }
+                ]
+            },
+            {
+                "subclass": "Inquisitive",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "natural curiosity and investigative drive",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "keen observation and small-folk insight",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical deduction and systematic investigation",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic insight and truth detection",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban mysteries and complex investigations"
+                    }
+                ]
+            },
+            {
+                "subclass": "Mastermind",
+                "races": [
+                    {
+                        "name": "Human",
+                        "subclass_reason": "political maneuvering and social manipulation",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "identity manipulation and perfect disguises",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal cunning and dark schemes",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "social versatility and cultural bridging",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "complex urban politics require masterminds"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "diverse magical populations breed intrigue"
+                    }
+                ]
+            },
+            {
+                "subclass": "Phantom",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm death connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "death experience and lingering spirits",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "undead nature and ghostly abilities",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    },
+                    {
+                        "name": "Hexblood",
+                        "subclass_reason": "hag magic and spectral connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fey-touched individuals of cursed woods"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests harbor spirits and ghostly presences"
+                    }
+                ]
+            },
+            {
+                "subclass": "Scout",
+                "races": [
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "aerial scouting and reconnaissance",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "subclass_reason": "forest tracking and stealth",
+                        "continent": "Kuriguer",
+                        "continent_reason": "deep woodland clans"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline agility and exploration drive",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "nimble scouting and pathfinding",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "open plains require mobile scouts"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "dangerous forests need skilled pathfinders"
+                    }
+                ]
+            },
+            {
+                "subclass": "Soulknife",
+                "races": [
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic blade manifestation",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "psionic warrior blade techniques",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Githzerai",
+                        "subclass_reason": "disciplined psionic focus",
+                        "continent": "Kuriguer",
+                        "continent_reason": "isolated monasteries"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "psionic communities develop mental blade techniques"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability enhances psionic abilities"
+                    }
+                ]
+            },
+            {
+                "subclass": "Swashbuckler",
+                "races": [
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "charismatic dueling and social finesse",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Tabaxi",
+                        "subclass_reason": "feline agility and flashy combat",
+                        "continent": "Skratonia",
+                        "continent_reason": "hunters of the plains"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable dueling and charm",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal charisma and dramatic flair",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban dueling culture and social combat"
+                    }
+                ]
+            },
+            {
+                "subclass": "Thief",
+                "races": [
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "natural nimbleness and luck",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    },
+                    {
+                        "name": "Goblin",
+                        "subclass_reason": "sneaky scavenging nature",
+                        "continent": "Skratonia",
+                        "continent_reason": "scavengers on the plains"
+                    },
+                    {
+                        "name": "Kenku",
+                        "subclass_reason": "mimicry for infiltration",
+                        "continent": "Kuriguer",
+                        "continent_reason": "mimicry thrives in bustling ports"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable criminal techniques",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban centers provide theft opportunities"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "busy ports and diverse populations"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Sorcerer",
+        "suitability_reason": "Sorcerers possess innate magical abilities often tied to their bloodline. Dragonborn with draconic heritage, Tieflings with infernal blood, and Genasi with elemental connections naturally excel as sorcerers.",
+        "subclasses": [
+            {
+                "subclass": "Aberrant Mind",
+                "races": [
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic heritage and alien dream connections",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar exposure to aberrant forces",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Plasmoid",
+                        "subclass_reason": "alien ooze nature and strange thoughts",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "strange oozes near volcanic swamps"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban populations exposed to aberrant influences"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability attracts aberrant entities"
+                    }
+                ]
+            },
+            {
+                "subclass": "Clockwork Soul",
+                "races": [
+                    {
+                        "name": "Warforged",
+                        "subclass_reason": "mechanical soul and ordered construction",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "living constructs forged in volcanic forges"
+                    },
+                    {
+                        "name": "Autognome",
+                        "subclass_reason": "clockwork precision and mechanical magic",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "mechanical creations from resource workshops"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical order and systematic magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Alatman of Kamalatman",
+                        "reason": "mechanical workshops and construct creation"
+                    }
+                ]
+            },
+            {
+                "subclass": "Divine Soul",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial heritage and divine spark",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Protector Aasimar",
+                        "subclass_reason": "divine protection and radiant power",
+                        "continent": "Skratonia",
+                        "continent_reason": "guardians in populous towns"
+                    },
+                    {
+                        "name": "Scourge Aasimar",
+                        "subclass_reason": "zealous divine energy",
+                        "continent": "Skratonia",
+                        "continent_reason": "zealots within mercenary guilds"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic divine connection",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse religious traditions and divine exposure"
+                    }
+                ]
+            },
+            {
+                "subclass": "Draconic Bloodline",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "direct draconic heritage and breath weapon",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Kobold",
+                        "subclass_reason": "dragon worship and draconic emulation",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "underground miners near dwarves"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "mixed heritage with draconic influence",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "draconic heritage and dragon presence"
+                    }
+                ]
+            },
+            {
+                "subclass": "Lunar Sorcery",
+                "races": [
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "fey seasonal magic and lunar cycles",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm lunar connection",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Owlin",
+                        "subclass_reason": "nocturnal lunar wisdom",
+                        "continent": "Kuriguer",
+                        "continent_reason": "nocturnal forestfolk"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests enhance lunar connections"
+                    }
+                ]
+            },
+            {
+                "subclass": "Shadow Magic",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm heritage and darkness mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal shadow heritage",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Drow",
+                        "subclass_reason": "underdark shadow magic",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "subterranean mines/caverns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "shadow magic nodes and dark enchantments"
+                    },
+                    {
+                        "continent": "Maltman of Kamalatman",
+                        "reason": "underground darkness traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "Storm Sorcery",
+                "races": [
+                    {
+                        "name": "Air Genasi",
+                        "subclass_reason": "elemental storm heritage",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal winds"
+                    },
+                    {
+                        "name": "Aarakocra",
+                        "subclass_reason": "sky storms and wind mastery",
+                        "continent": "Bulsania",
+                        "continent_reason": "thrive on high mountains and icy peaks"
+                    },
+                    {
+                        "name": "Triton",
+                        "subclass_reason": "oceanic tempests and sea storms",
+                        "continent": "Kuriguer",
+                        "continent_reason": "sea-folk along coasts"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "coastal storms and elemental forces"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain storms and harsh weather"
+                    }
+                ]
+            },
+            {
+                "subclass": "Wild Magic",
+                "races": [
+                    {
+                        "name": "Genasi",
+                        "subclass_reason": "elemental chaos and unpredictable power",
+                        "continent": "Kuriguer",
+                        "continent_reason": "elementally attuned to its magical forests"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal chaos bleeding through",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Halfling",
+                        "subclass_reason": "luck interacting with chaotic magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "farmers and caravan leaders"
+                    },
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "shapeshifting chaos and identity flux",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "wild magic zones create unpredictable surges"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Warlock",
+        "suitability_reason": "Warlocks gain power through pacts with otherworldly entities. Tieflings with infernal connections, Humans seeking power, and other desperate or ambitious races make ideal warlocks.",
+        "subclasses": [
+            {
+                "subclass": "The Archfey",
+                "races": [
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "natural fey court connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "fey revelry and archfey patronage",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    },
+                    {
+                        "name": "Fairy",
+                        "subclass_reason": "direct fey heritage and court ties",
+                        "continent": "Kuriguer",
+                        "continent_reason": "magical glades and enchanted groves"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "fey attraction to mixed heritage",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "fey courts and archfey presence in magical forests"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Celestial",
+                "races": [
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial heritage and divine connection",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Protector Aasimar",
+                        "subclass_reason": "protective celestial guidance",
+                        "continent": "Skratonia",
+                        "continent_reason": "guardians in populous towns"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "seeking celestial power and guidance",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "celestial influence in populated areas"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Fathomless",
+                "races": [
+                    {
+                        "name": "Triton",
+                        "subclass_reason": "oceanic depths and sea entity connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "sea-folk along coasts"
+                    },
+                    {
+                        "name": "Sea Elf",
+                        "subclass_reason": "deep sea exploration and abyssal contact",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal dwellers"
+                    },
+                    {
+                        "name": "Water Genasi",
+                        "subclass_reason": "elemental water connections to deep entities",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal rivers and lakes"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "coastal waters and deep sea mysteries"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Fiend",
+                "races": [
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal heritage and natural fiend connection",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "desperate pacts for power",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Half-Orc",
+                        "subclass_reason": "savage nature attracting fiendish patrons",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "swamp frontier clans"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "dark heritage and fiendish connections",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban desperation and infernal temptations"
+                    },
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "swamp darkness harbors fiendish entities"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Genie",
+                "races": [
+                    {
+                        "name": "Genasi",
+                        "subclass_reason": "elemental heritage and genie connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "elementally attuned to its magical forests"
+                    },
+                    {
+                        "name": "Air Genasi",
+                        "subclass_reason": "djinni heritage and wind magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "coastal winds"
+                    },
+                    {
+                        "name": "Fire Genasi",
+                        "subclass_reason": "efreeti heritage and flame magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "volatile magical hotspots"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "seeking elemental power through genie pacts",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "elemental nodes attract genie attention"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Great Old One",
+                "races": [
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "psychic vulnerability to alien minds",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "curiosity leading to forbidden knowledge",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar exposure to ancient entities",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "scholarly pursuits uncover forbidden knowledge"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability attracts ancient entities"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Hexblade",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm weapon spirits",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "weapon-bound pacts for power",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile weapon mastery with eldritch power",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical weapons and shadow blade spirits"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban warriors seeking magical advantages"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Undead",
+                "races": [
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "vampiric heritage and undead connection",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "death experience and undead affinity",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm undead connections",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Alatman of Kamalatman",
+                        "reason": "vampiric legends and undead experiments"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "shadow magic and death mysteries"
+                    }
+                ]
+            },
+            {
+                "subclass": "The Undying",
+                "races": [
+                    {
+                        "name": "Yuan-ti",
+                        "subclass_reason": "serpentine longevity and immortality seeking",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "serpentfolk hidden in swamps"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm deathless pursuits",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "desperate pursuit of immortality",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "swamp cults and immortality rituals"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Wizard",
+        "suitability_reason": "Wizards are scholarly spellcasters who master arcane knowledge through study. High Elves, Gnomes, and other intellectually gifted races excel at magical research and spellcraft.",
+        "subclasses": [
+            {
+                "subclass": "School of Abjuration",
+                "races": [
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "protective ward traditions and defensive magic",
+                        "continent": "Maltman of Kamalatman",
+                        "continent_reason": "mountain miners and stoneworkers"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "magical protection and ward crafting",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "ancient protective magic traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Warforged",
+                        "subclass_reason": "constructed resilience and magical protection",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "living constructs forged in volcanic forges"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Maltman of Kamalatman",
+                        "reason": "mining communities need protective magic"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical dangers require skilled ward-crafters"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Bladesinging",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "traditional elven spellsword mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "versatile magic-martial combination",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow-enhanced blade dancing",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "elven bladesinging traditions and magical combat schools"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Chronurgy",
+                "races": [
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "temporal tinkering and time magic innovation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "long-lived perspective on time magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical approach to temporal mechanics",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical research and temporal experimentation"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Conjuration",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "summoning traditions and planar magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "creative summoning and construct creation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar summoning expertise",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical instability enables planar summoning"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Divination",
+                "races": [
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "ancient wisdom and foresight traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Kalashtar",
+                        "subclass_reason": "dream plane visions and psychic foresight",
+                        "continent": "Skratonia",
+                        "continent_reason": "spiritual dream-walkers in towns"
+                    },
+                    {
+                        "name": "Aasimar",
+                        "subclass_reason": "celestial guidance and divine visions",
+                        "continent": "Skratonia",
+                        "continent_reason": "blend into common city-states, spiritual leaders"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "scholarly pursuit of prophetic knowledge",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical forests enhance divinatory abilities"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban centers value prophetic guidance"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Enchantment",
+                "races": [
+                    {
+                        "name": "Eladrin",
+                        "subclass_reason": "fey charm magic and enchantment mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "fae-tied magic groves"
+                    },
+                    {
+                        "name": "Half-Elf",
+                        "subclass_reason": "natural charisma and social magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "bridge between human and elf society"
+                    },
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "identity manipulation and mental influence",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    },
+                    {
+                        "name": "Satyr",
+                        "subclass_reason": "fey enchantment and revelry magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "revelers of fey glades"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "fey influence and enchantment traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Evocation",
+                "races": [
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic destructive magic and breath weapons",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    },
+                    {
+                        "name": "Fire Genasi",
+                        "subclass_reason": "elemental fire evocation mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "volatile magical hotspots"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "refined destructive magic techniques",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal destructive magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "numerous across city-states"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical research and evocation experimentation"
+                    },
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized societies value battle magic"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Graviturgy",
+                "races": [
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar gravity manipulation expertise",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "advanced magical theory and gravity studies",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "logical approach to gravitational forces",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical research and exotic arcana"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Illusion",
+                "races": [
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "natural illusion magic and trickery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "shapeshifting and identity illusions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    },
+                    {
+                        "name": "Kenku",
+                        "subclass_reason": "mimicry and deceptive magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "mimicry thrives in bustling ports"
+                    },
+                    {
+                        "name": "Fairy",
+                        "subclass_reason": "fey glamour and illusion mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "magical glades and enchanted groves"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "fey magic and illusion traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Necromancy",
+                "races": [
+                    {
+                        "name": "Shadar-kai",
+                        "subclass_reason": "shadow realm death magic mastery",
+                        "continent": "Kuriguer",
+                        "continent_reason": "shadow-kin in dangerous woods"
+                    },
+                    {
+                        "name": "Dhampir",
+                        "subclass_reason": "undead heritage and necromantic affinity",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "forest edges, tied to vampiric legends"
+                    },
+                    {
+                        "name": "Yuan-ti",
+                        "subclass_reason": "serpentine death magic and dark rituals",
+                        "continent": "Katman of Kamalatman",
+                        "continent_reason": "serpentfolk hidden in swamps"
+                    },
+                    {
+                        "name": "Reborn",
+                        "subclass_reason": "personal death experience and undead understanding",
+                        "continent": "Skratonia",
+                        "continent_reason": "souls reborn in populous lands"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "shadow magic and necromantic research"
+                    },
+                    {
+                        "continent": "Katman of Kamalatman",
+                        "reason": "swamp cults and dark magic traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "Order of Scribes",
+                "races": [
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "meticulous record keeping and magical innovation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Vedalken",
+                        "subclass_reason": "systematic documentation and logical magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "intellectuals in scholarly cities"
+                    },
+                    {
+                        "name": "High Elf",
+                        "subclass_reason": "ancient magical libraries and scholarly traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "native to magic forests and coasts"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable magical documentation",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "urban libraries and scholarly institutions"
+                    },
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "ancient magical archives and research centers"
+                    }
+                ]
+            },
+            {
+                "subclass": "School of Transmutation",
+                "races": [
+                    {
+                        "name": "Changeling",
+                        "subclass_reason": "natural transformation magic and shapeshifting",
+                        "continent": "Kuriguer",
+                        "continent_reason": "blend into diverse magic towns"
+                    },
+                    {
+                        "name": "Gnome",
+                        "subclass_reason": "inventive transformation and matter manipulation",
+                        "continent": "Kuriguer",
+                        "continent_reason": "clever inventors in coastal towns"
+                    },
+                    {
+                        "name": "Shifter",
+                        "subclass_reason": "shapeshifting heritage and transformation magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "lycan-touched of the wild woods"
+                    },
+                    {
+                        "name": "Plasmoid",
+                        "subclass_reason": "ooze transformation and malleable form",
+                        "continent": "Alatman of Kamalatman",
+                        "continent_reason": "strange oozes near volcanic swamps"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical transformation and shapeshifting traditions"
+                    }
+                ]
+            },
+            {
+                "subclass": "War Magic",
+                "races": [
+                    {
+                        "name": "Hobgoblin",
+                        "subclass_reason": "military magical tactics and battlefield wizardry",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized in icy fortresses"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptable battle magic and military service",
+                        "continent": "Skratonia",
+                        "continent_reason": "dominant city-state populace"
+                    },
+                    {
+                        "name": "Githyanki",
+                        "subclass_reason": "planar warrior-mage traditions",
+                        "continent": "Kuriguer",
+                        "continent_reason": "warlike enclaves"
+                    },
+                    {
+                        "name": "Dragonborn",
+                        "subclass_reason": "draconic battle magic and tactical spellcasting",
+                        "continent": "Bulsania",
+                        "continent_reason": "hardy and militarized, adapted to harsh cold"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized societies train battle-mages"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "organized armies employ war wizards"
+                    }
+                ]
+            }
+        ]
+    }
+]

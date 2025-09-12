@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imgs/Logos/SNlogoVector.png">
+    <title>Alabastria Character Assistant</title>
+</head>
+<body>
+    <nav class="reverse">
+        <img src="../../Imgs/Logos/SNlogoVector.png" alt="Logo" id="logo" class="reverse">
+        <h1 id="title" class="reverse">Alabastria Character Assistant</h1>
+        <div id="colorModeContainer" class="reverse">
+            <input type="checkbox" id="colorModeCheckbox" onchange="app.changeColorMode()" class="reverse">
+            <label for="colorModeCheckbox" id="colorModeLabel" class="reverse"></label>
+        </div>
+    </nav>
+
+    <main>
+        <div id="container">
+            <!-- Welcome Section -->
+            <section id="welcome-section" class="section active">
+                <div class="welcome-content">
+                    <h2>Welcome to Alabastria</h2>
+                    <div class="world-map">
+                        <img src="continent_images/Alabastria.png" alt="Map of Alabastria" id="world-map-image">
+                    </div>
+                    <p class="world-description" id="world-description">
+                        Loading the world of Alabastria...
+                    </p>
+                    <div class="filter-selection">
+                        <h3>Where shall our journey begin?</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn" onclick="app.setFilter('continent')">
+                                <span class="icon">🗺️</span>
+                                <span class="filter-btn-text">Continent</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.setFilter('race')">
+                                <span class="icon">👥</span>
+                                <span class="filter-btn-text">Race</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.setFilter('class')">
+                                <span class="icon">⚔️</span>
+                                <span class="filter-btn-text">Class</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="history-selection">
+                        <h3>Know your History</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn" onclick="app.showWorldHistory()">
+                                <span class="icon">📜</span>
+                                <span class="filter-btn-text">World History</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.showGuildHistory()">
+                                <span class="icon">🏛️</span>
+                                <span class="filter-btn-text">Guild History</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selection Section -->
+            <section id="selection-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2 id="selection-title"></h2>
+                </div>
+                <div id="selection-grid" class="selection-grid"></div>
+            </section>
+
+            <!-- Details Section -->
+            <section id="details-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2 id="details-title"></h2>
+                </div>
+                <div class="details-content">
+                    <div id="details-info" class="details-info"></div>
+                    <div id="relationships-table" class="relationships-table"></div>
+                </div>
+            </section>
+
+            <!-- World History Section -->
+            <section id="world-history-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2>World History of Alabastria</h2>
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-content" id="timeline-content">
+                        <!-- Timeline will be generated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guild History Section -->
+            <section id="guild-history-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2>Guild History: The Huntbound Order</h2>
+                </div>
+                <div class="guild-nav-buttons">
+                    <button class="filter-btn guild-nav-btn" onclick="app.showGuildView('overview')" id="guild-overview-btn">
+                        <span class="icon">📜</span>
+                        <span class="filter-btn-text">Overview</span>
+                    </button>
+                    <button class="filter-btn guild-nav-btn" onclick="app.showGuildView('staff')" id="guild-staff-btn">
+                        <span class="icon">👔</span>
+                        <span class="filter-btn-text">Guild Staff</span>
+                    </button>
+                    <button class="filter-btn guild-nav-btn" onclick="app.showGuildView('members')" id="guild-members-btn">
+                        <span class="icon">⚔️</span>
+                        <span class="filter-btn-text">Guild Members</span>
+                    </button>
+                    <button class="filter-btn guild-nav-btn" onclick="app.showGuildView('quests')" id="guild-quests-btn">
+                        <span class="icon">📋</span>
+                        <span class="filter-btn-text">Quest Reports</span>
+                    </button>
+                </div>
+                <div class="guild-container">
+                    <div class="guild-content" id="guild-content">
+                        <!-- Guild content will be generated here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for timeline period details -->
+    <div id="timeline-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <span class="modal-close" onclick="app.closeModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Explore the lands of Alabastria and discover your character's destiny</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            app.initializePage();
+        }
+    </script>
+</body>
+</html> 

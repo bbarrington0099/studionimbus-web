@@ -1,0 +1,139 @@
+/* 
+ * Navigation and Header Styles
+ * Contains all navigation bar, logo, title, and color mode toggle styles
+ */
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.darkMode nav {
+    background: rgba(44, 36, 22, 0.9);
+    border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+}
+
+.lightMode nav {
+    background: rgba(244, 241, 232, 0.9);
+    border-bottom: 2px solid rgba(139, 69, 19, 0.2);
+}
+
+/* ===== LOGO ===== */
+#logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+    filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
+}
+
+#logo:hover {
+    transform: scale(1.05);
+}
+
+/* ===== TITLE ===== */
+#title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.darkMode #title {
+    text-shadow: var(--text-shadow-dark);
+    color: var(--desert-tan);
+}
+
+.lightMode #title {
+    text-shadow: var(--text-shadow-light);
+    color: var(--ink-dark);
+}
+
+/* ===== COLOR MODE TOGGLE ===== */
+#colorModeContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+#colorModeCheckbox {
+    display: none;
+}
+
+#colorModeLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    border: 2px solid var(--mountain-brown);
+}
+
+.darkMode #colorModeLabel {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    box-shadow: var(--shadow-dark);
+}
+
+.lightMode #colorModeLabel {
+    background: var(--desert-tan);
+    color: var(--ink-dark);
+    box-shadow: var(--shadow-light);
+}
+
+#colorModeLabel:hover {
+    transform: scale(1.1);
+}
+
+.darkMode #colorModeLabel:after {
+    content: "☀️";
+}
+
+.lightMode #colorModeLabel:after {
+    content: "🌙";
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    border-top: 2px solid var(--mountain-brown);
+}
+
+.darkMode footer {
+    background: rgba(44, 36, 22, 0.5);
+}
+
+.lightMode footer {
+    background: rgba(244, 241, 232, 0.5);
+}
+
+footer p {
+    font-style: italic;
+}
+
+.darkMode footer p {
+    color: var(--desert-tan);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode footer p {
+    color: var(--ink-dark);
+    text-shadow: var(--text-shadow-light);
+}

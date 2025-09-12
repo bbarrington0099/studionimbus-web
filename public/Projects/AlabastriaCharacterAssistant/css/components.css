@@ -1,0 +1,384 @@
+/* 
+ * Reusable Component Styles
+ * Contains buttons, cards, forms, and other reusable UI components
+ */
+
+/* ===== BUTTONS ===== */
+
+/* Filter Buttons */
+.filter-btn {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--forest-green));
+    border: 2px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    color: var(--parchment-light);
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: var(--text-shadow-dark);
+}
+
+.darkMode .filter-btn {
+    box-shadow: var(--shadow-dark);
+}
+
+.lightMode .filter-btn {
+    box-shadow: var(--shadow-light);
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, var(--forest-green), var(--ocean-blue));
+}
+
+.filter-btn .icon {
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.filter-btn span:not(.icon) {
+    color: var(--parchment-light);
+    text-shadow: var(--text-shadow-dark);
+    background: transparent;
+}
+
+.filter-btn-text {
+    font-size: 1rem;
+    font-weight: 600;
+    background: transparent;
+}
+
+/* Back Button */
+.back-btn {
+    background: var(--ocean-blue);
+    border: 2px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    color: var(--parchment-light);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.darkMode .back-btn {
+    box-shadow: var(--shadow-dark);
+}
+
+.lightMode .back-btn {
+    box-shadow: var(--shadow-light);
+}
+
+.back-btn:hover {
+    background: var(--forest-green);
+    transform: translateX(-2px);
+}
+
+/* History Button */
+.history-btn {
+    background: var(--forest-green);
+    border: 2px solid var(--mountain-brown);
+    margin-left: 0.5rem;
+}
+
+.history-btn:hover {
+    background: var(--gold-accent);
+    transform: translateX(-2px);
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    background: var(--ocean-blue);
+    border: 1px solid var(--mountain-brown);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    color: var(--parchment-light);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-shadow: var(--text-shadow-dark);
+    margin-left: 0.25rem;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background: var(--forest-green);
+    transform: scale(1.05);
+}
+
+/* Special styling for subclass navigation buttons */
+.subclass-btn {
+    background: var(--gold-accent);
+    font-weight: 700;
+}
+
+.subclass-btn:hover {
+    background: var(--volcanic-red);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* ===== CARDS ===== */
+
+/* Selection Cards */
+.selection-card {
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid var(--mountain-brown);
+    position: relative;
+    overflow: hidden;
+}
+
+.darkMode .selection-card {
+    background: rgba(44, 36, 22, 0.7);
+    box-shadow: var(--shadow-dark);
+}
+
+.lightMode .selection-card {
+    background: rgba(244, 241, 232, 0.9);
+    box-shadow: var(--shadow-light);
+}
+
+.selection-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--ocean-blue);
+}
+
+.darkMode .selection-card:hover {
+    box-shadow: 0 4px 15px rgba(44, 79, 107, 0.3);
+}
+
+.lightMode .selection-card:hover {
+    box-shadow: 0 4px 15px rgba(44, 79, 107, 0.2);
+}
+
+.selection-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.darkMode .selection-card h3 {
+    color: var(--ocean-blue);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode .selection-card h3 {
+    color: var(--ocean-blue);
+    text-shadow: var(--text-shadow-light);
+}
+
+.selection-card p {
+    line-height: 1.6;
+}
+
+.darkMode .selection-card p {
+    color: var(--parchment-light);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode .selection-card p {
+    color: var(--ink-dark);
+    text-shadow: var(--text-shadow-light);
+}
+
+/* Continent Cards */
+.continent-card {
+    position: relative;
+    min-height: 200px;
+}
+
+.continent-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    opacity: 0.4;
+    transition: var(--transition);
+    border: 2px solid var(--mountain-brown);
+}
+
+.continent-card:hover .continent-image {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+/* ===== DETAILS AND SUMMARY ELEMENTS ===== */
+details {
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--mountain-brown);
+    overflow: hidden;
+}
+
+.darkMode details {
+    background: rgba(44, 36, 22, 0.5);
+}
+
+.lightMode details {
+    background: rgba(244, 241, 232, 0.7);
+}
+
+summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--mountain-brown);
+}
+
+.darkMode summary {
+    background: rgba(44, 36, 22, 0.8);
+    color: var(--desert-tan);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode summary {
+    background: rgba(244, 241, 232, 0.9);
+    color: var(--mountain-brown);
+    text-shadow: var(--text-shadow-light);
+}
+
+summary:hover {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    text-shadow: var(--text-shadow-dark);
+}
+
+details[open] summary {
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.details-content-inner {
+    padding: 1rem;
+}
+
+/* ===== LANGUAGE INFORMATION ===== */
+.language-info {
+    margin-top: 1.5rem;
+    border: 1px solid var(--mountain-brown);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.darkMode .language-info {
+    background: rgba(139, 69, 19, 0.15);
+}
+
+.lightMode .language-info {
+    background: rgba(139, 69, 19, 0.1);
+}
+
+.language-summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--mountain-brown);
+}
+
+.darkMode .language-summary {
+    background: rgba(44, 36, 22, 0.8);
+    color: var(--desert-tan);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode .language-summary {
+    background: rgba(244, 241, 232, 0.9);
+    color: var(--mountain-brown);
+    text-shadow: var(--text-shadow-light);
+}
+
+.language-summary:hover {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.language-details[open] .language-summary {
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.language-content {
+    padding: 1rem;
+}
+
+.language-category {
+    margin-bottom: 1rem;
+}
+
+.language-category:last-child {
+    margin-bottom: 0;
+}
+
+.language-category strong {
+    color: var(--ocean-blue);
+}
+
+.language-description {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 1rem;
+    line-height: 1.4;
+    padding-top: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+    opacity: 0.9;
+}
+
+/* ===== BADGES AND TAGS ===== */
+.stats-badge {
+    display: inline-block;
+    margin: 0.2rem 0.5rem 0.2rem 0;
+    padding: 0.2rem 0.5rem;
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.quest-count-badge {
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}

@@ -1,0 +1,125 @@
+[
+    {
+        "world": "Alabastria",
+        "description": "This world of wonders was once a beastly plane simply consisting of wild creatures within its forests, mountains, deserts, and planes. It is unknown in record what was responsible or how it happened, but groups of creatures and peoples from all different manner of realms and worlds of existence began reappearing in this new land and its various continents. Through much loss and areal infighting, not understanding or knowing what had happened to their homes, as the quickest to adapt and recover rose to establish the beginnings of control, now many starting new generations, permanent homes, their own ways of life, making Alabastria what it is today. \n\n It has now been 800 cycles since The Bringing, most races are multiple generations deep, empires have risen and fallen, villages have become towns and towns have become capital cities, politics from whatever land their ancestors hailed from are long forgotten for this current worlds kingdoms."
+    },
+    {
+        "continent": "Kuriguer",
+        "description": "Here is the land of magic, far from a fairytale sense. With the establishment of two fine towns along the coast and smaller settlements leading South, the rest of this land is shrouded beyond a forest not typically kind to strangers.",
+        "languages": {
+            "primary": ["Common", "Elvish", "Sylvan"],
+            "secondary": ["Gnomish", "Draconic", "Primordial"],
+            "rare": ["Celestial", "Abyssal", "Deep Speech"],
+            "description": "The magical nature of Kuriguer has attracted diverse races. Elvish dominates the forests, Sylvan echoes in fey-touched areas, while Primordial resonates with elemental magic. The coastal towns use Common for trade, and magical research brings scholars speaking Draconic and even rarer planar languages."
+        },
+        "politics": {
+            "kingdoms": ["Elven Coastal Towns"],
+            "settlements": ["Two major coastal towns", "Small southern settlements"],
+            "dominant_races": ["Elves", "Gnomes", "Fey creatures"],
+            "notes": "Magic-rich, hostile forests",
+            "political_climate": "Elven coastal towns value autonomy; interior magic forests remain wild and dangerous."
+        }
+    },
+    {
+        "continent": "Alatman of Kamalatman",
+        "description": "Land grouped of grey forests, flat swamps, and a timely volcano, exploring this land is quite popular due to the great natural riches that can be sent back, but settling there has proven quite difficult with the royal family's great taxes placed on the land with claims of wanting to regulate the removal of the materials found.",
+        "languages": {
+            "primary": ["Common", "Draconic"],
+            "secondary": ["Gnomish", "Infernal", "Primordial"],
+            "rare": ["Abyssal", "Deep Speech", "Modron"],
+            "description": "The volcanic forges and construct workshops of Alatman attract Warforged and Autognomes, making Draconic common for magical crafting. The dangerous forests harbor darker creatures, bringing Infernal and Abyssal whispers. Primordial echoes from the volcanic activity, while Common serves the mining expeditions."
+        },
+        "politics": {
+            "kingdoms": ["Alatman (part of Kamalatman)"],
+            "settlements": ["Resource extraction outposts", "Volcanic forge workshops"],
+            "dominant_races": ["Warforged", "Autognomes", "Dhampir"],
+            "notes": "Resource-rich, heavily taxed by Kamalatman monarchy",
+            "political_climate": "Alatman monarchy enforces taxes on resource extraction, making settlement difficult despite the land's natural riches."
+        }
+    },
+    {
+        "continent": "Maltman of Kamalatman",
+        "description": "A very mountainous region, the kingdom sends ships to collect and spread many ores and materials across the world from the vastly efficient yet seemingly small mining villages.",
+        "languages": {
+            "primary": ["Dwarvish", "Common"],
+            "secondary": ["Undercommon", "Draconic", "Gnomish"],
+            "rare": ["Giant", "Terran", "Deep Speech"],
+            "description": "The mountain strongholds echo with Dwarvish as the dominant language, while mining operations use Common for trade. Deep Gnome communities speak Undercommon, and ancient draconic runes mark the deepest mines. Kobolds in the depths maintain their Draconic dialect, and the rare Giant tongue echoes from the highest peaks."
+        },
+        "politics": {
+            "kingdoms": ["Maltman (part of Kamalatman)"],
+            "settlements": ["Efficient mining villages", "Mountain strongholds"],
+            "dominant_races": ["Dwarves", "Deep Gnomes", "Kobolds"],
+            "notes": "Efficient mining operations, part of Kamalatman",
+            "political_climate": "Maltman dwarves manage mines efficiently as part of the greater Kamalatman kingdom, focusing on resource extraction and trade."
+        }
+    },
+    {
+        "continent": "Skratonia",
+        "description": "While other worlds would likely consider this a desert wasteland, in Alabastria, Skratonia is the most populated land due to its' many open planes, and moderate temperate compared to much of the commoner welcome options or the swampy marshlands of the triontinental Kingdom of Kamalatman, allowing the growth of decent crops, leading to a very diverse mix of people of small settlements connected through major towns.",
+        "languages": {
+            "primary": ["Common", "Halfling"],
+            "secondary": ["Elvish", "Infernal", "Celestial"],
+            "rare": ["Draconic", "Telepathic", "Giant"],
+            "description": "As the most diverse and populated continent, Skratonia is dominated by Common as the trade language. Halfling communities maintain their pastoral tongue, while the many Tieflings bring Infernal influences. Aasimar populations contribute Celestial phrases, and the scholarly cities preserve Draconic texts. The plains-dwelling Centaurs and Leonin add their own linguistic flavors."
+        },
+        "politics": {
+            "kingdoms": ["Skratonian Alliance"],
+            "settlements": ["Council-led city-states", "Rural farming communities", "Major trade towns"],
+            "dominant_races": ["Humans", "Halflings", "Tieflings", "Aasimar", "Centaurs", "Leonin"],
+            "notes": "Central plains hub; fertile land",
+            "political_climate": "Council-led city-states with moderate tensions between rural and urban regions. Mercenary guilds like Huntbound Order are respected but independent."
+        }
+    },
+    {
+        "continent": "Bulsania",
+        "description": "The resident continent of ice and tough inhabitants holds few settlements on its' West coast before reaching a group of mountain ranges including the cloud towering Noxious Mountain, leading into a frozen land left to giants and titans.",
+        "languages": {
+            "primary": ["Giant", "Draconic"],
+            "secondary": ["Common", "Aarakocra", "Goliath"],
+            "rare": ["Celestial", "Primordial", "Auran"],
+            "description": "The harsh frozen landscape is dominated by Giant, spoken by the titans and giants that rule the interior. Draconic echoes from the militarized Dragonborn settlements, while Aarakocra calls ring from the mountain peaks. The few coastal settlements use Common for trade, and Primordial whispers through the eternal storms. Goliath tribal dialects blend elements of Giant and Common."
+        },
+        "politics": {
+            "kingdoms": ["Icebound Confederacy"],
+            "settlements": ["Icy strongholds", "Few western coastal settlements"],
+            "dominant_races": ["Giants", "Dragonborn", "Goliaths", "Aarakocra"],
+            "notes": "Harsh icy frontier; militarized",
+            "political_climate": "Confederation of icy strongholds; isolationist, wary of outsiders, militarized society."
+        }
+    },
+    {
+        "continent": "Kantra",
+        "description": "A counter to Bulsania, this land of fiery cracking earth and ash filled sky is home to creatures not known by the lands around it as no attempted explorations have returned, leading to quite the rumors of this hellish region. (No map as the land is uncharted)",
+        "languages": {
+            "primary": ["Infernal", "Abyssal"],
+            "secondary": ["Ignan", "Primordial"],
+            "rare": ["Deep Speech", "Unknown Dialects"],
+            "description": "The uncharted hellish landscape of Kantra is shrouded in mystery, but the few whispered reports speak of Infernal and Abyssal tongues echoing across the burning plains. Ignan, the language of fire elementals, crackles through the volcanic air, while Primordial resonates with the raw elemental chaos. Unknown dialects of creatures that have never been catalogued may exist in this forbidden land."
+        },
+        "politics": {
+            "kingdoms": ["Unknown"],
+            "settlements": ["Rumored hellish settlements"],
+            "dominant_races": ["Infernal creatures", "Beasts", "Monsterfolk"],
+            "notes": "Exploration dangerous",
+            "political_climate": "Unknown; exploration expeditions rarely return. Rumors of hellish beasts keep nations cautious."
+        }
+    },
+    {
+        "continent": "Katman of Kamalatman",
+        "description": "Home to most of the kingdoms inhabitants, this land has a stretch of planes preluding a mass of swampy less populated areas.",
+        "languages": {
+            "primary": ["Orcish", "Common"],
+            "secondary": ["Draconic", "Lizardfolk", "Yuan-ti"],
+            "rare": ["Abyssal", "Aquan", "Druidic"],
+            "description": "The swamplands echo with Orcish war-cries from the tribal strongholds, while Common serves the kingdom's administration on the plains. Lizardfolk communities maintain their ancient reptilian tongue, and the secretive Yuan-ti speak their serpentine language in hidden enclaves. Draconic marks ancient ruins, while Aquan flows with the wetland waters and Druidic whispers through the marsh grasses."
+        },
+        "politics": {
+            "kingdoms": ["Katman (part of Kamalatman)"],
+            "settlements": ["Plains administrative centers", "Swamp tribal strongholds", "Frontier outposts"],
+            "dominant_races": ["Orcs", "Half-Orcs", "Lizardfolk", "Yuan-ti"],
+            "notes": "Agricultural, part of Kamalatman kingdom",
+            "political_climate": "Katman kingdom focuses on swampy frontier defense as part of the greater Kamalatman realm, balancing agricultural plains with wild swampland territories."
+        }
+    }
+]
