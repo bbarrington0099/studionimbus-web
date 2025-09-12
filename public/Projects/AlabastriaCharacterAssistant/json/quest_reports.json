@@ -1,0 +1,53 @@
+[
+    {
+        "quest_name": "The Terror Wyvern of Skratonia",
+        "quest_summary": "The legendary solo battle that led to the founding of the Huntbound Order",
+        "party_members": [
+            {
+                "name": "Tharos Raggenthraw",
+                "rank_at_time": "Not Guild Member (Royal Army Veteran)",
+                "role": "Solo Hunter"
+            }
+        ],
+        "quest_rank": "Mithral",
+        "commissioned_by": "Self-initiated (Village Defense)",
+        "enemies": [
+            {
+                "name": "Terror Wyvern of Skratonia",
+                "type": "Ancient Wyvern",
+                "threat_level": "Extreme",
+                "description": "A massive wyvern that had been terrorizing villages across central Skratonia for months. Known for its cunning tactics and devastating poison breath."
+            }
+        ],
+        "special_awards_promotions": [
+            {
+                "recipient": "Tharos Raggenthraw",
+                "award": "Guild Founder Status",
+                "description": "Founded the Huntbound Order immediately following this victory"
+            }
+        ],
+        "notable_loot_decor": [
+            {
+                "item": "Wyvern Skull Trophy",
+                "description": "The massive skull of the Terror Wyvern, mounted in what would become the Great Hall",
+                "significance": "First trophy of the guild, symbol of the founding"
+            },
+            {
+                "item": "Wyvern Scale Armor Fragments",
+                "description": "Scales used to craft protective gear for early guild members",
+                "significance": "Provided protection for the first recruits"
+            },
+            {
+                "item": "Founding Banner",
+                "description": "The banner Tharos planted after the victory, bearing the first guild oath",
+                "significance": "Original guild standard, still displayed in the Great Hall"
+            }
+        ],
+        "fallen_members": [],
+        "extra_notes": "This was not technically a guild quest since the guild didn't exist yet, but it is considered the foundational moment of the Huntbound Order. Tharos fought alone with only his faith in Tempus and his determination to protect the innocent. His armor was torn, his face scarred, but his resolve was unbroken. The victory speech he gave while standing over the wyvern's corpse became the guild's founding oath. The village he saved, Millhaven, later became one of the guild's strongest supporters and a major recruitment center. This solo victory also established Tharos's core philosophy: that those putting their lives on the line should determine their own methods, as long as the innocent are protected. When founding the guild, he welcomed hunters of all stripes - soldiers and sellswords, druids and rangers, rogues and mages - many bringing methods he might never use himself, including poison, forbidden magics, and merciless execution. He saw the necessity in diverse approaches to monster hunting.",
+        "date": "755 Cycles After The Bringing",
+        "location": "Millhaven Village, Central Skratonia",
+        "duration": "Single day battle",
+        "outcome": "Complete Success - Wyvern slain, village saved, guild founded"
+    }
+]
