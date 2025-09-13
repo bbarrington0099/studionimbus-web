@@ -329,6 +329,75 @@
                 ],
                 "alabastria_context": "Aarakocra Zealots in Bulsania serve sky gods with divine fury. Aasimar across Skratonia channel celestial rage for righteous causes, while Dragonborn embrace draconic religious fervor in their militarized society.",
                 "playstyle": "Religious warrior with divine damage and support abilities. Perfect for players who want to combine faith with fury."
+            },
+            {
+                "name": "Path of the Battlerager",
+                "description": "Dwarven warriors who wear spiked armor and use it as a weapon, becoming whirlwinds of destruction in combat.",
+                "key_features": [
+                    {
+                        "name": "Battlerager Armor",
+                        "level": 3,
+                        "description": "Gain proficiency with spiked armor and can use it as a weapon"
+                    },
+                    {
+                        "name": "Reckless Abandon",
+                        "level": 3,
+                        "description": "Gain temporary hit points when you use Reckless Attack"
+                    },
+                    {
+                        "name": "Battlerager Charge",
+                        "level": 6,
+                        "description": "Charge into battle, dealing damage and knocking enemies prone"
+                    }
+                ],
+                "alabastria_context": "Battleragers in Alabastria are primarily found among the dwarven strongholds of Bulsania, where their aggressive fighting style is both feared and respected. They often serve as elite shock troops in the Icebound Confederacy.",
+                "playstyle": "Aggressive tank who uses armor as a weapon. Perfect for players who want to be a mobile, damaging tank."
+            },
+            {
+                "name": "Path of the Giant",
+                "description": "Barbarians who channel the power of giants, growing in size and strength as they rage, becoming towering forces of destruction.",
+                "key_features": [
+                    {
+                        "name": "Giant's Might",
+                        "level": 3,
+                        "description": "Grow to Large size when you rage, gaining reach and damage bonuses"
+                    },
+                    {
+                        "name": "Elemental Cleaver",
+                        "level": 6,
+                        "description": "Infuse your attacks with elemental damage based on your chosen giant type"
+                    },
+                    {
+                        "name": "Mighty Impel",
+                        "level": 10,
+                        "description": "Throw enemies or objects with incredible force, dealing damage and knocking them back"
+                    }
+                ],
+                "alabastria_context": "Giant barbarians in Alabastria often trace their lineage to the ancient giants who once roamed the mountains of Bulsania and the peaks of Kamalatman. Their connection to these primordial beings gives them incredible strength and size.",
+                "playstyle": "Size-changing warrior with area control and massive damage. Great for players who want to be a huge, intimidating presence on the battlefield."
+            },
+            {
+                "name": "Path of Wild Magic",
+                "description": "Barbarians touched by chaotic magic whose rage triggers unpredictable magical effects, creating both opportunities and dangers.",
+                "key_features": [
+                    {
+                        "name": "Magic Awareness",
+                        "level": 3,
+                        "description": "Sense magic around you as a bonus action and gain advantage on saving throws against spells"
+                    },
+                    {
+                        "name": "Wild Surge",
+                        "level": 3,
+                        "description": "Trigger random magical effects when you rage, from beneficial to dangerous"
+                    },
+                    {
+                        "name": "Bolstering Magic",
+                        "level": 6,
+                        "description": "Grant spell slots or enhance ability checks for allies through your wild magic"
+                    }
+                ],
+                "alabastria_context": "Wild Magic barbarians in Alabastria are often found in the magical anomalies of Kuriguer, where the chaotic magic of the forests has touched their souls. They are both feared and sought after for their unpredictable power.",
+                "playstyle": "Chaotic warrior with unpredictable magical effects. Perfect for players who enjoy randomness and magical mayhem."
             }
         ]
     },
@@ -685,6 +754,75 @@
                 ],
                 "alabastria_context": "Aarakocra Tempest Clerics in Bulsania's peaks command mountain storms and arctic winds. Triton storm-callers along Kuriguer's coasts control oceanic tempests, while Air Genasi channel coastal winds and lightning.",
                 "playstyle": "Destructive spellcaster with weather-based powers. Perfect for players who want to call down divine storms and lightning."
+            },
+            {
+                "name": "Light Domain",
+                "description": "Clerics of light and sun gods who wield radiant energy to illuminate darkness and burn away evil.",
+                "key_features": [
+                    {
+                        "name": "Warding Flare",
+                        "level": 1,
+                        "description": "Impose disadvantage on enemy attacks as a reaction"
+                    },
+                    {
+                        "name": "Channel Divinity: Radiance of the Dawn",
+                        "level": 2,
+                        "description": "Create a burst of radiant light that damages undead and fiends"
+                    },
+                    {
+                        "name": "Potent Spellcasting",
+                        "level": 8,
+                        "description": "Add Wisdom modifier to cantrip damage"
+                    }
+                ],
+                "alabastria_context": "Light Clerics in Alabastria serve as beacons of hope in dark times, their radiant magic particularly effective against the undead and fiends that plague the world. They are common in Skratonia's cities and the Huntbound Order.",
+                "playstyle": "Offensive caster with radiant damage and area control. Great for players who want to be a divine blaster with utility."
+            },
+            {
+                "name": "Nature Domain",
+                "description": "Clerics who serve nature gods, wielding the power of the natural world to protect and nurture life.",
+                "key_features": [
+                    {
+                        "name": "Acolyte of Nature",
+                        "level": 1,
+                        "description": "Learn a druid cantrip and gain proficiency with heavy armor"
+                    },
+                    {
+                        "name": "Channel Divinity: Charm Animals and Plants",
+                        "level": 2,
+                        "description": "Charm beasts and plants to aid you"
+                    },
+                    {
+                        "name": "Dampen Elements",
+                        "level": 6,
+                        "description": "Grant resistance to elemental damage to allies"
+                    }
+                ],
+                "alabastria_context": "Nature Clerics in Alabastria are found in the wild regions of Kuriguer and the untamed areas of Kamalatman. They serve as protectors of the natural world and guides for those who venture into dangerous wilderness.",
+                "playstyle": "Versatile caster with nature magic and elemental resistance. Perfect for players who want to combine divine power with nature magic."
+            },
+            {
+                "name": "Trickery Domain",
+                "description": "Clerics of trickster gods who use deception, illusion, and cunning to outwit enemies and protect their allies.",
+                "key_features": [
+                    {
+                        "name": "Blessing of the Trickster",
+                        "level": 1,
+                        "description": "Grant advantage on Stealth checks to allies"
+                    },
+                    {
+                        "name": "Channel Divinity: Invoke Duplicity",
+                        "level": 2,
+                        "description": "Create an illusory duplicate of yourself"
+                    },
+                    {
+                        "name": "Cloak of Shadows",
+                        "level": 6,
+                        "description": "Turn invisible as an action"
+                    }
+                ],
+                "alabastria_context": "Trickery Clerics in Alabastria often serve as spies, scouts, and information gatherers. Their deceptive abilities make them valuable in the complex political landscape and dangerous missions of the Huntbound Order.",
+                "playstyle": "Stealth-focused caster with illusion magic and deception. Great for players who want to be sneaky and cunning."
             }
         ]
     },
@@ -1666,6 +1804,148 @@
                 ],
                 "alabastria_context": "High Elf Divination Wizards in Kuriguer use their long lives to study prophetic magic. Kalashtar wizards in Skratonia combine dream-plane visions with scholarly divination, while Human oracles interpret divine and arcane portents.",
                 "playstyle": "Support wizard with future sight and information gathering. Ideal for players who want to help the party through foresight and knowledge."
+            }
+        ]
+    },
+    {
+        "class": "Tactician",
+        "description": "Masters of strategy and battlefield control who use intelligence and planning to outmaneuver enemies and coordinate allies. These brilliant commanders excel at analyzing situations and turning the tide of battle through superior tactics.",
+        "role": "Support/Control",
+        "primary_ability": "Intelligence",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Intelligence",
+            "Wisdom"
+        ],
+        "armor_proficiency": "Light armor, medium armor, shields",
+        "weapon_proficiency": "Simple weapons, hand crossbows, longswords, rapiers, shortswords",
+        "tool_proficiency": "One type of gaming set, one type of musical instrument",
+        "key_features": [
+            {
+                "name": "Perfect Plan",
+                "level": 1,
+                "description": "Gain Perfect Plan dice that can be used to enhance your own or allies' rolls"
+            },
+            {
+                "name": "Intelligent Defense",
+                "level": 1,
+                "description": "Use Intelligence modifier instead of Dexterity for AC calculation"
+            },
+            {
+                "name": "Analyze",
+                "level": 2,
+                "description": "As a bonus action, analyze a creature within 60 feet for tactical advantages"
+            },
+            {
+                "name": "Strategic Focus",
+                "level": 3,
+                "description": "Choose a strategic focus that grants additional features and maneuvers"
+            },
+            {
+                "name": "Tactical Command",
+                "level": 5,
+                "description": "Grant allies additional actions or movement through strategic commands"
+            },
+            {
+                "name": "Battlefield Control",
+                "level": 7,
+                "description": "Manipulate the battlefield to your advantage through superior positioning"
+            }
+        ],
+        "alabastria_lore": "In the complex political landscape of Alabastria, Tacticians serve as military advisors, guild strategists, and battlefield commanders. Their analytical minds and strategic thinking make them invaluable in the Huntbound Order's most dangerous missions, where proper planning can mean the difference between victory and disaster.",
+        "playstyle": "Support character who excels at battlefield control and enhancing allies through strategic planning. Best for players who enjoy tactical thinking and coordinating team efforts.",
+        "subclasses": [
+            {
+                "name": "Grandmaster",
+                "description": "Masters of grand strategy who excel at long-term planning and large-scale tactical operations.",
+                "key_features": [
+                    {
+                        "name": "Strategic Planning",
+                        "level": 3,
+                        "description": "Spend time planning to gain significant advantages in upcoming encounters"
+                    },
+                    {
+                        "name": "Battlefield Survey",
+                        "level": 6,
+                        "description": "Analyze terrain and enemy positions to predict and counter enemy tactics"
+                    },
+                    {
+                        "name": "Grand Strategy",
+                        "level": 10,
+                        "description": "Coordinate multiple allies with complex tactical maneuvers"
+                    }
+                ],
+                "alabastria_context": "Grandmasters in Alabastria often serve as military advisors to kingdoms and guild leaders. Their strategic minds are crucial for planning large-scale operations against the most dangerous threats.",
+                "playstyle": "Long-term strategic planning and battlefield control. Perfect for players who enjoy complex tactical scenarios."
+            },
+            {
+                "name": "Mentalist",
+                "description": "Tacticians who use psionic abilities and mental powers to read enemy intentions and coordinate allies through telepathic communication.",
+                "key_features": [
+                    {
+                        "name": "Telepathic Link",
+                        "level": 3,
+                        "description": "Create mental connections with allies for silent communication and coordination"
+                    },
+                    {
+                        "name": "Mind Reading",
+                        "level": 6,
+                        "description": "Read enemy surface thoughts to predict their actions and counter their tactics"
+                    },
+                    {
+                        "name": "Psychic Command",
+                        "level": 10,
+                        "description": "Issue mental commands that enhance ally performance and disrupt enemy coordination"
+                    }
+                ],
+                "alabastria_context": "Mentalists in Alabastria often work with the Huntbound Order's intelligence operations, using their psionic abilities to gather information and coordinate covert missions.",
+                "playstyle": "Psionic support and battlefield communication. Great for players who want to combine strategy with mental powers."
+            },
+            {
+                "name": "Scholar",
+                "description": "Academic tacticians who study warfare, history, and enemy tactics to develop innovative strategies and countermeasures.",
+                "key_features": [
+                    {
+                        "name": "Tactical Knowledge",
+                        "level": 3,
+                        "description": "Gain extensive knowledge of enemy tactics and weaknesses"
+                    },
+                    {
+                        "name": "Research and Development",
+                        "level": 6,
+                        "description": "Develop new tactics and strategies based on historical study and analysis"
+                    },
+                    {
+                        "name": "Master Tactician",
+                        "level": 10,
+                        "description": "Apply advanced tactical knowledge to gain significant advantages in combat"
+                    }
+                ],
+                "alabastria_context": "Scholars in Alabastria often work in the magical academies of Kuriguer, studying ancient warfare and developing new tactics for modern threats.",
+                "playstyle": "Knowledge-based strategy and research. Ideal for players who enjoy learning about enemy types and developing counter-strategies."
+            },
+            {
+                "name": "War Mind",
+                "description": "Combat-focused tacticians who combine martial prowess with strategic thinking, leading from the front lines.",
+                "key_features": [
+                    {
+                        "name": "Combat Analysis",
+                        "level": 3,
+                        "description": "Analyze combat situations in real-time to gain tactical advantages"
+                    },
+                    {
+                        "name": "Battlefield Presence",
+                        "level": 6,
+                        "description": "Your mere presence on the battlefield inspires and coordinates allies"
+                    },
+                    {
+                        "name": "War Leader",
+                        "level": 10,
+                        "description": "Lead by example, gaining powerful combat abilities when fighting alongside allies"
+                    }
+                ],
+                "alabastria_context": "War Minds in Alabastria often serve as field commanders in the Huntbound Order, leading dangerous missions and inspiring their fellow hunters to greatness.",
+                "playstyle": "Combat-focused strategy and leadership. Perfect for players who want to combine tactical thinking with martial prowess."
             }
         ]
     }
