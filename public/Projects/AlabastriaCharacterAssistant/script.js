@@ -81,32 +81,9 @@ const app = {
         this.loadWorldHistoryData();
         this.loadGuildData();
         await this.loadGuildStaffAndMembers();
-        this.setupScrollListener();
-
         this.setupModalListeners();
         this.showSection('welcome-section');
     },
-
-    // Setup scroll listener for jump-to-top button
-    setupScrollListener() {
-        window.addEventListener('scroll', () => {
-            const jumpBtn = document.getElementById('jump-to-top');
-            const detailsSection = document.getElementById('details-section');
-
-            if (jumpBtn && detailsSection && detailsSection.classList.contains('active')) {
-                // Show jump button when we've scrolled down significantly in the details section
-                if (window.scrollY > 300) {
-                    jumpBtn.style.display = 'block';
-                } else {
-                    jumpBtn.style.display = 'none';
-                }
-            } else if (jumpBtn) {
-                jumpBtn.style.display = 'none';
-            }
-        });
-    },
-
-
 
     // Setup modal event listeners
     setupModalListeners() {
@@ -522,7 +499,7 @@ const app = {
     loadWorldDescription() {
         const worldData = this.continentData.find(item => item.world);
         if (worldData) {
-            document.getElementById('world-description').textContent = worldData.description;
+            document.getElementById('world-description').innerHTML = worldData.description;
         }
     },
 
@@ -827,9 +804,15 @@ const app = {
                 <h3>${raceData.race}</h3>
                 <p class="race-description">${raceData.description}</p>
                 <div class="race-info">
-                    <span class="race-size">Size: ${raceData.size}</span>
-                    <span class="race-speed">Speed: ${raceData.speed}</span>
-                    <span class="race-ability-scores">${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}</span>
+                    <div class="race-stat">
+                        <strong>Size:</strong> ${raceData.size}
+                    </div>
+                    <div class="race-stat">
+                        <strong>Speed:</strong> ${raceData.speed}
+                    </div>
+                    <div class="race-stat">
+                        <strong>Ability Scores:</strong> ${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}
+                    </div>
                 </div>
                 <p class="race-playstyle">${raceData.playstyle}</p>
                 ${raceData.subraces && raceData.subraces.length > 0 ? `<div class="subrace-count">${raceData.subraces.length} subraces available</div>` : ''}
@@ -1674,7 +1657,6 @@ const app = {
                      onerror="this.style.display='none'">
                 ${continent.languages ? this.renderLanguageInfo(continent.languages) : ''}
                 ${continent.politics ? this.renderPoliticalInfo(continent.politics) : ''}
-                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
             </div>
         `;
 
@@ -1801,30 +1783,51 @@ const app = {
             <div class="sticky-info">
                 <h3>About ${this.currentSelection}</h3>
                 <p class="race-description">${raceData.description}</p>
-                <div class="race-basics">
-                    <div class="basic-info">
-                        <strong>Size:</strong> ${raceData.size}<br>
-                        <strong>Speed:</strong> ${raceData.speed}<br>
-                        <strong>Ability Score Increase:</strong> ${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}<br>
-                        <strong>Age:</strong> ${raceData.age}<br>
-                        <strong>Alignment:</strong> ${raceData.alignment}
-                    </div>
-                    <div class="languages">
-                        <strong>Languages:</strong> ${raceData.languages.join(', ')}
-                    </div>
-                </div>
                 <p class="alabastria-lore"><strong>In Alabastria:</strong> ${raceData.alabastria_lore}</p>
                 <p class="playstyle-info"><strong>Playstyle:</strong> ${raceData.playstyle}</p>
                 <div class="recommended-classes">
                     <strong>Recommended Classes:</strong> ${raceData.recommended_classes.join(', ')}
                 </div>
-                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
             </div>
         `;
 
         // Render comprehensive race information
         relationshipsContainer.innerHTML = `
             <h3>${this.currentSelection} Race Information</h3>
+            
+            <details>
+                <summary>Basic Information</summary>
+                <div class="details-content-inner">
+                    <div class="race-basic-stats">
+                        <div class="race-stat">
+                            <strong>Size:</strong> ${raceData.size}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Speed:</strong> ${raceData.speed}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Ability Score Increase:</strong> ${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Age:</strong> ${raceData.age}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Alignment:</strong> ${raceData.alignment}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Languages:</strong> ${raceData.languages.join(', ')}
+                        </div>
+                        ${raceData.height_weight ? `
+                            <div class="race-stat">
+                                <strong>Height:</strong> ${raceData.height_weight.height_range}
+                            </div>
+                            <div class="race-stat">
+                                <strong>Weight:</strong> ${raceData.height_weight.weight_range}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            </details>
             
             <details>
                 <summary>Racial Traits</summary>
@@ -1855,6 +1858,10 @@ const app = {
                                             ${subrace.ability_score_increase ? `
                                                 <p class="subrace-ability-scores"><strong>Ability Score Increase:</strong> ${Object.entries(subrace.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}</p>
                                             ` : ''}
+                                            ${subrace.height_weight ? `
+                                                <p class="subrace-height-weight"><strong>Height:</strong> ${subrace.height_weight.height_range}</p>
+                                                <p class="subrace-height-weight"><strong>Weight:</strong> ${subrace.height_weight.weight_range}</p>
+                                            ` : ''}
                                             <p class="subrace-context"><strong>In Alabastria:</strong> ${subrace.alabastria_context}</p>
                                             <p class="subrace-playstyle"><strong>Playstyle:</strong> ${subrace.playstyle}</p>
                                         </div>
@@ -1876,6 +1883,128 @@ const app = {
                     </div>
                 </details>
             ` : ''}
+            
+            <details>
+                <summary>Continental & Class Relationships</summary>
+                <div class="details-content-inner">
+                    ${this.renderRaceRelationships(raceData.race)}
+                </div>
+            </details>
+        `;
+    },
+
+    // Helper function to render race relationships
+    renderRaceRelationships(raceName) {
+        const raceRelations = new Map();
+        const continentRelations = new Map();
+
+        // Find relationships from the relation data
+        this.relationData.forEach(classData => {
+            classData.subclasses.forEach(subclass => {
+                // Check if this race is suitable for this subclass
+                const raceMatch = subclass.races.find(race =>
+                    race.name === raceName ||
+                    race.name.includes(raceName) ||
+                    raceName.includes(race.name)
+                );
+
+                if (raceMatch) {
+                    if (!raceRelations.has(classData.class)) {
+                        raceRelations.set(classData.class, []);
+                    }
+                    raceRelations.get(classData.class).push({
+                        subclass: subclass.subclass,
+                        reason: raceMatch.subclass_reason,
+                        continent: raceMatch.continent,
+                        continentReason: raceMatch.continent_reason
+                    });
+
+                    // Track continent relationships
+                    if (!continentRelations.has(raceMatch.continent)) {
+                        continentRelations.set(raceMatch.continent, []);
+                    }
+                    continentRelations.get(raceMatch.continent).push({
+                        class: classData.class,
+                        subclass: subclass.subclass,
+                        reason: raceMatch.continent_reason
+                    });
+                }
+            });
+        });
+
+        if (raceRelations.size === 0 && continentRelations.size === 0) {
+            return '<p>No specific continental or class relationships found for this race.</p>';
+        }
+
+        return `
+            <div class="race-relationships">
+                ${continentRelations.size > 0 ? `
+                    <div class="relationship-section">
+                        <h4>Prominent Continents (${continentRelations.size})</h4>
+                        ${Array.from(continentRelations.entries()).map(([continent, relations]) => `
+                            <details>
+                                <summary class="relationship-item emphasized">
+                                    <div class="relationship-header">
+                                        <span class="relationship-name">${continent}</span>
+                                        <div class="nav-buttons">
+                                            ${this.createNavButton('continent', continent, '→')}
+                                            <small>(${relations.length} class specialization${relations.length > 1 ? 's' : ''})</small>
+                                        </div>
+                                    </div>
+                                </summary>
+                                <div class="details-content-inner">
+                                    <div class="relationship-reason">
+                                        <strong>Why prominent:</strong> ${relations[0].reason}<br><br>
+                                        <strong>Class Specializations:</strong><br>
+                                        ${relations.map(rel => `
+                                            <div class="relationship-item emphasized">
+                                                <div class="relationship-header">
+                                                    <span><strong>${rel.class} (${rel.subclass})</strong></span>
+                                                    ${this.createNavButton('class', rel.class, rel.subclass, rel.subclass)}
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </details>
+                        `).join('')}
+                    </div>
+                ` : ''}
+                
+                ${raceRelations.size > 0 ? `
+                    <div class="relationship-section">
+                        <h4>Suitable Classes (${raceRelations.size})</h4>
+                        ${Array.from(raceRelations.entries()).map(([className, subclasses]) => `
+                            <details>
+                                <summary class="relationship-item emphasized">
+                                    <div class="relationship-header">
+                                        <span class="relationship-name">${className}</span>
+                                        <div class="nav-buttons">
+                                            ${this.createNavButton('class', className, '→')}
+                                            <small>(${subclasses.length} subclass${subclasses.length > 1 ? 'es' : ''})</small>
+                                        </div>
+                                    </div>
+                                </summary>
+                                <div class="details-content-inner">
+                                    <div class="relationship-reason">
+                                        ${subclasses.map(sc => `
+                                            <div class="relationship-item emphasized">
+                                                <div class="relationship-header">
+                                                    <span><strong>${sc.subclass}:</strong> ${sc.reason}</span>
+                                                    ${this.createNavButton('class', className, sc.subclass, sc.subclass)}
+                                                </div>
+                                                <div class="relationship-context">
+                                                    <strong>Continental context:</strong> ${sc.continentReason} (${sc.continent})
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </details>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
         `;
     },
 
@@ -1892,28 +2021,43 @@ const app = {
             <div class="sticky-info">
                 <h3>About ${this.currentSelection}</h3>
                 <p class="class-description">${classData.description}</p>
-                <div class="class-basics">
-                    <div class="basic-info">
-                        <strong>Role:</strong> ${classData.role}<br>
-                        <strong>Primary Ability:</strong> ${classData.primary_ability}<br>
-                        <strong>Hit Die:</strong> ${classData.hit_die}<br>
-                        <strong>Saving Throws:</strong> ${classData.saving_throws.join(', ')}
-                    </div>
-                    <div class="proficiencies">
-                        <strong>Armor:</strong> ${classData.armor_proficiency}<br>
-                        <strong>Weapons:</strong> ${classData.weapon_proficiency}<br>
-                        <strong>Tools:</strong> ${classData.tool_proficiency}
-                    </div>
-                </div>
                 <p class="alabastria-lore"><strong>In Alabastria:</strong> ${classData.alabastria_lore}</p>
                 <p class="playstyle-info"><strong>Playstyle:</strong> ${classData.playstyle}</p>
-                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
             </div>
         `;
 
         // Render comprehensive class information
         relationshipsContainer.innerHTML = `
             <h3>${this.currentSelection} Class Information</h3>
+            
+            <details>
+                <summary>Basic Information</summary>
+                <div class="details-content-inner">
+                    <div class="class-basic-stats">
+                        <div class="race-stat">
+                            <strong>Role:</strong> ${classData.role}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Primary Ability:</strong> ${classData.primary_ability}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Hit Die:</strong> ${classData.hit_die}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Saving Throws:</strong> ${classData.saving_throws.join(', ')}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Armor:</strong> ${classData.armor_proficiency}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Weapons:</strong> ${classData.weapon_proficiency}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Tools:</strong> ${classData.tool_proficiency}
+                        </div>
+                    </div>
+                </div>
+            </details>
             
             <details>
                 <summary>Key Features</summary>
@@ -1927,48 +2071,11 @@ const app = {
                 </div>
             </details>
 
-            <details>
-                <summary>Subclasses (${classData.subclasses.length})</summary>
-                <div class="details-content-inner">
-                    ${classData.subclasses.map(subclass => {
-            const subclassId = `subclass-${subclass.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`;
-            return `
-                            <details id="${subclassId}">
-                                <summary class="subclass-section">
-                                    <h4>${subclass.name}</h4>
-                                    <p class="subclass-description">${subclass.description}</p>
-                                </summary>
-                                <div class="details-content-inner">
-                                    <div class="subclass-info">
-                                        <p class="subclass-context"><strong>In Alabastria:</strong> ${subclass.alabastria_context}</p>
-                                        <p class="subclass-playstyle"><strong>Playstyle:</strong> ${subclass.playstyle}</p>
-                                    </div>
-                                    <details>
-                                        <summary>Key Features</summary>
-                                        <div class="details-content-inner">
-                                            ${subclass.key_features.map(feature => `
-                                                <div class="feature-item">
-                                                    <h5>${feature.name} (Level ${feature.level})</h5>
-                                                    <p>${feature.description}</p>
-                                                </div>
-                                            `).join('')}
-                                        </div>
-                                    </details>
-                                </div>
-                            </details>
-                        `;
-        }).join('')}
-                </div>
-            </details>
-
             ${relationData ? `
                 <details>
-                    <summary>Race & Continent Relationships</summary>
+                    <summary>Subclasses & Race Relationships (${relationData.subclasses.length})</summary>
                     <div class="details-content-inner">
-                        <details>
-                            <summary>Subclasses & Suitable Races</summary>
-                            <div class="details-content-inner">
-                                ${relationData.subclasses.map(subclass => {
+                        ${relationData.subclasses.map(subclass => {
             const subclassId = `relation-subclass-${subclass.subclass.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`;
             return `
                                         <details id="${subclassId}">
@@ -1976,6 +2083,10 @@ const app = {
                                                 <h4>${subclass.subclass}</h4>
                                             </summary>
                                             <div class="details-content-inner">
+                                                <div class="subclass-info">
+                                                    <p class="subclass-context"><strong>In Alabastria:</strong> ${subclass.alabastria_context || 'No specific context available.'}</p>
+                                                    <p class="subclass-playstyle"><strong>Playstyle:</strong> ${subclass.playstyle || 'No playstyle information available.'}</p>
+                                                </div>
                                                 <details>
                                                     <summary>Suitable Races (${subclass.races.length})</summary>
                                                     <div class="details-content-inner">
@@ -2059,7 +2170,6 @@ const app = {
                 <div class="sticky-info">
                     <h3>${category.name}</h3>
                     <p class="playstyle-description">${category.description}</p>
-                    <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
                 </div>
             `;
 
@@ -2085,7 +2195,7 @@ const app = {
             <div class="sticky-info">
                 <h3>Ability Score Priorities</h3>
                 <p>Understanding which abilities are most important for each class and what they do</p>
-                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
+
             </div>
         `;
 
@@ -2121,7 +2231,7 @@ const app = {
             <div class="sticky-info">
                 <h3>Class Complexity Levels</h3>
                 <p>Find classes that match your experience level and preferred complexity</p>
-                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
+
             </div>
         `;
 

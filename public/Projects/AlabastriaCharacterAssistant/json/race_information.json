@@ -10,7 +10,15 @@
         },
         "age": "Aarakocra reach maturity by age 3. Compared to humans, aarakocra don't usually live longer than 30 years.",
         "alignment": "Most aarakocra are good and rarely choose sides when it comes to law and chaos. Leaders are sometimes lawful good.",
-        "languages": ["Common", "Aarakocra", "Auran"],
+        "languages": [
+            "Common",
+            "Aarakocra",
+            "Auran"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'4\"",
+            "weight_range": "90 to 130 lbs"
+        },
         "traits": [
             {
                 "name": "Flight",
@@ -23,7 +31,12 @@
         ],
         "alabastria_lore": "In Bulsania's mountain peaks and Kuriguer's coastal cliffs, Aarakocra serve as messengers and scouts, their aerial perspective providing crucial intelligence about the harsh landscapes below. These birdfolk often work with the Huntbound Order, using their flight to track dangerous creatures across difficult terrain.",
         "playstyle": "Excellent mobility and ranged combat specialists. Perfect for players who want aerial superiority and unique movement options.",
-        "recommended_classes": ["Ranger", "Rogue", "Monk", "Druid"],
+        "recommended_classes": [
+            "Ranger",
+            "Rogue",
+            "Monk",
+            "Druid"
+        ],
         "subraces": []
     },
     {
@@ -36,7 +49,14 @@
         },
         "age": "Aasimar mature at the same rate as humans but live a few years longer.",
         "alignment": "Aasimar are inclined toward good alignments. Not all aasimar are of good alignment, but very few are evil.",
-        "languages": ["Common", "Celestial"],
+        "languages": [
+            "Common",
+            "Celestial"
+        ],
+        "height_weight": {
+            "height_range": "5'4\" to 7'0\"",
+            "weight_range": "110 to 190 lbs"
+        },
         "traits": [
             {
                 "name": "Darkvision",
@@ -53,13 +73,22 @@
         ],
         "alabastria_lore": "Across Skratonia's cities and temples, Aasimar serve as beacons of hope and divine guidance. These celestial-touched individuals often work with clerics and paladins, their healing abilities and divine resistance making them natural leaders in the fight against darkness.",
         "playstyle": "Divine support and healing specialists. Great for players who want to be the party's moral compass and primary healer.",
-        "recommended_classes": ["Cleric", "Paladin", "Sorcerer (Divine Soul)", "Bard"],
+        "recommended_classes": [
+            "Cleric",
+            "Paladin",
+            "Sorcerer (Divine Soul)",
+            "Bard"
+        ],
         "subraces": [
             {
                 "name": "Protector Aasimar",
                 "description": "Protector aasimar are charged by the powers of good to guard the weak, to seek out evil, and to stand vigilant against the darkness.",
                 "ability_score_increase": {
                     "Wisdom": 1
+                },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
                 },
                 "traits": [
                     {
@@ -76,6 +105,10 @@
                 "ability_score_increase": {
                     "Constitution": 1
                 },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
+                },
                 "traits": [
                     {
                         "name": "Radiant Consumption",
@@ -90,6 +123,10 @@
                 "description": "An aasimar who was touched by dark powers, or who chose to dabble in them, is an aasimar whose original celestial nature has been warped by evil.",
                 "ability_score_increase": {
                     "Strength": 1
+                },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
                 },
                 "traits": [
                     {
@@ -113,7 +150,14 @@
         },
         "age": "Autognomes don't age, but they can be destroyed. They can live indefinitely if properly maintained.",
         "alignment": "Most autognomes are lawful, following the instructions of their creators or their own internal programming.",
-        "languages": ["Common", "Gnomish"],
+        "languages": [
+            "Common",
+            "Gnomish"
+        ],
+        "height_weight": {
+            "height_range": "2'8\" to 3'4\"",
+            "weight_range": "45 to 49 lbs"
+        },
         "traits": [
             {
                 "name": "Constructed Resilience",
@@ -134,7 +178,12 @@
         ],
         "alabastria_lore": "In Alatman's volcanic forges and Maltman's mountain workshops, Autognomes serve as tireless assistants to their gnomish creators. These mechanical beings represent the pinnacle of gnomish engineering, combining magical and technological innovation in Alabastria's most advanced settlements.",
         "playstyle": "Durable utility specialists with unique construct abilities. Perfect for players who want to be immune to many common threats and have unique roleplay opportunities.",
-        "recommended_classes": ["Artificer", "Wizard", "Cleric", "Fighter"],
+        "recommended_classes": [
+            "Artificer",
+            "Wizard",
+            "Cleric",
+            "Fighter"
+        ],
         "subraces": []
     },
     {
@@ -148,7 +197,14 @@
         },
         "age": "Bugbears reach adulthood at age 16 and live up to 80 years.",
         "alignment": "Bugbears are chaotic evil in the wild, but some can be trained to be lawful evil.",
-        "languages": ["Common", "Goblin"],
+        "languages": [
+            "Common",
+            "Goblin"
+        ],
+        "height_weight": {
+            "height_range": "6'0\" to 7'4\"",
+            "weight_range": "200 to 272 lbs"
+        },
         "traits": [
             {
                 "name": "Darkvision",
@@ -173,7 +229,12 @@
         ],
         "alabastria_lore": "In Katman's swamplands and the darker corners of Alabastria, Bugbears serve as scouts and infiltrators for various factions. Their natural stealth and surprise attack abilities make them valuable assets in the Huntbound Order's more covert operations.",
         "playstyle": "Stealthy melee combatants with surprise tactics. Great for players who want to be sneaky fighters with extended reach.",
-        "recommended_classes": ["Rogue", "Ranger", "Fighter", "Barbarian"],
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Fighter",
+            "Barbarian"
+        ],
         "subraces": []
     },
     {
@@ -187,7 +248,14 @@
         },
         "age": "Centaurs mature and age at the same rate as humans.",
         "alignment": "Centaurs are typically chaotic good, valuing freedom and nature.",
-        "languages": ["Common", "Sylvan"],
+        "languages": [
+            "Common",
+            "Sylvan"
+        ],
+        "height_weight": {
+            "height_range": "6'2\" to 7'10\"",
+            "weight_range": "200 to 272 lbs"
+        },
         "traits": [
             {
                 "name": "Charge",
@@ -208,7 +276,12 @@
         ],
         "alabastria_lore": "On Skratonia's vast plains and in Kuriguer's magical forests, Centaurs serve as messengers, scouts, and guardians of nature. Their speed and connection to the land make them invaluable allies in the Huntbound Order's efforts to protect Alabastria's wilderness.",
         "playstyle": "Mobile melee combatants with nature connection. Perfect for players who want speed, strength, and natural abilities.",
-        "recommended_classes": ["Ranger", "Druid", "Fighter", "Paladin"],
+        "recommended_classes": [
+            "Ranger",
+            "Druid",
+            "Fighter",
+            "Paladin"
+        ],
         "subraces": []
     },
     {
@@ -222,7 +295,14 @@
         },
         "age": "Changelings mature at the same rate as humans but can live up to 200 years.",
         "alignment": "Changelings are typically chaotic, as they value personal freedom and adaptability.",
-        "languages": ["Common", "Two languages of your choice"],
+        "languages": [
+            "Common",
+            "Two languages of your choice"
+        ],
+        "height_weight": {
+            "height_range": "5'4\" to 7'0\"",
+            "weight_range": "110 to 190 lbs"
+        },
         "traits": [
             {
                 "name": "Shapechanger",
@@ -239,7 +319,12 @@
         ],
         "alabastria_lore": "In Skratonia's diverse cities and Kuriguer's cosmopolitan ports, Changelings serve as spies, diplomats, and information brokers. Their shapeshifting abilities make them invaluable assets to the Huntbound Order's intelligence operations.",
         "playstyle": "Versatile social specialists with infiltration abilities. Perfect for players who want to be masters of disguise and social manipulation.",
-        "recommended_classes": ["Bard", "Rogue", "Warlock", "Sorcerer"],
+        "recommended_classes": [
+            "Bard",
+            "Rogue",
+            "Warlock",
+            "Sorcerer"
+        ],
         "subraces": []
     },
     {
@@ -253,7 +338,14 @@
         },
         "age": "Dhampirs mature at the same rate as humans but can live for centuries.",
         "alignment": "Dhampirs can be of any alignment, though many struggle with their dark heritage.",
-        "languages": ["Common", "One language of your choice"],
+        "languages": [
+            "Common",
+            "One language of your choice"
+        ],
+        "height_weight": {
+            "height_range": "5'4\" to 7'0\"",
+            "weight_range": "110 to 190 lbs"
+        },
         "traits": [
             {
                 "name": "Darkvision",
@@ -274,7 +366,12 @@
         ],
         "alabastria_lore": "In Alabastria's shadowed corners and among the undead-haunted regions, Dhampirs walk a dangerous path between life and death. Some serve the Huntbound Order as specialists against undead threats, while others struggle with their dark heritage in the world's more accepting communities.",
         "playstyle": "Mobile combatants with unique feeding mechanics. Great for players who want to play morally complex characters with undead abilities.",
-        "recommended_classes": ["Rogue", "Ranger", "Fighter", "Warlock"],
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Fighter",
+            "Warlock"
+        ],
         "subraces": []
     },
     {
@@ -288,7 +385,14 @@
         },
         "age": "Dragonborn reach adulthood by age 15 and live to be around 80 years old.",
         "alignment": "Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil.",
-        "languages": ["Common", "Draconic"],
+        "languages": [
+            "Common",
+            "Draconic"
+        ],
+        "height_weight": {
+            "height_range": "5'6\" to 7'2\"",
+            "weight_range": "175 to 247 lbs"
+        },
         "traits": [
             {
                 "name": "Draconic Ancestry",
@@ -305,11 +409,20 @@
         ],
         "alabastria_lore": "In Bulsania's militarized society and across Alabastria's dragon-worshipping regions, Dragonborn serve as elite warriors and leaders. Their draconic heritage and martial prowess make them natural commanders in the Huntbound Order's most dangerous missions.",
         "playstyle": "Martial combatants with elemental abilities. Perfect for players who want to be proud warriors with draconic powers.",
-        "recommended_classes": ["Fighter", "Paladin", "Sorcerer", "Barbarian"],
+        "recommended_classes": [
+            "Fighter",
+            "Paladin",
+            "Sorcerer",
+            "Barbarian"
+        ],
         "subraces": [
             {
                 "name": "Chromatic Dragonborn",
                 "description": "Chromatic dragonborn are descended from evil dragons and often inherit their ancestors' destructive tendencies.",
+                "height_weight": {
+                    "height_range": "5'6\" to 7'2\"",
+                    "weight_range": "175 to 247 lbs"
+                },
                 "traits": [
                     {
                         "name": "Chromatic Ancestry",
@@ -322,6 +435,10 @@
             {
                 "name": "Metallic Dragonborn",
                 "description": "Metallic dragonborn are descended from good dragons and often inherit their ancestors' protective nature.",
+                "height_weight": {
+                    "height_range": "5'6\" to 7'2\"",
+                    "weight_range": "175 to 247 lbs"
+                },
                 "traits": [
                     {
                         "name": "Metallic Ancestry",
@@ -334,6 +451,10 @@
             {
                 "name": "Gem Dragonborn",
                 "description": "Gem dragonborn are descended from psionic dragons and often inherit their ancestors' mental abilities.",
+                "height_weight": {
+                    "height_range": "5'6\" to 7'2\"",
+                    "weight_range": "175 to 247 lbs"
+                },
                 "traits": [
                     {
                         "name": "Gem Ancestry",
@@ -355,7 +476,14 @@
         },
         "age": "Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
         "alignment": "Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.",
-        "languages": ["Common", "Dwarvish"],
+        "languages": [
+            "Common",
+            "Dwarvish"
+        ],
+        "height_weight": {
+            "height_range": "3'8\" to 4'0\"",
+            "weight_range": "115 to 163 lbs"
+        },
         "traits": [
             {
                 "name": "Darkvision",
@@ -372,13 +500,22 @@
         ],
         "alabastria_lore": "In Maltman's mountain strongholds and Alatman's volcanic forges, Dwarves serve as master craftsmen and miners. Their expertise in metalwork and stone construction makes them invaluable allies in the Huntbound Order's efforts to fortify settlements against monstrous threats.",
         "playstyle": "Durable craftsmen and warriors with resistance to common threats. Perfect for players who want to be tough, practical characters with crafting abilities.",
-        "recommended_classes": ["Fighter", "Cleric", "Paladin", "Artificer"],
+        "recommended_classes": [
+            "Fighter",
+            "Cleric",
+            "Paladin",
+            "Artificer"
+        ],
         "subraces": [
             {
                 "name": "Hill Dwarf",
                 "description": "Hill dwarves are more social and less reclusive than mountain dwarves, often found in human settlements.",
                 "ability_score_increase": {
                     "Wisdom": 1
+                },
+                "height_weight": {
+                    "height_range": "3'8\" to 4'0\"",
+                    "weight_range": "115 to 163 lbs"
                 },
                 "traits": [
                     {
@@ -395,6 +532,10 @@
                 "ability_score_increase": {
                     "Strength": 2
                 },
+                "height_weight": {
+                    "height_range": "4'0\" to 4'8\"",
+                    "weight_range": "130 to 178 lbs"
+                },
                 "traits": [
                     {
                         "name": "Dwarven Armor Training",
@@ -409,6 +550,10 @@
                 "description": "Duergar are dark dwarves who live in the Underdark and have developed psionic abilities.",
                 "ability_score_increase": {
                     "Strength": 1
+                },
+                "height_weight": {
+                    "height_range": "3'8\" to 4'0\"",
+                    "weight_range": "115 to 163 lbs"
                 },
                 "traits": [
                     {
@@ -439,7 +584,14 @@
         },
         "age": "Elves mature at the same rate as humans but can live to be 750 years old.",
         "alignment": "Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own.",
-        "languages": ["Common", "Elvish"],
+        "languages": [
+            "Common",
+            "Elvish"
+        ],
+        "height_weight": {
+            "height_range": "4'6\" to 6'4\"",
+            "weight_range": "90 to 130 lbs"
+        },
         "traits": [
             {
                 "name": "Darkvision",
@@ -460,13 +612,22 @@
         ],
         "alabastria_lore": "In Kuriguer's magical forests and Skratonia's ancient groves, Elves serve as guardians of nature and keepers of ancient wisdom. Their long lives and magical heritage make them natural leaders in the Huntbound Order's efforts to protect Alabastria's natural beauty and magical secrets.",
         "playstyle": "Graceful and perceptive characters with magical resistance. Perfect for players who want to be agile, wise, and resistant to common magical effects.",
-        "recommended_classes": ["Ranger", "Wizard", "Fighter", "Rogue"],
+        "recommended_classes": [
+            "Ranger",
+            "Wizard",
+            "Fighter",
+            "Rogue"
+        ],
         "subraces": [
             {
                 "name": "High Elf",
                 "description": "High elves are the most traditional and magical of the elven subraces, often found in magical academies and ancient libraries.",
                 "ability_score_increase": {
                     "Intelligence": 1
+                },
+                "height_weight": {
+                    "height_range": "4'6\" to 6'4\"",
+                    "weight_range": "90 to 130 lbs"
                 },
                 "traits": [
                     {
@@ -491,6 +652,10 @@
                 "ability_score_increase": {
                     "Wisdom": 1
                 },
+                "height_weight": {
+                    "height_range": "4'6\" to 6'4\"",
+                    "weight_range": "100 to 140 lbs"
+                },
                 "traits": [
                     {
                         "name": "Elf Weapon Training",
@@ -513,6 +678,10 @@
                 "description": "Dark elves, or drow, are elves who live in the Underdark and have adapted to its harsh environment.",
                 "ability_score_increase": {
                     "Charisma": 1
+                },
+                "height_weight": {
+                    "height_range": "4'5\" to 5'7\"",
+                    "weight_range": "75 to 105 lbs"
                 },
                 "traits": [
                     {
@@ -541,6 +710,10 @@
                 "ability_score_increase": {
                     "Constitution": 1
                 },
+                "height_weight": {
+                    "height_range": "4'6\" to 6'4\"",
+                    "weight_range": "90 to 130 lbs"
+                },
                 "traits": [
                     {
                         "name": "Sea Elf Training",
@@ -564,6 +737,10 @@
                 "ability_score_increase": {
                     "Intelligence": 1
                 },
+                "height_weight": {
+                    "height_range": "4'6\" to 6'4\"",
+                    "weight_range": "90 to 130 lbs"
+                },
                 "traits": [
                     {
                         "name": "Fey Step",
@@ -582,6 +759,10 @@
                 "description": "Shadar-kai are elves who live in the Shadowfell and have a deep connection to death and shadow magic.",
                 "ability_score_increase": {
                     "Constitution": 1
+                },
+                "height_weight": {
+                    "height_range": "4'6\" to 6'4\"",
+                    "weight_range": "90 to 130 lbs"
                 },
                 "traits": [
                     {
@@ -613,7 +794,14 @@
         },
         "age": "Fairies mature at the same rate as humans but can live for centuries.",
         "alignment": "Fairies are typically chaotic, as they value personal freedom and creativity.",
-        "languages": ["Common", "Sylvan"],
+        "languages": [
+            "Common",
+            "Sylvan"
+        ],
+        "height_weight": {
+            "height_range": "2'6\" to 3'2\"",
+            "weight_range": "30 to 34 lbs"
+        },
         "traits": [
             {
                 "name": "Fairy Magic",
@@ -630,7 +818,12 @@
         ],
         "alabastria_lore": "In Kuriguer's magical forests and fey-touched areas, Fairies serve as messengers and guardians of the natural world. Their small size and magical abilities make them excellent scouts and spies in the Huntbound Order's operations.",
         "playstyle": "Tiny magical scouts with flight abilities. Perfect for players who want to be small, magical characters with unique movement options.",
-        "recommended_classes": ["Druid", "Bard", "Ranger", "Warlock"],
+        "recommended_classes": [
+            "Druid",
+            "Bard",
+            "Ranger",
+            "Warlock"
+        ],
         "subraces": []
     },
     {
@@ -644,7 +837,15 @@
         },
         "age": "Firbolgs mature at the same rate as humans but can live for centuries.",
         "alignment": "Firbolgs are typically neutral good, valuing nature and protecting the innocent.",
-        "languages": ["Common", "Giant", "Elvish"],
+        "languages": [
+            "Common",
+            "Giant",
+            "Elvish"
+        ],
+        "height_weight": {
+            "height_range": "7'0\" to 8'8\"",
+            "weight_range": "250 to 322 lbs"
+        },
         "traits": [
             {
                 "name": "Firbolg Magic",
@@ -665,7 +866,12 @@
         ],
         "alabastria_lore": "In Kuriguer's deepest forests and Skratonia's ancient groves, Firbolgs serve as guardians of nature and protectors of the innocent. Their gentle strength and natural magic make them powerful allies in the Huntbound Order's efforts to protect Alabastria's wilderness.",
         "playstyle": "Gentle giants with nature magic and stealth abilities. Perfect for players who want to be strong, wise characters with unique magical abilities.",
-        "recommended_classes": ["Druid", "Cleric", "Ranger", "Barbarian"],
+        "recommended_classes": [
+            "Druid",
+            "Cleric",
+            "Ranger",
+            "Barbarian"
+        ],
         "subraces": []
     },
     {
@@ -678,7 +884,14 @@
         },
         "age": "Genasi mature at the same rate as humans but can live for centuries.",
         "alignment": "Genasi can be of any alignment, though they often reflect the nature of their elemental heritage.",
-        "languages": ["Common", "Primordial"],
+        "languages": [
+            "Common",
+            "Primordial"
+        ],
+        "height_weight": {
+            "height_range": "5'4\" to 7'0\"",
+            "weight_range": "110 to 190 lbs"
+        },
         "traits": [
             {
                 "name": "Elemental Resistance",
@@ -691,13 +904,22 @@
         ],
         "alabastria_lore": "In Kuriguer's elemental hotspots and Alatman's volcanic regions, Genasi serve as elemental specialists and magical researchers. Their elemental heritage and magical abilities make them valuable assets in the Huntbound Order's efforts to understand and control Alabastria's magical phenomena.",
         "playstyle": "Elemental magic users with unique resistances. Perfect for players who want to be magical characters with elemental themes.",
-        "recommended_classes": ["Sorcerer", "Wizard", "Druid", "Monk"],
+        "recommended_classes": [
+            "Sorcerer",
+            "Wizard",
+            "Druid",
+            "Monk"
+        ],
         "subraces": [
             {
                 "name": "Air Genasi",
                 "description": "Air genasi are connected to the element of air and wind, often found in high places and open spaces.",
                 "ability_score_increase": {
                     "Dexterity": 1
+                },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
                 },
                 "traits": [
                     {
@@ -726,6 +948,10 @@
                 "ability_score_increase": {
                     "Strength": 1
                 },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
+                },
                 "traits": [
                     {
                         "name": "Earth Resistance",
@@ -749,6 +975,10 @@
                 "ability_score_increase": {
                     "Intelligence": 1
                 },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
+                },
                 "traits": [
                     {
                         "name": "Fire Resistance",
@@ -771,6 +1001,10 @@
                 "description": "Water genasi are connected to the element of water and ice, often found near bodies of water and in cold climates.",
                 "ability_score_increase": {
                     "Wisdom": 1
+                },
+                "height_weight": {
+                    "height_range": "5'4\" to 7'0\"",
+                    "weight_range": "110 to 190 lbs"
                 },
                 "traits": [
                     {

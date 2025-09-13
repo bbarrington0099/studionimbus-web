@@ -7,8 +7,8 @@
 
 /* Filter Buttons */
 .filter-btn {
-    background: linear-gradient(135deg, var(--ocean-blue), var(--forest-green));
-    border: 2px solid var(--mountain-brown);
+    background: var(--ocean-blue);
+    border: 2px solid var(--ocean-blue);
     border-radius: var(--border-radius);
     padding: 2rem 1.5rem;
     color: var(--parchment-light);
@@ -23,19 +23,43 @@
     align-items: center;
     gap: 0.5rem;
     text-shadow: var(--text-shadow-dark);
+    position: relative;
+    overflow: hidden;
 }
 
 .darkMode .filter-btn {
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-md);
 }
 
 .lightMode .filter-btn {
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-light-md);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
 }
 
 .filter-btn:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(135deg, var(--forest-green), var(--ocean-blue));
+    transform: translateY(-2px);
+    background: var(--forest-green);
+    border-color: var(--forest-green);
+    box-shadow: var(--shadow-lg);
+}
+
+.filter-btn:hover::before {
+    left: 100%;
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
 }
 
 .filter-btn .icon {
@@ -63,12 +87,20 @@
     background: transparent;
 }
 
+span.filter-btn-text.lightMode {
+    color: var(--parchment-dark);
+}
+
+span.filter-btn-text.darkMode {
+    color: var(--parchment-light);
+}
+
 /* Back Button */
 .back-btn {
     background: var(--ocean-blue);
-    border: 2px solid var(--mountain-brown);
-    border-radius: var(--border-radius);
-    padding: 0.5rem 1rem;
+    border: 2px solid var(--ocean-blue);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1.5rem;
     color: var(--parchment-light);
     font-family: 'Cinzel', serif;
     font-size: 1rem;
@@ -76,39 +108,63 @@
     cursor: pointer;
     transition: var(--transition);
     text-shadow: var(--text-shadow-dark);
+    position: relative;
+    overflow: hidden;
 }
 
 .darkMode .back-btn {
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-sm);
 }
 
 .lightMode .back-btn {
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-light-sm);
+}
+
+.back-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
 }
 
 .back-btn:hover {
     background: var(--forest-green);
+    border-color: var(--forest-green);
     transform: translateX(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.back-btn:hover::before {
+    left: 100%;
+}
+
+.back-btn:active {
+    transform: translateX(0);
 }
 
 /* History Button */
 .history-btn {
     background: var(--forest-green);
-    border: 2px solid var(--mountain-brown);
+    border: 2px solid var(--forest-green);
     margin-left: 0.5rem;
 }
 
 .history-btn:hover {
     background: var(--gold-accent);
+    border-color: var(--gold-accent);
     transform: translateX(-2px);
 }
 
 /* Navigation Buttons */
 .nav-btn {
     background: var(--ocean-blue);
-    border: 1px solid var(--mountain-brown);
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--ocean-blue);
+    border-radius: var(--border-radius-sm);
+    padding: 0.4rem 0.8rem;
     color: var(--parchment-light);
     font-family: 'Cinzel', serif;
     font-size: 0.8rem;
@@ -118,21 +174,42 @@
     text-shadow: var(--text-shadow-dark);
     margin-left: 0.25rem;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
 }
 
 .nav-btn:hover {
     background: var(--forest-green);
+    border-color: var(--forest-green);
     transform: scale(1.05);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-btn:hover::before {
+    left: 100%;
 }
 
 /* Special styling for subclass navigation buttons */
 .subclass-btn {
     background: var(--gold-accent);
+    border-color: var(--gold-accent);
     font-weight: 700;
 }
 
 .subclass-btn:hover {
     background: var(--volcanic-red);
+    border-color: var(--volcanic-red);
 }
 
 .nav-buttons {
@@ -154,29 +231,50 @@
     border: 2px solid var(--mountain-brown);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .darkMode .selection-card {
-    background: rgba(44, 36, 22, 0.7);
-    box-shadow: var(--shadow-dark);
+    background: var(--glass-dark-bg);
+    border-color: var(--glass-dark-border);
+    box-shadow: var(--shadow-md);
 }
 
 .lightMode .selection-card {
-    background: rgba(244, 241, 232, 0.9);
-    box-shadow: var(--shadow-light);
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--shadow-light-md);
+}
+
+.selection-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--ocean-blue), var(--forest-green));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
 }
 
 .selection-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--ocean-blue);
+    box-shadow: var(--shadow-lg);
+}
+
+.selection-card:hover::before {
+    opacity: 0.1;
 }
 
 .darkMode .selection-card:hover {
-    box-shadow: 0 4px 15px rgba(44, 79, 107, 0.3);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
 .lightMode .selection-card:hover {
-    box-shadow: 0 4px 15px rgba(44, 79, 107, 0.2);
+    box-shadow: var(--shadow-light-lg);
 }
 
 .selection-card h3 {
@@ -238,16 +336,27 @@
 details {
     margin-bottom: 1rem;
     border-radius: var(--border-radius);
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
 }
 
 .darkMode details {
-    background: rgba(44, 36, 22, 0.5);
+    background: var(--glass-dark-bg);
+    border-color: var(--glass-dark-border);
+    box-shadow: var(--shadow-sm);
 }
 
 .lightMode details {
-    background: rgba(244, 241, 232, 0.7);
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--shadow-light-sm);
+}
+
+details:hover {
+    border-color: var(--ocean-blue);
+    box-shadow: var(--shadow-md);
 }
 
 summary {
@@ -255,21 +364,35 @@ summary {
     cursor: pointer;
     font-family: 'Cinzel Decorative', serif;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: var(--transition);
     border-bottom: 1px solid var(--mountain-brown);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .darkMode summary {
-    background: rgba(44, 36, 22, 0.8);
+    background: var(--glass-dark-bg);
     color: var(--desert-tan);
     text-shadow: var(--text-shadow-dark);
 }
 
 .lightMode summary {
-    background: rgba(244, 241, 232, 0.9);
+    background: var(--glass-bg);
     color: var(--mountain-brown);
     text-shadow: var(--text-shadow-light);
+}
+
+summary::before {
+    content: '▶';
+    transition: var(--transition);
+    font-size: 0.8rem;
+    color: var(--ocean-blue);
 }
 
 summary:hover {
@@ -278,10 +401,20 @@ summary:hover {
     text-shadow: var(--text-shadow-dark);
 }
 
+summary:hover::before {
+    color: var(--parchment-light);
+}
+
 details[open] summary {
     background: var(--forest-green);
     color: var(--parchment-light);
     text-shadow: var(--text-shadow-dark);
+    border-bottom-color: var(--forest-green);
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+    color: var(--parchment-light);
 }
 
 .details-content-inner {
@@ -362,6 +495,28 @@ details[open] summary {
     padding-top: 1rem;
     border-top: 1px solid var(--mountain-brown);
     opacity: 0.9;
+}
+
+/* ===== RACE STATS ===== */
+.race-basic-stats,
+.class-basic-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.race-stat {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: rgba(44, 79, 107, 0.1);
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--ocean-blue);
+}
+
+.race-stat strong {
+    color: var(--ocean-blue);
+    font-weight: 600;
 }
 
 /* ===== BADGES AND TAGS ===== */

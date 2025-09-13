@@ -124,21 +124,24 @@ main {
     line-height: 1.8;
     padding: 2rem;
     border-radius: var(--border-radius);
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
+    backdrop-filter: blur(10px);
 }
 
 .darkMode .world-description {
-    background: rgba(44, 36, 22, 0.6);
+    background: var(--glass-dark-bg);
     color: var(--parchment-light);
     text-shadow: var(--text-shadow-dark);
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-md);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .world-description {
-    background: rgba(244, 241, 232, 0.8);
+    background: var(--glass-bg);
     color: var(--ink-dark);
     text-shadow: var(--text-shadow-light);
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-light-md);
+    border-color: var(--glass-border);
 }
 
 /* ===== FILTER SELECTION ===== */
@@ -182,10 +185,9 @@ main {
 
 /* ===== DETAILS CONTENT LAYOUT ===== */
 .details-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: start;
     min-height: 100vh;
     position: relative;
 }
@@ -194,18 +196,21 @@ main {
     border-radius: var(--border-radius);
     padding: 2rem;
     min-height: fit-content;
-    height: 100%;
     border: 1px solid var(--mountain-brown);
+    backdrop-filter: blur(10px);
+    order: 1;
 }
 
 .darkMode .details-info {
-    background: rgba(44, 36, 22, 0.7);
-    box-shadow: var(--shadow-dark);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-md);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .details-info {
-    background: rgba(244, 241, 232, 0.9);
-    box-shadow: var(--shadow-light);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-md);
+    border-color: var(--glass-border);
 }
 
 .details-info h3 {
@@ -250,23 +255,24 @@ main {
     z-index: 50;
     border-radius: var(--border-radius);
     padding: 2rem;
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
     margin-bottom: 1rem;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     overflow-x: hidden;
+    backdrop-filter: blur(15px);
 }
 
 .darkMode .sticky-info {
-    background: rgba(44, 36, 22, 0.95);
-    box-shadow: var(--shadow-dark);
-    backdrop-filter: blur(10px);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .sticky-info {
-    background: rgba(244, 241, 232, 0.95);
-    box-shadow: var(--shadow-light);
-    backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-lg);
+    border-color: var(--glass-border);
 }
 
 .sticky-info h3 {

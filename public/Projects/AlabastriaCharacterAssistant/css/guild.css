@@ -49,19 +49,20 @@
     overflow-y: auto;
     border-radius: var(--border-radius);
     padding: 2rem;
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
+    backdrop-filter: blur(15px);
 }
 
 .darkMode .guild-info {
-    background: rgba(44, 36, 22, 0.95);
-    box-shadow: var(--shadow-dark);
-    backdrop-filter: blur(10px);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .guild-info {
-    background: rgba(244, 241, 232, 0.95);
-    box-shadow: var(--shadow-light);
-    backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-lg);
+    border-color: var(--glass-border);
 }
 
 /* ===== GUILD EMBLEM ===== */
@@ -104,17 +105,20 @@
 .guild-details {
     border-radius: var(--border-radius);
     padding: 2rem;
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
+    backdrop-filter: blur(10px);
 }
 
 .darkMode .guild-details {
-    background: rgba(44, 36, 22, 0.7);
-    box-shadow: var(--shadow-dark);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-md);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .guild-details {
-    background: rgba(244, 241, 232, 0.9);
-    box-shadow: var(--shadow-light);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-md);
+    border-color: var(--glass-border);
 }
 
 .guild-section {
@@ -288,7 +292,7 @@
 
 .staff-card,
 .member-card {
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     transition: var(--transition);
@@ -296,24 +300,28 @@
     display: flex;
     flex-direction: column;
     min-height: 400px;
+    backdrop-filter: blur(10px);
 }
 
 .darkMode .staff-card,
 .darkMode .member-card {
-    background: rgba(44, 36, 22, 0.8);
-    box-shadow: var(--shadow-dark);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-md);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .staff-card,
 .lightMode .member-card {
-    background: rgba(244, 241, 232, 0.9);
-    box-shadow: var(--shadow-light);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-md);
+    border-color: var(--glass-border);
 }
 
 .staff-card:hover,
 .member-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--gold-accent);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ===== STAFF AND MEMBER IMAGES ===== */
