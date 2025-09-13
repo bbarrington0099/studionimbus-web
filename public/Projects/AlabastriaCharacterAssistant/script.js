@@ -6,6 +6,9 @@ const app = {
     currentSubclass: null, // Track subclass for auto-scrolling
     continentData: [],
     relationData: [],
+    classInformationData: [], // Comprehensive class information
+    raceInformationData: [], // Comprehensive race information
+    playstyleGuideData: null, // Player selection guide
     navigationHistory: [], // Track navigation history
     worldHistoryData: [], // World history timeline data
     guildData: null, // Guild information data
@@ -79,7 +82,7 @@ const app = {
         this.loadGuildData();
         await this.loadGuildStaffAndMembers();
         this.setupScrollListener();
-        
+
         this.setupModalListeners();
         this.showSection('welcome-section');
     },
@@ -103,7 +106,7 @@ const app = {
         });
     },
 
-    
+
 
     // Setup modal event listeners
     setupModalListeners() {
@@ -497,13 +500,19 @@ const app = {
     // Load data from JSON files
     async loadData() {
         try {
-            const [continentResponse, relationResponse] = await Promise.all([
+            const [continentResponse, relationResponse, classInfoResponse, raceInfoResponse, playstyleResponse] = await Promise.all([
                 fetch('json/continent_data.json'),
-                fetch('json/relation_data.json')
+                fetch('json/relation_data.json'),
+                fetch('json/class_information.json'),
+                fetch('json/race_information.json'),
+                fetch('json/playstyle_guide.json')
             ]);
 
             this.continentData = await continentResponse.json();
             this.relationData = await relationResponse.json();
+            this.classInformationData = await classInfoResponse.json();
+            this.raceInformationData = await raceInfoResponse.json();
+            this.playstyleGuideData = await playstyleResponse.json();
         } catch (error) {
             console.error('Error loading data:', error);
         }
@@ -766,6 +775,9 @@ const app = {
             case 'class':
                 title.textContent = 'Skills passed down throughout Alabastria';
                 break;
+            case 'playstyle':
+                title.textContent = 'Find Your Perfect Class';
+                break;
         }
         grid.innerHTML = '';
 
@@ -775,6 +787,8 @@ const app = {
             this.renderRaces(grid);
         } else if (this.currentFilter === 'class') {
             this.renderClasses(grid);
+        } else if (this.currentFilter === 'playstyle') {
+            this.renderPlaystyleGuide(grid);
         }
 
         this.showSection('selection-section');
@@ -804,102 +818,107 @@ const app = {
     },
 
     renderRaces(container) {
-        Object.entries(this.raceHierarchy).forEach(([mainRace, subraces]) => {
-            if (Array.isArray(subraces) && subraces.length === 0) {
-                // Simple race with no subraces
-                const card = document.createElement('div');
-                card.className = 'selection-card';
-                card.onclick = () => this.selectItem(mainRace);
-
-                card.innerHTML = `
-                    <h3>${mainRace}</h3>
-                    <p>A versatile race found across the lands of Alabastria</p>
-                `;
-
-                container.appendChild(card);
-            } else if (Array.isArray(subraces)) {
-                // Race with simple subraces
-                const card = document.createElement('div');
-                card.className = 'selection-card race-hierarchy-card';
-
-                card.innerHTML = `
-                    <details>
-                        <summary class="race-main-summary">
-                            <h3>${mainRace}</h3>
-                            <p>A diverse race with ${subraces.length} distinct subraces</p>
-                        </summary>
-                        <div class="subrace-list">
-                            ${subraces.map(subrace => `
-                                <div class="subrace-item" onclick="app.selectItem('${subrace} ${mainRace}')">
-                                    <h4>${subrace} ${mainRace}</h4>
-                                    <p>A specialized variant of the ${mainRace} race</p>
-                                </div>
-                            `).join('')}
-                            <div class="subrace-item" onclick="app.selectItem('${mainRace}')">
-                                <h4>General ${mainRace}</h4>
-                                <p>The base ${mainRace} without specific subrace traits</p>
-                            </div>
-                        </div>
-                    </details>
-                `;
-
-                container.appendChild(card);
-            } else {
-                // Complex hierarchy (like Dragonborn)
-                const card = document.createElement('div');
-                card.className = 'selection-card race-hierarchy-card';
-
-                const totalSubraces = Object.values(subraces).reduce((sum, arr) => sum + arr.length, 0);
-
-                card.innerHTML = `
-                    <details>
-                        <summary class="race-main-summary">
-                            <h3>${mainRace}</h3>
-                            <p>A diverse race with ${Object.keys(subraces).length} categories and ${totalSubraces} variants</p>
-                        </summary>
-                        <div class="subrace-list">
-                            ${Object.entries(subraces).map(([category, variants]) => `
-                                <details class="subrace-category">
-                                    <summary class="subrace-category-summary">
-                                        <h4>${category} ${mainRace}</h4>
-                                        <p>${variants.length} variants</p>
-                                    </summary>
-                                    <div class="subrace-variants">
-                                        ${variants.map(variant => `
-                                            <div class="subrace-item" onclick="app.selectItem('${variant} ${category} ${mainRace}')">
-                                                <h5>${variant} ${category} ${mainRace}</h5>
-                                                <p>A ${variant.toLowerCase()} ${category.toLowerCase()} variant</p>
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                </details>
-                            `).join('')}
-                            <div class="subrace-item" onclick="app.selectItem('${mainRace}')">
-                                <h4>General ${mainRace}</h4>
-                                <p>The base ${mainRace} without specific heritage</p>
-                            </div>
-                        </div>
-                    </details>
-                `;
-
-                container.appendChild(card);
-            }
-        });
-    },
-
-    renderClasses(container) {
-        this.relationData.forEach(classData => {
+        this.raceInformationData.forEach(raceData => {
             const card = document.createElement('div');
-            card.className = 'selection-card';
-            card.onclick = () => this.selectItem(classData.class);
+            card.className = 'selection-card race-card';
+            card.onclick = () => this.selectItem(raceData.race);
 
             card.innerHTML = `
-                <h3>${classData.class}</h3>
-                <p>${classData.suitability_reason}</p>
+                <h3>${raceData.race}</h3>
+                <p class="race-description">${raceData.description}</p>
+                <div class="race-info">
+                    <span class="race-size">Size: ${raceData.size}</span>
+                    <span class="race-speed">Speed: ${raceData.speed}</span>
+                    <span class="race-ability-scores">${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}</span>
+                </div>
+                <p class="race-playstyle">${raceData.playstyle}</p>
+                ${raceData.subraces && raceData.subraces.length > 0 ? `<div class="subrace-count">${raceData.subraces.length} subraces available</div>` : ''}
             `;
 
             container.appendChild(card);
         });
+    },
+
+    renderClasses(container) {
+        this.classInformationData.forEach(classData => {
+            const card = document.createElement('div');
+            card.className = 'selection-card class-card';
+            card.onclick = () => this.selectItem(classData.class);
+
+            card.innerHTML = `
+                <h3>${classData.class}</h3>
+                <p class="class-description">${classData.description}</p>
+                <div class="class-info">
+                    <span class="class-role">${classData.role}</span>
+                    <span class="class-ability">Primary: ${classData.primary_ability}</span>
+                    <span class="class-hit-die">Hit Die: ${classData.hit_die}</span>
+                </div>
+                <p class="class-playstyle">${classData.playstyle}</p>
+            `;
+
+            container.appendChild(card);
+        });
+    },
+
+    renderPlaystyleGuide(container) {
+        if (!this.playstyleGuideData) {
+            container.innerHTML = '<p>Playstyle guide not available.</p>';
+            return;
+        }
+
+        const guide = this.playstyleGuideData;
+
+        // Render playstyle categories
+        guide.playstyle_categories.forEach(category => {
+            const card = document.createElement('div');
+            card.className = 'selection-card playstyle-card';
+            card.onclick = () => this.selectItem(category.name);
+
+            card.innerHTML = `
+                <h3>${category.name}</h3>
+                <p class="playstyle-description">${category.description}</p>
+                <div class="recommended-classes">
+                    <strong>Recommended Classes:</strong>
+                    <div class="class-list">
+                        ${category.recommended_classes.map(rec => `
+                            <span class="class-tag">${rec.class} (${rec.subclass})</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            container.appendChild(card);
+        });
+
+        // Add ability score priorities section
+        const abilityCard = document.createElement('div');
+        abilityCard.className = 'selection-card ability-scores-card';
+        abilityCard.onclick = () => this.selectItem('Ability Scores');
+
+        abilityCard.innerHTML = `
+            <h3>Ability Score Priorities</h3>
+            <p>Understanding which abilities are most important for each class</p>
+            <div class="ability-info">
+                <strong>Click to explore ability score details and class recommendations</strong>
+            </div>
+        `;
+
+        container.appendChild(abilityCard);
+
+        // Add complexity levels section
+        const complexityCard = document.createElement('div');
+        complexityCard.className = 'selection-card complexity-card';
+        complexityCard.onclick = () => this.selectItem('Complexity Levels');
+
+        complexityCard.innerHTML = `
+            <h3>Class Complexity Levels</h3>
+            <p>Find classes that match your experience level and preferred complexity</p>
+            <div class="complexity-info">
+                <strong>Click to explore complexity levels and class recommendations</strong>
+            </div>
+        `;
+
+        container.appendChild(complexityCard);
     },
 
     // Details section
@@ -924,6 +943,8 @@ const app = {
             this.renderRaceDetails(info, relationships);
         } else if (this.currentFilter === 'class') {
             this.renderClassDetails(info, relationships);
+        } else if (this.currentFilter === 'playstyle') {
+            this.renderPlaystyleDetails(info, relationships);
         }
 
         this.showSection('details-section');
@@ -1769,199 +1790,365 @@ const app = {
     },
 
     renderRaceDetails(infoContainer, relationshipsContainer) {
-        // Normalize the race name for data lookup
-        const normalizedRaceName = this.normalizeRaceName(this.currentSelection);
+        const raceData = this.raceInformationData.find(r => r.race === this.currentSelection);
+
+        if (!raceData) {
+            infoContainer.innerHTML = `<p>Race information not found.</p>`;
+            return;
+        }
 
         infoContainer.innerHTML = `
             <div class="sticky-info">
                 <h3>About ${this.currentSelection}</h3>
-                <p>The ${this.currentSelection} race has adapted to various continents across Alabastria, developing unique relationships with different classes and specializations.</p>
+                <p class="race-description">${raceData.description}</p>
+                <div class="race-basics">
+                    <div class="basic-info">
+                        <strong>Size:</strong> ${raceData.size}<br>
+                        <strong>Speed:</strong> ${raceData.speed}<br>
+                        <strong>Ability Score Increase:</strong> ${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}<br>
+                        <strong>Age:</strong> ${raceData.age}<br>
+                        <strong>Alignment:</strong> ${raceData.alignment}
+                    </div>
+                    <div class="languages">
+                        <strong>Languages:</strong> ${raceData.languages.join(', ')}
+                    </div>
+                </div>
+                <p class="alabastria-lore"><strong>In Alabastria:</strong> ${raceData.alabastria_lore}</p>
+                <p class="playstyle-info"><strong>Playstyle:</strong> ${raceData.playstyle}</p>
+                <div class="recommended-classes">
+                    <strong>Recommended Classes:</strong> ${raceData.recommended_classes.join(', ')}
+                </div>
                 <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
             </div>
         `;
 
-        // Find class and continent relationships for this race
-        const classRelations = new Map();
-        const continentRelations = new Map();
-
-        this.relationData.forEach(classData => {
-            classData.subclasses.forEach(subclass => {
-                // Look for exact match first, then try normalized name
-                let raceData = subclass.races.find(r => r.name === this.currentSelection);
-                if (!raceData) {
-                    raceData = subclass.races.find(r => r.name === normalizedRaceName);
-                }
-
-                if (raceData) {
-                    if (!classRelations.has(classData.class)) {
-                        classRelations.set(classData.class, []);
-                    }
-                    classRelations.get(classData.class).push({
-                        subclass: subclass.subclass,
-                        reason: raceData.subclass_reason,
-                        continent: raceData.continent,
-                        continentReason: raceData.continent_reason
-                    });
-
-                    if (!continentRelations.has(raceData.continent)) {
-                        continentRelations.set(raceData.continent, []);
-                    }
-                    continentRelations.get(raceData.continent).push({
-                        class: classData.class,
-                        subclass: subclass.subclass,
-                        reason: raceData.continent_reason
-                    });
-                }
-            });
-        });
-
+        // Render comprehensive race information
         relationshipsContainer.innerHTML = `
-            <h3>${this.currentSelection} Relationships</h3>
+            <h3>${this.currentSelection} Race Information</h3>
+            
             <details>
-                <summary>Suitable Classes (${classRelations.size})</summary>
+                <summary>Racial Traits</summary>
                 <div class="details-content-inner">
-                    ${Array.from(classRelations.entries()).map(([className, subclasses]) => `
-                        <details>
-                            <summary class="relationship-item">
-                                <div class="relationship-header">
-                                    <span class="relationship-name">${className}</span>
-                                    <div class="nav-buttons">
-                                        ${this.createNavButton('class', className, '→')}
-                                        <small>(${subclasses.length} subclass${subclasses.length > 1 ? 'es' : ''})</small>
-                                    </div>
-                                </div>
-                            </summary>
-                            <div class="details-content-inner">
-                                <div class="relationship-reason">
-                                    ${subclasses.map(sc => `
-                                        <div class="relationship-item">
-                                            <div class="relationship-header">
-                                                <span><strong>${sc.subclass}:</strong> ${sc.reason} <em>(in ${sc.continent})</em></span>
-                                                <div class="nav-buttons">
-                                                    ${this.createNavButton('continent', sc.continent, '→')}
-                                                    ${this.createNavButton('class', className, sc.subclass, sc.subclass)}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </details>
+                    ${raceData.traits.map(trait => `
+                        <div class="trait-item">
+                            <h4>${trait.name}</h4>
+                            <p>${trait.description}</p>
+                        </div>
                     `).join('')}
                 </div>
             </details>
-            <details>
-                <summary>Found in Continents (${continentRelations.size})</summary>
-                <div class="details-content-inner">
-                    ${Array.from(continentRelations.entries()).map(([continent, classes]) => `
-                        <details>
-                            <summary class="relationship-item">
-                                <div class="relationship-header">
-                                    <span class="relationship-name">${continent}</span>
-                                    <div class="nav-buttons">
-                                        ${this.createNavButton('continent', continent, '→')}
-                                        <small>(${classes.length} specialization${classes.length > 1 ? 's' : ''})</small>
-                                    </div>
-                                </div>
-                            </summary>
-                            <div class="details-content-inner">
-                                <div class="relationship-reason">
-                                    <strong>Why they're here:</strong> ${classes[0].reason}<br><br>
-                                    <strong>Specializations:</strong><br>
-                                    ${classes.map(c => `
-                                        <div class="relationship-item">
-                                            <div class="relationship-header">
-                                                <span>${c.class} (${c.subclass})</span>
-                                                ${this.createNavButton('class', c.class, c.subclass, c.subclass)}
-                                            </div>
+
+            ${raceData.subraces && raceData.subraces.length > 0 ? `
+                <details>
+                    <summary>Subraces (${raceData.subraces.length})</summary>
+                    <div class="details-content-inner">
+                        ${raceData.subraces.map(subrace => {
+            const subraceId = `subrace-${subrace.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`;
+            return `
+                                <details id="${subraceId}">
+                                    <summary class="subrace-section">
+                                        <h4>${subrace.name}</h4>
+                                        <p class="subrace-description">${subrace.description}</p>
+                                    </summary>
+                                    <div class="details-content-inner">
+                                        <div class="subrace-info">
+                                            ${subrace.ability_score_increase ? `
+                                                <p class="subrace-ability-scores"><strong>Ability Score Increase:</strong> ${Object.entries(subrace.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}</p>
+                                            ` : ''}
+                                            <p class="subrace-context"><strong>In Alabastria:</strong> ${subrace.alabastria_context}</p>
+                                            <p class="subrace-playstyle"><strong>Playstyle:</strong> ${subrace.playstyle}</p>
                                         </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </details>
-                    `).join('')}
-                </div>
-            </details>
+                                        <details>
+                                            <summary>Traits</summary>
+                                            <div class="details-content-inner">
+                                                ${subrace.traits.map(trait => `
+                                                    <div class="trait-item">
+                                                        <h5>${trait.name}</h5>
+                                                        <p>${trait.description}</p>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            `;
+        }).join('')}
+                    </div>
+                </details>
+            ` : ''}
         `;
     },
 
     renderClassDetails(infoContainer, relationshipsContainer) {
-        const classData = this.relationData.find(c => c.class === this.currentSelection);
+        const classData = this.classInformationData.find(c => c.class === this.currentSelection);
+        const relationData = this.relationData.find(c => c.class === this.currentSelection);
+
+        if (!classData) {
+            infoContainer.innerHTML = `<p>Class information not found.</p>`;
+            return;
+        }
 
         infoContainer.innerHTML = `
             <div class="sticky-info">
                 <h3>About ${this.currentSelection}</h3>
-                <p>${classData.suitability_reason}</p>
+                <p class="class-description">${classData.description}</p>
+                <div class="class-basics">
+                    <div class="basic-info">
+                        <strong>Role:</strong> ${classData.role}<br>
+                        <strong>Primary Ability:</strong> ${classData.primary_ability}<br>
+                        <strong>Hit Die:</strong> ${classData.hit_die}<br>
+                        <strong>Saving Throws:</strong> ${classData.saving_throws.join(', ')}
+                    </div>
+                    <div class="proficiencies">
+                        <strong>Armor:</strong> ${classData.armor_proficiency}<br>
+                        <strong>Weapons:</strong> ${classData.weapon_proficiency}<br>
+                        <strong>Tools:</strong> ${classData.tool_proficiency}
+                    </div>
+                </div>
+                <p class="alabastria-lore"><strong>In Alabastria:</strong> ${classData.alabastria_lore}</p>
+                <p class="playstyle-info"><strong>Playstyle:</strong> ${classData.playstyle}</p>
                 <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
             </div>
         `;
 
-        // Organize subclasses and their relationships
+        // Render comprehensive class information
         relationshipsContainer.innerHTML = `
-            <h3>${this.currentSelection} Subclasses & Relationships</h3>
+            <h3>${this.currentSelection} Class Information</h3>
+            
+            <details>
+                <summary>Key Features</summary>
+                <div class="details-content-inner">
+                    ${classData.key_features.map(feature => `
+                        <div class="feature-item">
+                            <h4>${feature.name} (Level ${feature.level})</h4>
+                            <p>${feature.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </details>
+
             <details>
                 <summary>Subclasses (${classData.subclasses.length})</summary>
                 <div class="details-content-inner">
                     ${classData.subclasses.map(subclass => {
-            const subclassId = `subclass-${subclass.subclass.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`;
+            const subclassId = `subclass-${subclass.name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`;
             return `
-                        <details id="${subclassId}">
-                            <summary class="subclass-section">
-                                <h4>${subclass.subclass}</h4>
-                            </summary>
-                            <div class="details-content-inner">
-                                <details>
-                                    <summary>Suitable Races (${subclass.races.length})</summary>
-                                    <div class="details-content-inner">
-                                        ${subclass.races.map(race => `
-                                            <details>
-                                                <summary class="relationship-item">
-                                                    <div class="relationship-header">
-                                                        <span class="relationship-name">${race.name}</span>
-                                                        <div class="nav-buttons">
-                                                            ${this.createNavButton('race', race.name, '→')}
-                                                            ${this.createNavButton('continent', race.continent, race.continent.split(' ')[0])}
-                                                            <small>(${race.continent})</small>
-                                                        </div>
-                                                    </div>
-                                                </summary>
-                                                <div class="details-content-inner">
-                                                    <div class="relationship-reason">
-                                                        <strong>Why suitable:</strong> ${race.subclass_reason}<br>
-                                                        <strong>Continental context:</strong> ${race.continent_reason}
-                                                    </div>
-                                                </div>
-                                            </details>
-                                        `).join('')}
+                            <details id="${subclassId}">
+                                <summary class="subclass-section">
+                                    <h4>${subclass.name}</h4>
+                                    <p class="subclass-description">${subclass.description}</p>
+                                </summary>
+                                <div class="details-content-inner">
+                                    <div class="subclass-info">
+                                        <p class="subclass-context"><strong>In Alabastria:</strong> ${subclass.alabastria_context}</p>
+                                        <p class="subclass-playstyle"><strong>Playstyle:</strong> ${subclass.playstyle}</p>
                                     </div>
-                                </details>
-                                ${subclass.prominent_continents ? `
                                     <details>
-                                        <summary>Prominent Continents (${subclass.prominent_continents.length})</summary>
+                                        <summary>Key Features</summary>
                                         <div class="details-content-inner">
-                                            ${subclass.prominent_continents.map(continent => `
-                                                <details>
-                                                    <summary class="relationship-item emphasized">
-                                                        <div class="relationship-header">
-                                                            <span class="relationship-name">${continent.continent}</span>
-                                                            ${this.createNavButton('continent', continent.continent, '→')}
-                                                        </div>
-                                                    </summary>
-                                                    <div class="details-content-inner">
-                                                        <div class="relationship-reason">
-                                                            ${continent.reason}
-                                                        </div>
-                                                    </div>
-                                                </details>
+                                            ${subclass.key_features.map(feature => `
+                                                <div class="feature-item">
+                                                    <h5>${feature.name} (Level ${feature.level})</h5>
+                                                    <p>${feature.description}</p>
+                                                </div>
                                             `).join('')}
                                         </div>
                                     </details>
-                                ` : ''}
-                            </div>
-                        </details>
-                    `}).join('')}
+                                </div>
+                            </details>
+                        `;
+        }).join('')}
                 </div>
             </details>
+
+            ${relationData ? `
+                <details>
+                    <summary>Race & Continent Relationships</summary>
+                    <div class="details-content-inner">
+                        <details>
+                            <summary>Subclasses & Suitable Races</summary>
+                            <div class="details-content-inner">
+                                ${relationData.subclasses.map(subclass => {
+            const subclassId = `relation-subclass-${subclass.subclass.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`;
+            return `
+                                        <details id="${subclassId}">
+                                            <summary class="subclass-section">
+                                                <h4>${subclass.subclass}</h4>
+                                            </summary>
+                                            <div class="details-content-inner">
+                                                <details>
+                                                    <summary>Suitable Races (${subclass.races.length})</summary>
+                                                    <div class="details-content-inner">
+                                                        ${subclass.races.map(race => `
+                                                            <details>
+                                                                <summary class="relationship-item">
+                                                                    <div class="relationship-header">
+                                                                        <span class="relationship-name">${race.name}</span>
+                                                                        <div class="nav-buttons">
+                                                                            ${this.createNavButton('race', race.name, '→')}
+                                                                            ${this.createNavButton('continent', race.continent, race.continent.split(' ')[0])}
+                                                                            <small>(${race.continent})</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </summary>
+                                                                <div class="details-content-inner">
+                                                                    <div class="relationship-reason">
+                                                                        <strong>Why suitable:</strong> ${race.subclass_reason}<br>
+                                                                        <strong>Continental context:</strong> ${race.continent_reason}
+                                                                    </div>
+                                                                </div>
+                                                            </details>
+                                                        `).join('')}
+                                                    </div>
+                                                </details>
+                                                ${subclass.prominent_continents ? `
+                                                    <details>
+                                                        <summary>Prominent Continents (${subclass.prominent_continents.length})</summary>
+                                                        <div class="details-content-inner">
+                                                            ${subclass.prominent_continents.map(continent => `
+                                                                <details>
+                                                                    <summary class="relationship-item emphasized">
+                                                                        <div class="relationship-header">
+                                                                            <span class="relationship-name">${continent.continent}</span>
+                                                                            ${this.createNavButton('continent', continent.continent, '→')}
+                                                                        </div>
+                                                                    </summary>
+                                                                    <div class="details-content-inner">
+                                                                        <div class="relationship-reason">
+                                                                            ${continent.reason}
+                                                                        </div>
+                                                                    </div>
+                                                                </details>
+                                                            `).join('')}
+                                                        </div>
+                                                    </details>
+                                                ` : ''}
+                                            </div>
+                                        </details>
+                                    `;
+        }).join('')}
+                            </div>
+                        </details>
+                    </div>
+                </details>
+            ` : ''}
+        `;
+    },
+
+    renderPlaystyleDetails(infoContainer, relationshipsContainer) {
+        if (!this.playstyleGuideData) {
+            infoContainer.innerHTML = `<p>Playstyle guide not available.</p>`;
+            return;
+        }
+
+        const guide = this.playstyleGuideData;
+
+        if (this.currentSelection === 'Ability Scores') {
+            this.renderAbilityScoreDetails(infoContainer, relationshipsContainer, guide);
+        } else if (this.currentSelection === 'Complexity Levels') {
+            this.renderComplexityDetails(infoContainer, relationshipsContainer, guide);
+        } else {
+            // Render specific playstyle category
+            const category = guide.playstyle_categories.find(cat => cat.name === this.currentSelection);
+            if (!category) {
+                infoContainer.innerHTML = `<p>Playstyle category not found.</p>`;
+                return;
+            }
+
+            infoContainer.innerHTML = `
+                <div class="sticky-info">
+                    <h3>${category.name}</h3>
+                    <p class="playstyle-description">${category.description}</p>
+                    <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
+                </div>
+            `;
+
+            relationshipsContainer.innerHTML = `
+                <h3>Recommended Classes for ${category.name}</h3>
+                <div class="recommended-classes-list">
+                    ${category.recommended_classes.map(rec => `
+                        <div class="recommended-class-item">
+                            <h4>${rec.class} - ${rec.subclass}</h4>
+                            <p class="recommendation-reason">${rec.reason}</p>
+                            <div class="class-actions">
+                                ${this.createNavButton('class', rec.class, 'View Class Details')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+    },
+
+    renderAbilityScoreDetails(infoContainer, relationshipsContainer, guide) {
+        infoContainer.innerHTML = `
+            <div class="sticky-info">
+                <h3>Ability Score Priorities</h3>
+                <p>Understanding which abilities are most important for each class and what they do</p>
+                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
+            </div>
+        `;
+
+        relationshipsContainer.innerHTML = `
+            <h3>Ability Score Guide</h3>
+            <div class="ability-scores-grid">
+                ${Object.entries(guide.ability_score_priorities).map(([ability, data]) => `
+                    <div class="ability-score-card">
+                        <h4>${ability}</h4>
+                        <p class="ability-description">${data.description}</p>
+                        <div class="ability-details">
+                            <div class="best-classes">
+                                <strong>Best Classes:</strong>
+                                <div class="class-tags">
+                                    ${data.best_classes.map(cls => `<span class="class-tag">${cls}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="important-for">
+                                <strong>Important For:</strong>
+                                <ul>
+                                    ${data.important_for.map(item => `<li>${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    },
+
+    renderComplexityDetails(infoContainer, relationshipsContainer, guide) {
+        infoContainer.innerHTML = `
+            <div class="sticky-info">
+                <h3>Class Complexity Levels</h3>
+                <p>Find classes that match your experience level and preferred complexity</p>
+                <button id="jump-to-top" class="jump-btn" onclick="app.jumpToTop()" style="display: none;">↑ Top</button>
+            </div>
+        `;
+
+        relationshipsContainer.innerHTML = `
+            <h3>Complexity Guide</h3>
+            <div class="complexity-levels">
+                ${Object.entries(guide.complexity_levels).map(([level, data]) => `
+                    <div class="complexity-level-card">
+                        <h4>${level}</h4>
+                        <p class="complexity-description">${data.description}</p>
+                        <div class="complexity-classes">
+                            <strong>Classes:</strong>
+                            <div class="class-list">
+                                ${data.classes.map(cls => `
+                                    <div class="class-item">
+                                        <span class="class-name">${cls.class}</span>
+                                        ${cls.subclass ? `<span class="subclass-name">(${cls.subclass})</span>` : ''}
+                                        <div class="class-actions">
+                                            ${this.createNavButton('class', cls.class, 'View Class')}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
         `;
     }
 };

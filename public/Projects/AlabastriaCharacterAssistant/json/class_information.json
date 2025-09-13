@@ -1,0 +1,1672 @@
+[
+    {
+        "class": "Artificer",
+        "description": "Innovative crafters who blend magic and technology to create magical items and devices. Masters of invention who infuse mundane objects with arcane power.",
+        "role": "Support/Utility",
+        "primary_ability": "Intelligence",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Constitution",
+            "Intelligence"
+        ],
+        "armor_proficiency": "Light armor, medium armor, shields",
+        "weapon_proficiency": "Simple weapons, firearms (if available), light crossbows, heavy crossbows",
+        "tool_proficiency": "Thieves' tools, tinker's tools, one type of artisan's tools",
+        "key_features": [
+            {
+                "name": "Magical Tinkering",
+                "level": 1,
+                "description": "Create tiny magical objects that produce minor effects"
+            },
+            {
+                "name": "Infuse Item",
+                "level": 2,
+                "description": "Imbue mundane items with magical properties"
+            },
+            {
+                "name": "Spellcasting",
+                "level": 1,
+                "description": "Half-caster using tools as spellcasting focus"
+            },
+            {
+                "name": "Tool Expertise",
+                "level": 6,
+                "description": "Double proficiency bonus with tool checks"
+            }
+        ],
+        "alabastria_lore": "In the volcanic forges of Alatman and the mountain workshops of Maltman, Artificers represent the pinnacle of magical engineering. These innovative creators bridge the gap between ancient magic and emerging technology, crafting wonders that aid adventurers and defend settlements across Kamalatman.",
+        "playstyle": "Versatile support character who excels at problem-solving through magical items and utility spells. Best for players who enjoy creative solutions and helping the party with magical gadgets.",
+        "subclasses": [
+            {
+                "name": "Alchemist",
+                "description": "Masters of magical chemistry who brew potions and elixirs to heal allies and harm enemies.",
+                "key_features": [
+                    {
+                        "name": "Experimental Elixir",
+                        "level": 3,
+                        "description": "Create random beneficial potions each day"
+                    },
+                    {
+                        "name": "Healing Word",
+                        "level": 3,
+                        "description": "Always prepared spell for emergency healing"
+                    },
+                    {
+                        "name": "Alchemical Savant",
+                        "level": 5,
+                        "description": "Add INT modifier to spell damage and healing"
+                    }
+                ],
+                "alabastria_context": "In Kuriguer's coastal towns, Gnome Alchemists work alongside Deep Gnomes from Maltman's underground laboratories, creating miraculous healing draughts and explosive compounds. Their workshops fill the air with colorful smoke and the promise of magical discovery.",
+                "playstyle": "Support-focused healer and utility caster. Perfect for players who want to be the party's medic while contributing unique magical solutions."
+            },
+            {
+                "name": "Armorer",
+                "description": "Creators of magical armor who turn their own body into a walking fortress or stealth suit.",
+                "key_features": [
+                    {
+                        "name": "Arcane Armor",
+                        "level": 3,
+                        "description": "Transform armor into magical suit with special properties"
+                    },
+                    {
+                        "name": "Armor Model",
+                        "level": 3,
+                        "description": "Choose between Guardian (tank) or Infiltrator (stealth) modes"
+                    },
+                    {
+                        "name": "Extra Attack",
+                        "level": 5,
+                        "description": "Make two attacks when you take the Attack action"
+                    }
+                ],
+                "alabastria_context": "Warforged Armorers in Alatman's volcanic forges create living armor that adapts to any situation. Dwarven Armorers in Maltman craft traditional but magically enhanced suits, while Hobgoblin Armorers in Bulsania focus on military applications.",
+                "playstyle": "Tanky front-line fighter or stealthy infiltrator. Great for players who want to be heavily armored but still have magical utility."
+            },
+            {
+                "name": "Artillerist",
+                "description": "Experts in explosive magic and ranged combat who create magical turrets and enhance projectiles.",
+                "key_features": [
+                    {
+                        "name": "Eldritch Cannons",
+                        "level": 3,
+                        "description": "Create magical turrets for offense, defense, or support"
+                    },
+                    {
+                        "name": "Arcane Firearm",
+                        "level": 5,
+                        "description": "Enhanced damage with artificer spells using wands or rods"
+                    },
+                    {
+                        "name": "Explosive Cannon",
+                        "level": 9,
+                        "description": "Sacrifice cannons for explosive damage"
+                    }
+                ],
+                "alabastria_context": "Rock Gnome Artillerists in Kuriguer's innovative coastal cities develop siege weapons that blend magic with mechanical precision. In Bulsania's icy fortresses, Hobgoblin Artillerists create devastating weapons to defend against the harsh frontier.",
+                "playstyle": "Ranged damage dealer with battlefield control. Ideal for players who enjoy tactical positioning and dealing consistent damage from afar."
+            },
+            {
+                "name": "Battle Smith",
+                "description": "Warrior-inventors who combine martial prowess with magical constructs, accompanied by a steel defender.",
+                "key_features": [
+                    {
+                        "name": "Steel Defender",
+                        "level": 3,
+                        "description": "Mechanical companion that fights alongside you"
+                    },
+                    {
+                        "name": "Battle Ready",
+                        "level": 3,
+                        "description": "Use INT for weapon attacks and gain martial weapon proficiency"
+                    },
+                    {
+                        "name": "Extra Attack",
+                        "level": 5,
+                        "description": "Make two attacks when you take the Attack action"
+                    }
+                ],
+                "alabastria_context": "Warforged Battle Smiths in Alatman understand construct creation intimately, crafting loyal steel defenders. Gnome Battle Smiths in Kuriguer combine inventive genius with combat necessity, while Human Battle Smiths in Skratonia adapt these techniques for city defense.",
+                "playstyle": "Versatile warrior with a loyal companion. Perfect for players who want to fight in melee while having a pet and magical utility."
+            }
+        ]
+    },
+    {
+        "class": "Barbarian",
+        "description": "Fierce warriors who harness primal fury and instinct to become devastating forces in battle. They draw strength from rage and their connection to the wild.",
+        "role": "Tank/Damage Dealer",
+        "primary_ability": "Strength",
+        "hit_die": "d12",
+        "saving_throws": [
+            "Strength",
+            "Constitution"
+        ],
+        "armor_proficiency": "Light armor, medium armor, shields",
+        "weapon_proficiency": "Simple weapons, martial weapons",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Rage",
+                "level": 1,
+                "description": "Enter a battle fury for damage bonus and damage resistance"
+            },
+            {
+                "name": "Unarmored Defense",
+                "level": 1,
+                "description": "AC equals 10 + Dex modifier + Con modifier while unarmored"
+            },
+            {
+                "name": "Reckless Attack",
+                "level": 2,
+                "description": "Gain advantage on attacks but enemies have advantage against you"
+            },
+            {
+                "name": "Extra Attack",
+                "level": 5,
+                "description": "Make two attacks when you take the Attack action"
+            }
+        ],
+        "alabastria_lore": "From the frozen peaks of Bulsania to the swampy strongholds of Katman, Barbarians embody the untamed spirit of Alabastria's wildest places. These warriors reject civilization's constraints, drawing power from ancestral spirits, primal totems, and the raw fury of the natural world.",
+        "playstyle": "High-damage, high-durability front-line fighter. Best for players who want to charge into battle and deal massive damage while shrugging off enemy attacks.",
+        "subclasses": [
+            {
+                "name": "Path of the Ancestral Guardian",
+                "description": "Barbarians who call upon the spirits of their ancestors to protect allies and hinder enemies.",
+                "key_features": [
+                    {
+                        "name": "Ancestral Protectors",
+                        "level": 3,
+                        "description": "Ancestors reduce damage to allies and hinder your targets"
+                    },
+                    {
+                        "name": "Spirit Shield",
+                        "level": 6,
+                        "description": "Use reaction to reduce damage to nearby allies"
+                    },
+                    {
+                        "name": "Consult the Spirits",
+                        "level": 10,
+                        "description": "Cast augury or clairvoyance as rituals"
+                    }
+                ],
+                "alabastria_context": "In Bulsania's mountain tribes, Goliath Ancestral Guardians commune with the spirits of their giant-kin ancestors. Orc tribes in Katman's swamps honor their fallen warriors, while Lizardfolk draw upon ancient reptilian memories.",
+                "playstyle": "Protective tank who shields allies while dealing damage. Great for players who want to be the party's guardian and protector."
+            },
+            {
+                "name": "Path of the Beast",
+                "description": "Barbarians whose rage manifests as bestial transformations, growing claws, fangs, or other natural weapons.",
+                "key_features": [
+                    {
+                        "name": "Form of the Beast",
+                        "level": 3,
+                        "description": "Grow natural weapons when you rage: bite, claws, or tail"
+                    },
+                    {
+                        "name": "Bestial Soul",
+                        "level": 6,
+                        "description": "Gain climbing, swimming speed or enhanced jumping"
+                    },
+                    {
+                        "name": "Infectious Fury",
+                        "level": 10,
+                        "description": "Spread your bestial rage to allies"
+                    }
+                ],
+                "alabastria_context": "Shifters in Kuriguer's wild woods naturally gravitate toward this path, their lycanthropic heritage manifesting in battle. Tabaxi on Skratonia's plains embrace their feline nature, while Beasthide Shifters become living weapons.",
+                "playstyle": "Versatile melee combatant with animal-like abilities. Perfect for players who want to embody primal savagery and adaptability."
+            },
+            {
+                "name": "Path of the Berserker",
+                "description": "Warriors who abandon all restraint in battle, becoming unstoppable forces of destruction.",
+                "key_features": [
+                    {
+                        "name": "Frenzy",
+                        "level": 3,
+                        "description": "Make additional attacks during rage but gain exhaustion"
+                    },
+                    {
+                        "name": "Mindless Rage",
+                        "level": 6,
+                        "description": "Immunity to charm and fear while raging"
+                    },
+                    {
+                        "name": "Intimidating Presence",
+                        "level": 10,
+                        "description": "Frighten enemies with your ferocity"
+                    }
+                ],
+                "alabastria_context": "Orc warriors in Katman's tribal strongholds embrace the berserker's path, their natural fury enhanced by swamp warfare. Goliaths in Bulsania's harsh mountains use relentless rage to survive, while Dragonborn channel draconic wrath.",
+                "playstyle": "Maximum damage output with high risk/reward mechanics. Ideal for players who want to be an unstoppable force of destruction."
+            },
+            {
+                "name": "Path of the Storm Herald",
+                "description": "Barbarians who channel elemental forces during their rage, creating auras of destruction around them.",
+                "key_features": [
+                    {
+                        "name": "Storm Aura",
+                        "level": 3,
+                        "description": "Choose desert (fire), sea (lightning), or tundra (cold) aura effects"
+                    },
+                    {
+                        "name": "Storm Soul",
+                        "level": 6,
+                        "description": "Gain resistance and additional benefits based on your aura"
+                    },
+                    {
+                        "name": "Shielding Storm",
+                        "level": 10,
+                        "description": "Grant resistance to allies within your aura"
+                    }
+                ],
+                "alabastria_context": "Aarakocra Storm Heralds in Bulsania's peaks channel mountain storms and arctic winds. Air Genasi in Kuriguer embrace coastal tempests, while Goliaths manifest the fury of blizzards and avalanches.",
+                "playstyle": "Area-of-effect damage dealer who affects the battlefield around them. Great for players who want elemental powers and battlefield control."
+            },
+            {
+                "name": "Path of the Totem Warrior",
+                "description": "Barbarians who form spiritual bonds with animal totems, gaining their traits and wisdom.",
+                "key_features": [
+                    {
+                        "name": "Totem Spirit",
+                        "level": 3,
+                        "description": "Choose bear (resistance), eagle (perception), or wolf (pack tactics) totems"
+                    },
+                    {
+                        "name": "Aspect of the Beast",
+                        "level": 6,
+                        "description": "Gain additional totem animal benefits outside of rage"
+                    },
+                    {
+                        "name": "Totemic Attunement",
+                        "level": 14,
+                        "description": "Powerful totem abilities that affect combat and exploration"
+                    }
+                ],
+                "alabastria_context": "Goliath tribes in Bulsania bond with mountain spirits and giant eagles. Shifters in Kuriguer connect with forest predators, while Centaurs on Skratonia's plains honor horse spirits and plains animals.",
+                "playstyle": "Versatile barbarian with nature-themed abilities. Perfect for players who want spiritual connection to animals and varied utility."
+            },
+            {
+                "name": "Path of Wild Magic",
+                "description": "Barbarians touched by chaotic magic whose rage triggers unpredictable magical effects.",
+                "key_features": [
+                    {
+                        "name": "Magic Awareness",
+                        "level": 3,
+                        "description": "Sense magic around you as a bonus action"
+                    },
+                    {
+                        "name": "Wild Surge",
+                        "level": 3,
+                        "description": "Trigger random magical effects when you rage"
+                    },
+                    {
+                        "name": "Bolstering Magic",
+                        "level": 6,
+                        "description": "Grant spell slots or enhance ability checks for allies"
+                    }
+                ],
+                "alabastria_context": "Genasi in Kuriguer's magical forests experience wild surges from elemental chaos. Tieflings across Skratonia manifest infernal unpredictability, while Halflings discover their luck interacts strangely with magical forces.",
+                "playstyle": "Unpredictable barbarian with magical effects. Ideal for players who enjoy chaos and want magic mixed with martial combat."
+            },
+            {
+                "name": "Path of the Zealot",
+                "description": "Divine warriors whose rage is fueled by religious fervor and celestial or infernal power.",
+                "key_features": [
+                    {
+                        "name": "Divine Fury",
+                        "level": 3,
+                        "description": "Deal extra radiant or necrotic damage while raging"
+                    },
+                    {
+                        "name": "Warrior of the Gods",
+                        "level": 3,
+                        "description": "Spells that restore you to life require no material components"
+                    },
+                    {
+                        "name": "Zealous Presence",
+                        "level": 10,
+                        "description": "Grant allies advantage on attacks and saving throws"
+                    }
+                ],
+                "alabastria_context": "Aarakocra Zealots in Bulsania serve sky gods with divine fury. Aasimar across Skratonia channel celestial rage for righteous causes, while Dragonborn embrace draconic religious fervor in their militarized society.",
+                "playstyle": "Religious warrior with divine damage and support abilities. Perfect for players who want to combine faith with fury."
+            }
+        ]
+    },
+    {
+        "class": "Bard",
+        "description": "Versatile performers who weave magic through music, stories, and performance. Masters of inspiration who support allies and control the battlefield through charm and wit.",
+        "role": "Support/Utility",
+        "primary_ability": "Charisma",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Dexterity",
+            "Charisma"
+        ],
+        "armor_proficiency": "Light armor",
+        "weapon_proficiency": "Simple weapons, hand crossbows, longswords, rapiers, shortswords",
+        "tool_proficiency": "Three musical instruments of your choice",
+        "key_features": [
+            {
+                "name": "Spellcasting",
+                "level": 1,
+                "description": "Full caster with access to spells from any class"
+            },
+            {
+                "name": "Bardic Inspiration",
+                "level": 1,
+                "description": "Grant allies bonus dice to add to their rolls"
+            },
+            {
+                "name": "Jack of All Trades",
+                "level": 2,
+                "description": "Add half proficiency bonus to non-proficient ability checks"
+            },
+            {
+                "name": "Expertise",
+                "level": 3,
+                "description": "Double proficiency bonus for chosen skills"
+            }
+        ],
+        "alabastria_lore": "In Skratonia's diverse city-states and Kuriguer's magical courts, Bards serve as diplomats, entertainers, and keepers of lore. Their songs preserve the history of The Bringing, weave magic through performance, and inspire heroes across all continents of Alabastria.",
+        "playstyle": "Ultimate support character with unmatched versatility. Best for players who enjoy helping others succeed and having options for every situation.",
+        "subclasses": [
+            {
+                "name": "College of Creation",
+                "description": "Bards who use the Song of Creation to bring objects and creatures into existence through performance.",
+                "key_features": [
+                    {
+                        "name": "Note of Potential",
+                        "level": 3,
+                        "description": "Bardic Inspiration dice can trigger additional effects"
+                    },
+                    {
+                        "name": "Performance of Creation",
+                        "level": 3,
+                        "description": "Create nonmagical items through performance"
+                    },
+                    {
+                        "name": "Animating Performance",
+                        "level": 6,
+                        "description": "Bring objects to life as dancing companions"
+                    }
+                ],
+                "alabastria_context": "Satyr Bards in Kuriguer's fey glades channel creation magic through revelry and song. Half-Elf Bards in Skratonia use their versatile nature to bridge different artistic traditions, while Fairy Bards create wonder through miniature performances.",
+                "playstyle": "Creative support with unique utility options. Great for players who want to solve problems through magical creativity."
+            },
+            {
+                "name": "College of Eloquence",
+                "description": "Masters of speech and persuasion who can sway minds and guarantee their words have impact.",
+                "key_features": [
+                    {
+                        "name": "Silver Tongue",
+                        "level": 3,
+                        "description": "Treat low rolls on Deception and Persuasion as 10s"
+                    },
+                    {
+                        "name": "Unsettling Words",
+                        "level": 3,
+                        "description": "Use Bardic Inspiration to reduce enemy saving throws"
+                    },
+                    {
+                        "name": "Universal Speech",
+                        "level": 6,
+                        "description": "Make any creature understand your speech"
+                    }
+                ],
+                "alabastria_context": "Half-Elf diplomats in Skratonia's council chambers master eloquence to bridge cultural divides. Aasimar speakers inspire through celestial wisdom, while Human politicians navigate complex city-state relationships.",
+                "playstyle": "Social manipulation and guaranteed success. Perfect for players who want to excel in roleplay and social encounters."
+            },
+            {
+                "name": "College of Glamour",
+                "description": "Bards touched by fey magic who use supernatural beauty and charm to entrance and command.",
+                "key_features": [
+                    {
+                        "name": "Mantle of Inspiration",
+                        "level": 3,
+                        "description": "Grant allies temporary hit points and movement"
+                    },
+                    {
+                        "name": "Enthralling Performance",
+                        "level": 3,
+                        "description": "Charm creatures through extended performance"
+                    },
+                    {
+                        "name": "Mantle of Majesty",
+                        "level": 6,
+                        "description": "Cast command as a bonus action while concentrating on enchantment"
+                    }
+                ],
+                "alabastria_context": "Eladrin Bards in Kuriguer's magic groves embody seasonal glamour and fey beauty. Satyr performers captivate audiences with supernatural charisma, while Tiefling Bards use infernal allure for darker purposes.",
+                "playstyle": "Enchantment-focused controller with fey magic. Ideal for players who want to charm enemies and inspire allies with supernatural presence."
+            },
+            {
+                "name": "College of Lore",
+                "description": "Scholars and knowledge-seekers who collect secrets and magical techniques from across the world.",
+                "key_features": [
+                    {
+                        "name": "Cutting Words",
+                        "level": 3,
+                        "description": "Use Bardic Inspiration to reduce enemy attack, ability, and damage rolls"
+                    },
+                    {
+                        "name": "Additional Magical Secrets",
+                        "level": 6,
+                        "description": "Learn spells from any class earlier than other bards"
+                    },
+                    {
+                        "name": "Peerless Skill",
+                        "level": 14,
+                        "description": "Add half your proficiency bonus to Bardic Inspiration"
+                    }
+                ],
+                "alabastria_context": "Human scholars in Skratonia's libraries preserve knowledge from all continents. Half-Elf researchers bridge different cultural traditions, while Vedalken academics approach lore with systematic precision.",
+                "playstyle": "Ultimate versatility with access to any spell. Perfect for players who want maximum options and knowledge-based roleplay."
+            },
+            {
+                "name": "College of Spirits",
+                "description": "Bards who commune with spirits and channel their stories for magical effects.",
+                "key_features": [
+                    {
+                        "name": "Guiding Whispers",
+                        "level": 3,
+                        "description": "Bardic Inspiration can be used on Wisdom or Charisma checks"
+                    },
+                    {
+                        "name": "Spirit Session",
+                        "level": 3,
+                        "description": "Channel spirits for random magical effects"
+                    },
+                    {
+                        "name": "Tales from Beyond",
+                        "level": 6,
+                        "description": "Use Bardic Inspiration to trigger specific spirit effects"
+                    }
+                ],
+                "alabastria_context": "Shadar-kai Bards in Kuriguer's dangerous woods commune with shadow spirits. Reborn individuals in Skratonia channel memories of past lives, while Hexblood Bards speak with spirits touched by hag magic.",
+                "playstyle": "Unpredictable support with spiritual themes. Great for players who enjoy ghostly lore and random magical effects."
+            },
+            {
+                "name": "College of Swords",
+                "description": "Warrior-poets who combine bladework with performance, fighting with artistic flair.",
+                "key_features": [
+                    {
+                        "name": "Fighting Style",
+                        "level": 3,
+                        "description": "Choose Dueling or Two-Weapon Fighting"
+                    },
+                    {
+                        "name": "Blade Flourish",
+                        "level": 3,
+                        "description": "Use Bardic Inspiration for special attack effects"
+                    },
+                    {
+                        "name": "Extra Attack",
+                        "level": 6,
+                        "description": "Make two attacks when you take the Attack action"
+                    }
+                ],
+                "alabastria_context": "Half-Elf duelists in Skratonia's urban centers blend combat with performance art. Tabaxi blade dancers on the plains combine feline grace with swordplay, while Human sword-singers adapt techniques from multiple traditions.",
+                "playstyle": "Melee-focused bard with combat prowess. Perfect for players who want to fight up close while maintaining bardic versatility."
+            },
+            {
+                "name": "College of Valor",
+                "description": "Battle-bards who inspire courage in combat and fight alongside their allies.",
+                "key_features": [
+                    {
+                        "name": "Combat Inspiration",
+                        "level": 3,
+                        "description": "Bardic Inspiration can add to weapon damage or AC"
+                    },
+                    {
+                        "name": "Medium Armor and Shields",
+                        "level": 3,
+                        "description": "Proficiency with medium armor, shields, and martial weapons"
+                    },
+                    {
+                        "name": "Extra Attack",
+                        "level": 6,
+                        "description": "Make two attacks when you take the Attack action"
+                    }
+                ],
+                "alabastria_context": "Dragonborn war-singers in Bulsania's militarized society inspire troops with draconic battle hymns. Human valor bards lead Skratonia's city militias, while Leonin pride-singers rally their warrior communities.",
+                "playstyle": "Balanced combat and support character. Ideal for players who want to fight effectively while inspiring allies."
+            },
+            {
+                "name": "College of Whispers",
+                "description": "Spies and manipulators who use secrets and psychic magic to control and deceive.",
+                "key_features": [
+                    {
+                        "name": "Psychic Blades",
+                        "level": 3,
+                        "description": "Use Bardic Inspiration to deal psychic damage"
+                    },
+                    {
+                        "name": "Words of Terror",
+                        "level": 3,
+                        "description": "Frighten creatures through whispered secrets"
+                    },
+                    {
+                        "name": "Mantle of Whispers",
+                        "level": 6,
+                        "description": "Capture and use the shadows of humanoids"
+                    }
+                ],
+                "alabastria_context": "Changeling spies in Kuriguer's diverse ports use their shapeshifting with whispered secrets. Kenku information brokers excel at gathering and trading secrets, while Tiefling manipulators work in Skratonia's political shadows.",
+                "playstyle": "Espionage and psychological warfare. Perfect for players who want to be the party's spy and manipulator."
+            }
+        ]
+    },
+    {
+        "class": "Cleric",
+        "description": "Divine agents who channel the power of their deities to heal, protect, and smite enemies. Servants of gods who wield holy magic to aid allies and punish the wicked.",
+        "role": "Support/Healer",
+        "primary_ability": "Wisdom",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Wisdom",
+            "Charisma"
+        ],
+        "armor_proficiency": "Light armor, medium armor, shields",
+        "weapon_proficiency": "Simple weapons",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Spellcasting",
+                "level": 1,
+                "description": "Full caster with access to entire cleric spell list"
+            },
+            {
+                "name": "Divine Domain",
+                "level": 1,
+                "description": "Choose a domain that grants additional spells and abilities"
+            },
+            {
+                "name": "Channel Divinity",
+                "level": 2,
+                "description": "Channel divine energy for powerful effects"
+            },
+            {
+                "name": "Destroy Undead",
+                "level": 5,
+                "description": "Automatically destroy low-CR undead with Channel Divinity"
+            }
+        ],
+        "alabastria_lore": "Across Alabastria's diverse continents, Clerics serve as the primary connection between mortals and the divine. From Tempus-worshipping War Clerics like Tharos Raggenthraw to forge-priests in Maltman's workshops, these holy servants adapt their faith to serve their communities' needs.",
+        "playstyle": "Primary healer and support with strong defensive capabilities. Best for players who want to keep the party alive while contributing meaningful combat support.",
+        "subclasses": [
+            {
+                "name": "Forge Domain",
+                "description": "Clerics of smithing gods who bless weapons and armor with divine power.",
+                "key_features": [
+                    {
+                        "name": "Blessing of the Forge",
+                        "level": 1,
+                        "description": "Enhance weapons or armor with +1 bonus"
+                    },
+                    {
+                        "name": "Channel Divinity: Artisan's Blessing",
+                        "level": 2,
+                        "description": "Create simple metal items through divine power"
+                    },
+                    {
+                        "name": "Soul of the Forge",
+                        "level": 6,
+                        "description": "Resistance to fire damage and +1 AC while wearing heavy armor"
+                    }
+                ],
+                "alabastria_context": "Dwarven Forge Clerics in Maltman's mountain strongholds serve the god of smiths and creation. Warforged clerics in Alatman understand the divine spark within constructed beings, while Duergar forge-priests work in the deepest underground workshops.",
+                "playstyle": "Tanky support focused on equipment enhancement. Perfect for players who want to craft magical items and support through divine smithing."
+            },
+            {
+                "name": "Life Domain",
+                "description": "Healers dedicated to preserving and restoring life, the most traditional clerical role.",
+                "key_features": [
+                    {
+                        "name": "Disciple of Life",
+                        "level": 1,
+                        "description": "Healing spells restore additional hit points"
+                    },
+                    {
+                        "name": "Channel Divinity: Preserve Life",
+                        "level": 2,
+                        "description": "Heal multiple allies simultaneously"
+                    },
+                    {
+                        "name": "Blessed Healer",
+                        "level": 6,
+                        "description": "Heal yourself when you heal others with spells"
+                    }
+                ],
+                "alabastria_context": "Aasimar Life Clerics in Skratonia's cities serve as beacons of hope and healing. Human clerics establish temples and hospitals, while Halfling healers tend to rural communities and traveling caravans.",
+                "playstyle": "Ultimate healer focused on keeping everyone alive. Ideal for players who want to be the party's primary source of healing and support."
+            },
+            {
+                "name": "War Domain",
+                "description": "Battle-clerics who serve gods of war and conflict, blessing warriors and leading charges.",
+                "key_features": [
+                    {
+                        "name": "War Priest",
+                        "level": 1,
+                        "description": "Make bonus action weapon attacks when casting spells"
+                    },
+                    {
+                        "name": "Channel Divinity: Guided Strike",
+                        "level": 2,
+                        "description": "Gain +10 bonus to attack rolls"
+                    },
+                    {
+                        "name": "War Domain Spells",
+                        "level": 1,
+                        "description": "Always know spells like shield, spiritual weapon, and crusader's mantle"
+                    }
+                ],
+                "alabastria_context": "Leonin War Clerics like Tharos Raggenthraw serve Tempus across Skratonia's warrior prides. Dragonborn battle-priests lead Bulsania's militarized forces, while Orc war-shamans rally tribal warriors in Katman's swamps.",
+                "playstyle": "Combat-focused cleric who fights on the front lines. Great for players who want to be both warrior and priest."
+            },
+            {
+                "name": "Tempest Domain",
+                "description": "Storm-callers who channel the power of thunder, lightning, and ocean tempests.",
+                "key_features": [
+                    {
+                        "name": "Wrath of the Storm",
+                        "level": 1,
+                        "description": "Deal thunder or lightning damage to attackers"
+                    },
+                    {
+                        "name": "Channel Divinity: Destructive Wrath",
+                        "level": 2,
+                        "description": "Maximize thunder or lightning damage"
+                    },
+                    {
+                        "name": "Thunderbolt Strike",
+                        "level": 6,
+                        "description": "Push enemies when dealing lightning damage"
+                    }
+                ],
+                "alabastria_context": "Aarakocra Tempest Clerics in Bulsania's peaks command mountain storms and arctic winds. Triton storm-callers along Kuriguer's coasts control oceanic tempests, while Air Genasi channel coastal winds and lightning.",
+                "playstyle": "Destructive spellcaster with weather-based powers. Perfect for players who want to call down divine storms and lightning."
+            }
+        ]
+    },
+    {
+        "class": "Druid",
+        "description": "Guardians of nature who wield primal magic and can transform into animals. Protectors of the natural world who draw power from the land itself.",
+        "role": "Spellcaster/Shapeshifter",
+        "primary_ability": "Wisdom",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Intelligence",
+            "Wisdom"
+        ],
+        "armor_proficiency": "Light armor, medium armor, shields (non-metal only)",
+        "weapon_proficiency": "Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
+        "tool_proficiency": "Herbalism kit",
+        "key_features": [
+            {
+                "name": "Druidcraft",
+                "level": 1,
+                "description": "Minor nature-based magical effects"
+            },
+            {
+                "name": "Spellcasting",
+                "level": 1,
+                "description": "Full caster with nature and elemental spells"
+            },
+            {
+                "name": "Wild Shape",
+                "level": 2,
+                "description": "Transform into beasts for combat and utility"
+            },
+            {
+                "name": "Druid Circle",
+                "level": 2,
+                "description": "Choose a circle that defines your druidic focus"
+            }
+        ],
+        "alabastria_lore": "In Kuriguer's magical forests and Skratonia's fertile plains, Druids maintain the balance between civilization and wilderness. These primal spellcasters guard ancient groves, tend to wounded lands, and serve as bridges between the natural and civilized worlds.",
+        "playstyle": "Versatile nature-based caster with shapeshifting abilities. Best for players who want to embody nature's power and have unique utility options.",
+        "subclasses": [
+            {
+                "name": "Circle of the Land",
+                "description": "Druids connected to specific terrains who draw additional magic from their chosen environment.",
+                "key_features": [
+                    {
+                        "name": "Bonus Cantrip",
+                        "level": 2,
+                        "description": "Learn an additional druid cantrip"
+                    },
+                    {
+                        "name": "Natural Recovery",
+                        "level": 2,
+                        "description": "Recover spell slots during short rests"
+                    },
+                    {
+                        "name": "Circle Spells",
+                        "level": 3,
+                        "description": "Additional spells based on chosen land type"
+                    }
+                ],
+                "alabastria_context": "Wood Elf Land Druids in Kuriguer's forests specialize in woodland magic. Centaurs on Skratonia's plains master grassland spells, while Lizardfolk in Katman's swamps command wetland magic.",
+                "playstyle": "Spell-focused druid with terrain specialization. Great for players who want maximum spellcasting power and environmental themes."
+            },
+            {
+                "name": "Circle of the Moon",
+                "description": "Druids who excel at shapeshifting, taking more powerful beast forms for combat.",
+                "key_features": [
+                    {
+                        "name": "Combat Wild Shape",
+                        "level": 2,
+                        "description": "Use Wild Shape as a bonus action and while in beast form"
+                    },
+                    {
+                        "name": "Circle Forms",
+                        "level": 2,
+                        "description": "Transform into more powerful beasts, including CR 1 creatures"
+                    },
+                    {
+                        "name": "Primal Strike",
+                        "level": 6,
+                        "description": "Beast form attacks count as magical"
+                    }
+                ],
+                "alabastria_context": "Shifters in Kuriguer's wild woods naturally gravitate toward moon magic, their lycanthropic heritage enhanced by druidic power. Firbolg moon druids become massive forest guardians, while Wood Elves master the forms of woodland predators.",
+                "playstyle": "Melee combatant through shapeshifting. Perfect for players who want to fight as animals and have strong physical presence."
+            },
+            {
+                "name": "Circle of Wildfire",
+                "description": "Druids who understand that destruction and renewal are part of nature's cycle, wielding cleansing flames.",
+                "key_features": [
+                    {
+                        "name": "Summon Wildfire Spirit",
+                        "level": 2,
+                        "description": "Summon a fire elemental companion"
+                    },
+                    {
+                        "name": "Enhanced Bond",
+                        "level": 6,
+                        "description": "Gain benefits when your wildfire spirit is active"
+                    },
+                    {
+                        "name": "Circle Spells",
+                        "level": 2,
+                        "description": "Additional fire and healing spells"
+                    }
+                ],
+                "alabastria_context": "Fire Genasi in Kuriguer's magical hotspots channel elemental fire for renewal. Tiefling druids across Skratonia use infernal heritage for natural cleansing, while Dragonborn embrace draconic flame as part of nature's cycle.",
+                "playstyle": "Fire-focused druid with elemental companion. Ideal for players who want to combine destruction and healing themes."
+            }
+        ]
+    },
+    {
+        "class": "Fighter",
+        "description": "Masters of martial combat skilled with a variety of weapons and tactics. Versatile warriors who excel in physical combat through training and technique.",
+        "role": "Tank/Damage Dealer",
+        "primary_ability": "Strength or Dexterity",
+        "hit_die": "d10",
+        "saving_throws": [
+            "Strength",
+            "Constitution"
+        ],
+        "armor_proficiency": "All armor, shields",
+        "weapon_proficiency": "Simple weapons, martial weapons",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Fighting Style",
+                "level": 1,
+                "description": "Choose a specialized combat technique"
+            },
+            {
+                "name": "Second Wind",
+                "level": 1,
+                "description": "Recover hit points as a bonus action"
+            },
+            {
+                "name": "Action Surge",
+                "level": 2,
+                "description": "Take an additional action on your turn"
+            },
+            {
+                "name": "Extra Attack",
+                "level": 5,
+                "description": "Make multiple attacks when you take the Attack action"
+            }
+        ],
+        "alabastria_lore": "From Skratonia's diverse city militias to Bulsania's elite dragon-riders, Fighters represent the pinnacle of martial training. These versatile warriors adapt their techniques to serve as guards, soldiers, duelists, and champions across all of Alabastria's continents.",
+        "playstyle": "Reliable physical combatant with excellent survivability. Best for players who want consistent performance in combat with tactical options.",
+        "subclasses": [
+            {
+                "name": "Champion",
+                "description": "Fighters focused on physical excellence and improved critical hits, representing peak athletic ability.",
+                "key_features": [
+                    {
+                        "name": "Improved Critical",
+                        "level": 3,
+                        "description": "Score critical hits on 19-20"
+                    },
+                    {
+                        "name": "Remarkable Athlete",
+                        "level": 7,
+                        "description": "Add half proficiency to Strength, Dexterity, and Constitution checks"
+                    },
+                    {
+                        "name": "Additional Fighting Style",
+                        "level": 10,
+                        "description": "Choose a second fighting style"
+                    }
+                ],
+                "alabastria_context": "Human Champions in Skratonia's cities excel through pure determination and training. Goliath Champions in Bulsania's mountains embody natural athletic superiority, while Orc Champions in Katman's swamps demonstrate raw physical power.",
+                "playstyle": "Simple but effective warrior focused on consistent damage. Perfect for new players or those who want straightforward combat effectiveness."
+            },
+            {
+                "name": "Battle Master",
+                "description": "Tactical fighters who use combat maneuvers to control the battlefield and enhance their attacks.",
+                "key_features": [
+                    {
+                        "name": "Combat Superiority",
+                        "level": 3,
+                        "description": "Superiority dice to fuel special maneuvers"
+                    },
+                    {
+                        "name": "Maneuvers",
+                        "level": 3,
+                        "description": "Learn tactical combat techniques like Trip Attack and Riposte"
+                    },
+                    {
+                        "name": "Know Your Enemy",
+                        "level": 7,
+                        "description": "Learn information about enemy capabilities"
+                    }
+                ],
+                "alabastria_context": "Hobgoblin Battle Masters in Bulsania's fortresses combine military discipline with tactical expertise. Human officers in Skratonia's armies use maneuvers to coordinate troops, while Dwarf veterans in Maltman employ mountain warfare tactics.",
+                "playstyle": "Tactical combatant with versatile options. Great for players who enjoy strategic thinking and battlefield control."
+            },
+            {
+                "name": "Eldritch Knight",
+                "description": "Warrior-mages who combine martial prowess with arcane magic, creating spellswords.",
+                "key_features": [
+                    {
+                        "name": "Spellcasting",
+                        "level": 3,
+                        "description": "One-third caster focusing on abjuration and evocation"
+                    },
+                    {
+                        "name": "Weapon Bond",
+                        "level": 3,
+                        "description": "Bond with weapons to summon them and enhance attacks"
+                    },
+                    {
+                        "name": "War Magic",
+                        "level": 7,
+                        "description": "Make weapon attacks after casting cantrips"
+                    }
+                ],
+                "alabastria_context": "High Elf Eldritch Knights in Kuriguer's magical forests blend ancient spellsword traditions with modern techniques. Githyanki warriors adapt planar magic for combat, while Half-Elf knights bridge martial and magical traditions.",
+                "playstyle": "Magical warrior with utility spells and combat enhancement. Ideal for players who want both sword and sorcery."
+            }
+        ]
+    },
+    {
+        "class": "Monk",
+        "description": "Disciplined martial artists who harness their inner energy (ki) for extraordinary abilities. Masters of unarmed combat who achieve supernatural feats through meditation and training.",
+        "role": "Striker/Utility",
+        "primary_ability": "Dexterity and Wisdom",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Strength",
+            "Dexterity"
+        ],
+        "armor_proficiency": "None",
+        "weapon_proficiency": "Simple weapons, shortswords",
+        "tool_proficiency": "One type of artisan's tools or one musical instrument",
+        "key_features": [
+            {
+                "name": "Unarmored Defense",
+                "level": 1,
+                "description": "AC equals 10 + Dex modifier + Wis modifier while unarmored"
+            },
+            {
+                "name": "Martial Arts",
+                "level": 1,
+                "description": "Enhanced unarmed strikes and bonus action attacks"
+            },
+            {
+                "name": "Ki",
+                "level": 2,
+                "description": "Spend ki points for special techniques and abilities"
+            },
+            {
+                "name": "Unarmored Movement",
+                "level": 2,
+                "description": "Increased speed while unarmored"
+            }
+        ],
+        "alabastria_lore": "In hidden monasteries across Alabastria's mountains and secluded valleys, Monks pursue physical and spiritual perfection. These disciplined warriors combine ancient martial techniques with mystical ki manipulation, serving as guardians, seekers, and enlightened warriors.",
+        "playstyle": "Mobile striker with unique abilities and excellent utility. Best for players who want to be agile, versatile, and different from traditional warriors.",
+        "subclasses": [
+            {
+                "name": "Way of the Open Hand",
+                "description": "Traditional monks who master unarmed combat and ki manipulation techniques.",
+                "key_features": [
+                    {
+                        "name": "Open Hand Technique",
+                        "level": 3,
+                        "description": "Add effects to Flurry of Blows attacks: knock prone, push, or prevent reactions"
+                    },
+                    {
+                        "name": "Wholeness of Body",
+                        "level": 6,
+                        "description": "Heal yourself using ki"
+                    },
+                    {
+                        "name": "Tranquility",
+                        "level": 11,
+                        "description": "End enchantments on yourself and gain sanctuary-like protection"
+                    }
+                ],
+                "alabastria_context": "Human Open Hand Monks in Skratonia's urban monasteries teach classical martial arts. Aarakocra monks in Bulsania's peaks combine aerial techniques with traditional forms, while High Elf monks in Kuriguer blend ancient elven martial traditions.",
+                "playstyle": "Classic monk focused on unarmed combat mastery. Perfect for players who want the traditional monk experience with reliable techniques."
+            },
+            {
+                "name": "Way of Shadow",
+                "description": "Ninja-like monks who use stealth, darkness, and illusion magic for infiltration and assassination.",
+                "key_features": [
+                    {
+                        "name": "Shadow Arts",
+                        "level": 3,
+                        "description": "Cast darkness, darkvision, pass without trace, and silence using ki"
+                    },
+                    {
+                        "name": "Shadow Step",
+                        "level": 6,
+                        "description": "Teleport between shadows and gain advantage on attacks"
+                    },
+                    {
+                        "name": "Cloak of Shadows",
+                        "level": 11,
+                        "description": "Become invisible as an action"
+                    }
+                ],
+                "alabastria_context": "Shadar-kai Shadow Monks in Kuriguer's dangerous woods master shadow magic and stealth. Kenku monks use their mimicry for infiltration, while Tabaxi shadow dancers combine feline stealth with monastic training.",
+                "playstyle": "Stealth-focused monk with magical abilities. Great for players who want to be sneaky scouts and assassins."
+            },
+            {
+                "name": "Way of the Four Elements",
+                "description": "Monks who channel elemental forces through their ki, becoming living conduits of elemental power.",
+                "key_features": [
+                    {
+                        "name": "Elemental Disciplines",
+                        "level": 3,
+                        "description": "Learn to cast elemental spells using ki points"
+                    },
+                    {
+                        "name": "Additional Disciplines",
+                        "level": 6,
+                        "description": "Learn more powerful elemental techniques"
+                    },
+                    {
+                        "name": "Elemental Mastery",
+                        "level": 11,
+                        "description": "Access to high-level elemental spells"
+                    }
+                ],
+                "alabastria_context": "Genasi Four Elements Monks in Kuriguer's elemental nodes master their inherited powers. Air Genasi control wind and storm, Fire Genasi channel flame and heat, while Earth and Water Genasi manipulate stone and tide.",
+                "playstyle": "Magical monk with elemental powers. Ideal for players who want to blend martial arts with elemental magic."
+            }
+        ]
+    },
+    {
+        "class": "Paladin",
+        "description": "Holy warriors bound by sacred oaths to uphold justice and righteousness. Divine champions who combine martial prowess with holy magic to protect the innocent.",
+        "role": "Tank/Support",
+        "primary_ability": "Strength and Charisma",
+        "hit_die": "d10",
+        "saving_throws": [
+            "Wisdom",
+            "Charisma"
+        ],
+        "armor_proficiency": "All armor, shields",
+        "weapon_proficiency": "Simple weapons, martial weapons",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Divine Sense",
+                "level": 1,
+                "description": "Detect celestials, fiends, and undead"
+            },
+            {
+                "name": "Lay on Hands",
+                "level": 1,
+                "description": "Heal others through touch"
+            },
+            {
+                "name": "Divine Smite",
+                "level": 2,
+                "description": "Expend spell slots for extra radiant damage"
+            },
+            {
+                "name": "Sacred Oath",
+                "level": 3,
+                "description": "Choose an oath that defines your paladin's mission"
+            }
+        ],
+        "alabastria_lore": "Across Alabastria's realms, Paladins stand as beacons of hope and justice. These oath-bound warriors serve various causes, from protecting ancient forests to conquering evil, their divine magic powered by unwavering conviction and righteous purpose.",
+        "playstyle": "Durable front-line fighter with healing and support abilities. Best for players who want to be the party's moral compass and protector.",
+        "subclasses": [
+            {
+                "name": "Oath of Devotion",
+                "description": "Traditional paladins devoted to ideals of virtue, honor, and righteousness.",
+                "key_features": [
+                    {
+                        "name": "Sacred Weapon",
+                        "level": 3,
+                        "description": "Channel Divinity to make weapon magical and shed bright light"
+                    },
+                    {
+                        "name": "Turn the Unholy",
+                        "level": 3,
+                        "description": "Channel Divinity to turn fiends and undead"
+                    },
+                    {
+                        "name": "Aura of Devotion",
+                        "level": 7,
+                        "description": "Grant charm immunity to nearby allies"
+                    }
+                ],
+                "alabastria_context": "Aasimar Devotion Paladins in Skratonia's cities serve as exemplars of celestial virtue. Human paladins establish orders dedicated to justice and protection, while Dragonborn honor-knights uphold draconic codes of conduct.",
+                "playstyle": "Classic righteous paladin focused on protection and virtue. Perfect for players who want to be the traditional holy knight."
+            },
+            {
+                "name": "Oath of the Ancients",
+                "description": "Paladins who protect the light, beauty, and life of the world, often serving nature deities.",
+                "key_features": [
+                    {
+                        "name": "Nature's Wrath",
+                        "level": 3,
+                        "description": "Channel Divinity to restrain enemies with spectral vines"
+                    },
+                    {
+                        "name": "Turn the Faithless",
+                        "level": 3,
+                        "description": "Channel Divinity to turn fey and fiends"
+                    },
+                    {
+                        "name": "Aura of Warding",
+                        "level": 7,
+                        "description": "Grant spell damage resistance to nearby allies"
+                    }
+                ],
+                "alabastria_context": "Wood Elf Ancients Paladins in Kuriguer's forests protect sacred groves and ancient mysteries. Firbolg guardians serve as champions of the natural world, while Centaurs on Skratonia's plains defend the harmony between civilization and nature.",
+                "playstyle": "Nature-focused paladin with protective abilities. Great for players who want to combine holy warrior with nature themes."
+            },
+            {
+                "name": "Oath of Vengeance",
+                "description": "Paladins dedicated to punishing wrongdoers and pursuing justice through relentless pursuit.",
+                "key_features": [
+                    {
+                        "name": "Abjure Enemy",
+                        "level": 3,
+                        "description": "Channel Divinity to frighten and slow a target"
+                    },
+                    {
+                        "name": "Vow of Enmity",
+                        "level": 3,
+                        "description": "Channel Divinity to gain advantage against one enemy"
+                    },
+                    {
+                        "name": "Relentless Avenger",
+                        "level": 7,
+                        "description": "Move without provoking opportunity attacks after hitting with opportunity attack"
+                    }
+                ],
+                "alabastria_context": "Half-Orc Vengeance Paladins in Katman's frontier pursue justice with savage determination. Tiefling paladins seek to overcome their infernal heritage through righteous action, while Human avengers hunt down those who prey on the innocent.",
+                "playstyle": "Aggressive paladin focused on hunting down evil. Ideal for players who want to be a relentless force of justice."
+            }
+        ]
+    },
+    {
+        "class": "Ranger",
+        "description": "Skilled hunters and trackers who thrive in the wilderness. Masters of survival who protect civilization's borders and guide others through dangerous lands.",
+        "role": "Striker/Scout",
+        "primary_ability": "Dexterity and Wisdom",
+        "hit_die": "d10",
+        "saving_throws": [
+            "Strength",
+            "Dexterity"
+        ],
+        "armor_proficiency": "Light armor, medium armor, shields",
+        "weapon_proficiency": "Simple weapons, martial weapons",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Favored Enemy",
+                "level": 1,
+                "description": "Choose creature types to gain bonuses against"
+            },
+            {
+                "name": "Natural Explorer",
+                "level": 1,
+                "description": "Choose favored terrain for exploration benefits"
+            },
+            {
+                "name": "Spellcasting",
+                "level": 2,
+                "description": "Half-caster with nature and utility spells"
+            },
+            {
+                "name": "Ranger Archetype",
+                "level": 3,
+                "description": "Choose a specialization that defines your ranger's focus"
+            }
+        ],
+        "alabastria_lore": "From Kuriguer's magical forests to Bulsania's frozen peaks, Rangers serve as guardians of the wild places. These skilled trackers and hunters protect travelers, hunt dangerous beasts, and maintain the balance between civilization and wilderness.",
+        "playstyle": "Versatile scout and ranged combatant with survival expertise. Best for players who want to excel in exploration and outdoor adventures.",
+        "subclasses": [
+            {
+                "name": "Hunter",
+                "description": "Rangers specialized in hunting specific types of prey, masters of taking down dangerous creatures.",
+                "key_features": [
+                    {
+                        "name": "Hunter's Prey",
+                        "level": 3,
+                        "description": "Choose Colossus Slayer, Giant Killer, or Horde Breaker"
+                    },
+                    {
+                        "name": "Defensive Tactics",
+                        "level": 7,
+                        "description": "Choose Escape the Horde, Multiattack Defense, or Steel Will"
+                    },
+                    {
+                        "name": "Multiattack",
+                        "level": 11,
+                        "description": "Choose Volley or Whirlwind Attack for fighting groups"
+                    }
+                ],
+                "alabastria_context": "Human Hunters in Skratonia's diverse lands adapt their techniques for various threats. Wood Elf hunters in Kuriguer specialize in forest predators, while Tabaxi hunters on the plains track dangerous beasts with feline instincts.",
+                "playstyle": "Versatile combatant effective against many enemy types. Great for players who want reliable combat effectiveness and adaptability."
+            },
+            {
+                "name": "Beast Master",
+                "description": "Rangers who form deep bonds with animal companions, fighting alongside loyal beasts.",
+                "key_features": [
+                    {
+                        "name": "Ranger's Companion",
+                        "level": 3,
+                        "description": "Gain a loyal animal companion that fights with you"
+                    },
+                    {
+                        "name": "Exceptional Training",
+                        "level": 7,
+                        "description": "Your companion can take the Dash, Disengage, or Help action"
+                    },
+                    {
+                        "name": "Bestial Fury",
+                        "level": 11,
+                        "description": "Your companion can make two attacks"
+                    }
+                ],
+                "alabastria_context": "Aarakocra Beast Masters in Bulsania's peaks bond with eagles and mountain cats. Shifters in Kuriguer form natural connections with forest creatures, while Halfling rangers partner with loyal dogs and ponies for caravan protection.",
+                "playstyle": "Pet-focused ranger with loyal companion. Perfect for players who want an animal partner and unique tactical options."
+            },
+            {
+                "name": "Gloom Stalker",
+                "description": "Rangers who excel in darkness and underground environments, masters of ambush and stealth.",
+                "key_features": [
+                    {
+                        "name": "Dread Ambusher",
+                        "level": 3,
+                        "description": "Extra attack and damage on first turn of combat"
+                    },
+                    {
+                        "name": "Umbral Sight",
+                        "level": 3,
+                        "description": "Darkvision and invisibility to darkvision while in darkness"
+                    },
+                    {
+                        "name": "Iron Mind",
+                        "level": 7,
+                        "description": "Proficiency in Wisdom saving throws"
+                    }
+                ],
+                "alabastria_context": "Shadar-kai Gloom Stalkers in Kuriguer's shadow-touched woods master darkness and stealth. Drow rangers in Maltman's underground caverns excel at subterranean warfare, while Tabaxi night-hunters use feline senses for nocturnal tracking.",
+                "playstyle": "Stealth-focused ambush specialist. Ideal for players who want to be deadly scouts and first-strike specialists."
+            }
+        ]
+    },
+    {
+        "class": "Rogue",
+        "description": "Cunning and agile characters who excel in stealth, thievery, and precision strikes. Masters of skills and subterfuge who strike from the shadows.",
+        "role": "Striker/Utility",
+        "primary_ability": "Dexterity",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Dexterity",
+            "Intelligence"
+        ],
+        "armor_proficiency": "Light armor",
+        "weapon_proficiency": "Simple weapons, hand crossbows, longswords, rapiers, shortswords",
+        "tool_proficiency": "Thieves' tools",
+        "key_features": [
+            {
+                "name": "Expertise",
+                "level": 1,
+                "description": "Double proficiency bonus for chosen skills"
+            },
+            {
+                "name": "Sneak Attack",
+                "level": 1,
+                "description": "Deal extra damage when you have advantage or an ally nearby"
+            },
+            {
+                "name": "Thieves' Cant",
+                "level": 1,
+                "description": "Secret language and signs used by rogues"
+            },
+            {
+                "name": "Cunning Action",
+                "level": 2,
+                "description": "Dash, Disengage, or Hide as bonus actions"
+            }
+        ],
+        "alabastria_lore": "In Skratonia's bustling cities and Kuriguer's diverse ports, Rogues operate in the shadows of society. These skilled individuals serve as spies, thieves, investigators, and scouts, using cunning and agility to accomplish what others cannot through force.",
+        "playstyle": "High-damage striker with excellent utility and mobility. Best for players who enjoy stealth, problem-solving, and precise strikes.",
+        "subclasses": [
+            {
+                "name": "Thief",
+                "description": "Classic rogues who excel at burglary, climbing, and using magical items.",
+                "key_features": [
+                    {
+                        "name": "Fast Hands",
+                        "level": 3,
+                        "description": "Use objects, pick locks, or disarm traps as bonus actions"
+                    },
+                    {
+                        "name": "Second-Story Work",
+                        "level": 3,
+                        "description": "Enhanced climbing and jumping abilities"
+                    },
+                    {
+                        "name": "Use Magic Device",
+                        "level": 13,
+                        "description": "Use any magic item regardless of restrictions"
+                    }
+                ],
+                "alabastria_context": "Halfling Thieves in Skratonia's cities use their natural nimbleness for both legitimate and questionable pursuits. Goblin scavengers on the plains excel at finding and using discarded items, while Human thieves adapt techniques from multiple traditions.",
+                "playstyle": "Utility-focused rogue with excellent mobility and item use. Perfect for players who want to be the party's problem solver and infiltrator."
+            },
+            {
+                "name": "Assassin",
+                "description": "Professional killers who specialize in disguises, poisons, and elimination techniques.",
+                "key_features": [
+                    {
+                        "name": "Bonus Proficiencies",
+                        "level": 3,
+                        "description": "Proficiency with disguise kit and poisoner's kit"
+                    },
+                    {
+                        "name": "Assassinate",
+                        "level": 3,
+                        "description": "Advantage and automatic crits against surprised creatures"
+                    },
+                    {
+                        "name": "Infiltration Expertise",
+                        "level": 9,
+                        "description": "Create false identities and blend into society"
+                    }
+                ],
+                "alabastria_context": "Kenku Assassins in Kuriguer's ports use their mimicry for perfect infiltration. Shadar-kai killers employ shadow magic for silent elimination, while Changeling assassins become anyone they need to be for their missions.",
+                "playstyle": "Stealth-focused killer with disguise abilities. Great for players who want to be deadly infiltrators and eliminate key targets."
+            },
+            {
+                "name": "Arcane Trickster",
+                "description": "Rogues who blend thievery with illusion and enchantment magic.",
+                "key_features": [
+                    {
+                        "name": "Spellcasting",
+                        "level": 3,
+                        "description": "One-third caster focusing on illusion and enchantment"
+                    },
+                    {
+                        "name": "Mage Hand Legerdemain",
+                        "level": 3,
+                        "description": "Enhanced mage hand for thievery and stealth"
+                    },
+                    {
+                        "name": "Magical Ambush",
+                        "level": 9,
+                        "description": "Impose disadvantage on saves against spells cast while hidden"
+                    }
+                ],
+                "alabastria_context": "High Elf Arcane Tricksters in Kuriguer combine natural magic with roguish skills. Gnome tricksters use illusion magic for elaborate heists, while Half-Elf rogues bridge magical and mundane techniques.",
+                "playstyle": "Magical rogue with utility spells and enhanced stealth. Ideal for players who want magic mixed with traditional rogue abilities."
+            }
+        ]
+    },
+    {
+        "class": "Sorcerer",
+        "description": "Innate spellcasters whose magic comes from their bloodline or a mysterious source within. Raw magical power channeled through force of personality.",
+        "role": "Damage Dealer/Controller",
+        "primary_ability": "Charisma",
+        "hit_die": "d6",
+        "saving_throws": [
+            "Constitution",
+            "Charisma"
+        ],
+        "armor_proficiency": "None",
+        "weapon_proficiency": "Daggers, darts, slings, quarterstaffs, light crossbows",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Spellcasting",
+                "level": 1,
+                "description": "Full caster with limited spells known but flexible casting"
+            },
+            {
+                "name": "Sorcerous Origin",
+                "level": 1,
+                "description": "Source of your magic that grants additional abilities"
+            },
+            {
+                "name": "Font of Magic",
+                "level": 2,
+                "description": "Convert spell slots to sorcery points and vice versa"
+            },
+            {
+                "name": "Metamagic",
+                "level": 3,
+                "description": "Modify spells with sorcery points for enhanced effects"
+            }
+        ],
+        "alabastria_lore": "Across Alabastria, Sorcerers represent the raw power of magic made manifest. From Dragonborn with draconic heritage in Bulsania to Tieflings channeling infernal chaos in Skratonia, these spellcasters wield power that flows from their very being.",
+        "playstyle": "Flexible spellcaster with powerful magical effects. Best for players who want to specialize in magic and customize their spells.",
+        "subclasses": [
+            {
+                "name": "Draconic Bloodline",
+                "description": "Sorcerers with dragon ancestry who gain draconic resilience and elemental power.",
+                "key_features": [
+                    {
+                        "name": "Dragon Ancestor",
+                        "level": 1,
+                        "description": "Choose a dragon type for damage resistance and extra spells"
+                    },
+                    {
+                        "name": "Draconic Resilience",
+                        "level": 1,
+                        "description": "Extra hit points and natural armor"
+                    },
+                    {
+                        "name": "Elemental Affinity",
+                        "level": 6,
+                        "description": "Add Charisma modifier to damage of chosen type"
+                    }
+                ],
+                "alabastria_context": "Dragonborn Sorcerers in Bulsania manifest their draconic heritage through raw magical power. Kobolds in Maltman's mines channel their dragon worship into sorcerous abilities, while Half-Elves across Skratonia discover draconic ancestors in their mixed bloodlines.",
+                "playstyle": "Durable elemental damage dealer. Perfect for players who want to embody draconic power and specialize in elemental magic."
+            },
+            {
+                "name": "Wild Magic",
+                "description": "Sorcerers touched by chaotic magic whose spells can trigger unpredictable effects.",
+                "key_features": [
+                    {
+                        "name": "Wild Magic Surge",
+                        "level": 1,
+                        "description": "Chance to trigger random magical effects when casting spells"
+                    },
+                    {
+                        "name": "Tides of Chaos",
+                        "level": 1,
+                        "description": "Gain advantage on rolls but increase surge chance"
+                    },
+                    {
+                        "name": "Bend Luck",
+                        "level": 6,
+                        "description": "Spend sorcery points to alter d20 rolls"
+                    }
+                ],
+                "alabastria_context": "Genasi Wild Sorcerers in Kuriguer's magical forests experience surges from elemental chaos. Tiefling sorcerers across Skratonia manifest infernal unpredictability, while Halfling magic-users find their luck creates unexpected magical results.",
+                "playstyle": "Unpredictable spellcaster with chaotic effects. Great for players who enjoy randomness and want to create memorable magical moments."
+            },
+            {
+                "name": "Divine Soul",
+                "description": "Sorcerers blessed by divine power who can access both arcane and divine magic.",
+                "key_features": [
+                    {
+                        "name": "Divine Magic",
+                        "level": 1,
+                        "description": "Learn spells from cleric spell list in addition to sorcerer"
+                    },
+                    {
+                        "name": "Favored by the Gods",
+                        "level": 1,
+                        "description": "Add 2d4 to failed saving throws"
+                    },
+                    {
+                        "name": "Empowered Healing",
+                        "level": 6,
+                        "description": "Spend sorcery points to maximize healing spells"
+                    }
+                ],
+                "alabastria_context": "Aasimar Divine Soul Sorcerers in Skratonia channel celestial power through their bloodline. Protector Aasimar focus on healing and protection, while Dragonborn divine sorcerers in Bulsania combine draconic heritage with divine blessing.",
+                "playstyle": "Versatile caster with both arcane and divine magic. Ideal for players who want maximum spell variety and healing capabilities."
+            }
+        ]
+    },
+    {
+        "class": "Warlock",
+        "description": "Spellcasters who derive their magic from pacts with powerful entities. Wielders of eldritch power gained through otherworldly bargains.",
+        "role": "Damage Dealer/Utility",
+        "primary_ability": "Charisma",
+        "hit_die": "d8",
+        "saving_throws": [
+            "Wisdom",
+            "Charisma"
+        ],
+        "armor_proficiency": "Light armor",
+        "weapon_proficiency": "Simple weapons",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Otherworldly Patron",
+                "level": 1,
+                "description": "Choose a powerful entity that grants you magic"
+            },
+            {
+                "name": "Pact Magic",
+                "level": 1,
+                "description": "Short rest spell slot recovery with limited but powerful slots"
+            },
+            {
+                "name": "Eldritch Invocations",
+                "level": 2,
+                "description": "Customize your abilities with invocation choices"
+            },
+            {
+                "name": "Pact Boon",
+                "level": 3,
+                "description": "Choose Blade, Chain, or Tome for additional abilities"
+            }
+        ],
+        "alabastria_lore": "In Alabastria's shadowed corners and desperate places, Warlocks forge pacts with beings beyond mortal understanding. From Tieflings embracing their fiendish heritage to Humans seeking forbidden power, these spellcasters trade pieces of their souls for eldritch might.",
+        "playstyle": "Customizable spellcaster with consistent power. Best for players who want unique abilities and don't mind role-playing otherworldly obligations.",
+        "subclasses": [
+            {
+                "name": "The Fiend",
+                "description": "Warlocks who serve demons, devils, or other evil outsiders for infernal power.",
+                "key_features": [
+                    {
+                        "name": "Dark One's Blessing",
+                        "level": 1,
+                        "description": "Gain temporary hit points when you reduce enemies to 0 HP"
+                    },
+                    {
+                        "name": "Dark One's Own Luck",
+                        "level": 6,
+                        "description": "Add d10 to ability checks or saves"
+                    },
+                    {
+                        "name": "Fiendish Resilience",
+                        "level": 10,
+                        "description": "Choose damage type to resist each short rest"
+                    }
+                ],
+                "alabastria_context": "Tiefling Fiend Warlocks in Skratonia embrace their infernal heritage through diabolic pacts. Human desperate souls make bargains for power, while Half-Orc warlocks in Katman's swamps trade with savage fiendish entities.",
+                "playstyle": "Durable damage dealer with infernal power. Perfect for players who want to play with dark themes and consistent combat effectiveness."
+            },
+            {
+                "name": "The Archfey",
+                "description": "Warlocks bound to powerful fey lords who grant whimsical but potent magic.",
+                "key_features": [
+                    {
+                        "name": "Fey Presence",
+                        "level": 1,
+                        "description": "Cause enemies to be charmed or frightened"
+                    },
+                    {
+                        "name": "Misty Escape",
+                        "level": 6,
+                        "description": "Turn invisible and teleport when taking damage"
+                    },
+                    {
+                        "name": "Beguiling Defenses",
+                        "level": 10,
+                        "description": "Immunity to charm and reflect charm effects"
+                    }
+                ],
+                "alabastria_context": "Eladrin Archfey Warlocks in Kuriguer's magic groves serve seasonal courts with natural connections. Satyr warlocks revel with fey lords in eternal parties, while Half-Elf warlocks bridge mortal and fey worlds through their pacts.",
+                "playstyle": "Enchantment-focused controller with fey magic. Great for players who want whimsical powers and social manipulation abilities."
+            },
+            {
+                "name": "The Great Old One",
+                "description": "Warlocks who serve ancient, alien entities that exist beyond normal reality.",
+                "key_features": [
+                    {
+                        "name": "Telepathic Communication",
+                        "level": 1,
+                        "description": "Communicate telepathically with creatures"
+                    },
+                    {
+                        "name": "Entropic Ward",
+                        "level": 6,
+                        "description": "Impose disadvantage on attacks and gain advantage on next attack"
+                    },
+                    {
+                        "name": "Thought Shield",
+                        "level": 10,
+                        "description": "Resistance to psychic damage and reflect psychic damage"
+                    }
+                ],
+                "alabastria_context": "Kalashtar Great Old One Warlocks in Skratonia accidentally contact alien minds through their psychic abilities. Human scholars uncover forbidden knowledge, while Githyanki warlocks encounter cosmic entities during planar travels.",
+                "playstyle": "Psychic-themed warlock with alien abilities. Ideal for players who enjoy cosmic horror themes and mental manipulation."
+            }
+        ]
+    },
+    {
+        "class": "Wizard",
+        "description": "Scholarly spellcasters who master arcane magic through rigorous study and research. The ultimate magical generalists with access to the largest spell selection.",
+        "role": "Controller/Utility",
+        "primary_ability": "Intelligence",
+        "hit_die": "d6",
+        "saving_throws": [
+            "Intelligence",
+            "Wisdom"
+        ],
+        "armor_proficiency": "None",
+        "weapon_proficiency": "Daggers, darts, slings, quarterstaffs, light crossbows",
+        "tool_proficiency": "None",
+        "key_features": [
+            {
+                "name": "Spellcasting",
+                "level": 1,
+                "description": "Full caster with spellbook containing all known spells"
+            },
+            {
+                "name": "Arcane Recovery",
+                "level": 1,
+                "description": "Recover some spell slots during short rests"
+            },
+            {
+                "name": "Arcane Tradition",
+                "level": 2,
+                "description": "Choose a school of magic specialization"
+            },
+            {
+                "name": "Spell Mastery",
+                "level": 18,
+                "description": "Cast certain spells without using spell slots"
+            }
+        ],
+        "alabastria_lore": "In Kuriguer's magical academies and Skratonia's scholarly institutions, Wizards represent the pinnacle of magical learning. These dedicated researchers unlock the secrets of arcane power through study, experimentation, and careful documentation of magical phenomena.",
+        "playstyle": "Ultimate magical versatility with preparation-based casting. Best for players who enjoy strategic planning and having the right spell for every situation.",
+        "subclasses": [
+            {
+                "name": "School of Evocation",
+                "description": "Wizards who specialize in destructive magic, mastering spells of force and energy.",
+                "key_features": [
+                    {
+                        "name": "Sculpt Spells",
+                        "level": 2,
+                        "description": "Protect allies from your area spells"
+                    },
+                    {
+                        "name": "Potent Cantrip",
+                        "level": 6,
+                        "description": "Cantrips deal half damage on successful saves"
+                    },
+                    {
+                        "name": "Empowered Evocation",
+                        "level": 10,
+                        "description": "Add Intelligence modifier to evocation spell damage"
+                    }
+                ],
+                "alabastria_context": "Dragonborn Evocation Wizards in Bulsania combine draconic heritage with destructive magic research. Fire Genasi wizards in Kuriguer master elemental destruction, while High Elf battle-mages refine combat spellcasting techniques.",
+                "playstyle": "Damage-focused wizard with safe area spells. Perfect for players who want to be the party's primary magical damage dealer."
+            },
+            {
+                "name": "School of Illusion",
+                "description": "Wizards who master deception, misdirection, and reality-bending illusions.",
+                "key_features": [
+                    {
+                        "name": "Improved Minor Illusion",
+                        "level": 2,
+                        "description": "Create both sound and image with minor illusion"
+                    },
+                    {
+                        "name": "Malleable Illusions",
+                        "level": 6,
+                        "description": "Change illusion spell details as an action"
+                    },
+                    {
+                        "name": "Illusory Reality",
+                        "level": 14,
+                        "description": "Make one object from illusion spells temporarily real"
+                    }
+                ],
+                "alabastria_context": "Gnome Illusion Wizards in Kuriguer's coastal towns combine natural illusion magic with scholarly study. Changeling wizards use their shapeshifting to enhance deceptive magic, while Kenku illusionists perfect mimicry through magical means.",
+                "playstyle": "Deception and control specialist with creative solutions. Great for players who enjoy creative problem-solving and battlefield control."
+            },
+            {
+                "name": "School of Divination",
+                "description": "Wizards who peer into the future and uncover hidden knowledge through prophetic magic.",
+                "key_features": [
+                    {
+                        "name": "Portent",
+                        "level": 2,
+                        "description": "Roll dice each day to replace d20 rolls later"
+                    },
+                    {
+                        "name": "Expert Divination",
+                        "level": 6,
+                        "description": "Recover spell slots when casting divination spells"
+                    },
+                    {
+                        "name": "The Third Eye",
+                        "level": 10,
+                        "description": "Choose from various enhanced sight abilities"
+                    }
+                ],
+                "alabastria_context": "High Elf Divination Wizards in Kuriguer use their long lives to study prophetic magic. Kalashtar wizards in Skratonia combine dream-plane visions with scholarly divination, while Human oracles interpret divine and arcane portents.",
+                "playstyle": "Support wizard with future sight and information gathering. Ideal for players who want to help the party through foresight and knowledge."
+            }
+        ]
+    }
+]

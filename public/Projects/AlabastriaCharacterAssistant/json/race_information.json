@@ -1,0 +1,798 @@
+[
+    {
+        "race": "Aarakocra",
+        "description": "Birdfolk from the Elemental Plane of Air, Aarakocra are often travelers, expats, refugees, or adventurers. Resembling humanoids in their stature and bipedal movements, they also gain the benefits of a flying speed, slashing talons, and an understanding of the Aarakocra as well as the Auran tongue and writ.",
+        "size": "Medium",
+        "speed": "25 feet walking, 50 feet flying",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Wisdom": 1
+        },
+        "age": "Aarakocra reach maturity by age 3. Compared to humans, aarakocra don't usually live longer than 30 years.",
+        "alignment": "Most aarakocra are good and rarely choose sides when it comes to law and chaos. Leaders are sometimes lawful good.",
+        "languages": ["Common", "Aarakocra", "Auran"],
+        "traits": [
+            {
+                "name": "Flight",
+                "description": "You have a flying speed of 50 feet. To use this speed, you can't be wearing medium or heavy armor."
+            },
+            {
+                "name": "Talons",
+                "description": "You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit."
+            }
+        ],
+        "alabastria_lore": "In Bulsania's mountain peaks and Kuriguer's coastal cliffs, Aarakocra serve as messengers and scouts, their aerial perspective providing crucial intelligence about the harsh landscapes below. These birdfolk often work with the Huntbound Order, using their flight to track dangerous creatures across difficult terrain.",
+        "playstyle": "Excellent mobility and ranged combat specialists. Perfect for players who want aerial superiority and unique movement options.",
+        "recommended_classes": ["Ranger", "Rogue", "Monk", "Druid"],
+        "subraces": []
+    },
+    {
+        "race": "Aasimar",
+        "description": "Aasimar are descended from humans and often celestials, reflecting the light and pure good of the divine realm. This goodness is often signified by a celestial mark on their bodies and their undeniable beauty.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Charisma": 2
+        },
+        "age": "Aasimar mature at the same rate as humans but live a few years longer.",
+        "alignment": "Aasimar are inclined toward good alignments. Not all aasimar are of good alignment, but very few are evil.",
+        "languages": ["Common", "Celestial"],
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Celestial Resistance",
+                "description": "You have resistance to necrotic damage and radiant damage."
+            },
+            {
+                "name": "Healing Hands",
+                "description": "As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."
+            }
+        ],
+        "alabastria_lore": "Across Skratonia's cities and temples, Aasimar serve as beacons of hope and divine guidance. These celestial-touched individuals often work with clerics and paladins, their healing abilities and divine resistance making them natural leaders in the fight against darkness.",
+        "playstyle": "Divine support and healing specialists. Great for players who want to be the party's moral compass and primary healer.",
+        "recommended_classes": ["Cleric", "Paladin", "Sorcerer (Divine Soul)", "Bard"],
+        "subraces": [
+            {
+                "name": "Protector Aasimar",
+                "description": "Protector aasimar are charged by the powers of good to guard the weak, to seek out evil, and to stand vigilant against the darkness.",
+                "ability_score_increase": {
+                    "Wisdom": 1
+                },
+                "traits": [
+                    {
+                        "name": "Radiant Soul",
+                        "description": "As an action, you can unleash the divine energy within yourself, causing your eyes to glimmer and two luminous, incorporeal wings to sprout from your back. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet, and once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level. Once you use this trait, you can't use it again until you finish a long rest."
+                    }
+                ],
+                "alabastria_context": "Protector Aasimar in Skratonia's temples serve as divine guardians, their radiant wings inspiring hope in the faithful. They often work alongside Tharos Raggenthraw's Huntbound Order, bringing celestial light to the darkest corners of Alabastria.",
+                "playstyle": "Defensive support with healing and radiant damage. Perfect for players who want to protect allies while dealing divine damage."
+            },
+            {
+                "name": "Scourge Aasimar",
+                "description": "Scourge aasimar are imbued with a divine energy that blazes intensely within them. It feeds a powerful desire to destroy evil—a desire that is, at its best, unflinching and, at its worst, all-consuming.",
+                "ability_score_increase": {
+                    "Constitution": 1
+                },
+                "traits": [
+                    {
+                        "name": "Radiant Consumption",
+                        "description": "As an action, you can unleash the divine energy within yourself, causing a searing light to radiate from you, pour out of your eyes and mouth, and threaten to char you. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level. Once you use this trait, you can't use it again until you finish a long rest."
+                    }
+                ],
+                "alabastria_context": "Scourge Aasimar in Alabastria's frontier regions channel their burning divine fury against the forces of evil. Their intense light and self-sacrificing nature make them formidable allies in the Huntbound Order's most dangerous missions.",
+                "playstyle": "Offensive support with area damage and self-sacrifice. Great for players who want to deal damage while supporting allies."
+            },
+            {
+                "name": "Fallen Aasimar",
+                "description": "An aasimar who was touched by dark powers, or who chose to dabble in them, is an aasimar whose original celestial nature has been warped by evil.",
+                "ability_score_increase": {
+                    "Strength": 1
+                },
+                "traits": [
+                    {
+                        "name": "Necrotic Shroud",
+                        "description": "As an action, you can unleash the divine energy within yourself, causing your eyes to turn black and two skeletal, ghostly, flightless wings to sprout from your back. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet, and once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level. Once you use this trait, you can't use it again until you finish a long rest."
+                    }
+                ],
+                "alabastria_context": "Fallen Aasimar in Alabastria's shadowed corners struggle with their corrupted divine nature. Some seek redemption through the Huntbound Order, while others embrace their dark power to fight evil with evil.",
+                "playstyle": "Dark support with necrotic damage and intimidation. Ideal for players who want to play morally complex characters with dark powers."
+            }
+        ]
+    },
+    {
+        "race": "Autognome",
+        "description": "Autognomes are small constructs built by gnomes to serve as assistants and companions. They are imbued with a spark of life and sentience, making them more than mere machines.",
+        "size": "Small",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Intelligence": 2,
+            "Constitution": 1
+        },
+        "age": "Autognomes don't age, but they can be destroyed. They can live indefinitely if properly maintained.",
+        "alignment": "Most autognomes are lawful, following the instructions of their creators or their own internal programming.",
+        "languages": ["Common", "Gnomish"],
+        "traits": [
+            {
+                "name": "Constructed Resilience",
+                "description": "You were created to have remarkable fortitude, represented by the following benefits: You have advantage on saving throws against being poisoned, and you have resistance to poison damage. You don't need to eat, drink, or breathe. You are immune to disease. You don't need to sleep, and magic can't put you to sleep."
+            },
+            {
+                "name": "Mechanical Nature",
+                "description": "Your creature type is construct, rather than humanoid. Spells and other effects that target humanoids don't affect you."
+            },
+            {
+                "name": "Sentry's Rest",
+                "description": "When you take a long rest, you must spend at least 6 hours in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn't render you unconscious, and you can see and hear as normal."
+            },
+            {
+                "name": "True Life",
+                "description": "You are a living creature. You can be affected by healing magic, and you can be targeted by spells that target humanoids. You can be raised from the dead."
+            }
+        ],
+        "alabastria_lore": "In Alatman's volcanic forges and Maltman's mountain workshops, Autognomes serve as tireless assistants to their gnomish creators. These mechanical beings represent the pinnacle of gnomish engineering, combining magical and technological innovation in Alabastria's most advanced settlements.",
+        "playstyle": "Durable utility specialists with unique construct abilities. Perfect for players who want to be immune to many common threats and have unique roleplay opportunities.",
+        "recommended_classes": ["Artificer", "Wizard", "Cleric", "Fighter"],
+        "subraces": []
+    },
+    {
+        "race": "Bugbear",
+        "description": "Bugbears are large, hairy goblinoids with a talent for stealth and surprise attacks. Despite their intimidating appearance, they can be surprisingly cunning and strategic.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Dexterity": 1
+        },
+        "age": "Bugbears reach adulthood at age 16 and live up to 80 years.",
+        "alignment": "Bugbears are chaotic evil in the wild, but some can be trained to be lawful evil.",
+        "languages": ["Common", "Goblin"],
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Long-Limbed",
+                "description": "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+            },
+            {
+                "name": "Powerful Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+            },
+            {
+                "name": "Sneaky",
+                "description": "You are proficient in the Stealth skill."
+            },
+            {
+                "name": "Surprise Attack",
+                "description": "If you surprise a creature and hit it with an attack on your first turn in combat, the target takes an extra 2d6 damage from the attack."
+            }
+        ],
+        "alabastria_lore": "In Katman's swamplands and the darker corners of Alabastria, Bugbears serve as scouts and infiltrators for various factions. Their natural stealth and surprise attack abilities make them valuable assets in the Huntbound Order's more covert operations.",
+        "playstyle": "Stealthy melee combatants with surprise tactics. Great for players who want to be sneaky fighters with extended reach.",
+        "recommended_classes": ["Rogue", "Ranger", "Fighter", "Barbarian"],
+        "subraces": []
+    },
+    {
+        "race": "Centaur",
+        "description": "Centaurs are humanoid creatures with the upper body of a human and the lower body of a horse. They are known for their speed, strength, and connection to nature.",
+        "size": "Medium",
+        "speed": "40 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Wisdom": 1
+        },
+        "age": "Centaurs mature and age at the same rate as humans.",
+        "alignment": "Centaurs are typically chaotic good, valuing freedom and nature.",
+        "languages": ["Common", "Sylvan"],
+        "traits": [
+            {
+                "name": "Charge",
+                "description": "If you move at least 30 feet straight toward a target and then hit it with a melee weapon attack on the same turn, you can immediately follow that attack with a bonus action, making one attack against the target with your hooves."
+            },
+            {
+                "name": "Hooves",
+                "description": "Your hooves are natural melee weapons, which you can use to make unarmed strikes. If you hit with them, you deal bludgeoning damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Equine Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift. In addition, any climb that requires hands and feet is especially difficult for you because of your equine legs. When you make such a climb, each foot of movement costs you 4 extra feet, instead of the normal 1 extra foot."
+            },
+            {
+                "name": "Survivor",
+                "description": "You have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival."
+            }
+        ],
+        "alabastria_lore": "On Skratonia's vast plains and in Kuriguer's magical forests, Centaurs serve as messengers, scouts, and guardians of nature. Their speed and connection to the land make them invaluable allies in the Huntbound Order's efforts to protect Alabastria's wilderness.",
+        "playstyle": "Mobile melee combatants with nature connection. Perfect for players who want speed, strength, and natural abilities.",
+        "recommended_classes": ["Ranger", "Druid", "Fighter", "Paladin"],
+        "subraces": []
+    },
+    {
+        "race": "Changeling",
+        "description": "Changelings are shapeshifters who can alter their appearance at will. They are often found in urban environments where their abilities allow them to blend in and gather information.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Charisma": 2,
+            "Dexterity": 1
+        },
+        "age": "Changelings mature at the same rate as humans but can live up to 200 years.",
+        "alignment": "Changelings are typically chaotic, as they value personal freedom and adaptability.",
+        "languages": ["Common", "Two languages of your choice"],
+        "traits": [
+            {
+                "name": "Shapechanger",
+                "description": "As an action, you can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight, but not so much that your size changes. You can make yourself appear as a member of another race, though none of your game statistics change. You can't duplicate the appearance of a creature you've never seen, and you must adopt a form that has the same basic arrangement of limbs that you have. Your clothing and equipment aren't changed by this trait. You stay in the new form until you use an action to revert to your true form or until you die."
+            },
+            {
+                "name": "Changeling Instincts",
+                "description": "You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, and Persuasion."
+            },
+            {
+                "name": "Divergent Persona",
+                "description": "You gain proficiency with one tool of your choice. You also choose two personality traits, one ideal, one bond, and one flaw. While you are in the form of this persona, the chosen personality traits, ideal, bond, and flaw replace those of your background."
+            }
+        ],
+        "alabastria_lore": "In Skratonia's diverse cities and Kuriguer's cosmopolitan ports, Changelings serve as spies, diplomats, and information brokers. Their shapeshifting abilities make them invaluable assets to the Huntbound Order's intelligence operations.",
+        "playstyle": "Versatile social specialists with infiltration abilities. Perfect for players who want to be masters of disguise and social manipulation.",
+        "recommended_classes": ["Bard", "Rogue", "Warlock", "Sorcerer"],
+        "subraces": []
+    },
+    {
+        "race": "Dhampir",
+        "description": "Dhampirs are the offspring of vampires and mortals, inheriting some of their undead parent's abilities while maintaining their humanity. They walk between the worlds of the living and the dead.",
+        "size": "Medium",
+        "speed": "35 feet",
+        "ability_score_increase": {
+            "Charisma": 2,
+            "Dexterity": 1
+        },
+        "age": "Dhampirs mature at the same rate as humans but can live for centuries.",
+        "alignment": "Dhampirs can be of any alignment, though many struggle with their dark heritage.",
+        "languages": ["Common", "One language of your choice"],
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Spider Climb",
+                "description": "You have a climbing speed equal to your walking speed. In addition, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free."
+            },
+            {
+                "name": "Vampiric Bite",
+                "description": "Your fanged bite is a natural weapon, which counts as a simple melee weapon with which you are proficient. You add your Constitution modifier, instead of your Strength modifier, to the attack and damage rolls when you attack with this bite. It deals 1d4 piercing damage on a hit. While you are missing half or more of your hit points, you have advantage on attack rolls you make with this bite. When you attack with this bite and hit a creature that doesn't have all its hit points, you can empower yourself in one of the following ways: You regain hit points equal to the damage dealt by the bite. You gain a bonus to the next ability check or attack roll you make; the bonus equals the damage dealt by the bite (minimum of +1). Either choice requires no action. You can empower yourself with this bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+            },
+            {
+                "name": "Deathless Nature",
+                "description": "You don't need to breathe."
+            }
+        ],
+        "alabastria_lore": "In Alabastria's shadowed corners and among the undead-haunted regions, Dhampirs walk a dangerous path between life and death. Some serve the Huntbound Order as specialists against undead threats, while others struggle with their dark heritage in the world's more accepting communities.",
+        "playstyle": "Mobile combatants with unique feeding mechanics. Great for players who want to play morally complex characters with undead abilities.",
+        "recommended_classes": ["Rogue", "Ranger", "Fighter", "Warlock"],
+        "subraces": []
+    },
+    {
+        "race": "Dragonborn",
+        "description": "Dragonborn are humanoid dragons, created by dragons or born from dragon eggs. They are proud, honorable, and often seek to prove their worth through great deeds.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Charisma": 1
+        },
+        "age": "Dragonborn reach adulthood by age 15 and live to be around 80 years old.",
+        "alignment": "Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil.",
+        "languages": ["Common", "Draconic"],
+        "traits": [
+            {
+                "name": "Draconic Ancestry",
+                "description": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table."
+            },
+            {
+                "name": "Breath Weapon",
+                "description": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can't use it again until you complete a short or long rest."
+            },
+            {
+                "name": "Damage Resistance",
+                "description": "You have resistance to the damage type associated with your draconic ancestry."
+            }
+        ],
+        "alabastria_lore": "In Bulsania's militarized society and across Alabastria's dragon-worshipping regions, Dragonborn serve as elite warriors and leaders. Their draconic heritage and martial prowess make them natural commanders in the Huntbound Order's most dangerous missions.",
+        "playstyle": "Martial combatants with elemental abilities. Perfect for players who want to be proud warriors with draconic powers.",
+        "recommended_classes": ["Fighter", "Paladin", "Sorcerer", "Barbarian"],
+        "subraces": [
+            {
+                "name": "Chromatic Dragonborn",
+                "description": "Chromatic dragonborn are descended from evil dragons and often inherit their ancestors' destructive tendencies.",
+                "traits": [
+                    {
+                        "name": "Chromatic Ancestry",
+                        "description": "You can choose from Black, Blue, Green, Red, or White dragon ancestry, each with different breath weapon and resistance types."
+                    }
+                ],
+                "alabastria_context": "Chromatic Dragonborn in Bulsania's military often serve as shock troops, their destructive breath weapons making them feared on the battlefield. Some seek redemption through the Huntbound Order, channeling their destructive power against true evil.",
+                "playstyle": "Offensive warriors with destructive elemental powers. Great for players who want to deal elemental damage and intimidate enemies."
+            },
+            {
+                "name": "Metallic Dragonborn",
+                "description": "Metallic dragonborn are descended from good dragons and often inherit their ancestors' protective nature.",
+                "traits": [
+                    {
+                        "name": "Metallic Ancestry",
+                        "description": "You can choose from Brass, Bronze, Copper, Gold, or Silver dragon ancestry, each with different breath weapon and resistance types."
+                    }
+                ],
+                "alabastria_context": "Metallic Dragonborn in Alabastria's temples and noble houses serve as protectors and leaders. Their noble heritage and protective abilities make them natural leaders in the Huntbound Order's quest to protect the innocent.",
+                "playstyle": "Defensive warriors with protective elemental powers. Perfect for players who want to be noble protectors with draconic abilities."
+            },
+            {
+                "name": "Gem Dragonborn",
+                "description": "Gem dragonborn are descended from psionic dragons and often inherit their ancestors' mental abilities.",
+                "traits": [
+                    {
+                        "name": "Gem Ancestry",
+                        "description": "You can choose from Amethyst, Crystal, Emerald, Sapphire, or Topaz dragon ancestry, each with different breath weapon and resistance types."
+                    }
+                ],
+                "alabastria_context": "Gem Dragonborn in Kuriguer's magical academies and Skratonia's scholarly institutions study the mysteries of the mind. Their psionic heritage and intellectual abilities make them valuable researchers and strategists in the Huntbound Order.",
+                "playstyle": "Intellectual warriors with psionic abilities. Ideal for players who want to combine martial prowess with mental powers."
+            }
+        ]
+    },
+    {
+        "race": "Dwarf",
+        "description": "Dwarves are a stoic but stern race, ensconced in cities carved from the hearts of mountains and fiercely determined to repel the hardships of the outside world.",
+        "size": "Medium",
+        "speed": "25 feet",
+        "ability_score_increase": {
+            "Constitution": 2
+        },
+        "age": "Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
+        "alignment": "Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.",
+        "languages": ["Common", "Dwarvish"],
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Dwarven Resilience",
+                "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+            },
+            {
+                "name": "Stonecunning",
+                "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+            }
+        ],
+        "alabastria_lore": "In Maltman's mountain strongholds and Alatman's volcanic forges, Dwarves serve as master craftsmen and miners. Their expertise in metalwork and stone construction makes them invaluable allies in the Huntbound Order's efforts to fortify settlements against monstrous threats.",
+        "playstyle": "Durable craftsmen and warriors with resistance to common threats. Perfect for players who want to be tough, practical characters with crafting abilities.",
+        "recommended_classes": ["Fighter", "Cleric", "Paladin", "Artificer"],
+        "subraces": [
+            {
+                "name": "Hill Dwarf",
+                "description": "Hill dwarves are more social and less reclusive than mountain dwarves, often found in human settlements.",
+                "ability_score_increase": {
+                    "Wisdom": 1
+                },
+                "traits": [
+                    {
+                        "name": "Dwarven Toughness",
+                        "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+                    }
+                ],
+                "alabastria_context": "Hill Dwarves in Skratonia's cities and Kuriguer's coastal towns serve as merchants and craftsmen. Their social nature and extra durability make them excellent community leaders and healers in the Huntbound Order.",
+                "playstyle": "Durable support characters with extra hit points. Great for players who want to be tough healers or community leaders."
+            },
+            {
+                "name": "Mountain Dwarf",
+                "description": "Mountain dwarves are more traditional and reclusive, often found in their mountain strongholds.",
+                "ability_score_increase": {
+                    "Strength": 2
+                },
+                "traits": [
+                    {
+                        "name": "Dwarven Armor Training",
+                        "description": "You have proficiency with light and medium armor."
+                    }
+                ],
+                "alabastria_context": "Mountain Dwarves in Maltman's strongholds and Bulsania's peaks serve as elite warriors and miners. Their martial training and strength make them formidable fighters in the Huntbound Order's most dangerous missions.",
+                "playstyle": "Heavily armored warriors with martial training. Perfect for players who want to be heavily armored fighters with crafting abilities."
+            },
+            {
+                "name": "Duergar",
+                "description": "Duergar are dark dwarves who live in the Underdark and have developed psionic abilities.",
+                "ability_score_increase": {
+                    "Strength": 1
+                },
+                "traits": [
+                    {
+                        "name": "Duergar Magic",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, without requiring a material component. When you reach 5th level, you can cast the invisibility spell on yourself once with this trait, without requiring a material component. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells."
+                    },
+                    {
+                        "name": "Duergar Resilience",
+                        "description": "You have advantage on saving throws against illusions and against being charmed or paralyzed."
+                    },
+                    {
+                        "name": "Sunlight Sensitivity",
+                        "description": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+                    }
+                ],
+                "alabastria_context": "Duergar in Maltman's deepest mines and Alatman's underground workshops serve as specialized craftsmen and spies. Their psionic abilities and Underdark knowledge make them valuable assets in the Huntbound Order's covert operations.",
+                "playstyle": "Psionic craftsmen with stealth abilities. Great for players who want to be magical craftsmen with unique abilities."
+            }
+        ]
+    },
+    {
+        "race": "Elf",
+        "description": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2
+        },
+        "age": "Elves mature at the same rate as humans but can live to be 750 years old.",
+        "alignment": "Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own.",
+        "languages": ["Common", "Elvish"],
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Keen Senses",
+                "description": "You have proficiency in the Perception skill."
+            },
+            {
+                "name": "Fey Ancestry",
+                "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+            },
+            {
+                "name": "Trance",
+                "description": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+            }
+        ],
+        "alabastria_lore": "In Kuriguer's magical forests and Skratonia's ancient groves, Elves serve as guardians of nature and keepers of ancient wisdom. Their long lives and magical heritage make them natural leaders in the Huntbound Order's efforts to protect Alabastria's natural beauty and magical secrets.",
+        "playstyle": "Graceful and perceptive characters with magical resistance. Perfect for players who want to be agile, wise, and resistant to common magical effects.",
+        "recommended_classes": ["Ranger", "Wizard", "Fighter", "Rogue"],
+        "subraces": [
+            {
+                "name": "High Elf",
+                "description": "High elves are the most traditional and magical of the elven subraces, often found in magical academies and ancient libraries.",
+                "ability_score_increase": {
+                    "Intelligence": 1
+                },
+                "traits": [
+                    {
+                        "name": "Elf Weapon Training",
+                        "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+                    },
+                    {
+                        "name": "Cantrip",
+                        "description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+                    },
+                    {
+                        "name": "Extra Language",
+                        "description": "You can speak, read, and write one extra language of your choice."
+                    }
+                ],
+                "alabastria_context": "High Elves in Kuriguer's magical academies and Skratonia's scholarly institutions serve as wizards and researchers. Their intellectual nature and magical abilities make them valuable strategists and spellcasters in the Huntbound Order.",
+                "playstyle": "Intellectual spellcasters with martial training. Great for players who want to be magical warriors with extra languages."
+            },
+            {
+                "name": "Wood Elf",
+                "description": "Wood elves are swift and stealthy, with a deep bond to the forests and natural world.",
+                "ability_score_increase": {
+                    "Wisdom": 1
+                },
+                "traits": [
+                    {
+                        "name": "Elf Weapon Training",
+                        "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+                    },
+                    {
+                        "name": "Fleet of Foot",
+                        "description": "Your base walking speed increases to 35 feet."
+                    },
+                    {
+                        "name": "Mask of the Wild",
+                        "description": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                    }
+                ],
+                "alabastria_context": "Wood Elves in Kuriguer's magical forests and Skratonia's ancient groves serve as rangers and druids. Their natural stealth and speed make them excellent scouts and trackers in the Huntbound Order's wilderness operations.",
+                "playstyle": "Swift and stealthy nature guardians. Perfect for players who want to be fast, sneaky characters with nature abilities."
+            },
+            {
+                "name": "Dark Elf (Drow)",
+                "description": "Dark elves, or drow, are elves who live in the Underdark and have adapted to its harsh environment.",
+                "ability_score_increase": {
+                    "Charisma": 1
+                },
+                "traits": [
+                    {
+                        "name": "Superior Darkvision",
+                        "description": "Your darkvision has a radius of 120 feet."
+                    },
+                    {
+                        "name": "Sunlight Sensitivity",
+                        "description": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+                    },
+                    {
+                        "name": "Drow Magic",
+                        "description": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    },
+                    {
+                        "name": "Drow Weapon Training",
+                        "description": "You have proficiency with rapiers, shortswords, and hand crossbows."
+                    }
+                ],
+                "alabastria_context": "Drow in Maltman's deepest caverns and Alatman's underground regions serve as scouts and spies. Their Underdark knowledge and magical abilities make them valuable assets in the Huntbound Order's covert operations.",
+                "playstyle": "Magical scouts with Underdark abilities. Great for players who want to be stealthy spellcasters with unique challenges."
+            },
+            {
+                "name": "Sea Elf",
+                "description": "Sea elves are elves who have adapted to life underwater and have a deep connection to the ocean.",
+                "ability_score_increase": {
+                    "Constitution": 1
+                },
+                "traits": [
+                    {
+                        "name": "Sea Elf Training",
+                        "description": "You have proficiency with the spear, trident, light crossbow, and net."
+                    },
+                    {
+                        "name": "Child of the Sea",
+                        "description": "You have a swimming speed of 30 feet, and you can breathe air and water."
+                    },
+                    {
+                        "name": "Friend of the Sea",
+                        "description": "Using gestures and sounds, you can communicate simple ideas with any beast that has an innate swimming speed."
+                    }
+                ],
+                "alabastria_context": "Sea Elves in Kuriguer's coastal waters and along Alabastria's shores serve as maritime scouts and protectors. Their aquatic abilities and ocean knowledge make them valuable allies in the Huntbound Order's coastal operations.",
+                "playstyle": "Aquatic scouts with ocean abilities. Perfect for players who want to be water-based characters with unique movement options."
+            },
+            {
+                "name": "Eladrin",
+                "description": "Eladrin are elves who live in the Feywild and have a deep connection to the seasons and natural cycles.",
+                "ability_score_increase": {
+                    "Intelligence": 1
+                },
+                "traits": [
+                    {
+                        "name": "Fey Step",
+                        "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest. When you reach 3rd level, your Fey Step gains an additional effect based on your season. The effect lasts until the end of your next turn."
+                    },
+                    {
+                        "name": "Trance",
+                        "description": "You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you remain conscious."
+                    }
+                ],
+                "alabastria_context": "Eladrin in Kuriguer's magical forests and fey-touched areas serve as guardians of the natural world. Their seasonal magic and fey connection make them powerful allies in the Huntbound Order's efforts to protect Alabastria's magical balance.",
+                "playstyle": "Seasonal magic users with teleportation. Great for players who want to be magical characters with unique seasonal abilities."
+            },
+            {
+                "name": "Shadar-kai",
+                "description": "Shadar-kai are elves who live in the Shadowfell and have a deep connection to death and shadow magic.",
+                "ability_score_increase": {
+                    "Constitution": 1
+                },
+                "traits": [
+                    {
+                        "name": "Blessing of the Raven Queen",
+                        "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a long rest. Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent."
+                    },
+                    {
+                        "name": "Necrotic Resistance",
+                        "description": "You have resistance to necrotic damage."
+                    },
+                    {
+                        "name": "Trance",
+                        "description": "You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you remain conscious."
+                    }
+                ],
+                "alabastria_context": "Shadar-kai in Kuriguer's shadow-touched woods and Alabastria's darker regions serve as specialists against undead threats. Their shadow magic and death resistance make them valuable assets in the Huntbound Order's most dangerous missions.",
+                "playstyle": "Shadow magic users with death resistance. Perfect for players who want to be dark magical characters with unique abilities."
+            }
+        ]
+    },
+    {
+        "race": "Fairy",
+        "description": "Fairies are small, magical humanoids with a deep connection to the Feywild. They are known for their mischievous nature and powerful magic.",
+        "size": "Small",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Charisma": 2,
+            "Dexterity": 1
+        },
+        "age": "Fairies mature at the same rate as humans but can live for centuries.",
+        "alignment": "Fairies are typically chaotic, as they value personal freedom and creativity.",
+        "languages": ["Common", "Sylvan"],
+        "traits": [
+            {
+                "name": "Fairy Magic",
+                "description": "You know the druidcraft cantrip. Starting at 3rd level, you can cast the faerie fire spell with this trait. Starting at 5th level, you can also cast the enlarge/reduce spell with this trait. Once you cast faerie fire or enlarge/reduce with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. Charisma is your spellcasting ability for these spells."
+            },
+            {
+                "name": "Flight",
+                "description": "You have a flying speed equal to your walking speed. You can hover."
+            },
+            {
+                "name": "Fey Passage",
+                "description": "You can squeeze through a space as narrow as 1 inch wide without squeezing."
+            }
+        ],
+        "alabastria_lore": "In Kuriguer's magical forests and fey-touched areas, Fairies serve as messengers and guardians of the natural world. Their small size and magical abilities make them excellent scouts and spies in the Huntbound Order's operations.",
+        "playstyle": "Tiny magical scouts with flight abilities. Perfect for players who want to be small, magical characters with unique movement options.",
+        "recommended_classes": ["Druid", "Bard", "Ranger", "Warlock"],
+        "subraces": []
+    },
+    {
+        "race": "Firbolg",
+        "description": "Firbolgs are gentle giants who live in the deepest forests and serve as guardians of nature. They are known for their wisdom, strength, and connection to the natural world.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Wisdom": 2,
+            "Strength": 1
+        },
+        "age": "Firbolgs mature at the same rate as humans but can live for centuries.",
+        "alignment": "Firbolgs are typically neutral good, valuing nature and protecting the innocent.",
+        "languages": ["Common", "Giant", "Elvish"],
+        "traits": [
+            {
+                "name": "Firbolg Magic",
+                "description": "You can cast detect magic and disguise self with this trait, using Wisdom as your spellcasting ability. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. You can also cast these spells using any spell slots you have of the appropriate level."
+            },
+            {
+                "name": "Hidden Step",
+                "description": "As a bonus action, you can magically turn invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw. Once you use this trait, you can't do so again until you finish a short or long rest."
+            },
+            {
+                "name": "Powerful Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+            },
+            {
+                "name": "Speech of Beast and Leaf",
+                "description": "You have the ability to communicate in a limited manner with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them."
+            }
+        ],
+        "alabastria_lore": "In Kuriguer's deepest forests and Skratonia's ancient groves, Firbolgs serve as guardians of nature and protectors of the innocent. Their gentle strength and natural magic make them powerful allies in the Huntbound Order's efforts to protect Alabastria's wilderness.",
+        "playstyle": "Gentle giants with nature magic and stealth abilities. Perfect for players who want to be strong, wise characters with unique magical abilities.",
+        "recommended_classes": ["Druid", "Cleric", "Ranger", "Barbarian"],
+        "subraces": []
+    },
+    {
+        "race": "Genasi",
+        "description": "Genasi are humanoids with a deep connection to elemental forces. They are born when mortals and elementals interbreed, resulting in beings with elemental powers.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2
+        },
+        "age": "Genasi mature at the same rate as humans but can live for centuries.",
+        "alignment": "Genasi can be of any alignment, though they often reflect the nature of their elemental heritage.",
+        "languages": ["Common", "Primordial"],
+        "traits": [
+            {
+                "name": "Elemental Resistance",
+                "description": "You have resistance to one damage type based on your elemental heritage."
+            },
+            {
+                "name": "Elemental Magic",
+                "description": "You know one cantrip based on your elemental heritage. At 3rd level, you can cast a 1st-level spell based on your elemental heritage. At 5th level, you can cast a 2nd-level spell based on your elemental heritage. Once you cast a spell with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have of the appropriate level. Constitution is your spellcasting ability for these spells."
+            }
+        ],
+        "alabastria_lore": "In Kuriguer's elemental hotspots and Alatman's volcanic regions, Genasi serve as elemental specialists and magical researchers. Their elemental heritage and magical abilities make them valuable assets in the Huntbound Order's efforts to understand and control Alabastria's magical phenomena.",
+        "playstyle": "Elemental magic users with unique resistances. Perfect for players who want to be magical characters with elemental themes.",
+        "recommended_classes": ["Sorcerer", "Wizard", "Druid", "Monk"],
+        "subraces": [
+            {
+                "name": "Air Genasi",
+                "description": "Air genasi are connected to the element of air and wind, often found in high places and open spaces.",
+                "ability_score_increase": {
+                    "Dexterity": 1
+                },
+                "traits": [
+                    {
+                        "name": "Air Resistance",
+                        "description": "You have resistance to lightning damage."
+                    },
+                    {
+                        "name": "Air Magic",
+                        "description": "You know the shocking grasp cantrip. At 3rd level, you can cast feather fall with this trait. At 5th level, you can cast levitate with this trait. Once you cast feather fall or levitate with this trait, you can't cast that spell with it again until you finish a long rest."
+                    },
+                    {
+                        "name": "Unending Breath",
+                        "description": "You can hold your breath indefinitely while you're not incapacitated."
+                    },
+                    {
+                        "name": "Mingle with the Wind",
+                        "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest."
+                    }
+                ],
+                "alabastria_context": "Air Genasi in Kuriguer's coastal regions and Bulsania's mountain peaks serve as scouts and messengers. Their wind magic and aerial abilities make them excellent for reconnaissance and communication in the Huntbound Order.",
+                "playstyle": "Wind magic users with teleportation abilities. Great for players who want to be mobile magical characters with air themes."
+            },
+            {
+                "name": "Earth Genasi",
+                "description": "Earth genasi are connected to the element of earth and stone, often found in mountains and underground areas.",
+                "ability_score_increase": {
+                    "Strength": 1
+                },
+                "traits": [
+                    {
+                        "name": "Earth Resistance",
+                        "description": "You have resistance to acid damage."
+                    },
+                    {
+                        "name": "Earth Magic",
+                        "description": "You know the blade ward cantrip. At 3rd level, you can cast earth tremor with this trait. At 5th level, you can cast passwall with this trait. Once you cast earth tremor or passwall with this trait, you can't cast that spell with it again until you finish a long rest."
+                    },
+                    {
+                        "name": "Earth Walk",
+                        "description": "You can move across difficult terrain made of earth or stone without spending extra movement."
+                    }
+                ],
+                "alabastria_context": "Earth Genasi in Maltman's mountain strongholds and Alatman's volcanic regions serve as miners and craftsmen. Their earth magic and stone abilities make them valuable for construction and excavation in the Huntbound Order.",
+                "playstyle": "Earth magic users with terrain abilities. Perfect for players who want to be sturdy magical characters with earth themes."
+            },
+            {
+                "name": "Fire Genasi",
+                "description": "Fire genasi are connected to the element of fire and heat, often found in volcanic areas and hot climates.",
+                "ability_score_increase": {
+                    "Intelligence": 1
+                },
+                "traits": [
+                    {
+                        "name": "Fire Resistance",
+                        "description": "You have resistance to fire damage."
+                    },
+                    {
+                        "name": "Fire Magic",
+                        "description": "You know the produce flame cantrip. At 3rd level, you can cast burning hands with this trait. At 5th level, you can cast flame blade with this trait. Once you cast burning hands or flame blade with this trait, you can't cast that spell with it again until you finish a long rest."
+                    },
+                    {
+                        "name": "Reach to the Blaze",
+                        "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest."
+                    }
+                ],
+                "alabastria_context": "Fire Genasi in Alatman's volcanic forges and Kuriguer's magical hotspots serve as smiths and magical researchers. Their fire magic and heat resistance make them excellent for crafting and magical experimentation in the Huntbound Order.",
+                "playstyle": "Fire magic users with teleportation abilities. Great for players who want to be destructive magical characters with fire themes."
+            },
+            {
+                "name": "Water Genasi",
+                "description": "Water genasi are connected to the element of water and ice, often found near bodies of water and in cold climates.",
+                "ability_score_increase": {
+                    "Wisdom": 1
+                },
+                "traits": [
+                    {
+                        "name": "Water Resistance",
+                        "description": "You have resistance to acid damage."
+                    },
+                    {
+                        "name": "Water Magic",
+                        "description": "You know the shape water cantrip. At 3rd level, you can cast create or destroy water with this trait. At 5th level, you can cast wall of water with this trait. Once you cast create or destroy water or wall of water with this trait, you can't cast that spell with it again until you finish a long rest."
+                    },
+                    {
+                        "name": "Amphibious",
+                        "description": "You can breathe air and water."
+                    },
+                    {
+                        "name": "Swim",
+                        "description": "You have a swimming speed of 30 feet."
+                    }
+                ],
+                "alabastria_context": "Water Genasi in Kuriguer's coastal waters and along Alabastria's shores serve as maritime specialists and water guardians. Their water magic and aquatic abilities make them excellent for coastal operations and water-based missions in the Huntbound Order.",
+                "playstyle": "Water magic users with aquatic abilities. Perfect for players who want to be water-based magical characters with unique movement options."
+            }
+        ]
+    }
+]
