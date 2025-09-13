@@ -795,7 +795,49 @@ const app = {
     },
 
     renderRaces(container) {
-        this.raceInformationData.forEach(raceData => {
+        // Add search bar
+        const searchContainer = document.createElement('div');
+        searchContainer.className = 'search-container';
+        searchContainer.innerHTML = `
+            <div class="search-bar">
+                <input type="text" id="race-search" placeholder="Search races and subraces..." 
+                       onkeyup="app.filterRaces()" class="search-input">
+                <select id="race-ability-filter" onchange="app.filterRaces()" class="filter-select">
+                    <option value="">All Ability Scores</option>
+                    <option value="any">Any Ability Increase</option>
+                    <option value="str">Strength (+1 or +2)</option>
+                    <option value="dex">Dexterity (+1 or +2)</option>
+                    <option value="con">Constitution (+1 or +2)</option>
+                    <option value="int">Intelligence (+1 or +2)</option>
+                    <option value="wis">Wisdom (+1 or +2)</option>
+                    <option value="cha">Charisma (+1 or +2)</option>
+                    <option value="plus2">+2 Ability Increase</option>
+                </select>
+                <button onclick="app.clearRaceSearch()" class="clear-search-btn">Clear</button>
+            </div>
+        `;
+        container.appendChild(searchContainer);
+
+        // Add results container
+        const resultsContainer = document.createElement('div');
+        resultsContainer.id = 'race-results';
+        resultsContainer.className = 'results-container selection-results-grid';
+        container.appendChild(resultsContainer);
+
+        // Store original data for filtering
+        this.originalRaceData = [...this.raceInformationData];
+        this.filteredRaceData = [...this.raceInformationData];
+
+        this.renderRaceResults();
+    },
+
+    renderRaceResults() {
+        const resultsContainer = document.getElementById('race-results');
+        if (!resultsContainer) return;
+
+        resultsContainer.innerHTML = '';
+
+        this.filteredRaceData.forEach(raceData => {
             const card = document.createElement('div');
             card.className = 'selection-card race-card';
             card.onclick = () => this.selectItem(raceData.race);
@@ -818,12 +860,128 @@ const app = {
                 ${raceData.subraces && raceData.subraces.length > 0 ? `<div class="subrace-count">${raceData.subraces.length} subraces available</div>` : ''}
             `;
 
-            container.appendChild(card);
+            resultsContainer.appendChild(card);
         });
     },
 
+    filterRaces() {
+        const searchTerm = document.getElementById('race-search').value.toLowerCase();
+        const abilityFilter = document.getElementById('race-ability-filter').value;
+
+        if (searchTerm === '' && abilityFilter === '') {
+            this.filteredRaceData = [...this.originalRaceData];
+        } else {
+            this.filteredRaceData = this.originalRaceData.filter(raceData => {
+                // Search term filtering - only search names
+                if (searchTerm !== '') {
+                    let matchesSearch = false;
+
+                    // Search in race name
+                    if (raceData.race.toLowerCase().includes(searchTerm)) matchesSearch = true;
+
+                    // Special case: If searching for Dragonborn colors, always show Dragonborn
+                    if (raceData.race.toLowerCase() === 'dragonborn') {
+                        const dragonbornColors = ['black', 'blue', 'green', 'red', 'white', 'brass', 'bronze', 'copper', 'gold', 'silver', 'amethyst', 'crystal', 'emerald', 'sapphire', 'topaz', 'chromatic', 'metallic', 'gem'];
+                        // Check if search term matches any Dragonborn color (partial or exact)
+                        if (dragonbornColors.some(color => color.includes(searchTerm) || searchTerm.includes(color))) {
+                            matchesSearch = true;
+                        }
+                    }
+
+                    // Search in subraces (including Dragonborn colors)
+                    if (raceData.subraces) {
+                        if (raceData.subraces.some(subrace => {
+                            const subraceName = subrace.name.toLowerCase();
+                            const subraceDesc = subrace.description ? subrace.description.toLowerCase() : '';
+
+                            return subraceName.includes(searchTerm) ||
+                                // Dragonborn color matching (partial)
+                                (subraceName.includes('chromatic') && 'chromatic'.includes(searchTerm)) ||
+                                (subraceName.includes('metallic') && 'metallic'.includes(searchTerm)) ||
+                                (subraceName.includes('gem') && 'gem'.includes(searchTerm)) ||
+                                // Individual color matching in descriptions (partial)
+                                (['black', 'blue', 'green', 'red', 'white'].some(color => color.includes(searchTerm) && subraceDesc.includes(color))) ||
+                                (['brass', 'bronze', 'copper', 'gold', 'silver'].some(color => color.includes(searchTerm) && subraceDesc.includes(color))) ||
+                                (['amethyst', 'crystal', 'emerald', 'sapphire', 'topaz'].some(color => color.includes(searchTerm) && subraceDesc.includes(color)));
+                        })) {
+                            matchesSearch = true;
+                        }
+                    }
+
+                    if (!matchesSearch) return false;
+                }
+
+                // Ability score filtering
+                if (abilityFilter !== '') {
+                    const abilityScores = raceData.ability_score_increase;
+                    const hasAbilityIncrease = Object.values(abilityScores).some(value => value > 0);
+
+                    if (abilityFilter === 'any' && !hasAbilityIncrease) return false;
+                    if (abilityFilter === 'str' && (!abilityScores.Strength || abilityScores.Strength === 0)) return false;
+                    if (abilityFilter === 'dex' && (!abilityScores.Dexterity || abilityScores.Dexterity === 0)) return false;
+                    if (abilityFilter === 'con' && (!abilityScores.Constitution || abilityScores.Constitution === 0)) return false;
+                    if (abilityFilter === 'int' && (!abilityScores.Intelligence || abilityScores.Intelligence === 0)) return false;
+                    if (abilityFilter === 'wis' && (!abilityScores.Wisdom || abilityScores.Wisdom === 0)) return false;
+                    if (abilityFilter === 'cha' && (!abilityScores.Charisma || abilityScores.Charisma === 0)) return false;
+                    if (abilityFilter === 'plus2' && !Object.values(abilityScores).some(value => value === 2)) return false;
+                }
+
+                return true;
+            });
+        }
+
+        this.renderRaceResults();
+    },
+
+    clearRaceSearch() {
+        document.getElementById('race-search').value = '';
+        document.getElementById('race-ability-filter').value = '';
+        this.filteredRaceData = [...this.originalRaceData];
+        this.renderRaceResults();
+    },
+
     renderClasses(container) {
-        this.classInformationData.forEach(classData => {
+        // Add search bar
+        const searchContainer = document.createElement('div');
+        searchContainer.className = 'search-container';
+        searchContainer.innerHTML = `
+            <div class="search-bar">
+                <input type="text" id="class-search" placeholder="Search classes and subclasses..." 
+                       onkeyup="app.filterClasses()" class="search-input">
+                <select id="class-ability-filter" onchange="app.filterClasses()" class="filter-select">
+                    <option value="">All Primary Abilities</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Constitution">Constitution</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Wisdom">Wisdom</option>
+                    <option value="Charisma">Charisma</option>
+                </select>
+                <button onclick="app.clearClassSearch()" class="clear-search-btn">Clear</button>
+            </div>
+        `;
+        container.appendChild(searchContainer);
+
+        // Add results container
+        const resultsContainer = document.createElement('div');
+        resultsContainer.id = 'class-results';
+        resultsContainer.className = 'results-container selection-results-grid';
+        container.appendChild(resultsContainer);
+
+        // Store original data for filtering
+        this.originalClassData = [...this.classInformationData];
+        this.filteredClassData = [...this.classInformationData];
+
+        this.renderClassResults();
+    },
+
+    renderClassResults() {
+        const resultsContainer = document.getElementById('class-results');
+        if (!resultsContainer) return;
+
+        resultsContainer.innerHTML = '';
+
+        this.filteredClassData.forEach(classData => {
             const card = document.createElement('div');
             card.className = 'selection-card class-card';
             card.onclick = () => this.selectItem(classData.class);
@@ -839,8 +997,58 @@ const app = {
                 <p class="class-playstyle">${classData.playstyle}</p>
             `;
 
-            container.appendChild(card);
+            resultsContainer.appendChild(card);
         });
+    },
+
+    filterClasses() {
+        const searchTerm = document.getElementById('class-search').value.toLowerCase();
+        const abilityFilter = document.getElementById('class-ability-filter').value;
+
+        if (searchTerm === '' && abilityFilter === '') {
+            this.filteredClassData = [...this.originalClassData];
+        } else {
+            this.filteredClassData = this.originalClassData.filter(classData => {
+                // Search term filtering - only search names
+                if (searchTerm !== '') {
+                    let matchesSearch = false;
+
+                    // Search in class name
+                    if (classData.class.toLowerCase().includes(searchTerm)) matchesSearch = true;
+
+                    // Search in subclasses
+                    if (classData.subclasses) {
+                        if (classData.subclasses.some(subclass =>
+                            subclass.name && subclass.name.toLowerCase().includes(searchTerm)
+                        )) matchesSearch = true;
+                    }
+
+                    if (!matchesSearch) return false;
+                }
+
+                // Primary ability filtering - loose search
+                if (abilityFilter !== '') {
+                    const primaryAbility = classData.primary_ability.toLowerCase();
+                    const filterAbility = abilityFilter.toLowerCase();
+
+                    // Check if the filter ability is contained in the primary ability string
+                    if (!primaryAbility.includes(filterAbility)) {
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+        }
+
+        this.renderClassResults();
+    },
+
+    clearClassSearch() {
+        document.getElementById('class-search').value = '';
+        document.getElementById('class-ability-filter').value = '';
+        this.filteredClassData = [...this.originalClassData];
+        this.renderClassResults();
     },
 
     renderPlaystyleGuide(container) {
@@ -1321,8 +1529,41 @@ const app = {
          <div class="guild-details">
             <div class="guild-section">
                <h3>Active Members</h3>
-               <div class="members-grid">
-                  ${this.guildMembersData.map(member => {
+               
+               <div class="search-container">
+                   <div class="search-bar">
+                       <input type="text" id="member-search" placeholder="Search by member name..." 
+                              onkeyup="app.filterGuildMembers()" class="search-input">
+                       <select id="member-manager-filter" onchange="app.filterGuildMembers()" class="filter-select">
+                           <option value="">All Managers</option>
+                           ${[...new Set(this.guildMembersData.map(m => m.managed_by))].map(manager =>
+            `<option value="${manager}">${manager}</option>`
+        ).join('')}
+                       </select>
+                       <select id="member-rank-filter" onchange="app.filterGuildMembers()" class="filter-select">
+                           <option value="">All Ranks</option>
+                           ${[...new Set(this.guildMembersData.map(m => m.rank))].map(rank =>
+            `<option value="${rank}">${rank}</option>`
+        ).join('')}
+                       </select>
+                       <button onclick="app.clearGuildMemberFilters()" class="clear-search-btn">Clear All</button>
+                   </div>
+               </div>
+               
+               <div id="member-results" class="members-grid">
+                  ${this.renderGuildMemberResults()}
+               </div>
+            </div>
+         </div>
+      `;
+    },
+
+    renderGuildMemberResults() {
+        if (!this.filteredGuildMembersData) {
+            this.filteredGuildMembersData = [...this.guildMembersData];
+        }
+
+        return this.filteredGuildMembersData.map(member => {
             const memberQuests = this.getMemberQuestParticipation(member.name);
             return `
                         <div class="member-card">
@@ -1374,11 +1615,44 @@ const app = {
                            </div>
                         </div>
                      `;
-        }).join('')}
-               </div>
-            </div>
-         </div>
-      `;
+        }).join('');
+    },
+
+    filterGuildMembers() {
+        const searchTerm = document.getElementById('member-search').value.toLowerCase();
+        const managerFilter = document.getElementById('member-manager-filter').value;
+        const rankFilter = document.getElementById('member-rank-filter').value;
+
+        this.filteredGuildMembersData = this.guildMembersData.filter(member => {
+            // Name search
+            if (searchTerm && !member.name.toLowerCase().includes(searchTerm)) return false;
+
+            // Manager filter
+            if (managerFilter && member.managed_by !== managerFilter) return false;
+
+            // Rank filter
+            if (rankFilter && member.rank !== rankFilter) return false;
+
+            return true;
+        });
+
+        // Update the results
+        const resultsContainer = document.getElementById('member-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderGuildMemberResults();
+        }
+    },
+
+    clearGuildMemberFilters() {
+        document.getElementById('member-search').value = '';
+        document.getElementById('member-manager-filter').value = '';
+        document.getElementById('member-rank-filter').value = '';
+        this.filteredGuildMembersData = [...this.guildMembersData];
+
+        const resultsContainer = document.getElementById('member-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderGuildMemberResults();
+        }
     },
 
     // Render quest reports view
@@ -1423,8 +1697,35 @@ const app = {
          <div class="guild-details">
             <div class="guild-section">
                <h3>Completed Quests</h3>
-               <div style="margin-bottom: 1rem;">
-                  ${this.questReportsData.map(quest => `
+               
+               <div class="search-container">
+                   <div class="search-bar">
+                       <input type="text" id="quest-search" placeholder="Search by quest name or member..." 
+                              onkeyup="app.filterQuestReports()" class="search-input">
+                       <select id="quest-rank-filter" onchange="app.filterQuestReports()" class="filter-select">
+                           <option value="">All Ranks</option>
+                           ${[...new Set(this.questReportsData.map(q => q.quest_rank))].map(rank =>
+                `<option value="${rank}">${rank}</option>`
+            ).join('')}
+                       </select>
+                       <button onclick="app.clearQuestFilters()" class="clear-search-btn">Clear All</button>
+                   </div>
+               </div>
+               
+               <div id="quest-results" style="margin-bottom: 1rem;">
+                  ${this.renderQuestResults()}
+               </div>
+            </div>
+         </div>
+      `;
+    },
+
+    renderQuestResults() {
+        if (!this.filteredQuestReportsData) {
+            this.filteredQuestReportsData = [...this.questReportsData];
+        }
+
+        return this.filteredQuestReportsData.map(quest => `
                      <details style="margin: 1.5rem 0; border: 2px solid var(--mountain-brown); border-radius: var(--border-radius); overflow: hidden;">
                         <summary style="padding: 1.5rem; background: rgba(44, 79, 107, 0.1); cursor: pointer; font-weight: 600; font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; color: var(--ocean-blue);">
                            ${quest.quest_name} <span style="font-size: 0.8rem; color: var(--gold-accent);">[${quest.quest_rank}]</span>
@@ -1532,11 +1833,45 @@ const app = {
                            ` : ''}
                         </div>
                      </details>
-                  `).join('')}
-               </div>
-            </div>
-         </div>
-      `;
+                  `).join('');
+    },
+
+    filterQuestReports() {
+        const searchTerm = document.getElementById('quest-search').value.toLowerCase();
+        const rankFilter = document.getElementById('quest-rank-filter').value;
+
+        this.filteredQuestReportsData = this.questReportsData.filter(quest => {
+            // Quest name search
+            if (searchTerm && !quest.quest_name.toLowerCase().includes(searchTerm)) {
+                // Check if any party member matches the search
+                const memberMatch = quest.party_members.some(member =>
+                    member.name.toLowerCase().includes(searchTerm)
+                );
+                if (!memberMatch) return false;
+            }
+
+            // Rank filter
+            if (rankFilter && quest.quest_rank !== rankFilter) return false;
+
+            return true;
+        });
+
+        // Update the results
+        const resultsContainer = document.getElementById('quest-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderQuestResults();
+        }
+    },
+
+    clearQuestFilters() {
+        document.getElementById('quest-search').value = '';
+        document.getElementById('quest-rank-filter').value = '';
+        this.filteredQuestReportsData = [...this.questReportsData];
+
+        const resultsContainer = document.getElementById('quest-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderQuestResults();
+        }
     },
 
     // Jump to specific quest report
