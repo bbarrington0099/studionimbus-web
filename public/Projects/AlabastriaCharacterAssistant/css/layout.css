@@ -177,10 +177,17 @@ main {
 
 /* ===== SELECTION GRID ===== */
 .selection-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Results grid within selection */
+.selection-results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 2rem;
 }
 
 /* ===== DETAILS CONTENT LAYOUT ===== */
