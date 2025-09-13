@@ -1705,7 +1705,86 @@ const app = {
         });
 
         relationshipsContainer.innerHTML = `
-            <h3>Races & Classes in ${this.currentSelection}</h3>
+            <h3>${this.currentSelection} Information</h3>
+            
+            ${continent.wars_conflicts ? `
+                <details>
+                    <summary>Wars & Conflicts (${continent.wars_conflicts.current.length + continent.wars_conflicts.historical.length})</summary>
+                    <div class="details-content-inner">
+                        ${continent.wars_conflicts.current.length > 0 ? `
+                            <h4>Current Conflicts</h4>
+                            ${continent.wars_conflicts.current.map(conflict => `
+                                <div class="conflict-item">
+                                    <div class="conflict-header">
+                                        <h5>${conflict.name}</h5>
+                                        <span class="conflict-status status-${conflict.status.toLowerCase().replace(' ', '-')}">${conflict.status}</span>
+                                    </div>
+                                    <p class="conflict-description">${conflict.description}</p>
+                                    <div class="conflict-participants">
+                                        <strong>Participants:</strong> ${conflict.participants.join(', ')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        ` : ''}
+                        
+                        ${continent.wars_conflicts.historical.length > 0 ? `
+                            <h4>Historical Conflicts</h4>
+                            ${continent.wars_conflicts.historical.map(conflict => `
+                                <div class="conflict-item historical">
+                                    <div class="conflict-header">
+                                        <h5>${conflict.name}</h5>
+                                        <span class="conflict-outcome">${conflict.outcome}</span>
+                                    </div>
+                                    <p class="conflict-description">${conflict.description}</p>
+                                </div>
+                            `).join('')}
+                        ` : ''}
+                    </div>
+                </details>
+            ` : ''}
+            
+            ${continent.treaties_alliances ? `
+                <details>
+                    <summary>Treaties & Alliances (${continent.treaties_alliances.length})</summary>
+                    <div class="details-content-inner">
+                        ${continent.treaties_alliances.map(treaty => `
+                            <div class="treaty-item">
+                                <div class="treaty-header">
+                                    <h5>${treaty.name}</h5>
+                                    <span class="treaty-type">${treaty.type}</span>
+                                    <span class="treaty-status status-${treaty.status.toLowerCase()}">${treaty.status}</span>
+                                </div>
+                                <p class="treaty-description">${treaty.description}</p>
+                                <div class="treaty-partners">
+                                    <strong>Partners:</strong> ${treaty.partners.join(', ')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </details>
+            ` : ''}
+            
+            ${continent.trade_routes ? `
+                <details>
+                    <summary>Trade Routes (${continent.trade_routes.length})</summary>
+                    <div class="details-content-inner">
+                        ${continent.trade_routes.map(route => `
+                            <div class="trade-route-item">
+                                <div class="trade-route-header">
+                                    <h5>${route.name}</h5>
+                                    <span class="trade-route-type">${route.type}</span>
+                                    <span class="trade-route-frequency">${route.frequency}</span>
+                                </div>
+                                <p class="trade-route-description">${route.description}</p>
+                                <div class="trade-route-goods">
+                                    <strong>Goods:</strong> ${route.goods.join(', ')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </details>
+            ` : ''}
+            
             <details>
                 <summary>Native Races (${raceRelations.size})</summary>
                 <div class="details-content-inner">

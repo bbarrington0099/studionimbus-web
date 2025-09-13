@@ -7,119 +7,947 @@
         "continent": "Kuriguer",
         "description": "Here is the land of magic, far from a fairytale sense. With the establishment of two fine towns along the coast and smaller settlements leading South, the rest of this land is shrouded beyond a forest not typically kind to strangers.",
         "languages": {
-            "primary": ["Common", "Elvish", "Sylvan"],
-            "secondary": ["Gnomish", "Draconic", "Primordial"],
-            "rare": ["Celestial", "Abyssal", "Deep Speech"],
+            "primary": [
+                "Common",
+                "Elvish",
+                "Sylvan"
+            ],
+            "secondary": [
+                "Gnomish",
+                "Draconic",
+                "Primordial"
+            ],
+            "rare": [
+                "Celestial",
+                "Abyssal",
+                "Deep Speech"
+            ],
             "description": "The magical nature of Kuriguer has attracted diverse races. Elvish dominates the forests, Sylvan echoes in fey-touched areas, while Primordial resonates with elemental magic. The coastal towns use Common for trade, and magical research brings scholars speaking Draconic and even rarer planar languages."
         },
         "politics": {
-            "kingdoms": ["Elven Coastal Towns"],
-            "settlements": ["Two major coastal towns", "Small southern settlements"],
-            "dominant_races": ["Elves", "Gnomes", "Fey creatures"],
+            "kingdoms": [
+                "Elven Coastal Towns"
+            ],
+            "settlements": [
+                "Two major coastal towns",
+                "Small southern settlements"
+            ],
+            "dominant_races": [
+                "Elves",
+                "Gnomes",
+                "Fey creatures"
+            ],
             "notes": "Magic-rich, hostile forests",
             "political_climate": "Elven coastal towns value autonomy; interior magic forests remain wild and dangerous."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "Forest Border Disputes",
+                    "description": "Ongoing tensions with Skratonia over logging rights in the southern forest edges. Skratonian settlers occasionally encroach on elven territory.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Kuriguer Elves",
+                        "Skratonian Settlers"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The Wyvern Wars (300-600 Cycles)",
+                    "description": "Kuriguer led the magical defense against wyvern migrations, establishing the continent as the center of magical research and defense.",
+                    "outcome": "Victory - established magical academies and research institutions"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Magical Research Accord",
+                "description": "Agreement with Skratonia to share magical knowledge in exchange for agricultural goods and trade access.",
+                "partners": [
+                    "Skratonia"
+                ],
+                "type": "Trade and Research",
+                "status": "Active"
+            },
+            {
+                "name": "The Northern Defense Pact",
+                "description": "Mutual defense agreement with Bulsania against threats from Kantra and unknown northern dangers.",
+                "partners": [
+                    "Bulsania"
+                ],
+                "type": "Military",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Magical Coast Route",
+                "description": "Primary trade route connecting Kuriguer's coastal towns to Skratonia's major cities, carrying magical components and research materials.",
+                "type": "Maritime",
+                "goods": [
+                    "Magical components",
+                    "Research materials",
+                    "Elven crafts",
+                    "Agricultural products"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Northern Air Route",
+                "description": "Aerial trade route using flying ships to connect with Bulsania, avoiding the dangerous Kantra region.",
+                "type": "Aerial",
+                "goods": [
+                    "Magical artifacts",
+                    "Rare components",
+                    "Elven weapons",
+                    "Frozen goods"
+                ],
+                "frequency": "Monthly"
+            },
+            {
+                "name": "The Forest Path",
+                "description": "Overland route through the dangerous interior forests to reach the Kamalatman regions, used by brave traders and the Huntbound Order.",
+                "type": "Overland",
+                "goods": [
+                    "Magical research",
+                    "Rare herbs",
+                    "Mining equipment",
+                    "Swamp goods"
+                ],
+                "frequency": "Irregular"
+            }
+        ]
     },
     {
         "continent": "Alatman of Kamalatman",
         "description": "Land grouped of grey forests, flat swamps, and a timely volcano, exploring this land is quite popular due to the great natural riches that can be sent back, but settling there has proven quite difficult with the royal family's great taxes placed on the land with claims of wanting to regulate the removal of the materials found.",
         "languages": {
-            "primary": ["Common", "Draconic"],
-            "secondary": ["Gnomish", "Infernal", "Primordial"],
-            "rare": ["Abyssal", "Deep Speech", "Modron"],
+            "primary": [
+                "Common",
+                "Draconic"
+            ],
+            "secondary": [
+                "Gnomish",
+                "Infernal",
+                "Primordial"
+            ],
+            "rare": [
+                "Abyssal",
+                "Deep Speech",
+                "Modron"
+            ],
             "description": "The volcanic forges and construct workshops of Alatman attract Warforged and Autognomes, making Draconic common for magical crafting. The dangerous forests harbor darker creatures, bringing Infernal and Abyssal whispers. Primordial echoes from the volcanic activity, while Common serves the mining expeditions."
         },
         "politics": {
-            "kingdoms": ["Alatman (part of Kamalatman)"],
-            "settlements": ["Resource extraction outposts", "Volcanic forge workshops"],
-            "dominant_races": ["Warforged", "Autognomes", "Dhampir"],
+            "kingdoms": [
+                "Alatman (part of Kamalatman)"
+            ],
+            "settlements": [
+                "Resource extraction outposts",
+                "Volcanic forge workshops"
+            ],
+            "dominant_races": [
+                "Warforged",
+                "Autognomes",
+                "Dhampir"
+            ],
             "notes": "Resource-rich, heavily taxed by Kamalatman monarchy",
             "political_climate": "Alatman monarchy enforces taxes on resource extraction, making settlement difficult despite the land's natural riches."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "The Resource Tax Rebellion",
+                    "description": "Ongoing uprisings against the Kamalatman monarchy's heavy taxation on resource extraction. Local miners and settlers demand fairer treatment.",
+                    "status": "Active",
+                    "participants": [
+                        "Alatman Miners",
+                        "Kamalatman Royal Guard"
+                    ]
+                },
+                {
+                    "name": "Swamp Border Skirmishes",
+                    "description": "Frequent clashes with Katman over control of the shared swamp regions and resource rights.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Alatman Forces",
+                        "Katman Tribes"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The Alatman Resource Wars (600-700 Cycles)",
+                    "description": "Major conflict over control of the volcanic resources, leading to the current taxation system.",
+                    "outcome": "Kamalatman monarchy victory - established current tax system"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Kamalatman Internal Trade Agreement",
+                "description": "Internal trade agreement between the three Kamalatman regions for resource sharing and mutual defense.",
+                "partners": [
+                    "Maltman",
+                    "Katman"
+                ],
+                "type": "Trade and Military",
+                "status": "Active"
+            },
+            {
+                "name": "The Volcanic Forge Accord",
+                "description": "Agreement with Skratonia to supply advanced magical components in exchange for agricultural goods and trade access.",
+                "partners": [
+                    "Skratonia"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Volcanic Supply Route",
+                "description": "Primary trade route connecting Alatman's volcanic forges to the other Kamalatman regions and beyond.",
+                "type": "Maritime and Overland",
+                "goods": [
+                    "Volcanic glass",
+                    "Magical metals",
+                    "Constructed items",
+                    "Rare minerals"
+                ],
+                "frequency": "Daily"
+            },
+            {
+                "name": "The Swamp Passage",
+                "description": "Dangerous overland route through the swamps connecting to Katman, used for internal Kamalatman trade.",
+                "type": "Overland",
+                "goods": [
+                    "Raw materials",
+                    "Food supplies",
+                    "Military equipment",
+                    "Swamp resources"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Eastern Sea Route",
+                "description": "Maritime route connecting to Skratonia and other eastern continents, carrying high-value volcanic goods.",
+                "type": "Maritime",
+                "goods": [
+                    "Magical components",
+                    "Volcanic weapons",
+                    "Rare gems",
+                    "Agricultural products"
+                ],
+                "frequency": "Bi-weekly"
+            }
+        ]
     },
     {
         "continent": "Maltman of Kamalatman",
         "description": "A very mountainous region, the kingdom sends ships to collect and spread many ores and materials across the world from the vastly efficient yet seemingly small mining villages.",
         "languages": {
-            "primary": ["Dwarvish", "Common"],
-            "secondary": ["Undercommon", "Draconic", "Gnomish"],
-            "rare": ["Giant", "Terran", "Deep Speech"],
+            "primary": [
+                "Dwarvish",
+                "Common"
+            ],
+            "secondary": [
+                "Undercommon",
+                "Draconic",
+                "Gnomish"
+            ],
+            "rare": [
+                "Giant",
+                "Terran",
+                "Deep Speech"
+            ],
             "description": "The mountain strongholds echo with Dwarvish as the dominant language, while mining operations use Common for trade. Deep Gnome communities speak Undercommon, and ancient draconic runes mark the deepest mines. Kobolds in the depths maintain their Draconic dialect, and the rare Giant tongue echoes from the highest peaks."
         },
         "politics": {
-            "kingdoms": ["Maltman (part of Kamalatman)"],
-            "settlements": ["Efficient mining villages", "Mountain strongholds"],
-            "dominant_races": ["Dwarves", "Deep Gnomes", "Kobolds"],
+            "kingdoms": [
+                "Maltman (part of Kamalatman)"
+            ],
+            "settlements": [
+                "Efficient mining villages",
+                "Mountain strongholds"
+            ],
+            "dominant_races": [
+                "Dwarves",
+                "Deep Gnomes",
+                "Kobolds"
+            ],
             "notes": "Efficient mining operations, part of Kamalatman",
             "political_climate": "Maltman dwarves manage mines efficiently as part of the greater Kamalatman kingdom, focusing on resource extraction and trade."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "Mountain Border Disputes",
+                    "description": "Ongoing territorial disputes with Bulsania over mountain ranges and mining rights in the northern regions.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Maltman Dwarves",
+                        "Bulsania Giants"
+                    ]
+                },
+                {
+                    "name": "Underground Expansion Conflicts",
+                    "description": "Tensions with Kuriguer over underground magical resources and ancient ruins discovered in deep mines.",
+                    "status": "Diplomatic",
+                    "participants": [
+                        "Maltman Miners",
+                        "Kuriguer Scholars"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The Great Mining Wars (200-300 Cycles)",
+                    "description": "Major conflicts over control of the richest mining regions, establishing Maltman as the primary mining center of Kamalatman.",
+                    "outcome": "Maltman victory - established current mining territories"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Kamalatman Internal Trade Agreement",
+                "description": "Internal trade agreement between the three Kamalatman regions for resource sharing and mutual defense.",
+                "partners": [
+                    "Alatman",
+                    "Katman"
+                ],
+                "type": "Trade and Military",
+                "status": "Active"
+            },
+            {
+                "name": "The Northern Mining Accord",
+                "description": "Trade agreement with Bulsania for rare metals and gems in exchange for advanced mining equipment and techniques.",
+                "partners": [
+                    "Bulsania"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            },
+            {
+                "name": "The Central Trade Pact",
+                "description": "Major trade agreement with Skratonia for agricultural goods and manufactured items in exchange for raw materials and mining expertise.",
+                "partners": [
+                    "Skratonia"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Great Mining Road",
+                "description": "Primary overland trade route connecting Maltman's mining villages to the other Kamalatman regions and major trade centers.",
+                "type": "Overland",
+                "goods": [
+                    "Raw ores",
+                    "Refined metals",
+                    "Gems",
+                    "Mining equipment",
+                    "Dwarven crafts"
+                ],
+                "frequency": "Daily"
+            },
+            {
+                "name": "The Northern Sea Route",
+                "description": "Maritime route connecting to Bulsania and other northern regions, carrying high-value mining goods.",
+                "type": "Maritime",
+                "goods": [
+                    "Rare metals",
+                    "Magical gems",
+                    "Dwarven weapons",
+                    "Frozen goods"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Central Plains Route",
+                "description": "Major trade route connecting to Skratonia's agricultural regions, carrying raw materials and manufactured goods.",
+                "type": "Overland and Maritime",
+                "goods": [
+                    "Mining equipment",
+                    "Raw materials",
+                    "Agricultural products",
+                    "Manufactured goods"
+                ],
+                "frequency": "Bi-weekly"
+            },
+            {
+                "name": "The Underground Passage",
+                "description": "Secret underground trade route connecting to Kuriguer through ancient dwarven tunnels, used for magical research materials.",
+                "type": "Underground",
+                "goods": [
+                    "Magical metals",
+                    "Ancient artifacts",
+                    "Research materials",
+                    "Rare components"
+                ],
+                "frequency": "Monthly"
+            }
+        ]
     },
     {
         "continent": "Skratonia",
         "description": "While other worlds would likely consider this a desert wasteland, in Alabastria, Skratonia is the most populated land due to its' many open planes, and moderate temperate compared to much of the commoner welcome options or the swampy marshlands of the triontinental Kingdom of Kamalatman, allowing the growth of decent crops, leading to a very diverse mix of people of small settlements connected through major towns.",
         "languages": {
-            "primary": ["Common", "Halfling"],
-            "secondary": ["Elvish", "Infernal", "Celestial"],
-            "rare": ["Draconic", "Telepathic", "Giant"],
+            "primary": [
+                "Common",
+                "Halfling"
+            ],
+            "secondary": [
+                "Elvish",
+                "Infernal",
+                "Celestial"
+            ],
+            "rare": [
+                "Draconic",
+                "Telepathic",
+                "Giant"
+            ],
             "description": "As the most diverse and populated continent, Skratonia is dominated by Common as the trade language. Halfling communities maintain their pastoral tongue, while the many Tieflings bring Infernal influences. Aasimar populations contribute Celestial phrases, and the scholarly cities preserve Draconic texts. The plains-dwelling Centaurs and Leonin add their own linguistic flavors."
         },
         "politics": {
-            "kingdoms": ["Skratonian Alliance"],
-            "settlements": ["Council-led city-states", "Rural farming communities", "Major trade towns"],
-            "dominant_races": ["Humans", "Halflings", "Tieflings", "Aasimar", "Centaurs", "Leonin"],
+            "kingdoms": [
+                "Skratonian Alliance"
+            ],
+            "settlements": [
+                "Council-led city-states",
+                "Rural farming communities",
+                "Major trade towns"
+            ],
+            "dominant_races": [
+                "Humans",
+                "Halflings",
+                "Tieflings",
+                "Aasimar",
+                "Centaurs",
+                "Leonin"
+            ],
             "notes": "Central plains hub; fertile land",
             "political_climate": "Council-led city-states with moderate tensions between rural and urban regions. Mercenary guilds like Huntbound Order are respected but independent."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "The Plains Expansion Disputes",
+                    "description": "Ongoing tensions with Kuriguer over logging rights and territorial expansion into forested border regions.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Skratonian Settlers",
+                        "Kuriguer Elves"
+                    ]
+                },
+                {
+                    "name": "The Taxation Wars",
+                    "description": "Ongoing conflicts with Kamalatman over trade tariffs and resource taxation, particularly affecting the central trade routes.",
+                    "status": "Active",
+                    "participants": [
+                        "Skratonian Merchants",
+                        "Kamalatman Royal Guard"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The First Continental War (100-130 Cycles)",
+                    "description": "Major conflict with Bulsania over control of northern trade routes, establishing Skratonia as the central trade hub.",
+                    "outcome": "Skratonia victory - established current trade dominance"
+                },
+                {
+                    "name": "The Wyvern Wars (300-600 Cycles)",
+                    "description": "Alliance with Kuriguer and Kamalatman against wyvern migrations, establishing international cooperation.",
+                    "outcome": "Victory - established current alliance system"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Central Trade Alliance",
+                "description": "Major trade agreement with all major continents, making Skratonia the central hub for international commerce.",
+                "partners": [
+                    "Kuriguer",
+                    "Bulsania",
+                    "Kamalatman"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            },
+            {
+                "name": "The Magical Research Accord",
+                "description": "Agreement with Kuriguer to share agricultural goods and trade access in exchange for magical knowledge and components.",
+                "partners": [
+                    "Kuriguer"
+                ],
+                "type": "Trade and Research",
+                "status": "Active"
+            },
+            {
+                "name": "The Northern Defense Pact",
+                "description": "Mutual defense agreement with Bulsania against threats from Kantra and unknown northern dangers.",
+                "partners": [
+                    "Bulsania"
+                ],
+                "type": "Military",
+                "status": "Active"
+            },
+            {
+                "name": "The Central Trade Pact",
+                "description": "Major trade agreement with Maltman for raw materials and mining expertise in exchange for agricultural goods and manufactured items.",
+                "partners": [
+                    "Maltman"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Great Central Highway",
+                "description": "Primary overland trade route connecting all major Skratonian cities and extending to other continents.",
+                "type": "Overland",
+                "goods": [
+                    "Agricultural products",
+                    "Manufactured goods",
+                    "Trade goods",
+                    "Food supplies"
+                ],
+                "frequency": "Daily"
+            },
+            {
+                "name": "The Magical Coast Route",
+                "description": "Maritime trade route connecting to Kuriguer's coastal towns, carrying magical components and research materials.",
+                "type": "Maritime",
+                "goods": [
+                    "Agricultural products",
+                    "Magical components",
+                    "Research materials",
+                    "Elven crafts"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Northern Air Route",
+                "description": "Aerial trade route using flying ships to connect with Bulsania, avoiding the dangerous Kantra region.",
+                "type": "Aerial",
+                "goods": [
+                    "Agricultural products",
+                    "Manufactured goods",
+                    "Frozen goods",
+                    "Rare components"
+                ],
+                "frequency": "Monthly"
+            },
+            {
+                "name": "The Central Plains Route",
+                "description": "Major trade route connecting to Maltman's mining regions, carrying raw materials and manufactured goods.",
+                "type": "Overland and Maritime",
+                "goods": [
+                    "Mining equipment",
+                    "Raw materials",
+                    "Agricultural products",
+                    "Manufactured goods"
+                ],
+                "frequency": "Bi-weekly"
+            },
+            {
+                "name": "The Southern Swamp Route",
+                "description": "Dangerous overland route connecting to the Kamalatman regions, used for internal trade and resource exchange.",
+                "type": "Overland",
+                "goods": [
+                    "Agricultural products",
+                    "Swamp goods",
+                    "Raw materials",
+                    "Military equipment"
+                ],
+                "frequency": "Weekly"
+            }
+        ]
     },
     {
         "continent": "Bulsania",
         "description": "The resident continent of ice and tough inhabitants holds few settlements on its' West coast before reaching a group of mountain ranges including the cloud towering Noxious Mountain, leading into a frozen land left to giants and titans.",
         "languages": {
-            "primary": ["Giant", "Draconic"],
-            "secondary": ["Common", "Aarakocra", "Goliath"],
-            "rare": ["Celestial", "Primordial", "Auran"],
+            "primary": [
+                "Giant",
+                "Draconic"
+            ],
+            "secondary": [
+                "Common",
+                "Aarakocra",
+                "Goliath"
+            ],
+            "rare": [
+                "Celestial",
+                "Primordial",
+                "Auran"
+            ],
             "description": "The harsh frozen landscape is dominated by Giant, spoken by the titans and giants that rule the interior. Draconic echoes from the militarized Dragonborn settlements, while Aarakocra calls ring from the mountain peaks. The few coastal settlements use Common for trade, and Primordial whispers through the eternal storms. Goliath tribal dialects blend elements of Giant and Common."
         },
         "politics": {
-            "kingdoms": ["Icebound Confederacy"],
-            "settlements": ["Icy strongholds", "Few western coastal settlements"],
-            "dominant_races": ["Giants", "Dragonborn", "Goliaths", "Aarakocra"],
+            "kingdoms": [
+                "Icebound Confederacy"
+            ],
+            "settlements": [
+                "Icy strongholds",
+                "Few western coastal settlements"
+            ],
+            "dominant_races": [
+                "Giants",
+                "Dragonborn",
+                "Goliaths",
+                "Aarakocra"
+            ],
             "notes": "Harsh icy frontier; militarized",
             "political_climate": "Confederation of icy strongholds; isolationist, wary of outsiders, militarized society."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "The Northern Border Disputes",
+                    "description": "Ongoing territorial disputes with Maltman over mountain ranges and mining rights in the southern regions.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Bulsania Giants",
+                        "Maltman Dwarves"
+                    ]
+                },
+                {
+                    "name": "The Kantra Watch",
+                    "description": "Constant vigilance against threats from the mysterious Kantra region, requiring significant military resources.",
+                    "status": "Active",
+                    "participants": [
+                        "Bulsania Military",
+                        "Unknown Kantra Threats"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The First Continental War (100-130 Cycles)",
+                    "description": "Major conflict with Skratonia over control of northern trade routes, establishing current territorial boundaries.",
+                    "outcome": "Skratonia victory - established current trade dominance"
+                },
+                {
+                    "name": "The Wyvern Wars (300-600 Cycles)",
+                    "description": "Alliance with Skratonia and Kamalatman against wyvern migrations, establishing international cooperation.",
+                    "outcome": "Victory - established current alliance system"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Northern Defense Pact",
+                "description": "Mutual defense agreement with Kuriguer against threats from Kantra and unknown northern dangers.",
+                "partners": [
+                    "Kuriguer"
+                ],
+                "type": "Military",
+                "status": "Active"
+            },
+            {
+                "name": "The Northern Mining Accord",
+                "description": "Trade agreement with Maltman for rare metals and gems in exchange for advanced mining equipment and techniques.",
+                "partners": [
+                    "Maltman"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            },
+            {
+                "name": "The Central Trade Alliance",
+                "description": "Trade agreement with Skratonia for agricultural goods and manufactured items in exchange for frozen goods and rare materials.",
+                "partners": [
+                    "Skratonia"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Northern Air Route",
+                "description": "Aerial trade route using flying ships to connect with Kuriguer and Skratonia, avoiding the dangerous Kantra region.",
+                "type": "Aerial",
+                "goods": [
+                    "Frozen goods",
+                    "Rare materials",
+                    "Magical artifacts",
+                    "Elven weapons"
+                ],
+                "frequency": "Monthly"
+            },
+            {
+                "name": "The Northern Sea Route",
+                "description": "Maritime route connecting to Maltman and other northern regions, carrying high-value frozen goods and rare materials.",
+                "type": "Maritime",
+                "goods": [
+                    "Rare metals",
+                    "Magical gems",
+                    "Frozen goods",
+                    "Dwarven weapons"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Central Plains Route",
+                "description": "Major trade route connecting to Skratonia's agricultural regions, carrying frozen goods and rare materials.",
+                "type": "Overland and Maritime",
+                "goods": [
+                    "Frozen goods",
+                    "Rare materials",
+                    "Agricultural products",
+                    "Manufactured goods"
+                ],
+                "frequency": "Bi-weekly"
+            },
+            {
+                "name": "The Kantra Watch Route",
+                "description": "Military patrol route along the northern borders, monitoring for threats from Kantra and unknown dangers.",
+                "type": "Military",
+                "goods": [
+                    "Military equipment",
+                    "Supplies",
+                    "Reconnaissance",
+                    "Defense materials"
+                ],
+                "frequency": "Daily"
+            }
+        ]
     },
     {
         "continent": "Kantra",
         "description": "A counter to Bulsania, this land of fiery cracking earth and ash filled sky is home to creatures not known by the lands around it as no attempted explorations have returned, leading to quite the rumors of this hellish region. (No map as the land is uncharted)",
         "languages": {
-            "primary": ["Infernal", "Abyssal"],
-            "secondary": ["Ignan", "Primordial"],
-            "rare": ["Deep Speech", "Unknown Dialects"],
+            "primary": [
+                "Infernal",
+                "Abyssal"
+            ],
+            "secondary": [
+                "Ignan",
+                "Primordial"
+            ],
+            "rare": [
+                "Deep Speech",
+                "Unknown Dialects"
+            ],
             "description": "The uncharted hellish landscape of Kantra is shrouded in mystery, but the few whispered reports speak of Infernal and Abyssal tongues echoing across the burning plains. Ignan, the language of fire elementals, crackles through the volcanic air, while Primordial resonates with the raw elemental chaos. Unknown dialects of creatures that have never been catalogued may exist in this forbidden land."
         },
         "politics": {
-            "kingdoms": ["Unknown"],
-            "settlements": ["Rumored hellish settlements"],
-            "dominant_races": ["Infernal creatures", "Beasts", "Monsterfolk"],
+            "kingdoms": [
+                "Unknown"
+            ],
+            "settlements": [
+                "Rumored hellish settlements"
+            ],
+            "dominant_races": [
+                "Infernal creatures",
+                "Beasts",
+                "Monsterfolk"
+            ],
             "notes": "Exploration dangerous",
             "political_climate": "Unknown; exploration expeditions rarely return. Rumors of hellish beasts keep nations cautious."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "The Kantra Watch",
+                    "description": "Constant military vigilance by Bulsania and other northern nations against unknown threats from Kantra.",
+                    "status": "Active",
+                    "participants": [
+                        "Bulsania Military",
+                        "Unknown Kantra Threats"
+                    ]
+                },
+                {
+                    "name": "The Forbidden Land Disputes",
+                    "description": "Ongoing tensions over who has the right to explore or claim Kantra, with multiple nations claiming territorial rights.",
+                    "status": "Diplomatic",
+                    "participants": [
+                        "Bulsania",
+                        "Kuriguer",
+                        "Skratonia"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The Great Exploration Attempts (400-600 Cycles)",
+                    "description": "Multiple failed expeditions to explore Kantra, resulting in the loss of hundreds of explorers and establishing the region as forbidden.",
+                    "outcome": "Failure - Kantra remains unexplored and dangerous"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Kantra Non-Aggression Pact",
+                "description": "Agreement between all major nations to avoid direct conflict over Kantra and focus on defense against its threats.",
+                "partners": [
+                    "Bulsania",
+                    "Kuriguer",
+                    "Skratonia",
+                    "Kamalatman"
+                ],
+                "type": "Military",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Kantra Avoidance Route",
+                "description": "All trade routes deliberately avoid Kantra, creating longer but safer paths between northern and southern continents.",
+                "type": "Maritime and Aerial",
+                "goods": [
+                    "All trade goods",
+                    "Military supplies",
+                    "Reconnaissance",
+                    "Defense materials"
+                ],
+                "frequency": "All routes"
+            }
+        ]
     },
     {
         "continent": "Katman of Kamalatman",
         "description": "Home to most of the kingdoms inhabitants, this land has a stretch of planes preluding a mass of swampy less populated areas.",
         "languages": {
-            "primary": ["Orcish", "Common"],
-            "secondary": ["Draconic", "Lizardfolk", "Yuan-ti"],
-            "rare": ["Abyssal", "Aquan", "Druidic"],
+            "primary": [
+                "Orcish",
+                "Common"
+            ],
+            "secondary": [
+                "Draconic",
+                "Lizardfolk",
+                "Yuan-ti"
+            ],
+            "rare": [
+                "Abyssal",
+                "Aquan",
+                "Druidic"
+            ],
             "description": "The swamplands echo with Orcish war-cries from the tribal strongholds, while Common serves the kingdom's administration on the plains. Lizardfolk communities maintain their ancient reptilian tongue, and the secretive Yuan-ti speak their serpentine language in hidden enclaves. Draconic marks ancient ruins, while Aquan flows with the wetland waters and Druidic whispers through the marsh grasses."
         },
         "politics": {
-            "kingdoms": ["Katman (part of Kamalatman)"],
-            "settlements": ["Plains administrative centers", "Swamp tribal strongholds", "Frontier outposts"],
-            "dominant_races": ["Orcs", "Half-Orcs", "Lizardfolk", "Yuan-ti"],
+            "kingdoms": [
+                "Katman (part of Kamalatman)"
+            ],
+            "settlements": [
+                "Plains administrative centers",
+                "Swamp tribal strongholds",
+                "Frontier outposts"
+            ],
+            "dominant_races": [
+                "Orcs",
+                "Half-Orcs",
+                "Lizardfolk",
+                "Yuan-ti"
+            ],
             "notes": "Agricultural, part of Kamalatman kingdom",
             "political_climate": "Katman kingdom focuses on swampy frontier defense as part of the greater Kamalatman realm, balancing agricultural plains with wild swampland territories."
-        }
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "The Swamp Border Skirmishes",
+                    "description": "Frequent clashes with Alatman over control of the shared swamp regions and resource rights.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Katman Tribes",
+                        "Alatman Forces"
+                    ]
+                },
+                {
+                    "name": "The Southern Frontier Wars",
+                    "description": "Ongoing conflicts with Skratonia over trade tariffs and resource taxation, particularly affecting the southern trade routes.",
+                    "status": "Active",
+                    "participants": [
+                        "Katman Merchants",
+                        "Skratonian Merchants"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The Swamp Wars (500-600 Cycles)",
+                    "description": "Major conflicts over control of the swamp regions, establishing Katman as the primary agricultural center of Kamalatman.",
+                    "outcome": "Katman victory - established current agricultural territories"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Kamalatman Internal Trade Agreement",
+                "description": "Internal trade agreement between the three Kamalatman regions for resource sharing and mutual defense.",
+                "partners": [
+                    "Maltman",
+                    "Alatman"
+                ],
+                "type": "Trade and Military",
+                "status": "Active"
+            },
+            {
+                "name": "The Southern Trade Pact",
+                "description": "Trade agreement with Skratonia for agricultural goods and manufactured items in exchange for raw materials and swamp resources.",
+                "partners": [
+                    "Skratonia"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Southern Swamp Route",
+                "description": "Dangerous overland route connecting to Skratonia's agricultural regions, carrying swamp goods and raw materials.",
+                "type": "Overland",
+                "goods": [
+                    "Swamp goods",
+                    "Raw materials",
+                    "Agricultural products",
+                    "Military equipment"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Swamp Passage",
+                "description": "Dangerous overland route through the swamps connecting to Alatman, used for internal Kamalatman trade.",
+                "type": "Overland",
+                "goods": [
+                    "Raw materials",
+                    "Food supplies",
+                    "Military equipment",
+                    "Swamp resources"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Central Plains Route",
+                "description": "Major trade route connecting to Maltman's mining regions, carrying raw materials and manufactured goods.",
+                "type": "Overland and Maritime",
+                "goods": [
+                    "Mining equipment",
+                    "Raw materials",
+                    "Agricultural products",
+                    "Manufactured goods"
+                ],
+                "frequency": "Bi-weekly"
+            },
+            {
+                "name": "The Eastern Sea Route",
+                "description": "Maritime route connecting to Skratonia and other eastern continents, carrying high-value swamp goods.",
+                "type": "Maritime",
+                "goods": [
+                    "Swamp goods",
+                    "Rare materials",
+                    "Agricultural products",
+                    "Military equipment"
+                ],
+                "frequency": "Bi-weekly"
+            }
+        ]
     }
 ]
