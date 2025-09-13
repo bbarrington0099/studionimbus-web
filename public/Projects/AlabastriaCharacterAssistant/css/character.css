@@ -7,18 +7,22 @@
 .relationships-table {
     border-radius: var(--border-radius);
     padding: 2rem;
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
     min-height: max-content;
+    backdrop-filter: blur(10px);
+    order: 2;
 }
 
 .darkMode .relationships-table {
-    background: rgba(44, 36, 22, 0.7);
-    box-shadow: var(--shadow-dark);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-md);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .relationships-table {
-    background: rgba(244, 241, 232, 0.9);
-    box-shadow: var(--shadow-light);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-md);
+    border-color: var(--glass-border);
 }
 
 .relationships-table h3,
@@ -60,23 +64,28 @@
 
 /* ===== RELATIONSHIP ITEMS ===== */
 .relationship-item {
-    border-radius: 6px;
-    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    padding: 1.25rem;
     border-left: 4px solid var(--ocean-blue);
     transition: var(--transition);
+    backdrop-filter: blur(5px);
+    margin-bottom: 0.5rem;
 }
 
 .darkMode .relationship-item {
-    background: rgba(44, 36, 22, 0.5);
+    background: var(--glass-dark-bg);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .relationship-item {
-    background: rgba(244, 241, 232, 0.7);
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
 }
 
 .relationship-item:hover {
     transform: translateX(3px);
     border-left-color: var(--forest-green);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Emphasized Relationships */

@@ -1,0 +1,473 @@
+{
+    "playstyle_categories": [
+        {
+            "name": "New Player Friendly",
+            "description": "Classes that are easy to learn and play effectively",
+            "recommended_classes": [
+                {
+                    "class": "Fighter",
+                    "subclass": "Champion",
+                    "reason": "Simple mechanics, high survivability, consistent performance"
+                },
+                {
+                    "class": "Cleric",
+                    "subclass": "Life Domain",
+                    "reason": "Clear role as healer, helpful to party, straightforward spellcasting"
+                },
+                {
+                    "class": "Barbarian",
+                    "subclass": "Path of the Berserker",
+                    "reason": "Simple rage mechanic, high damage, durable"
+                },
+                {
+                    "class": "Ranger",
+                    "subclass": "Hunter",
+                    "reason": "Versatile combat options, useful exploration abilities"
+                }
+            ]
+        },
+        {
+            "name": "Front-Line Fighter",
+            "description": "Characters who excel in melee combat and can take hits",
+            "recommended_classes": [
+                {
+                    "class": "Fighter",
+                    "subclass": "Battle Master",
+                    "reason": "Tactical combat options, high AC, multiple attacks"
+                },
+                {
+                    "class": "Paladin",
+                    "subclass": "Oath of Devotion",
+                    "reason": "Tank with healing, divine smite for burst damage"
+                },
+                {
+                    "class": "Barbarian",
+                    "subclass": "Path of the Totem Warrior",
+                    "reason": "Damage resistance, high HP, versatile totems"
+                },
+                {
+                    "class": "Monk",
+                    "subclass": "Way of the Open Hand",
+                    "reason": "Mobile melee fighter with battlefield control"
+                }
+            ]
+        },
+        {
+            "name": "Spellcaster",
+            "description": "Characters focused on magical abilities and spellcasting",
+            "recommended_classes": [
+                {
+                    "class": "Wizard",
+                    "subclass": "School of Evocation",
+                    "reason": "Largest spell selection, ultimate magical versatility"
+                },
+                {
+                    "class": "Sorcerer",
+                    "subclass": "Draconic Bloodline",
+                    "reason": "Flexible spellcasting with metamagic, durable"
+                },
+                {
+                    "class": "Cleric",
+                    "subclass": "Tempest Domain",
+                    "reason": "Divine magic with destructive power"
+                },
+                {
+                    "class": "Druid",
+                    "subclass": "Circle of the Land",
+                    "reason": "Nature magic with spell recovery"
+                }
+            ]
+        },
+        {
+            "name": "Support/Healer",
+            "description": "Characters who focus on helping and healing allies",
+            "recommended_classes": [
+                {
+                    "class": "Cleric",
+                    "subclass": "Life Domain",
+                    "reason": "Best healing in the game, protective spells"
+                },
+                {
+                    "class": "Bard",
+                    "subclass": "College of Lore",
+                    "reason": "Bardic inspiration, versatile spells, skills"
+                },
+                {
+                    "class": "Druid",
+                    "subclass": "Circle of Dreams",
+                    "reason": "Healing and teleportation support"
+                },
+                {
+                    "class": "Artificer",
+                    "subclass": "Alchemist",
+                    "reason": "Healing elixirs, magical item support"
+                }
+            ]
+        },
+        {
+            "name": "Stealth/Scout",
+            "description": "Characters who excel at sneaking, scouting, and reconnaissance",
+            "recommended_classes": [
+                {
+                    "class": "Rogue",
+                    "subclass": "Thief",
+                    "reason": "Ultimate stealth and infiltration abilities"
+                },
+                {
+                    "class": "Ranger",
+                    "subclass": "Gloom Stalker",
+                    "reason": "Ambush specialist with darkvision invisibility"
+                },
+                {
+                    "class": "Monk",
+                    "subclass": "Way of Shadow",
+                    "reason": "Shadow magic and ninja abilities"
+                },
+                {
+                    "class": "Rogue",
+                    "subclass": "Assassin",
+                    "reason": "Disguises and elimination techniques"
+                }
+            ]
+        },
+        {
+            "name": "Damage Dealer",
+            "description": "Characters focused on dealing high damage to enemies",
+            "recommended_classes": [
+                {
+                    "class": "Barbarian",
+                    "subclass": "Path of the Berserker",
+                    "reason": "Massive melee damage with rage bonuses"
+                },
+                {
+                    "class": "Fighter",
+                    "subclass": "Champion",
+                    "reason": "Consistent damage with improved critical hits"
+                },
+                {
+                    "class": "Sorcerer",
+                    "subclass": "Draconic Bloodline",
+                    "reason": "High spell damage with elemental affinity"
+                },
+                {
+                    "class": "Warlock",
+                    "subclass": "The Fiend",
+                    "reason": "Consistent damage with short rest recovery"
+                }
+            ]
+        },
+        {
+            "name": "Versatile/Jack-of-All-Trades",
+            "description": "Characters who can adapt to many situations and roles",
+            "recommended_classes": [
+                {
+                    "class": "Bard",
+                    "subclass": "College of Lore",
+                    "reason": "Skills, spells, inspiration - can do everything"
+                },
+                {
+                    "class": "Ranger",
+                    "subclass": "Hunter",
+                    "reason": "Combat, exploration, and utility in one package"
+                },
+                {
+                    "class": "Artificer",
+                    "subclass": "Battle Smith",
+                    "reason": "Combat, magic, crafting, and companion"
+                },
+                {
+                    "class": "Cleric",
+                    "subclass": "War Domain",
+                    "reason": "Healing, combat, and divine magic"
+                }
+            ]
+        },
+        {
+            "name": "Pet/Companion Lover",
+            "description": "Characters who want animal companions or summoned allies",
+            "recommended_classes": [
+                {
+                    "class": "Ranger",
+                    "subclass": "Beast Master",
+                    "reason": "Loyal animal companion that fights alongside you"
+                },
+                {
+                    "class": "Artificer",
+                    "subclass": "Battle Smith",
+                    "reason": "Steel Defender mechanical companion"
+                },
+                {
+                    "class": "Druid",
+                    "subclass": "Circle of Wildfire",
+                    "reason": "Wildfire Spirit elemental companion"
+                },
+                {
+                    "class": "Warlock",
+                    "subclass": "The Archfey",
+                    "reason": "Pact of the Chain familiar options"
+                }
+            ]
+        },
+        {
+            "name": "Unique/Unusual Mechanics",
+            "description": "Characters with distinctive gameplay mechanics",
+            "recommended_classes": [
+                {
+                    "class": "Monk",
+                    "subclass": "Way of the Four Elements",
+                    "reason": "Ki-powered elemental abilities"
+                },
+                {
+                    "class": "Warlock",
+                    "subclass": "The Great Old One",
+                    "reason": "Eldritch invocations and otherworldly patrons"
+                },
+                {
+                    "class": "Sorcerer",
+                    "subclass": "Wild Magic",
+                    "reason": "Unpredictable magical surges"
+                },
+                {
+                    "class": "Druid",
+                    "subclass": "Circle of the Moon",
+                    "reason": "Shapeshifting into animals for combat"
+                }
+            ]
+        }
+    ],
+    "ability_score_priorities": {
+        "Strength": {
+            "description": "Physical power for melee attacks and carrying capacity",
+            "best_classes": [
+                "Fighter",
+                "Barbarian",
+                "Paladin"
+            ],
+            "important_for": [
+                "Melee weapon attacks",
+                "Jumping",
+                "Athletics",
+                "Carrying heavy items"
+            ]
+        },
+        "Dexterity": {
+            "description": "Agility for ranged attacks, stealth, and avoiding damage",
+            "best_classes": [
+                "Rogue",
+                "Ranger",
+                "Monk"
+            ],
+            "important_for": [
+                "Ranged attacks",
+                "AC (light armor)",
+                "Stealth",
+                "Initiative"
+            ]
+        },
+        "Constitution": {
+            "description": "Health and endurance for all characters",
+            "best_classes": [
+                "All classes benefit",
+                "Especially Barbarian"
+            ],
+            "important_for": [
+                "Hit points",
+                "Concentration saves",
+                "Survival"
+            ]
+        },
+        "Intelligence": {
+            "description": "Reasoning and memory for magic and knowledge",
+            "best_classes": [
+                "Wizard",
+                "Artificer"
+            ],
+            "important_for": [
+                "Wizard spells",
+                "Knowledge skills",
+                "Investigation"
+            ]
+        },
+        "Wisdom": {
+            "description": "Awareness and intuition for divine magic and perception",
+            "best_classes": [
+                "Cleric",
+                "Druid",
+                "Ranger",
+                "Monk"
+            ],
+            "important_for": [
+                "Divine spells",
+                "Perception",
+                "Insight",
+                "Survival"
+            ]
+        },
+        "Charisma": {
+            "description": "Force of personality for social interaction and some magic",
+            "best_classes": [
+                "Bard",
+                "Sorcerer",
+                "Warlock",
+                "Paladin"
+            ],
+            "important_for": [
+                "Social skills",
+                "Charisma-based spells",
+                "Leadership"
+            ]
+        }
+    },
+    "role_descriptions": {
+        "Tank": {
+            "description": "Front-line fighter who absorbs damage and protects allies",
+            "key_abilities": [
+                "High AC",
+                "High HP",
+                "Damage resistance",
+                "Protective abilities"
+            ],
+            "best_classes": [
+                "Fighter",
+                "Paladin",
+                "Barbarian"
+            ]
+        },
+        "Damage Dealer": {
+            "description": "Character focused on eliminating enemies quickly",
+            "key_abilities": [
+                "High damage output",
+                "Multiple attacks",
+                "Critical hits",
+                "Spell damage"
+            ],
+            "best_classes": [
+                "Fighter",
+                "Barbarian",
+                "Sorcerer",
+                "Warlock"
+            ]
+        },
+        "Support": {
+            "description": "Character who enhances allies and provides utility",
+            "key_abilities": [
+                "Healing",
+                "Buffs",
+                "Inspiration",
+                "Utility spells"
+            ],
+            "best_classes": [
+                "Cleric",
+                "Bard",
+                "Druid"
+            ]
+        },
+        "Controller": {
+            "description": "Character who manipulates the battlefield and enemy actions",
+            "key_abilities": [
+                "Area spells",
+                "Crowd control",
+                "Battlefield manipulation",
+                "Debuffs"
+            ],
+            "best_classes": [
+                "Wizard",
+                "Druid",
+                "Bard"
+            ]
+        },
+        "Scout": {
+            "description": "Character who excels at reconnaissance and exploration",
+            "key_abilities": [
+                "Stealth",
+                "Perception",
+                "Movement",
+                "Information gathering"
+            ],
+            "best_classes": [
+                "Rogue",
+                "Ranger",
+                "Monk"
+            ]
+        },
+        "Striker": {
+            "description": "Character who deals high damage to single targets",
+            "key_abilities": [
+                "Sneak attack",
+                "Precise strikes",
+                "Mobility",
+                "Single-target damage"
+            ],
+            "best_classes": [
+                "Rogue",
+                "Monk",
+                "Ranger"
+            ]
+        }
+    },
+    "complexity_levels": {
+        "Simple": {
+            "description": "Easy to learn and play, few complex mechanics",
+            "classes": [
+                {
+                    "class": "Fighter",
+                    "subclass": "Champion"
+                },
+                {
+                    "class": "Barbarian",
+                    "subclass": "Path of the Berserker"
+                },
+                {
+                    "class": "Cleric",
+                    "subclass": "Life Domain"
+                },
+                {
+                    "class": "Rogue",
+                    "subclass": "Thief"
+                }
+            ]
+        },
+        "Moderate": {
+            "description": "Some resource management and tactical decisions",
+            "classes": [
+                {
+                    "class": "Fighter",
+                    "subclass": "Battle Master"
+                },
+                {
+                    "class": "Paladin",
+                    "subclass": "Oath of Devotion"
+                },
+                {
+                    "class": "Ranger",
+                    "subclass": "Hunter"
+                },
+                {
+                    "class": "Bard",
+                    "subclass": "College of Valor"
+                }
+            ]
+        },
+        "Complex": {
+            "description": "Many options, resource management, and strategic planning",
+            "classes": [
+                {
+                    "class": "Wizard",
+                    "subclass": "Any"
+                },
+                {
+                    "class": "Druid",
+                    "subclass": "Circle of the Moon"
+                },
+                {
+                    "class": "Bard",
+                    "subclass": "College of Lore"
+                },
+                {
+                    "class": "Artificer",
+                    "subclass": "Any"
+                }
+            ]
+        }
+    }
+}

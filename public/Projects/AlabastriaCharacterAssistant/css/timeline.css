@@ -47,26 +47,31 @@
 
 /* ===== TIMELINE CARDS ===== */
 .timeline-card {
-    border: 2px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     position: relative;
     transition: var(--transition);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
 }
 
 .darkMode .timeline-card {
-    background: rgba(44, 36, 22, 0.9);
-    box-shadow: var(--shadow-dark);
+    background: var(--glass-dark-bg);
+    box-shadow: var(--shadow-md);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .timeline-card {
-    background: var(--parchment-light);
-    box-shadow: var(--shadow-light);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-light-md);
+    border-color: var(--glass-border);
 }
 
 .timeline-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--ocean-blue);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Timeline card connection dots */
@@ -135,21 +140,26 @@
 
 .modal-content {
     margin: 5% auto;
-    border: 3px solid var(--mountain-brown);
+    border: 1px solid var(--mountain-brown);
     border-radius: var(--border-radius);
     width: 90%;
     max-width: 800px;
     max-height: 80vh;
     overflow-y: auto;
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    transform: translateY(-165vh);
 }
 
 .darkMode .modal-content {
-    background: var(--parchment-dark);
+    background: var(--glass-dark-bg);
+    border-color: var(--glass-dark-border);
 }
 
 .lightMode .modal-content {
-    background: var(--parchment-light);
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
 }
 
 /* ===== MODAL HEADER ===== */
@@ -178,7 +188,6 @@
 }
 
 .modal-close:hover {
-    color: var(--gold-accent);
     transform: scale(1.1);
 }
 
