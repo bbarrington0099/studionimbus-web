@@ -395,6 +395,113 @@
                         "reason": "harsh conditions breed fanatical devotion"
                     }
                 ]
+            },
+            {
+                "subclass": "Battlerager",
+                "races": [
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "dwarven tradition of spiked armor and aggressive combat",
+                        "continent": "Bulsania",
+                        "continent_reason": "militarized dwarven strongholds"
+                    },
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "mountain-bred warriors who use any weapon available",
+                        "continent": "Bulsania",
+                        "continent_reason": "high mountain tribes"
+                    },
+                    {
+                        "name": "Orc",
+                        "subclass_reason": "aggressive combat style and love of battle",
+                        "continent": "Kamalatman",
+                        "continent_reason": "tribal warriors of the swamps and mountains"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "militarized society values aggressive combat tactics"
+                    }
+                ]
+            },
+            {
+                "subclass": "Giant",
+                "races": [
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "giant heritage and natural size advantage",
+                        "continent": "Bulsania",
+                        "continent_reason": "mountain tribes with giant ancestry"
+                    },
+                    {
+                        "name": "Dwarf",
+                        "subclass_reason": "connection to mountain giants and stone magic",
+                        "continent": "Bulsania",
+                        "continent_reason": "dwarven strongholds in giant territory"
+                    },
+                    {
+                        "name": "Firbolg",
+                        "subclass_reason": "giant-kin heritage and natural magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "forest giants of the magical woods"
+                    },
+                    {
+                        "name": "Goliath",
+                        "subclass_reason": "giant bloodline and mountain heritage",
+                        "continent": "Kamalatman",
+                        "continent_reason": "mountain regions with giant influence"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "mountain regions where giants once roamed"
+                    },
+                    {
+                        "continent": "Kamalatman",
+                        "reason": "mountain peaks and ancient giant territories"
+                    }
+                ]
+            },
+            {
+                "subclass": "Wild Magic",
+                "races": [
+                    {
+                        "name": "Tiefling",
+                        "subclass_reason": "infernal heritage creates chaotic magical effects",
+                        "continent": "Skratonia",
+                        "continent_reason": "diverse populations with magical heritage"
+                    },
+                    {
+                        "name": "Elf",
+                        "subclass_reason": "fey heritage and connection to wild magic",
+                        "continent": "Kuriguer",
+                        "continent_reason": "magical forests enhance wild magic"
+                    },
+                    {
+                        "name": "Genasi",
+                        "subclass_reason": "elemental heritage creates unpredictable magic",
+                        "continent": "Kamalatman",
+                        "continent_reason": "elemental planes influence the region"
+                    },
+                    {
+                        "name": "Human",
+                        "subclass_reason": "adaptability allows them to channel chaotic magic",
+                        "continent": "Skratonia",
+                        "continent_reason": "diverse magical exposure"
+                    }
+                ],
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "magical anomalies enhance wild magic abilities"
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "diverse magical influences create chaotic effects"
+                    }
+                ]
             }
         ]
     },
@@ -3823,6 +3930,163 @@
                     {
                         "continent": "Skratonia",
                         "reason": "organized armies employ war wizards"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "class": "Tactician",
+        "subclasses": [
+            {
+                "subclass": "Grandmaster",
+                "alabastria_context": "Grandmasters in Alabastria often serve as military advisors to kingdoms and guild leaders. Their strategic minds are crucial for planning large-scale operations against the most dangerous threats.",
+                "playstyle": "Long-term strategic planning and battlefield control. Perfect for players who enjoy complex tactical scenarios.",
+                "prominent_continents": [
+                    {
+                        "continent": "Skratonia",
+                        "reason": "The political complexity and diverse populations of Skratonia require master strategists to coordinate between different city-states and manage international diplomacy."
+                    },
+                    {
+                        "continent": "Kamalatman",
+                        "reason": "The ongoing political tensions and resource conflicts in Kamalatman demand strategic minds to navigate the complex web of rebellions and negotiations."
+                    }
+                ],
+                "races": [
+                    {
+                        "name": "Human",
+                        "continent": "Skratonia",
+                        "continent_reason": "Humans' adaptability and political acumen make them natural grandmasters in Skratonia's complex political landscape.",
+                        "subclass_reason": "Human intelligence and strategic thinking excel in long-term planning and diplomatic coordination."
+                    },
+                    {
+                        "name": "Elf",
+                        "continent": "Kuriguer",
+                        "continent_reason": "Elven longevity and wisdom make them exceptional grandmasters, able to plan strategies that span decades.",
+                        "subclass_reason": "Elven patience and long-term thinking are perfect for grand strategy and complex tactical planning."
+                    },
+                    {
+                        "name": "Dwarf",
+                        "continent": "Bulsania",
+                        "continent_reason": "Dwarven military traditions and defensive strategies make them natural grandmasters in Bulsania's militarized society.",
+                        "subclass_reason": "Dwarven discipline and tactical expertise excel in large-scale military operations and defensive strategies."
+                    },
+                    {
+                        "name": "Halfling",
+                        "continent": "Skratonia",
+                        "continent_reason": "Halfling communities in Skratonia value clever planning and resource management, producing excellent grandmasters.",
+                        "subclass_reason": "Halfling ingenuity and community-focused thinking make them excellent at coordinating large-scale operations."
+                    }
+                ]
+            },
+            {
+                "subclass": "Mentalist",
+                "alabastria_context": "Mentalists in Alabastria often work with the Huntbound Order's intelligence operations, using their psionic abilities to gather information and coordinate covert missions.",
+                "playstyle": "Psionic support and battlefield communication. Great for players who want to combine strategy with mental powers.",
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "The magical anomalies and psionic phenomena in Kuriguer's forests attract and enhance mentalist abilities."
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "The diverse populations and complex politics of Skratonia require mentalists for intelligence gathering and coordination."
+                    }
+                ],
+                "races": [
+                    {
+                        "name": "Kalashtar",
+                        "continent": "Skratonia",
+                        "continent_reason": "Kalashtar's natural psionic abilities and connection to the dream plane make them exceptional mentalists in Skratonia's diverse society.",
+                        "subclass_reason": "Kalashtar psionic abilities and telepathic communication are perfect for mentalist tactics and coordination."
+                    },
+                    {
+                        "name": "Gith",
+                        "continent": "Kuriguer",
+                        "continent_reason": "Gith psionic heritage and mental discipline make them natural mentalists in Kuriguer's magical environment.",
+                        "subclass_reason": "Gith psionic powers and mental training excel in telepathic communication and battlefield coordination."
+                    },
+                    {
+                        "name": "Elf",
+                        "continent": "Kuriguer",
+                        "continent_reason": "Elven mental discipline and magical sensitivity make them excellent mentalists in Kuriguer's magical forests.",
+                        "subclass_reason": "Elven mental focus and magical aptitude enhance psionic abilities and strategic thinking."
+                    }
+                ]
+            },
+            {
+                "subclass": "Scholar",
+                "alabastria_context": "Scholars in Alabastria often work in the magical academies of Kuriguer, studying ancient warfare and developing new tactics for modern threats.",
+                "playstyle": "Knowledge-based strategy and research. Ideal for players who enjoy learning about enemy types and developing counter-strategies.",
+                "prominent_continents": [
+                    {
+                        "continent": "Kuriguer",
+                        "reason": "The magical academies and research institutions in Kuriguer provide the perfect environment for scholarly tacticians to study and develop new strategies."
+                    },
+                    {
+                        "continent": "Skratonia",
+                        "reason": "The central location and diverse populations of Skratonia make it an ideal place for scholars to gather information and study different tactical approaches."
+                    }
+                ],
+                "races": [
+                    {
+                        "name": "Elf",
+                        "continent": "Kuriguer",
+                        "continent_reason": "Elven longevity and scholarly traditions make them exceptional scholars in Kuriguer's magical academies.",
+                        "subclass_reason": "Elven patience and scholarly nature excel in research, study, and developing innovative tactics."
+                    },
+                    {
+                        "name": "Human",
+                        "continent": "Skratonia",
+                        "continent_reason": "Human curiosity and adaptability make them excellent scholars in Skratonia's diverse and information-rich environment.",
+                        "subclass_reason": "Human intelligence and research skills are perfect for studying enemy tactics and developing counter-strategies."
+                    },
+                    {
+                        "name": "Gnome",
+                        "continent": "Kuriguer",
+                        "continent_reason": "Gnome curiosity and magical aptitude make them natural scholars in Kuriguer's magical research institutions.",
+                        "subclass_reason": "Gnome intelligence and attention to detail excel in tactical research and strategic analysis."
+                    }
+                ]
+            },
+            {
+                "subclass": "War Mind",
+                "alabastria_context": "War Minds in Alabastria often serve as field commanders in the Huntbound Order, leading dangerous missions and inspiring their fellow hunters to greatness.",
+                "playstyle": "Combat-focused strategy and leadership. Perfect for players who want to combine tactical thinking with martial prowess.",
+                "prominent_continents": [
+                    {
+                        "continent": "Bulsania",
+                        "reason": "The militarized society and harsh conditions of Bulsania produce natural war minds who excel at leading in combat."
+                    },
+                    {
+                        "continent": "Kamalatman",
+                        "reason": "The ongoing conflicts and dangerous terrain of Kamalatman require war minds to lead operations in challenging conditions."
+                    }
+                ],
+                "races": [
+                    {
+                        "name": "Dwarf",
+                        "continent": "Bulsania",
+                        "continent_reason": "Dwarven military traditions and combat expertise make them natural war minds in Bulsania's militarized society.",
+                        "subclass_reason": "Dwarven martial prowess and leadership abilities excel in combat-focused tactics and battlefield command."
+                    },
+                    {
+                        "name": "Orc",
+                        "continent": "Kamalatman",
+                        "continent_reason": "Orcish combat prowess and natural leadership make them excellent war minds in Kamalatman's challenging environment.",
+                        "subclass_reason": "Orcish strength and combat experience are perfect for leading from the front lines and inspiring allies."
+                    },
+                    {
+                        "name": "Goliath",
+                        "continent": "Bulsania",
+                        "continent_reason": "Goliath physical prowess and mountain survival skills make them exceptional war minds in Bulsania's harsh conditions.",
+                        "subclass_reason": "Goliath strength and endurance excel in combat leadership and battlefield presence."
+                    },
+                    {
+                        "name": "Human",
+                        "continent": "Skratonia",
+                        "continent_reason": "Human adaptability and leadership qualities make them excellent war minds in Skratonia's diverse military forces.",
+                        "subclass_reason": "Human versatility and tactical thinking are perfect for combat leadership and strategic command."
                     }
                 ]
             }

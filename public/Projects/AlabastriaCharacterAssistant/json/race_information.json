@@ -1028,5 +1028,2053 @@
                 "playstyle": "Water magic users with aquatic abilities. Perfect for players who want to be water-based magical characters with unique movement options."
             }
         ]
+    },
+    {
+        "race": "Gnome",
+        "description": "Small, curious folk with a natural affinity for magic and invention. Gnomes are known for their intelligence, curiosity, and love of knowledge.",
+        "size": "Small",
+        "speed": "25 feet",
+        "ability_score_increase": {
+            "Intelligence": 2
+        },
+        "age": "Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
+        "alignment": "Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers.",
+        "languages": [
+            "Common",
+            "Gnomish"
+        ],
+        "height_weight": {
+            "height_range": "3'0\" to 3'6\"",
+            "weight_range": "35 to 45 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Gnome Cunning",
+                "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+            }
+        ],
+        "alabastria_lore": "Gnomes in Alabastria are found primarily in the magical academies of Kuriguer, where their natural curiosity and magical aptitude make them excellent researchers and inventors. They often work alongside Artificers to create magical devices and study the strange phenomena of the world.",
+        "playstyle": "Intelligent spellcasters and inventors who excel at problem-solving and magical research. Perfect for players who enjoy creative solutions and magical experimentation.",
+        "recommended_classes": [
+            "Wizard",
+            "Artificer",
+            "Bard",
+            "Cleric"
+        ],
+        "subraces": [
+            {
+                "name": "Forest Gnome",
+                "description": "Forest gnomes are reclusive and shy, living in hidden communities deep in the woods.",
+                "ability_score_increase": {
+                    "Dexterity": 1
+                },
+                "height_weight": {
+                    "height_range": "3'0\" to 3'6\"",
+                    "weight_range": "35 to 45 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Natural Illusionist",
+                        "description": "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
+                    },
+                    {
+                        "name": "Speak with Small Beasts",
+                        "description": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts."
+                    }
+                ],
+                "alabastria_context": "Forest Gnomes in Alabastria are found in the magical forests of Kuriguer, where they serve as guardians of nature and guides for those who venture into the dangerous woods.",
+                "playstyle": "Stealthy and nature-focused gnomes who excel at illusion magic and communication with animals."
+            },
+            {
+                "name": "Rock Gnome",
+                "description": "Rock gnomes are the most common gnomes, known for their engineering skills and love of tinkering.",
+                "ability_score_increase": {
+                    "Constitution": 1
+                },
+                "height_weight": {
+                    "height_range": "3'0\" to 3'6\"",
+                    "weight_range": "35 to 45 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Artificer's Lore",
+                        "description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
+                    },
+                    {
+                        "name": "Tinker",
+                        "description": "You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp)."
+                    }
+                ],
+                "alabastria_context": "Rock Gnomes in Alabastria are found in the workshops and forges of Kamalatman, where their engineering skills are highly valued. They often work alongside Dwarves and Artificers to create mechanical devices and magical items.",
+                "playstyle": "Engineering-focused gnomes who excel at creating devices and understanding technology."
+            }
+        ]
+    },
+    {
+        "race": "Giff",
+        "description": "Hippopotamus-like humanoids known for their strength, honor, and love of firearms and explosives. Giff are disciplined warriors with a strong sense of duty.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": "Giff mature at the same rate as humans and live about as long.",
+        "alignment": "Giff are typically lawful, tending toward good. They value honor, discipline, and order.",
+        "languages": [
+            "Common",
+            "Giff"
+        ],
+        "height_weight": {
+            "height_range": "6'0\" to 7'0\"",
+            "weight_range": "280 to 340 lbs"
+        },
+        "traits": [
+            {
+                "name": "Firearms Mastery",
+                "description": "You have proficiency with firearms and ignore the loading property of firearms. You can use a bonus action to reload a firearm you are holding."
+            },
+            {
+                "name": "Hippo Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+            },
+            {
+                "name": "Natural Armor",
+                "description": "Your thick hide provides you with a +1 bonus to AC when you aren't wearing armor."
+            }
+        ],
+        "alabastria_lore": "Giff in Alabastria are found primarily in the militarized regions of Bulsania, where their disciplined nature and combat prowess make them excellent soldiers and guards. They often serve in the Huntbound Order as elite warriors.",
+        "playstyle": "Strong warriors who excel at ranged combat with firearms and heavy weapons. Perfect for players who want to be disciplined soldiers with advanced weaponry.",
+        "recommended_classes": [
+            "Fighter",
+            "Ranger",
+            "Paladin",
+            "Barbarian"
+        ]
+    },
+    {
+        "race": "Goblin",
+        "description": "Small, cunning humanoids known for their stealth, speed, and opportunistic nature. Goblins are survivors who excel at hit-and-run tactics.",
+        "size": "Small",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Constitution": 1
+        },
+        "age": "Goblins reach adulthood at age 8 and live up to 60 years.",
+        "alignment": "Goblins are typically neutral evil, as they care only for their own needs. A few goblins might rise above their origins, however, proving to be heroes worthy of legend.",
+        "languages": [
+            "Common",
+            "Goblin"
+        ],
+        "height_weight": {
+            "height_range": "3'0\" to 3'6\"",
+            "weight_range": "35 to 45 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Fury of the Small",
+                "description": "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest."
+            },
+            {
+                "name": "Nimble Escape",
+                "description": "You can take the Disengage or Hide action as a bonus action on each of your turns."
+            }
+        ],
+        "alabastria_lore": "Goblins in Alabastria are found in the swamps and wilderness of Kamalatman, where they form small tribes and communities. They are often viewed with suspicion by other races, but some have proven themselves as valuable allies and members of the Huntbound Order.",
+        "playstyle": "Fast and stealthy characters who excel at hit-and-run tactics and survival. Perfect for players who want to be quick and cunning.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Fighter",
+            "Monk"
+        ]
+    },
+    {
+        "race": "Goliath",
+        "description": "Tall, muscular humanoids with gray skin and a natural resistance to cold. Goliaths are competitive and value strength and endurance.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": "Goliaths have lifespans comparable to humans. They enter adulthood in their late teens and usually live less than a century.",
+        "alignment": "Goliaths tend toward neutral alignments. They value individual freedom and self-reliance.",
+        "languages": [
+            "Common",
+            "Giant"
+        ],
+        "height_weight": {
+            "height_range": "7'0\" to 8'0\"",
+            "weight_range": "280 to 340 lbs"
+        },
+        "traits": [
+            {
+                "name": "Natural Athlete",
+                "description": "You have proficiency in the Athletics skill."
+            },
+            {
+                "name": "Stone's Endurance",
+                "description": "You can focus yourself to occasionally shrug off injury. When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled, and reduce the damage by that total. After you use this trait, you can't use it again until you finish a short or long rest."
+            },
+            {
+                "name": "Powerful Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+            },
+            {
+                "name": "Mountain Born",
+                "description": "You're acclimated to high altitude, including elevations above 20,000 feet. You're also naturally adapted to cold climates."
+            }
+        ],
+        "alabastria_lore": "Goliaths in Alabastria are found primarily in the mountain regions of Bulsania and Kamalatman, where their strength and endurance make them excellent climbers and warriors. They often serve as guides and protectors in the harsh mountain terrain.",
+        "playstyle": "Strong and tough characters who excel at physical challenges and combat. Perfect for players who want to be powerful warriors with natural resilience.",
+        "recommended_classes": [
+            "Barbarian",
+            "Fighter",
+            "Ranger",
+            "Monk"
+        ]
+    },
+    {
+        "race": "Half-Elf",
+        "description": "The offspring of humans and elves, combining the best traits of both races. Half-elves are versatile and charismatic, often serving as diplomats and mediators.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Charisma": 2,
+            "Two other ability scores": 1
+        },
+        "age": "Half-elves mature at the same rate humans do and reach adulthood around age 20. They live much longer than humans, often exceeding 180 years.",
+        "alignment": "Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers.",
+        "languages": [
+            "Common",
+            "Elvish",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Fey Ancestry",
+                "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+            },
+            {
+                "name": "Skill Versatility",
+                "description": "You gain proficiency in two skills of your choice."
+            }
+        ],
+        "alabastria_lore": "Half-Elves in Alabastria are found throughout all continents, often serving as diplomats and mediators between different races. Their mixed heritage makes them valuable in the complex political landscape of the world.",
+        "playstyle": "Versatile characters who excel at social interaction and can adapt to many different situations. Perfect for players who want flexibility and charisma.",
+        "recommended_classes": [
+            "Bard",
+            "Paladin",
+            "Ranger",
+            "Sorcerer",
+            "Warlock"
+        ],
+        "subraces": [
+            {
+                "name": "Aquatic Half-Elf",
+                "description": "Half-elves with aquatic heritage who can breathe underwater and swim with ease.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Aquatic",
+                        "description": "You can breathe air and water, and you have a swimming speed of 30 feet."
+                    }
+                ],
+                "alabastria_context": "Aquatic Half-Elves in Alabastria are found along the coasts of Kuriguer and in the waterways of Kamalatman, where their aquatic abilities make them excellent for maritime operations.",
+                "playstyle": "Water-based characters who excel at aquatic adventures and coastal missions."
+            },
+            {
+                "name": "Drow Half-Elf",
+                "description": "Half-elves with drow heritage who have some of the dark elves' abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Drow Magic",
+                        "description": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Drow Half-Elves in Alabastria are rare but found in the darker regions of Kuriguer's forests, where they often serve as scouts and guides in dangerous areas.",
+                "playstyle": "Dark magic users with unique spellcasting abilities and darkvision."
+            },
+            {
+                "name": "High Half-Elf",
+                "description": "Half-elves with high elf heritage who have some magical abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Elf Weapon Training",
+                        "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+                    },
+                    {
+                        "name": "Cantrip",
+                        "description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+                    }
+                ],
+                "alabastria_context": "High Half-Elves in Alabastria are found in the magical academies of Kuriguer and the cities of Skratonia, where their magical heritage makes them excellent scholars and diplomats.",
+                "playstyle": "Magical characters with weapon proficiency and cantrip abilities."
+            },
+            {
+                "name": "Wood Half-Elf",
+                "description": "Half-elves with wood elf heritage who have enhanced speed and stealth abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Elf Weapon Training",
+                        "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+                    },
+                    {
+                        "name": "Fleet of Foot",
+                        "description": "Your base walking speed increases to 35 feet."
+                    },
+                    {
+                        "name": "Mask of the Wild",
+                        "description": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+                    }
+                ],
+                "alabastria_context": "Wood Half-Elves in Alabastria are found in the forests of Kuriguer and the wilderness of Kamalatman, where their natural abilities make them excellent rangers and scouts.",
+                "playstyle": "Fast and stealthy characters who excel at wilderness survival and ranged combat."
+            }
+        ]
+    },
+    {
+        "race": "Half-Orc",
+        "description": "The offspring of humans and orcs, combining human versatility with orcish strength and endurance. Half-orcs are often found on the fringes of society.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": "Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and rarely live longer than 75 years.",
+        "alignment": "Half-orcs inherit a tendency toward chaos from their orc parents and are not strongly inclined toward good. Half-orcs raised among orcs and willing to live out their lives among them are usually evil.",
+        "languages": [
+            "Common",
+            "Orc"
+        ],
+        "height_weight": {
+            "height_range": "5'6\" to 6'6\"",
+            "weight_range": "150 to 220 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Relentless Endurance",
+                "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+            },
+            {
+                "name": "Savage Attacks",
+                "description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+            }
+        ],
+        "alabastria_lore": "Half-Orcs in Alabastria are found primarily in the frontier regions of Kamalatman and the borderlands of Skratonia, where their strength and endurance make them valuable as guards and warriors. They often face discrimination but have proven themselves as capable members of the Huntbound Order.",
+        "playstyle": "Strong and tough characters who excel at combat and survival. Perfect for players who want to be powerful warriors with natural resilience.",
+        "recommended_classes": [
+            "Barbarian",
+            "Fighter",
+            "Ranger",
+            "Rogue"
+        ]
+    },
+    {
+        "race": "Halfling",
+        "description": "Small, cheerful folk known for their luck, courage, and love of comfort. Halflings are optimistic and resourceful, making the best of any situation.",
+        "size": "Small",
+        "speed": "25 feet",
+        "ability_score_increase": {
+            "Dexterity": 2
+        },
+        "age": "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
+        "alignment": "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.",
+        "languages": [
+            "Common",
+            "Halfling"
+        ],
+        "height_weight": {
+            "height_range": "2'7\" to 3'3\"",
+            "weight_range": "30 to 40 lbs"
+        },
+        "traits": [
+            {
+                "name": "Lucky",
+                "description": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+            },
+            {
+                "name": "Brave",
+                "description": "You have advantage on saving throws against being frightened."
+            },
+            {
+                "name": "Halfling Nimbleness",
+                "description": "You can move through the space of any creature that is of a size larger than yours."
+            }
+        ],
+        "alabastria_lore": "Halflings in Alabastria are found primarily in the fertile plains of Skratonia, where their agricultural skills and community values make them excellent farmers and merchants. They often serve as the backbone of the region's economy and are known for their hospitality.",
+        "playstyle": "Lucky and brave characters who excel at avoiding danger and supporting their communities. Perfect for players who want to be optimistic and resourceful.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Bard",
+            "Cleric"
+        ],
+        "subraces": [
+            {
+                "name": "Lightfoot Halfling",
+                "description": "Lightfoot halflings are stealthy and social, able to hide behind larger creatures.",
+                "ability_score_increase": {
+                    "Charisma": 1
+                },
+                "height_weight": {
+                    "height_range": "2'7\" to 3'3\"",
+                    "weight_range": "30 to 40 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Naturally Stealthy",
+                        "description": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+                    }
+                ],
+                "alabastria_context": "Lightfoot Halflings in Alabastria are found in the cities of Skratonia, where their social skills and stealth make them excellent merchants and diplomats.",
+                "playstyle": "Social and stealthy halflings who excel at hiding and social interaction."
+            },
+            {
+                "name": "Stout Halfling",
+                "description": "Stout halflings are hardier and more resistant to poison than other halflings.",
+                "ability_score_increase": {
+                    "Constitution": 1
+                },
+                "height_weight": {
+                    "height_range": "2'7\" to 3'3\"",
+                    "weight_range": "30 to 40 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Stout Resilience",
+                        "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+                    }
+                ],
+                "alabastria_context": "Stout Halflings in Alabastria are found in the agricultural regions of Skratonia, where their hardiness makes them excellent farmers and workers in harsh conditions.",
+                "playstyle": "Hardy and resilient halflings who excel at surviving in difficult conditions."
+            },
+            {
+                "name": "Ghostwise Halfling",
+                "description": "Ghostwise halflings are reclusive and have telepathic abilities.",
+                "ability_score_increase": {
+                    "Wisdom": 1
+                },
+                "height_weight": {
+                    "height_range": "2'7\" to 3'3\"",
+                    "weight_range": "30 to 40 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Silent Speech",
+                        "description": "You can speak telepathically to any creature within 30 feet of you. The creature understands you only if the two of you share a language. You can speak telepathically in this way to one creature at a time."
+                    }
+                ],
+                "alabastria_context": "Ghostwise Halflings in Alabastria are found in the remote regions of Kuriguer's forests, where their telepathic abilities make them excellent scouts and guides.",
+                "playstyle": "Telepathic halflings who excel at silent communication and wilderness survival."
+            }
+        ]
+    },
+    {
+        "race": "Harengon",
+        "description": "Rabbit-like humanoids known for their agility, luck, and connection to the Feywild. Harengon are quick, nimble, and often have a mischievous streak.",
+        "size": "Small or Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "One other ability score": 1
+        },
+        "age": "Harengon mature at the same rate as humans and live about as long.",
+        "alignment": "Harengon are typically chaotic, tending toward good. They value freedom and personal expression.",
+        "languages": [
+            "Common",
+            "Sylvan"
+        ],
+        "height_weight": {
+            "height_range": "3'0\" to 5'0\"",
+            "weight_range": "35 to 85 lbs"
+        },
+        "traits": [
+            {
+                "name": "Hare-Trigger",
+                "description": "You can add your proficiency bonus to your initiative rolls."
+            },
+            {
+                "name": "Leporine Senses",
+                "description": "You have proficiency in the Perception skill."
+            },
+            {
+                "name": "Lucky Footwork",
+                "description": "When you fail a Dexterity saving throw, you can use your reaction to reroll the die, and you must use the new roll."
+            },
+            {
+                "name": "Rabbit Hop",
+                "description": "As a bonus action, you can jump a number of feet equal to 5 × your proficiency bonus, without provoking opportunity attacks. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+            }
+        ],
+        "alabastria_lore": "Harengon in Alabastria are found primarily in the magical forests of Kuriguer, where their fey heritage and agility make them excellent scouts and messengers. They often serve as couriers for the Huntbound Order and guides through dangerous terrain.",
+        "playstyle": "Agile and lucky characters who excel at movement and avoiding danger. Perfect for players who want to be quick and nimble.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Monk",
+            "Bard"
+        ]
+    },
+    {
+        "race": "Hexblood",
+        "description": "Humanoids touched by hag magic, bearing the mark of a hag's influence. Hexbloods are often outcasts but possess unique magical abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Two ability scores": 1
+        },
+        "age": "Hexbloods mature at the same rate as humans and live about as long.",
+        "alignment": "Hexbloods can be of any alignment, but many lean toward chaotic due to their outsider status.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Hex Magic",
+                "description": "You know the minor illusion cantrip. When you reach 3rd level, you can cast the hex spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can also cast the disguise self spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+            },
+            {
+                "name": "Eerie Token",
+                "description": "As an action, you can harmlessly remove a lock of your hair, a bit of your nail, or one of your teeth. This token is imbued with magic until you finish a long rest. While the token is imbued in this way, you can use an action to send a telepathic message to the creature holding or carrying the token, as long as you are on the same plane of existence. The message can contain up to twenty-five words."
+            }
+        ],
+        "alabastria_lore": "Hexbloods in Alabastria are found in the darker regions of Kuriguer's forests and the swamps of Kamalatman, where their hag-touched nature makes them both feared and sought after for their unique magical abilities. They often serve as scouts and information gatherers for the Huntbound Order.",
+        "playstyle": "Magical characters with unique abilities and outsider status. Perfect for players who want to be mysterious and magical.",
+        "recommended_classes": [
+            "Warlock",
+            "Sorcerer",
+            "Wizard",
+            "Ranger"
+        ]
+    },
+    {
+        "race": "Hobgoblin",
+        "description": "Larger, more disciplined cousins of goblins known for their military prowess and strict codes of honor. Hobgoblins are organized warriors who value discipline and order.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2,
+            "Intelligence": 1
+        },
+        "age": "Hobgoblins mature at the same rate as humans and live about as long.",
+        "alignment": "Hobgoblins are typically lawful evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
+        "languages": [
+            "Common",
+            "Goblin"
+        ],
+        "height_weight": {
+            "height_range": "5'6\" to 6'6\"",
+            "weight_range": "150 to 220 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Martial Training",
+                "description": "You are proficient with two martial weapons of your choice and with light armor."
+            },
+            {
+                "name": "Saving Face",
+                "description": "If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
+            }
+        ],
+        "alabastria_lore": "Hobgoblins in Alabastria are found in the militarized regions of Bulsania and the organized settlements of Kamalatman, where their disciplined nature and military training make them excellent soldiers and guards. Some have proven themselves as valuable members of the Huntbound Order.",
+        "playstyle": "Disciplined warriors who excel at organized combat and teamwork. Perfect for players who want to be military-focused characters.",
+        "recommended_classes": [
+            "Fighter",
+            "Paladin",
+            "Ranger",
+            "Wizard"
+        ]
+    },
+    {
+        "race": "Human",
+        "description": "The most adaptable and ambitious of the common races, humans are known for their versatility and drive to achieve greatness. They are found in every corner of the world.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "All ability scores": 1
+        },
+        "age": "Humans reach adulthood in their late teens and live less than a century.",
+        "alignment": "Humans tend toward no particular alignment. The best and the worst are found among them.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Extra Language",
+                "description": "You can speak, read, and write one extra language of your choice."
+            }
+        ],
+        "alabastria_lore": "Humans in Alabastria are found throughout all continents, serving as the backbone of most civilizations. Their adaptability and ambition have made them leaders in politics, trade, and the Huntbound Order. They are known for their ability to work with other races and their drive to achieve greatness.",
+        "playstyle": "Versatile characters who can excel at any role. Perfect for players who want maximum flexibility and adaptability.",
+        "recommended_classes": [
+            "Any"
+        ],
+        "subraces": [
+            {
+                "name": "Variant Human",
+                "description": "Humans with a particular talent or focus, represented by a feat.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Feat",
+                        "description": "You gain one feat of your choice."
+                    },
+                    {
+                        "name": "Skill",
+                        "description": "You gain proficiency in one skill of your choice."
+                    }
+                ],
+                "alabastria_context": "Variant Humans in Alabastria are found throughout all continents, often as specialists and experts in their chosen fields. Their focused abilities make them valuable in the Huntbound Order and other organizations.",
+                "playstyle": "Specialized humans with unique abilities and focused expertise."
+            },
+            {
+                "name": "Mark of Finding Human",
+                "description": "Humans with the Mark of Finding, a dragonmark that grants tracking and divination abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Hunter's Intuition",
+                        "description": "When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll a d4 and add the number rolled to the ability check."
+                    },
+                    {
+                        "name": "Finder's Magic",
+                        "description": "You can cast the hunter's mark spell with this trait. Starting at 3rd level, you can also cast the locate object spell with it. Starting at 5th level, you can also cast the locate creature spell with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mark of Finding Humans in Alabastria are found primarily in the Huntbound Order, where their tracking abilities make them invaluable for finding monsters and lost people.",
+                "playstyle": "Tracking specialists with divination magic and enhanced perception."
+            },
+            {
+                "name": "Mark of Handling Human",
+                "description": "Humans with the Mark of Handling, a dragonmark that grants animal handling and beast mastery abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Wild Intuition",
+                        "description": "When you make a Wisdom (Animal Handling) or Intelligence (Nature) check, you can roll a d4 and add the number rolled to the ability check."
+                    },
+                    {
+                        "name": "Primal Connection",
+                        "description": "You can cast the speak with animals spell with this trait. Starting at 3rd level, you can also cast the animal friendship spell with it. Starting at 5th level, you can also cast the beast sense spell with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mark of Handling Humans in Alabastria are found in the wilderness regions of Kuriguer and Kamalatman, where their animal handling abilities make them excellent rangers and beast masters.",
+                "playstyle": "Animal specialists with nature magic and beast communication abilities."
+            },
+            {
+                "name": "Mark of Making Human",
+                "description": "Humans with the Mark of Making, a dragonmark that grants crafting and creation abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Artisan's Intuition",
+                        "description": "When you make an Intelligence (Arcana) or Intelligence (History) check, you can roll a d4 and add the number rolled to the ability check."
+                    },
+                    {
+                        "name": "Maker's Magic",
+                        "description": "You can cast the mending cantrip with this trait. Starting at 3rd level, you can also cast the magic weapon spell with it. Starting at 5th level, you can also cast the fabricate spell with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mark of Making Humans in Alabastria are found in the workshops and forges of Kamalatman, where their crafting abilities make them excellent artificers and smiths.",
+                "playstyle": "Crafting specialists with creation magic and enhanced intelligence."
+            },
+            {
+                "name": "Mark of Passage Human",
+                "description": "Humans with the Mark of Passage, a dragonmark that grants movement and transportation abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Intuitive Motion",
+                        "description": "When you make a Dexterity (Acrobatics) or Strength (Athletics) check, you can roll a d4 and add the number rolled to the ability check."
+                    },
+                    {
+                        "name": "Passage Magic",
+                        "description": "You can cast the longstrider spell with this trait. Starting at 3rd level, you can also cast the misty step spell with it. Starting at 5th level, you can also cast the passwall spell with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mark of Passage Humans in Alabastria are found throughout all continents as couriers and messengers, where their movement abilities make them excellent for transportation and communication.",
+                "playstyle": "Movement specialists with teleportation magic and enhanced mobility."
+            },
+            {
+                "name": "Mark of Sentinel Human",
+                "description": "Humans with the Mark of Sentinel, a dragonmark that grants protection and defense abilities.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Vigilant Guardian",
+                        "description": "When you make a Wisdom (Insight) or Wisdom (Perception) check, you can roll a d4 and add the number rolled to the ability check."
+                    },
+                    {
+                        "name": "Sentinel's Magic",
+                        "description": "You can cast the shield spell with this trait. Starting at 3rd level, you can also cast the warding bond spell with it. Starting at 5th level, you can also cast the death ward spell with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mark of Sentinel Humans in Alabastria are found in the Huntbound Order and other protective organizations, where their defensive abilities make them excellent guards and protectors.",
+                "playstyle": "Protection specialists with defensive magic and enhanced awareness."
+            }
+        ]
+    },
+    {
+        "race": "Kalashtar",
+        "description": "Humanoids with a unique connection to the dream plane, sharing their consciousness with quori spirits. Kalashtar are wise, empathetic, and possess psionic abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Wisdom": 2,
+            "One other ability score": 1
+        },
+        "age": "Kalashtar mature at the same rate as humans and live about as long.",
+        "alignment": "Kalashtar are typically lawful good, as they are guided by the wisdom of their quori spirits.",
+        "languages": [
+            "Common",
+            "Quori"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Dual Mind",
+                "description": "You have advantage on all Wisdom saving throws."
+            },
+            {
+                "name": "Mental Discipline",
+                "description": "You have resistance to psychic damage."
+            },
+            {
+                "name": "Mind Link",
+                "description": "You can speak telepathically to any creature you can see within 30 feet of you. The creature understands you only if the two of you share a language. You can speak telepathically in this way to one creature at a time."
+            },
+            {
+                "name": "Severed from Dreams",
+                "description": "You don't sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness."
+            }
+        ],
+        "alabastria_lore": "Kalashtar in Alabastria are found primarily in the magical regions of Kuriguer, where their psionic abilities and connection to the dream plane make them excellent scholars and spiritual guides. They often serve as advisors to the Huntbound Order and other organizations.",
+        "playstyle": "Psionic characters with telepathic abilities and spiritual wisdom. Perfect for players who want to be wise and empathetic with unique mental powers.",
+        "recommended_classes": [
+            "Monk",
+            "Cleric",
+            "Wizard",
+            "Bard"
+        ]
+    },
+    {
+        "race": "Kender",
+        "description": "Small, curious humanoids known for their fearlessness, curiosity, and tendency to 'borrow' things. Kender are brave, optimistic, and often find themselves in trouble.",
+        "size": "Small",
+        "speed": "25 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Charisma": 1
+        },
+        "age": "Kender reach adulthood at age 20 and live up to 200 years.",
+        "alignment": "Kender are typically chaotic good, as they value freedom and helping others.",
+        "languages": [
+            "Common",
+            "Kenderspeak"
+        ],
+        "height_weight": {
+            "height_range": "3'0\" to 3'6\"",
+            "weight_range": "35 to 45 lbs"
+        },
+        "traits": [
+            {
+                "name": "Fearless",
+                "description": "You are immune to the frightened condition."
+            },
+            {
+                "name": "Kender Curiosity",
+                "description": "You have advantage on all Intelligence (Investigation) checks."
+            },
+            {
+                "name": "Taunt",
+                "description": "As a bonus action, you can unleash a string of provoking words at a creature within 30 feet of you that can hear you. The target must succeed on a Wisdom saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or be taunted by you until the start of your next turn. A taunted target has disadvantage on attack rolls against targets other than you."
+            }
+        ],
+        "alabastria_lore": "Kender in Alabastria are found throughout all continents, often serving as scouts and adventurers. Their fearlessness and curiosity make them excellent for dangerous missions, though their tendency to 'borrow' things can cause problems.",
+        "playstyle": "Fearless and curious characters who excel at exploration and social interaction. Perfect for players who want to be brave and optimistic.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Bard",
+            "Fighter"
+        ]
+    },
+    {
+        "race": "Kenku",
+        "description": "Raven-like humanoids cursed to mimic sounds and voices rather than speak original thoughts. Kenku are clever, stealthy, and excellent at imitation.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Wisdom": 1
+        },
+        "age": "Kenku reach adulthood at age 12 and live up to 60 years.",
+        "alignment": "Kenku are typically chaotic neutral, as they are driven by their own desires and instincts.",
+        "languages": [
+            "Common",
+            "Auran"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 5'6\"",
+            "weight_range": "90 to 120 lbs"
+        },
+        "traits": [
+            {
+                "name": "Expert Forgery",
+                "description": "You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects."
+            },
+            {
+                "name": "Kenku Training",
+                "description": "You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand."
+            },
+            {
+                "name": "Mimicry",
+                "description": "You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check."
+            }
+        ],
+        "alabastria_lore": "Kenku in Alabastria are found in the cities and wilderness of all continents, often serving as spies, messengers, and information gatherers. Their mimicry abilities make them valuable for the Huntbound Order's intelligence operations.",
+        "playstyle": "Stealthy and clever characters who excel at imitation and information gathering. Perfect for players who want to be sneaky and resourceful.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Bard",
+            "Monk"
+        ]
+    },
+    {
+        "race": "Kobold",
+        "description": "Small, reptilian humanoids known for their cowardice, cunning, and pack tactics. Kobolds are weak individually but dangerous in groups.",
+        "size": "Small",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2
+        },
+        "age": "Kobolds reach adulthood at age 6 and live up to 120 years.",
+        "alignment": "Kobolds are typically lawful evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
+        "languages": [
+            "Common",
+            "Draconic"
+        ],
+        "height_weight": {
+            "height_range": "2'0\" to 2'6\"",
+            "weight_range": "25 to 35 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Grovel, Cower, and Beg",
+                "description": "As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against creatures within 10 feet of you that can see you. Once you use this trait, you can't use it again until you finish a short or long rest."
+            },
+            {
+                "name": "Pack Tactics",
+                "description": "You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated."
+            }
+        ],
+        "alabastria_lore": "Kobolds in Alabastria are found in the underground regions of Kamalatman and the mountain caves of Bulsania, where they form small communities and serve as scouts and miners. Some have proven themselves as valuable members of the Huntbound Order.",
+        "playstyle": "Small and cunning characters who excel at teamwork and survival. Perfect for players who want to be clever and resourceful.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Fighter",
+            "Wizard"
+        ]
+    },
+    {
+        "race": "Leonin",
+        "description": "Lion-like humanoids known for their strength, courage, and regal bearing. Leonin are proud warriors who value honor and strength.",
+        "size": "Medium",
+        "speed": "35 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": "Leonin reach adulthood at age 20 and live up to 80 years.",
+        "alignment": "Leonin are typically lawful good, as they value honor, justice, and protecting the weak.",
+        "languages": [
+            "Common",
+            "Leonin"
+        ],
+        "height_weight": {
+            "height_range": "5'6\" to 6'6\"",
+            "weight_range": "150 to 220 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Claws",
+                "description": "Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Hunter's Instincts",
+                "description": "You have proficiency in one of the following skills of your choice: Athletics, Intimidation, Perception, or Survival."
+            },
+            {
+                "name": "Daunting Roar",
+                "description": "As a bonus action, you can let out a menacing roar. Creatures of your choice within 10 feet of you that can hear you must succeed on a Wisdom saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. Once you use this trait, you can't use it again until you finish a short or long rest."
+            }
+        ],
+        "alabastria_lore": "Leonin in Alabastria are found primarily in the plains of Skratonia and the mountain regions of Bulsania, where their strength and courage make them excellent warriors and leaders. They often serve as commanders in the Huntbound Order and other military organizations.",
+        "playstyle": "Strong and courageous characters who excel at combat and leadership. Perfect for players who want to be powerful warriors with regal bearing.",
+        "recommended_classes": [
+            "Fighter",
+            "Paladin",
+            "Barbarian",
+            "Ranger"
+        ]
+    },
+    {
+        "race": "Lizardfolk",
+        "description": "Reptilian humanoids known for their natural armor, swimming abilities, and practical nature. Lizardfolk are survivalists who value efficiency and strength.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2,
+            "Wisdom": 1
+        },
+        "age": "Lizardfolk reach adulthood at age 14 and live up to 60 years.",
+        "alignment": "Lizardfolk are typically neutral, as they care only for their own survival and the survival of their tribe.",
+        "languages": [
+            "Common",
+            "Draconic"
+        ],
+        "height_weight": {
+            "height_range": "5'6\" to 6'6\"",
+            "weight_range": "150 to 220 lbs"
+        },
+        "traits": [
+            {
+                "name": "Bite",
+                "description": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Cunning Artisan",
+                "description": "As part of a short rest, you can harvest bone and hide from a slain beast, construct, dragon, monstrosity, or plant creature of size Small or larger to create one of the following items: a shield, a club, a javelin, or 1d4 darts or blowgun needles. To use this trait, you need a blade, such as a dagger, or appropriate artisan's tools, such as leatherworker's tools."
+            },
+            {
+                "name": "Hold Breath",
+                "description": "You can hold your breath for up to 15 minutes at a time."
+            },
+            {
+                "name": "Natural Armor",
+                "description": "You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor."
+            },
+            {
+                "name": "Hungry Jaws",
+                "description": "In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you gain temporary hit points (minimum of 1) equal to your Constitution modifier, and you can't use this trait again until you finish a short or long rest."
+            }
+        ],
+        "alabastria_lore": "Lizardfolk in Alabastria are found primarily in the swamps and wetlands of Kamalatman, where their natural abilities make them excellent hunters and survivalists. They often serve as guides and scouts for the Huntbound Order in difficult terrain.",
+        "playstyle": "Survivalist characters who excel at combat and wilderness survival. Perfect for players who want to be practical and efficient.",
+        "recommended_classes": [
+            "Ranger",
+            "Fighter",
+            "Druid",
+            "Barbarian"
+        ]
+    },
+    {
+        "race": "Loxodon",
+        "description": "Elephant-like humanoids known for their strength, wisdom, and natural armor. Loxodon are patient, wise, and have excellent memories.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2,
+            "Wisdom": 1
+        },
+        "age": "Loxodon reach adulthood at age 20 and live up to 450 years.",
+        "alignment": "Loxodon are typically lawful good, as they value order, justice, and protecting others.",
+        "languages": [
+            "Common",
+            "Loxodon"
+        ],
+        "height_weight": {
+            "height_range": "6'0\" to 7'0\"",
+            "weight_range": "280 to 340 lbs"
+        },
+        "traits": [
+            {
+                "name": "Natural Armor",
+                "description": "You have thick, leathery skin. When you aren't wearing armor, your AC is 12 + your Constitution modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor."
+            },
+            {
+                "name": "Powerful Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+            },
+            {
+                "name": "Trunk",
+                "description": "You can grasp things with your trunk, and you can use it as a snorkel. It has a reach of 5 feet, and it can lift a number of pounds equal to five times your Strength score. You can use it to do the following simple tasks: lift, drop, hold, push, or pull an object or a creature; open or close a door or a container; grapple someone; or make an unarmed strike. Your DM might allow other simple tasks to be added to that list of options. It can't wield weapons or shields or do anything that requires manual precision, such as using tools or magic items or performing the somatic components of a spell."
+            },
+            {
+                "name": "Keen Smell",
+                "description": "Thanks to your sensitive trunk, you have advantage on Wisdom (Perception) checks that involve smell."
+            }
+        ],
+        "alabastria_lore": "Loxodon in Alabastria are found primarily in the plains of Skratonia and the mountain regions of Bulsania, where their strength and wisdom make them excellent leaders and protectors. They often serve as advisors and commanders in the Huntbound Order.",
+        "playstyle": "Strong and wise characters who excel at leadership and protection. Perfect for players who want to be patient and powerful.",
+        "recommended_classes": [
+            "Cleric",
+            "Fighter",
+            "Paladin",
+            "Monk"
+        ]
+    },
+    {
+        "race": "Minotaur",
+        "description": "Bull-like humanoids known for their strength, horns, and connection to labyrinths. Minotaurs are powerful warriors with a natural sense of direction.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": "Minotaurs reach adulthood at age 20 and live up to 100 years.",
+        "alignment": "Minotaurs are typically chaotic neutral, as they value freedom and personal strength.",
+        "languages": [
+            "Common",
+            "Minotaur"
+        ],
+        "height_weight": {
+            "height_range": "6'0\" to 7'0\"",
+            "weight_range": "200 to 280 lbs"
+        },
+        "traits": [
+            {
+                "name": "Horns",
+                "description": "Your horns are natural melee weapons, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Goring Rush",
+                "description": "When you take the Dash action on your turn, you can make one melee attack with your horns as a bonus action."
+            },
+            {
+                "name": "Hammering Horns",
+                "description": "When you use the Attack action during your turn to make a melee attack, you can attempt to shove a creature with your horns as a bonus action. You cannot use this shove attempt to knock a creature prone."
+            },
+            {
+                "name": "Labyrinthine Recall",
+                "description": "You can perfectly recall any path you have traveled."
+            }
+        ],
+        "alabastria_lore": "Minotaurs in Alabastria are found primarily in the mountain regions of Bulsania and the underground areas of Kamalatman, where their strength and sense of direction make them excellent guides and warriors. They often serve as protectors and scouts for the Huntbound Order.",
+        "playstyle": "Strong and powerful characters who excel at combat and navigation. Perfect for players who want to be powerful warriors with unique abilities.",
+        "recommended_classes": [
+            "Barbarian",
+            "Fighter",
+            "Ranger",
+            "Paladin"
+        ]
+    },
+    {
+        "race": "Orc",
+        "description": "Strong, aggressive humanoids known for their physical prowess and tribal culture. Orcs are fierce warriors who value strength and honor.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": "Orcs reach adulthood at age 12 and live up to 50 years.",
+        "alignment": "Orcs are typically chaotic evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
+        "languages": [
+            "Common",
+            "Orc"
+        ],
+        "height_weight": {
+            "height_range": "5'6\" to 6'6\"",
+            "weight_range": "150 to 220 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Aggressive",
+                "description": "As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started."
+            },
+            {
+                "name": "Powerful Build",
+                "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+            }
+        ],
+        "alabastria_lore": "Orcs in Alabastria are found primarily in the frontier regions of Kamalatman and the borderlands of Skratonia, where their strength and aggression make them valuable as warriors and guards. Some have proven themselves as capable members of the Huntbound Order.",
+        "playstyle": "Strong and aggressive characters who excel at combat and physical challenges. Perfect for players who want to be powerful warriors.",
+        "recommended_classes": [
+            "Barbarian",
+            "Fighter",
+            "Ranger",
+            "Rogue"
+        ]
+    },
+    {
+        "race": "Owlin",
+        "description": "Owl-like humanoids known for their flight, stealth, and keen senses. Owlin are wise, stealthy, and have excellent night vision.",
+        "size": "Small or Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Wisdom": 1
+        },
+        "age": "Owlin mature at the same rate as humans and live about as long.",
+        "alignment": "Owlin are typically neutral good, as they value wisdom and helping others.",
+        "languages": [
+            "Common",
+            "Owlin"
+        ],
+        "height_weight": {
+            "height_range": "3'0\" to 5'0\"",
+            "weight_range": "35 to 85 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Flight",
+                "description": "You have a flying speed equal to your walking speed. You can't use this flying speed if you're wearing medium or heavy armor."
+            },
+            {
+                "name": "Keen Senses",
+                "description": "You have proficiency in the Perception skill."
+            },
+            {
+                "name": "Silent Feathers",
+                "description": "You have proficiency in the Stealth skill."
+            }
+        ],
+        "alabastria_lore": "Owlin in Alabastria are found primarily in the forests of Kuriguer and the mountain regions of Bulsania, where their flight and stealth abilities make them excellent scouts and messengers. They often serve as aerial reconnaissance for the Huntbound Order.",
+        "playstyle": "Flying and stealthy characters who excel at reconnaissance and night operations. Perfect for players who want to be wise and mobile.",
+        "recommended_classes": [
+            "Ranger",
+            "Rogue",
+            "Monk",
+            "Cleric"
+        ]
+    },
+    {
+        "race": "Plasmoid",
+        "description": "Amorphous humanoids made of living ooze, capable of changing their shape and squeezing through tight spaces. Plasmoids are adaptable and resilient.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2,
+            "One other ability score": 1
+        },
+        "age": "Plasmoids mature at the same rate as humans and live about as long.",
+        "alignment": "Plasmoids can be of any alignment, as they are highly adaptable to their environment.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Amorphous",
+                "description": "You can squeeze through a space as narrow as 1 inch wide without squeezing."
+            },
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Hold Breath",
+                "description": "You can hold your breath for 1 hour."
+            },
+            {
+                "name": "Natural Reach",
+                "description": "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+            },
+            {
+                "name": "Shape Self",
+                "description": "As a bonus action, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob. While you have a humanlike shape, you can wear clothing and armor made for a Humanoid of your size. As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long, or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can't attack with the pseudopod or use it to carry more than 10 pounds."
+            }
+        ],
+        "alabastria_lore": "Plasmoids in Alabastria are found in the swamps and underground regions of Kamalatman, where their amorphous nature makes them excellent infiltrators and scouts. They often serve as spies and information gatherers for the Huntbound Order.",
+        "playstyle": "Adaptable and resilient characters who excel at infiltration and survival. Perfect for players who want to be flexible and unique.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Monk",
+            "Wizard"
+        ]
+    },
+    {
+        "race": "Reborn",
+        "description": "Humanoids who have died and returned to life, bearing the marks of their death and possessing unique abilities. Reborn are often outcasts but have unique perspectives on life and death.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Two ability scores": 1
+        },
+        "age": "Reborn mature at the same rate as humans and live about as long.",
+        "alignment": "Reborn can be of any alignment, as their death and rebirth often changes their perspective on life.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Ancestral Legacy",
+                "description": "You gain the benefits of your choice of one of the following options: (a) Darkvision with a range of 60 feet, (b) Proficiency in two skills of your choice, or (c) Proficiency with one tool of your choice."
+            },
+            {
+                "name": "Deathless Nature",
+                "description": "You don't need to eat, drink, or breathe. You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in an inactive, motionless state, during which you remain semiconscious."
+            },
+            {
+                "name": "Knowledge from a Past Life",
+                "description": "When you make an ability check that uses a skill, you can roll a d6 and add the number rolled to the check. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+            },
+            {
+                "name": "Soul's Gift",
+                "description": "You have resistance to necrotic damage and radiant damage."
+            }
+        ],
+        "alabastria_lore": "Reborn in Alabastria are found throughout all continents, often serving as advisors and guides due to their unique perspective on life and death. They often work with the Huntbound Order as spiritual advisors and those who understand the nature of mortality.",
+        "playstyle": "Unique characters with death-defying abilities and unique perspectives. Perfect for players who want to be mysterious and otherworldly.",
+        "recommended_classes": [
+            "Cleric",
+            "Warlock",
+            "Wizard",
+            "Bard"
+        ]
+    },
+    {
+        "race": "Satyr",
+        "description": "Fey humanoids with goat-like features known for their revelry, music, and connection to nature. Satyrs are joyful, musical, and have a strong connection to the Feywild.",
+        "size": "Medium",
+        "speed": "35 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Charisma": 1
+        },
+        "age": "Satyrs mature at the same rate as humans and live about as long.",
+        "alignment": "Satyrs are typically chaotic good, as they value freedom and joy.",
+        "languages": [
+            "Common",
+            "Sylvan"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Fey",
+                "description": "Your creature type is fey, rather than humanoid."
+            },
+            {
+                "name": "Ram",
+                "description": "You can use your head and horns to make unarmed strikes. If you hit with them, you deal bludgeoning damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Magic Resistance",
+                "description": "You have advantage on saving throws against spells and other magical effects."
+            },
+            {
+                "name": "Mirthful Leaps",
+                "description": "Whenever you make a long or high jump, you can roll a d8 and add the number rolled to the number of feet you cover, even when making a standing jump. This extra distance costs movement as normal."
+            },
+            {
+                "name": "Reveler",
+                "description": "You have proficiency in the Performance and Persuasion skills, and you have proficiency with one musical instrument of your choice."
+            }
+        ],
+        "alabastria_lore": "Satyrs in Alabastria are found primarily in the magical forests of Kuriguer, where their fey nature and musical abilities make them excellent entertainers and guides. They often serve as bards and entertainers for the Huntbound Order.",
+        "playstyle": "Joyful and musical characters who excel at entertainment and social interaction. Perfect for players who want to be charismatic and fun-loving.",
+        "recommended_classes": [
+            "Bard",
+            "Ranger",
+            "Druid",
+            "Rogue"
+        ]
+    },
+    {
+        "race": "Shifter",
+        "description": "Humanoids with the ability to partially transform into their animal totems. Shifters are connected to nature and have enhanced senses and abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "One other ability score": 1
+        },
+        "age": "Shifters mature at the same rate as humans and live about as long.",
+        "alignment": "Shifters are typically neutral, as they are driven by their animal instincts and personal desires.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Shifting",
+                "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to your level + your Constitution modifier (minimum of 1). You also gain additional benefits that depend on your shifter type, as detailed below. Once you shift, you can't do so again until you finish a short or long rest."
+            }
+        ],
+        "alabastria_lore": "Shifters in Alabastria are found throughout all continents, often serving as scouts and rangers due to their animal-like abilities. They often work with the Huntbound Order as trackers and wilderness guides.",
+        "playstyle": "Nature-connected characters with animal-like abilities and enhanced senses. Perfect for players who want to be wild and instinctive.",
+        "recommended_classes": [
+            "Ranger",
+            "Druid",
+            "Barbarian",
+            "Rogue"
+        ],
+        "subraces": [
+            {
+                "name": "Beasthide Shifter",
+                "description": "Beasthide shifters are tough and resilient, with enhanced durability and strength.",
+                "ability_score_increase": {
+                    "Constitution": 1
+                },
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Shifting Feature",
+                        "description": "While shifting, you gain 1d6 temporary hit points at the start of each of your turns. You also gain a +1 bonus to AC while shifting."
+                    }
+                ],
+                "alabastria_context": "Beasthide Shifters in Alabastria are found in the harsh regions of Bulsania and Kamalatman, where their toughness makes them excellent survivalists and warriors.",
+                "playstyle": "Tough and resilient shifters who excel at survival and combat."
+            },
+            {
+                "name": "Longtooth Shifter",
+                "description": "Longtooth shifters are fierce and aggressive, with enhanced combat abilities.",
+                "ability_score_increase": {
+                    "Strength": 1
+                },
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Shifting Feature",
+                        "description": "While shifting, you can use your fangs to make an unarmed strike as a bonus action. If you hit, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+                    }
+                ],
+                "alabastria_context": "Longtooth Shifters in Alabastria are found in the frontier regions of Kamalatman and Skratonia, where their ferocity makes them excellent warriors and guards.",
+                "playstyle": "Fierce and aggressive shifters who excel at combat and intimidation."
+            },
+            {
+                "name": "Swiftstride Shifter",
+                "description": "Swiftstride shifters are fast and agile, with enhanced mobility and reflexes.",
+                "ability_score_increase": {
+                    "Dexterity": 1
+                },
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Shifting Feature",
+                        "description": "While shifting, your walking speed increases by 10 feet. You also gain a +1 bonus to AC while shifting."
+                    }
+                ],
+                "alabastria_context": "Swiftstride Shifters in Alabastria are found throughout all continents, often serving as messengers and scouts due to their speed and agility.",
+                "playstyle": "Fast and agile shifters who excel at mobility and stealth."
+            },
+            {
+                "name": "Wildhunt Shifter",
+                "description": "Wildhunt shifters are wise and perceptive, with enhanced senses and tracking abilities.",
+                "ability_score_increase": {
+                    "Wisdom": 1
+                },
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Shifting Feature",
+                        "description": "While shifting, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you, unless you're incapacitated."
+                    }
+                ],
+                "alabastria_context": "Wildhunt Shifters in Alabastria are found in the wilderness regions of Kuriguer and Kamalatman, where their enhanced senses make them excellent trackers and guides.",
+                "playstyle": "Wise and perceptive shifters who excel at tracking and wilderness survival."
+            }
+        ]
+    },
+    {
+        "race": "Simic Hybrid",
+        "description": "Humanoids who have been enhanced with animal traits through magical experimentation. Simic Hybrids are unique individuals with both human and animal characteristics.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2,
+            "One other ability score": 1
+        },
+        "age": "Simic Hybrids mature at the same rate as humans and live about as long.",
+        "alignment": "Simic Hybrids can be of any alignment, as their enhancements don't determine their moral outlook.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Animal Enhancement",
+                "description": "You gain one of the following enhancements of your choice: (a) Manta Glide: You have a flying speed equal to your walking speed, but you must end your turn on solid ground or fall. (b) Nimble Climber: You have a climbing speed equal to your walking speed. (c) Underwater Adaptation: You can breathe air and water, and you have a swimming speed equal to your walking speed."
+            },
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            }
+        ],
+        "alabastria_lore": "Simic Hybrids in Alabastria are found primarily in the magical academies of Kuriguer, where their unique enhancements make them valuable for research and experimentation. They often serve as test subjects and researchers for the Huntbound Order.",
+        "playstyle": "Enhanced characters with unique animal traits and abilities. Perfect for players who want to be unique and experimental.",
+        "recommended_classes": [
+            "Artificer",
+            "Wizard",
+            "Ranger",
+            "Monk"
+        ]
+    },
+    {
+        "race": "Tabaxi",
+        "description": "Cat-like humanoids known for their agility, curiosity, and love of shiny objects. Tabaxi are graceful, stealthy, and have excellent reflexes.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Charisma": 1
+        },
+        "age": "Tabaxi reach adulthood at age 20 and live up to 100 years.",
+        "alignment": "Tabaxi are typically chaotic good, as they value freedom and helping others.",
+        "languages": [
+            "Common",
+            "Tabaxi"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Feline Agility",
+                "description": "Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns."
+            },
+            {
+                "name": "Cat's Claws",
+                "description": "Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Cat's Talent",
+                "description": "You have proficiency in the Perception and Stealth skills."
+            }
+        ],
+        "alabastria_lore": "Tabaxi in Alabastria are found throughout all continents, often serving as scouts and messengers due to their agility and curiosity. They often work with the Huntbound Order as trackers and information gatherers.",
+        "playstyle": "Agile and curious characters who excel at stealth and exploration. Perfect for players who want to be graceful and inquisitive.",
+        "recommended_classes": [
+            "Rogue",
+            "Ranger",
+            "Monk",
+            "Bard"
+        ]
+    },
+    {
+        "race": "Thri-kreen",
+        "description": "Insectoid humanoids with four arms and a chitinous exoskeleton. Thri-kreen are fast, agile, and have unique physical abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Dexterity": 2,
+            "Wisdom": 1
+        },
+        "age": "Thri-kreen reach adulthood at age 20 and live up to 100 years.",
+        "alignment": "Thri-kreen are typically lawful neutral, as they value order and efficiency.",
+        "languages": [
+            "Common",
+            "Thri-kreen"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Chameleon Carapace",
+                "description": "As a bonus action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide."
+            },
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Extra Arms",
+                "description": "You have two extra arms below your main pair of arms. The extra arms can manipulate an object, open or close a door or container, pick up or set down a Tiny object, or wield a weapon that has the light property."
+            },
+            {
+                "name": "Sleepless",
+                "description": "You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you remain semiconscious."
+            },
+            {
+                "name": "Thri-kreen Weapon Training",
+                "description": "You are proficient with the gythka and the chatkcha."
+            }
+        ],
+        "alabastria_lore": "Thri-kreen in Alabastria are found primarily in the desert regions of Kamalatman and the mountain regions of Bulsania, where their unique abilities make them excellent scouts and warriors. They often serve as elite operatives for the Huntbound Order.",
+        "playstyle": "Unique insectoid characters with multiple arms and special abilities. Perfect for players who want to be alien and efficient.",
+        "recommended_classes": [
+            "Fighter",
+            "Ranger",
+            "Monk",
+            "Rogue"
+        ]
+    },
+    {
+        "race": "Tiefling",
+        "description": "Humanoids with infernal heritage, bearing the mark of their fiendish ancestors. Tieflings are often outcasts but possess unique magical abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Charisma": 2,
+            "Intelligence": 1
+        },
+        "age": "Tieflings mature at the same rate as humans and live about as long.",
+        "alignment": "Tieflings are typically chaotic neutral, as they are driven by their own desires and instincts.",
+        "languages": [
+            "Common",
+            "Infernal"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Hellish Resistance",
+                "description": "You have resistance to fire damage."
+            },
+            {
+                "name": "Infernal Legacy",
+                "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+            }
+        ],
+        "alabastria_lore": "Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities. They often work with the Huntbound Order as magical specialists and those who understand the nature of fiends.",
+        "playstyle": "Magical characters with infernal heritage and unique abilities. Perfect for players who want to be mysterious and magical.",
+        "recommended_classes": [
+            "Warlock",
+            "Sorcerer",
+            "Wizard",
+            "Bard"
+        ],
+        "subraces": [
+            {
+                "name": "Asmodeus Tiefling",
+                "description": "Tieflings with the bloodline of Asmodeus, the Lord of the Nine Hells.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Asmodeus Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Baalzebul Tiefling",
+                "description": "Tieflings with the bloodline of Baalzebul, the Lord of Flies.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the suggestion spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the stinking cloud spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Baalzebul Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Dispater Tiefling",
+                "description": "Tieflings with the bloodline of Dispater, the Iron Duke.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the command spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the detect magic spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Dispater Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Fierna Tiefling",
+                "description": "Tieflings with the bloodline of Fierna, the Lady of the Fourth.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the charm person spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the suggestion spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Fierna Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Glasya Tiefling",
+                "description": "Tieflings with the bloodline of Glasya, the Daughter of Asmodeus.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the minor illusion spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the disguise self spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Glasya Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Levistus Tiefling",
+                "description": "Tieflings with the bloodline of Levistus, the Lord of the Fifth.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the ray of frost spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the armor of Agathys spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Levistus Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Mammon Tiefling",
+                "description": "Tieflings with the bloodline of Mammon, the Lord of the Third.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the Tenser's floating disk spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the arcane lock spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mammon Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Mephistopheles Tiefling",
+                "description": "Tieflings with the bloodline of Mephistopheles, the Lord of the Eighth.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the burning hands spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the flame blade spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Mephistopheles Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            },
+            {
+                "name": "Zariel Tiefling",
+                "description": "Tieflings with the bloodline of Zariel, the Fallen Angel.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Infernal Legacy",
+                        "description": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the searing smite spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the branding smite spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Zariel Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
+                "playstyle": "Magical tieflings with infernal heritage and unique abilities."
+            }
+        ]
+    },
+    {
+        "race": "Tortle",
+        "description": "Turtle-like humanoids known for their natural armor and connection to water. Tortles are wise, patient, and have excellent defensive abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 2,
+            "Wisdom": 1
+        },
+        "age": "Tortles reach adulthood at age 15 and live up to 200 years.",
+        "alignment": "Tortles are typically lawful good, as they value order, justice, and protecting others.",
+        "languages": [
+            "Common",
+            "Aquan"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "200 to 280 lbs"
+        },
+        "traits": [
+            {
+                "name": "Claws",
+                "description": "Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+            },
+            {
+                "name": "Hold Breath",
+                "description": "You can hold your breath for up to 1 hour."
+            },
+            {
+                "name": "Natural Armor",
+                "description": "Due to your shell, you have a +2 bonus to AC while you aren't wearing armor."
+            },
+            {
+                "name": "Shell Defense",
+                "description": "You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell."
+            },
+            {
+                "name": "Survival Instinct",
+                "description": "You gain proficiency in the Survival skill. Your shell gives you advantage on all checks made to stabilize a dying creature and on all checks made to provide first aid."
+            }
+        ],
+        "alabastria_lore": "Tortles in Alabastria are found primarily in the coastal regions of Kuriguer and the waterways of Kamalatman, where their natural abilities make them excellent swimmers and protectors. They often serve as guardians and healers for the Huntbound Order.",
+        "playstyle": "Defensive and wise characters who excel at protection and healing. Perfect for players who want to be patient and protective.",
+        "recommended_classes": [
+            "Cleric",
+            "Druid",
+            "Monk",
+            "Paladin"
+        ]
+    },
+    {
+        "race": "Triton",
+        "description": "Aquatic humanoids with a strong connection to the sea and water magic. Tritons are noble, proud, and have excellent swimming abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Strength": 1,
+            "Constitution": 1,
+            "Charisma": 1
+        },
+        "age": "Tritons reach adulthood at age 20 and live up to 200 years.",
+        "alignment": "Tritons are typically lawful good, as they value order, justice, and protecting others.",
+        "languages": [
+            "Common",
+            "Primordial"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Amphibious",
+                "description": "You can breathe air and water."
+            },
+            {
+                "name": "Control Air and Water",
+                "description": "You can cast fog cloud with this trait. Starting at 3rd level, you can cast gust of wind with it, and starting at 5th level, you can also cast wall of water with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells."
+            },
+            {
+                "name": "Emissary of the Sea",
+                "description": "Aquatic beasts have an extraordinary affinity with your people. You can communicate simple ideas to any beast that can breathe water. They can understand the meaning of your words, though you have no special ability to understand them in return."
+            },
+            {
+                "name": "Guardians of the Depths",
+                "description": "Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks caused by a deep, underwater environment."
+            },
+            {
+                "name": "Swimming Speed",
+                "description": "You have a swimming speed of 30 feet."
+            }
+        ],
+        "alabastria_lore": "Tritons in Alabastria are found primarily in the coastal regions of Kuriguer and the waterways of Kamalatman, where their aquatic abilities make them excellent sailors and water guardians. They often serve as maritime specialists for the Huntbound Order.",
+        "playstyle": "Aquatic characters with water magic and swimming abilities. Perfect for players who want to be noble and water-focused.",
+        "recommended_classes": [
+            "Paladin",
+            "Cleric",
+            "Ranger",
+            "Fighter"
+        ]
+    },
+    {
+        "race": "Vedalken",
+        "description": "Blue-skinned humanoids known for their intelligence, precision, and connection to knowledge. Vedalken are analytical, methodical, and have excellent problem-solving abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Intelligence": 2,
+            "Wisdom": 1
+        },
+        "age": "Vedalken reach adulthood at age 20 and live up to 350 years.",
+        "alignment": "Vedalken are typically lawful neutral, as they value order, logic, and efficiency.",
+        "languages": [
+            "Common",
+            "Vedalken"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Vedalken Dispassion",
+                "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+            },
+            {
+                "name": "Partially Amphibious",
+                "description": "You can breathe air and water, but you need to be submerged at least once every 4 hours to avoid suffocating."
+            },
+            {
+                "name": "Tireless Precision",
+                "description": "You are proficient with one of the following skills of your choice: Arcana, History, Investigation, Medicine, Performance, or Sleight of Hand. You are also proficient with one tool of your choice. When you make an ability check with the chosen skill or tool, you can roll a d4 and add the number rolled to the check."
+            }
+        ],
+        "alabastria_lore": "Vedalken in Alabastria are found primarily in the magical academies of Kuriguer and the research facilities of Kamalatman, where their analytical abilities make them excellent scholars and researchers. They often serve as advisors and researchers for the Huntbound Order.",
+        "playstyle": "Intelligent and analytical characters who excel at problem-solving and research. Perfect for players who want to be methodical and precise.",
+        "recommended_classes": [
+            "Wizard",
+            "Artificer",
+            "Cleric",
+            "Bard"
+        ]
+    },
+    {
+        "race": "Warforged",
+        "description": "Constructed humanoids created for war but now seeking their own purpose. Warforged are durable, adaptable, and have unique mechanical abilities.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Constitution": 2,
+            "One other ability score": 1
+        },
+        "age": "Warforged reach adulthood at age 20 and live up to 200 years.",
+        "alignment": "Warforged can be of any alignment, as they are driven by their own choices and experiences.",
+        "languages": [
+            "Common",
+            "One other language"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Constructed Resilience",
+                "description": "You were created to have remarkable fortitude, represented by the following benefits: You have advantage on saving throws against being poisoned, and you have resistance to poison damage. You don't need to eat, drink, or breathe. You are immune to disease. You don't need to sleep, and magic can't put you to sleep."
+            },
+            {
+                "name": "Sentry's Rest",
+                "description": "When you take a long rest, you must spend at least 6 hours in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn't render you unconscious, and you can see and hear as normal."
+            },
+            {
+                "name": "Integrated Protection",
+                "description": "Your body has built-in defensive layers, which can be enhanced with armor: You gain a +1 bonus to Armor Class. You can don only armor with which you have proficiency. To don armor other than a shield, you must incorporate it into your body over the course of 1 hour, during which you must remain in contact with the armor. To doff armor, you must spend 1 hour removing it. You can rest while donning or doffing armor in this way. While you live, the armor incorporated into your body can't be removed against your will."
+            },
+            {
+                "name": "Specialized Design",
+                "description": "You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice."
+            }
+        ],
+        "alabastria_lore": "Warforged in Alabastria are found throughout all continents, often serving as guards and warriors due to their constructed nature and durability. They often work with the Huntbound Order as elite operatives and those who understand the nature of constructs.",
+        "playstyle": "Constructed characters with unique mechanical abilities and durability. Perfect for players who want to be artificial and adaptable.",
+        "recommended_classes": [
+            "Fighter",
+            "Paladin",
+            "Ranger",
+            "Artificer"
+        ]
+    },
+    {
+        "race": "Yuan-ti",
+        "description": "Snake-like humanoids with serpentine features and magical abilities. Yuan-ti are often outcasts but possess unique magical powers and resistance to magic.",
+        "size": "Medium",
+        "speed": "30 feet",
+        "ability_score_increase": {
+            "Charisma": 2,
+            "Intelligence": 1
+        },
+        "age": "Yuan-ti reach adulthood at age 20 and live up to 200 years.",
+        "alignment": "Yuan-ti are typically chaotic evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
+        "languages": [
+            "Common",
+            "Abyssal",
+            "Draconic"
+        ],
+        "height_weight": {
+            "height_range": "5'0\" to 6'0\"",
+            "weight_range": "110 to 180 lbs"
+        },
+        "traits": [
+            {
+                "name": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "name": "Magic Resistance",
+                "description": "You have advantage on saving throws against spells and other magical effects."
+            },
+            {
+                "name": "Poison Immunity",
+                "description": "You are immune to poison damage and the poisoned condition."
+            },
+            {
+                "name": "Serpentine Magic",
+                "description": "You know the poison spray cantrip. When you reach 3rd level, you can cast the suggestion spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the animal friendship spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+            }
+        ],
+        "alabastria_lore": "Yuan-ti in Alabastria are found primarily in the swamps and underground regions of Kamalatman, where their serpentine nature makes them excellent infiltrators and spellcasters. They often serve as spies and magical specialists for the Huntbound Order.",
+        "playstyle": "Magical characters with serpentine heritage and unique abilities. Perfect for players who want to be mysterious and magical.",
+        "recommended_classes": [
+            "Warlock",
+            "Sorcerer",
+            "Wizard",
+            "Ranger"
+        ],
+        "subraces": [
+            {
+                "name": "Pureblood Yuan-ti",
+                "description": "Yuan-ti with the most human-like appearance, often able to pass as human.",
+                "height_weight": {
+                    "height_range": "5'0\" to 6'0\"",
+                    "weight_range": "110 to 180 lbs"
+                },
+                "traits": [
+                    {
+                        "name": "Innate Spellcasting",
+                        "description": "You know the poison spray cantrip. When you reach 3rd level, you can cast the suggestion spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the animal friendship spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ],
+                "alabastria_context": "Pureblood Yuan-ti in Alabastria are found throughout all continents, often serving as spies and infiltrators due to their human-like appearance and magical abilities.",
+                "playstyle": "Human-like yuan-ti with magical abilities and infiltration skills."
+            }
+        ]
     }
 ]
