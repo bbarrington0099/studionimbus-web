@@ -812,6 +812,11 @@ const app = {
 
     // Helper function to navigate to related items
     navigateToRelated(type, name, subclass = null) {
+        // Close any open modals
+        this.closeModal();
+        this.closeDeityModal();
+        this.closeBackupModals();
+
         // Save current state to history including opened sections
         this.navigationHistory.push({
             filter: this.currentFilter,
@@ -2158,6 +2163,11 @@ const app = {
 
     // Jump to specific quest report
     jumpToQuestReport(questName) {
+        // Close any open modals
+        this.closeModal();
+        this.closeDeityModal();
+        this.closeBackupModals();
+
         // Switch to quest reports view
         this.currentGuildView = 'quests';
         this.renderGuildHistory();
@@ -2186,6 +2196,11 @@ const app = {
 
     // Jump to specific guild member
     jumpToGuildMember(memberName) {
+        // Close any open modals
+        this.closeModal();
+        this.closeDeityModal();
+        this.closeBackupModals();
+
         // Switch to guild members view
         this.currentGuildView = 'members';
         this.renderGuildHistory();
@@ -2290,6 +2305,19 @@ const app = {
     closeModal() {
         const modal = document.getElementById('timeline-modal');
         modal.style.display = 'none';
+    },
+
+    // Close backup modals
+    closeBackupModals() {
+        const backupTimelineModal = document.getElementById('backup-timeline-modal');
+        const backupDeityModal = document.getElementById('backup-deity-modal');
+
+        if (backupTimelineModal) {
+            backupTimelineModal.remove();
+        }
+        if (backupDeityModal) {
+            backupDeityModal.remove();
+        }
     },
 
     // Render pantheon and deities
