@@ -199,10 +199,13 @@
     right: 25px;
     top: 50%;
     transform: translateY(-50%);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
 }
 
 .deity-modal-close:hover {
-    color: #ff6b6b;
+    color: var(--ocean-blue);
     transform: translateY(-50%) scale(1.1);
 }
 

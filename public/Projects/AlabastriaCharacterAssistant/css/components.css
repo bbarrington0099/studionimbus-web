@@ -1234,13 +1234,54 @@ p {
     box-shadow: var(--shadow-md);
 }
 
+/* Hover states for primary and secondary deity tags */
+.deity-tag.primary:hover {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+    border-color: var(--gold-accent);
+}
+
+.deity-tag.secondary:hover {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+    border-color: var(--gold-accent);
+}
+
 .deity-tag.primary {
     background: var(--ocean-blue);
     border-color: var(--ocean-blue);
+    color: var(--parchment-dark);
 }
 
 .deity-tag.secondary {
     background: var(--mountain-brown);
+    border-color: var(--mountain-brown);
+    color: var(--parchment-light);
+}
+
+/* Dark mode deity tag colors */
+.darkMode .deity-tag.primary {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border-color: var(--ocean-blue);
+}
+
+.darkMode .deity-tag.secondary {
+    background: var(--mountain-brown);
+    color: var(--parchment-light);
+    border-color: var(--mountain-brown);
+}
+
+/* Light mode deity tag colors */
+.lightMode .deity-tag.primary {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border-color: var(--ocean-blue);
+}
+
+.lightMode .deity-tag.secondary {
+    background: var(--mountain-brown);
+    color: var(--parchment-light);
     border-color: var(--mountain-brown);
 }
 
@@ -1646,6 +1687,14 @@ p {
     line-height: 1.5;
     margin: 0;
     font-size: 0.9rem;
+}
+
+.darkMode .reasoning-section p {
+    color: var(--parchment-light);
+}
+
+.lightMode .reasoning-section p {
+    color: var(--parchment-dark);
 }
 
 /* Additional Responsive Design for Deity Features */
