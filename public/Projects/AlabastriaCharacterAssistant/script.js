@@ -100,8 +100,80 @@ const app = {
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
                 this.closeModal();
+                this.closeImageFullscreen();
             }
         });
+
+        // Setup image click listeners for fullscreen viewing
+        this.setupImageFullscreen();
+    },
+
+    // Setup image fullscreen functionality
+    setupImageFullscreen() {
+        // Add click listeners to all images
+        document.addEventListener('click', (event) => {
+            if (event.target.tagName === 'IMG' && !event.target.classList.contains('no-fullscreen')) {
+                this.showImageFullscreen(event.target.src, event.target.alt);
+            }
+        });
+    },
+
+    // Show image in fullscreen modal
+    showImageFullscreen(imageSrc, imageAlt) {
+        // Create fullscreen image modal if it doesn't exist
+        let imageModal = document.getElementById('image-fullscreen-modal');
+        if (!imageModal) {
+            imageModal = document.createElement('div');
+            imageModal.id = 'image-fullscreen-modal';
+            imageModal.className = 'image-fullscreen-modal';
+            imageModal.innerHTML = `
+                <div class="image-fullscreen-content">
+                    <span class="image-fullscreen-close">&times;</span>
+                    <img class="image-fullscreen-img" src="" alt="">
+                    <div class="image-fullscreen-caption"></div>
+                </div>
+            `;
+            document.body.appendChild(imageModal);
+
+            // Add event listeners
+            imageModal.querySelector('.image-fullscreen-close').addEventListener('click', () => {
+                this.closeImageFullscreen();
+            });
+
+            imageModal.addEventListener('click', (event) => {
+                if (event.target === imageModal) {
+                    this.closeImageFullscreen();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && imageModal.style.display === 'block') {
+                    this.closeImageFullscreen();
+                }
+            });
+        }
+
+        // Set image source and alt text
+        const img = imageModal.querySelector('.image-fullscreen-img');
+        const caption = imageModal.querySelector('.image-fullscreen-caption');
+
+        img.src = imageSrc;
+        img.alt = imageAlt;
+        caption.textContent = imageAlt;
+
+        // Show modal
+        imageModal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    },
+
+    // Close image fullscreen modal
+    closeImageFullscreen() {
+        const imageModal = document.getElementById('image-fullscreen-modal');
+        if (imageModal) {
+            imageModal.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+        }
     },
 
     // Jump to top function
