@@ -44,7 +44,7 @@
             "current": [
                 {
                     "name": "Forest Border Disputes",
-                    "description": "Ongoing tensions with Skratonia over logging rights in the southern forest edges. Skratonian settlers occasionally encroach on elven territory.",
+                    "description": "Ongoing tensions with Skratonia over logging rights in the northern coastal forests. Skratonian settlers occasionally encroach on elven territory.",
                     "status": "Low-intensity",
                     "participants": [
                         "Kuriguer Elves",
@@ -435,7 +435,7 @@
             "current": [
                 {
                     "name": "The Plains Expansion Disputes",
-                    "description": "Ongoing tensions with Kuriguer over logging rights and territorial expansion into forested border regions.",
+                    "description": "Ongoing tensions with Kuriguer over logging rights and territorial expansion into forested coasts.",
                     "status": "Low-intensity",
                     "participants": [
                         "Skratonian Settlers",
