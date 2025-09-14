@@ -34,5 +34,17 @@
         "personality": "Thoughtful, eccentric, and prone to losing track of time. Ovlan has a passion for knowledge and the written word, speaking with excitement when inspiration strikes. He is kind-hearted, though absentminded, and has a habit of weeping at moving music. His friends know him as dependable, if always late.",
         "faith": "While he holds no personal god, he honors the War God Tempus as patron of the Huntbound Order, treating divine blessing with quiet respect rather than devotion.",
         "background": "Once a youth of the Witchlight Carnival, Ovlan left its endless cycle of revelry when it lost its wonder, seeking greater meaning in study and service. Now he serves as the Huntbound Order’s librarian, with an uncanny memory for where every book lies. He aids hunters not by blade but by insight, scribing records of their deeds and providing arcane knowledge crucial for their survival. With his wisp companion ever at his side, he embodies the Order’s bond of camaraderie — a friend who would never leave another behind."
+    },
+    {
+        "name": "Varon Tavis",
+        "race": "Hobgoblin",
+        "class": "Path of the Giants Barbarian",
+        "guild_role": "Forge-Master / Smithing Trainer",
+        "rank": "Coal",
+        "image": "VaronTavis.png",
+        "appearance": "A tall, broad-shouldered Hobgoblin of 36 years, standing six feet tall with weathered, battle-marked skin. His sharp features carry the stern intensity of one who has lived long in the wilds. He wears furs, leathers, and patched armor, marked with the Huntbound Order’s heraldry in blue and silver. His arms are corded with muscle from years at the anvil, and his hands are scarred, calloused, and blackened from the forge.",
+        "personality": "Blunt, wary, and slow to trust outsiders, Varon respects strength and survival above all. Though not cruel, he has little patience for wealth or refinement, believing only experience in the wild proves worth. Once his trust is earned, however, his loyalty is unwavering, rooted in clan bonds and hard-earned camaraderie. He takes pride in teaching others the craft of smithing, seeing the forge as both a crucible and a bond between warriors.",
+        "faith": "He holds no faith in gods, but honors the strength of the wilds, storms, and mountains as forces that shape all beings.",
+        "background": "Exiled from his clan for reasons he rarely speaks of, Varon carved out a life as an outlander, living by strength, grit, and knowledge of the land. His exile turned to belonging when he joined the Huntbound Order, where his tracking skill, endurance, and raw might found new purpose. Yet his truest gift lies in the forge: Varon serves as the guild’s blacksmith and smithing trainer, shaping weapons and armor that carry Huntbound hunters into battle. The clang of his hammer is as constant as the roar of beasts on the hunt, and his forge is open to any guildmate seeking to learn. Though quiet and guarded, he is a steadfast companion on the hunt and a shield for those he calls kin."
     }
 ]
