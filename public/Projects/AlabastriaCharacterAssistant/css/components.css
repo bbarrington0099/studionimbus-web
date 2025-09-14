@@ -48,8 +48,8 @@
 
 .filter-btn:hover {
     transform: translateY(-2px);
-    background: var(--forest-green);
-    border-color: var(--forest-green);
+    background: var(--glass-bg);
+    border-color: var(--glass-bg);
     box-shadow: var(--shadow-lg);
 }
 
@@ -132,8 +132,8 @@ span.filter-btn-text.darkMode {
 }
 
 .back-btn:hover {
-    background: var(--forest-green);
-    border-color: var(--forest-green);
+    background: var(--glass-bg);
+    border-color: var(--glass-bg);
     transform: translateX(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -148,8 +148,8 @@ span.filter-btn-text.darkMode {
 
 /* History Button */
 .history-btn {
-    background: var(--forest-green);
-    border: 2px solid var(--forest-green);
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-bg);
     margin-left: 0.5rem;
 }
 
@@ -190,8 +190,8 @@ span.filter-btn-text.darkMode {
 }
 
 .nav-btn:hover {
-    background: var(--forest-green);
-    border-color: var(--forest-green);
+    background: var(--glass-bg);
+    border-color: var(--glass-bg);
     transform: scale(1.05);
     box-shadow: var(--shadow-sm);
 }
@@ -253,7 +253,7 @@ span.filter-btn-text.darkMode {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, var(--ocean-blue), var(--forest-green));
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-bg));
     opacity: 0;
     transition: var(--transition);
     z-index: -1;
@@ -406,10 +406,10 @@ summary:hover::before {
 }
 
 details[open] summary {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     text-shadow: var(--text-shadow-dark);
-    border-bottom-color: var(--forest-green);
+    border-bottom-color: var(--ocean-blue);
 }
 
 details[open] summary::before {
@@ -470,7 +470,7 @@ p {
 }
 
 .language-details[open] .language-summary {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     text-shadow: var(--text-shadow-dark);
 }
@@ -528,7 +528,7 @@ p {
     display: inline-block;
     margin: 0.2rem 0.5rem 0.2rem 0;
     padding: 0.2rem 0.5rem;
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     border-radius: 10px;
     font-size: 0.8rem;
@@ -536,7 +536,7 @@ p {
 }
 
 .quest-count-badge {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     font-size: 0.8rem;
     white-space: nowrap;
@@ -700,5 +700,1197 @@ p {
     .search-container {
         margin: 1rem 0;
         padding: 0.75rem;
+    }
+}
+
+/* ===== JUMP BUTTON STYLES ===== */
+
+.jump-button {
+    padding: 0.5rem 1rem;
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border: 2px solid var(--ocean-blue);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+}
+
+.jump-button:hover {
+    background: var(--parchment-light);
+    color: var(--ocean-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.darkMode .jump-button {
+    background: var(--ice-blue);
+    color: var(--ink-dark);
+    border-color: var(--ice-blue);
+}
+
+.darkMode .jump-button:hover {
+    background: var(--ink-dark);
+    color: var(--ice-blue);
+}
+
+.jump-to-gods-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(44, 79, 107, 0.05);
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--ocean-blue);
+}
+
+.jump-to-gods-section h4 {
+    color: var(--ocean-blue);
+    margin-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+}
+
+/* ===== DEITY-RACE GROUP STYLES ===== */
+
+.deity-race-group {
+    margin-bottom: 1rem;
+    border: 1px solid var(--ocean-blue);
+    border-radius: var(--border-radius);
+    background: rgba(44, 79, 107, 0.05);
+}
+
+.deity-summary {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.deity-summary:hover {
+    background: rgba(44, 79, 107, 0.1);
+}
+
+.deity-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.deity-header i {
+    font-size: 1.2rem;
+    color: var(--ocean-blue);
+}
+
+.deity-header strong {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--ink-dark);
+}
+
+.pantheon-badge {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    font-family: 'Cinzel', serif;
+}
+
+.race-count {
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.race-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.race-tag {
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.race-tag.primary {
+    background: rgba(61, 90, 42, 0.1);
+    color: var(--glass-bg);
+    border-color: var(--glass-bg);
+}
+
+.race-tag.primary:hover {
+    background: var(--glass-bg);
+    color: var(--parchment-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.race-tag.secondary {
+    background: rgba(44, 79, 107, 0.1);
+    color: var(--ocean-blue);
+    border-color: var(--ocean-blue);
+}
+
+.race-tag.secondary:hover {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.reasoning-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(44, 79, 107, 0.05);
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--ocean-blue);
+}
+
+.reasoning-section h4 {
+    color: var(--ocean-blue);
+    margin-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+}
+
+.reasoning-content p {
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: var(--ink-light);
+}
+
+.reasoning-content p:last-child {
+    margin-bottom: 0;
+}
+
+.deity-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ocean-blue);
+}
+
+.deity-details-btn {
+    padding: 0.5rem 1rem;
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border: 2px solid var(--ocean-blue);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.deity-details-btn:hover {
+    background: var(--parchment-light);
+    color: var(--ocean-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.darkMode .deity-header strong {
+    color: var(--parchment-light);
+}
+
+.darkMode .race-tag.primary {
+    background: rgba(61, 90, 42, 0.2);
+    color: var(--glass-bg);
+}
+
+.darkMode .race-tag.primary:hover {
+    background: var(--glass-bg);
+    color: var(--ink-dark);
+}
+
+.darkMode .race-tag.secondary {
+    background: rgba(44, 79, 107, 0.2);
+    color: var(--ice-blue);
+}
+
+.darkMode .race-tag.secondary:hover {
+    background: var(--ice-blue);
+    color: var(--ink-dark);
+}
+
+.darkMode .deity-details-btn {
+    background: var(--ice-blue);
+    color: var(--ink-dark);
+    border-color: var(--ice-blue);
+}
+
+.darkMode .deity-details-btn:hover {
+    background: var(--ink-dark);
+    color: var(--ice-blue);
+}
+
+/* ===== DEITY MODAL RELATIONSHIP STYLES ===== */
+
+.deity-relationships-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(44, 79, 107, 0.05);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--ocean-blue);
+}
+
+.deity-relationships-section h3 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.deity-relationships-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.relationship-group {
+    border: 1px solid var(--ocean-blue);
+    border-radius: var(--border-radius);
+    background: var(--parchment-light);
+}
+
+.relationship-summary {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    background: rgba(44, 79, 107, 0.1);
+}
+
+.relationship-summary:hover {
+    background: rgba(44, 79, 107, 0.15);
+}
+
+.relationship-summary h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.relationship-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.relationship-item {
+    padding: 1rem;
+    background: rgba(44, 79, 107, 0.05);
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--ocean-blue);
+}
+
+.relationship-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.relationship-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+}
+
+.relationship-name.primary {
+    background: rgba(61, 90, 42, 0.2);
+    color: var(--glass-bg);
+    border: 1px solid var(--glass-bg);
+}
+
+.relationship-name.secondary {
+    background: rgba(44, 79, 107, 0.2);
+    color: var(--ocean-blue);
+    border: 1px solid var(--ocean-blue);
+}
+
+.relationship-reasoning {
+    margin: 0;
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.darkMode .deity-relationships-section {
+    background: rgba(44, 79, 107, 0.1);
+}
+
+.darkMode .relationship-group {
+    background: var(--ink-dark);
+    border-color: var(--ice-blue);
+}
+
+.darkMode .relationship-summary {
+    background: rgba(44, 79, 107, 0.2);
+}
+
+.darkMode .relationship-summary:hover {
+    background: rgba(44, 79, 107, 0.3);
+}
+
+.darkMode .relationship-summary h4 {
+    color: var(--ice-blue);
+}
+
+.darkMode .relationship-item {
+    background: rgba(44, 79, 107, 0.1);
+    border-left-color: var(--ice-blue);
+}
+
+.darkMode .relationship-name.primary {
+    background: rgba(61, 90, 42, 0.3);
+    color: var(--glass-bg);
+    border-color: var(--glass-bg);
+}
+
+.darkMode .relationship-name.secondary {
+    background: rgba(44, 79, 107, 0.3);
+    color: var(--ice-blue);
+    border-color: var(--ice-blue);
+}
+
+.darkMode .relationship-reasoning {
+    color: var(--parchment-light);
+}
+
+/* ===== PANTHEON STYLES ===== */
+
+/* Pantheon Container */
+.pantheon-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pantheon-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(44, 79, 107, 0.1);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--ocean-blue);
+}
+
+.pantheon-info h3 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.pantheon-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pantheon-section {
+    background: rgba(139, 69, 19, 0.05);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    border: 1px solid var(--mountain-brown);
+}
+
+.pantheon-section h3 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Pantheon Grid */
+.pantheon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.pantheon-card {
+    background: rgba(44, 79, 107, 0.1);
+    border: 2px solid var(--ocean-blue);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.pantheon-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold-accent);
+}
+
+.pantheon-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pantheon-icon {
+    font-size: 2rem;
+    color: var(--gold-accent);
+}
+
+.pantheon-header h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.pantheon-description {
+    color: var(--ink-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.darkMode .pantheon-description {
+    color: var(--parchment-light);
+}
+
+.lightMode .pantheon-description {
+    color: var(--ink-dark);
+}
+
+.deities-list {
+    margin-top: 1rem;
+}
+
+.deities-list strong {
+    color: var(--ocean-blue);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.deity-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.deity-tag {
+    background: var(--glass-bg);
+    color: var(--parchment-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid var(--ocean-blue);
+}
+
+.lightMode .deity-tag {
+    background: var(--glass-bg);
+    color: var(--parchment-dark);
+    border-color: var(--ocean-blue);
+}
+
+.deity-tag:hover {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.deity-tag.primary {
+    background: var(--ocean-blue);
+    border-color: var(--ocean-blue);
+}
+
+.deity-tag.secondary {
+    background: var(--mountain-brown);
+    border-color: var(--mountain-brown);
+}
+
+.deity-tag i {
+    font-size: 0.8rem;
+}
+
+/* Deity Relationships Grid */
+.deity-relationships-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.deity-relationship-card {
+    background: rgba(74, 93, 35, 0.1);
+    border: 2px solid var(--glass-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.deity-relationship-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold-accent);
+}
+
+.relationship-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.relationship-header h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.subclass-tag,
+.continent-tag {
+    background: var(--mountain-brown);
+    color: var(--parchment-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.continent-tag {
+    background: var(--ocean-blue);
+}
+
+.relationship-deities {
+    margin-bottom: 1rem;
+}
+
+.primary-deities,
+.secondary-deities {
+    margin-bottom: 0.8rem;
+}
+
+.primary-deities strong,
+.secondary-deities strong {
+    color: var(--glass-bg);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.relationship-reasoning {
+    padding-top: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+}
+
+.relationship-reasoning p {
+    margin: 0;
+    color: var(--ink-light);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.darkMode .relationship-reasoning p {
+    color: var(--parchment-light);
+}
+
+.lightMode .relationship-reasoning p {
+    color: var(--parchment-dark);
+}
+
+/* Responsive Design for Pantheon */
+@media (max-width: 768px) {
+    .pantheon-container {
+        padding: 1rem;
+    }
+
+    .pantheon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .deity-relationships-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pantheon-card,
+    .deity-relationship-card {
+        padding: 1rem;
+    }
+
+    .deity-tags {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .deity-tag {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Deity Summary Cards */
+.deity-summary-card {
+    background: rgba(44, 79, 107, 0.1);
+    border: 2px solid var(--ocean-blue);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.deity-details {
+    width: 100%;
+}
+
+.deity-summary {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(44, 79, 107, 0.1);
+    transition: var(--transition);
+}
+
+.deity-summary:hover {
+    background: rgba(44, 79, 107, 0.2);
+}
+
+.deity-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.deity-icon {
+    font-size: 1.5rem;
+    color: var(--gold-accent);
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Ensure Font Awesome icons are visible */
+.deity-icon.fas,
+.deity-icon.far,
+.deity-icon.fab {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome";
+    font-weight: 900;
+}
+
+/* Fallback for missing icons */
+.deity-icon:not([class*="fa-"]):before {
+    content: "?";
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.deity-header h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.pantheon-tag {
+    background: var(--glass-bg);
+    color: var(--parchment-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.darkMode .pantheon-tag {
+    color: var(--parchment-light);
+}
+
+.lightMode .pantheon-tag {
+    color: var(--parchment-dark);
+}
+
+.deity-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat {
+    background: var(--glass-bg);
+    color: var(--parchment-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.deity-details-content {
+    padding: 1.5rem;
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.deity-info-section {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.deity-info-btn {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.deity-info-btn:hover {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+    transform: translateY(-2px);
+}
+
+.deity-relationships-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.relationship-category {
+    border: 1px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.category-summary {
+    padding: 1rem;
+    background: rgba(44, 79, 107, 0.1);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ocean-blue);
+}
+
+.darkMode .category-summary {
+    color: var(--parchment-light);
+}
+
+.lightMode .category-summary {
+    color: var(--parchment-dark);
+}
+
+.relationship-list {
+    padding: 1rem;
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.relationship-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(44, 79, 107, 0.1);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--glass-bg);
+}
+
+.relationship-item:last-child {
+    margin-bottom: 0;
+}
+
+.relationship-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.relationship-name {
+    font-weight: 600;
+    color: var(--ocean-blue);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.relationship-reasoning {
+    color: var(--ink-light);
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Deity Recommendations */
+.deity-recommendations {
+    margin-top: 1rem;
+}
+
+.continent-deity-group,
+.race-deity-group,
+.subclass-deity-group {
+    border: 1px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.continent-summary,
+.race-summary,
+.subclass-summary {
+    padding: 1rem;
+    background: rgba(44, 79, 107, 0.1);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--ocean-blue);
+}
+
+.deity-count {
+    background: var(--glass-bg);
+    color: var(--parchment-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.deity-group-content {
+    padding: 1rem;
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.primary-deities-section,
+.secondary-deities-section {
+    margin-bottom: 1rem;
+}
+
+.primary-deities-section h4,
+.secondary-deities-section h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.reasoning-section {
+    padding-top: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+}
+
+.reasoning-section h4 {
+    color: var(--glass-bg);
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.reasoning-section p {
+    color: var(--ink-light);
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Additional Responsive Design for Deity Features */
+@media (max-width: 768px) {
+    .deity-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .deity-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .relationship-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* ===== DEITY ALLIES & CONFLICTS SECTION ===== */
+.deity-allies-conflicts-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--parchment-light) 0%, var(--parchment-white) 100%);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deity-allies-conflicts-section h3 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--gold-accent);
+    padding-bottom: 0.5rem;
+}
+
+.deity-relationships-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.deity-relationship-group {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--mountain-brown);
+}
+
+.deity-relationship-group h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--gold-accent);
+    padding-bottom: 0.5rem;
+}
+
+.deity-relationship-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.deity-relationship-item {
+    padding: 0.75rem;
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--gold-accent);
+    transition: var(--transition);
+}
+
+.deity-relationship-item:hover {
+    background: var(--gold-accent);
+    transform: translateX(5px);
+}
+
+.deity-relationship-name {
+    font-weight: 600;
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+}
+
+.deity-relationship-reasoning {
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.darkMode .deity-relationship-reasoning {
+    color: var(--desert-tan);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode .deity-relationship-reasoning {
+    color: var(--mountain-brown);
+    text-shadow: var(--text-shadow-light);
+}
+
+.no-relationships {
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+.darkMode .no-relationships {
+    color: var(--desert-tan);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode .no-relationships {
+    color: var(--mountain-brown);
+    text-shadow: var(--text-shadow-light);
+}
+
+/* ===== DEITY SYMBOLS & COLORS SECTION ===== */
+.deity-symbols-colors-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--parchment-white) 0%, var(--parchment-light) 100%);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deity-symbols-colors-section h3 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--gold-accent);
+    padding-bottom: 0.5rem;
+}
+
+.deity-symbols-colors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.deity-symbols-group,
+.deity-colors-group {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--mountain-brown);
+}
+
+.deity-symbols-group h4,
+.deity-colors-group h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--gold-accent);
+    padding-bottom: 0.5rem;
+}
+
+.deity-symbols-content,
+.deity-colors-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.deity-symbol-item,
+.deity-color-item {
+    padding: 0.75rem;
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--gold-accent);
+    transition: var(--transition);
+}
+
+.deity-symbol-item:hover,
+.deity-color-item:hover {
+    background: var(--gold-accent);
+    transform: translateX(5px);
+}
+
+.deity-symbol-name,
+.deity-color-name {
+    font-weight: 600;
+    color: var(--ocean-blue);
+    font-family: 'Cinzel', serif;
+}
+
+.no-symbols,
+.no-colors {
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+.darkMode .no-symbols,
+.darkMode .no-colors {
+    color: var(--desert-tan);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.lightMode .no-symbols,
+.lightMode .no-colors {
+    color: var(--mountain-brown);
+    text-shadow: var(--text-shadow-light);
+}
+
+/* Dark mode support for new sections */
+.darkMode .deity-allies-conflicts-section,
+.darkMode .deity-symbols-colors-section {
+    background: var(--glass-dark-bg);
+    border-color: var(--mountain-brown);
+}
+
+.darkMode .deity-relationship-group,
+.darkMode .deity-symbols-group,
+.darkMode .deity-colors-group {
+    background: var(--glass-dark-bg);
+    border-color: var(--mountain-brown);
+}
+
+.darkMode .deity-relationship-item,
+.darkMode .deity-symbol-item,
+.darkMode .deity-color-item {
+    background: var(--glass-dark-bg);
+}
+
+.darkMode .deity-relationship-item:hover,
+.darkMode .deity-symbol-item:hover,
+.darkMode .deity-color-item:hover {
+    background: var(--gold-accent);
+    color: var(--dark-text);
+}
+
+/* Responsive design for new sections */
+@media (max-width: 768px) {
+
+    .deity-relationships-grid,
+    .deity-symbols-colors-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .deity-allies-conflicts-section,
+    .deity-symbols-colors-section {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .deity-relationship-group,
+    .deity-symbols-group,
+    .deity-colors-group {
+        padding: 1rem;
     }
 }

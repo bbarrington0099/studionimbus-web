@@ -22,7 +22,7 @@
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, var(--ocean-blue), var(--forest-green));
+    background: linear-gradient(to bottom, var(--ocean-blue), var(--glass-bg));
     transform: translateX(-50%);
     border-radius: 2px;
 }
@@ -117,7 +117,7 @@
 }
 
 .timeline-highlight {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -126,85 +126,228 @@
 }
 
 /* ===== MODAL STYLES ===== */
-.modal {
+/* Timeline modal now uses deity modal classes - see deity modal styles below */
+
+/* ===== DEITY MODAL STYLES ===== */
+.deity-modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 9999999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    overflow-y: auto;
 }
 
-.modal-content {
-    margin: 5% auto;
-    border: 1px solid var(--mountain-brown);
-    border-radius: var(--border-radius);
-    width: 90%;
-    max-width: 800px;
-    max-height: 80vh;
+.deity-modal-content {
+    margin: 1% auto;
+    border: 2px solid var(--ocean-blue);
+    border-radius: 12px;
+    min-width: 80vw;
+    max-height: 95vh;
     overflow-y: auto;
     box-shadow: var(--shadow-xl);
     backdrop-filter: blur(20px);
-    position: absolute;
-    transform: translateY(-165vh);
+    position: relative;
+    top: 2%;
+    padding: 0;
 }
 
-.darkMode .modal-content {
+.darkMode .deity-modal-content {
     background: var(--glass-dark-bg);
-    border-color: var(--glass-dark-border);
+    border-color: var(--ocean-blue);
 }
 
-.lightMode .modal-content {
-    background: var(--glass-bg);
-    border-color: var(--glass-border);
+.lightMode .deity-modal-content {
+    background: var(--parchment-light);
+    border-color: var(--ocean-blue);
 }
 
-/* ===== MODAL HEADER ===== */
-.modal-header {
+/* ===== DEITY MODAL HEADER ===== */
+.deity-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
-    border-bottom: 2px solid var(--mountain-brown);
-    background: var(--ocean-blue);
+    padding: 25px;
+    border-bottom: 2px solid var(--ocean-blue);
+    background: linear-gradient(135deg, var(--ocean-blue), var(--mountain-brown));
     color: var(--parchment-light);
+    border-radius: 12px 12px 0 0;
+    position: relative;
 }
 
-.modal-header h2 {
+.deity-modal-header h2 {
     margin: 0;
     font-family: 'Cinzel Decorative', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.modal-close {
-    font-size: 2rem;
+.deity-modal-close {
+    font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
     background: transparent;
-}
-
-.modal-close:hover {
-    transform: scale(1.1);
-}
-
-/* ===== MODAL BODY ===== */
-.modal-body {
-    padding: 2rem;
-    line-height: 1.6;
-}
-
-.darkMode .modal-body {
     color: var(--parchment-light);
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.lightMode .modal-body {
-    color: var(--ink-dark);
+.deity-modal-close:hover {
+    color: #ff6b6b;
+    transform: translateY(-50%) scale(1.1);
 }
 
-#modal-title {
-    background: transparent;
+/* ===== DEITY MODAL BODY ===== */
+.deity-modal-body {
+    padding: 30px;
+    line-height: 1.7;
+}
+
+
+.darkMode .deity-modal-body {
+    color: var(--desert-tan);
+}
+
+.lightMode .deity-modal-body {
+    color: var(--parchment-dark);
+}
+
+.deity-modal-body h3 {
+    color: var(--ocean-blue);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--mountain-brown);
+    padding-bottom: 8px;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.deity-modal-body h4 {
+    color: var(--ocean-blue);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.deity-modal-body p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.deity-modal-body ul {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+.deity-modal-body li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+/* ===== DEITY INFO GRID ===== */
+.deity-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.deity-info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.deity-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.deity-info-card h4 {
+    color: var(--ocean-blue);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+/* ===== DEITY HISTORY SECTION ===== */
+.deity-history-section {
+    background: var(--card-bg);
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-md);
+}
+
+.deity-history-period {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--bg-color);
+    border-left: 4px solid var(--ocean-blue);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.deity-history-period:hover {
+    background: var(--card-bg);
+    box-shadow: var(--shadow-sm);
+}
+
+.deity-history-period h4 {
+    color: var(--ocean-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.deity-history-period p {
+    margin-bottom: 0;
+    font-size: 1.05rem;
+}
+
+/* ===== DEITY ICON IN MODAL ===== */
+.deity-modal-icon {
+    font-size: 2rem;
+    color: var(--gold-accent);
+    margin-right: 10px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .deity-modal-content {
+        width: 98%;
+        margin: 1% auto;
+    }
+
+    .deity-modal-header {
+        padding: 20px;
+    }
+
+    .deity-modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .deity-modal-body {
+        padding: 20px;
+    }
+
+    .deity-info-grid {
+        grid-template-columns: 1fr;
+    }
 }

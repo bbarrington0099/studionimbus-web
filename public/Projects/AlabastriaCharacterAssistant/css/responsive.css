@@ -5,6 +5,7 @@
 
 /* ===== TABLET RESPONSIVE (768px and below) ===== */
 @media (max-width: 768px) {
+
     /* Navigation */
     nav {
         padding: 1rem;
@@ -36,7 +37,10 @@
     }
 
     .filter-btn {
-        min-width: 200px;
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+        min-width: calc(100vw - 2rem);
+        flex-direction: row;
     }
 
     /* Selection grid */
@@ -197,6 +201,7 @@
 
 /* ===== MOBILE RESPONSIVE (480px and below) ===== */
 @media (max-width: 480px) {
+
     /* Welcome section */
     .welcome-content h2 {
         font-size: 1.5rem;
@@ -210,7 +215,9 @@
     /* Filter buttons */
     .filter-btn {
         padding: 1.5rem 1rem;
-        min-width: 150px;
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+        min-width: calc(100vw - 2rem);
     }
 
     /* Details and relationships */
@@ -281,13 +288,13 @@
         align-items: flex-start;
         gap: 0.3rem;
     }
-    
+
     /* Quest participation headers */
     .quest-participation-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     /* Stats badges */
     .stats-badge {
         margin: 0.1rem 0.3rem 0.1rem 0;
@@ -297,6 +304,7 @@
 
 /* ===== LARGE SCREEN OPTIMIZATIONS (1200px and above) ===== */
 @media (min-width: 1200px) {
+
     /* Ensure content doesn't get too wide on large screens */
     .timeline-container,
     .guild-container {
@@ -316,6 +324,7 @@
 
 /* ===== PRINT STYLES ===== */
 @media print {
+
     /* Hide interactive elements */
     nav,
     .back-btn,

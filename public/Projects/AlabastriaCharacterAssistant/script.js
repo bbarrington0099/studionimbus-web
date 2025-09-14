@@ -16,6 +16,8 @@ const app = {
     guildMembersData: [], // Guild members data
     questReportsData: [], // Quest reports data
     currentGuildView: 'overview', // Track current guild view
+    pantheonData: [], // Pantheon and deity data
+    deityRelationshipsData: [], // Deity relationships data
     raceHierarchy: {
         "Aarakocra": [],
         "Aasimar": ["Fallen", "Protector", "Scourge"],
@@ -81,6 +83,7 @@ const app = {
         this.loadWorldHistoryData();
         this.loadGuildData();
         await this.loadGuildStaffAndMembers();
+        await this.loadPantheonData();
         this.setupModalListeners();
         this.showSection('welcome-section');
     },
@@ -88,11 +91,15 @@ const app = {
     // Setup modal event listeners
     setupModalListeners() {
         const modal = document.getElementById('timeline-modal');
+        const deityModal = document.getElementById('deity-modal');
 
         // Close modal when clicking outside of it
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 this.closeModal();
+            }
+            if (event.target === deityModal) {
+                this.closeDeityModal();
             }
         });
 
@@ -100,6 +107,7 @@ const app = {
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
                 this.closeModal();
+                this.closeDeityModal();
                 this.closeImageFullscreen();
             }
         });
@@ -252,6 +260,23 @@ const app = {
             top: 0,
             behavior: 'smooth'
         });
+    },
+
+    // Jump to deity search function
+    jumpToDeitySearch() {
+        // Switch to the pantheon section
+        this.showSection('pantheon');
+
+        // Scroll to the deity relationships section
+        setTimeout(() => {
+            const deitySection = document.querySelector('.pantheon-section');
+            if (deitySection) {
+                deitySection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 100);
     },
 
     // Load world history data
@@ -616,6 +641,29 @@ const app = {
         }
     },
 
+    // Load pantheon and deity data
+    async loadPantheonData() {
+        try {
+            const [pantheonResponse, pantheonPart2Response, pantheonPart3Response, pantheonPart4Response, relationshipsResponse] = await Promise.all([
+                fetch('json/pantheon_data.json'),
+                fetch('json/pantheon_data_part2.json'),
+                fetch('json/pantheon_data_part3.json'),
+                fetch('json/pantheon_data_part4.json'),
+                fetch('json/deity_relationships.json')
+            ]);
+
+            const pantheonData1 = await pantheonResponse.json();
+            const pantheonData2 = await pantheonPart2Response.json();
+            const pantheonData3 = await pantheonPart3Response.json();
+            const pantheonData4 = await pantheonPart4Response.json();
+            this.pantheonData = [...pantheonData1, ...pantheonData2, ...pantheonData3, ...pantheonData4];
+            this.deityRelationshipsData = await relationshipsResponse.json();
+            this.filteredDeityRelationships = [...this.deityRelationshipsData];
+        } catch (error) {
+            console.error('Error loading pantheon data:', error);
+        }
+    },
+
     // Load data from JSON files
     async loadData() {
         try {
@@ -867,14 +915,6 @@ const app = {
                         current = current.parentElement;
                     }
                 }
-            }
-
-            // For race or continent views, open the first level of details by default
-            if (this.currentFilter === 'race' || this.currentFilter === 'continent') {
-                const firstLevelDetails = document.querySelectorAll('#relationships-table > details');
-                firstLevelDetails.forEach(detail => {
-                    detail.open = true;
-                });
             }
         }, 300);
     },
@@ -1366,6 +1406,12 @@ const app = {
         this.renderGuildHistory();
     },
 
+    // Show pantheon and deities
+    showPantheon() {
+        this.showSection('pantheon-section');
+        this.renderPantheon();
+    },
+
     // Show specific guild view
     showGuildView(viewType) {
         this.currentGuildView = viewType;
@@ -1466,7 +1512,7 @@ const app = {
                   <div style="margin-top: 1rem;">
                      <strong>Facilities:</strong>
                      ${guild.headquarters.facilities.map(facility => `
-                        <div style="margin: 0.5rem 0; padding: 0.5rem; border-left: 3px solid var(--forest-green); background: rgba(139, 69, 19, 0.1);">
+                        <div style="margin: 0.5rem 0; padding: 0.5rem; border-left: 3px solid var(--glass-bg); background: rgba(139, 69, 19, 0.1);">
                            <strong>${facility.name}:</strong> ${facility.description}
                         </div>
                      `).join('')}
@@ -1677,7 +1723,7 @@ const app = {
                            ${staff.faith ? `
                               <details style="margin: 1rem 0;">
                                  <summary style="cursor: pointer; font-weight: 600; color: var(--ocean-blue);">Faith</summary>
-                                 <p style="margin: 0.5rem 0; line-height: 1.6;">${staff.faith}</p>
+                                 <p style="margin: 0.5rem 0; line-height: 1.6;">${this.makeDeityNamesClickable(staff.faith)}</p>
                               </details>
                            ` : ''}
                            
@@ -1750,7 +1796,7 @@ const app = {
                                     <h3>${member.name}</h3>
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                                        <div class="member-rank rank-${member.rank.toLowerCase()}">${member.rank} Rank</div>
-                                       <div class="member-rank rank-${member.rank.toLowerCase()}" style="background: var(--forest-green);">${memberQuests.length} Quest${memberQuests.length !== 1 ? 's' : ''}</div>
+                                       <div class="member-rank rank-${member.rank.toLowerCase()}" style="background: var(--glass-bg);">${memberQuests.length} Quest${memberQuests.length !== 1 ? 's' : ''}</div>
                                     </div>
                                  </div>
                               </div>
@@ -1765,17 +1811,41 @@ const app = {
                                  <strong>Specialization:</strong> ${member.specialization}
                               </div>
                               
+                              ${member.deity ? `
+                                 <div style="margin: 1rem 0;">
+                                    <strong>Deity:</strong> 
+                                    <button class="deity-button" onclick="app.showDeityDetails('${member.deity}')" style="
+                                       background: var(--gold-accent);
+                                       color: var(--dark-text);
+                                       border: none;
+                                       padding: 0.3rem 0.6rem;
+                                       border-radius: 4px;
+                                       cursor: pointer;
+                                       font-weight: 600;
+                                       margin-left: 0.5rem;
+                                       transition: var(--transition);
+                                    " onmouseover="this.style.background='var(--ocean-blue)'" onmouseout="this.style.background='var(--gold-accent)'">
+                                       ${member.deity}
+                                    </button>
+                                 </div>
+                                 ${member.deity_reasoning ? `
+                                    <div style="margin: 0.5rem 0; font-style: italic; color: var(--text-muted); font-size: 0.9rem;">
+                                       ${member.deity_reasoning}
+                                    </div>
+                                 ` : ''}
+                              ` : ''}
+                              
                               ${memberQuests.length > 0 ? `
                                  <details style="margin: 1rem 0;">
-                                    <summary style="cursor: pointer; font-weight: 600; color: var(--forest-green);">Quest Participation (${memberQuests.length})</summary>
+                                    <summary style="cursor: pointer; font-weight: 600; color: var(--glass-bg);">Quest Participation (${memberQuests.length})</summary>
                                     <div style="margin: 0.5rem 0;">
                                        ${memberQuests.map(quest => `
-                                          <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--forest-green); border-radius: 4px; background: rgba(74, 93, 35, 0.1);">
+                                          <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--glass-bg); border-radius: 4px; background: rgba(74, 93, 35, 0.1);">
                                              <div style="display: flex; justify-content: space-between; align-items: center;">
                                                 <span><strong>${quest.quest_name}</strong> [${quest.quest_rank}]</span>
                                                 <button class="nav-btn" onclick="app.jumpToQuestReport('${quest.quest_name}')" style="margin: 0;">View Report</button>
                                              </div>
-                                             <div style="font-size: 0.9rem; color: var(--forest-green); margin-top: 0.3rem;">
+                                             <div style="font-size: 0.9rem; color: var(--glass-bg); margin-top: 0.3rem;">
                                                 Role: ${quest.party_members.find(p => p.name === member.name)?.role || 'Unknown'}
                                              </div>
                                           </div>
@@ -1863,7 +1933,7 @@ const app = {
                         <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--mountain-brown);">
                            <strong>Quest Ranks:</strong><br>
                            ${Object.entries(stats.questRanks).map(([rank, count]) => `
-                              <span style="display: inline-block; margin: 0.2rem 0.5rem 0.2rem 0; padding: 0.2rem 0.5rem; background: var(--forest-green); color: var(--parchment-light); border-radius: 10px; font-size: 0.8rem;">
+                              <span style="display: inline-block; margin: 0.2rem 0.5rem 0.2rem 0; padding: 0.2rem 0.5rem; background: var(--glass-bg); color: var(--parchment-light); border-radius: 10px; font-size: 0.8rem;">
                                  ${rank}: ${count}
                               </span>
                            `).join('')}
@@ -1926,14 +1996,14 @@ const app = {
                               </div>
 
                               <div style="border: 1px solid var(--mountain-brown); border-radius: 6px; padding: 1rem; background: rgba(74, 93, 35, 0.1);">
-                                 <h4 style="color: var(--forest-green); margin-bottom: 0.8rem; font-family: 'Cinzel Decorative', serif;">Party Members</h4>
+                                 <h4 style="color: var(--glass-bg); margin-bottom: 0.8rem; font-family: 'Cinzel Decorative', serif;">Party Members</h4>
                                  ${quest.party_members.map(member => `
-                                    <div style="margin-bottom: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--forest-green); background: rgba(74, 93, 35, 0.1);">
+                                    <div style="margin-bottom: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--glass-bg); background: rgba(74, 93, 35, 0.1);">
                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
                                           <strong>${member.name}</strong>
                                           <button class="nav-btn" onclick="app.jumpToGuildMember('${member.name}')" style="margin: 0; font-size: 0.7rem;">View Member</button>
                                        </div>
-                                       <span style="font-size: 0.9rem; color: var(--forest-green);">${member.rank_at_time} - ${member.role}</span>
+                                       <span style="font-size: 0.9rem; color: var(--glass-bg);">${member.rank_at_time} - ${member.role}</span>
                                     </div>
                                  `).join('')}
                               </div>
@@ -2148,46 +2218,1158 @@ const app = {
         const period = this.worldHistoryData.find(p => p.period === periodKey);
         if (!period) return;
 
-        const modal = document.getElementById('timeline-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
+        this.createTimelineBackupModal(period);
+    },
 
-        modalTitle.textContent = `${period.period}: ${period.title}`;
+    // Create timeline backup modal
+    createTimelineBackupModal(period) {
+        // Remove any existing backup modal
+        const existingBackup = document.getElementById('backup-timeline-modal');
+        if (existingBackup) {
+            existingBackup.remove();
+        }
 
-        modalBody.innerHTML = `
-         <div style="margin-bottom: 2rem;">
-            <h3 style="color: var(--ocean-blue); font-family: 'Cinzel Decorative', serif; margin-bottom: 1rem;">Overview</h3>
-            <p style="line-height: 1.8; margin-bottom: 2rem;">${period.details.overview}</p>
-         </div>
+        // Create new backup modal
+        const backupModal = document.createElement('div');
+        backupModal.id = 'backup-timeline-modal';
+        backupModal.style.cssText = `
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.8) !important;
+            z-index: 99999999 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        `;
 
-         <div style="margin-bottom: 2rem;">
-            <h3 style="color: var(--ocean-blue); font-family: 'Cinzel Decorative', serif; margin-bottom: 1rem;">Major Events</h3>
-            ${period.details.events.map(event => `
-               <div style="margin-bottom: 1.5rem; padding: 1rem; border-left: 4px solid var(--forest-green); background: rgba(139, 69, 19, 0.1); border-radius: 4px;">
-                  <h4 style="color: var(--volcanic-red); font-weight: 600; margin-bottom: 0.5rem;">${event.name}</h4>
-                  <p style="line-height: 1.6;">${event.description}</p>
-               </div>
-            `).join('')}
-         </div>
+        backupModal.innerHTML = `
+            <div class="deity-modal-content">
+                <div class="deity-modal-header">
+                    <h2>
+                        <span class="deity-modal-icon">📜</span> ${period.period}: ${period.title}
+                    </h2>
+                    <button class="deity-modal-close" onclick="document.getElementById('backup-timeline-modal').remove()">&times;</button>
+                </div>
+                
+                <div class="deity-modal-body">
+                    <div class="deity-history-section">
+                        <h3>Overview</h3>
+                        <p>${period.details.overview}</p>
+                    </div>
 
-         <div>
-            <h3 style="color: var(--ocean-blue); font-family: 'Cinzel Decorative', serif; margin-bottom: 1rem;">Continental Developments</h3>
-            ${Object.entries(period.details.continents).map(([continent, description]) => `
-               <div style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--mountain-brown); border-radius: 6px; background: rgba(44, 79, 107, 0.1);">
-                  <h4 style="color: var(--gold-accent); font-weight: 600; margin-bottom: 0.5rem;">${continent}</h4>
-                  <p style="line-height: 1.6;">${description}</p>
-               </div>
-            `).join('')}
-         </div>
-      `;
+                    <div class="deity-history-section">
+                        <h3>Major Events</h3>
+                        ${period.details.events.map(event => `
+                           <div class="deity-history-period">
+                              <h4>${event.name}</h4>
+                              <p>${event.description}</p>
+                           </div>
+                        `).join('')}
+                    </div>
 
-        modal.style.display = 'block';
+                    <div class="deity-history-section">
+                        <h3>Continental Developments</h3>
+                        ${Object.entries(period.details.continents).map(([continent, description]) => `
+                           <div class="deity-info-card">
+                              <h4>${continent}</h4>
+                              <p>${description}</p>
+                           </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(backupModal);
     },
 
     // Close modal
     closeModal() {
         const modal = document.getElementById('timeline-modal');
         modal.style.display = 'none';
+    },
+
+    // Render pantheon and deities
+    renderPantheon() {
+        const pantheonContent = document.getElementById('pantheon-content');
+        if (!pantheonContent) return;
+
+        pantheonContent.innerHTML = `
+            <div class="pantheon-info">
+                <h3>The Pantheons of Alabastria</h3>
+                <p style="margin-bottom: 1rem;">Since The Bringing 800 cycles ago, the gods of various races have found new followers and established their influence across the continents of Alabastria. Each pantheon represents the core values and beliefs of their respective peoples.</p>
+            </div>
+
+            <div class="pantheon-details">
+                <div class="pantheon-section">
+                    <h3>Pantheons & Deities</h3>
+                    <div class="pantheon-grid">
+                        ${this.pantheonData.map(pantheon => `
+                            <div class="pantheon-card">
+                                <div class="pantheon-header">
+                                    <i class="${pantheon.symbol} pantheon-icon"></i>
+                                    <h4>${pantheon.pantheon}</h4>
+                                </div>
+                                <p class="pantheon-description">${pantheon.description}</p>
+                                <div class="deities-list">
+                                    <strong>Deities (${pantheon.deities.length}):</strong>
+                                    <div class="deity-tags">
+                                        ${pantheon.deities.map(deity => `
+                                            <span class="deity-tag" onclick="app.showDeityDetails('${deity.name}')" title="Click to view details">
+                                                <i class="${deity.symbol}"></i> ${deity.name}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="pantheon-section">
+                    <h3>Deity Relationships</h3>
+                    <p style="margin-bottom: 1rem;">Understanding which deities are favored by different races, classes, and continents can help you choose the right patron for your character.</p>
+                    
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <select id="deity-alignment-filter" onchange="app.filterDeityRelationships()" class="filter-select">
+                                <option value="">All Alignments</option>
+                                <option value="Lawful Good">Lawful Good</option>
+                                <option value="Neutral Good">Neutral Good</option>
+                                <option value="Chaotic Good">Chaotic Good</option>
+                                <option value="Lawful Neutral">Lawful Neutral</option>
+                                <option value="True Neutral">True Neutral</option>
+                                <option value="Neutral">Neutral</option>
+                                <option value="Chaotic Neutral">Chaotic Neutral</option>
+                                <option value="Lawful Evil">Lawful Evil</option>
+                                <option value="Neutral Evil">Neutral Evil</option>
+                                <option value="Chaotic Evil">Chaotic Evil</option>
+                            </select>
+                            <button onclick="app.clearDeityFilters()" class="clear-search-btn">Clear</button>
+                        </div>
+                    </div>
+                    
+                    <div id="deity-relationships-results" class="deity-relationships-grid">
+                        ${this.renderDeityRelationships()}
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    // Render deity relationships
+    renderDeityRelationships() {
+        // Get current alignment filter
+        const alignmentFilterElement = document.getElementById('deity-alignment-filter');
+        const alignmentFilter = alignmentFilterElement ? alignmentFilterElement.value : '';
+
+        // Group relationships by deity
+        const deityGroups = {};
+
+        this.filteredDeityRelationships.forEach(relationship => {
+            [...relationship.primary_deities, ...relationship.secondary_deities].forEach(deity => {
+                // If there's an alignment filter, only include deities with that alignment
+                if (alignmentFilter && this.getDeityAlignment(deity) !== alignmentFilter) {
+                    return;
+                }
+
+                if (!deityGroups[deity]) {
+                    deityGroups[deity] = {
+                        deity: deity,
+                        pantheon: this.getDeityPantheon(deity),
+                        symbol: this.getDeitySymbol(deity),
+                        primaryRelationships: [],
+                        secondaryRelationships: []
+                    };
+                }
+
+                const isPrimary = relationship.primary_deities.includes(deity);
+                if (isPrimary) {
+                    deityGroups[deity].primaryRelationships.push(relationship);
+                } else {
+                    deityGroups[deity].secondaryRelationships.push(relationship);
+                }
+            });
+        });
+
+        return Object.values(deityGroups).map(deityGroup => `
+            <div class="deity-summary-card">
+                <details class="deity-details">
+                    <summary class="deity-summary">
+                        <div class="deity-header">
+                            <i class="${deityGroup.symbol} deity-icon"></i>
+                            <h4>${deityGroup.deity}</h4>
+                            <span class="pantheon-tag">${deityGroup.pantheon}</span>
+                        </div>
+                    </summary>
+                    <div class="deity-details-content">
+                        <div class="deity-info-section">
+                            <button class="nav-btn deity-info-btn" onclick="app.showDeityDetails('${deityGroup.deity}')">
+                                <i class="fas fa-info-circle"></i> View Full Deity Information
+                            </button>
+                        </div>
+                        
+                        <div class="deity-relationships-section">
+                            ${this.renderDeityCategory('Popular Among Races', deityGroup, 'race')}
+                            ${this.renderDeityCategory('Popular in the Lands of', deityGroup, 'continent')}
+                            ${this.renderDeityCategory('Known to Aid these Warriors', deityGroup, 'class')}
+                        </div>
+                    </div>
+                </details>
+            </div>
+        `).join('');
+    },
+
+    // Get deity pantheon
+    getDeityPantheon(deityName) {
+        for (const pantheon of this.pantheonData) {
+            const deity = pantheon.deities.find(d => d.name === deityName);
+            if (deity) {
+                return pantheon.pantheon;
+            }
+        }
+        return 'Unknown Pantheon';
+    },
+
+    // Render deity category
+    renderDeityCategory(title, deityGroup, type) {
+        const allRelationships = [...deityGroup.primaryRelationships, ...deityGroup.secondaryRelationships];
+        const categoryRelationships = allRelationships.filter(rel => rel[type]);
+
+        if (categoryRelationships.length === 0) {
+            return '';
+        }
+
+        // Group by the type (race, continent, or class)
+        const grouped = {};
+        categoryRelationships.forEach(rel => {
+            const key = rel[type];
+            if (!grouped[key]) {
+                grouped[key] = {
+                    name: key,
+                    subclass: rel.subclass,
+                    relationships: []
+                };
+            }
+            grouped[key].relationships.push(rel);
+        });
+
+        return `
+            <details class="relationship-category">
+                <summary class="category-summary">
+                    <strong>${title} (${Object.keys(grouped).length})</strong>
+                </summary>
+                <div class="relationship-list">
+                    ${Object.values(grouped).map(group => `
+                        <div class="relationship-item">
+                            <div class="relationship-header">
+                                <span class="relationship-name">${group.name}</span>
+                                ${group.subclass ? `<span class="subclass-tag">${group.subclass}</span>` : ''}
+                                <div class="nav-buttons">
+                                    <button class="nav-btn" onclick="app.navigateToRelated('${type}', '${group.name}')" title="Go to ${type} details">→ ${type.charAt(0).toUpperCase() + type.slice(1)}</button>
+                                </div>
+                            </div>
+                            <div class="relationship-reasoning">
+                                ${group.relationships.map(rel => `
+                                    <p><strong>${rel.primary_deities.includes(deityGroup.deity) ? 'Primary' : 'Secondary'}:</strong> ${rel.reasoning}</p>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </details>
+        `;
+    },
+
+    // Get deity symbol
+    getDeitySymbol(deityName) {
+        for (const pantheon of this.pantheonData) {
+            const deity = pantheon.deities.find(d => d.name === deityName);
+            if (deity) {
+                return deity.symbol;
+            }
+        }
+        return 'fas fa-question';
+    },
+
+    // Get deity symbol with fallback
+    getDeitySymbolWithFallback(deityName) {
+        const symbol = this.getDeitySymbol(deityName);
+        // Add a fallback text in case the icon doesn't load
+        return `<i class="${symbol} deity-icon" title="${deityName}"></i><span class="deity-fallback" style="display: none;">${deityName.charAt(0)}</span>`;
+    },
+
+    // Show deity details
+    showDeityDetails(deityName) {
+        console.log('showDeityDetails called with:', deityName);
+        const deity = this.findDeityByName(deityName);
+        if (!deity) {
+            console.error('Deity not found:', deityName);
+            return;
+        }
+
+        const modal = document.getElementById('deity-modal');
+        const modalTitle = document.getElementById('deity-modal-title');
+        const modalBody = document.getElementById('deity-modal-body');
+
+        if (!modal) {
+            console.error('Deity modal not found!');
+            return;
+        }
+
+        const deityIcon = this.getDeitySymbol(deity.name);
+        const pantheon = this.getDeityPantheon(deity.name);
+
+        modalTitle.innerHTML = `<i class="${deityIcon} deity-modal-icon"></i> <span>${deity.name} - ${deity.title}</span>`;
+
+        modalBody.innerHTML = `
+            <div class="deity-details">
+                <div class="deity-info-grid">
+                    <div class="deity-info-card">
+                        <h4>Pantheon</h4>
+                        <p>${pantheon}</p>
+                    </div>
+                    <div class="deity-info-card">
+                        <h4>Alignment</h4>
+                        <p>${deity.alignment}</p>
+                    </div>
+                    <div class="deity-info-card">
+                        <h4>Domains</h4>
+                        <p>${deity.domains.join(', ')}</p>
+                    </div>
+                    <div class="deity-info-card">
+                        <h4>Followers</h4>
+                        <p>${deity.followers.join(', ')}</p>
+                    </div>
+                    <div class="deity-info-card">
+                        <h4>Holy Days</h4>
+                        <p>${deity.holy_days.join(', ')}</p>
+                    </div>
+                    <div class="deity-info-card">
+                        <h4>Temples</h4>
+                        <p>${deity.temple_type || deity.temples || 'Various locations'}</p>
+                    </div>
+                </div>
+                
+                <div class="deity-info-section">
+                    <h3>In Alabastria</h3>
+                    <p>${deity.alabastria_context}</p>
+                </div>
+                
+                <div class="deity-history-section">
+                    <h3>800-Year History in Alabastria</h3>
+                    ${Object.entries(deity.history_800_years).map(([period, description]) => `
+                        <div class="deity-history-period">
+                            <h4>${period.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                            <p>${description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="deity-allies-conflicts-section">
+                    <h3>Divine Relationships</h3>
+                    <div class="deity-relationships-grid">
+                        <div class="deity-relationship-group">
+                            <h4>Allies</h4>
+                            <div class="deity-relationship-content">
+                                ${deity.allies && deity.allies.length > 0 ?
+                deity.allies.map(ally => `
+                                        <div class="deity-relationship-item">
+                                            <span class="deity-relationship-name">${ally}</span>
+                                            <span class="deity-relationship-reasoning">${this.getRelationshipReasoning(deityName, ally, 'ally')}</span>
+                                        </div>
+                                    `).join('') :
+                '<p class="no-relationships">No known allies</p>'
+            }
+                            </div>
+                        </div>
+                        <div class="deity-relationship-group">
+                            <h4>Conflicts</h4>
+                            <div class="deity-relationship-content">
+                                ${deity.conflicts && deity.conflicts.length > 0 ?
+                deity.conflicts.map(conflict => `
+                                        <div class="deity-relationship-item">
+                                            <span class="deity-relationship-name">${conflict}</span>
+                                            <span class="deity-relationship-reasoning">${this.getRelationshipReasoning(deityName, conflict, 'conflict')}</span>
+                                        </div>
+                                    `).join('') :
+                '<p class="no-relationships">No known conflicts</p>'
+            }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="deity-symbols-colors-section">
+                    <h3>Symbols & Colors</h3>
+                    <div class="deity-symbols-colors-grid">
+                        <div class="deity-symbols-group">
+                            <h4>Symbols</h4>
+                            <div class="deity-symbols-content">
+                                ${deity.symbols && deity.symbols.length > 0 ?
+                deity.symbols.map(symbol => `
+                                        <div class="deity-symbol-item">
+                                            <span class="deity-symbol-name">${symbol}</span>
+                                        </div>
+                                    `).join('') :
+                '<p class="no-symbols">No known symbols</p>'
+            }
+                            </div>
+                        </div>
+                        <div class="deity-colors-group">
+                            <h4>Colors</h4>
+                            <div class="deity-colors-content">
+                                ${deity.colors && deity.colors.length > 0 ?
+                deity.colors.map(color => `
+                                        <div class="deity-color-item">
+                                            <span class="deity-color-name">${color}</span>
+                                        </div>
+                                    `).join('') :
+                '<p class="no-colors">No known colors</p>'
+            }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="deity-relationships-section">
+                    <h3>Relationships in Alabastria</h3>
+                    ${this.renderDeityModalRelationships(deityName)}
+                </div>
+            </div>
+        `;
+
+        // Style the content div to ensure visibility
+        const modalContent = modal.querySelector('.deity-modal-content');
+        if (modalContent) {
+            modalContent.style.backgroundColor = 'white';
+            modalContent.style.margin = '50px auto';
+            modalContent.style.borderRadius = '8px';
+            modalContent.style.maxWidth = '500px';
+            modalContent.style.position = 'relative';
+            modalContent.style.zIndex = '10000000';
+        }
+
+        // Force the modal to be visible with inline styles
+        modal.style.display = 'block !important';
+        modal.style.position = 'fixed';
+        modal.style.zIndex = '9999999';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+
+        console.log('Modal computed styles:', {
+            display: window.getComputedStyle(modal).display,
+            position: window.getComputedStyle(modal).position,
+            zIndex: window.getComputedStyle(modal).zIndex,
+            visibility: window.getComputedStyle(modal).visibility,
+            opacity: window.getComputedStyle(modal).opacity
+        });
+
+        // Check if modal is actually in the DOM and visible
+        console.log('Modal element:', modal);
+        console.log('Modal parent:', modal.parentElement);
+        console.log('Modal offsetParent:', modal.offsetParent);
+        console.log('Modal offsetWidth:', modal.offsetWidth);
+        console.log('Modal offsetHeight:', modal.offsetHeight);
+
+        console.log('Deity modal should be visible now');
+
+        // Check if modal is actually visible after a short delay
+        setTimeout(() => {
+            const computedStyle = window.getComputedStyle(modal);
+            if (computedStyle.display === 'none' || modal.offsetWidth === 0) {
+                console.log('Original modal not visible, creating backup...');
+                this.createSimpleBackupModal(deity, pantheon, this.getDeitySymbol(deity.name));
+            }
+        }, 100);
+    },
+
+    // Render deity modal relationships
+    renderDeityModalRelationships(deityName) {
+        const relationships = this.deityRelationshipsData.filter(rel =>
+            rel.primary_deities.includes(deityName) || rel.secondary_deities.includes(deityName)
+        );
+
+        if (relationships.length === 0) {
+            return `<p>No specific relationships recorded for this deity in Alabastria.</p>`;
+        }
+
+        // Group relationships by type
+        const races = [...new Set(relationships.map(rel => rel.race).filter(race => race))];
+        const subraces = [...new Set(relationships.map(rel => rel.subrace).filter(subrace => subrace))];
+        const classes = [...new Set(relationships.map(rel => rel.class).filter(cls => cls))];
+        const subclasses = [...new Set(relationships.map(rel => rel.subclass).filter(subclass => subclass))];
+        const continents = [...new Set(relationships.map(rel => rel.continent).filter(continent => continent))];
+
+        return `
+            <div class="deity-relationships-grid">
+                ${races.length > 0 ? `
+                    <details class="relationship-group">
+                        <summary class="relationship-summary">
+                            <h4>Races (${races.length})</h4>
+                        </summary>
+                        <div class="relationship-content">
+                            ${races.map(race => {
+            const raceRels = relationships.filter(rel => rel.race === race);
+            const isPrimary = raceRels.some(rel => rel.primary_deities.includes(deityName));
+            const reasoning = raceRels.find(rel => rel.reasoning)?.reasoning || 'Cultural and environmental factors influence deity preferences.';
+            return `
+                                    <div class="relationship-item">
+                                        <div class="relationship-header">
+                                            <span class="relationship-name ${isPrimary ? 'primary' : 'secondary'}">${race}</span>
+                                            <button class="jump-button" onclick="app.navigateToRelated('race', '${race}')" title="View race details">
+                                                <i class="fas fa-external-link-alt"></i> View Race
+                                            </button>
+                                        </div>
+                                        <p class="relationship-reasoning">${reasoning}</p>
+                                    </div>
+                                `;
+        }).join('')}
+                        </div>
+                    </details>
+                ` : ''}
+                
+                ${subraces.length > 0 ? `
+                    <details class="relationship-group">
+                        <summary class="relationship-summary">
+                            <h4>Subraces (${subraces.length})</h4>
+                        </summary>
+                        <div class="relationship-content">
+                            ${subraces.map(subrace => {
+            const subraceRels = relationships.filter(rel => rel.subrace === subrace);
+            const isPrimary = subraceRels.some(rel => rel.primary_deities.includes(deityName));
+            const reasoning = subraceRels.find(rel => rel.reasoning)?.reasoning || 'Cultural and environmental factors influence deity preferences.';
+            return `
+                                    <div class="relationship-item">
+                                        <div class="relationship-header">
+                                            <span class="relationship-name ${isPrimary ? 'primary' : 'secondary'}">${subrace}</span>
+                                            <button class="jump-button" onclick="app.navigateToRelated('race', '${subraceRels[0].race}')" title="View race details">
+                                                <i class="fas fa-external-link-alt"></i> View Race
+                                            </button>
+                                        </div>
+                                        <p class="relationship-reasoning">${reasoning}</p>
+                                    </div>
+                                `;
+        }).join('')}
+                        </div>
+                    </details>
+                ` : ''}
+                
+                ${classes.length > 0 ? `
+                    <details class="relationship-group">
+                        <summary class="relationship-summary">
+                            <h4>Classes (${classes.length})</h4>
+                        </summary>
+                        <div class="relationship-content">
+                            ${classes.map(cls => {
+            const classRels = relationships.filter(rel => rel.class === cls);
+            const isPrimary = classRels.some(rel => rel.primary_deities.includes(deityName));
+            const reasoning = classRels.find(rel => rel.reasoning)?.reasoning || 'Class abilities and philosophical alignment influence deity preferences.';
+            return `
+                                    <div class="relationship-item">
+                                        <div class="relationship-header">
+                                            <span class="relationship-name ${isPrimary ? 'primary' : 'secondary'}">${cls}</span>
+                                            <button class="jump-button" onclick="app.navigateToRelated('class', '${cls}')" title="View class details">
+                                                <i class="fas fa-external-link-alt"></i> View Class
+                                            </button>
+                                        </div>
+                                        <p class="relationship-reasoning">${reasoning}</p>
+                                    </div>
+                                `;
+        }).join('')}
+                        </div>
+                    </details>
+                ` : ''}
+                
+                ${subclasses.length > 0 ? `
+                    <details class="relationship-group">
+                        <summary class="relationship-summary">
+                            <h4>Subclasses (${subclasses.length})</h4>
+                        </summary>
+                        <div class="relationship-content">
+                            ${subclasses.map(subclass => {
+            const subclassRels = relationships.filter(rel => rel.subclass === subclass);
+            const isPrimary = subclassRels.some(rel => rel.primary_deities.includes(deityName));
+            const reasoning = subclassRels.find(rel => rel.reasoning)?.reasoning || 'Class abilities and philosophical alignment influence deity preferences.';
+            return `
+                                    <div class="relationship-item">
+                                        <div class="relationship-header">
+                                            <span class="relationship-name ${isPrimary ? 'primary' : 'secondary'}">${subclass}</span>
+                                            <button class="jump-button" onclick="app.navigateToRelated('class', '${subclassRels[0].class}', '${subclass}')" title="View class details">
+                                                <i class="fas fa-external-link-alt"></i> View Class
+                                            </button>
+                                        </div>
+                                        <p class="relationship-reasoning">${reasoning}</p>
+                                    </div>
+                                `;
+        }).join('')}
+                        </div>
+                    </details>
+                ` : ''}
+                
+                ${continents.length > 0 ? `
+                    <details class="relationship-group">
+                        <summary class="relationship-summary">
+                            <h4>Continents (${continents.length})</h4>
+                        </summary>
+                        <div class="relationship-content">
+                            ${continents.map(continent => {
+            const continentRels = relationships.filter(rel => rel.continent === continent);
+            const isPrimary = continentRels.some(rel => rel.primary_deities.includes(deityName));
+            const reasoning = continentRels.find(rel => rel.reasoning)?.reasoning || 'Geographic and cultural factors influence deity preferences.';
+            return `
+                                    <div class="relationship-item">
+                                        <div class="relationship-header">
+                                            <span class="relationship-name ${isPrimary ? 'primary' : 'secondary'}">${continent}</span>
+                                            <button class="jump-button" onclick="app.navigateToRelated('continent', '${continent}')" title="View continent details">
+                                                <i class="fas fa-external-link-alt"></i> View Continent
+                                            </button>
+                                        </div>
+                                        <p class="relationship-reasoning">${reasoning}</p>
+                                    </div>
+                                `;
+        }).join('')}
+                        </div>
+                    </details>
+                ` : ''}
+            </div>
+        `;
+    },
+
+    // Close deity modal
+    closeDeityModal() {
+        const modal = document.getElementById('deity-modal');
+        modal.style.display = 'none';
+    },
+
+    // Create simple backup modal
+    createSimpleBackupModal(deity, pantheon, deityIcon) {
+        // Remove any existing backup modal
+        const existingBackup = document.getElementById('backup-deity-modal');
+        if (existingBackup) {
+            existingBackup.remove();
+        }
+
+        // Create new backup modal
+        const backupModal = document.createElement('div');
+        backupModal.id = 'backup-deity-modal';
+        backupModal.style.cssText = `
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.8) !important;
+            z-index: 99999999 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        `;
+
+        backupModal.innerHTML = `
+            <div class="deity-modal-content">
+                <div class="deity-modal-header">
+                    <h2>
+                        <i class="${deityIcon} deity-modal-icon"></i> <span>${deity.name} - ${deity.title}</span>
+                    </h2>
+                    <button class="deity-modal-close" onclick="document.getElementById('backup-deity-modal').remove()">&times;</button>
+                </div>
+                
+                <div class="deity-modal-body">
+                    <div class="deity-info-grid">
+                        <div class="deity-info-card">
+                            <h4>Pantheon</h4>
+                            <p>${pantheon}</p>
+                        </div>
+                        <div class="deity-info-card">
+                            <h4>Alignment</h4>
+                            <p>${deity.alignment}</p>
+                        </div>
+                        <div class="deity-info-card">
+                            <h4>Domains</h4>
+                            <p>${deity.domains.join(', ')}</p>
+                        </div>
+                        <div class="deity-info-card">
+                            <h4>Followers</h4>
+                            <p>${deity.followers.join(', ')}</p>
+                        </div>
+                        <div class="deity-info-card">
+                            <h4>Holy Days</h4>
+                            <p>${deity.holy_days.join(', ')}</p>
+                        </div>
+                        <div class="deity-info-card">
+                            <h4>Temples</h4>
+                            <p>${deity.temple_type || deity.temples || 'Various locations'}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="deity-history-section">
+                        <h3>In Alabastria</h3>
+                        <p>${deity.alabastria_context}</p>
+                    </div>
+                    
+                    <div class="deity-history-section">
+                        <h3>800-Year History in Alabastria</h3>
+                        ${Object.entries(deity.history_800_years).map(([period, description]) => `
+                            <div class="deity-history-period">
+                                <h4>${period.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                                <p>${description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="deity-allies-conflicts-section">
+                        <h3>Divine Relationships</h3>
+                        <div class="deity-relationships-grid">
+                            <div class="deity-relationship-group">
+                                <h4>Allies</h4>
+                                <div class="deity-relationship-content">
+                                    ${deity.allies && deity.allies.length > 0 ?
+                deity.allies.map(ally => `
+                                            <div class="deity-relationship-item">
+                                                <span class="deity-relationship-name">${ally}</span>
+                                                <span class="deity-relationship-reasoning">${this.getRelationshipReasoning(deity.name, ally, 'ally')}</span>
+                                            </div>
+                                        `).join('') :
+                '<p class="no-relationships">No known allies</p>'
+            }
+                                </div>
+                            </div>
+                            <div class="deity-relationship-group">
+                                <h4>Conflicts</h4>
+                                <div class="deity-relationship-content">
+                                    ${deity.conflicts && deity.conflicts.length > 0 ?
+                deity.conflicts.map(conflict => `
+                                            <div class="deity-relationship-item">
+                                                <span class="deity-relationship-name">${conflict}</span>
+                                                <span class="deity-relationship-reasoning">${this.getRelationshipReasoning(deity.name, conflict, 'conflict')}</span>
+                                            </div>
+                                        `).join('') :
+                '<p class="no-relationships">No known conflicts</p>'
+            }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="deity-symbols-colors-section">
+                        <h3>Symbols & Colors</h3>
+                        <div class="deity-symbols-colors-grid">
+                            <div class="deity-symbols-group">
+                                <h4>Symbols</h4>
+                                <div class="deity-symbols-content">
+                                    ${deity.symbols && deity.symbols.length > 0 ?
+                deity.symbols.map(symbol => `
+                                            <div class="deity-symbol-item">
+                                                <span class="deity-symbol-name">${symbol}</span>
+                                            </div>
+                                        `).join('') :
+                '<p class="no-symbols">No known symbols</p>'
+            }
+                                </div>
+                            </div>
+                            <div class="deity-colors-group">
+                                <h4>Colors</h4>
+                                <div class="deity-colors-content">
+                                    ${deity.colors && deity.colors.length > 0 ?
+                deity.colors.map(color => `
+                                            <div class="deity-color-item">
+                                                <span class="deity-color-name">${color}</span>
+                                            </div>
+                                        `).join('') :
+                '<p class="no-colors">No known colors</p>'
+            }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="deity-relationships-section">
+                        <h3>Relationships in Alabastria</h3>
+                        ${this.renderDeityModalRelationships(deity.name)}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(backupModal);
+        console.log('Backup modal created and added to DOM');
+    },
+
+
+
+    // Find deity by name
+    findDeityByName(deityName) {
+        for (const pantheon of this.pantheonData) {
+            const deity = pantheon.deities.find(d => d.name === deityName);
+            if (deity) {
+                return deity;
+            }
+        }
+        return null;
+    },
+
+    // Filter deity relationships
+    filterDeityRelationships() {
+        const alignmentFilterElement = document.getElementById('deity-alignment-filter');
+        if (!alignmentFilterElement) {
+            return;
+        }
+
+        const alignmentFilter = alignmentFilterElement.value;
+
+        if (!this.pantheonData || this.pantheonData.length === 0) {
+            return;
+        }
+
+        if (!this.deityRelationshipsData || this.deityRelationshipsData.length === 0) {
+            return;
+        }
+
+        // Always show all relationships - the deity filtering is handled in renderDeityRelationships()
+        this.filteredDeityRelationships = [...this.deityRelationshipsData];
+
+        // Update the results
+        const resultsContainer = document.getElementById('deity-relationships-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderDeityRelationships();
+        }
+    },
+
+    // Get deity alignment from pantheon data
+    getDeityAlignment(deityName) {
+        for (const pantheon of this.pantheonData) {
+            const deity = pantheon.deities.find(d => d.name === deityName);
+            if (deity) {
+                return deity.alignment;
+            }
+        }
+        return null;
+    },
+
+    // Make deity names clickable in text
+    makeDeityNamesClickable(text) {
+        if (!text) return text;
+
+        // List of known deities
+        const deities = [
+            'Tempus', 'Mystra', 'Lathander', 'Selûne', 'Shar', 'Tymora', 'Bane', 'Cyric', 'Talona',
+            'Corellon Larethian', 'Lolth', 'Moradin', 'Garl Glittergold', 'Yondalla', 'Gruumsh',
+            'Maglubiyet', 'Kurtulmak', 'Asmodeus', 'Bahamut', 'Tiamat', 'Oghma', 'Kelemvor',
+            'The Raven Queen', 'Arvoreen', 'Cyrrollalee', 'Urogalan', 'Baervan Wildwanderer',
+            'Baravar Cloakshadow', 'Segojan Earthcaller', 'Khurgorbaeyag', 'Bargrivyek',
+            'Nomog-Geaya', 'Gith', 'Vlaakith', 'Sseth', 'Merrshaulk', 'Umberlee', 'Valkur',
+            'Deep Sashelas', 'Sekolah', 'Clangeddin Silverbeard', 'Berronar Truesilver',
+            'Haela Brightaxe', 'Dugmaren Brightmantle', 'Nebelun'
+        ];
+
+        let result = text;
+        deities.forEach(deity => {
+            const regex = new RegExp(`\\b${deity}\\b`, 'gi');
+            result = result.replace(regex, `<button class="deity-button" onclick="app.showDeityDetails('${deity}')" style="
+                background: var(--gold-accent);
+                color: var(--dark-text);
+                border: none;
+                padding: 0.2rem 0.4rem;
+                border-radius: 3px;
+                cursor: pointer;
+                font-weight: 600;
+                margin: 0 0.2rem;
+                transition: var(--transition);
+                display: inline;
+                font-size: inherit;
+            " onmouseover="this.style.background='var(--ocean-blue)'" onmouseout="this.style.background='var(--gold-accent)'">${deity}</button>`);
+        });
+
+        return result;
+    },
+
+    // Get relationship reasoning between deities
+    getRelationshipReasoning(deity1, deity2, relationshipType) {
+        const relationshipReasons = {
+            // Tempus relationships
+            'Tempus-Tymora': 'Both deities value courage and taking risks, with Tempus representing honorable battle and Tymora representing the luck that favors the brave.',
+            'Tempus-Lathander': 'Both represent renewal and new beginnings - Tempus through the glory of new victories and Lathander through the dawn of each day.',
+            'Tempus-Mystra': 'Both value knowledge and strategy, with Tempus focusing on military strategy and Mystra on magical knowledge.',
+            'Tempus-Bane': 'Fundamental opposition between honorable warfare (Tempus) and tyrannical conquest (Bane).',
+            'Tempus-Cyric': 'Tempus represents honor in battle while Cyric represents madness and chaos.',
+            'Tempus-Talona': 'Tempus values life and glory while Talona brings death and disease.',
+
+            // Mystra relationships
+            'Mystra-Corellon Larethian': 'Both are patrons of magic and creativity, with Mystra governing the Weave and Corellon representing elven magical arts.',
+            'Mystra-Oghma': 'Both value knowledge and learning, with Mystra focusing on magical knowledge and Oghma on all forms of knowledge.',
+            'Mystra-Lathander': 'Both represent renewal and growth - Mystra through magical innovation and Lathander through natural renewal.',
+            'Mystra-Cyric': 'Cyric seeks to destroy magic and the Weave, directly opposing Mystra\'s domain.',
+            'Mystra-Bane': 'Bane seeks to control knowledge and magic for tyranny, opposing Mystra\'s free sharing of magical knowledge.',
+            'Mystra-Shar': 'Shar represents the destruction of knowledge and memory, directly opposing Mystra\'s preservation of magical knowledge.',
+
+            // Lathander relationships
+            'Lathander-Selûne': 'Both represent light and guidance - Lathander the dawn and Selûne the moonlight that guides travelers.',
+            'Lathander-Tymora': 'Both represent hope and new beginnings - Lathander through renewal and Tymora through luck and opportunity.',
+            'Lathander-Shar': 'Fundamental opposition between light (Lathander) and darkness (Shar).',
+            'Lathander-Cyric': 'Lathander represents hope and renewal while Cyric represents despair and destruction.',
+            'Lathander-Bane': 'Lathander represents freedom and hope while Bane represents oppression and tyranny.',
+
+            // Selûne relationships
+            'Selûne-Corellon Larethian': 'Both are elven deities who value art, magic, and the guidance of their people.',
+            'Selûne-Tymora': 'Both guide travelers and adventurers, with Selûne providing navigation and Tymora providing luck.',
+            'Selûne-Shar': 'Sister deities with opposite domains - Selûne represents light and memory while Shar represents darkness and forgetting.',
+            'Selûne-Cyric': 'Selûne represents guidance and hope while Cyric represents madness and destruction.',
+            'Selûne-Bane': 'Selûne represents freedom and exploration while Bane represents oppression and control.',
+
+            // Shar relationships
+            'Shar-Cyric': 'Both represent destruction and chaos, with Shar focusing on secrets and Cyric on madness.',
+            'Shar-Bane': 'Both represent tyranny and control, with Shar using secrets and Bane using fear.',
+            'Shar-Talona': 'Both represent death and destruction, with Shar focusing on loss and Talona on disease.',
+            'Shar-Selûne': 'Sister deities with opposite domains - Shar represents darkness and forgetting while Selûne represents light and memory.',
+            'Shar-Lathander': 'Fundamental opposition between darkness (Shar) and light (Lathander).',
+            'Shar-Mystra': 'Shar seeks to destroy knowledge and memory while Mystra preserves magical knowledge.',
+
+            // Tymora relationships
+            'Tymora-Bane': 'Tymora represents luck and freedom while Bane represents tyranny and oppression.',
+            'Tymora-Cyric': 'Tymora represents good fortune while Cyric represents madness and destruction.',
+            'Tymora-Talona': 'Tymora represents luck and opportunity while Talona represents misfortune and disease.',
+
+            // Bane relationships
+            'Bane-Cyric': 'Both represent evil and destruction, though Bane is lawful and Cyric is chaotic.',
+            'Bane-Talona': 'Both represent death and destruction, with Bane focusing on tyranny and Talona on disease.',
+            'Bane-Tymora': 'Bane represents oppression and control while Tymora represents freedom and luck.',
+            'Bane-Lathander': 'Bane represents tyranny and oppression while Lathander represents freedom and hope.',
+            'Bane-Mystra': 'Bane seeks to control knowledge for tyranny while Mystra shares knowledge freely.',
+
+            // Cyric relationships
+            'Cyric-Talona': 'Both represent chaos and destruction, with Cyric focusing on madness and Talona on disease.',
+            'Cyric-Tymora': 'Cyric represents madness and destruction while Tymora represents luck and hope.',
+            'Cyric-Lathander': 'Cyric represents despair and destruction while Lathander represents hope and renewal.',
+            'Cyric-Mystra': 'Cyric seeks to destroy magic and knowledge while Mystra preserves them.',
+
+            // Talona relationships
+            'Talona-Tymora': 'Talona represents misfortune and disease while Tymora represents luck and good fortune.',
+            'Talona-Lathander': 'Talona represents death and disease while Lathander represents life and renewal.',
+            'Talona-Mystra': 'Talona represents destruction and decay while Mystra represents creation and knowledge.',
+
+            // Moradin relationships
+            'Moradin-Lathander': 'Both represent creation and craftsmanship, with Moradin focusing on metalwork and Lathander on renewal.',
+            'Moradin-Mystra': 'Both value knowledge and creation, with Moradin focusing on craftsmanship and Mystra on magical knowledge.',
+            'Moradin-Tymora': 'Both value skill and luck, with Moradin focusing on craftsmanship and Tymora on fortune.',
+            'Moradin-Bane': 'Moradin represents creation and community while Bane represents destruction and tyranny.',
+            'Moradin-Cyric': 'Moradin represents order and craftsmanship while Cyric represents chaos and destruction.',
+            'Moradin-Talona': 'Moradin represents life and creation while Talona represents death and disease.',
+
+            // Corellon Larethian relationships
+            'Corellon Larethian-Lolth': 'Sister deities with opposite domains - Corellon represents light and art while Lolth represents darkness and destruction.',
+            'Corellon Larethian-Lathander': 'Both represent light and creativity, with Corellon focusing on elven arts and Lathander on renewal.',
+            'Corellon Larethian-Mystra': 'Both are patrons of magic and creativity, with Corellon representing elven magical arts and Mystra governing the Weave.',
+            'Corellon Larethian-Bane': 'Corellon represents freedom and creativity while Bane represents oppression and control.',
+            'Corellon Larethian-Cyric': 'Corellon represents order and beauty while Cyric represents chaos and destruction.',
+
+            // Lolth relationships
+            'Lolth-Bane': 'Both represent tyranny and control, with Lolth focusing on drow society and Bane on general oppression.',
+            'Lolth-Cyric': 'Both represent evil and destruction, with Lolth focusing on drow society and Cyric on general chaos.',
+            'Lolth-Shar': 'Both represent darkness and secrets, with Lolth focusing on drow society and Shar on general darkness.',
+            'Lolth-Corellon Larethian': 'Sister deities with opposite domains - Lolth represents darkness and destruction while Corellon represents light and art.',
+            'Lolth-Lathander': 'Lolth represents darkness and destruction while Lathander represents light and renewal.',
+            'Lolth-Mystra': 'Lolth represents destruction and chaos while Mystra represents creation and order.',
+
+            // Asmodeus relationships
+            'Asmodeus-Bane': 'Both represent tyranny and control, with Asmodeus focusing on infernal contracts and Bane on general oppression.',
+            'Asmodeus-Cyric': 'Both represent evil and destruction, with Asmodeus focusing on lawful evil and Cyric on chaotic evil.',
+            'Asmodeus-Shar': 'Both represent darkness and secrets, with Asmodeus focusing on infernal contracts and Shar on general darkness.',
+            'Asmodeus-Lathander': 'Asmodeus represents tyranny and oppression while Lathander represents freedom and hope.',
+            'Asmodeus-Mystra': 'Asmodeus seeks to control knowledge for tyranny while Mystra shares knowledge freely.',
+            'Asmodeus-Tymora': 'Asmodeus represents oppression and control while Tymora represents freedom and luck.',
+
+            // Kelemvor relationships
+            'Kelemvor-Lathander': 'Both represent renewal and justice, with Kelemvor focusing on death and Lathander on life.',
+            'Kelemvor-Mystra': 'Both value knowledge and order, with Kelemvor focusing on death and Mystra on magic.',
+            'Kelemvor-Tymora': 'Both represent fairness and justice, with Kelemvor focusing on death and Tymora on luck.',
+            'Kelemvor-Bane': 'Kelemvor represents justice and fairness while Bane represents tyranny and oppression.',
+            'Kelemvor-Cyric': 'Kelemvor represents order and justice while Cyric represents chaos and destruction.',
+            'Kelemvor-Talona': 'Kelemvor represents natural death while Talona represents unnatural death and disease.',
+
+            // The Raven Queen relationships
+            'The Raven Queen-Kelemvor': 'Both represent death and justice, with The Raven Queen focusing on fate and Kelemvor on judgment.',
+            'The Raven Queen-Lathander': 'Both represent renewal and hope, with The Raven Queen focusing on death and Lathander on life.',
+            'The Raven Queen-Mystra': 'Both value knowledge and memory, with The Raven Queen focusing on death and Mystra on magic.',
+            'The Raven Queen-Bane': 'The Raven Queen represents justice and fate while Bane represents tyranny and oppression.',
+            'The Raven Queen-Cyric': 'The Raven Queen represents order and fate while Cyric represents chaos and destruction.',
+            'The Raven Queen-Talona': 'The Raven Queen represents natural death while Talona represents unnatural death and disease.',
+
+            // Yondalla relationships
+            'Yondalla-Lathander': 'Both represent protection and renewal, with Yondalla focusing on family and Lathander on general renewal.',
+            'Yondalla-Tymora': 'Both represent luck and protection, with Yondalla focusing on family and Tymora on general fortune.',
+            'Yondalla-Mystra': 'Both value knowledge and protection, with Yondalla focusing on family and Mystra on magic.',
+            'Yondalla-Bane': 'Yondalla represents protection and community while Bane represents oppression and tyranny.',
+            'Yondalla-Cyric': 'Yondalla represents order and community while Cyric represents chaos and destruction.',
+            'Yondalla-Talona': 'Yondalla represents life and protection while Talona represents death and disease.',
+
+            // Garl Glittergold relationships
+            'Garl Glittergold-Tymora': 'Both represent luck and protection, with Garl focusing on gnome community and Tymora on general fortune.',
+            'Garl Glittergold-Lathander': 'Both represent renewal and hope, with Garl focusing on gnome community and Lathander on general renewal.',
+            'Garl Glittergold-Mystra': 'Both value knowledge and creativity, with Garl focusing on gnome community and Mystra on magic.',
+            'Garl Glittergold-Bane': 'Garl represents freedom and community while Bane represents oppression and tyranny.',
+            'Garl Glittergold-Cyric': 'Garl represents order and community while Cyric represents chaos and destruction.',
+            'Garl Glittergold-Talona': 'Garl represents life and community while Talona represents death and disease.',
+
+            // Gruumsh relationships
+            'Gruumsh-Bane': 'Both represent war and conquest, with Gruumsh focusing on orc society and Bane on general tyranny.',
+            'Gruumsh-Cyric': 'Both represent destruction and chaos, with Gruumsh focusing on orc society and Cyric on general madness.',
+            'Gruumsh-Talona': 'Both represent death and destruction, with Gruumsh focusing on war and Talona on disease.',
+            'Gruumsh-Lathander': 'Gruumsh represents destruction and war while Lathander represents creation and renewal.',
+            'Gruumsh-Mystra': 'Gruumsh represents destruction and chaos while Mystra represents creation and order.',
+            'Gruumsh-Tymora': 'Gruumsh represents destruction and war while Tymora represents creation and luck.',
+
+            // Maglubiyet relationships
+            'Maglubiyet-Bane': 'Both represent war and conquest, with Maglubiyet focusing on goblinoid society and Bane on general tyranny.',
+            'Maglubiyet-Cyric': 'Both represent destruction and chaos, with Maglubiyet focusing on goblinoid society and Cyric on general madness.',
+            'Maglubiyet-Talona': 'Both represent death and destruction, with Maglubiyet focusing on war and Talona on disease.',
+            'Maglubiyet-Lathander': 'Maglubiyet represents destruction and war while Lathander represents creation and renewal.',
+            'Maglubiyet-Mystra': 'Maglubiyet represents destruction and chaos while Mystra represents creation and order.',
+            'Maglubiyet-Tymora': 'Maglubiyet represents destruction and war while Tymora represents creation and luck.',
+
+            // Kurtulmak relationships
+            'Kurtulmak-Maglubiyet': 'Both represent goblinoid society and war, with Kurtulmak focusing on kobolds and Maglubiyet on general goblinoids.',
+            'Kurtulmak-Bane': 'Both represent war and conquest, with Kurtulmak focusing on kobold society and Bane on general tyranny.',
+            'Kurtulmak-Cyric': 'Both represent destruction and chaos, with Kurtulmak focusing on kobold society and Cyric on general madness.',
+            'Kurtulmak-Lathander': 'Kurtulmak represents destruction and war while Lathander represents creation and renewal.',
+            'Kurtulmak-Mystra': 'Kurtulmak represents destruction and chaos while Mystra represents creation and order.',
+            'Kurtulmak-Tymora': 'Kurtulmak represents destruction and war while Tymora represents creation and luck.',
+
+            // Bahamut relationships
+            'Bahamut-Lathander': 'Both represent good and renewal, with Bahamut focusing on dragons and Lathander on general renewal.',
+            'Bahamut-Mystra': 'Both value knowledge and order, with Bahamut focusing on dragons and Mystra on magic.',
+            'Bahamut-Tymora': 'Both represent good and luck, with Bahamut focusing on dragons and Tymora on general fortune.',
+            'Bahamut-Tiamat': 'Sister deities with opposite domains - Bahamut represents good dragons while Tiamat represents evil dragons.',
+            'Bahamut-Bane': 'Bahamut represents good and justice while Bane represents evil and tyranny.',
+            'Bahamut-Cyric': 'Bahamut represents order and good while Cyric represents chaos and evil.',
+
+            // Tiamat relationships
+            'Tiamat-Bane': 'Both represent evil and tyranny, with Tiamat focusing on dragons and Bane on general oppression.',
+            'Tiamat-Cyric': 'Both represent evil and destruction, with Tiamat focusing on dragons and Cyric on general madness.',
+            'Tiamat-Shar': 'Both represent evil and darkness, with Tiamat focusing on dragons and Shar on general darkness.',
+            'Tiamat-Bahamut': 'Sister deities with opposite domains - Tiamat represents evil dragons while Bahamut represents good dragons.',
+            'Tiamat-Lathander': 'Tiamat represents evil and destruction while Lathander represents good and renewal.',
+            'Tiamat-Mystra': 'Tiamat represents evil and destruction while Mystra represents good and creation.',
+
+            // Oghma relationships
+            'Oghma-Mystra': 'Both value knowledge and learning, with Oghma focusing on all knowledge and Mystra on magical knowledge.',
+            'Oghma-Lathander': 'Both represent renewal and growth, with Oghma focusing on knowledge and Lathander on natural renewal.',
+            'Oghma-Tymora': 'Both value knowledge and luck, with Oghma focusing on learning and Tymora on fortune.',
+            'Oghma-Bane': 'Oghma represents free sharing of knowledge while Bane seeks to control knowledge for tyranny.',
+            'Oghma-Cyric': 'Oghma represents order and knowledge while Cyric represents chaos and destruction.',
+            'Oghma-Shar': 'Oghma represents preservation of knowledge while Shar represents destruction of knowledge.',
+
+            // Umberlee relationships
+            'Umberlee-Sekolah': 'Both represent the destructive power of the sea, with Umberlee focusing on storms and Sekolah on predation.',
+            'Umberlee-Bane': 'Both represent evil and destruction, with Umberlee focusing on the sea and Bane on general tyranny.',
+            'Umberlee-Cyric': 'Both represent chaos and destruction, with Umberlee focusing on the sea and Cyric on general madness.',
+            'Umberlee-Valkur': 'Umberlee represents the destructive power of the sea while Valkur represents its protective aspects.',
+            'Umberlee-Deep Sashelas': 'Umberlee represents the destructive power of the sea while Deep Sashelas represents its creative aspects.',
+            'Umberlee-Lathander': 'Umberlee represents destruction and chaos while Lathander represents creation and order.',
+
+            // Valkur relationships
+            'Valkur-Deep Sashelas': 'Both represent the positive aspects of the sea, with Valkur focusing on protection and Deep Sashelas on creativity.',
+            'Valkur-Lathander': 'Both represent protection and renewal, with Valkur focusing on the sea and Lathander on general renewal.',
+            'Valkur-Tymora': 'Both represent luck and protection, with Valkur focusing on the sea and Tymora on general fortune.',
+            'Valkur-Umberlee': 'Valkur represents the protective aspects of the sea while Umberlee represents its destructive aspects.',
+            'Valkur-Sekolah': 'Valkur represents protection and safety while Sekolah represents predation and danger.',
+            'Valkur-Bane': 'Valkur represents protection and freedom while Bane represents oppression and tyranny.',
+
+            // Deep Sashelas relationships
+            'Deep Sashelas-Lathander': 'Both represent creativity and renewal, with Deep Sashelas focusing on the sea and Lathander on general renewal.',
+            'Deep Sashelas-Mystra': 'Both value knowledge and creativity, with Deep Sashelas focusing on the sea and Mystra on magic.',
+            'Deep Sashelas-Umberlee': 'Deep Sashelas represents the creative aspects of the sea while Umberlee represents its destructive aspects.',
+            'Deep Sashelas-Sekolah': 'Deep Sashelas represents creativity and knowledge while Sekolah represents destruction and predation.',
+            'Deep Sashelas-Bane': 'Deep Sashelas represents creativity and freedom while Bane represents oppression and tyranny.',
+            'Deep Sashelas-Cyric': 'Deep Sashelas represents order and creativity while Cyric represents chaos and destruction.',
+
+            // Sekolah relationships
+            'Sekolah-Umberlee': 'Both represent the destructive power of the sea, with Sekolah focusing on predation and Umberlee on storms.',
+            'Sekolah-Bane': 'Both represent evil and destruction, with Sekolah focusing on the sea and Bane on general tyranny.',
+            'Sekolah-Cyric': 'Both represent chaos and destruction, with Sekolah focusing on the sea and Cyric on general madness.',
+            'Sekolah-Valkur': 'Sekolah represents predation and danger while Valkur represents protection and safety.',
+            'Sekolah-Deep Sashelas': 'Sekolah represents destruction and predation while Deep Sashelas represents creativity and knowledge.',
+            'Sekolah-Lathander': 'Sekolah represents destruction and chaos while Lathander represents creation and order.',
+
+            // Clangeddin Silverbeard relationships
+            'Clangeddin Silverbeard-Moradin': 'Both represent dwarven values and warfare, with Clangeddin focusing on battle and Moradin on general dwarven society.',
+            'Clangeddin Silverbeard-Lathander': 'Both represent honor and renewal, with Clangeddin focusing on battle and Lathander on general renewal.',
+            'Clangeddin Silverbeard-Tymora': 'Both represent courage and luck, with Clangeddin focusing on battle and Tymora on general fortune.',
+            'Clangeddin Silverbeard-Bane': 'Clangeddin represents honorable warfare while Bane represents tyrannical conquest.',
+            'Clangeddin Silverbeard-Cyric': 'Clangeddin represents order and honor while Cyric represents chaos and destruction.',
+            'Clangeddin Silverbeard-Talona': 'Clangeddin represents life and honor while Talona represents death and disease.',
+
+            // Berronar Truesilver relationships
+            'Berronar Truesilver-Moradin': 'Both represent dwarven values and protection, with Berronar focusing on family and Moradin on general dwarven society.',
+            'Berronar Truesilver-Lathander': 'Both represent protection and renewal, with Berronar focusing on family and Lathander on general renewal.',
+            'Berronar Truesilver-Tymora': 'Both represent protection and luck, with Berronar focusing on family and Tymora on general fortune.',
+            'Berronar Truesilver-Bane': 'Berronar represents protection and community while Bane represents oppression and tyranny.',
+            'Berronar Truesilver-Cyric': 'Berronar represents order and community while Cyric represents chaos and destruction.',
+            'Berronar Truesilver-Talona': 'Berronar represents life and protection while Talona represents death and disease.',
+
+            // Haela Brightaxe relationships
+            'Haela Brightaxe-Clangeddin Silverbeard': 'Both represent dwarven warfare and honor, with Haela focusing on battle and Clangeddin on general dwarven warfare.',
+            'Haela Brightaxe-Lathander': 'Both represent honor and renewal, with Haela focusing on battle and Lathander on general renewal.',
+            'Haela Brightaxe-Tymora': 'Both represent courage and luck, with Haela focusing on battle and Tymora on general fortune.',
+            'Haela Brightaxe-Bane': 'Haela represents honorable warfare while Bane represents tyrannical conquest.',
+            'Haela Brightaxe-Cyric': 'Haela represents order and honor while Cyric represents chaos and destruction.',
+            'Haela Brightaxe-Talona': 'Haela represents life and honor while Talona represents death and disease.',
+
+            // Dugmaren Brightmantle relationships
+            'Dugmaren Brightmantle-Garl Glittergold': 'Both represent gnome values and innovation, with Dugmaren focusing on discovery and Garl on general gnome society.',
+            'Dugmaren Brightmantle-Lathander': 'Both represent innovation and renewal, with Dugmaren focusing on discovery and Lathander on general renewal.',
+            'Dugmaren Brightmantle-Mystra': 'Both value knowledge and innovation, with Dugmaren focusing on discovery and Mystra on magic.',
+            'Dugmaren Brightmantle-Bane': 'Dugmaren represents innovation and freedom while Bane represents oppression and tyranny.',
+            'Dugmaren Brightmantle-Cyric': 'Dugmaren represents order and innovation while Cyric represents chaos and destruction.',
+            'Dugmaren Brightmantle-Talona': 'Dugmaren represents life and innovation while Talona represents death and disease.',
+
+            // Nebelun relationships
+            'Nebelun-Garl Glittergold': 'Both represent gnome values and wealth, with Nebelun focusing on trade and Garl on general gnome society.',
+            'Nebelun-Lathander': 'Both represent wealth and renewal, with Nebelun focusing on trade and Lathander on general renewal.',
+            'Nebelun-Tymora': 'Both represent wealth and luck, with Nebelun focusing on trade and Tymora on general fortune.',
+            'Nebelun-Bane': 'Nebelun represents wealth and freedom while Bane represents oppression and tyranny.',
+            'Nebelun-Cyric': 'Nebelun represents order and wealth while Cyric represents chaos and destruction.',
+            'Nebelun-Talona': 'Nebelun represents life and wealth while Talona represents death and disease.'
+        };
+
+        const key1 = `${deity1}-${deity2}`;
+        const key2 = `${deity2}-${deity1}`;
+
+        if (relationshipReasons[key1]) {
+            return relationshipReasons[key1];
+        } else if (relationshipReasons[key2]) {
+            return relationshipReasons[key2];
+        } else {
+            // Default reasoning based on relationship type
+            if (relationshipType === 'ally') {
+                return 'These deities share common values and goals, working together to achieve their mutual objectives.';
+            } else if (relationshipType === 'conflict') {
+                return 'These deities have opposing values and goals, often working against each other in their divine conflicts.';
+            }
+            return 'The nature of this relationship is not well documented.';
+        }
+    },
+
+    // Clear deity filters
+    clearDeityFilters() {
+        const alignmentFilterElement = document.getElementById('deity-alignment-filter');
+        if (!alignmentFilterElement) {
+            return;
+        }
+
+        alignmentFilterElement.value = '';
+        this.filteredDeityRelationships = [...this.deityRelationshipsData];
+
+        const resultsContainer = document.getElementById('deity-relationships-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderDeityRelationships();
+        }
     },
 
     renderContinentDetails(infoContainer, relationshipsContainer) {
@@ -2394,6 +3576,130 @@ const app = {
                     `).join('')}
                 </div>
             </details>
+            
+            <details>
+                <summary>Deity Recommendations</summary>
+                <div class="details-content-inner">
+                    ${this.renderContinentDeityRecommendations(this.currentSelection)}
+                </div>
+            </details>
+        `;
+    },
+
+    // Helper function to render continent deity recommendations
+    renderContinentDeityRecommendations(continentName) {
+        const continentDeities = this.deityRelationshipsData.filter(rel => rel.continent === continentName);
+
+        if (continentDeities.length === 0) {
+            return `
+                <div class="deity-recommendations">
+                    <h4>General Deity Recommendations for ${continentName}</h4>
+                    <p>While no specific deity relationships are recorded for this continent, here are some general recommendations based on the region's characteristics:</p>
+                    <div class="deity-group">
+                        <h5>Universal Deities</h5>
+                        <p><strong>Primary:</strong> Tymora (Luck), Lathander (Renewal), Selûne (Guidance)</p>
+                        <p><strong>Secondary:</strong> Mystra (Magic), Tempus (War), Kelemvor (Death)</p>
+                        <p><em>These deities are commonly worshiped across all regions of Alabastria and can provide guidance for any character.</em></p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Group by deity
+        const deityGroups = {};
+        continentDeities.forEach(rel => {
+            // Add primary deities
+            rel.primary_deities.forEach(deity => {
+                if (!deityGroups[deity]) {
+                    deityGroups[deity] = {
+                        deity: deity,
+                        pantheon: this.getDeityPantheon(deity),
+                        symbol: this.getDeitySymbol(deity),
+                        primaryRaces: [],
+                        secondaryRaces: [],
+                        reasoning: []
+                    };
+                }
+                deityGroups[deity].primaryRaces.push(rel.race);
+                if (rel.reasoning && !deityGroups[deity].reasoning.includes(rel.reasoning)) {
+                    deityGroups[deity].reasoning.push(rel.reasoning);
+                }
+            });
+
+            // Add secondary deities
+            rel.secondary_deities.forEach(deity => {
+                if (!deityGroups[deity]) {
+                    deityGroups[deity] = {
+                        deity: deity,
+                        pantheon: this.getDeityPantheon(deity),
+                        symbol: this.getDeitySymbol(deity),
+                        primaryRaces: [],
+                        secondaryRaces: [],
+                        reasoning: []
+                    };
+                }
+                deityGroups[deity].secondaryRaces.push(rel.race);
+                if (rel.reasoning && !deityGroups[deity].reasoning.includes(rel.reasoning)) {
+                    deityGroups[deity].reasoning.push(rel.reasoning);
+                }
+            });
+        });
+
+        return `
+            <div class="deity-recommendations">
+                <p style="margin-bottom: 1rem; font-style: italic;">The following deities are worshiped by races inhabiting ${continentName}. Click on any deity to view their full details.</p>
+                
+                ${Object.values(deityGroups).map(group => `
+                    <details class="deity-race-group">
+                        <summary class="deity-summary">
+                            <div class="deity-header">
+                                <i class="${group.symbol}"></i>
+                                <strong>${group.deity}</strong>
+                                <span class="pantheon-badge">${group.pantheon}</span>
+                            </div>
+                            <span class="race-count">${[...new Set(group.primaryRaces)].filter(race => race && race.trim() !== '').length} primary, ${[...new Set(group.secondaryRaces)].filter(race => race && race.trim() !== '').length} secondary</span>
+                        </summary>
+                        <div class="deity-group-content">
+                            <div class="primary-races-section">
+                                <h4>Primary Worshipers</h4>
+                                <div class="race-tags">
+                                    ${[...new Set(group.primaryRaces)].filter(race => race && race.trim() !== '').map(race => `
+                                        <span class="race-tag primary" onclick="app.navigateToRelated('race', '${race}')" title="Click to view race details">
+                                            ${race}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="secondary-races-section">
+                                <h4>Secondary Worshipers</h4>
+                                <div class="race-tags">
+                                    ${[...new Set(group.secondaryRaces)].filter(race => race && race.trim() !== '').map(race => `
+                                        <span class="race-tag secondary" onclick="app.navigateToRelated('race', '${race}')" title="Click to view race details">
+                                            ${race}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            ${group.reasoning.length > 0 ? `
+                                <div class="reasoning-section">
+                                    <h4>Why These Relationships?</h4>
+                                    <div class="reasoning-content">
+                                        ${group.reasoning.map(reason => `<p>${reason}</p>`).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                            
+                            <div class="deity-actions">
+                                <button class="deity-details-btn" onclick="app.showDeityDetails('${group.deity}')" title="View full deity details">
+                                    <i class="fas fa-info-circle"></i> View Deity Details
+                                </button>
+                            </div>
+                        </div>
+                    </details>
+                `).join('')}
+            </div>
         `;
     },
 
@@ -2502,6 +3808,13 @@ const app = {
                                                 `).join('')}
                                             </div>
                                         </details>
+                                        
+                                        <details>
+                                            <summary>Deity Relationships</summary>
+                                            <div class="details-content-inner">
+                                                ${this.renderSubraceDeityRecommendations(raceData.race, subrace.name)}
+                                            </div>
+                                        </details>
                                     </div>
                                 </details>
                             `;
@@ -2542,6 +3855,13 @@ const app = {
                 <summary>Continental & Class Relationships</summary>
                 <div class="details-content-inner">
                     ${this.renderRaceRelationships(raceData.race)}
+                </div>
+            </details>
+            
+            <details>
+                <summary>Deity Recommendations</summary>
+                <div class="details-content-inner">
+                    ${this.renderRaceDeityRecommendations(raceData.race, this.currentSubrace)}
                 </div>
             </details>
         `;
@@ -2658,6 +3978,183 @@ const app = {
                         `).join('')}
                     </div>
                 ` : ''}
+            </div>
+        `;
+    },
+
+    // Helper function to render race deity recommendations
+    renderRaceDeityRecommendations(raceName, subraceName = null) {
+        let raceDeities = this.deityRelationshipsData.filter(rel => rel.race === raceName);
+
+        // If a subrace is specified, prioritize subrace-specific relationships
+        if (subraceName) {
+            const subraceDeities = this.deityRelationshipsData.filter(rel =>
+                rel.race === raceName && rel.subrace === subraceName
+            );
+            if (subraceDeities.length > 0) {
+                raceDeities = subraceDeities;
+            }
+        }
+
+        if (raceDeities.length === 0) {
+            const title = subraceName ? `${subraceName} ${raceName}` : raceName;
+            return `
+                <div class="deity-recommendations">
+                    <h4>General Deity Recommendations for ${title}</h4>
+                    <p>While no specific deity relationships are recorded for this ${subraceName ? 'subrace' : 'race'}, here are some general recommendations based on common racial characteristics:</p>
+                    <div class="deity-group">
+                        <h5>Universal Deities</h5>
+                        <p><strong>Primary:</strong> Tymora (Luck), Lathander (Renewal), Selûne (Guidance)</p>
+                        <p><strong>Secondary:</strong> Mystra (Magic), Tempus (War), Kelemvor (Death)</p>
+                        <p><em>These deities are commonly worshiped across all races in Alabastria and can provide guidance for any character.</em></p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Group by continent
+        const continentGroups = {};
+        raceDeities.forEach(rel => {
+            if (!continentGroups[rel.continent]) {
+                continentGroups[rel.continent] = {
+                    continent: rel.continent,
+                    primaryDeities: [],
+                    secondaryDeities: []
+                };
+            }
+            continentGroups[rel.continent].primaryDeities.push(...rel.primary_deities);
+            continentGroups[rel.continent].secondaryDeities.push(...rel.secondary_deities);
+        });
+
+        const title = subraceName ? `${subraceName} ${raceName}` : raceName;
+        const isSubraceSpecific = subraceName && raceDeities.some(rel => rel.subrace === subraceName);
+
+        return `
+            <div class="deity-recommendations">
+                <p style="margin-bottom: 1rem; font-style: italic;">
+                    ${isSubraceSpecific ?
+                `The following deities are specifically favored by ${subraceName} ${raceName} based on their unique characteristics and cultural values.` :
+                `The following deities are commonly favored by ${raceName} based on their continental distribution and cultural values.`
+            }
+                </p>
+                
+                ${Object.values(continentGroups).map(group => `
+                    <details class="continent-deity-group">
+                        <summary class="continent-summary">
+                            <strong>${group.continent}</strong>
+                            <span class="deity-count">${[...new Set(group.primaryDeities)].length} primary, ${[...new Set(group.secondaryDeities)].length} secondary</span>
+                        </summary>
+                        <div class="deity-group-content">
+                            <div class="primary-deities-section">
+                                <h4>Primary Deities</h4>
+                                <div class="deity-tags">
+                                    ${[...new Set(group.primaryDeities)].map(deity => `
+                                        <span class="deity-tag primary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
+                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="secondary-deities-section">
+                                <h4>Secondary Deities</h4>
+                                <div class="deity-tags">
+                                    ${[...new Set(group.secondaryDeities)].map(deity => `
+                                        <span class="deity-tag secondary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
+                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="reasoning-section">
+                                <h4>Why These Deities?</h4>
+                                <p>${raceDeities.find(rel => rel.continent === group.continent && (!subraceName || rel.subrace === subraceName))?.reasoning || 'Cultural and environmental factors influence deity preferences.'}</p>
+                            </div>
+                        </div>
+                    </details>
+                `).join('')}
+            </div>
+        `;
+    },
+
+    // Helper function to render subrace deity recommendations
+    renderSubraceDeityRecommendations(raceName, subraceName) {
+        const subraceDeities = this.deityRelationshipsData.filter(rel =>
+            rel.race === raceName && rel.subrace === subraceName
+        );
+
+        if (subraceDeities.length === 0) {
+            return `
+                <div class="deity-recommendations">
+                    <h4>General Deity Recommendations for ${subraceName}</h4>
+                    <p>While no specific deity relationships are recorded for this subrace, here are some general recommendations based on common racial characteristics:</p>
+                    <div class="deity-group">
+                        <h5>Universal Deities</h5>
+                        <p><strong>Primary:</strong> Tymora (Luck), Lathander (Renewal), Selûne (Guidance)</p>
+                        <p><strong>Secondary:</strong> Mystra (Magic), Tempus (War), Kelemvor (Death)</p>
+                        <p><em>These deities are commonly worshiped across all races in Alabastria and can provide guidance for any character.</em></p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Group by continent
+        const continentGroups = {};
+        subraceDeities.forEach(rel => {
+            if (!continentGroups[rel.continent]) {
+                continentGroups[rel.continent] = {
+                    continent: rel.continent,
+                    primaryDeities: [],
+                    secondaryDeities: []
+                };
+            }
+            continentGroups[rel.continent].primaryDeities.push(...rel.primary_deities);
+            continentGroups[rel.continent].secondaryDeities.push(...rel.secondary_deities);
+        });
+
+        return `
+            <div class="deity-recommendations">
+                <p style="margin-bottom: 1rem; font-style: italic;">
+                    The following deities are specifically favored by ${subraceName} based on their unique characteristics and cultural values.
+                </p>
+                
+                ${Object.values(continentGroups).map(group => `
+                    <details class="continent-deity-group">
+                        <summary class="continent-summary">
+                            <strong>${group.continent}</strong>
+                            <span class="deity-count">${[...new Set(group.primaryDeities)].length} primary, ${[...new Set(group.secondaryDeities)].length} secondary</span>
+                        </summary>
+                        <div class="deity-group-content">
+                            <div class="primary-deities-section">
+                                <h4>Primary Deities</h4>
+                                <div class="deity-tags">
+                                    ${[...new Set(group.primaryDeities)].map(deity => `
+                                        <span class="deity-tag primary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
+                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="secondary-deities-section">
+                                <h4>Secondary Deities</h4>
+                                <div class="deity-tags">
+                                    ${[...new Set(group.secondaryDeities)].map(deity => `
+                                        <span class="deity-tag secondary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
+                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="reasoning-section">
+                                <h4>Why These Deities?</h4>
+                                <p>${subraceDeities.find(rel => rel.continent === group.continent)?.reasoning || 'Cultural and environmental factors influence deity preferences.'}</p>
+                            </div>
+                        </div>
+                    </details>
+                `).join('')}
             </div>
         `;
     },
@@ -2797,6 +4294,91 @@ const app = {
                     </div>
                 </details>
             ` : ''}
+            
+            <details>
+                <summary>Deity Recommendations</summary>
+                <div class="details-content-inner">
+                    ${this.renderClassDeityRecommendations(classData.class)}
+                </div>
+            </details>
+        `;
+    },
+
+    // Helper function to render class deity recommendations
+    renderClassDeityRecommendations(className) {
+        const classDeities = this.deityRelationshipsData.filter(rel => rel.class === className);
+
+        if (classDeities.length === 0) {
+            return `
+                <div class="deity-recommendations">
+                    <h4>General Deity Recommendations for ${className}</h4>
+                    <p>While no specific deity relationships are recorded for this class, here are some general recommendations based on common class characteristics:</p>
+                    <div class="deity-group">
+                        <h5>Universal Deities</h5>
+                        <p><strong>Primary:</strong> Tymora (Luck), Lathander (Renewal), Selûne (Guidance)</p>
+                        <p><strong>Secondary:</strong> Mystra (Magic), Tempus (War), Kelemvor (Death)</p>
+                        <p><em>These deities are commonly worshiped across all classes in Alabastria and can provide guidance for any character.</em></p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Group by subclass
+        const subclassGroups = {};
+        classDeities.forEach(rel => {
+            const key = rel.subclass || 'General';
+            if (!subclassGroups[key]) {
+                subclassGroups[key] = {
+                    subclass: rel.subclass,
+                    primaryDeities: [],
+                    secondaryDeities: []
+                };
+            }
+            subclassGroups[key].primaryDeities.push(...rel.primary_deities);
+            subclassGroups[key].secondaryDeities.push(...rel.secondary_deities);
+        });
+
+        return `
+            <div class="deity-recommendations">
+                <p style="margin-bottom: 1rem; font-style: italic;">The following deities are commonly favored by ${className} based on their class abilities and philosophical alignment.</p>
+                
+                ${Object.values(subclassGroups).map(group => `
+                    <details class="subclass-deity-group">
+                        <summary class="subclass-summary">
+                            <strong>${group.subclass || 'General'}</strong>
+                            <span class="deity-count">${[...new Set(group.primaryDeities)].length} primary, ${[...new Set(group.secondaryDeities)].length} secondary</span>
+                        </summary>
+                        <div class="deity-group-content">
+                            <div class="primary-deities-section">
+                                <h4>Primary Deities</h4>
+                                <div class="deity-tags">
+                                    ${[...new Set(group.primaryDeities)].map(deity => `
+                                        <span class="deity-tag primary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
+                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="secondary-deities-section">
+                                <h4>Secondary Deities</h4>
+                                <div class="deity-tags">
+                                    ${[...new Set(group.secondaryDeities)].map(deity => `
+                                        <span class="deity-tag secondary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
+                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="reasoning-section">
+                                <h4>Why These Deities?</h4>
+                                <p>${classDeities.find(rel => (rel.subclass || 'General') === (group.subclass || 'General'))?.reasoning || 'Class abilities and philosophical alignment influence deity preferences.'}</p>
+                            </div>
+                        </div>
+                    </details>
+                `).join('')}
+            </div>
         `;
     },
 

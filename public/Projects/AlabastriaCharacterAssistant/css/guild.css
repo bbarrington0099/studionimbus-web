@@ -262,7 +262,7 @@
 }
 
 .status-primary {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
 }
 
@@ -399,7 +399,7 @@
 
 .member-managed {
     font-size: 0.9rem;
-    color: var(--forest-green);
+    color: var(--glass-bg);
     font-style: italic;
     font-weight: 600;
     margin-top: 0.5rem;
@@ -487,7 +487,7 @@
 /* ===== QUEST PARTICIPATION ===== */
 .quest-participation {
     margin: 1rem 0;
-    border: 1px solid var(--forest-green);
+    border: 1px solid var(--glass-bg);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -497,7 +497,7 @@
     background: rgba(74, 93, 35, 0.1);
     cursor: pointer;
     font-weight: 600;
-    color: var(--forest-green);
+    color: var(--glass-bg);
     transition: var(--transition);
 }
 
@@ -508,7 +508,7 @@
 .quest-participation-item {
     margin: 0.5rem 0;
     padding: 0.5rem;
-    border: 1px solid var(--forest-green);
+    border: 1px solid var(--glass-bg);
     border-radius: 4px;
     background: rgba(74, 93, 35, 0.1);
 }
@@ -523,6 +523,6 @@
 
 .quest-participation-role {
     font-size: 0.9rem;
-    color: var(--forest-green);
+    color: var(--glass-bg);
     margin-top: 0.3rem;
 }

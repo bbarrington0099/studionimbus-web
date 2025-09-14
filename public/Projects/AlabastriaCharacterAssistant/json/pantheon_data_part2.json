@@ -1,0 +1,358 @@
+[
+  {
+    "pantheon": "Elves – The Seldarine & Dark Seldarine",
+    "description": "The traditional pantheon of elven civilization, centered around Corellon Larethian and his family. These gods represent the core values of elven society: art, magic, and nature.",
+    "symbol": "fas fa-moon",
+    "deities": [
+      {
+        "name": "Corellon Larethian",
+        "title": "Creator of the Elves",
+        "domains": [
+          "Elves",
+          "Art",
+          "Magic",
+          "Music"
+        ],
+        "alignment": "Chaotic Good",
+        "symbol": "fas fa-palette",
+        "description": "The chief god of the elves and the creator of the elven race. He represents art, magic, and the creative spirit.",
+        "alabastria_context": "Corellon's influence is strongest among elven communities and artists. His followers are often found among bards, wizards, and those who create beautiful things.",
+        "followers": [
+          "Elves",
+          "Artists",
+          "Bards",
+          "Wizards",
+          "Creators"
+        ],
+        "holy_days": [
+          "Art's Blessing",
+          "Creation's Call"
+        ],
+        "temples": "Art galleries and magical academies",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among elven settlers who sought to establish their art and magic in the new world, with his temples serving as centers of creativity and magic.",
+          "100-300_cycles": "Became the patron of elven communities across all continents, with his temples serving as centers of art and magic.",
+          "300-600_cycles": "Established the most prestigious magical and artistic institutions in Alabastria, with his followers being the primary creators and magical researchers across all continents.",
+          "600-800_cycles": "Currently maintains the most extensive network of art and magic in Alabastria, with his followers being the primary artists and magical researchers across all continents."
+        },
+        "allies": [
+          "Mystra",
+          "Selûne",
+          "Lathander"
+        ],
+        "conflicts": [
+          "Lolth",
+          "Bane",
+          "Cyric"
+        ],
+        "symbols": [
+          "Silver crescent",
+          "Artistic brush",
+          "Musical note",
+          "Elven rune",
+          "Crescent moon"
+        ],
+        "colors": [
+          "Silver",
+          "Blue",
+          "White",
+          "Gold"
+        ]
+      },
+      {
+        "name": "Sehanine Moonbow",
+        "title": "Goddess of Dreams",
+        "domains": [
+          "Dreams",
+          "Journeys",
+          "Death",
+          "Mysteries"
+        ],
+        "alignment": "Chaotic Good",
+        "symbol": "fas fa-moon",
+        "description": "The goddess of dreams, journeys, and mysteries. She represents the elven connection to the ethereal and the unknown.",
+        "alabastria_context": "Sehanine's influence is strongest among elven rangers and those who journey. Her followers are often found among rangers, druids, and those who explore the unknown.",
+        "followers": [
+          "Elven Rangers",
+          "Druids",
+          "Explorers",
+          "Dreamers"
+        ],
+        "holy_days": [
+          "Dream's Blessing",
+          "Journey's Call"
+        ],
+        "temples": "Forest shrines and journey markers",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among elven rangers who sought to explore the new world, with her temples serving as centers of dreams and journeys.",
+          "100-300_cycles": "Became the patron of elven rangers across all continents, with her temples serving as centers of exploration and dreams.",
+          "300-600_cycles": "Established the most extensive network of exploration and dreams in Alabastria, with her followers being the primary rangers and explorers across all continents.",
+          "600-800_cycles": "Currently maintains the most extensive network of exploration and dreams in Alabastria, with her followers being the primary rangers and explorers across all continents."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "moon"
+        ],
+        "colors": [
+          "Silver",
+          "White"
+        ]
+      },
+      {
+        "name": "Hanali Celanil",
+        "title": "Goddess of Love",
+        "domains": [
+          "Love",
+          "Beauty",
+          "Romance",
+          "Art"
+        ],
+        "alignment": "Chaotic Good",
+        "symbol": "fas fa-heart",
+        "description": "The goddess of love, beauty, and romance. She represents the elven appreciation for beauty and love.",
+        "alabastria_context": "Hanali's influence is strongest among elven communities and those who appreciate beauty. Her followers are often found among artists, lovers, and those who seek beauty.",
+        "followers": [
+          "Elven Artists",
+          "Lovers",
+          "Beauty Seekers",
+          "Romantics"
+        ],
+        "holy_days": [
+          "Love's Blessing",
+          "Beauty's Call"
+        ],
+        "temples": "Gardens and art galleries",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among elven communities who sought to maintain their culture of beauty and love in the new world, with her temples serving as centers of love and beauty.",
+          "100-300_cycles": "Became the patron of elven communities across all continents, with her temples serving as centers of love and beauty.",
+          "300-600_cycles": "Established the most extensive network of love and beauty in Alabastria, with her followers being the primary artists and lovers across all continents.",
+          "600-800_cycles": "Currently maintains the most extensive network of love and beauty in Alabastria, with her followers being the primary artists and lovers across all continents."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "heart"
+        ],
+        "colors": [
+          "Gold",
+          "Pink"
+        ]
+      },
+      {
+        "name": "Labelas Enoreth",
+        "title": "God of Time",
+        "domains": [
+          "Time",
+          "Wisdom",
+          "Longevity",
+          "Memory"
+        ],
+        "alignment": "Neutral Good",
+        "symbol": "fas fa-clock",
+        "description": "The god of time, wisdom, and longevity. He represents the elven connection to time and memory.",
+        "alabastria_context": "Labelas's influence is strongest among elven scholars and those who study history. His followers are often found among historians, scholars, and those who seek wisdom.",
+        "followers": [
+          "Elven Scholars",
+          "Historians",
+          "Wisdom Seekers",
+          "Memory Keepers"
+        ],
+        "holy_days": [
+          "Time's Blessing",
+          "Wisdom's Call"
+        ],
+        "temples": "Libraries and historical sites",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among elven scholars who sought to record the history of The Bringing, with his temples serving as centers of time and wisdom.",
+          "100-300_cycles": "Became the patron of elven scholars across all continents, with his temples serving as centers of time and wisdom.",
+          "300-600_cycles": "Established the most extensive network of time and wisdom in Alabastria, with his followers being the primary historians and scholars across all continents.",
+          "600-800_cycles": "Currently maintains the most extensive network of time and wisdom in Alabastria, with his followers being the primary historians and scholars across all continents."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "clock"
+        ],
+        "colors": [
+          "Gold",
+          "Silver"
+        ]
+      },
+      {
+        "name": "Solonor Thelandira",
+        "title": "God of Archery",
+        "domains": [
+          "Archery",
+          "Wilderness",
+          "Hunting",
+          "Nature"
+        ],
+        "alignment": "Chaotic Good",
+        "symbol": "fas fa-bow-arrow",
+        "description": "The god of archery, wilderness, and hunting. He represents the elven connection to nature and the hunt.",
+        "alabastria_context": "Solonor's influence is strongest among elven rangers and hunters. His followers are often found among rangers, hunters, and those who live in the wilderness.",
+        "followers": [
+          "Elven Rangers",
+          "Hunters",
+          "Wilderness Dwellers",
+          "Archers"
+        ],
+        "holy_days": [
+          "Archery's Blessing",
+          "Hunt's Call"
+        ],
+        "temples": "Forest shrines and hunting lodges",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among elven rangers who sought to hunt and explore the new world, with his temples serving as centers of archery and hunting.",
+          "100-300_cycles": "Became the patron of elven rangers across all continents, with his temples serving as centers of archery and hunting.",
+          "300-600_cycles": "Established the most extensive network of archery and hunting in Alabastria, with his followers being the primary rangers and hunters across all continents.",
+          "600-800_cycles": "Currently maintains the most extensive network of archery and hunting in Alabastria, with his followers being the primary rangers and hunters across all continents."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "bow arrow"
+        ],
+        "colors": [
+          "Green",
+          "Brown"
+        ]
+      },
+      {
+        "name": "Lolth",
+        "title": "Spider Queen",
+        "domains": [
+          "Spiders",
+          "Lies",
+          "Domination",
+          "Darkness"
+        ],
+        "alignment": "Chaotic Evil",
+        "symbol": "fas fa-spider",
+        "description": "The goddess of spiders, lies, and domination. She represents the dark side of elven society and the power of deception.",
+        "alabastria_context": "Lolth's influence is strongest among dark elves and those who seek power through deception. Her followers are often found among drow, rogues, and those who deal in lies.",
+        "followers": [
+          "Drow",
+          "Rogues",
+          "Deceivers",
+          "Power Seekers"
+        ],
+        "holy_days": [
+          "Spider's Blessing",
+          "Deception's Call"
+        ],
+        "temples": "Underground shrines and dark places",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among dark elves who sought to establish their power in the new world, with her temples serving as centers of deception and domination.",
+          "100-300_cycles": "Became the patron of dark elves across all continents, with her temples serving as centers of deception and domination.",
+          "300-600_cycles": "Established a network of deception and domination across all continents, with her followers being the primary deceivers and power seekers across all continents.",
+          "600-800_cycles": "Currently maintains a network of deception and domination in Alabastria, with her followers being the primary deceivers and power seekers across all continents."
+        },
+        "allies": [
+          "Bane",
+          "Cyric",
+          "Shar"
+        ],
+        "conflicts": [
+          "Corellon Larethian",
+          "Lathander",
+          "Mystra"
+        ],
+        "symbols": [
+          "Spider",
+          "Web",
+          "Drow symbol",
+          "Eight-pointed star",
+          "Spider web"
+        ],
+        "colors": [
+          "Black",
+          "Purple",
+          "Silver",
+          "Red"
+        ]
+      },
+      {
+        "name": "Vhaeraun",
+        "title": "God of Shadow",
+        "domains": [
+          "Shadow",
+          "Rebellion",
+          "Thievery",
+          "Secrets"
+        ],
+        "alignment": "Chaotic Evil",
+        "symbol": "fas fa-mask",
+        "description": "The god of shadow, rebellion, and thievery. He represents the rebellious and thieving aspects of dark elven society.",
+        "alabastria_context": "Vhaeraun's influence is strongest among dark elves and those who rebel against authority. His followers are often found among rogues, rebels, and those who deal in shadows.",
+        "followers": [
+          "Dark Elves",
+          "Rogues",
+          "Rebels",
+          "Thieves"
+        ],
+        "holy_days": [
+          "Shadow's Blessing",
+          "Rebellion's Call"
+        ],
+        "temples": "Hidden shrines and secret meeting places",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among dark elves who sought to rebel against the new world order, with his temples serving as centers of shadow and rebellion.",
+          "100-300_cycles": "Became the patron of dark elves across all continents, with his temples serving as centers of shadow and rebellion.",
+          "300-600_cycles": "Established a network of shadow and rebellion across all continents, with his followers being the primary rebels and thieves across all continents.",
+          "600-800_cycles": "Currently maintains a network of shadow and rebellion in Alabastria, with his followers being the primary rebels and thieves across all continents."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "mask"
+        ],
+        "colors": [
+          "Red",
+          "Black"
+        ]
+      },
+      {
+        "name": "Eilistraee",
+        "title": "Goddess of Song",
+        "domains": [
+          "Song",
+          "Redemption",
+          "Dance",
+          "Beauty"
+        ],
+        "alignment": "Chaotic Good",
+        "symbol": "fas fa-music",
+        "description": "The goddess of song, redemption, and dance. She represents the hope for redemption among dark elves.",
+        "alabastria_context": "Eilistraee's influence is strongest among dark elves who seek redemption and those who appreciate music. Her followers are often found among bards, dancers, and those who seek redemption.",
+        "followers": [
+          "Redeemed Dark Elves",
+          "Bards",
+          "Dancers",
+          "Redemption Seekers"
+        ],
+        "holy_days": [
+          "Song's Blessing",
+          "Redemption's Call"
+        ],
+        "temples": "Music halls and dance studios",
+        "history_800_years": {
+          "0-100_cycles": "Gained followers among dark elves who sought redemption in the new world, with her temples serving as centers of song and redemption.",
+          "100-300_cycles": "Became the patron of redeemed dark elves across all continents, with her temples serving as centers of song and redemption.",
+          "300-600_cycles": "Established a network of song and redemption across all continents, with her followers being the primary bards and redemption seekers across all continents.",
+          "600-800_cycles": "Currently maintains a network of song and redemption in Alabastria, with her followers being the primary bards and redemption seekers across all continents."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "music"
+        ],
+        "colors": [
+          "Gold",
+          "Silver"
+        ]
+      }
+    ]
+  }
+]
