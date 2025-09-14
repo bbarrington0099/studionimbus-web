@@ -855,6 +855,12 @@ const app = {
                     <div class="race-stat">
                         <strong>Ability Scores:</strong> ${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}
                     </div>
+                    <div class="race-stat">
+                        <strong>Maturity:</strong> ${raceData.maturity_age}
+                    </div>
+                    <div class="race-stat">
+                        <strong>Lifespan:</strong> ${raceData.lifespan}
+                    </div>
                 </div>
                 <p class="race-playstyle">${raceData.playstyle}</p>
                 ${raceData.subraces && raceData.subraces.length > 0 ? `<div class="subrace-count">${raceData.subraces.length} subraces available</div>` : ''}
@@ -2294,6 +2300,12 @@ const app = {
                         </div>
                         <div class="race-stat">
                             <strong>Age:</strong> ${raceData.age}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Maturity Age:</strong> ${raceData.maturity_age}
+                        </div>
+                        <div class="race-stat">
+                            <strong>Lifespan:</strong> ${raceData.lifespan}
                         </div>
                         <div class="race-stat">
                             <strong>Alignment:</strong> ${raceData.alignment}

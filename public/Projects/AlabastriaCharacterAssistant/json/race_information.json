@@ -37,7 +37,9 @@
             "Monk",
             "Druid"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 3,
+        "lifespan": "30 years"
     },
     {
         "race": "Aasimar",
@@ -47,7 +49,7 @@
         "ability_score_increase": {
             "Charisma": 2
         },
-        "age": "Aasimar mature at the same rate as humans but live a few years longer.",
+        "age": "Aasimar mature at the same rate as humans but can live up to 160 years.",
         "alignment": "Aasimar are inclined toward good alignments. Not all aasimar are of good alignment, but very few are evil.",
         "languages": [
             "Common",
@@ -101,7 +103,7 @@
             },
             {
                 "name": "Scourge Aasimar",
-                "description": "Scourge aasimar are imbued with a divine energy that blazes intensely within them. It feeds a powerful desire to destroy evil—a desire that is, at its best, unflinching and, at its worst, all-consuming.",
+                "description": "Scourge aasimar are imbued with a divine energy that blazes intensely within them. It feeds a powerful desire to destroy evil\u2014a desire that is, at its best, unflinching and, at its worst, all-consuming.",
                 "ability_score_increase": {
                     "Constitution": 1
                 },
@@ -137,7 +139,9 @@
                 "alabastria_context": "Fallen Aasimar in Alabastria's shadowed corners struggle with their corrupted divine nature. Some seek redemption through the Huntbound Order, while others embrace their dark power to fight evil with evil.",
                 "playstyle": "Dark support with necrotic damage and intimidation. Ideal for players who want to play morally complex characters with dark powers."
             }
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "160 years"
     },
     {
         "race": "Autognome",
@@ -184,7 +188,9 @@
             "Cleric",
             "Fighter"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": "N/A (Construct)",
+        "lifespan": "Indefinite"
     },
     {
         "race": "Bugbear",
@@ -235,7 +241,9 @@
             "Fighter",
             "Barbarian"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 16,
+        "lifespan": "80 years"
     },
     {
         "race": "Centaur",
@@ -246,7 +254,7 @@
             "Strength": 2,
             "Wisdom": 1
         },
-        "age": "Centaurs mature and age at the same rate as humans.",
+        "age": "Centaurs mature and age at the same rate as humans, living about 100 years.",
         "alignment": "Centaurs are typically chaotic good, valuing freedom and nature.",
         "languages": [
             "Common",
@@ -282,7 +290,9 @@
             "Fighter",
             "Paladin"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Changeling",
@@ -325,7 +335,9 @@
             "Warlock",
             "Sorcerer"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 18,
+        "lifespan": "200 years"
     },
     {
         "race": "Dhampir",
@@ -372,7 +384,9 @@
             "Fighter",
             "Warlock"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 18,
+        "lifespan": "Centuries"
     },
     {
         "race": "Dragonborn",
@@ -383,7 +397,7 @@
             "Strength": 2,
             "Charisma": 1
         },
-        "age": "Dragonborn reach adulthood by age 15 and live to be around 80 years old.",
+        "age": "Dragonborn grow quickly, reaching adulthood by age 15 and living to be around 80 years old.",
         "alignment": "Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil.",
         "languages": [
             "Common",
@@ -464,7 +478,9 @@
                 "alabastria_context": "Gem Dragonborn in Kuriguer's magical academies and Skratonia's scholarly institutions study the mysteries of the mind. Their psionic heritage and intellectual abilities make them valuable researchers and strategists in the Huntbound Order.",
                 "playstyle": "Intellectual warriors with psionic abilities. Ideal for players who want to combine martial prowess with mental powers."
             }
-        ]
+        ],
+        "maturity_age": 15,
+        "lifespan": "80 years"
     },
     {
         "race": "Dwarf",
@@ -572,7 +588,9 @@
                 "alabastria_context": "Duergar in Maltman's deepest mines and Alatman's underground workshops serve as specialized craftsmen and spies. Their psionic abilities and Underdark knowledge make them valuable assets in the Huntbound Order's covert operations.",
                 "playstyle": "Psionic craftsmen with stealth abilities. Great for players who want to be magical craftsmen with unique abilities."
             }
-        ]
+        ],
+        "maturity_age": 50,
+        "lifespan": "350 years"
     },
     {
         "race": "Elf",
@@ -582,7 +600,7 @@
         "ability_score_increase": {
             "Dexterity": 2
         },
-        "age": "Elves mature at the same rate as humans but can live to be 750 years old.",
+        "age": "Elves mature at the same rate as humans physically, but are considered adults around 100 years old. They can live to be 750 years old.",
         "alignment": "Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own.",
         "languages": [
             "Common",
@@ -781,7 +799,9 @@
                 "alabastria_context": "Shadar-kai in Kuriguer's shadow-touched woods and Alabastria's darker regions serve as specialists against undead threats. Their shadow magic and death resistance make them valuable assets in the Huntbound Order's most dangerous missions.",
                 "playstyle": "Shadow magic users with death resistance. Perfect for players who want to be dark magical characters with unique abilities."
             }
-        ]
+        ],
+        "maturity_age": 100,
+        "lifespan": "750 years"
     },
     {
         "race": "Fairy",
@@ -824,7 +844,9 @@
             "Ranger",
             "Warlock"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 18,
+        "lifespan": "Centuries"
     },
     {
         "race": "Firbolg",
@@ -835,7 +857,7 @@
             "Wisdom": 2,
             "Strength": 1
         },
-        "age": "Firbolgs mature at the same rate as humans but can live for centuries.",
+        "age": "Firbolgs reach adulthood around 30 and can live up to 500 years.",
         "alignment": "Firbolgs are typically neutral good, valuing nature and protecting the innocent.",
         "languages": [
             "Common",
@@ -872,7 +894,9 @@
             "Ranger",
             "Barbarian"
         ],
-        "subraces": []
+        "subraces": [],
+        "maturity_age": 30,
+        "lifespan": "500 years"
     },
     {
         "race": "Genasi",
@@ -882,7 +906,7 @@
         "ability_score_increase": {
             "Constitution": 2
         },
-        "age": "Genasi mature at the same rate as humans but can live for centuries.",
+        "age": "Genasi mature at the same rate as humans but can live up to 120 years.",
         "alignment": "Genasi can be of any alignment, though they often reflect the nature of their elemental heritage.",
         "languages": [
             "Common",
@@ -1027,7 +1051,9 @@
                 "alabastria_context": "Water Genasi in Kuriguer's coastal waters and along Alabastria's shores serve as maritime specialists and water guardians. Their water magic and aquatic abilities make them excellent for coastal operations and water-based missions in the Huntbound Order.",
                 "playstyle": "Water magic users with aquatic abilities. Perfect for players who want to be water-based magical characters with unique movement options."
             }
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "120 years"
     },
     {
         "race": "Gnome",
@@ -1112,7 +1138,9 @@
                 "alabastria_context": "Rock Gnomes in Alabastria are found in the workshops and forges of Kamalatman, where their engineering skills are highly valued. They often work alongside Dwarves and Artificers to create mechanical devices and magical items.",
                 "playstyle": "Engineering-focused gnomes who excel at creating devices and understanding technology."
             }
-        ]
+        ],
+        "maturity_age": 40,
+        "lifespan": "500 years"
     },
     {
         "race": "Giff",
@@ -1154,7 +1182,9 @@
             "Ranger",
             "Paladin",
             "Barbarian"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Goblin",
@@ -1196,7 +1226,9 @@
             "Ranger",
             "Fighter",
             "Monk"
-        ]
+        ],
+        "maturity_age": 8,
+        "lifespan": "60 years"
     },
     {
         "race": "Goliath",
@@ -1242,7 +1274,9 @@
             "Fighter",
             "Ranger",
             "Monk"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Half-Elf",
@@ -1364,7 +1398,9 @@
                 "alabastria_context": "Wood Half-Elves in Alabastria are found in the forests of Kuriguer and the wilderness of Kamalatman, where their natural abilities make them excellent rangers and scouts.",
                 "playstyle": "Fast and stealthy characters who excel at wilderness survival and ranged combat."
             }
-        ]
+        ],
+        "maturity_age": 20,
+        "lifespan": "180 years"
     },
     {
         "race": "Half-Orc",
@@ -1406,7 +1442,9 @@
             "Fighter",
             "Ranger",
             "Rogue"
-        ]
+        ],
+        "maturity_age": 14,
+        "lifespan": "75 years"
     },
     {
         "race": "Halfling",
@@ -1416,7 +1454,7 @@
         "ability_score_increase": {
             "Dexterity": 2
         },
-        "age": "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
+        "age": "Halflings reach adulthood at age 20 and live up to 150 years.",
         "alignment": "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.",
         "languages": [
             "Common",
@@ -1506,7 +1544,9 @@
                 "alabastria_context": "Ghostwise Halflings in Alabastria are found in the remote regions of Kuriguer's forests, where their telepathic abilities make them excellent scouts and guides.",
                 "playstyle": "Telepathic halflings who excel at silent communication and wilderness survival."
             }
-        ]
+        ],
+        "maturity_age": 20,
+        "lifespan": "150 years"
     },
     {
         "race": "Harengon",
@@ -1542,7 +1582,7 @@
             },
             {
                 "name": "Rabbit Hop",
-                "description": "As a bonus action, you can jump a number of feet equal to 5 × your proficiency bonus, without provoking opportunity attacks. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                "description": "As a bonus action, you can jump a number of feet equal to 5 \u00d7 your proficiency bonus, without provoking opportunity attacks. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
             }
         ],
         "alabastria_lore": "Harengon in Alabastria are found primarily in the magical forests of Kuriguer, where their fey heritage and agility make them excellent scouts and messengers. They often serve as couriers for the Huntbound Order and guides through dangerous terrain.",
@@ -1552,7 +1592,9 @@
             "Ranger",
             "Monk",
             "Bard"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Hexblood",
@@ -1562,7 +1604,7 @@
         "ability_score_increase": {
             "Two ability scores": 1
         },
-        "age": "Hexbloods mature at the same rate as humans and live about as long.",
+        "age": "Hexbloods mature at the same rate as humans but can live up to 200 years due to their hag heritage.",
         "alignment": "Hexbloods can be of any alignment, but many lean toward chaotic due to their outsider status.",
         "languages": [
             "Common",
@@ -1593,7 +1635,9 @@
             "Sorcerer",
             "Wizard",
             "Ranger"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "200 years"
     },
     {
         "race": "Hobgoblin",
@@ -1635,7 +1679,9 @@
             "Paladin",
             "Ranger",
             "Wizard"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Human",
@@ -1787,7 +1833,9 @@
                 "alabastria_context": "Mark of Sentinel Humans in Alabastria are found in the Huntbound Order and other protective organizations, where their defensive abilities make them excellent guards and protectors.",
                 "playstyle": "Protection specialists with defensive magic and enhanced awareness."
             }
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Kalashtar",
@@ -1833,7 +1881,9 @@
             "Cleric",
             "Wizard",
             "Bard"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Kender",
@@ -1844,7 +1894,7 @@
             "Dexterity": 2,
             "Charisma": 1
         },
-        "age": "Kender reach adulthood at age 20 and live up to 200 years.",
+        "age": "Kender mature at the same rate as halflings, reaching adulthood around 20 and living up to 150 years.",
         "alignment": "Kender are typically chaotic good, as they value freedom and helping others.",
         "languages": [
             "Common",
@@ -1875,7 +1925,9 @@
             "Ranger",
             "Bard",
             "Fighter"
-        ]
+        ],
+        "maturity_age": 20,
+        "lifespan": "150 years"
     },
     {
         "race": "Kenku",
@@ -1886,7 +1938,7 @@
             "Dexterity": 2,
             "Wisdom": 1
         },
-        "age": "Kenku reach adulthood at age 12 and live up to 60 years.",
+        "age": "Kenku reach adulthood at 12 and live around 60 years.",
         "alignment": "Kenku are typically chaotic neutral, as they are driven by their own desires and instincts.",
         "languages": [
             "Common",
@@ -1917,7 +1969,9 @@
             "Ranger",
             "Bard",
             "Monk"
-        ]
+        ],
+        "maturity_age": 12,
+        "lifespan": "60 years"
     },
     {
         "race": "Kobold",
@@ -1927,7 +1981,7 @@
         "ability_score_increase": {
             "Dexterity": 2
         },
-        "age": "Kobolds reach adulthood at age 6 and live up to 120 years.",
+        "age": "Kobolds mature quickly, reaching adulthood by age 6, and can live up to 120 years.",
         "alignment": "Kobolds are typically lawful evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
         "languages": [
             "Common",
@@ -1958,7 +2012,9 @@
             "Ranger",
             "Fighter",
             "Wizard"
-        ]
+        ],
+        "maturity_age": 6,
+        "lifespan": "120 years"
     },
     {
         "race": "Leonin",
@@ -1969,7 +2025,7 @@
             "Strength": 2,
             "Constitution": 1
         },
-        "age": "Leonin reach adulthood at age 20 and live up to 80 years.",
+        "age": "Leonin mature at the same rate as humans and live about as long.",
         "alignment": "Leonin are typically lawful good, as they value honor, justice, and protecting the weak.",
         "languages": [
             "Common",
@@ -2004,7 +2060,9 @@
             "Paladin",
             "Barbarian",
             "Ranger"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Lizardfolk",
@@ -2015,7 +2073,7 @@
             "Constitution": 2,
             "Wisdom": 1
         },
-        "age": "Lizardfolk reach adulthood at age 14 and live up to 60 years.",
+        "age": "Lizardfolk reach adulthood around 14 and live up to 60 years.",
         "alignment": "Lizardfolk are typically neutral, as they care only for their own survival and the survival of their tribe.",
         "languages": [
             "Common",
@@ -2054,7 +2112,9 @@
             "Fighter",
             "Druid",
             "Barbarian"
-        ]
+        ],
+        "maturity_age": 14,
+        "lifespan": "60 years"
     },
     {
         "race": "Loxodon",
@@ -2065,7 +2125,7 @@
             "Constitution": 2,
             "Wisdom": 1
         },
-        "age": "Loxodon reach adulthood at age 20 and live up to 450 years.",
+        "age": "Loxodon mature at the same rate as humans and live about as long.",
         "alignment": "Loxodon are typically lawful good, as they value order, justice, and protecting others.",
         "languages": [
             "Common",
@@ -2100,7 +2160,9 @@
             "Fighter",
             "Paladin",
             "Monk"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Minotaur",
@@ -2111,7 +2173,7 @@
             "Strength": 2,
             "Constitution": 1
         },
-        "age": "Minotaurs reach adulthood at age 20 and live up to 100 years.",
+        "age": "Minotaurs mature at the same rate as humans and live about as long.",
         "alignment": "Minotaurs are typically chaotic neutral, as they value freedom and personal strength.",
         "languages": [
             "Common",
@@ -2146,7 +2208,9 @@
             "Fighter",
             "Ranger",
             "Paladin"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Orc",
@@ -2157,7 +2221,7 @@
             "Strength": 2,
             "Constitution": 1
         },
-        "age": "Orcs reach adulthood at age 12 and live up to 50 years.",
+        "age": "Orcs mature a little faster than humans, reaching adulthood around age 14, and rarely live longer than 75 years.",
         "alignment": "Orcs are typically chaotic evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
         "languages": [
             "Common",
@@ -2188,7 +2252,9 @@
             "Fighter",
             "Ranger",
             "Rogue"
-        ]
+        ],
+        "maturity_age": 14,
+        "lifespan": "75 years"
     },
     {
         "race": "Owlin",
@@ -2234,7 +2300,9 @@
             "Rogue",
             "Monk",
             "Cleric"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Plasmoid",
@@ -2284,7 +2352,9 @@
             "Ranger",
             "Monk",
             "Wizard"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Reborn",
@@ -2294,7 +2364,7 @@
         "ability_score_increase": {
             "Two ability scores": 1
         },
-        "age": "Reborn mature at the same rate as humans and live about as long.",
+        "age": "Reborn don't age naturally and can live indefinitely, though their original race's lifespan may still apply.",
         "alignment": "Reborn can be of any alignment, as their death and rebirth often changes their perspective on life.",
         "languages": [
             "Common",
@@ -2329,7 +2399,9 @@
             "Warlock",
             "Wizard",
             "Bard"
-        ]
+        ],
+        "maturity_age": "Variable",
+        "lifespan": "Indefinite"
     },
     {
         "race": "Satyr",
@@ -2340,7 +2412,7 @@
             "Dexterity": 2,
             "Charisma": 1
         },
-        "age": "Satyrs mature at the same rate as humans and live about as long.",
+        "age": "Satyrs mature at the same rate as humans but can live up to 200 years.",
         "alignment": "Satyrs are typically chaotic good, as they value freedom and joy.",
         "languages": [
             "Common",
@@ -2379,7 +2451,9 @@
             "Ranger",
             "Druid",
             "Rogue"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "200 years"
     },
     {
         "race": "Shifter",
@@ -2495,7 +2569,9 @@
                 "alabastria_context": "Wildhunt Shifters in Alabastria are found in the wilderness regions of Kuriguer and Kamalatman, where their enhanced senses make them excellent trackers and guides.",
                 "playstyle": "Wise and perceptive shifters who excel at tracking and wilderness survival."
             }
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Simic Hybrid",
@@ -2533,7 +2609,9 @@
             "Wizard",
             "Ranger",
             "Monk"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Tabaxi",
@@ -2544,7 +2622,7 @@
             "Dexterity": 2,
             "Charisma": 1
         },
-        "age": "Tabaxi reach adulthood at age 20 and live up to 100 years.",
+        "age": "Tabaxi mature at the same rate as humans and have lifespans equivalent to humans.",
         "alignment": "Tabaxi are typically chaotic good, as they value freedom and helping others.",
         "languages": [
             "Common",
@@ -2579,7 +2657,9 @@
             "Ranger",
             "Monk",
             "Bard"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Thri-kreen",
@@ -2590,7 +2670,7 @@
             "Dexterity": 2,
             "Wisdom": 1
         },
-        "age": "Thri-kreen reach adulthood at age 20 and live up to 100 years.",
+        "age": "Thri-kreen mature at the same rate as humans and live about as long.",
         "alignment": "Thri-kreen are typically lawful neutral, as they value order and efficiency.",
         "languages": [
             "Common",
@@ -2629,7 +2709,9 @@
             "Ranger",
             "Monk",
             "Rogue"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Tiefling",
@@ -2640,7 +2722,7 @@
             "Charisma": 2,
             "Intelligence": 1
         },
-        "age": "Tieflings mature at the same rate as humans and live about as long.",
+        "age": "Tieflings mature at the same rate as humans but live a few years longer, up to 120 years.",
         "alignment": "Tieflings are typically chaotic neutral, as they are driven by their own desires and instincts.",
         "languages": [
             "Common",
@@ -2817,7 +2899,9 @@
                 "alabastria_context": "Zariel Tieflings in Alabastria are found throughout all continents, often serving as advisors and spellcasters due to their infernal heritage and magical abilities.",
                 "playstyle": "Magical tieflings with infernal heritage and unique abilities."
             }
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "120 years"
     },
     {
         "race": "Tortle",
@@ -2828,7 +2912,7 @@
             "Strength": 2,
             "Wisdom": 1
         },
-        "age": "Tortles reach adulthood at age 15 and live up to 200 years.",
+        "age": "Tortles reach adulthood by age 15 and live to be around 50 years old.",
         "alignment": "Tortles are typically lawful good, as they value order, justice, and protecting others.",
         "languages": [
             "Common",
@@ -2867,7 +2951,9 @@
             "Druid",
             "Monk",
             "Paladin"
-        ]
+        ],
+        "maturity_age": 15,
+        "lifespan": "50 years"
     },
     {
         "race": "Triton",
@@ -2879,7 +2965,7 @@
             "Constitution": 1,
             "Charisma": 1
         },
-        "age": "Tritons reach adulthood at age 20 and live up to 200 years.",
+        "age": "Tritons reach maturity around 15 and can live up to 200 years.",
         "alignment": "Tritons are typically lawful good, as they value order, justice, and protecting others.",
         "languages": [
             "Common",
@@ -2918,7 +3004,9 @@
             "Cleric",
             "Ranger",
             "Fighter"
-        ]
+        ],
+        "maturity_age": 15,
+        "lifespan": "200 years"
     },
     {
         "race": "Vedalken",
@@ -2929,7 +3017,7 @@
             "Intelligence": 2,
             "Wisdom": 1
         },
-        "age": "Vedalken reach adulthood at age 20 and live up to 350 years.",
+        "age": "Vedalken mature at the same rate as humans and live about as long.",
         "alignment": "Vedalken are typically lawful neutral, as they value order, logic, and efficiency.",
         "languages": [
             "Common",
@@ -2964,7 +3052,9 @@
             "Artificer",
             "Cleric",
             "Bard"
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "100 years"
     },
     {
         "race": "Warforged",
@@ -2975,7 +3065,7 @@
             "Constitution": 2,
             "One other ability score": 1
         },
-        "age": "Warforged reach adulthood at age 20 and live up to 200 years.",
+        "age": "Warforged don't age and can live indefinitely if properly maintained.",
         "alignment": "Warforged can be of any alignment, as they are driven by their own choices and experiences.",
         "languages": [
             "Common",
@@ -3010,7 +3100,9 @@
             "Paladin",
             "Ranger",
             "Artificer"
-        ]
+        ],
+        "maturity_age": "N/A (Construct)",
+        "lifespan": "Indefinite"
     },
     {
         "race": "Yuan-ti",
@@ -3021,7 +3113,7 @@
             "Charisma": 2,
             "Intelligence": 1
         },
-        "age": "Yuan-ti reach adulthood at age 20 and live up to 200 years.",
+        "age": "Yuan-ti mature at the same rate as humans and live up to 120 years.",
         "alignment": "Yuan-ti are typically chaotic evil, as they care only for their own needs and are willing to use any means to achieve their goals.",
         "languages": [
             "Common",
@@ -3075,6 +3167,8 @@
                 "alabastria_context": "Pureblood Yuan-ti in Alabastria are found throughout all continents, often serving as spies and infiltrators due to their human-like appearance and magical abilities.",
                 "playstyle": "Human-like yuan-ti with magical abilities and infiltration skills."
             }
-        ]
+        ],
+        "maturity_age": 18,
+        "lifespan": "120 years"
     }
 ]
