@@ -1013,9 +1013,9 @@ p {
 }
 
 .relationship-name.primary {
-    background: rgba(61, 90, 42, 0.2);
-    color: var(--glass-bg);
-    border: 1px solid var(--glass-bg);
+    background: rgba(44, 79, 107, 0.2);
+    color: var(--ocean-blue);
+    border: 1px solid var(--ocean-blue);
 }
 
 .relationship-name.secondary {
@@ -1060,12 +1060,12 @@ p {
 
 .darkMode .relationship-name.primary {
     background: var(--glass-bg);
-    color: var(--parchment-light);
-    border-color: var(--glass-bg);
+    color: var(--ice-blue);
+    border-color: var(--ice-blue);
 }
 
 .darkMode .relationship-name.secondary {
-    background: rgba(44, 79, 107, 0.3);
+    background: var(--glass-bg);
     color: var(--ice-blue);
     border-color: var(--ice-blue);
 }
