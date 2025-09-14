@@ -34,7 +34,7 @@
 
     /* UI Colors */
     --accent-color: var(--ocean-blue);
-    --success-color: var(--forest-green);
+    --success-color: var(--glass-bg);
     --warning-color: var(--gold-accent);
     --danger-color: var(--volcanic-red);
     --border-radius: 12px;
@@ -191,7 +191,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     width: 8px;
 }
 
@@ -773,7 +773,7 @@ img.no-fullscreen:hover {
 }
 
 .name-tag {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     padding: 0.3rem 0.6rem;
     border-radius: 15px;
@@ -848,7 +848,7 @@ img.no-fullscreen:hover {
 }
 
 .copy-notification-content {
-    background: var(--forest-green);
+    background: var(--glass-bg);
     color: var(--parchment-light);
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius);

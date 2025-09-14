@@ -45,6 +45,14 @@ Alabastria is a custom D&D 5e world where countless races from different planes 
 - **Guild Staff**: Non-combat personnel who keep the guild running
 - **Quest Reports**: Official records of completed missions and legendary hunts
 
+### ⚡ **Deity Relationships System**
+- **Comprehensive Pantheon**: Complete information about all deities in Alabastria
+- **Deity Relationships**: Detailed connections between deities and races, continents, and classes
+- **Alignment Filtering**: Filter deities by alignment (Lawful Good, Chaotic Evil, etc.)
+- **Interactive Deity Cards**: Click on any deity to see their relationships and lore
+- **Pantheon Organization**: Deities organized by their respective pantheons
+- **Relationship Reasoning**: Detailed explanations for why certain deities are connected to specific races, continents, or classes
+
 ### 🎨 **User Experience**
 - **Dark/Light Mode**: Toggle between color schemes
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
@@ -84,7 +92,12 @@ AlabastriaCharacterAssistant/
 │   ├── playstyle_guide.json       # Character creation guidance
 │   ├── guild_members.json         # Guild member profiles
 │   ├── guild_staff.json           # Guild staff information
-│   └── quest_reports.json         # Quest and mission records
+│   ├── quest_reports.json         # Quest and mission records
+│   ├── pantheon_data.json         # Deity information (part 1)
+│   ├── pantheon_data_part2.json   # Deity information (part 2)
+│   ├── pantheon_data_part3.json   # Deity information (part 3)
+│   ├── pantheon_data_part4.json   # Deity information (part 4)
+│   └── deity_relationships.json   # Deity-race-continent-class relationships
 ├── continent_images/      # World map and continent images
 ├── memberImages/         # Guild member portraits
 ├── staffImages/          # Guild staff portraits
@@ -116,7 +129,14 @@ AlabastriaCharacterAssistant/
 - Learn about ability score priorities and complexity levels
 - Find the perfect class for your character concept
 
-### 5. **Explore Guild Lore**
+### 5. **Explore Deity Relationships**
+- Click "Gods & Pantheons" to explore the divine powers of Alabastria
+- Browse deities by pantheon or use the alignment filter
+- Click on any deity to see their detailed relationships
+- Learn how different deities connect to races, continents, and classes
+- Understand the divine influence on character creation choices
+
+### 6. **Explore Guild Lore**
 - Navigate to the Guild History section
 - Learn about The Huntbound Order and its members
 - Read quest reports and legendary hunts
@@ -130,6 +150,8 @@ The application features a sophisticated relationship system that shows connecti
 - Classes and the races that work best with them
 - Subclasses and their continental origins
 - Guild members and their quest participation
+- Deities and their connections to races, continents, and classes
+- Pantheon members and their divine relationships
 
 ### **Rich Lore Integration**
 Every piece of information is contextualized within the Alabastria setting:
@@ -173,6 +195,23 @@ All data is based on official D&D 5e content with custom Alabastria lore:
 - **Classes**: Complete class information with Alabastria context
 - **World Building**: Original Alabastria setting and lore
 - **Guild System**: Custom organization with detailed backstory
+- **Deities**: Comprehensive pantheon system with relationship mapping
+
+## 🔄 Recent Updates
+
+### **Deity Relationships System (Latest)**
+- ✅ Added comprehensive deity relationships database
+- ✅ Implemented alignment-based filtering for deities
+- ✅ Created interactive deity cards with detailed relationship information
+- ✅ Added relationship reasoning for all deity connections
+- ✅ Ensured every deity has at least one recorded relationship
+- ✅ Fixed JSON syntax issues for proper data loading
+
+### **Previous Improvements**
+- ✅ Removed search bar from deity relationships section
+- ✅ Streamlined alignment filtering functionality
+- ✅ Enhanced user interface for better deity exploration
+- ✅ Improved data integrity and validation
 
 ## 🤝 Contributing
 

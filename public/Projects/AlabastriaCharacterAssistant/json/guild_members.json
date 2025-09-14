@@ -8,6 +8,12 @@
         "image": "Tharos_Raggenthraw.png",
         "status": "Active",
         "specialization": "Monster Hunting Leadership",
-        "notable_achievements": ["Founded the Huntbound Order", "Slayed the Terror Wyvern of Skratonia", "United diverse adventurers under one cause"]
+        "notable_achievements": [
+            "Founded the Huntbound Order",
+            "Slayed the Terror Wyvern of Skratonia",
+            "United diverse adventurers under one cause"
+        ],
+        "deity": "Tempus",
+        "deity_reasoning": "As a War Domain Cleric and founder of the Huntbound Order, Tharos follows Tempus, the Lord of Battles, who represents honor, strategy, and the glory of combat."
     }
 ]

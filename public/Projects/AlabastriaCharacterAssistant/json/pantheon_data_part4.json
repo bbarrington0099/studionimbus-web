@@ -1,0 +1,1224 @@
+[
+    {
+        "pantheon": "Death & Shadow Powers",
+        "description": "The mysterious pantheon of death, fate, and shadow, worshiped by those who deal with the afterlife and hidden knowledge.",
+        "symbol": "fas fa-skull",
+        "deities": [
+            {
+                "name": "The Raven Queen",
+                "title": "Goddess of Fate and Death",
+                "domains": [
+                    "Death",
+                    "Fate",
+                    "Memory"
+                ],
+                "alignment": "Lawful Neutral",
+                "symbol": "fas fa-crow",
+                "followers": [
+                    "Shadar-kai",
+                    "Mourners",
+                    "Necromancers"
+                ],
+                "holy_days": [
+                    "Day of Remembrance",
+                    "Shadow Festival"
+                ],
+                "temple_type": "Shadow Sanctuaries",
+                "alabastria_context": "The Raven Queen's influence has been crucial for those dealing with death and memory in Alabastria, particularly among the Shadar-kai and those who mourn the lost.",
+                "history_800_years": {
+                    "years_0_200": "The Raven Queen's followers arrived in Alabastria as scattered Shadar-kai and mourners, seeking to understand death in a new world.",
+                    "years_200_400": "As death became more common in Alabastria, The Raven Queen's influence grew. Her followers became known for their wisdom about mortality and memory.",
+                    "years_400_600": "The Raven Queen's temples became centers of death rites and memory preservation, serving as sanctuaries for the grieving.",
+                    "years_600_800": "In modern times, The Raven Queen's followers have become respected advisors on death and fate throughout Alabastria."
+                },
+                "allies": [
+                    "Kelemvor",
+                    "Lathander",
+                    "Mystra"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Raven",
+                    "Crown",
+                    "Scythe",
+                    "Fate symbol",
+                    "Raven's crown"
+                ],
+                "colors": [
+                    "Black",
+                    "Silver",
+                    "White",
+                    "Purple"
+                ]
+            },
+            {
+                "name": "Asmodeus",
+                "title": "Lord of the Nine Hells",
+                "domains": [
+                    "Tyranny",
+                    "Infernal",
+                    "Contracts"
+                ],
+                "alignment": "Lawful Evil",
+                "symbol": "fas fa-crown",
+                "followers": [
+                    "Devils",
+                    "Tyrants",
+                    "Contract Lawyers"
+                ],
+                "holy_days": [
+                    "Day of Binding",
+                    "Infernal Solstice"
+                ],
+                "temple_type": "Infernal Fortresses",
+                "alabastria_context": "Asmodeus's influence in Alabastria has been subtle but persistent, with his followers often working through legal systems and contracts to gain power.",
+                "history_800_years": {
+                    "years_0_200": "Asmodeus's influence arrived in Alabastria through corrupted legal systems and binding contracts, establishing footholds in various settlements.",
+                    "years_200_400": "His followers began to infiltrate positions of power, using legal loopholes and binding agreements to advance their agendas.",
+                    "years_400_600": "Asmodeus's temples became centers of legal manipulation and contract enforcement, often serving as courts of last resort.",
+                    "years_600_800": "In modern times, Asmodeus's influence is strongest in areas with complex legal systems, where his followers manipulate laws and contracts for their own gain."
+                },
+                "allies": [
+                    "Bane",
+                    "Cyric",
+                    "Shar"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Devil's head",
+                    "Infernal symbol",
+                    "Crown",
+                    "Flame",
+                    "Crown of Asmodeus"
+                ],
+                "colors": [
+                    "Red",
+                    "Black",
+                    "Gold",
+                    "Crimson"
+                ]
+            }
+        ]
+    },
+    {
+        "pantheon": "Halfling – Yondalla's Children",
+        "description": "The warm and protective pantheon of halfling deities, focused on home, family, and community.",
+        "symbol": "fas fa-home",
+        "deities": [
+            {
+                "name": "Yondalla",
+                "title": "The Protector and Provider",
+                "domains": [
+                    "Fertility",
+                    "Protection",
+                    "Halflings"
+                ],
+                "alignment": "Lawful Good",
+                "symbol": "fas fa-shield-alt",
+                "followers": [
+                    "Halflings",
+                    "Farmers",
+                    "Families"
+                ],
+                "holy_days": [
+                    "Harvest Festival",
+                    "Family Day"
+                ],
+                "temple_type": "Home Shrines",
+                "alabastria_context": "Yondalla's influence has been essential for halfling communities in Alabastria, providing them with protection and prosperity in their new homes.",
+                "history_800_years": {
+                    "years_0_200": "Yondalla's followers arrived in Alabastria as scattered halfling families, seeking to establish new homes and communities.",
+                    "years_200_400": "As halfling communities grew, Yondalla's influence expanded. Her followers became known for their hospitality and protection of their families.",
+                    "years_400_600": "Yondalla's temples became centers of community life, serving as places of worship and family gatherings.",
+                    "years_600_800": "In modern times, Yondalla's followers have become respected community leaders and protectors throughout Alabastria."
+                },
+                "allies": [
+                    "Lathander",
+                    "Tymora",
+                    "Mystra"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Shield",
+                    "Home",
+                    "Halfling symbol",
+                    "Cornucopia",
+                    "Shield of protection"
+                ],
+                "colors": [
+                    "Green",
+                    "Brown",
+                    "Gold",
+                    "White"
+                ]
+            },
+            {
+                "name": "Arvoreen",
+                "title": "The Defender",
+                "domains": [
+                    "Defense",
+                    "Vigilance",
+                    "Guardianship"
+                ],
+                "alignment": "Lawful Good",
+                "symbol": "fas fa-shield",
+                "followers": [
+                    "Halfling Guards",
+                    "Defenders",
+                    "Vigilantes"
+                ],
+                "holy_days": [
+                    "Defense Day",
+                    "Vigilance Night"
+                ],
+                "temple_type": "Guard Posts",
+                "alabastria_context": "Arvoreen's influence has been crucial for halfling defense in Alabastria, teaching them to protect their communities from threats.",
+                "history_800_years": {
+                    "years_0_200": "Arvoreen's followers focused on protecting their communities in the dangerous new world of Alabastria.",
+                    "years_200_400": "As halfling communities faced threats, Arvoreen's influence grew. His followers became known for their defensive skills and vigilance.",
+                    "years_400_600": "Arvoreen's temples became centers of defense training, producing skilled halfling guards and defenders.",
+                    "years_600_800": "In modern times, Arvoreen's followers have become respected guards and defenders throughout Alabastria."
+                },
+                "allies": [
+                    "Lathander",
+                    "Tymora",
+                    "Yondalla"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Shield",
+                    "Sword",
+                    "Halfling symbol",
+                    "Defense symbol",
+                    "Shield of Arvoreen"
+                ],
+                "colors": [
+                    "Silver",
+                    "Blue",
+                    "White",
+                    "Gold"
+                ]
+            },
+            {
+                "name": "Cyrrollalee",
+                "title": "The Hearthkeeper",
+                "domains": [
+                    "Friendship",
+                    "Trust",
+                    "Hearth"
+                ],
+                "alignment": "Neutral Good",
+                "symbol": "fas fa-heart",
+                "followers": [
+                    "Halfling Hosts",
+                    "Friends",
+                    "Community Builders"
+                ],
+                "holy_days": [
+                    "Friendship Day",
+                    "Hearth Festival"
+                ],
+                "temple_type": "Community Centers",
+                "alabastria_context": "Cyrrollalee's influence has been essential for building halfling communities in Alabastria, fostering friendship and trust among neighbors.",
+                "history_800_years": {
+                    "years_0_200": "Cyrrollalee's followers focused on building friendships and trust in their new communities in Alabastria.",
+                    "years_200_400": "As halfling communities grew, Cyrrollalee's influence expanded. Her followers became known for their hospitality and community building.",
+                    "years_400_600": "Cyrrollalee's temples became centers of community life, fostering friendship and trust among neighbors.",
+                    "years_600_800": "In modern times, Cyrrollalee's followers have become respected community builders and hosts throughout Alabastria."
+                },
+                "allies": [
+                    "Yondalla",
+                    "Lathander",
+                    "Tymora"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Heart",
+                    "Handshake",
+                    "Home",
+                    "Friendship symbol",
+                    "Heart of friendship"
+                ],
+                "colors": [
+                    "Pink",
+                    "Gold",
+                    "White",
+                    "Green"
+                ]
+            },
+            {
+                "name": "Urogalan",
+                "title": "The Earth Lord",
+                "domains": [
+                    "Death",
+                    "Earth",
+                    "Burials"
+                ],
+                "alignment": "Lawful Neutral",
+                "symbol": "fas fa-mountain",
+                "followers": [
+                    "Halfling Gravediggers",
+                    "Earth Workers",
+                    "Mourners"
+                ],
+                "holy_days": [
+                    "Earth Day",
+                    "Burial Festival"
+                ],
+                "temple_type": "Graveyards",
+                "alabastria_context": "Urogalan's influence has been important for halfling burial practices in Alabastria, providing them with proper death rites and earth connection.",
+                "history_800_years": {
+                    "years_0_200": "Urogalan's followers focused on proper burial practices for their dead in the new world of Alabastria.",
+                    "years_200_400": "As halfling communities established themselves, Urogalan's influence grew. His followers became known for their earth connection and burial skills.",
+                    "years_400_600": "Urogalan's temples became centers of earth magic and burial rites, serving the needs of halfling communities.",
+                    "years_600_800": "In modern times, Urogalan's followers have become respected earth workers and burial specialists throughout Alabastria."
+                },
+                "allies": [
+                    "Kelemvor",
+                    "Lathander",
+                    "Mystra"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Mountain",
+                    "Shovel",
+                    "Grave",
+                    "Earth symbol",
+                    "Mountain of earth"
+                ],
+                "colors": [
+                    "Brown",
+                    "Gray",
+                    "Green",
+                    "Gold"
+                ]
+            }
+        ]
+    },
+    {
+        "pantheon": "Gnomes – Lords of the Golden Hills",
+        "description": "The playful and protective pantheon of gnome deities, focused on luck, protection, and trickery.",
+        "symbol": "fas fa-gem",
+        "deities": [
+            {
+                "name": "Garl Glittergold",
+                "title": "The Joker",
+                "domains": [
+                    "Luck",
+                    "Jokes",
+                    "Protection"
+                ],
+                "alignment": "Neutral Good",
+                "symbol": "fas fa-smile",
+                "followers": [
+                    "Gnomes",
+                    "Tricksters",
+                    "Protectors"
+                ],
+                "holy_days": [
+                    "Joke Day",
+                    "Luck Festival"
+                ],
+                "temple_type": "Playful Shrines",
+                "alabastria_context": "Garl Glittergold's influence has been essential for gnome communities in Alabastria, providing them with luck and protection through humor.",
+                "history_800_years": {
+                    "years_0_200": "Garl Glittergold's followers arrived in Alabastria as scattered gnomes, seeking to bring joy and luck to their new communities.",
+                    "years_200_400": "As gnome communities grew, Garl Glittergold's influence expanded. His followers became known for their humor and protective magic.",
+                    "years_400_600": "Garl Glittergold's temples became centers of joy and protection, serving as places of worship and community gathering.",
+                    "years_600_800": "In modern times, Garl Glittergold's followers have become respected entertainers and protectors throughout Alabastria."
+                },
+                "allies": [
+                    "Tymora",
+                    "Lathander",
+                    "Mystra"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Gold nugget",
+                    "Gem",
+                    "Pickaxe",
+                    "Gnome symbol",
+                    "Golden gem"
+                ],
+                "colors": [
+                    "Gold",
+                    "Green",
+                    "Blue",
+                    "Silver"
+                ]
+            },
+            {
+                "name": "Baervan Wildwanderer",
+                "title": "The Forest Walker",
+                "domains": [
+                    "Forests",
+                    "Travel",
+                    "Wild Places"
+                ],
+                "alignment": "Chaotic Good",
+                "symbol": "fas fa-tree",
+                "followers": [
+                    "Gnome Rangers",
+                    "Travelers",
+                    "Nature Lovers"
+                ],
+                "holy_days": [
+                    "Forest Day",
+                    "Travel Festival"
+                ],
+                "temple_type": "Forest Shrines",
+                "alabastria_context": "Baervan Wildwanderer's influence has been important for gnome rangers and travelers in Alabastria, helping them navigate the wild places.",
+                "history_800_years": {
+                    "years_0_200": "Baervan Wildwanderer's followers focused on exploring the wild places of Alabastria and establishing safe travel routes.",
+                    "years_200_400": "As gnome communities expanded, Baervan Wildwanderer's influence grew. His followers became known for their forest knowledge and travel skills.",
+                    "years_400_600": "Baervan Wildwanderer's temples became centers of forest magic and travel knowledge, serving rangers and travelers.",
+                    "years_600_800": "In modern times, Baervan Wildwanderer's followers have become respected rangers and guides throughout Alabastria."
+                },
+                "allies": [
+                    "Garl Glittergold",
+                    "Lathander",
+                    "Tymora"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Tree",
+                    "Leaf",
+                    "Path",
+                    "Nature symbol",
+                    "Tree of life"
+                ],
+                "colors": [
+                    "Green",
+                    "Brown",
+                    "Gold",
+                    "Silver"
+                ]
+            },
+            {
+                "name": "Baravar Cloakshadow",
+                "title": "The Shadow Walker",
+                "domains": [
+                    "Trickery",
+                    "Illusions",
+                    "Deception"
+                ],
+                "alignment": "Chaotic Neutral",
+                "symbol": "fas fa-mask",
+                "followers": [
+                    "Gnome Illusionists",
+                    "Tricksters",
+                    "Spies"
+                ],
+                "holy_days": [
+                    "Trick Day",
+                    "Shadow Festival"
+                ],
+                "temple_type": "Hidden Shrines",
+                "alabastria_context": "Baravar Cloakshadow's influence has been important for gnome illusionists and tricksters in Alabastria, teaching them the art of deception.",
+                "history_800_years": {
+                    "years_0_200": "Baravar Cloakshadow's followers focused on using illusions and trickery to survive in the dangerous new world of Alabastria.",
+                    "years_200_400": "As gnome communities established themselves, Baravar Cloakshadow's influence grew. His followers became known for their illusion skills and trickery.",
+                    "years_400_600": "Baravar Cloakshadow's temples became centers of illusion magic and trickery, serving illusionists and spies.",
+                    "years_600_800": "In modern times, Baravar Cloakshadow's followers have become respected illusionists and tricksters throughout Alabastria."
+                },
+                "allies": [
+                    "Garl Glittergold",
+                    "Tymora",
+                    "Lathander"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Mask",
+                    "Shadow",
+                    "Cloak",
+                    "Trickery symbol",
+                    "Shadow mask"
+                ],
+                "colors": [
+                    "Purple",
+                    "Black",
+                    "Silver",
+                    "Gold"
+                ]
+            },
+            {
+                "name": "Segojan Earthcaller",
+                "title": "The Earth Speaker",
+                "domains": [
+                    "Earth",
+                    "Burrows",
+                    "Deep Places"
+                ],
+                "alignment": "Neutral Good",
+                "symbol": "fas fa-mountain",
+                "followers": [
+                    "Gnome Miners",
+                    "Earth Workers",
+                    "Burrowers"
+                ],
+                "holy_days": [
+                    "Earth Day",
+                    "Burrow Festival"
+                ],
+                "temple_type": "Underground Shrines",
+                "alabastria_context": "Segojan Earthcaller's influence has been essential for gnome miners and earth workers in Alabastria, helping them work with the earth safely.",
+                "history_800_years": {
+                    "years_0_200": "Segojan Earthcaller's followers focused on mining and earth work in their new homes in Alabastria.",
+                    "years_200_400": "As gnome communities grew, Segojan Earthcaller's influence expanded. His followers became known for their earth magic and mining skills.",
+                    "years_400_600": "Segojan Earthcaller's temples became centers of earth magic and mining knowledge, serving miners and earth workers.",
+                    "years_600_800": "In modern times, Segojan Earthcaller's followers have become respected miners and earth workers throughout Alabastria."
+                },
+                "allies": [
+                    "Garl Glittergold",
+                    "Moradin",
+                    "Lathander"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Mountain",
+                    "Hammer",
+                    "Gem",
+                    "Earth symbol",
+                    "Mountain gem"
+                ],
+                "colors": [
+                    "Brown",
+                    "Gold",
+                    "Green",
+                    "Silver"
+                ]
+            }
+        ]
+    },
+    {
+        "pantheon": "Goblins – The Dark Gods",
+        "description": "The brutal and oppressive pantheon of goblinoid deities, focused on war, domination, and goblinoid supremacy.",
+        "symbol": "fas fa-skull-crossbones",
+        "deities": [
+            {
+                "name": "Maglubiyet",
+                "title": "The Mighty One",
+                "domains": [
+                    "War",
+                    "Domination",
+                    "Goblinoids"
+                ],
+                "alignment": "Lawful Evil",
+                "symbol": "fas fa-crown",
+                "followers": [
+                    "Goblins",
+                    "Hobgoblins",
+                    "Bugbears"
+                ],
+                "holy_days": [
+                    "Conquest Day",
+                    "Supremacy Festival"
+                ],
+                "temple_type": "War Camps",
+                "alabastria_context": "Maglubiyet's influence has been crucial for goblinoid survival in Alabastria, teaching them to dominate and conquer in the new world.",
+                "history_800_years": {
+                    "years_0_200": "Maglubiyet's followers arrived in Alabastria as scattered goblinoid tribes, seeking to establish dominance in the new world.",
+                    "years_200_400": "As goblinoid tribes organized, Maglubiyet's influence grew. His followers became known for their warfare and domination tactics.",
+                    "years_400_600": "Maglubiyet's temples became centers of goblinoid power, serving as bases for conquest and domination.",
+                    "years_600_800": "In modern times, Maglubiyet's followers have become feared warlords and conquerors throughout Alabastria."
+                },
+                "allies": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Goblin symbol",
+                    "Skull",
+                    "War axe",
+                    "Banner",
+                    "Goblin crown"
+                ],
+                "colors": [
+                    "Red",
+                    "Black",
+                    "Brown",
+                    "Yellow"
+                ]
+            },
+            {
+                "name": "Khurgorbaeyag",
+                "title": "The Slave Driver",
+                "domains": [
+                    "Slavery",
+                    "Tyranny",
+                    "Oppression"
+                ],
+                "alignment": "Lawful Evil",
+                "symbol": "fas fa-chain",
+                "followers": [
+                    "Goblin Slavers",
+                    "Tyrants",
+                    "Oppressors"
+                ],
+                "holy_days": [
+                    "Slavery Day",
+                    "Tyranny Festival"
+                ],
+                "temple_type": "Slave Pits",
+                "alabastria_context": "Khurgorbaeyag's influence has been important for goblinoid slavers in Alabastria, teaching them the art of oppression and control.",
+                "history_800_years": {
+                    "years_0_200": "Khurgorbaeyag's followers focused on enslaving and oppressing others in their new homes in Alabastria.",
+                    "years_200_400": "As goblinoid tribes established themselves, Khurgorbaeyag's influence grew. His followers became known for their slavery and oppression tactics.",
+                    "years_400_600": "Khurgorbaeyag's temples became centers of slavery and oppression, serving as bases for goblinoid control.",
+                    "years_600_800": "In modern times, Khurgorbaeyag's followers have become feared slavers and oppressors throughout Alabastria."
+                },
+                "allies": [
+                    "Maglubiyet",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Chain",
+                    "Whip",
+                    "Collar",
+                    "Slavery symbol",
+                    "Chain of slavery"
+                ],
+                "colors": [
+                    "Black",
+                    "Red",
+                    "Brown",
+                    "Gray"
+                ]
+            },
+            {
+                "name": "Bargrivyek",
+                "title": "The Peacekeeper",
+                "domains": [
+                    "Territory",
+                    "Cooperation",
+                    "Unity"
+                ],
+                "alignment": "Lawful Neutral",
+                "symbol": "fas fa-handshake",
+                "followers": [
+                    "Goblin Diplomats",
+                    "Peacemakers",
+                    "Unifiers"
+                ],
+                "holy_days": [
+                    "Unity Day",
+                    "Peace Festival"
+                ],
+                "temple_type": "Diplomatic Centers",
+                "alabastria_context": "Bargrivyek's influence has been rare but important for goblinoid cooperation in Alabastria, teaching them the value of unity and peace.",
+                "history_800_years": {
+                    "years_0_200": "Bargrivyek's followers focused on building cooperation and unity among goblinoid tribes in Alabastria.",
+                    "years_200_400": "As goblinoid tribes struggled with infighting, Bargrivyek's influence grew. His followers became known for their diplomatic skills and unity efforts.",
+                    "years_400_600": "Bargrivyek's temples became centers of goblinoid diplomacy, serving as places of negotiation and peace.",
+                    "years_600_800": "In modern times, Bargrivyek's followers have become respected diplomats and peacemakers among goblinoids in Alabastria."
+                },
+                "allies": [
+                    "Maglubiyet",
+                    "Lathander",
+                    "Tymora"
+                ],
+                "conflicts": [
+                    "Bane",
+                    "Cyric",
+                    "Talona"
+                ],
+                "symbols": [
+                    "Handshake",
+                    "Peace sign",
+                    "Unity symbol",
+                    "Goblin symbol",
+                    "Hand of peace"
+                ],
+                "colors": [
+                    "Green",
+                    "Gold",
+                    "White",
+                    "Blue"
+                ]
+            },
+            {
+                "name": "Nomog-Geaya",
+                "title": "The Authority",
+                "domains": [
+                    "Authority",
+                    "War",
+                    "Hobgoblins"
+                ],
+                "alignment": "Lawful Evil",
+                "symbol": "fas fa-gavel",
+                "followers": [
+                    "Hobgoblins",
+                    "Military Leaders",
+                    "Authorities"
+                ],
+                "holy_days": [
+                    "Authority Day",
+                    "War Festival"
+                ],
+                "temple_type": "Military Forts",
+                "alabastria_context": "Nomog-Geaya's influence has been crucial for hobgoblin military organization in Alabastria, teaching them the importance of authority and discipline.",
+                "history_800_years": {
+                    "years_0_200": "Nomog-Geaya's followers focused on establishing military authority and discipline among hobgoblin forces in Alabastria.",
+                    "years_200_400": "As hobgoblin military forces organized, Nomog-Geaya's influence grew. His followers became known for their military discipline and authority.",
+                    "years_400_600": "Nomog-Geaya's temples became centers of military training and authority, serving as bases for hobgoblin military forces.",
+                    "years_600_800": "In modern times, Nomog-Geaya's followers have become respected military leaders and authorities among hobgoblins in Alabastria."
+                },
+                "allies": [
+                    "Maglubiyet",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Gavel",
+                    "Crown",
+                    "Authority symbol",
+                    "Hobgoblin symbol",
+                    "Gavel of authority"
+                ],
+                "colors": [
+                    "Red",
+                    "Black",
+                    "Gold",
+                    "Silver"
+                ]
+            },
+            {
+                "name": "Kurtulmak",
+                "title": "The Kobold God",
+                "domains": [
+                    "Kobolds",
+                    "Traps",
+                    "Tunnels"
+                ],
+                "alignment": "Lawful Evil",
+                "symbol": "fas fa-hammer",
+                "followers": [
+                    "Kobolds",
+                    "Trap Makers",
+                    "Tunnelers"
+                ],
+                "holy_days": [
+                    "Trap Day",
+                    "Tunnel Festival"
+                ],
+                "temple_type": "Underground Lairs",
+                "alabastria_context": "Kurtulmak's influence has been essential for kobold survival in Alabastria, teaching them to build traps and tunnels for protection.",
+                "history_800_years": {
+                    "years_0_200": "Kurtulmak's followers focused on building underground lairs and traps for protection in their new homes in Alabastria.",
+                    "years_200_400": "As kobold communities established themselves, Kurtulmak's influence grew. His followers became known for their trap-making and tunneling skills.",
+                    "years_400_600": "Kurtulmak's temples became centers of kobold engineering, serving as bases for trap construction and tunnel networks.",
+                    "years_600_800": "In modern times, Kurtulmak's followers have become respected engineers and trap makers among kobolds in Alabastria."
+                },
+                "allies": [
+                    "Maglubiyet",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Kobold symbol",
+                    "Trap",
+                    "Dagger",
+                    "Small skull",
+                    "Kobold trap"
+                ],
+                "colors": [
+                    "Brown",
+                    "Red",
+                    "Black",
+                    "Yellow"
+                ]
+            }
+        ]
+    },
+    {
+        "pantheon": "Gith",
+        "description": "The unique pantheon of Gith deities, focused on freedom, vengeance, and the eternal struggle against mind flayers.",
+        "symbol": "fas fa-fist-raised",
+        "deities": [
+            {
+                "name": "Gith",
+                "title": "The Liberator",
+                "domains": [
+                    "Freedom",
+                    "Vengeance",
+                    "Liberation"
+                ],
+                "alignment": "Chaotic Good",
+                "symbol": "fas fa-fist-raised",
+                "followers": [
+                    "Githyanki",
+                    "Githzerai",
+                    "Liberators"
+                ],
+                "holy_days": [
+                    "Liberation Day",
+                    "Freedom Festival"
+                ],
+                "temple_type": "Liberation Shrines",
+                "alabastria_context": "Gith's influence has been crucial for Gith communities in Alabastria, teaching them the value of freedom and the importance of fighting against oppression.",
+                "history_800_years": {
+                    "years_0_200": "Gith's followers arrived in Alabastria as scattered Gith seeking freedom from their past oppression.",
+                    "years_200_400": "As Gith communities established themselves, Gith's influence grew. His followers became known for their fight for freedom and liberation.",
+                    "years_400_600": "Gith's temples became centers of liberation and freedom, serving as places of worship and resistance.",
+                    "years_600_800": "In modern times, Gith's followers have become respected freedom fighters and liberators throughout Alabastria."
+                },
+                "allies": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "conflicts": [
+                    "Vlaakith",
+                    "Bane",
+                    "Cyric"
+                ],
+                "symbols": [
+                    "Fist",
+                    "Sword",
+                    "Liberation symbol",
+                    "Gith symbol",
+                    "Fist of freedom"
+                ],
+                "colors": [
+                    "Silver",
+                    "Blue",
+                    "White",
+                    "Gold"
+                ]
+            },
+            {
+                "name": "Vlaakith",
+                "title": "The Lich-Queen",
+                "domains": [
+                    "Tyranny",
+                    "Undeath",
+                    "Githyanki"
+                ],
+                "alignment": "Lawful Evil",
+                "symbol": "fas fa-skull",
+                "followers": [
+                    "Githyanki",
+                    "Undead",
+                    "Tyrants"
+                ],
+                "holy_days": [
+                    "Tyranny Day",
+                    "Undeath Festival"
+                ],
+                "temple_type": "Undead Fortresses",
+                "alabastria_context": "Vlaakith's influence has been important for Githyanki communities in Alabastria, teaching them the power of tyranny and undeath.",
+                "history_800_years": {
+                    "years_0_200": "Vlaakith's followers focused on establishing tyrannical control over Githyanki communities in Alabastria.",
+                    "years_200_400": "As Githyanki communities organized, Vlaakith's influence grew. Her followers became known for their tyrannical rule and undead magic.",
+                    "years_400_600": "Vlaakith's temples became centers of tyranny and undeath, serving as bases for Githyanki control.",
+                    "years_600_800": "In modern times, Vlaakith's followers have become feared tyrants and undead masters among Githyanki in Alabastria."
+                },
+                "allies": [
+                    "Bane",
+                    "Cyric",
+                    "Shar"
+                ],
+                "conflicts": [
+                    "Gith",
+                    "Lathander",
+                    "Mystra"
+                ],
+                "symbols": [
+                    "Skull",
+                    "Crown",
+                    "Lich symbol",
+                    "Githyanki symbol",
+                    "Crown of undeath"
+                ],
+                "colors": [
+                    "Black",
+                    "Purple",
+                    "Silver",
+                    "Red"
+                ]
+            }
+        ]
+    },
+    {
+        "pantheon": "Yuan-Ti / Serpent Gods",
+        "description": "The ancient and mysterious pantheon of serpent deities, focused on ambition, secrecy, and corruption.",
+        "symbol": "fas fa-staff-snake",
+        "deities": [
+            {
+                "name": "Sseth",
+                "title": "The Serpent Lord",
+                "domains": [
+                    "Ambition",
+                    "Secrecy",
+                    "Deception"
+                ],
+                "alignment": "Chaotic Evil",
+                "symbol": "fas fa-eye",
+                "followers": [
+                    "Yuan-Ti",
+                    "Ambition Seekers",
+                    "Deceivers"
+                ],
+                "holy_days": [
+                    "Ambition Day",
+                    "Secrecy Festival"
+                ],
+                "temple_type": "Hidden Temples",
+                "alabastria_context": "Sseth's influence has been important for Yuan-Ti communities in Alabastria, teaching them the power of ambition and secrecy.",
+                "history_800_years": {
+                    "years_0_200": "Sseth's followers arrived in Alabastria as scattered Yuan-Ti seeking power and influence in the new world.",
+                    "years_200_400": "As Yuan-Ti communities established themselves, Sseth's influence grew. His followers became known for their ambition and secretive nature.",
+                    "years_400_600": "Sseth's temples became centers of ambition and secrecy, serving as bases for Yuan-Ti power plays.",
+                    "years_600_800": "In modern times, Sseth's followers have become feared power brokers and secret manipulators throughout Alabastria."
+                },
+                "allies": [
+                    "Merrshaulk",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Eye",
+                    "Snake",
+                    "Ambition symbol",
+                    "Yuan-ti symbol",
+                    "Eye of ambition"
+                ],
+                "colors": [
+                    "Green",
+                    "Gold",
+                    "Black",
+                    "Silver"
+                ]
+            },
+            {
+                "name": "Merrshaulk",
+                "title": "The Slumbering Serpent",
+                "domains": [
+                    "Decadence",
+                    "Corruption",
+                    "Slumber"
+                ],
+                "alignment": "Chaotic Evil",
+                "symbol": "fas fa-bed",
+                "followers": [
+                    "Yuan-Ti",
+                    "Corrupt Officials",
+                    "Decadent Rulers"
+                ],
+                "holy_days": [
+                    "Decadence Day",
+                    "Slumber Festival"
+                ],
+                "temple_type": "Corrupt Palaces",
+                "alabastria_context": "Merrshaulk's influence has been important for Yuan-Ti communities in Alabastria, teaching them the dangers of decadence and corruption.",
+                "history_800_years": {
+                    "years_0_200": "Merrshaulk's followers focused on establishing decadent and corrupt practices in their new homes in Alabastria.",
+                    "years_200_400": "As Yuan-Ti communities grew, Merrshaulk's influence expanded. His followers became known for their decadence and corruption.",
+                    "years_400_600": "Merrshaulk's temples became centers of decadence and corruption, serving as places of moral decay.",
+                    "years_600_800": "In modern times, Merrshaulk's followers have become feared corruptors and decadent rulers throughout Alabastria."
+                },
+                "allies": [
+                    "Sseth",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Lathander",
+                    "Mystra",
+                    "Tymora"
+                ],
+                "symbols": [
+                    "Bed",
+                    "Snake",
+                    "Decadence symbol",
+                    "Yuan-ti symbol",
+                    "Serpent of slumber"
+                ],
+                "colors": [
+                    "Green",
+                    "Gold",
+                    "Black",
+                    "Purple"
+                ]
+            }
+        ]
+    },
+    {
+        "pantheon": "Sea Powers",
+        "description": "The powerful pantheon of sea deities, worshiped by tritons, sailors, and coastal folk who depend on the ocean for their livelihood.",
+        "symbol": "fas fa-water",
+        "deities": [
+            {
+                "name": "Umberlee",
+                "title": "The Bitch Queen",
+                "domains": [
+                    "Sea",
+                    "Storms",
+                    "Drowning"
+                ],
+                "alignment": "Chaotic Evil",
+                "symbol": "fas fa-wave-square",
+                "followers": [
+                    "Sailors",
+                    "Storm Callers",
+                    "Sea Witches"
+                ],
+                "holy_days": [
+                    "Storm Day",
+                    "Sea Festival"
+                ],
+                "temple_type": "Storm Shrines",
+                "alabastria_context": "Umberlee's influence has been crucial for sailors and coastal folk in Alabastria, teaching them to respect the power of the sea and storms.",
+                "history_800_years": {
+                    "years_0_200": "Umberlee's followers arrived in Alabastria as scattered sailors and coastal folk, seeking to understand the new seas.",
+                    "years_200_400": "As maritime communities grew, Umberlee's influence expanded. Her followers became known for their storm magic and sea knowledge.",
+                    "years_400_600": "Umberlee's temples became centers of storm magic and sea worship, serving sailors and coastal communities.",
+                    "years_600_800": "In modern times, Umberlee's followers have become respected storm callers and sea witches throughout Alabastria."
+                },
+                "allies": [
+                    "Sekolah",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Valkur",
+                    "Lathander",
+                    "Mystra"
+                ],
+                "symbols": [
+                    "Wave",
+                    "Storm",
+                    "Sea symbol",
+                    "Trident",
+                    "Storm wave"
+                ],
+                "colors": [
+                    "Blue",
+                    "White",
+                    "Silver",
+                    "Gray"
+                ]
+            },
+            {
+                "name": "Valkur",
+                "title": "The Sailor's Friend",
+                "domains": [
+                    "Sailors",
+                    "Protection",
+                    "Fair Seas"
+                ],
+                "alignment": "Chaotic Good",
+                "symbol": "fas fa-anchor",
+                "followers": [
+                    "Sailors",
+                    "Coastal Guards",
+                    "Sea Travelers"
+                ],
+                "holy_days": [
+                    "Sailor's Day",
+                    "Fair Seas Festival"
+                ],
+                "temple_type": "Harbor Shrines",
+                "alabastria_context": "Valkur's influence has been essential for sailors and sea travelers in Alabastria, providing them with protection and fair winds.",
+                "history_800_years": {
+                    "years_0_200": "Valkur's followers focused on protecting sailors and sea travelers in the new waters of Alabastria.",
+                    "years_200_400": "As maritime trade grew, Valkur's influence expanded. His followers became known for their protection of sailors and fair winds.",
+                    "years_400_600": "Valkur's temples became centers of sailor protection and sea travel, serving maritime communities.",
+                    "years_600_800": "In modern times, Valkur's followers have become respected protectors of sailors and sea travelers throughout Alabastria."
+                },
+                "allies": [
+                    "Deep Sashelas",
+                    "Lathander",
+                    "Tymora"
+                ],
+                "conflicts": [
+                    "Umberlee",
+                    "Sekolah",
+                    "Bane"
+                ],
+                "symbols": [
+                    "Anchor",
+                    "Ship",
+                    "Sailor symbol",
+                    "Compass",
+                    "Anchor of safety"
+                ],
+                "colors": [
+                    "Blue",
+                    "White",
+                    "Gold",
+                    "Silver"
+                ]
+            },
+            {
+                "name": "Deep Sashelas",
+                "title": "The Sea Elf God",
+                "domains": [
+                    "Creativity",
+                    "Knowledge",
+                    "Sea"
+                ],
+                "alignment": "Chaotic Good",
+                "symbol": "fas fa-fish",
+                "followers": [
+                    "Sea Elves",
+                    "Artists",
+                    "Scholars"
+                ],
+                "holy_days": [
+                    "Creativity Day",
+                    "Knowledge Festival"
+                ],
+                "temple_type": "Underwater Temples",
+                "alabastria_context": "Deep Sashelas's influence has been important for sea elves and coastal artists in Alabastria, inspiring creativity and knowledge of the sea.",
+                "history_800_years": {
+                    "years_0_200": "Deep Sashelas's followers arrived in Alabastria as scattered sea elves and coastal artists, seeking to create and learn in the new world.",
+                    "years_200_400": "As sea elf communities grew, Deep Sashelas's influence expanded. His followers became known for their creativity and sea knowledge.",
+                    "years_400_600": "Deep Sashelas's temples became centers of creativity and sea knowledge, serving artists and scholars.",
+                    "years_600_800": "In modern times, Deep Sashelas's followers have become respected artists and scholars throughout Alabastria."
+                },
+                "allies": [
+                    "Valkur",
+                    "Lathander",
+                    "Mystra"
+                ],
+                "conflicts": [
+                    "Sekolah",
+                    "Bane",
+                    "Cyric"
+                ],
+                "symbols": [
+                    "Fish",
+                    "Coral",
+                    "Sea symbol",
+                    "Trident",
+                    "Coral trident"
+                ],
+                "colors": [
+                    "Blue",
+                    "Green",
+                    "Gold",
+                    "Silver"
+                ]
+            },
+            {
+                "name": "Sekolah",
+                "title": "The Shark God",
+                "domains": [
+                    "Sharks",
+                    "Predation",
+                    "Sahuagin"
+                ],
+                "alignment": "Chaotic Evil",
+                "symbol": "fas fa-khanda",
+                "followers": [
+                    "Sahuagin",
+                    "Shark Cultists",
+                    "Predators"
+                ],
+                "holy_days": [
+                    "Predation Day",
+                    "Shark Festival"
+                ],
+                "temple_type": "Underwater Lairs",
+                "alabastria_context": "Sekolah's influence has been important for Sahuagin communities in Alabastria, teaching them the power of predation and the hunt.",
+                "history_800_years": {
+                    "years_0_200": "Sekolah's followers arrived in Alabastria as scattered Sahuagin seeking to establish their predatory dominance in the new waters.",
+                    "years_200_400": "As Sahuagin communities organized, Sekolah's influence grew. His followers became known for their predatory nature and hunting skills.",
+                    "years_400_600": "Sekolah's temples became centers of predation and hunting, serving as bases for Sahuagin dominance.",
+                    "years_600_800": "In modern times, Sekolah's followers have become feared predators and hunters throughout Alabastria's waters."
+                },
+                "allies": [
+                    "Umberlee",
+                    "Bane",
+                    "Cyric"
+                ],
+                "conflicts": [
+                    "Valkur",
+                    "Deep Sashelas",
+                    "Lathander"
+                ],
+                "symbols": [
+                    "Shark",
+                    "Fang",
+                    "Predation symbol",
+                    "Sahuagin symbol",
+                    "Shark's fang"
+                ],
+                "colors": [
+                    "Gray",
+                    "Red",
+                    "Black",
+                    "White"
+                ]
+            }
+        ]
+    }
+]

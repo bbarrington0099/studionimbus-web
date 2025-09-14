@@ -23,7 +23,7 @@ All CSS custom properties (variables) are defined in the main `style.css` file a
 ### Color Palette
 - `--parchment-light`, `--parchment-dark` - Background colors
 - `--ink-dark`, `--ink-light` - Text colors
-- `--forest-green`, `--ocean-blue`, `--mountain-brown` - Primary theme colors
+- `--glass-bg`, `--ocean-blue`, `--mountain-brown` - Primary theme colors
 - `--desert-tan`, `--ice-blue`, `--volcanic-red`, `--gold-accent` - Accent colors
 
 ### UI Variables

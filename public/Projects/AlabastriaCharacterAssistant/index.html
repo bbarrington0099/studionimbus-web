@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="../../Imgs/Logos/SNlogoVector.png">
+    <script src="https://kit.fontawesome.com/340ed0043e.js" crossorigin="anonymous"></script>
     <title>Alabastria - Lore of the Land</title>
 </head>
 <body>
@@ -58,8 +59,12 @@
                                 <span class="filter-btn-text">World History</span>
                             </button>
                             <button class="filter-btn" onclick="app.showGuildHistory()">
-                                <span class="icon">🏛️</span>
+                                <span class="icon">⚔️</span>
                                 <span class="filter-btn-text">Guild History</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.showPantheon()">
+                                <span class="icon">🏛️</span>
+                                <span class="filter-btn-text">Gods & Pantheons</span>
                             </button>
                         </div>
                     </div>
@@ -130,18 +135,44 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Pantheon Section -->
+            <section id="pantheon-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2>Gods & Pantheons of Alabastria</h2>
+                </div>
+                <div class="pantheon-container">
+                    <div class="pantheon-content" id="pantheon-content">
+                        <!-- Pantheon content will be generated here -->
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
     <!-- Modal for timeline period details -->
-    <div id="timeline-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div id="timeline-modal" class="deity-modal">
+        <div class="deity-modal-content">
+            <div class="deity-modal-header">
                 <h2 id="modal-title"></h2>
-                <span class="modal-close" onclick="app.closeModal()">&times;</span>
+                <span class="deity-modal-close" onclick="app.closeModal()">&times;</span>
             </div>
-            <div class="modal-body" id="modal-body">
+            <div class="deity-modal-body" id="modal-body">
                 <!-- Modal content will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for deity details -->
+    <div id="deity-modal" class="deity-modal">
+        <div class="deity-modal-content">
+            <div class="deity-modal-header">
+                <h2 id="deity-modal-title"></h2>
+                <span class="deity-modal-close" onclick="app.closeDeityModal()">&times;</span>
+            </div>
+            <div class="deity-modal-body" id="deity-modal-body">
+                <!-- Deity modal content will be generated here -->
             </div>
         </div>
     </div>

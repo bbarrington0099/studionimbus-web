@@ -1,0 +1,459 @@
+[
+  {
+    "pantheon": "Orcs – Tribe of Gruumsh",
+    "description": "The brutal pantheon of orcish deities, focused on conquest, strength, and survival in harsh conditions.",
+    "symbol": "fas fa-skull",
+    "deities": [
+      {
+        "name": "Gruumsh One-Eye",
+        "title": "The One-Eyed God",
+        "domains": [
+          "War",
+          "Destruction",
+          "Conquest"
+        ],
+        "alignment": "Chaotic Evil",
+        "symbol": "fas fa-eye-slash",
+        "followers": [
+          "Orcs",
+          "Barbarians",
+          "Conquerors"
+        ],
+        "holy_days": [
+          "Blood Moon",
+          "Conquest Day"
+        ],
+        "temple_type": "War Camps",
+        "alabastria_context": "Since The Bringing, Gruumsh has found new followers among the orc tribes scattered across Alabastria's harsh lands, particularly in the Blood Badlands and other unforgiving territories.",
+        "history_800_years": {
+          "years_0_200": "Gruumsh's followers arrived in Alabastria as scattered, desperate tribes. The One-Eyed God's influence was weak initially as orcs struggled to survive in unfamiliar lands.",
+          "years_200_400": "As orc tribes began to organize and establish themselves in the Blood Badlands, Gruumsh's power grew. His followers became known for their brutal raids and conquests.",
+          "years_400_600": "The orc tribes reached their peak of power, with Gruumsh's influence spreading across multiple continents. His followers established permanent settlements and began systematic conquests.",
+          "years_600_800": "In the modern era, Gruumsh's followers have become more organized but also more integrated into Alabastrian society, though they maintain their warlike nature."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "eye slash"
+        ],
+        "colors": [
+          "Red",
+          "Black"
+        ]
+      },
+      {
+        "name": "Luthic",
+        "title": "The Cave Mother",
+        "domains": [
+          "Fertility",
+          "Healing",
+          "Caves"
+        ],
+        "alignment": "Lawful Evil",
+        "symbol": "fas fa-mountain",
+        "followers": [
+          "Orc Mothers",
+          "Healers",
+          "Cave Dwellers"
+        ],
+        "holy_days": [
+          "Birth Festival",
+          "Cave Blessing"
+        ],
+        "temple_type": "Cave Sanctuaries",
+        "alabastria_context": "Luthic's influence has been crucial for orc survival in Alabastria's harsh environments, particularly in the Blood Badlands where her followers have established hidden cave settlements.",
+        "history_800_years": {
+          "years_0_200": "Luthic's followers focused on survival and reproduction in the new world, establishing hidden cave settlements and ensuring the continuation of orc bloodlines.",
+          "years_200_400": "As orc tribes grew, Luthic's influence expanded. Her followers became known for their healing abilities and their ability to make any cave habitable.",
+          "years_400_600": "Luthic's temples became centers of orc civilization, providing healing, fertility blessings, and safe havens for orc families.",
+          "years_600_800": "In modern times, Luthic's followers have adapted to Alabastrian society while maintaining their traditional cave-based communities and healing practices."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "mountain"
+        ],
+        "colors": [
+          "Brown",
+          "Green"
+        ]
+      },
+      {
+        "name": "Ilneval",
+        "title": "The War Chief",
+        "domains": [
+          "War",
+          "Strategy",
+          "Leadership"
+        ],
+        "alignment": "Lawful Evil",
+        "symbol": "fas fa-chess",
+        "followers": [
+          "Orc Generals",
+          "Tacticians",
+          "War Leaders"
+        ],
+        "holy_days": [
+          "Strategy Day",
+          "Victory Feast"
+        ],
+        "temple_type": "War Academies",
+        "alabastria_context": "Ilneval's strategic wisdom has been invaluable for orc survival in Alabastria, helping them adapt their warfare tactics to the new world's challenges.",
+        "history_800_years": {
+          "years_0_200": "Ilneval's followers struggled to adapt their warfare tactics to Alabastria's diverse terrain and new enemies, leading to many early defeats.",
+          "years_200_400": "As orc generals learned from their mistakes, Ilneval's influence grew. His followers began to develop new strategies suited to Alabastrian warfare.",
+          "years_400_600": "Ilneval's temples became centers of military training, producing some of the most effective orc commanders in Alabastrian history.",
+          "years_600_800": "In the modern era, Ilneval's followers have become respected military advisors, though they still maintain their aggressive tactics and strategic thinking."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "chess"
+        ],
+        "colors": [
+          "Red",
+          "Silver"
+        ]
+      },
+      {
+        "name": "Bahgtru",
+        "title": "The Brute",
+        "domains": [
+          "Strength",
+          "Loyalty",
+          "Brute Force"
+        ],
+        "alignment": "Chaotic Evil",
+        "symbol": "fas fa-fist-raised",
+        "followers": [
+          "Orc Warriors",
+          "Berserkers",
+          "Bodyguards"
+        ],
+        "holy_days": [
+          "Strength Day",
+          "Loyalty Feast"
+        ],
+        "temple_type": "Training Grounds",
+        "alabastria_context": "Bahgtru's followers have become known for their incredible physical strength and unwavering loyalty, making them valuable allies and fearsome enemies in Alabastria.",
+        "history_800_years": {
+          "years_0_200": "Bahgtru's followers relied on brute strength to survive in the harsh new world, often serving as protectors for their tribes.",
+          "years_200_400": "As orc tribes established themselves, Bahgtru's influence grew. His followers became known for their incredible physical prowess and loyalty.",
+          "years_400_600": "Bahgtru's temples became centers of physical training, producing some of the strongest warriors in Alabastrian history.",
+          "years_600_800": "In modern times, Bahgtru's followers have become respected mercenaries and bodyguards, valued for their strength and loyalty."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "fist raised"
+        ],
+        "colors": [
+          "Brown",
+          "Red"
+        ]
+      },
+      {
+        "name": "Shargaas",
+        "title": "The Night Stalker",
+        "domains": [
+          "Darkness",
+          "Stealth",
+          "Thievery"
+        ],
+        "alignment": "Chaotic Evil",
+        "symbol": "fas fa-mask",
+        "followers": [
+          "Assassins",
+          "Thieves",
+          "Spies"
+        ],
+        "holy_days": [
+          "Night of Shadows",
+          "Stealth Festival"
+        ],
+        "temple_type": "Hidden Shrines",
+        "alabastria_context": "Shargaas's followers have found new opportunities in Alabastria's complex political landscape, serving as spies, assassins, and information brokers.",
+        "history_800_years": {
+          "years_0_200": "Shargaas's followers operated in the shadows, gathering information and eliminating threats to their tribes in the new world.",
+          "years_200_400": "As orc tribes established themselves, Shargaas's influence grew. His followers became known for their stealth and cunning.",
+          "years_400_600": "Shargaas's temples became centers of espionage and assassination, serving the needs of orc leaders and their allies.",
+          "years_600_800": "In modern times, Shargaas's followers have become valuable assets in Alabastria's political intrigues, though they remain feared and distrusted."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "mask"
+        ],
+        "colors": [
+          "Black",
+          "Gray"
+        ]
+      }
+    ]
+  },
+  {
+    "pantheon": "Dragons & Dragonborn",
+    "description": "The ancient draconic pantheon, representing the eternal struggle between metallic and chromatic dragons.",
+    "symbol": "fas fa-dragon",
+    "deities": [
+      {
+        "name": "Bahamut",
+        "title": "The Platinum Dragon",
+        "domains": [
+          "Justice",
+          "Protection",
+          "Nobility"
+        ],
+        "alignment": "Lawful Good",
+        "symbol": "fas fa-shield-alt",
+        "followers": [
+          "Dragonborn",
+          "Paladins",
+          "Noble Warriors"
+        ],
+        "holy_days": [
+          "Day of Justice",
+          "Protection Festival"
+        ],
+        "temple_type": "Noble Temples",
+        "alabastria_context": "Bahamut's influence has been crucial for dragonborn integration into Alabastrian society, providing them with a moral compass and sense of purpose.",
+        "history_800_years": {
+          "years_0_200": "Bahamut's followers arrived in Alabastria as scattered dragonborn seeking a new home. The Platinum Dragon's influence helped them establish themselves as noble protectors.",
+          "years_200_400": "As dragonborn communities grew, Bahamut's influence expanded. His followers became known for their justice and protection of the innocent.",
+          "years_400_600": "Bahamut's temples became centers of justice and protection, serving as courts and sanctuaries for those in need.",
+          "years_600_800": "In modern times, Bahamut's followers have become respected judges, paladins, and protectors throughout Alabastria."
+        },
+        "allies": [
+          "Lathander",
+          "Mystra",
+          "Tymora"
+        ],
+        "conflicts": [
+          "Tiamat",
+          "Bane",
+          "Cyric"
+        ],
+        "symbols": [
+          "Dragon head",
+          "Platinum scale",
+          "Divine symbol",
+          "Wing",
+          "Platinum dragon"
+        ],
+        "colors": [
+          "Platinum",
+          "White",
+          "Gold",
+          "Silver"
+        ]
+      },
+      {
+        "name": "Tiamat",
+        "title": "The Chromatic Dragon",
+        "domains": [
+          "Greed",
+          "Tyranny",
+          "Vengeance"
+        ],
+        "alignment": "Chaotic Evil",
+        "symbol": "fas fa-crown",
+        "followers": [
+          "Evil Dragonborn",
+          "Tyrants",
+          "Greedy Merchants"
+        ],
+        "holy_days": [
+          "Day of Conquest",
+          "Greed Festival"
+        ],
+        "temple_type": "Dark Fortresses",
+        "alabastria_context": "Tiamat's influence has been a constant threat in Alabastria, with her followers seeking power, wealth, and domination over others.",
+        "history_800_years": {
+          "years_0_200": "Tiamat's followers arrived in Alabastria as ambitious dragonborn seeking power and wealth in the new world.",
+          "years_200_400": "As dragonborn communities established themselves, Tiamat's influence grew. Her followers became known for their greed and tyranny.",
+          "years_400_600": "Tiamat's temples became centers of corruption and oppression, serving as bases for her followers' schemes.",
+          "years_600_800": "In modern times, Tiamat's followers have become powerful merchants, corrupt officials, and tyrants, though they are constantly opposed by Bahamut's followers."
+        },
+        "allies": [
+          "Bane",
+          "Cyric",
+          "Shar"
+        ],
+        "conflicts": [
+          "Bahamut",
+          "Lathander",
+          "Mystra"
+        ],
+        "symbols": [
+          "Five-headed dragon",
+          "Chromatic scale",
+          "Evil symbol",
+          "Claw",
+          "Five-headed dragon"
+        ],
+        "colors": [
+          "Red",
+          "Blue",
+          "Green",
+          "Black",
+          "White"
+        ]
+      }
+    ]
+  },
+  {
+    "pantheon": "Elemental Lords",
+    "description": "The primordial forces of nature, worshiped by genasi, tritons, and those who seek to understand the fundamental elements.",
+    "symbol": "fas fa-fire",
+    "deities": [
+      {
+        "name": "Akadi",
+        "title": "The Queen of Air",
+        "domains": [
+          "Air",
+          "Movement",
+          "Change"
+        ],
+        "alignment": "Chaotic Neutral",
+        "symbol": "fas fa-wind",
+        "followers": [
+          "Air Genasi",
+          "Sailors",
+          "Wanderers"
+        ],
+        "holy_days": [
+          "Wind Festival",
+          "Change Day"
+        ],
+        "temple_type": "High Towers",
+        "alabastria_context": "Akadi's influence has been crucial for air genasi and sailors in Alabastria, helping them navigate the winds and adapt to change.",
+        "history_800_years": {
+          "years_0_200": "Akadi's followers arrived in Alabastria as scattered air genasi and sailors, seeking new horizons and opportunities.",
+          "years_200_400": "As air genasi communities established themselves, Akadi's influence grew. Her followers became known for their adaptability and mobility.",
+          "years_400_600": "Akadi's temples became centers of navigation and weather prediction, serving sailors and travelers throughout Alabastria.",
+          "years_600_800": "In modern times, Akadi's followers have become respected navigators, messengers, and agents of change."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "wind"
+        ],
+        "colors": [
+          "White",
+          "Blue"
+        ]
+      },
+      {
+        "name": "Grumbar",
+        "title": "The Earth Lord",
+        "domains": [
+          "Earth",
+          "Strength",
+          "Endurance"
+        ],
+        "alignment": "Lawful Neutral",
+        "symbol": "fas fa-mountain",
+        "followers": [
+          "Earth Genasi",
+          "Miners",
+          "Farmers"
+        ],
+        "holy_days": [
+          "Earth Day",
+          "Harvest Festival"
+        ],
+        "temple_type": "Underground Shrines",
+        "alabastria_context": "Grumbar's influence has been essential for earth genasi and miners in Alabastria, helping them work with the land and extract its resources.",
+        "history_800_years": {
+          "years_0_200": "Grumbar's followers arrived in Alabastria as earth genasi and miners, seeking to work with the land and extract its resources.",
+          "years_200_400": "As earth genasi communities established themselves, Grumbar's influence grew. His followers became known for their strength and endurance.",
+          "years_400_600": "Grumbar's temples became centers of mining and agriculture, serving as places of strength and stability.",
+          "years_600_800": "In modern times, Grumbar's followers have become respected miners, farmers, and builders throughout Alabastria."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "mountain"
+        ],
+        "colors": [
+          "Brown",
+          "Gray"
+        ]
+      },
+      {
+        "name": "Kossuth",
+        "title": "The Fire Lord",
+        "domains": [
+          "Fire",
+          "Destruction",
+          "Renewal"
+        ],
+        "alignment": "Chaotic Neutral",
+        "symbol": "fas fa-fire",
+        "followers": [
+          "Fire Genasi",
+          "Blacksmiths",
+          "Warriors"
+        ],
+        "holy_days": [
+          "Fire Festival",
+          "Renewal Day"
+        ],
+        "temple_type": "Forge Temples",
+        "alabastria_context": "Kossuth's influence has been crucial for fire genasi and blacksmiths in Alabastria, providing them with the power to forge weapons and tools.",
+        "history_800_years": {
+          "years_0_200": "Kossuth's followers arrived in Alabastria as fire genasi and blacksmiths, seeking to forge new lives in the new world.",
+          "years_200_400": "As fire genasi communities established themselves, Kossuth's influence grew. His followers became known for their forging skills and fiery temperaments.",
+          "years_400_600": "Kossuth's temples became centers of forging and metalworking, producing some of the finest weapons and tools in Alabastria.",
+          "years_600_800": "In modern times, Kossuth's followers have become respected blacksmiths, warriors, and agents of renewal."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "fire"
+        ],
+        "colors": [
+          "Red",
+          "Orange"
+        ]
+      },
+      {
+        "name": "Istishia",
+        "title": "The Water Lord",
+        "domains": [
+          "Water",
+          "Adaptability",
+          "Rivers"
+        ],
+        "alignment": "True Neutral",
+        "symbol": "fas fa-water",
+        "followers": [
+          "Water Genasi",
+          "Fishermen",
+          "Healers"
+        ],
+        "holy_days": [
+          "Water Festival",
+          "Flow Day"
+        ],
+        "temple_type": "Riverside Shrines",
+        "alabastria_context": "Istishia's influence has been essential for water genasi and fishermen in Alabastria, helping them work with rivers and heal the sick.",
+        "history_800_years": {
+          "years_0_200": "Istishia's followers arrived in Alabastria as water genasi and fishermen, seeking to work with the rivers and heal the sick.",
+          "years_200_400": "As water genasi communities established themselves, Istishia's influence grew. His followers became known for their adaptability and healing abilities.",
+          "years_400_600": "Istishia's temples became centers of healing and water management, serving as places of peace and renewal.",
+          "years_600_800": "In modern times, Istishia's followers have become respected healers, fishermen, and agents of adaptability."
+        },
+        "allies": [],
+        "conflicts": [],
+        "symbols": [
+          "water"
+        ],
+        "colors": [
+          "Blue",
+          "White"
+        ]
+      }
+    ]
+  }
+]

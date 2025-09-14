@@ -84,7 +84,7 @@
 
 .relationship-item:hover {
     transform: translateX(3px);
-    border-left-color: var(--forest-green);
+    border-left-color: var(--glass-bg);
     box-shadow: var(--shadow-sm);
 }
 

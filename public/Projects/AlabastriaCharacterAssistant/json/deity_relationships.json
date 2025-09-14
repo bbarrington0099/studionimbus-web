@@ -1,0 +1,2489 @@
+[
+    {
+        "race": "Human",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Selûne",
+            "Kelemvor"
+        ],
+        "reasoning": "Humans in Skratonia, being the most populous and politically active race, naturally gravitate toward deities that represent their core values: warfare and strategy (Tempus), renewal and hope (Lathander), and good fortune (Tymora). Their agricultural lifestyle and need for protection makes them favor these gods."
+    },
+    {
+        "race": "Human",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Tempus",
+            "Kelemvor",
+            "Bane"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Selûne"
+        ],
+        "reasoning": "Humans in the harsh conditions of Bulsania favor deities of war and death, as survival requires strength and the acceptance of mortality. The militarized nature of their society makes them lean toward Tempus and Bane, while Kelemvor provides comfort in the face of frequent death."
+    },
+    {
+        "race": "Human",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Mystra",
+            "Selûne",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Kelemvor"
+        ],
+        "reasoning": "Humans in Kuriguer, living in coastal towns near magical forests, favor deities of magic, navigation, and luck. Their proximity to magical anomalies and their seafaring lifestyle makes Mystra and Selûne natural choices, while Tymora appeals to their adventurous spirit."
+    },
+    {
+        "race": "Human",
+        "continent": "Kamalatman",
+        "primary_deities": [
+            "Bane",
+            "Myrkul",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Tempus",
+            "Kelemvor"
+        ],
+        "reasoning": "Humans in Kamalatman, living under oppressive rule and dealing with taxation conflicts, naturally gravitate toward deities of tyranny and death. The harsh conditions and political instability make them favor Bane and Myrkul, while Beshaba represents their frequent misfortunes."
+    },
+    {
+        "race": "Dwarf",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Moradin",
+            "Clangeddin Silverbeard",
+            "Berronar Truesilver"
+        ],
+        "secondary_deities": [
+            "Dugmaren Brightmantle",
+            "Vergadain"
+        ],
+        "reasoning": "Dwarves in Bulsania, living in harsh mountain conditions, strongly favor their traditional pantheon. Moradin as their creator, Clangeddin for their warrior traditions, and Berronar for their strong family values. The challenging environment makes them rely heavily on their cultural deities."
+    },
+    {
+        "race": "Dwarf",
+        "continent": "Kamalatman",
+        "primary_deities": [
+            "Moradin",
+            "Vergadain",
+            "Dugmaren Brightmantle"
+        ],
+        "secondary_deities": [
+            "Berronar Truesilver",
+            "Clangeddin Silverbeard"
+        ],
+        "reasoning": "Dwarves in Kamalatman, working in mines and dealing with resource extraction, favor Moradin for creation, Vergadain for trade and wealth, and Dugmaren for innovation in mining techniques. Their commercial focus makes them lean toward trade-oriented deities."
+    },
+    {
+        "race": "Elf",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Corellon Larethian",
+            "Sehanine Moonbow",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Tymora"
+        ],
+        "reasoning": "Elves in Kuriguer, living in coastal towns near magical forests, strongly favor their traditional Seldarine pantheon. Corellon as their creator, Sehanine for their connection to nature and dreams, and Mystra for their magical abilities. Their proximity to magical anomalies makes Mystra particularly important."
+    },
+    {
+        "race": "Elf",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Corellon Larethian",
+            "Mystra",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "reasoning": "Elves in Skratonia, living in the more cosmopolitan environment, still favor their traditional deities but also incorporate human deities. Corellon remains central, while Mystra and Selûne help them navigate the magical and maritime aspects of their new home."
+    },
+    {
+        "race": "Half-Elf",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Corellon Larethian",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Selûne",
+            "Sehanine Moonbow"
+        ],
+        "reasoning": "Half-elves in Skratonia, bridging human and elven cultures, favor a mix of both pantheons. Corellon represents their elven heritage, while Lathander and Tymora represent their human side. Their dual nature makes them adaptable to multiple religious traditions."
+    },
+    {
+        "race": "Half-Orc",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Tempus",
+            "Luthic"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Kelemvor"
+        ],
+        "reasoning": "Half-orcs in Skratonia, balancing their orcish heritage with human society, favor Gruumsh and Luthic from their orcish side, while also incorporating Tempus for warfare and Tymora for luck. Their mixed heritage makes them draw from both pantheons."
+    },
+    {
+        "race": "Halfling",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Yondalla",
+            "Tymora",
+            "Lathander"
+        ],
+        "secondary_deities": [
+            "Arvoreen",
+            "Cyrrollalee"
+        ],
+        "reasoning": "Halflings in Skratonia, living in agricultural communities, favor Yondalla for protection and fertility, Tymora for luck, and Lathander for renewal. Their peaceful nature makes them favor protective and luck-based deities over war gods."
+    },
+    {
+        "race": "Gnome",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Garl Glittergold",
+            "Mystra",
+            "Baravar Cloakshadow"
+        ],
+        "secondary_deities": [
+            "Baervan Wildwanderer",
+            "Segojan Earthcaller"
+        ],
+        "reasoning": "Gnomes in Kuriguer, living near magical forests, favor Garl Glittergold for luck and protection, Mystra for magic, and Baravar for trickery. Their magical nature and proximity to magical anomalies makes them favor luck and magic deities."
+    },
+    {
+        "race": "Dragonborn",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Bahamut",
+            "Tiamat",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Tymora"
+        ],
+        "reasoning": "Dragonborn in Skratonia, being dragon-related, naturally favor Bahamut and Tiamat. Their warrior nature also draws them to Tempus. Their metallic and chromatic heritage makes them choose between the two dragon gods based on their alignment."
+    },
+    {
+        "race": "Tiefling",
+        "continent": "Kamalatman",
+        "primary_deities": [
+            "Asmodeus",
+            "Bane",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Beshaba"
+        ],
+        "reasoning": "Tieflings in Kamalatman, living in the politically unstable region, favor deities of tyranny and death. Their infernal heritage makes them naturally drawn to Asmodeus and Bane, while the harsh conditions make them favor Myrkul and other dark deities."
+    },
+    {
+        "race": "Genasi",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Akadi",
+            "Grumbar",
+            "Kossuth",
+            "Istishia"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Selûne"
+        ],
+        "reasoning": "Genasi in Kuriguer, being elemental in nature, naturally favor the elemental lords. Their proximity to magical anomalies makes them also favor Mystra and Selûne. Their elemental heritage determines which elemental lord they primarily worship."
+    },
+    {
+        "race": "Gith",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Gith",
+            "Vlaakith",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Kelemvor",
+            "Tymora"
+        ],
+        "reasoning": "Gith in Skratonia, being from another plane, favor their traditional deities Gith and Vlaakith. Their warrior nature also draws them to Tempus. Their otherworldly origin makes them maintain their traditional religious practices while adapting to their new home."
+    },
+    {
+        "race": "Yuan-Ti",
+        "continent": "Kamalatman",
+        "primary_deities": [
+            "Sseth",
+            "Merrshaulk",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Beshaba"
+        ],
+        "reasoning": "Yuan-Ti in Kamalatman, being serpent-related, naturally favor Sseth and Merrshaulk. Their connection to death and decay makes them also favor Myrkul. Their reptilian nature and the harsh conditions of Kamalatman make them favor serpent and death deities."
+    },
+    {
+        "race": "Triton",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Umberlee",
+            "Valkur",
+            "Deep Sashelas"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Tymora"
+        ],
+        "reasoning": "Tritons in Kuriguer, being sea-dwelling, naturally favor sea deities. Umberlee for the sea's power, Valkur for protection, and Deep Sashelas for creativity. Their coastal lifestyle makes them also favor Selûne and Tymora."
+    },
+    {
+        "class": "Fighter",
+        "subclass": "Champion",
+        "primary_deities": [
+            "Tempus",
+            "Clangeddin Silverbeard",
+            "Bahamut"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Fighters, especially Champions, favor deities of war and honor. Tempus for strategy and battle, Clangeddin for honor and courage, and Bahamut for justice. Their martial nature makes them favor war and justice deities."
+    },
+    {
+        "class": "Fighter",
+        "subclass": "Eldritch Knight",
+        "primary_deities": [
+            "Mystra",
+            "Tempus",
+            "Corellon Larethian"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Selûne"
+        ],
+        "reasoning": "Eldritch Knights, combining martial and magical abilities, favor Mystra for magic, Tempus for warfare, and Corellon for elven magic. Their dual nature makes them favor both war and magic deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "Evocation",
+        "primary_deities": [
+            "Mystra",
+            "Corellon Larethian",
+            "Kossuth"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Selûne"
+        ],
+        "reasoning": "Evocation Wizards, specializing in destructive magic, favor Mystra for arcane knowledge, Corellon for elven magic, and Kossuth for fire magic. Their destructive nature makes them favor magic and elemental deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "Divination",
+        "primary_deities": [
+            "Mystra",
+            "Sehanine Moonbow",
+            "Jergal"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Tymora"
+        ],
+        "reasoning": "Divination Wizards, specializing in foresight and knowledge, favor Mystra for arcane knowledge, Sehanine for dreams and journeys, and Jergal for records and fate. Their knowledge-seeking nature makes them favor wisdom and knowledge deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Life Domain",
+        "primary_deities": [
+            "Lathander",
+            "Berronar Truesilver",
+            "Yondalla"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Selûne"
+        ],
+        "reasoning": "Life Domain Clerics, specializing in healing and protection, favor Lathander for renewal and healing, Berronar for family protection, and Yondalla for fertility and protection. Their healing nature makes them favor life and protection deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "War Domain",
+        "primary_deities": [
+            "Tempus",
+            "Clangeddin Silverbeard",
+            "Bane"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "War Domain Clerics, specializing in warfare and combat, favor Tempus for strategy and battle, Clangeddin for honor and courage, and Bane for tyranny and conquest. Their martial nature makes them favor war deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Death Domain",
+        "primary_deities": [
+            "Kelemvor",
+            "Myrkul",
+            "Jergal"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Beshaba"
+        ],
+        "reasoning": "Death Domain Clerics, specializing in death and undeath, favor Kelemvor for judgment, Myrkul for undeath, and Jergal for records of the dead. Their death-focused nature makes them favor death and judgment deities."
+    },
+    {
+        "class": "Rogue",
+        "subclass": "Thief",
+        "primary_deities": [
+            "Shar",
+            "Baravar Cloakshadow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Beshaba",
+            "Vergadain"
+        ],
+        "reasoning": "Thief Rogues, specializing in stealth and trickery, favor Shar for secrets and darkness, Baravar for trickery and illusions, and Tymora for luck. Their stealthy nature makes them favor trickery and luck deities."
+    },
+    {
+        "class": "Rogue",
+        "subclass": "Assassin",
+        "primary_deities": [
+            "Shar",
+            "Bane",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Beshaba",
+            "Kelemvor"
+        ],
+        "reasoning": "Assassin Rogues, specializing in death and stealth, favor Shar for secrets and darkness, Bane for tyranny and conquest, and Myrkul for undeath. Their deadly nature makes them favor dark and death deities."
+    },
+    {
+        "class": "Ranger",
+        "subclass": "Beast Master",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Beast Master Rangers, specializing in nature and animals, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "class": "Ranger",
+        "subclass": "Hunter",
+        "primary_deities": [
+            "Tempus",
+            "Clangeddin Silverbeard",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Selûne"
+        ],
+        "reasoning": "Hunter Rangers, specializing in combat and tracking, favor Tempus for strategy and battle, Clangeddin for honor and courage, and Tymora for luck. Their martial nature makes them favor war and luck deities."
+    },
+    {
+        "class": "Paladin",
+        "subclass": "Devotion",
+        "primary_deities": [
+            "Lathander",
+            "Bahamut",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Devotion Paladins, specializing in justice and protection, favor Lathander for renewal and hope, Bahamut for justice and protection, and Tymora for good fortune. Their righteous nature makes them favor justice and protection deities."
+    },
+    {
+        "class": "Paladin",
+        "subclass": "Vengeance",
+        "primary_deities": [
+            "Tempus",
+            "Bane",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Kelemvor"
+        ],
+        "reasoning": "Vengeance Paladins, specializing in retribution and justice, favor Tempus for strategy and battle, Bane for tyranny and conquest, and Tymora for luck. Their vengeful nature makes them favor war and justice deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Berserker",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Tempus",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Luthic",
+            "Bane"
+        ],
+        "reasoning": "Berserker Barbarians, specializing in rage and combat, favor Gruumsh for destruction and conquest, Tempus for strategy and battle, and Tymora for luck. Their rage-filled nature makes them favor war and destruction deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Totem Warrior",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Totem Warrior Barbarians, specializing in nature and animals, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "Lore",
+        "primary_deities": [
+            "Mystra",
+            "Jergal",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Lore Bards, specializing in knowledge and stories, favor Mystra for arcane knowledge, Jergal for records and fate, and Tymora for luck. Their knowledge-seeking nature makes them favor wisdom and luck deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "Valor",
+        "primary_deities": [
+            "Tempus",
+            "Tymora",
+            "Lathander"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Mystra"
+        ],
+        "reasoning": "Valor Bards, specializing in combat and inspiration, favor Tempus for strategy and battle, Tymora for luck, and Lathander for renewal and hope. Their martial nature makes them favor war and luck deities."
+    },
+    {
+        "class": "Druid",
+        "subclass": "Circle of the Moon",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Circle of the Moon Druids, specializing in nature and transformation, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "class": "Druid",
+        "subclass": "Circle of the Land",
+        "primary_deities": [
+            "Grumbar",
+            "Istishia",
+            "Akadi"
+        ],
+        "secondary_deities": [
+            "Kossuth",
+            "Selûne"
+        ],
+        "reasoning": "Circle of the Land Druids, specializing in elemental magic, favor Grumbar for earth, Istishia for water, and Akadi for air. Their elemental nature makes them favor elemental deities."
+    },
+    {
+        "class": "Monk",
+        "subclass": "Way of the Open Hand",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Jergal"
+        ],
+        "reasoning": "Way of the Open Hand Monks, specializing in balance and harmony, favor Lathander for renewal and hope, Tymora for luck, and Selûne for navigation and wanderers. Their balanced nature makes them favor harmony and luck deities."
+    },
+    {
+        "class": "Monk",
+        "subclass": "Way of Shadow",
+        "primary_deities": [
+            "Shar",
+            "Baravar Cloakshadow",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Myrkul",
+            "Kelemvor"
+        ],
+        "reasoning": "Way of Shadow Monks, specializing in stealth and darkness, favor Shar for secrets and darkness, Baravar for trickery and illusions, and Beshaba for misfortune. Their shadowy nature makes them favor dark and trickery deities."
+    },
+    {
+        "class": "Sorcerer",
+        "subclass": "Draconic Bloodline",
+        "primary_deities": [
+            "Bahamut",
+            "Tiamat",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Selûne"
+        ],
+        "reasoning": "Draconic Bloodline Sorcerers, specializing in dragon magic, favor Bahamut and Tiamat for their dragon heritage, and Mystra for arcane knowledge. Their draconic nature makes them favor dragon and magic deities."
+    },
+    {
+        "class": "Sorcerer",
+        "subclass": "Wild Magic",
+        "primary_deities": [
+            "Tymora",
+            "Mystra",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Wild Magic Sorcerers, specializing in chaotic magic, favor Tymora for luck, Mystra for arcane knowledge, and Beshaba for misfortune. Their chaotic nature makes them favor luck and chaos deities."
+    },
+    {
+        "class": "Warlock",
+        "subclass": "The Fiend",
+        "primary_deities": [
+            "Asmodeus",
+            "Bane",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Beshaba"
+        ],
+        "reasoning": "The Fiend Warlocks, specializing in infernal magic, favor Asmodeus for their patron, Bane for tyranny and conquest, and Myrkul for undeath. Their infernal nature makes them favor dark and infernal deities."
+    },
+    {
+        "class": "Warlock",
+        "subclass": "The Great Old One",
+        "primary_deities": [
+            "Shar",
+            "Myrkul",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Jergal",
+            "Kelemvor"
+        ],
+        "reasoning": "The Great Old One Warlocks, specializing in eldritch magic, favor Shar for secrets and darkness, Myrkul for undeath, and Beshaba for misfortune. Their eldritch nature makes them favor dark and mysterious deities."
+    },
+    {
+        "class": "Artificer",
+        "subclass": "Alchemist",
+        "primary_deities": [
+            "Mystra",
+            "Dugmaren Brightmantle",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Selûne"
+        ],
+        "reasoning": "Alchemist Artificers, specializing in magical invention, favor Mystra for arcane knowledge, Dugmaren for discovery and invention, and Tymora for luck. Their inventive nature makes them favor knowledge and luck deities."
+    },
+    {
+        "class": "Artificer",
+        "subclass": "Battle Smith",
+        "primary_deities": [
+            "Moradin",
+            "Tempus",
+            "Dugmaren Brightmantle"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Battle Smith Artificers, specializing in magical weapons and armor, favor Moradin for creation and craftsmanship, Tempus for strategy and battle, and Dugmaren for discovery and invention. Their martial nature makes them favor war and creation deities."
+    },
+    {
+        "race": "Aarakocra",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Akadi",
+            "Valkur",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Selûne"
+        ],
+        "reasoning": "Aarakocra in Bulsania, being bird-like and living in the mountains, naturally favor Akadi for air and wind, Valkur for protection and navigation, and Tymora for luck in their aerial travels. Their high-altitude lifestyle makes them favor air and protection deities."
+    },
+    {
+        "race": "Aasimar",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Aasimar in Skratonia, being celestial-touched, naturally favor Lathander for renewal and hope, Tymora for good fortune, and Selûne for guidance and navigation. Their celestial nature makes them favor light and guidance deities."
+    },
+    {
+        "race": "Autognome",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Garl Glittergold",
+            "Dugmaren Brightmantle",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Baravar Cloakshadow",
+            "Tymora"
+        ],
+        "reasoning": "Autognomes in Alatman, being constructed beings, favor Garl Glittergold for protection and luck, Dugmaren for discovery and invention, and Mystra for arcane knowledge. Their mechanical nature makes them favor knowledge and invention deities."
+    },
+    {
+        "race": "Bugbear",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Luthic",
+            "Bane"
+        ],
+        "secondary_deities": [
+            "Tempus",
+            "Beshaba"
+        ],
+        "reasoning": "Bugbears in Katman, being goblinoid and living in swamps, favor Gruumsh for strength and conquest, Luthic for protection and fertility, and Bane for tyranny and power. Their aggressive nature makes them favor war and power deities."
+    },
+    {
+        "race": "Centaur",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Centaurs in Skratonia, being nature-focused and nomadic, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nomadic nature makes them favor nature and travel deities."
+    },
+    {
+        "race": "Changeling",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Baravar Cloakshadow",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Changelings in Kuriguer, being shape-shifters and living near magical forests, favor Baravar for trickery and illusions, Mystra for arcane knowledge, and Tymora for luck. Their magical nature makes them favor trickery and magic deities."
+    },
+    {
+        "race": "Dhampir",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Kelemvor",
+            "Myrkul",
+            "Shar"
+        ],
+        "secondary_deities": [
+            "Beshaba",
+            "Jergal"
+        ],
+        "reasoning": "Dhampirs in Alatman, being undead-touched and living in volcanic regions, favor Kelemvor for judgment, Myrkul for undeath, and Shar for secrets and darkness. Their undead nature makes them favor death and dark deities."
+    },
+    {
+        "race": "Fairy",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Corellon Larethian",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Fairies in Kuriguer, being fey and living in magical forests, favor Sehanine for dreams and journeys, Corellon for elven magic, and Tymora for luck. Their fey nature makes them favor nature and magic deities."
+    },
+    {
+        "race": "Firbolg",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Firbolgs in Kuriguer, being nature guardians and living in magical forests, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature guardian role makes them favor nature and travel deities."
+    },
+    {
+        "race": "Giff",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Kelemvor"
+        ],
+        "reasoning": "Giff in Skratonia, being hippo-like and militaristic, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck. Their militaristic nature makes them favor war and luck deities."
+    },
+    {
+        "race": "Goblin",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Luthic",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Tymora"
+        ],
+        "reasoning": "Goblins in Katman, being goblinoid and living in swamps, favor Gruumsh for strength and conquest, Luthic for protection and fertility, and Beshaba for misfortune. Their chaotic nature makes them favor war and chaos deities."
+    },
+    {
+        "race": "Goliath",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Kelemvor",
+            "Bane"
+        ],
+        "reasoning": "Goliaths in Bulsania, being mountain-dwelling and competitive, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck. Their competitive nature makes them favor war and luck deities."
+    },
+    {
+        "race": "Harengon",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tymora",
+            "Lathander",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Harengons in Skratonia, being rabbit-like and lucky, favor Tymora for luck, Lathander for renewal and hope, and Selûne for guidance and navigation. Their lucky nature makes them favor luck and guidance deities."
+    },
+    {
+        "race": "Hexblood",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Shar",
+            "Mystra",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Myrkul",
+            "Kelemvor"
+        ],
+        "reasoning": "Hexbloods in Kuriguer, being hag-touched and living near magical forests, favor Shar for secrets and darkness, Mystra for arcane knowledge, and Beshaba for misfortune. Their hag-touched nature makes them favor dark and magic deities."
+    },
+    {
+        "race": "Hobgoblin",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Bane",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Luthic",
+            "Tymora"
+        ],
+        "reasoning": "Hobgoblins in Katman, being goblinoid and militaristic, favor Gruumsh for strength and conquest, Bane for tyranny and power, and Tempus for strategy and battle. Their militaristic nature makes them favor war and power deities."
+    },
+    {
+        "race": "Kalashtar",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Mystra",
+            "Jergal",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Kalashtar in Skratonia, being psionic and spiritual, favor Mystra for arcane knowledge, Jergal for records and fate, and Tymora for luck. Their psionic nature makes them favor knowledge and wisdom deities."
+    },
+    {
+        "race": "Kender",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tymora",
+            "Baravar Cloakshadow",
+            "Lathander"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Mystra"
+        ],
+        "reasoning": "Kender in Skratonia, being curious and lucky, favor Tymora for luck, Baravar for trickery and illusions, and Lathander for renewal and hope. Their curious nature makes them favor luck and trickery deities."
+    },
+    {
+        "race": "Kenku",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Baravar Cloakshadow",
+            "Tymora",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Kenku in Kuriguer, being crow-like and living near magical forests, favor Baravar for trickery and illusions, Tymora for luck, and Mystra for arcane knowledge. Their trickster nature makes them favor trickery and luck deities."
+    },
+    {
+        "race": "Kobold",
+        "continent": "Maltman of Kamalatman",
+        "primary_deities": [
+            "Kurtulmak",
+            "Moradin",
+            "Dugmaren Brightmantle"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Kobolds in Maltman, being dragon-related and living in mines, favor Kurtulmak for their traditional deity, Moradin for creation and craftsmanship, and Dugmaren for discovery and invention. Their mining nature makes them favor creation and discovery deities."
+    },
+    {
+        "race": "Leonin",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Kelemvor"
+        ],
+        "reasoning": "Leonin in Skratonia, being lion-like and proud, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck. Their proud nature makes them favor war and luck deities."
+    },
+    {
+        "race": "Lizardfolk",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Sseth",
+            "Merrshaulk",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Beshaba"
+        ],
+        "reasoning": "Lizardfolk in Katman, being reptilian and living in swamps, favor Sseth for their traditional deity, Merrshaulk for their serpent god, and Myrkul for death and decay. Their reptilian nature makes them favor serpent and death deities."
+    },
+    {
+        "race": "Loxodon",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Loxodon in Skratonia, being elephant-like and wise, favor Lathander for renewal and hope, Tymora for luck, and Selûne for guidance and navigation. Their wise nature makes them favor guidance and luck deities."
+    },
+    {
+        "race": "Minotaur",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Tempus",
+            "Bane",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Kelemvor"
+        ],
+        "reasoning": "Minotaurs in Bulsania, being bull-like and aggressive, favor Tempus for strategy and battle, Bane for tyranny and power, and Tymora for luck. Their aggressive nature makes them favor war and power deities."
+    },
+    {
+        "race": "Orc",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Luthic",
+            "Bane"
+        ],
+        "secondary_deities": [
+            "Tempus",
+            "Beshaba"
+        ],
+        "reasoning": "Orcs in Katman, being goblinoid and living in swamps, favor Gruumsh for strength and conquest, Luthic for protection and fertility, and Bane for tyranny and power. Their aggressive nature makes them favor war and power deities."
+    },
+    {
+        "race": "Owlin",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Selûne",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Lathander"
+        ],
+        "reasoning": "Owlin in Kuriguer, being owl-like and living near magical forests, favor Sehanine for dreams and journeys, Selûne for guidance and navigation, and Tymora for luck. Their nocturnal nature makes them favor night and guidance deities."
+    },
+    {
+        "race": "Plasmoid",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Istishia",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Plasmoids in Alatman, being ooze-like and living in volcanic regions, favor Istishia for water and fluidity, Mystra for arcane knowledge, and Tymora for luck. Their fluid nature makes them favor water and magic deities."
+    },
+    {
+        "race": "Reborn",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Kelemvor",
+            "Myrkul",
+            "Jergal"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Beshaba"
+        ],
+        "reasoning": "Reborn in Alatman, being undead-touched and living in volcanic regions, favor Kelemvor for judgment, Myrkul for undeath, and Jergal for records of the dead. Their undead nature makes them favor death and judgment deities."
+    },
+    {
+        "race": "Satyr",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Mystra"
+        ],
+        "reasoning": "Satyrs in Kuriguer, being fey and living in magical forests, favor Sehanine for dreams and journeys, Tymora for luck, and Selûne for guidance and navigation. Their fey nature makes them favor nature and luck deities."
+    },
+    {
+        "race": "Shifter",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Shifters in Kuriguer, being shape-shifters and living near magical forests, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "race": "Simic Hybrid",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Istishia",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Simic Hybrids in Alatman, being bio-engineered and living in volcanic regions, favor Istishia for water and fluidity, Mystra for arcane knowledge, and Tymora for luck. Their hybrid nature makes them favor water and magic deities."
+    },
+    {
+        "race": "Tabaxi",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Mystra"
+        ],
+        "reasoning": "Tabaxi in Kuriguer, being cat-like and living near magical forests, favor Sehanine for dreams and journeys, Tymora for luck, and Selûne for guidance and navigation. Their curious nature makes them favor luck and guidance deities."
+    },
+    {
+        "race": "Thri-kreen",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Kelemvor"
+        ],
+        "reasoning": "Thri-kreen in Skratonia, being insect-like and militaristic, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck. Their militaristic nature makes them favor war and luck deities."
+    },
+    {
+        "race": "Tortle",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Istishia",
+            "Selûne",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Mystra"
+        ],
+        "reasoning": "Tortles in Kuriguer, being turtle-like and living near magical forests, favor Istishia for water and fluidity, Selûne for guidance and navigation, and Tymora for luck. Their aquatic nature makes them favor water and guidance deities."
+    },
+    {
+        "race": "Vedalken",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Mystra",
+            "Jergal",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Vedalken in Alatman, being blue-skinned and intellectual, favor Mystra for arcane knowledge, Jergal for records and fate, and Tymora for luck. Their intellectual nature makes them favor knowledge and wisdom deities."
+    },
+    {
+        "race": "Warforged",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Moradin",
+            "Dugmaren Brightmantle",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Warforged in Alatman, being constructed beings and living in volcanic regions, favor Moradin for creation and craftsmanship, Dugmaren for discovery and invention, and Mystra for arcane knowledge. Their constructed nature makes them favor creation and knowledge deities."
+    },
+    {
+        "class": "Artificer",
+        "subclass": "Armorer",
+        "primary_deities": [
+            "Moradin",
+            "Dugmaren Brightmantle",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Armorer Artificers, specializing in magical armor, favor Moradin for creation and craftsmanship, Dugmaren for discovery and invention, and Mystra for arcane knowledge. Their armor-focused nature makes them favor creation and knowledge deities."
+    },
+    {
+        "class": "Artificer",
+        "subclass": "Artillerist",
+        "primary_deities": [
+            "Mystra",
+            "Dugmaren Brightmantle",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Artillerist Artificers, specializing in explosive magic and ranged combat, favor Mystra for arcane knowledge, Dugmaren for discovery and invention, and Tempus for strategy and battle. Their explosive nature makes them favor magic and war deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of the Ancestral Guardian",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Jergal",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Ancestral Guardian Barbarians, calling upon ancestral spirits, favor Sehanine for dreams and journeys, Jergal for records and fate, and Tymora for luck. Their spirit-focused nature makes them favor wisdom and luck deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of the Beast",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Beast Barbarians, embracing animal instincts, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of the Storm Herald",
+        "primary_deities": [
+            "Kossuth",
+            "Istishia",
+            "Akadi"
+        ],
+        "secondary_deities": [
+            "Grumbar",
+            "Tymora"
+        ],
+        "reasoning": "Storm Herald Barbarians, commanding elemental forces, favor Kossuth for fire, Istishia for water, and Akadi for air. Their elemental nature makes them favor elemental deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of Wild Magic",
+        "primary_deities": [
+            "Tymora",
+            "Mystra",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Wild Magic Barbarians, embracing chaotic magic, favor Tymora for luck, Mystra for arcane knowledge, and Beshaba for misfortune. Their chaotic nature makes them favor luck and chaos deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of the Zealot",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Kelemvor"
+        ],
+        "reasoning": "Zealot Barbarians, driven by divine fury, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck. Their divine nature makes them favor war and luck deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of the Battlerager",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Tempus",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Luthic",
+            "Bane"
+        ],
+        "reasoning": "Battlerager Barbarians, specializing in armored combat, favor Gruumsh for strength and conquest, Tempus for strategy and battle, and Tymora for luck. Their aggressive nature makes them favor war and luck deities."
+    },
+    {
+        "class": "Barbarian",
+        "subclass": "Path of the Giant",
+        "primary_deities": [
+            "Tempus",
+            "Grumbar",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Bane"
+        ],
+        "reasoning": "Giant Barbarians, drawing power from giants, favor Tempus for strategy and battle, Grumbar for earth and strength, and Tymora for luck. Their giant-focused nature makes them favor war and earth deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Creation",
+        "primary_deities": [
+            "Mystra",
+            "Corellon Larethian",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Creation Bards, using the Song of Creation, favor Mystra for arcane knowledge, Corellon for elven magic, and Tymora for luck. Their creative nature makes them favor magic and luck deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Eloquence",
+        "primary_deities": [
+            "Tymora",
+            "Lathander",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Eloquence Bards, masters of persuasion, favor Tymora for luck, Lathander for renewal and hope, and Selûne for guidance and navigation. Their persuasive nature makes them favor luck and guidance deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Glamour",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Mystra"
+        ],
+        "reasoning": "Glamour Bards, masters of enchantment, favor Sehanine for dreams and journeys, Tymora for luck, and Selûne for guidance and navigation. Their enchanting nature makes them favor nature and luck deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Spirits",
+        "primary_deities": [
+            "Jergal",
+            "Kelemvor",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Spirits Bards, communing with the dead, favor Jergal for records and fate, Kelemvor for judgment, and Tymora for luck. Their spirit-focused nature makes them favor death and wisdom deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Swords",
+        "primary_deities": [
+            "Tempus",
+            "Tymora",
+            "Lathander"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Mystra"
+        ],
+        "reasoning": "Swords Bards, masters of blade work, favor Tempus for strategy and battle, Tymora for luck, and Lathander for renewal and hope. Their martial nature makes them favor war and luck deities."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Whispers",
+        "primary_deities": [
+            "Shar",
+            "Baravar Cloakshadow",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Myrkul",
+            "Kelemvor"
+        ],
+        "reasoning": "Whispers Bards, masters of secrets and fear, favor Shar for secrets and darkness, Baravar for trickery and illusions, and Beshaba for misfortune. Their secretive nature makes them favor dark and trickery deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Forge Domain",
+        "primary_deities": [
+            "Moradin",
+            "Dugmaren Brightmantle",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Forge Domain Clerics, blessing weapons and armor, favor Moradin for creation and craftsmanship, Dugmaren for discovery and invention, and Mystra for arcane knowledge. Their crafting nature makes them favor creation and knowledge deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Tempest Domain",
+        "primary_deities": [
+            "Kossuth",
+            "Istishia",
+            "Akadi"
+        ],
+        "secondary_deities": [
+            "Grumbar",
+            "Tymora"
+        ],
+        "reasoning": "Tempest Domain Clerics, commanding storms and weather, favor Kossuth for fire, Istishia for water, and Akadi for air. Their elemental nature makes them favor elemental deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Light Domain",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Light Domain Clerics, wielding radiant energy, favor Lathander for renewal and hope, Tymora for luck, and Selûne for guidance and navigation. Their radiant nature makes them favor light and guidance deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Nature Domain",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Nature Domain Clerics, protecting the natural world, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Trickery Domain",
+        "primary_deities": [
+            "Baravar Cloakshadow",
+            "Tymora",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Mystra"
+        ],
+        "reasoning": "Trickery Domain Clerics, masters of deception, favor Baravar for trickery and illusions, Tymora for luck, and Beshaba for misfortune. Their deceptive nature makes them favor trickery and luck deities."
+    },
+    {
+        "class": "Druid",
+        "subclass": "Circle of Wildfire",
+        "primary_deities": [
+            "Kossuth",
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Wildfire Druids, embracing destruction and renewal, favor Kossuth for fire, Sehanine for dreams and journeys, and Tymora for luck. Their destructive nature makes them favor fire and nature deities."
+    },
+    {
+        "class": "Fighter",
+        "subclass": "Battle Master",
+        "primary_deities": [
+            "Tempus",
+            "Clangeddin Silverbeard",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Bane"
+        ],
+        "reasoning": "Battle Master Fighters, masters of combat tactics, favor Tempus for strategy and battle, Clangeddin for honor and courage, and Tymora for luck. Their tactical nature makes them favor war and luck deities."
+    },
+    {
+        "class": "Monk",
+        "subclass": "Way of the Four Elements",
+        "primary_deities": [
+            "Kossuth",
+            "Istishia",
+            "Akadi"
+        ],
+        "secondary_deities": [
+            "Grumbar",
+            "Tymora"
+        ],
+        "reasoning": "Four Elements Monks, mastering elemental forces, favor Kossuth for fire, Istishia for water, and Akadi for air. Their elemental nature makes them favor elemental deities."
+    },
+    {
+        "class": "Paladin",
+        "subclass": "Oath of the Ancients",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Ancients Paladins, protecting the natural world, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "class": "Ranger",
+        "subclass": "Gloom Stalker",
+        "primary_deities": [
+            "Shar",
+            "Sehanine Moonbow",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Myrkul",
+            "Kelemvor"
+        ],
+        "reasoning": "Gloom Stalker Rangers, masters of darkness and stealth, favor Shar for secrets and darkness, Sehanine for dreams and journeys, and Beshaba for misfortune. Their dark nature makes them favor dark and nature deities."
+    },
+    {
+        "class": "Rogue",
+        "subclass": "Arcane Trickster",
+        "primary_deities": [
+            "Mystra",
+            "Baravar Cloakshadow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Arcane Trickster Rogues, combining magic and stealth, favor Mystra for arcane knowledge, Baravar for trickery and illusions, and Tymora for luck. Their magical nature makes them favor magic and trickery deities."
+    },
+    {
+        "class": "Sorcerer",
+        "subclass": "Divine Soul",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Divine Soul Sorcerers, touched by divine power, favor Lathander for renewal and hope, Tymora for luck, and Selûne for guidance and navigation. Their divine nature makes them favor light and guidance deities."
+    },
+    {
+        "class": "Warlock",
+        "subclass": "The Archfey",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Corellon Larethian",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Archfey Warlocks, serving fey patrons, favor Sehanine for dreams and journeys, Corellon for elven magic, and Tymora for luck. Their fey nature makes them favor nature and magic deities."
+    },
+    {
+        "class": "Warlock",
+        "subclass": "The Great Old One",
+        "primary_deities": [
+            "Shar",
+            "Myrkul",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Jergal",
+            "Kelemvor"
+        ],
+        "reasoning": "Great Old One Warlocks, serving eldritch patrons, favor Shar for secrets and darkness, Myrkul for undeath, and Beshaba for misfortune. Their eldritch nature makes them favor dark and mysterious deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Abjuration",
+        "primary_deities": [
+            "Mystra",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Abjuration Wizards, specializing in protective magic, favor Mystra for arcane knowledge, Lathander for renewal and hope, and Tymora for luck. Their protective nature makes them favor magic and protection deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Conjuration",
+        "primary_deities": [
+            "Mystra",
+            "Corellon Larethian",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Conjuration Wizards, specializing in summoning magic, favor Mystra for arcane knowledge, Corellon for elven magic, and Tymora for luck. Their summoning nature makes them favor magic and luck deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Enchantment",
+        "primary_deities": [
+            "Mystra",
+            "Baravar Cloakshadow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Enchantment Wizards, specializing in mind-affecting magic, favor Mystra for arcane knowledge, Baravar for trickery and illusions, and Tymora for luck. Their enchanting nature makes them favor magic and trickery deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Illusion",
+        "primary_deities": [
+            "Baravar Cloakshadow",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Illusion Wizards, specializing in deceptive magic, favor Baravar for trickery and illusions, Mystra for arcane knowledge, and Tymora for luck. Their deceptive nature makes them favor trickery and magic deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Necromancy",
+        "primary_deities": [
+            "Myrkul",
+            "Kelemvor",
+            "Jergal"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Beshaba"
+        ],
+        "reasoning": "Necromancy Wizards, specializing in death magic, favor Myrkul for undeath, Kelemvor for judgment, and Jergal for records of the dead. Their death-focused nature makes them favor death and judgment deities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Transmutation",
+        "primary_deities": [
+            "Mystra",
+            "Dugmaren Brightmantle",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Transmutation Wizards, specializing in change magic, favor Mystra for arcane knowledge, Dugmaren for discovery and invention, and Tymora for luck. Their transformative nature makes them favor knowledge and luck deities."
+    },
+    {
+        "class": "Tactician",
+        "subclass": "Grandmaster",
+        "primary_deities": [
+            "Tempus",
+            "Jergal",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Mystra"
+        ],
+        "reasoning": "Grandmaster Tacticians, masters of grand strategy, favor Tempus for strategy and battle, Jergal for records and fate, and Tymora for luck. Their strategic nature makes them favor war and wisdom deities."
+    },
+    {
+        "class": "Tactician",
+        "subclass": "War Mind",
+        "primary_deities": [
+            "Tempus",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Jergal"
+        ],
+        "reasoning": "War Mind Tacticians, masters of battlefield control, favor Tempus for strategy and battle, Mystra for arcane knowledge, and Tymora for luck. Their battlefield nature makes them favor war and magic deities."
+    },
+    {
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Moradin",
+            "Dugmaren Brightmantle",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Alatman, the volcanic forge region of Kamalatman, is home to Warforged, Autognomes, and other constructed beings. The volcanic forges and magical workshops make this region favor Moradin for creation and craftsmanship, Dugmaren for discovery and invention, and Mystra for arcane knowledge. The dangerous volcanic environment and focus on magical construction makes them favor creation and knowledge deities."
+    },
+    {
+        "continent": "Maltman of Kamalatman",
+        "primary_deities": [
+            "Moradin",
+            "Dugmaren Brightmantle",
+            "Vergadain"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Maltman, the mountainous mining region of Kamalatman, is home to Dwarves, Deep Gnomes, and Kobolds. The efficient mining operations and mountain strongholds make this region favor Moradin for creation and craftsmanship, Dugmaren for discovery and invention, and Vergadain for trade and wealth. The mining focus and mountain environment makes them favor creation and trade deities."
+    },
+    {
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Gruumsh One-Eye",
+            "Luthic",
+            "Bane"
+        ],
+        "secondary_deities": [
+            "Tempus",
+            "Beshaba"
+        ],
+        "reasoning": "Katman, the swampy agricultural region of Kamalatman, is home to Orcs, Half-Orcs, Lizardfolk, and Yuan-ti. The swampy frontier and agricultural focus make this region favor Gruumsh for strength and conquest, Luthic for protection and fertility, and Bane for tyranny and power. The swampy environment and goblinoid populations makes them favor war and power deities."
+    },
+    {
+        "continent": "Kantra",
+        "primary_deities": [
+            "Asmodeus",
+            "Bane",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Beshaba"
+        ],
+        "reasoning": "Kantra, the uncharted hellish region, is home to unknown infernal creatures and monsters. The dangerous volcanic landscape and mysterious inhabitants make this region favor Asmodeus for their infernal patron, Bane for tyranny and conquest, and Myrkul for undeath. The hellish environment and unknown dangers makes them favor dark and infernal deities."
+    },
+    {
+        "race": "Aasimar",
+        "subrace": "Protector Aasimar",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Corellon Larethian"
+        ],
+        "reasoning": "Protector Aasimar, being charged to guard the weak and seek out evil, naturally favor Lathander for renewal and hope, Tymora for good fortune in their protective duties, and Selûne for guidance and navigation. Their protective nature makes them favor light and guidance deities."
+    },
+    {
+        "race": "Aasimar",
+        "subrace": "Scourge Aasimar",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tempus",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Kelemvor"
+        ],
+        "reasoning": "Scourge Aasimar, driven by divine energy to destroy evil, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck in their destructive mission. Their destructive nature makes them favor war and light deities."
+    },
+    {
+        "race": "Aasimar",
+        "subrace": "Fallen Aasimar",
+        "continent": "Kamalatman",
+        "primary_deities": [
+            "Kelemvor",
+            "Myrkul",
+            "Shar"
+        ],
+        "secondary_deities": [
+            "Beshaba",
+            "Jergal"
+        ],
+        "reasoning": "Fallen Aasimar, touched by dark powers, favor Kelemvor for judgment, Myrkul for undeath, and Shar for secrets and darkness. Their fallen nature makes them favor death and dark deities."
+    },
+    {
+        "race": "Dragonborn",
+        "subrace": "Chromatic Dragonborn",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Tiamat",
+            "Tempus",
+            "Bane"
+        ],
+        "secondary_deities": [
+            "Myrkul",
+            "Beshaba"
+        ],
+        "reasoning": "Chromatic Dragonborn, descended from evil dragons, naturally favor Tiamat for their dragon heritage, Tempus for strategy and battle, and Bane for tyranny and power. Their destructive nature makes them favor evil dragon and war deities."
+    },
+    {
+        "race": "Dragonborn",
+        "subrace": "Metallic Dragonborn",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Bahamut",
+            "Lathander",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Mystra"
+        ],
+        "reasoning": "Metallic Dragonborn, descended from good dragons, naturally favor Bahamut for their dragon heritage, Lathander for renewal and hope, and Tymora for good fortune. Their protective nature makes them favor good dragon and light deities."
+    },
+    {
+        "race": "Dragonborn",
+        "subrace": "Gem Dragonborn",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Bahamut",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Gem Dragonborn, descended from gem dragons, naturally favor Bahamut for their dragon heritage, Mystra for arcane knowledge, and Tymora for luck. Their magical nature makes them favor dragon and magic deities."
+    },
+    {
+        "race": "Dwarf",
+        "subrace": "Hill Dwarf",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Moradin",
+            "Berronar Truesilver",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Yondalla"
+        ],
+        "reasoning": "Hill Dwarves, being more social and community-focused, favor Moradin for creation and craftsmanship, Berronar for family protection, and Tymora for luck. Their social nature makes them favor creation and family deities."
+    },
+    {
+        "race": "Dwarf",
+        "subrace": "Mountain Dwarf",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Moradin",
+            "Clangeddin Silverbeard",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Berronar Truesilver",
+            "Tymora"
+        ],
+        "reasoning": "Mountain Dwarves, being more traditional and reclusive, favor Moradin for creation and craftsmanship, Clangeddin for honor and courage, and Tempus for strategy and battle. Their traditional nature makes them favor creation and war deities."
+    },
+    {
+        "race": "Dwarf",
+        "subrace": "Duergar",
+        "continent": "Maltman of Kamalatman",
+        "primary_deities": [
+            "Moradin",
+            "Dugmaren Brightmantle",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Beshaba"
+        ],
+        "reasoning": "Duergar, being deep dwarves with dark magic, favor Moradin for creation and craftsmanship, Dugmaren for discovery and invention, and Myrkul for undeath. Their dark nature makes them favor creation and death deities."
+    },
+    {
+        "race": "Elf",
+        "subrace": "High Elf",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Corellon Larethian",
+            "Mystra",
+            "Sehanine Moonbow"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Tymora"
+        ],
+        "reasoning": "High Elves, being the most traditional and magical, favor Corellon for elven magic, Mystra for arcane knowledge, and Sehanine for dreams and journeys. Their magical nature makes them favor magic and elven deities."
+    },
+    {
+        "race": "Elf",
+        "subrace": "Wood Elf",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Wood Elves, being nature-focused and stealthy, favor Sehanine for dreams and journeys, Baervan for forests and travel, and Selûne for navigation and wanderers. Their nature-focused nature makes them favor nature and travel deities."
+    },
+    {
+        "race": "Elf",
+        "subrace": "Drow",
+        "continent": "Kamalatman",
+        "primary_deities": [
+            "Shar",
+            "Myrkul",
+            "Beshaba"
+        ],
+        "secondary_deities": [
+            "Bane",
+            "Kelemvor"
+        ],
+        "reasoning": "Drow, being dark elves with evil tendencies, favor Shar for secrets and darkness, Myrkul for undeath, and Beshaba for misfortune. Their dark nature makes them favor dark and evil deities."
+    },
+    {
+        "race": "Elf",
+        "subrace": "Sea Elf",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Selûne",
+            "Istishia",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Valkur",
+            "Lathander"
+        ],
+        "reasoning": "Sea Elves, being aquatic and living in coastal waters, favor Selûne for guidance and navigation, Istishia for water and fluidity, and Tymora for luck. Their aquatic nature makes them favor water and navigation deities."
+    },
+    {
+        "race": "Elf",
+        "subrace": "Eladrin",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Corellon Larethian",
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Eladrin, being fey elves with seasonal magic, favor Corellon for elven magic, Sehanine for dreams and journeys, and Tymora for luck. Their fey nature makes them favor elven and nature deities."
+    },
+    {
+        "race": "Genasi",
+        "subrace": "Air Genasi",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Akadi",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Air Genasi, being elemental air beings, naturally favor Akadi for air and wind, Mystra for arcane knowledge, and Tymora for luck. Their air nature makes them favor air and magic deities."
+    },
+    {
+        "race": "Genasi",
+        "subrace": "Earth Genasi",
+        "continent": "Maltman of Kamalatman",
+        "primary_deities": [
+            "Grumbar",
+            "Moradin",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Dugmaren Brightmantle",
+            "Lathander"
+        ],
+        "reasoning": "Earth Genasi, being elemental earth beings, naturally favor Grumbar for earth and strength, Moradin for creation and craftsmanship, and Tymora for luck. Their earth nature makes them favor earth and creation deities."
+    },
+    {
+        "race": "Genasi",
+        "subrace": "Fire Genasi",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Kossuth",
+            "Mystra",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Tempus",
+            "Lathander"
+        ],
+        "reasoning": "Fire Genasi, being elemental fire beings, naturally favor Kossuth for fire and destruction, Mystra for arcane knowledge, and Tymora for luck. Their fire nature makes them favor fire and magic deities."
+    },
+    {
+        "race": "Genasi",
+        "subrace": "Water Genasi",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Istishia",
+            "Selûne",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Mystra"
+        ],
+        "reasoning": "Water Genasi, being elemental water beings, naturally favor Istishia for water and fluidity, Selûne for guidance and navigation, and Tymora for luck. Their water nature makes them favor water and navigation deities."
+    },
+    {
+        "race": "Gnome",
+        "subrace": "Forest Gnome",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Garl Glittergold",
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Baervan Wildwanderer",
+            "Selûne"
+        ],
+        "reasoning": "Forest Gnomes, being nature-focused and stealthy, favor Garl Glittergold for luck and protection, Sehanine for dreams and journeys, and Tymora for luck. Their nature-focused nature makes them favor nature and luck deities."
+    },
+    {
+        "race": "Gnome",
+        "subrace": "Rock Gnome",
+        "continent": "Maltman of Kamalatman",
+        "primary_deities": [
+            "Garl Glittergold",
+            "Dugmaren Brightmantle",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Rock Gnomes, being tinkerers and inventors, favor Garl Glittergold for luck and protection, Dugmaren for discovery and invention, and Mystra for arcane knowledge. Their inventive nature makes them favor luck and knowledge deities."
+    },
+    {
+        "race": "Halfling",
+        "subrace": "Lightfoot Halfling",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Yondalla",
+            "Tymora",
+            "Baravar Cloakshadow"
+        ],
+        "secondary_deities": [
+            "Lathander",
+            "Selûne"
+        ],
+        "reasoning": "Lightfoot Halflings, being naturally stealthy and lucky, favor Yondalla for protection and fertility, Tymora for luck, and Baravar for trickery and illusions. Their stealthy nature makes them favor luck and trickery deities."
+    },
+    {
+        "race": "Halfling",
+        "subrace": "Stout Halfling",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Yondalla",
+            "Tymora",
+            "Lathander"
+        ],
+        "secondary_deities": [
+            "Arvoreen",
+            "Cyrrollalee"
+        ],
+        "reasoning": "Stout Halflings, being more resilient and hardy, favor Yondalla for protection and fertility, Tymora for luck, and Lathander for renewal and hope. Their resilient nature makes them favor protection and luck deities."
+    },
+    {
+        "race": "Halfling",
+        "subrace": "Ghostwise Halfling",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Yondalla",
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Lathander"
+        ],
+        "reasoning": "Ghostwise Halflings, being telepathic and nature-focused, favor Yondalla for protection and fertility, Sehanine for dreams and journeys, and Tymora for luck. Their telepathic nature makes them favor nature and luck deities."
+    },
+    {
+        "race": "Human",
+        "subrace": "Variant Human",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tymora",
+            "Lathander",
+            "Selûne"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Tempus"
+        ],
+        "reasoning": "Variant Humans, being adaptable and versatile, favor Tymora for luck, Lathander for renewal and hope, and Selûne for guidance and navigation. Their versatile nature makes them favor luck and guidance deities."
+    },
+    {
+        "race": "Orc",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Bahgtru",
+            "Gruumsh One-Eye",
+            "Luthic"
+        ],
+        "secondary_deities": [
+            "Ilneval",
+            "Shargaas"
+        ],
+        "reasoning": "Orcs in the swamplands of Katman revere Bahgtru as the god of strength and endurance, essential for survival in harsh conditions. Gruumsh One-Eye remains their primary war god, while Luthic provides maternal protection. Ilneval offers tactical wisdom, and Shargaas guides them through darkness."
+    },
+    {
+        "race": "Orc",
+        "continent": "Bulsania",
+        "primary_deities": [
+            "Bahgtru",
+            "Gruumsh One-Eye",
+            "Ilneval"
+        ],
+        "secondary_deities": [
+            "Luthic",
+            "Shargaas"
+        ],
+        "reasoning": "Orcs in the frozen wastes of Bulsania rely heavily on Bahgtru's strength to survive the harsh climate. Gruumsh One-Eye guides their military campaigns, while Ilneval provides the strategic thinking needed for complex warfare. Luthic and Shargaas offer protection and stealth respectively."
+    },
+    {
+        "race": "Elf",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Eilistraee",
+            "Hanali Celanil",
+            "Corellon Larethian"
+        ],
+        "secondary_deities": [
+            "Sehanine Moonbow",
+            "Labelas Enoreth"
+        ],
+        "reasoning": "Elves in Kuriguer's magical forests revere Eilistraee for her connection to nature and dance, Hanali Celanil for beauty and love, and Corellon as their creator. Sehanine Moonbow provides lunar guidance, while Labelas Enoreth offers wisdom and time mastery."
+    },
+    {
+        "race": "Elf",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Hanali Celanil",
+            "Labelas Enoreth",
+            "Corellon Larethian"
+        ],
+        "secondary_deities": [
+            "Eilistraee",
+            "Sehanine Moonbow"
+        ],
+        "reasoning": "Elves in Skratonia's diverse cities favor Hanali Celanil for her domains of beauty and love, Labelas Enoreth for wisdom and time, and Corellon as their patron. Eilistraee and Sehanine Moonbow provide additional guidance for those seeking deeper connections to nature and the moon."
+    },
+    {
+        "race": "Drow",
+        "continent": "Maltman of Kamalatman",
+        "primary_deities": [
+            "Lolth",
+            "Vhaeraun",
+            "Eilistraee"
+        ],
+        "secondary_deities": [
+            "Shar",
+            "Myrkul"
+        ],
+        "reasoning": "Drow in the underground mines of Maltman primarily worship Lolth, their spider queen, while Vhaeraun appeals to male drow seeking independence. Eilistraee offers hope for those seeking redemption. Shar and Myrkul provide additional dark guidance for those embracing their heritage."
+    },
+    {
+        "race": "Elf",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Solonor Thelandira",
+            "Corellon Larethian",
+            "Sehanine Moonbow"
+        ],
+        "secondary_deities": [
+            "Hanali Celanil",
+            "Labelas Enoreth"
+        ],
+        "reasoning": "Elves in Kuriguer's forests revere Solonor Thelandira as the god of archery and hunting, essential skills for survival in the magical wilderness. Corellon and Sehanine Moonbow provide additional guidance, while Hanali Celanil and Labelas Enoreth offer beauty and wisdom."
+    },
+    {
+        "race": "Goblin",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Maglubiyet",
+            "Khurgorbaeyag",
+            "Nomog-Geaya"
+        ],
+        "secondary_deities": [
+            "Luthic",
+            "Bargrivyek"
+        ],
+        "reasoning": "Goblins in the swamplands of Katman worship Maglubiyet as their primary war god, Khurgorbaeyag for his domains of slavery and oppression, and Nomog-Geaya for his connection to goblin society. Luthic provides maternal protection, while Bargrivyek offers guidance for goblin communities."
+    },
+    {
+        "race": "Goblin",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Maglubiyet",
+            "Khurgorbaeyag",
+            "Bargrivyek"
+        ],
+        "secondary_deities": [
+            "Nomog-Geaya",
+            "Luthic"
+        ],
+        "reasoning": "Goblins in Alatman's volcanic regions worship Maglubiyet for warfare, Khurgorbaeyag for his harsh domains, and Bargrivyek for community guidance. Nomog-Geaya and Luthic provide additional support for goblin society in the harsh volcanic environment."
+    },
+    {
+        "race": "Lizardfolk",
+        "continent": "Katman of Kamalatman",
+        "primary_deities": [
+            "Sekolah",
+            "Sseth",
+            "Merrshaulk"
+        ],
+        "secondary_deities": [
+            "Bargrivyek",
+            "Urogalan"
+        ],
+        "reasoning": "Lizardfolk in the swamplands of Katman primarily worship Sekolah, the shark god, for his connection to water and hunting. Sseth and Merrshaulk provide additional reptilian guidance, while Bargrivyek and Urogalan offer community and death-related wisdom."
+    },
+    {
+        "race": "Lizardfolk",
+        "continent": "Alatman of Kamalatman",
+        "primary_deities": [
+            "Sekolah",
+            "Sseth",
+            "Urogalan"
+        ],
+        "secondary_deities": [
+            "Merrshaulk",
+            "Bargrivyek"
+        ],
+        "reasoning": "Lizardfolk in Alatman's volcanic regions worship Sekolah for his aquatic domains, Sseth for reptilian power, and Urogalan for death and the underworld. Merrshaulk and Bargrivyek provide additional guidance for lizardfolk communities in the harsh volcanic environment."
+    },
+    {
+        "race": "Shifter",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "The Raven Queen",
+            "Sehanine Moonbow",
+            "Corellon Larethian"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Tymora"
+        ],
+        "reasoning": "Shifters in Kuriguer's magical forests revere The Raven Queen for her connection to fate and death, Sehanine Moonbow for lunar guidance, and Corellon for their elven heritage. Mystra and Tymora provide additional magical and luck-based guidance for their transformative nature."
+    },
+    {
+        "race": "Shifter",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "The Raven Queen",
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Corellon Larethian",
+            "Mystra"
+        ],
+        "reasoning": "Shifters in Skratonia's plains worship The Raven Queen for her domains of fate and death, Sehanine Moonbow for lunar guidance, and Tymora for luck in their transformations. Corellon Larethian and Mystra provide additional elven and magical guidance."
+    },
+    {
+        "race": "Halfling",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Urogalan",
+            "Yondalla",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Arvoreen",
+            "Cyrrollalee"
+        ],
+        "reasoning": "Halflings in Skratonia revere Urogalan for his connection to death and the afterlife, Yondalla as their primary goddess, and Tymora for luck. Arvoreen and Cyrrollalee provide additional halfling-specific guidance for protection and home life."
+    },
+    {
+        "race": "Halfling",
+        "continent": "Kuriguer",
+        "primary_deities": [
+            "Urogalan",
+            "Yondalla",
+            "Arvoreen"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Cyrrollalee"
+        ],
+        "reasoning": "Halflings in Kuriguer's coastal towns worship Urogalan for death-related guidance, Yondalla as their patron goddess, and Arvoreen for protection. Tymora and Cyrrollalee provide additional luck and home-based guidance for halfling communities."
+    },
+    {
+        "class": "Ranger",
+        "subclass": "Gloom Stalker",
+        "primary_deities": [
+            "The Raven Queen",
+            "Shar",
+            "Sehanine Moonbow"
+        ],
+        "secondary_deities": [
+            "Baravar Cloakshadow",
+            "Tymora"
+        ],
+        "reasoning": "Gloom Stalker rangers revere The Raven Queen for her connection to fate and death, Shar for her domains of darkness and secrets, and Sehanine Moonbow for lunar guidance. Baravar Cloakshadow and Tymora provide additional stealth and luck-based guidance."
+    },
+    {
+        "class": "Ranger",
+        "subclass": "Hunter",
+        "primary_deities": [
+            "Solonor Thelandira",
+            "Sehanine Moonbow",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Tymora",
+            "Lathander"
+        ],
+        "reasoning": "Hunter rangers worship Solonor Thelandira as the god of archery and hunting, Sehanine Moonbow for lunar guidance, and Tempus for warfare. Tymora and Lathander provide additional luck and renewal-based guidance for their hunting activities."
+    },
+    {
+        "class": "Warlock",
+        "subclass": "The Archfey",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Corellon Larethian",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Mystra",
+            "Lathander"
+        ],
+        "reasoning": "Archfey warlocks revere Sehanine Moonbow for her connection to fey magic, Corellon Larethian for elven heritage, and Tymora for luck. Mystra and Lathander provide additional magical and renewal-based guidance for their fey connections."
+    },
+    {
+        "class": "Warlock",
+        "subclass": "The Great Old One",
+        "primary_deities": [
+            "The Raven Queen",
+            "Shar",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Jergal",
+            "Beshaba"
+        ],
+        "reasoning": "Great Old One warlocks worship The Raven Queen for her connection to fate and death, Shar for her domains of darkness and secrets, and Myrkul for death. Jergal and Beshaba provide additional death and misfortune-based guidance for their otherworldly connections."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Trickery Domain",
+        "primary_deities": [
+            "Baravar Cloakshadow",
+            "Tymora",
+            "Shar"
+        ],
+        "secondary_deities": [
+            "Beshaba",
+            "Mystra"
+        ],
+        "reasoning": "Trickery domain clerics revere Baravar Cloakshadow for his domains of illusion and stealth, Tymora for luck, and Shar for her connection to secrets. Beshaba and Mystra provide additional misfortune and magical guidance for their deceptive practices."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Nature Domain",
+        "primary_deities": [
+            "Sehanine Moonbow",
+            "Corellon Larethian",
+            "Grumbar"
+        ],
+        "secondary_deities": [
+            "Istishia",
+            "Akadi"
+        ],
+        "reasoning": "Nature domain clerics worship Sehanine Moonbow for her connection to nature, Corellon Larethian for elven heritage, and Grumbar for earth. Istishia and Akadi provide additional elemental guidance for their nature-based practices."
+    },
+    {
+        "class": "Cleric",
+        "subclass": "Death Domain",
+        "primary_deities": [
+            "The Raven Queen",
+            "Kelemvor",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Jergal",
+            "Urogalan"
+        ],
+        "reasoning": "Death domain clerics revere The Raven Queen for her connection to fate and death, Kelemvor for his role as judge of the dead, and Myrkul for death. Jergal and Urogalan provide additional death-related guidance for their necromantic practices."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Glamour",
+        "primary_deities": [
+            "Hanali Celanil",
+            "Sehanine Moonbow",
+            "Tymora"
+        ],
+        "secondary_deities": [
+            "Corellon Larethian",
+            "Mystra"
+        ],
+        "reasoning": "Glamour bards worship Hanali Celanil for her domains of beauty and love, Sehanine Moonbow for lunar guidance, and Tymora for luck. Corellon Larethian and Mystra provide additional elven and magical guidance for their enchanting performances."
+    },
+    {
+        "class": "Bard",
+        "subclass": "College of Spirits",
+        "primary_deities": [
+            "The Raven Queen",
+            "Jergal",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Urogalan",
+            "Shar"
+        ],
+        "reasoning": "Spirits bards revere The Raven Queen for her connection to fate and death, Jergal for his role as scribe of the dead, and Myrkul for death. Urogalan and Shar provide additional death and shadow-based guidance for their spirit communication."
+    },
+    {
+        "class": "Druid",
+        "subclass": "Circle of Spores",
+        "primary_deities": [
+            "Urogalan",
+            "The Raven Queen",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Jergal",
+            "Shar"
+        ],
+        "reasoning": "Spores druids worship Urogalan for his connection to death and the underworld, The Raven Queen for fate and death, and Myrkul for death. Jergal and Shar provide additional death and shadow-based guidance for their necromantic nature practices."
+    },
+    {
+        "class": "Druid",
+        "subclass": "Circle of Wildfire",
+        "primary_deities": [
+            "Kossuth",
+            "Grumbar",
+            "Istishia"
+        ],
+        "secondary_deities": [
+            "Akadi",
+            "Tymora"
+        ],
+        "reasoning": "Wildfire druids revere Kossuth for his connection to fire, Grumbar for earth, and Istishia for water. Akadi and Tymora provide additional air and luck-based guidance for their elemental destruction and renewal practices."
+    },
+    {
+        "class": "Monk",
+        "subclass": "Way of the Long Death",
+        "primary_deities": [
+            "The Raven Queen",
+            "Jergal",
+            "Urogalan"
+        ],
+        "secondary_deities": [
+            "Myrkul",
+            "Shar"
+        ],
+        "reasoning": "Long Death monks worship The Raven Queen for her connection to fate and death, Jergal for his role as scribe of the dead, and Urogalan for death. Myrkul and Shar provide additional death and shadow-based guidance for their necromantic martial arts."
+    },
+    {
+        "class": "Monk",
+        "subclass": "Way of the Four Elements",
+        "primary_deities": [
+            "Kossuth",
+            "Grumbar",
+            "Istishia"
+        ],
+        "secondary_deities": [
+            "Akadi",
+            "Mystra"
+        ],
+        "reasoning": "Four Elements monks revere Kossuth for fire, Grumbar for earth, and Istishia for water. Akadi and Mystra provide additional air and magical guidance for their elemental martial arts practices."
+    },
+    {
+        "class": "Sorcerer",
+        "subclass": "Shadow Magic",
+        "primary_deities": [
+            "Shar",
+            "The Raven Queen",
+            "Myrkul"
+        ],
+        "secondary_deities": [
+            "Jergal",
+            "Urogalan"
+        ],
+        "reasoning": "Shadow Magic sorcerers worship Shar for her domains of darkness and secrets, The Raven Queen for fate and death, and Myrkul for death. Jergal and Urogalan provide additional death-related guidance for their shadow-based magical abilities."
+    },
+    {
+        "class": "Sorcerer",
+        "subclass": "Divine Soul",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Corellon Larethian",
+            "Sehanine Moonbow"
+        ],
+        "reasoning": "Divine Soul sorcerers revere Lathander for renewal and hope, Tymora for luck, and Mystra for magic. Corellon Larethian and Sehanine Moonbow provide additional elven and lunar guidance for their divine magical abilities."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Necromancy",
+        "primary_deities": [
+            "The Raven Queen",
+            "Myrkul",
+            "Jergal"
+        ],
+        "secondary_deities": [
+            "Urogalan",
+            "Shar"
+        ],
+        "reasoning": "Necromancy wizards worship The Raven Queen for her connection to fate and death, Myrkul for death, and Jergal for his role as scribe of the dead. Urogalan and Shar provide additional death and shadow-based guidance for their necromantic studies."
+    },
+    {
+        "class": "Wizard",
+        "subclass": "School of Enchantment",
+        "primary_deities": [
+            "Hanali Celanil",
+            "Sehanine Moonbow",
+            "Mystra"
+        ],
+        "secondary_deities": [
+            "Corellon Larethian",
+            "Tymora"
+        ],
+        "reasoning": "Enchantment wizards revere Hanali Celanil for her domains of beauty and love, Sehanine Moonbow for lunar guidance, and Mystra for magic. Corellon Larethian and Tymora provide additional elven and luck-based guidance for their enchanting studies."
+    }
+]
