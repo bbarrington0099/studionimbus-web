@@ -739,3 +739,178 @@ img.no-fullscreen:hover {
     opacity: 1;
     transform: none;
 }
+
+/* ===== RACE NAMES STYLING ===== */
+.names-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.name-category {
+    background: rgba(44, 79, 107, 0.1);
+    border: 1px solid var(--mountain-brown);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+.name-category h4 {
+    color: var(--ocean-blue);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    border-bottom: 2px solid var(--ocean-blue);
+    padding-bottom: 0.5rem;
+}
+
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.name-tag {
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-shadow: var(--text-shadow-dark);
+    transition: var(--transition);
+    border: 1px solid rgba(74, 93, 35, 0.3);
+    cursor: pointer;
+    user-select: none;
+}
+
+.name-tag:hover {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    text-shadow: var(--text-shadow-light);
+}
+
+.name-tag:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Dark mode adjustments for name tags */
+.darkMode .name-tag {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border-color: rgba(44, 79, 107, 0.3);
+}
+
+.darkMode .name-tag:hover {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+}
+
+/* Mobile responsiveness for names */
+@media (max-width: 768px) {
+    .names-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .name-category {
+        padding: 0.8rem;
+    }
+
+    .name-category h4 {
+        font-size: 1rem;
+    }
+
+    .name-tag {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* ===== COPY NOTIFICATION STYLING ===== */
+.copy-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-notification.show {
+    transform: translateX(0);
+}
+
+.copy-notification-content {
+    background: var(--forest-green);
+    color: var(--parchment-light);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--gold-accent);
+    min-width: 200px;
+    text-shadow: var(--text-shadow-dark);
+}
+
+.copy-icon {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.copy-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Dark mode for copy notification */
+.darkMode .copy-notification-content {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border-color: var(--gold-accent);
+}
+
+.darkMode .copy-icon {
+    background: var(--gold-accent);
+    color: var(--ink-dark);
+}
+
+/* Mobile responsiveness for copy notification */
+@media (max-width: 768px) {
+    .copy-notification {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        transform: translateY(-100%);
+    }
+
+    .copy-notification.show {
+        transform: translateY(0);
+    }
+
+    .copy-notification-content {
+        min-width: auto;
+        padding: 0.8rem 1rem;
+    }
+
+    .copy-text {
+        font-size: 0.8rem;
+    }
+}

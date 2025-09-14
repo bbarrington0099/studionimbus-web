@@ -176,6 +176,76 @@ const app = {
         }
     },
 
+    // Copy text to clipboard
+    async copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            this.showCopyNotification(text);
+        } catch (err) {
+            // Fallback for older browsers
+            this.fallbackCopyToClipboard(text);
+        }
+    },
+
+    // Fallback copy method for older browsers
+    fallbackCopyToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            this.showCopyNotification(text);
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+        }
+
+        document.body.removeChild(textArea);
+    },
+
+    // Show copy notification
+    showCopyNotification(text) {
+        // Remove existing notification if any
+        const existingNotification = document.getElementById('copy-notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.id = 'copy-notification';
+        notification.className = 'copy-notification';
+        notification.innerHTML = `
+            <div class="copy-notification-content">
+                <span class="copy-icon">✓</span>
+                <span class="copy-text">"${text}" copied to clipboard!</span>
+            </div>
+        `;
+
+        // Add to page
+        document.body.appendChild(notification);
+
+        // Show notification with animation
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+
+        // Hide notification after 2 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 2000);
+    },
+
     // Jump to top function
     jumpToTop() {
         window.scrollTo({
@@ -926,12 +996,6 @@ const app = {
                     </div>
                     <div class="race-stat">
                         <strong>Ability Scores:</strong> ${Object.entries(raceData.ability_score_increase).map(([ability, value]) => `${ability} +${value}`).join(', ')}
-                    </div>
-                    <div class="race-stat">
-                        <strong>Maturity:</strong> ${raceData.maturity_age}
-                    </div>
-                    <div class="race-stat">
-                        <strong>Lifespan:</strong> ${raceData.lifespan}
                     </div>
                 </div>
                 <p class="race-playstyle">${raceData.playstyle}</p>
@@ -2374,12 +2438,6 @@ const app = {
                             <strong>Age:</strong> ${raceData.age}
                         </div>
                         <div class="race-stat">
-                            <strong>Maturity Age:</strong> ${raceData.maturity_age}
-                        </div>
-                        <div class="race-stat">
-                            <strong>Lifespan:</strong> ${raceData.lifespan}
-                        </div>
-                        <div class="race-stat">
                             <strong>Alignment:</strong> ${raceData.alignment}
                         </div>
                         <div class="race-stat">
@@ -2448,6 +2506,34 @@ const app = {
                                 </details>
                             `;
         }).join('')}
+                    </div>
+                </details>
+            ` : ''}
+            
+            ${raceData.names ? `
+                <details>
+                    <summary>Common Names</summary>
+                    <div class="details-content-inner">
+                        <div class="names-section">
+                            <div class="name-category">
+                                <h4>Male Names</h4>
+                                <div class="name-list">
+                                    ${raceData.names.male_names.map(name => `<span class="name-tag" onclick="app.copyToClipboard('${name}')" title="Click to copy">${name}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="name-category">
+                                <h4>Female Names</h4>
+                                <div class="name-list">
+                                    ${raceData.names.female_names.map(name => `<span class="name-tag" onclick="app.copyToClipboard('${name}')" title="Click to copy">${name}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="name-category">
+                                <h4>Last Names</h4>
+                                <div class="name-list">
+                                    ${raceData.names.last_names.map(name => `<span class="name-tag" onclick="app.copyToClipboard('${name}')" title="Click to copy">${name}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </details>
             ` : ''}
