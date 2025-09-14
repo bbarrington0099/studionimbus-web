@@ -2504,10 +2504,8 @@ const app = {
 
     // Show deity details
     showDeityDetails(deityName) {
-        console.log('showDeityDetails called with:', deityName);
         const deity = this.findDeityByName(deityName);
         if (!deity) {
-            console.error('Deity not found:', deityName);
             return;
         }
 
@@ -2516,7 +2514,6 @@ const app = {
         const modalBody = document.getElementById('deity-modal-body');
 
         if (!modal) {
-            console.error('Deity modal not found!');
             return;
         }
 
@@ -2663,28 +2660,10 @@ const app = {
         modal.style.height = '100%';
         modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
 
-        console.log('Modal computed styles:', {
-            display: window.getComputedStyle(modal).display,
-            position: window.getComputedStyle(modal).position,
-            zIndex: window.getComputedStyle(modal).zIndex,
-            visibility: window.getComputedStyle(modal).visibility,
-            opacity: window.getComputedStyle(modal).opacity
-        });
-
-        // Check if modal is actually in the DOM and visible
-        console.log('Modal element:', modal);
-        console.log('Modal parent:', modal.parentElement);
-        console.log('Modal offsetParent:', modal.offsetParent);
-        console.log('Modal offsetWidth:', modal.offsetWidth);
-        console.log('Modal offsetHeight:', modal.offsetHeight);
-
-        console.log('Deity modal should be visible now');
-
         // Check if modal is actually visible after a short delay
         setTimeout(() => {
             const computedStyle = window.getComputedStyle(modal);
             if (computedStyle.display === 'none' || modal.offsetWidth === 0) {
-                console.log('Original modal not visible, creating backup...');
                 this.createSimpleBackupModal(deity, pantheon, this.getDeitySymbol(deity.name));
             }
         }, 100);
@@ -2999,7 +2978,6 @@ const app = {
         `;
 
         document.body.appendChild(backupModal);
-        console.log('Backup modal created and added to DOM');
     },
 
 
