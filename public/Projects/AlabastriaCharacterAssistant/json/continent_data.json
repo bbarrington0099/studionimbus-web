@@ -6,6 +6,10 @@
     {
         "continent": "Kuriguer",
         "description": "Here is the land of magic, far from a fairytale sense. With the establishment of two fine towns along the coast and smaller settlements leading South, the rest of this land is shrouded beyond a forest not typically kind to strangers.",
+        "colors": [
+            "Purple",
+            "Silver"
+        ],
         "languages": {
             "primary": [
                 "Common",
@@ -122,6 +126,10 @@
     {
         "continent": "Alatman of Kamalatman",
         "description": "Land grouped of grey forests, flat swamps, and a timely volcano, exploring this land is quite popular due to the great natural riches that can be sent back, but settling there has proven quite difficult with the royal family's great taxes placed on the land with claims of wanting to regulate the removal of the materials found.",
+        "colors": [
+            "Orange",
+            "Yellow"
+        ],
         "languages": {
             "primary": [
                 "Common",
@@ -247,6 +255,10 @@
     {
         "continent": "Maltman of Kamalatman",
         "description": "A very mountainous region, the kingdom sends ships to collect and spread many ores and materials across the world from the vastly efficient yet seemingly small mining villages.",
+        "colors": [
+            "Steel gray",
+            "Blue"
+        ],
         "languages": {
             "primary": [
                 "Dwarvish",
@@ -394,6 +406,10 @@
     {
         "continent": "Skratonia",
         "description": "While other worlds would likely consider this a desert wasteland, in Alabastria, Skratonia is the most populated land due to its' many open planes, and moderate temperate compared to much of the commoner welcome options or the swampy marshlands of the triontinental Kingdom of Kamalatman, allowing the growth of decent crops, leading to a very diverse mix of people of small settlements connected through major towns.",
+        "colors": [
+            "Green",
+            "Gold"
+        ],
         "languages": {
             "primary": [
                 "Common",
@@ -571,6 +587,10 @@
     {
         "continent": "Bulsania",
         "description": "The resident continent of ice and tough inhabitants holds few settlements on its' West coast before reaching a group of mountain ranges including the cloud towering Noxious Mountain, leading into a frozen land left to giants and titans.",
+        "colors": [
+            "Light blue",
+            "White"
+        ],
         "languages": {
             "primary": [
                 "Giant",
@@ -722,6 +742,10 @@
     {
         "continent": "Kantra",
         "description": "A counter to Bulsania, this land of fiery cracking earth and ash filled sky is home to creatures not known by the lands around it as no attempted explorations have returned, leading to quite the rumors of this hellish region. (No map as the land is uncharted)",
+        "colors": [
+            "Crimson",
+            "Dark"
+        ],
         "languages": {
             "primary": [
                 "Infernal",
@@ -814,6 +838,10 @@
     {
         "continent": "Katman of Kamalatman",
         "description": "Home to most of the kingdoms inhabitants, this land has a stretch of planes preluding a mass of swampy less populated areas.",
+        "colors": [
+            "Pink",
+            "Brown"
+        ],
         "languages": {
             "primary": [
                 "Orcish",
