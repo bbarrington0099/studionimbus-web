@@ -418,6 +418,70 @@ body {
     box-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
 }
 
+/* Rank background colors for staff and member cards */
+.rank-coal {
+    background: #2c2c2c !important;
+    color: var(--parchment-light) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-dark);
+}
+
+.rank-copper {
+    background: #b87333 !important;
+    color: var(--parchment-light) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-dark);
+}
+
+.rank-iron {
+    background: #708090 !important;
+    color: var(--parchment-light) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-dark);
+}
+
+.rank-silver {
+    background: #c0c0c0 !important;
+    color: var(--ink-dark) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-light);
+}
+
+.rank-gold {
+    background: #ffd700 !important;
+    color: var(--ink-dark) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-light);
+}
+
+.rank-platinum {
+    background: #e5e4e2 !important;
+    color: var(--ink-dark) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-light);
+}
+
+.rank-mithral {
+    background: #b0e0e6 !important;
+    color: var(--ink-dark) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-shadow: var(--text-shadow-light);
+}
+
 /* Mobile responsiveness for rank headers */
 @media (max-width: 768px) {
     .rank-header {
