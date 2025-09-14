@@ -10,5 +10,18 @@
         "personality": "Equal parts father-figure and commander. Stern when needed, but known for his booming laugh and ability to unite wildly different adventurers under one cause.",
         "faith": "Devoted to Tempus, the Lord of Battles",
         "background": "Former veteran of the king's armies who founded the guild after witnessing villages abandoned to monsters while soldiers fought foreign wars. The legendary wyvern slayer who established the guild's core values and continues to lead by example. Tharos's leadership philosophy embraces the idea that those risking their lives in the field should determine their own methods, so long as they serve the greater good of protecting the innocent. This pragmatic approach allows the guild to welcome diverse alignments and fighting styles while maintaining unity of purpose."
+    },
+    {
+        "name": "Kinris Morranfew",
+        "race": "Kalashtar",
+        "class": "Mentalist Tactician",
+        "guild_role": "Barkeep / Doctor / Brewer / Guild Confidante",
+        "rank": "Coal",
+        "image": "KinrisMorranfew.png",
+        "appearance": "A warm-eyed Kalashtar woman of 26 years, with intricate black tattoos swirling across her face and arms. She keeps her dark hair in a thick braid over her shoulder and wears a blue tunic beneath a leather apron marked with the Huntbound Order’s emblem. Her hands are calloused from both brewing and healing, and her ever-present smile carries both mischief and kindness.",
+        "personality": "Lively, compassionate, and endlessly curious about others. Kinris does everything with flair, often too much, but her energy is infectious. She listens deeply, makes everyone feel heard, and believes even the most broken soul can be mended with patience, laughter, and care.",
+        "faith": "Respects Tempus's blessing on the guild, but her personal philosophy is rooted in the sanctity of life and quiet compassion over divine wrath.",
+        "background": "Born to a wandering caravan, Kinris found her place among The Huntbound Order as much for her wit and brewing as for her healing touch. She became the guild’s unofficial heart: tending wounds, pouring drinks, and listening to the burdens of hunters who return from bloody work. Though she avoids killing, her strategic mind aids guild hunts with clever plans and mentalist insight. To many members, Kinris is both a sister and a counselor — the keeper of secrets, scars, and spirits (both strong drink and soulful guidance)."
     }
+    
 ]
