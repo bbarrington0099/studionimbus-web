@@ -336,3 +336,217 @@ body {
         width: 100%;
     }
 }
+
+/* Rank Header Styling */
+.rank-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.rank-image {
+    width: 60px;
+    height: 60px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--mountain-brown);
+    background: rgba(139, 69, 19, 0.1);
+    transition: var(--transition);
+}
+
+/* Rank-specific border colors */
+.rank-card:has(.rank-image[alt*="Coal"]) .rank-image {
+    border-color: #2c2c2c;
+}
+
+.rank-card:has(.rank-image[alt*="Copper"]) .rank-image {
+    border-color: #b87333;
+}
+
+.rank-card:has(.rank-image[alt*="Iron"]) .rank-image {
+    border-color: #708090;
+}
+
+.rank-card:has(.rank-image[alt*="Silver"]) .rank-image {
+    border-color: #c0c0c0;
+}
+
+.rank-card:has(.rank-image[alt*="Gold"]) .rank-image {
+    border-color: #ffd700;
+}
+
+.rank-card:has(.rank-image[alt*="Platinum"]) .rank-image {
+    border-color: #e5e4e2;
+}
+
+.rank-card:has(.rank-image[alt*="Mithral"]) .rank-image {
+    border-color: #b0e0e6;
+}
+
+.rank-image:hover {
+    transform: scale(1.1);
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.3);
+}
+
+.rank-title {
+    flex: 1;
+}
+
+.rank-title h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.2rem;
+}
+
+.rank-title .rank-level {
+    font-size: 0.9rem;
+    color: var(--ocean-blue);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Special styling for Coal rank image */
+.rank-card.coal-rank .rank-image {
+    border: 3px solid #2c2c2c;
+    background: linear-gradient(135deg, rgba(44, 44, 44, 0.2), rgba(139, 69, 19, 0.1));
+}
+
+.rank-card.coal-rank .rank-image:hover {
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
+}
+
+/* Mobile responsiveness for rank headers */
+@media (max-width: 768px) {
+    .rank-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .rank-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Member Header Styling (for staff and members) */
+.member-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.member-rank-image {
+    width: 50px;
+    height: 50px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--mountain-brown);
+    background: rgba(139, 69, 19, 0.1);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+/* Member rank-specific border colors */
+.member-card:has(.member-rank-image[alt*="Coal"]) .member-rank-image {
+    border-color: #2c2c2c;
+}
+
+.member-card:has(.member-rank-image[alt*="Copper"]) .member-rank-image {
+    border-color: #b87333;
+}
+
+.member-card:has(.member-rank-image[alt*="Iron"]) .member-rank-image {
+    border-color: #708090;
+}
+
+.member-card:has(.member-rank-image[alt*="Silver"]) .member-rank-image {
+    border-color: #c0c0c0;
+}
+
+.member-card:has(.member-rank-image[alt*="Gold"]) .member-rank-image {
+    border-color: #ffd700;
+}
+
+.member-card:has(.member-rank-image[alt*="Platinum"]) .member-rank-image {
+    border-color: #e5e4e2;
+}
+
+.member-card:has(.member-rank-image[alt*="Mithral"]) .member-rank-image {
+    border-color: #b0e0e6;
+}
+
+/* Staff rank-specific border colors */
+.staff-card:has(.member-rank-image[alt*="Coal"]) .member-rank-image {
+    border-color: #2c2c2c;
+}
+
+.staff-card:has(.member-rank-image[alt*="Copper"]) .member-rank-image {
+    border-color: #b87333;
+}
+
+.staff-card:has(.member-rank-image[alt*="Iron"]) .member-rank-image {
+    border-color: #708090;
+}
+
+.staff-card:has(.member-rank-image[alt*="Silver"]) .member-rank-image {
+    border-color: #c0c0c0;
+}
+
+.staff-card:has(.member-rank-image[alt*="Gold"]) .member-rank-image {
+    border-color: #ffd700;
+}
+
+.staff-card:has(.member-rank-image[alt*="Platinum"]) .member-rank-image {
+    border-color: #e5e4e2;
+}
+
+.staff-card:has(.member-rank-image[alt*="Mithral"]) .member-rank-image {
+    border-color: #b0e0e6;
+}
+
+.member-rank-image:hover {
+    transform: scale(1.1);
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.3);
+}
+
+.member-title {
+    flex: 1;
+}
+
+.member-title h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* Special styling for Coal rank in member cards */
+.member-card .member-rank-image[alt*="Coal"] {
+    border: 3px solid #2c2c2c;
+    background: linear-gradient(135deg, rgba(44, 44, 44, 0.2), rgba(139, 69, 19, 0.1));
+}
+
+.member-card .member-rank-image[alt*="Coal"]:hover {
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
+}
+
+/* Mobile responsiveness for member headers */
+@media (max-width: 768px) {
+    .member-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .member-rank-image {
+        width: 40px;
+        height: 40px;
+        align-self: center;
+    }
+}
