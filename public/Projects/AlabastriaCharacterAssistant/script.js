@@ -968,6 +968,10 @@ const app = {
             // Store the full continent name for lookup
             card.onclick = () => this.selectItem(continent.continent);
 
+            // Apply continent gradient background
+            const gradient = this.getContinentGradient(continent.continent);
+            card.style.background = gradient;
+
             card.innerHTML = `
                 <img src="continent_images/${continent.continent.split(" ")[0]}.png" 
                      alt="${continent.continent}" 
@@ -2347,7 +2351,7 @@ const app = {
                                     <div class="deity-tags">
                                         ${pantheon.deities.map(deity => `
                                             <span class="deity-tag" onclick="app.showDeityDetails('${deity.name}')" title="Click to view details">
-                                                <i class="${deity.symbol}"></i> ${deity.name}
+                                                <i class="${deity.symbol}" style="color: ${this.getDeityFirstColor(deity.name)};"></i> ${deity.name}
                                             </span>
                                         `).join('')}
                                     </div>
@@ -2428,7 +2432,7 @@ const app = {
                 <details class="deity-details">
                     <summary class="deity-summary">
                         <div class="deity-header">
-                            <i class="${deityGroup.symbol} deity-icon"></i>
+                            <i class="${deityGroup.symbol} deity-icon" style="color: ${this.getDeityFirstColor(deityGroup.deity)};"></i>
                             <h4>${deityGroup.deity}</h4>
                             <span class="pantheon-tag">${deityGroup.pantheon}</span>
                         </div>
@@ -2530,6 +2534,100 @@ const app = {
         return `<i class="${symbol} deity-icon" title="${deityName}"></i><span class="deity-fallback" style="display: none;">${deityName.charAt(0)}</span>`;
     },
 
+    // Map deity color names to CSS colors
+    getDeityColorCSS(colorName) {
+        const colorMap = {
+            // Primary colors
+            'Red': '#dc2626',
+            'Blue': '#2563eb',
+            'Green': '#16a34a',
+            'Yellow': '#eab308',
+            'Purple': '#9333ea',
+            'Orange': '#ea580c',
+            'Pink': '#ec4899',
+            'Brown': '#8b4513',
+            'Black': '#000000',
+            'White': '#ffffff',
+            'Gray': '#6b7280',
+            'Silver': '#9ca3af',
+            'Gold': '#fbbf24',
+
+            // Extended colors
+            'Crimson': '#dc2626',
+            'Crimson red': '#dc2626',
+            'Deep blue': '#1e40af',
+            'Light blue': '#3b82f6',
+            'Steel gray': '#4b5563',
+            'Dark': '#1f2937',
+            'Light': '#f9fafb',
+            'Bright': '#fbbf24',
+            'Dark blue': '#1e40af',
+            'Dark green': '#166534',
+            'Dark red': '#991b1b',
+            'Dark purple': '#7c2d12',
+            'Dark gray': '#374151',
+            'Light gray': '#d1d5db',
+            'Bright red': '#ef4444',
+            'Bright blue': '#3b82f6',
+            'Bright green': '#22c55e',
+            'Bright yellow': '#facc15',
+            'Bright purple': '#a855f7',
+            'Bright orange': '#f97316',
+            'Bright pink': '#f472b6',
+            'Bright gold': '#fbbf24',
+            'Bright silver': '#e5e7eb',
+            'Bright white': '#ffffff',
+            'Bright black': '#000000',
+            'Bright brown': '#cd853f',
+            'Bright gray': '#6b7280',
+            'Bright crimson': '#dc2626',
+            'Bright steel': '#4b5563',
+            'Bright dark': '#1f2937',
+            'Bright light': '#f9fafb',
+            'Bright deep': '#1e40af',
+            'Bright light blue': '#3b82f6',
+            'Bright steel gray': '#4b5563',
+            'Bright dark blue': '#1e40af',
+            'Bright dark green': '#166534',
+            'Bright dark red': '#991b1b',
+            'Bright dark purple': '#7c2d12',
+            'Bright dark gray': '#374151',
+            'Bright light gray': '#d1d5db'
+        };
+
+        return colorMap[colorName] || '#6b7280'; // Default to gray if color not found
+    },
+
+    // Get deity's first color for styling
+    getDeityFirstColor(deityName) {
+        const deity = this.findDeityByName(deityName);
+        if (deity && deity.colors && deity.colors.length > 0) {
+            return this.getDeityColorCSS(deity.colors[0]);
+        }
+        return '#6b7280'; // Default gray
+    },
+
+    // Get continent's colors for styling
+    getContinentColors(continentName) {
+        const continent = this.continentData.find(c => c.continent === continentName);
+        if (continent && continent.colors && continent.colors.length >= 2) {
+            return {
+                primary: this.getDeityColorCSS(continent.colors[0]),
+                secondary: this.getDeityColorCSS(continent.colors[1])
+            };
+        }
+        return {
+            primary: '#6b7280',
+            secondary: '#9ca3af'
+        };
+    },
+
+    // Get continent gradient CSS
+    getContinentGradient(continentName) {
+        const colors = this.getContinentColors(continentName);
+        return `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)`;
+    },
+
     // Show deity details
     showDeityDetails(deityName) {
         const deity = this.findDeityByName(deityName);
@@ -2548,7 +2646,7 @@ const app = {
         const deityIcon = this.getDeitySymbol(deity.name);
         const pantheon = this.getDeityPantheon(deity.name);
 
-        modalTitle.innerHTML = `<i class="${deityIcon} deity-modal-icon"></i> <span>${deity.name} - ${deity.title}</span>`;
+        modalTitle.innerHTML = `<i class="${deityIcon} deity-modal-icon" style="color: ${this.getDeityFirstColor(deity.name)};"></i> <span>${deity.name} - ${deity.title}</span>`;
 
         modalBody.innerHTML = `
             <div class="deity-details">
@@ -2650,6 +2748,7 @@ const app = {
                                 ${deity.colors && deity.colors.length > 0 ?
                 deity.colors.map(color => `
                                         <div class="deity-color-item">
+                                            <div class="color-swatch" style="background-color: ${this.getDeityColorCSS(color)}; width: 20px; height: 20px; border-radius: 50%; display: inline-block; margin-right: 10px; border: 2px solid var(--mountain-brown);"></div>
                                             <span class="deity-color-name">${color}</span>
                                         </div>
                                     `).join('') :
@@ -2883,7 +2982,7 @@ const app = {
             <div class="deity-modal-content">
                 <div class="deity-modal-header">
                     <h2>
-                        <i class="${deityIcon} deity-modal-icon"></i> <span>${deity.name} - ${deity.title}</span>
+                        <i class="${deityIcon} deity-modal-icon" style="color: ${this.getDeityFirstColor(deity.name)};"></i> <span>${deity.name} - ${deity.title}</span>
                     </h2>
                     <button class="deity-modal-close" onclick="document.getElementById('backup-deity-modal').remove()">&times;</button>
                 </div>
@@ -2987,6 +3086,7 @@ const app = {
                                     ${deity.colors && deity.colors.length > 0 ?
                 deity.colors.map(color => `
                                             <div class="deity-color-item">
+                                                <div class="color-swatch" style="background-color: ${this.getDeityColorCSS(color)}; width: 20px; height: 20px; border-radius: 50%; display: inline-block; margin-right: 10px; border: 2px solid var(--mountain-brown);"></div>
                                                 <span class="deity-color-name">${color}</span>
                                             </div>
                                         `).join('') :
@@ -3386,6 +3486,19 @@ const app = {
             <div class="sticky-info">
                 <h3>About ${this.currentSelection}</h3>
                 <p>${continent.description}</p>
+                ${continent.colors ? `
+                    <div class="continent-colors-section" style="margin: 1rem 0;">
+                        <h4 style="color: var(--ocean-blue); font-family: 'Cinzel Decorative', serif; margin-bottom: 0.5rem;">Colors</h4>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            ${continent.colors.map(color => `
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <div class="color-swatch" style="background-color: ${this.getDeityColorCSS(color)}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--mountain-brown);"></div>
+                                    <span style="font-weight: 600; color: var(--ocean-blue);">${color}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
                 <img src="continent_images/${this.currentSelection.split(" ")[0]}.png" 
                      alt="${this.currentSelection}" 
                      style="width: 100%; max-width: 300px; border-radius: 8px; margin-top: 1rem; border: 2px solid var(--mountain-brown);"
@@ -4056,7 +4169,7 @@ const app = {
                                 <div class="deity-tags">
                                     ${[...new Set(group.primaryDeities)].map(deity => `
                                         <span class="deity-tag primary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
-                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                            <i class="${this.getDeitySymbol(deity)}" style="color: ${this.getDeityFirstColor(deity)};"></i> ${deity}
                                         </span>
                                     `).join('')}
                                 </div>
@@ -4067,7 +4180,7 @@ const app = {
                                 <div class="deity-tags">
                                     ${[...new Set(group.secondaryDeities)].map(deity => `
                                         <span class="deity-tag secondary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
-                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                            <i class="${this.getDeitySymbol(deity)}" style="color: ${this.getDeityFirstColor(deity)};"></i> ${deity}
                                         </span>
                                     `).join('')}
                                 </div>
@@ -4137,7 +4250,7 @@ const app = {
                                 <div class="deity-tags">
                                     ${[...new Set(group.primaryDeities)].map(deity => `
                                         <span class="deity-tag primary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
-                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                            <i class="${this.getDeitySymbol(deity)}" style="color: ${this.getDeityFirstColor(deity)};"></i> ${deity}
                                         </span>
                                     `).join('')}
                                 </div>
@@ -4148,7 +4261,7 @@ const app = {
                                 <div class="deity-tags">
                                     ${[...new Set(group.secondaryDeities)].map(deity => `
                                         <span class="deity-tag secondary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
-                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                            <i class="${this.getDeitySymbol(deity)}" style="color: ${this.getDeityFirstColor(deity)};"></i> ${deity}
                                         </span>
                                     `).join('')}
                                 </div>
@@ -4360,7 +4473,7 @@ const app = {
                                 <div class="deity-tags">
                                     ${[...new Set(group.primaryDeities)].map(deity => `
                                         <span class="deity-tag primary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
-                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                            <i class="${this.getDeitySymbol(deity)}" style="color: ${this.getDeityFirstColor(deity)};"></i> ${deity}
                                         </span>
                                     `).join('')}
                                 </div>
@@ -4371,7 +4484,7 @@ const app = {
                                 <div class="deity-tags">
                                     ${[...new Set(group.secondaryDeities)].map(deity => `
                                         <span class="deity-tag secondary" onclick="app.showDeityDetails('${deity}')" title="Click to view deity details">
-                                            <i class="${this.getDeitySymbol(deity)}"></i> ${deity}
+                                            <i class="${this.getDeitySymbol(deity)}" style="color: ${this.getDeityFirstColor(deity)};"></i> ${deity}
                                         </span>
                                     `).join('')}
                                 </div>
