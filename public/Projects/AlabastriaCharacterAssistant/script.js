@@ -1473,8 +1473,35 @@ const app = {
          <div class="guild-details">
             <div class="guild-section">
                <h3>Current Staff Members</h3>
-               <div class="staff-grid">
-                  ${this.guildStaffData.map(staff => `
+               
+               <div class="search-container">
+                   <div class="search-bar">
+                       <input type="text" id="staff-search" placeholder="Search by staff name..." 
+                              onkeyup="app.filterGuildStaff()" class="search-input">
+                       <select id="staff-role-filter" onchange="app.filterGuildStaff()" class="filter-select">
+                           <option value="">All Roles</option>
+                           ${[...new Set(this.guildStaffData.map(s => s.guild_role))].map(role =>
+            `<option value="${role}">${role}</option>`
+        ).join('')}
+                       </select>
+                       <button onclick="app.clearGuildStaffFilters()" class="clear-search-btn">Clear All</button>
+                   </div>
+               </div>
+               
+               <div id="staff-results" class="staff-grid">
+                  ${this.renderGuildStaffResults()}
+               </div>
+            </div>
+         </div>
+      `;
+    },
+
+    renderGuildStaffResults() {
+        if (!this.filteredGuildStaffData) {
+            this.filteredGuildStaffData = [...this.guildStaffData];
+        }
+
+        return this.filteredGuildStaffData.map(staff => `
                      <div class="staff-card">
                         <img src="staffImages/${staff.image}" alt="${staff.name}" class="staff-image" onerror="this.style.display='none'">
                         <div class="staff-info">
@@ -1508,11 +1535,7 @@ const app = {
                            </details>
                         </div>
                      </div>
-                  `).join('')}
-               </div>
-            </div>
-         </div>
-      `;
+                  `).join('');
     },
 
     // Render guild members view
@@ -1871,6 +1894,38 @@ const app = {
         const resultsContainer = document.getElementById('quest-results');
         if (resultsContainer) {
             resultsContainer.innerHTML = this.renderQuestResults();
+        }
+    },
+
+    filterGuildStaff() {
+        const searchTerm = document.getElementById('staff-search').value.toLowerCase();
+        const roleFilter = document.getElementById('staff-role-filter').value;
+
+        this.filteredGuildStaffData = this.guildStaffData.filter(staff => {
+            // Name search
+            if (searchTerm && !staff.name.toLowerCase().includes(searchTerm)) return false;
+
+            // Role filter
+            if (roleFilter && staff.guild_role !== roleFilter) return false;
+
+            return true;
+        });
+
+        // Update the results
+        const resultsContainer = document.getElementById('staff-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderGuildStaffResults();
+        }
+    },
+
+    clearGuildStaffFilters() {
+        document.getElementById('staff-search').value = '';
+        document.getElementById('staff-role-filter').value = '';
+        this.filteredGuildStaffData = [...this.guildStaffData];
+
+        const resultsContainer = document.getElementById('staff-results');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = this.renderGuildStaffResults();
         }
     },
 
