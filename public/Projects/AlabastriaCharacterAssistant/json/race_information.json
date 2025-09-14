@@ -38,8 +38,32 @@
             "Druid"
         ],
         "subraces": [],
-        "maturity_age": 3,
-        "lifespan": "30 years"
+        "names": {
+            "male_names": [
+                "Kree",
+                "Kreel",
+                "Kreeth",
+                "Kreetha",
+                "Kreetho",
+                "Kreethu"
+            ],
+            "female_names": [
+                "Kreea",
+                "Kreela",
+                "Kreetha",
+                "Kreethi",
+                "Kreetho",
+                "Kreethu"
+            ],
+            "last_names": [
+                "Windcaller",
+                "Skysoarer",
+                "Clouddancer",
+                "Stormrider",
+                "Windwhisper",
+                "Skywatcher"
+            ]
+        }
     },
     {
         "race": "Aasimar",
@@ -103,7 +127,7 @@
             },
             {
                 "name": "Scourge Aasimar",
-                "description": "Scourge aasimar are imbued with a divine energy that blazes intensely within them. It feeds a powerful desire to destroy evil\u2014a desire that is, at its best, unflinching and, at its worst, all-consuming.",
+                "description": "Scourge aasimar are imbued with a divine energy that blazes intensely within them. It feeds a powerful desire to destroy evil—a desire that is, at its best, unflinching and, at its worst, all-consuming.",
                 "ability_score_increase": {
                     "Constitution": 1
                 },
@@ -140,8 +164,32 @@
                 "playstyle": "Dark support with necrotic damage and intimidation. Ideal for players who want to play morally complex characters with dark powers."
             }
         ],
-        "maturity_age": 18,
-        "lifespan": "160 years"
+        "names": {
+            "male_names": [
+                "Seraphiel",
+                "Thalion",
+                "Aurelius",
+                "Celestius",
+                "Divinus",
+                "Luminus"
+            ],
+            "female_names": [
+                "Liora",
+                "Mara",
+                "Celestia",
+                "Aurelia",
+                "Divina",
+                "Lumina"
+            ],
+            "last_names": [
+                "Brightwing",
+                "Goldheart",
+                "Starfall",
+                "Lightbringer",
+                "Heavenward",
+                "Divinegrace"
+            ]
+        }
     },
     {
         "race": "Autognome",
@@ -189,8 +237,32 @@
             "Fighter"
         ],
         "subraces": [],
-        "maturity_age": "N/A (Construct)",
-        "lifespan": "Indefinite"
+        "names": {
+            "male_names": [
+                "Cog",
+                "Gear",
+                "Spring",
+                "Piston",
+                "Rivet",
+                "Bolt"
+            ],
+            "female_names": [
+                "Cog",
+                "Gear",
+                "Spring",
+                "Piston",
+                "Rivet",
+                "Bolt"
+            ],
+            "last_names": [
+                "Ironworks",
+                "Steelcraft",
+                "Clockwork",
+                "Mechanus",
+                "Gearwright",
+                "Springmaker"
+            ]
+        }
     },
     {
         "race": "Bugbear",
@@ -242,8 +314,32 @@
             "Barbarian"
         ],
         "subraces": [],
-        "maturity_age": 16,
-        "lifespan": "80 years"
+        "names": {
+            "male_names": [
+                "Gor",
+                "Thokk",
+                "Dren",
+                "Harg",
+                "Krusk",
+                "Vrak"
+            ],
+            "female_names": [
+                "Shara",
+                "Emen",
+                "Baggi",
+                "Vola",
+                "Ovak",
+                "Zara"
+            ],
+            "last_names": [
+                "Bloodclaw",
+                "Bonechewer",
+                "Skullcrusher",
+                "Ironhide",
+                "Grimjaw",
+                "Darkfang"
+            ]
+        }
     },
     {
         "race": "Centaur",
@@ -291,8 +387,32 @@
             "Paladin"
         ],
         "subraces": [],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Chiron",
+                "Pholus",
+                "Nessus",
+                "Eurytion",
+                "Hylaeus",
+                "Rhoecus"
+            ],
+            "female_names": [
+                "Hippe",
+                "Melanippe",
+                "Ocyrhoe",
+                "Theano",
+                "Euippe",
+                "Hippodamia"
+            ],
+            "last_names": [
+                "Swiftstride",
+                "Windrunner",
+                "Meadowgallop",
+                "Thunderhoof",
+                "Stormchaser",
+                "Wildheart"
+            ]
+        }
     },
     {
         "race": "Changeling",
@@ -336,8 +456,32 @@
             "Sorcerer"
         ],
         "subraces": [],
-        "maturity_age": 18,
-        "lifespan": "200 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Shapeshifter",
+                "Faceless",
+                "Mimic",
+                "Doppelganger",
+                "Illusion",
+                "Mirage"
+            ]
+        }
     },
     {
         "race": "Dhampir",
@@ -385,8 +529,32 @@
             "Warlock"
         ],
         "subraces": [],
-        "maturity_age": 18,
-        "lifespan": "Centuries"
+        "names": {
+            "male_names": [
+                "Vladimir",
+                "Damien",
+                "Lucian",
+                "Cassius",
+                "Darius",
+                "Marcus"
+            ],
+            "female_names": [
+                "Lilith",
+                "Raven",
+                "Luna",
+                "Cassandra",
+                "Diana",
+                "Mira"
+            ],
+            "last_names": [
+                "Nightshade",
+                "Bloodmoon",
+                "Shadowbane",
+                "Darkheart",
+                "Crimson",
+                "Nocturne"
+            ]
+        }
     },
     {
         "race": "Dragonborn",
@@ -479,8 +647,32 @@
                 "playstyle": "Intellectual warriors with psionic abilities. Ideal for players who want to combine martial prowess with mental powers."
             }
         ],
-        "maturity_age": 15,
-        "lifespan": "80 years"
+        "names": {
+            "male_names": [
+                "Arjhan",
+                "Balasar",
+                "Bharash",
+                "Donaar",
+                "Ghesh",
+                "Heskan"
+            ],
+            "female_names": [
+                "Akra",
+                "Biri",
+                "Daar",
+                "Farideh",
+                "Harann",
+                "Havilar"
+            ],
+            "last_names": [
+                "Flameheart",
+                "Stormwind",
+                "Frostfang",
+                "Thunderclaw",
+                "Shadowscale",
+                "Goldwing"
+            ]
+        }
     },
     {
         "race": "Dwarf",
@@ -589,8 +781,32 @@
                 "playstyle": "Psionic craftsmen with stealth abilities. Great for players who want to be magical craftsmen with unique abilities."
             }
         ],
-        "maturity_age": 50,
-        "lifespan": "350 years"
+        "names": {
+            "male_names": [
+                "Thrain",
+                "Beldrum",
+                "Dorn",
+                "Farin",
+                "Orik",
+                "Thorin"
+            ],
+            "female_names": [
+                "Hilda",
+                "Elinor",
+                "Bree",
+                "Dagna",
+                "Helja",
+                "Thora"
+            ],
+            "last_names": [
+                "Ironbeard",
+                "Stonehammer",
+                "Goldforge",
+                "Mountainheart",
+                "Steelaxe",
+                "Rockfist"
+            ]
+        }
     },
     {
         "race": "Elf",
@@ -800,8 +1016,32 @@
                 "playstyle": "Shadow magic users with death resistance. Perfect for players who want to be dark magical characters with unique abilities."
             }
         ],
-        "maturity_age": 100,
-        "lifespan": "750 years"
+        "names": {
+            "male_names": [
+                "Thamior",
+                "Kaelen",
+                "Aelar",
+                "Valandil",
+                "Immeral",
+                "Arannis"
+            ],
+            "female_names": [
+                "Laeriel",
+                "Sylvaria",
+                "Naivara",
+                "Elenwen",
+                "Faelina",
+                "Thalindra"
+            ],
+            "last_names": [
+                "Moonwhisper",
+                "Stardancer",
+                "Windweaver",
+                "Leafshade",
+                "Riversong",
+                "Forestwalker"
+            ]
+        }
     },
     {
         "race": "Fairy",
@@ -845,8 +1085,26 @@
             "Warlock"
         ],
         "subraces": [],
-        "maturity_age": 18,
-        "lifespan": "Centuries"
+        "names": {
+            "male_names": [
+                "Puck",
+                "Oberon",
+                "Titania"
+            ],
+            "female_names": [
+                "Titania",
+                "Puck",
+                "Oberon"
+            ],
+            "last_names": [
+                "Sparklewing",
+                "Dustdancer",
+                "Glowmoth",
+                "Twinkletoes",
+                "Shimmer",
+                "Gleam"
+            ]
+        }
     },
     {
         "race": "Firbolg",
@@ -895,8 +1153,32 @@
             "Barbarian"
         ],
         "subraces": [],
-        "maturity_age": 30,
-        "lifespan": "500 years"
+        "names": {
+            "male_names": [
+                "Bael",
+                "Druid",
+                "Fael",
+                "Gael",
+                "Hael",
+                "Kael"
+            ],
+            "female_names": [
+                "Ael",
+                "Bael",
+                "Cael",
+                "Dael",
+                "Eael",
+                "Fael"
+            ],
+            "last_names": [
+                "Treehugger",
+                "Forestkeeper",
+                "Natureguard",
+                "Wildwood",
+                "Greenheart",
+                "Earthshaker"
+            ]
+        }
     },
     {
         "race": "Genasi",
@@ -1052,8 +1334,32 @@
                 "playstyle": "Water magic users with aquatic abilities. Perfect for players who want to be water-based magical characters with unique movement options."
             }
         ],
-        "maturity_age": 18,
-        "lifespan": "120 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Blaze",
+                "Cinder",
+                "Dust",
+                "Ember",
+                "Flame"
+            ],
+            "female_names": [
+                "Aria",
+                "Breeze",
+                "Crystal",
+                "Dew",
+                "Echo",
+                "Frost"
+            ],
+            "last_names": [
+                "Elemental",
+                "Primordial",
+                "Essence",
+                "Spirit",
+                "Force",
+                "Power"
+            ]
+        }
     },
     {
         "race": "Gnome",
@@ -1139,8 +1445,32 @@
                 "playstyle": "Engineering-focused gnomes who excel at creating devices and understanding technology."
             }
         ],
-        "maturity_age": 40,
-        "lifespan": "500 years"
+        "names": {
+            "male_names": [
+                "Fizban",
+                "Tink",
+                "Alston",
+                "Boddynock",
+                "Zook",
+                "Fizzlepuff"
+            ],
+            "female_names": [
+                "Nissa",
+                "Bimpnottin",
+                "Caramip",
+                "Ellywick",
+                "Tana",
+                "Thistle"
+            ],
+            "last_names": [
+                "Tinkertop",
+                "Gadgetmaker",
+                "Whimsy",
+                "Trickster",
+                "Gizmo",
+                "Puzzle"
+            ]
+        }
     },
     {
         "race": "Giff",
@@ -1183,8 +1513,32 @@
             "Paladin",
             "Barbarian"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Gunther",
+                "Hans",
+                "Klaus",
+                "Otto",
+                "Rolf",
+                "Wolfgang"
+            ],
+            "female_names": [
+                "Greta",
+                "Helga",
+                "Ingrid",
+                "Katarina",
+                "Petra",
+                "Ursula"
+            ],
+            "last_names": [
+                "Ironfist",
+                "Steeljaw",
+                "Gunpowder",
+                "Cannonball",
+                "Blunderbuss",
+                "Musket"
+            ]
+        }
     },
     {
         "race": "Goblin",
@@ -1227,8 +1581,32 @@
             "Fighter",
             "Monk"
         ],
-        "maturity_age": 8,
-        "lifespan": "60 years"
+        "names": {
+            "male_names": [
+                "Grik",
+                "Snag",
+                "Vrak",
+                "Dreg",
+                "Muck",
+                "Snik"
+            ],
+            "female_names": [
+                "Ziz",
+                "Yip",
+                "Nib",
+                "Gik",
+                "Pox",
+                "Vix"
+            ],
+            "last_names": [
+                "Sneak",
+                "Stab",
+                "Grab",
+                "Snatch",
+                "Pilfer",
+                "Thief"
+            ]
+        }
     },
     {
         "race": "Goliath",
@@ -1275,8 +1653,32 @@
             "Ranger",
             "Monk"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Stonefist",
+                "Mountainpeak",
+                "Thunderclap",
+                "Stormcaller",
+                "Earthshaker",
+                "Rockbreaker"
+            ]
+        }
     },
     {
         "race": "Half-Elf",
@@ -1399,8 +1801,32 @@
                 "playstyle": "Fast and stealthy characters who excel at wilderness survival and ranged combat."
             }
         ],
-        "maturity_age": 20,
-        "lifespan": "180 years"
+        "names": {
+            "male_names": [
+                "Caelum",
+                "Lioran",
+                "Thalion",
+                "Eldrin",
+                "Arlen",
+                "Dorian"
+            ],
+            "female_names": [
+                "Liora",
+                "Nyxara",
+                "Elara",
+                "Selene",
+                "Aria",
+                "Luna"
+            ],
+            "last_names": [
+                "Moonwhisper",
+                "Stardancer",
+                "Windweaver",
+                "Leafshade",
+                "Riversong",
+                "Forestwalker"
+            ]
+        }
     },
     {
         "race": "Half-Orc",
@@ -1443,8 +1869,32 @@
             "Ranger",
             "Rogue"
         ],
-        "maturity_age": 14,
-        "lifespan": "75 years"
+        "names": {
+            "male_names": [
+                "Gor",
+                "Thokk",
+                "Dren",
+                "Harg",
+                "Krusk",
+                "Vrak"
+            ],
+            "female_names": [
+                "Shara",
+                "Emen",
+                "Baggi",
+                "Vola",
+                "Ovak",
+                "Zara"
+            ],
+            "last_names": [
+                "Bloodclaw",
+                "Bonechewer",
+                "Skullcrusher",
+                "Ironhide",
+                "Grimjaw",
+                "Darkfang"
+            ]
+        }
     },
     {
         "race": "Halfling",
@@ -1545,8 +1995,32 @@
                 "playstyle": "Telepathic halflings who excel at silent communication and wilderness survival."
             }
         ],
-        "maturity_age": 20,
-        "lifespan": "150 years"
+        "names": {
+            "male_names": [
+                "Milo",
+                "Pippin",
+                "Samwise",
+                "Frodo",
+                "Bilbo",
+                "Tobias"
+            ],
+            "female_names": [
+                "Rosie",
+                "Marigold",
+                "Pansy",
+                "Daisy",
+                "Primrose",
+                "Piri"
+            ],
+            "last_names": [
+                "Greenbottle",
+                "Underhill",
+                "Goodbarrel",
+                "Hobbiton",
+                "Bagshot",
+                "Baggins"
+            ]
+        }
     },
     {
         "race": "Harengon",
@@ -1582,7 +2056,7 @@
             },
             {
                 "name": "Rabbit Hop",
-                "description": "As a bonus action, you can jump a number of feet equal to 5 \u00d7 your proficiency bonus, without provoking opportunity attacks. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+                "description": "As a bonus action, you can jump a number of feet equal to 5 × your proficiency bonus, without provoking opportunity attacks. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
             }
         ],
         "alabastria_lore": "Harengon in Alabastria are found primarily in the magical forests of Kuriguer, where their fey heritage and agility make them excellent scouts and messengers. They often serve as couriers for the Huntbound Order and guides through dangerous terrain.",
@@ -1593,8 +2067,32 @@
             "Monk",
             "Bard"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Bunny",
+                "Hoppy",
+                "Jumper",
+                "Skipper",
+                "Bounder",
+                "Leaper"
+            ],
+            "female_names": [
+                "Bunny",
+                "Hoppy",
+                "Jumper",
+                "Skipper",
+                "Bounder",
+                "Leaper"
+            ],
+            "last_names": [
+                "Longears",
+                "Quickfoot",
+                "Swiftjump",
+                "Bouncy",
+                "Fleetfoot",
+                "Springstep"
+            ]
+        }
     },
     {
         "race": "Hexblood",
@@ -1636,8 +2134,32 @@
             "Wizard",
             "Ranger"
         ],
-        "maturity_age": 18,
-        "lifespan": "200 years"
+        "names": {
+            "male_names": [
+                "Crow",
+                "Raven",
+                "Shadow",
+                "Grim",
+                "Dark",
+                "Night"
+            ],
+            "female_names": [
+                "Crow",
+                "Raven",
+                "Shadow",
+                "Grim",
+                "Dark",
+                "Night"
+            ],
+            "last_names": [
+                "Hexweaver",
+                "Cursebearer",
+                "Witchborn",
+                "Hagspawn",
+                "Darkmagic",
+                "Spellbound"
+            ]
+        }
     },
     {
         "race": "Hobgoblin",
@@ -1680,8 +2202,32 @@
             "Ranger",
             "Wizard"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Gor",
+                "Thokk",
+                "Dren",
+                "Harg",
+                "Krusk",
+                "Vrak"
+            ],
+            "female_names": [
+                "Shara",
+                "Emen",
+                "Baggi",
+                "Vola",
+                "Ovak",
+                "Zara"
+            ],
+            "last_names": [
+                "Ironfist",
+                "Steeljaw",
+                "Gunpowder",
+                "Cannonball",
+                "Blunderbuss",
+                "Musket"
+            ]
+        }
     },
     {
         "race": "Human",
@@ -1834,8 +2380,32 @@
                 "playstyle": "Protection specialists with defensive magic and enhanced awareness."
             }
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Smith",
+                "Johnson",
+                "Williams",
+                "Brown",
+                "Jones",
+                "Garcia"
+            ]
+        }
     },
     {
         "race": "Kalashtar",
@@ -1882,8 +2452,32 @@
             "Wizard",
             "Bard"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Dreamweaver",
+                "Mindwalker",
+                "Soulbinder",
+                "Spiritguide",
+                "Psion",
+                "Telepath"
+            ]
+        }
     },
     {
         "race": "Kender",
@@ -1926,8 +2520,32 @@
             "Bard",
             "Fighter"
         ],
-        "maturity_age": 20,
-        "lifespan": "150 years"
+        "names": {
+            "male_names": [
+                "Milo",
+                "Pippin",
+                "Samwise",
+                "Frodo",
+                "Bilbo",
+                "Tobias"
+            ],
+            "female_names": [
+                "Rosie",
+                "Marigold",
+                "Pansy",
+                "Daisy",
+                "Primrose",
+                "Piri"
+            ],
+            "last_names": [
+                "Greenbottle",
+                "Underhill",
+                "Goodbarrel",
+                "Hobbiton",
+                "Bagshot",
+                "Baggins"
+            ]
+        }
     },
     {
         "race": "Kenku",
@@ -1970,8 +2588,32 @@
             "Bard",
             "Monk"
         ],
-        "maturity_age": 12,
-        "lifespan": "60 years"
+        "names": {
+            "male_names": [
+                "Caw",
+                "Squawk",
+                "Chirp",
+                "Tweet",
+                "Coo",
+                "Cackle"
+            ],
+            "female_names": [
+                "Caw",
+                "Squawk",
+                "Chirp",
+                "Tweet",
+                "Coo",
+                "Cackle"
+            ],
+            "last_names": [
+                "Featherfall",
+                "Wingbeat",
+                "Skycaller",
+                "Windwhisper",
+                "Cloudsoarer",
+                "Stormdancer"
+            ]
+        }
     },
     {
         "race": "Kobold",
@@ -2013,8 +2655,32 @@
             "Fighter",
             "Wizard"
         ],
-        "maturity_age": 6,
-        "lifespan": "120 years"
+        "names": {
+            "male_names": [
+                "Meepo",
+                "Snik",
+                "Vrak",
+                "Drek",
+                "Muck",
+                "Grik"
+            ],
+            "female_names": [
+                "Ziz",
+                "Yip",
+                "Nib",
+                "Gik",
+                "Pox",
+                "Vix"
+            ],
+            "last_names": [
+                "Tinyclaw",
+                "Smallfang",
+                "Littletooth",
+                "Miniscale",
+                "Petite",
+                "Diminutive"
+            ]
+        }
     },
     {
         "race": "Leonin",
@@ -2061,8 +2727,32 @@
             "Barbarian",
             "Ranger"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Goldmane",
+                "Lionheart",
+                "Pridestalker",
+                "Mane",
+                "Roar",
+                "Claw"
+            ]
+        }
     },
     {
         "race": "Lizardfolk",
@@ -2113,8 +2803,32 @@
             "Druid",
             "Barbarian"
         ],
-        "maturity_age": 14,
-        "lifespan": "60 years"
+        "names": {
+            "male_names": [
+                "Sissith",
+                "Vessk",
+                "Throden",
+                "Hissar",
+                "Ziss",
+                "Kess"
+            ],
+            "female_names": [
+                "Sash",
+                "Vissara",
+                "Thiss",
+                "Hissara",
+                "Zissith",
+                "Kessara"
+            ],
+            "last_names": [
+                "Scalefoot",
+                "Tailswish",
+                "Clawmark",
+                "Fang",
+                "Scale",
+                "Lizard"
+            ]
+        }
     },
     {
         "race": "Loxodon",
@@ -2161,8 +2875,32 @@
             "Paladin",
             "Monk"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Tuskbreaker",
+                "Trunkstrong",
+                "Ivory",
+                "Tusk",
+                "Trunk",
+                "Elephant"
+            ]
+        }
     },
     {
         "race": "Minotaur",
@@ -2209,8 +2947,32 @@
             "Ranger",
             "Paladin"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Hornbreaker",
+                "Bullrush",
+                "Charger",
+                "Horn",
+                "Bull",
+                "Maze"
+            ]
+        }
     },
     {
         "race": "Orc",
@@ -2253,8 +3015,32 @@
             "Ranger",
             "Rogue"
         ],
-        "maturity_age": 14,
-        "lifespan": "75 years"
+        "names": {
+            "male_names": [
+                "Gor",
+                "Thokk",
+                "Dren",
+                "Harg",
+                "Krusk",
+                "Vrak"
+            ],
+            "female_names": [
+                "Shara",
+                "Emen",
+                "Baggi",
+                "Vola",
+                "Ovak",
+                "Zara"
+            ],
+            "last_names": [
+                "Bloodclaw",
+                "Bonechewer",
+                "Skullcrusher",
+                "Ironhide",
+                "Grimjaw",
+                "Darkfang"
+            ]
+        }
     },
     {
         "race": "Owlin",
@@ -2301,8 +3087,24 @@
             "Monk",
             "Cleric"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Hoot",
+                "Screech"
+            ],
+            "female_names": [
+                "Hoot",
+                "Screech"
+            ],
+            "last_names": [
+                "Nightwing",
+                "Owlcall",
+                "Hoot",
+                "Screech",
+                "Wingbeat",
+                "Featherfall"
+            ]
+        }
     },
     {
         "race": "Plasmoid",
@@ -2353,8 +3155,32 @@
             "Monk",
             "Wizard"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Blob",
+                "Goo",
+                "Slime",
+                "Gel",
+                "Ooze",
+                "Mucus"
+            ],
+            "female_names": [
+                "Blob",
+                "Goo",
+                "Slime",
+                "Gel",
+                "Ooze",
+                "Mucus"
+            ],
+            "last_names": [
+                "Slimy",
+                "Gooey",
+                "Blobby",
+                "Gelatinous",
+                "Mucous",
+                "Viscous"
+            ]
+        }
     },
     {
         "race": "Reborn",
@@ -2400,8 +3226,32 @@
             "Wizard",
             "Bard"
         ],
-        "maturity_age": "Variable",
-        "lifespan": "Indefinite"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Deathless",
+                "Undying",
+                "Eternal",
+                "Immortal",
+                "Ageless",
+                "Timeless"
+            ]
+        }
     },
     {
         "race": "Satyr",
@@ -2452,8 +3302,26 @@
             "Druid",
             "Rogue"
         ],
-        "maturity_age": 18,
-        "lifespan": "200 years"
+        "names": {
+            "male_names": [
+                "Puck",
+                "Oberon",
+                "Titania"
+            ],
+            "female_names": [
+                "Titania",
+                "Puck",
+                "Oberon"
+            ],
+            "last_names": [
+                "Horned",
+                "Goatfoot",
+                "Pan",
+                "Faun",
+                "Sylvan",
+                "Woodland"
+            ]
+        }
     },
     {
         "race": "Shifter",
@@ -2570,8 +3438,32 @@
                 "playstyle": "Wise and perceptive shifters who excel at tracking and wilderness survival."
             }
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Wildheart",
+                "Beastform",
+                "Shapeshifter",
+                "Feral",
+                "Primal",
+                "Savage"
+            ]
+        }
     },
     {
         "race": "Simic Hybrid",
@@ -2610,8 +3502,32 @@
             "Ranger",
             "Monk"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Hybrid",
+                "Mutant",
+                "Experiment",
+                "Modified",
+                "Enhanced",
+                "Evolved"
+            ]
+        }
     },
     {
         "race": "Tabaxi",
@@ -2658,8 +3574,32 @@
             "Monk",
             "Bard"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Whiskers",
+                "Purr",
+                "Meow",
+                "Claw",
+                "Fang",
+                "Tail"
+            ]
+        }
     },
     {
         "race": "Thri-kreen",
@@ -2710,8 +3650,32 @@
             "Monk",
             "Rogue"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Manyarms",
+                "Chitin",
+                "Exoskeleton",
+                "Mandible",
+                "Antenna",
+                "Compound"
+            ]
+        }
     },
     {
         "race": "Tiefling",
@@ -2900,8 +3864,32 @@
                 "playstyle": "Magical tieflings with infernal heritage and unique abilities."
             }
         ],
-        "maturity_age": 18,
-        "lifespan": "120 years"
+        "names": {
+            "male_names": [
+                "Akmenos",
+                "Barakas",
+                "Damakos",
+                "Iados",
+                "Therai",
+                "Vladimir"
+            ],
+            "female_names": [
+                "Akta",
+                "Bryseis",
+                "Damaia",
+                "Kallista",
+                "Lerissa",
+                "Lilith"
+            ],
+            "last_names": [
+                "Hellspawn",
+                "Devilborn",
+                "Infernal",
+                "Demon",
+                "Fiend",
+                "Devil"
+            ]
+        }
     },
     {
         "race": "Tortle",
@@ -2952,8 +3940,32 @@
             "Monk",
             "Paladin"
         ],
-        "maturity_age": 15,
-        "lifespan": "50 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Shellback",
+                "Turtle",
+                "Tortoise",
+                "Carapace",
+                "Shell",
+                "Slow"
+            ]
+        }
     },
     {
         "race": "Triton",
@@ -3005,8 +4017,32 @@
             "Ranger",
             "Fighter"
         ],
-        "maturity_age": 15,
-        "lifespan": "200 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Seafoam",
+                "Wavecaller",
+                "Tide",
+                "Ocean",
+                "Sea",
+                "Water"
+            ]
+        }
     },
     {
         "race": "Vedalken",
@@ -3053,8 +4089,32 @@
             "Cleric",
             "Bard"
         ],
-        "maturity_age": 18,
-        "lifespan": "100 years"
+        "names": {
+            "male_names": [
+                "Aiden",
+                "Caleb",
+                "Ethan",
+                "Gavin",
+                "Ian",
+                "Liam"
+            ],
+            "female_names": [
+                "Aria",
+                "Cora",
+                "Eva",
+                "Grace",
+                "Iris",
+                "Luna"
+            ],
+            "last_names": [
+                "Mind",
+                "Thought",
+                "Logic",
+                "Reason",
+                "Wisdom",
+                "Knowledge"
+            ]
+        }
     },
     {
         "race": "Warforged",
@@ -3101,8 +4161,32 @@
             "Ranger",
             "Artificer"
         ],
-        "maturity_age": "N/A (Construct)",
-        "lifespan": "Indefinite"
+        "names": {
+            "male_names": [
+                "Cog",
+                "Gear",
+                "Spring",
+                "Piston",
+                "Rivet",
+                "Bolt"
+            ],
+            "female_names": [
+                "Cog",
+                "Gear",
+                "Spring",
+                "Piston",
+                "Rivet",
+                "Bolt"
+            ],
+            "last_names": [
+                "Ironworks",
+                "Steelcraft",
+                "Clockwork",
+                "Mechanus",
+                "Gearwright",
+                "Springmaker"
+            ]
+        }
     },
     {
         "race": "Yuan-ti",
@@ -3168,7 +4252,31 @@
                 "playstyle": "Human-like yuan-ti with magical abilities and infiltration skills."
             }
         ],
-        "maturity_age": 18,
-        "lifespan": "120 years"
+        "names": {
+            "male_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "female_names": [
+                "Aukan",
+                "Eglath",
+                "Gae-Al",
+                "Gauthak",
+                "Ilikan",
+                "Keothi"
+            ],
+            "last_names": [
+                "Snakescale",
+                "Serpent",
+                "Viper",
+                "Cobra",
+                "Python",
+                "Constrictor"
+            ]
+        }
     }
 ]
