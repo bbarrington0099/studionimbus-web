@@ -1388,8 +1388,13 @@ const app = {
                <div class="rank-grid">
                   ${guild.ranks.map(rank => `
                      <div class="rank-card ${rank.special ? 'coal-rank' : ''}" style="border-left: 4px solid ${rank.color};">
-                        <h4>${rank.name}</h4>
-                        <div class="rank-level">Level ${rank.level}</div>
+                        <div class="rank-header">
+                           <img src="rankImages/${rank.name.toLowerCase()}_rank.png" alt="${rank.name} Rank" class="rank-image" onerror="this.style.display='none'">
+                           <div class="rank-title">
+                              <h4>${rank.name}</h4>
+                              <div class="rank-level">Level ${rank.level}</div>
+                           </div>
+                        </div>
                         <p>${rank.description}</p>
                      </div>
                   `).join('')}
@@ -1505,9 +1510,14 @@ const app = {
                      <div class="staff-card">
                         <img src="staffImages/${staff.image}" alt="${staff.name}" class="staff-image" onerror="this.style.display='none'">
                         <div class="staff-info">
-                           <h3>${staff.name}</h3>
-                           <div class="staff-role">${staff.guild_role}</div>
-                           <div class="staff-rank rank-${staff.rank.toLowerCase()}">${staff.rank} Rank</div>
+                           <div class="member-header">
+                              <img src="rankImages/${staff.rank.toLowerCase()}_rank.png" alt="${staff.rank} Rank" class="member-rank-image" onerror="this.style.display='none'">
+                              <div class="member-title">
+                                 <h3>${staff.name}</h3>
+                                 <div class="staff-role">${staff.guild_role}</div>
+                                 <div class="staff-rank rank-${staff.rank.toLowerCase()}">${staff.rank} Rank</div>
+                              </div>
+                           </div>
                            <div style="margin-bottom: 1rem;">
                               <strong>Race/Class:</strong> ${staff.race}, ${staff.class}
                            </div>
@@ -1592,10 +1602,15 @@ const app = {
                         <div class="member-card">
                            <img src="memberImages/${member.image}" alt="${member.name}" class="member-image" onerror="this.style.display='none'">
                            <div class="member-info">
-                              <h3>${member.name}</h3>
-                              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                 <div class="member-rank rank-${member.rank.toLowerCase()}">${member.rank} Rank</div>
-                                 <div class="member-rank rank-${member.rank.toLowerCase()}" style="background: var(--forest-green);">${memberQuests.length} Quest${memberQuests.length !== 1 ? 's' : ''}</div>
+                              <div class="member-header">
+                                 <img src="rankImages/${member.rank.toLowerCase()}_rank.png" alt="${member.rank} Rank" class="member-rank-image" onerror="this.style.display='none'">
+                                 <div class="member-title">
+                                    <h3>${member.name}</h3>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                       <div class="member-rank rank-${member.rank.toLowerCase()}">${member.rank} Rank</div>
+                                       <div class="member-rank rank-${member.rank.toLowerCase()}" style="background: var(--forest-green);">${memberQuests.length} Quest${memberQuests.length !== 1 ? 's' : ''}</div>
+                                    </div>
+                                 </div>
                               </div>
                               <div class="member-class">Level ${member.level} ${member.class}</div>
                               <div class="member-managed">${member.managed_by}</div>
