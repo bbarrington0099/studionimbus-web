@@ -399,7 +399,6 @@
 
 .member-managed {
     font-size: 0.9rem;
-    color: var(--glass-bg);
     font-style: italic;
     font-weight: 600;
     margin-top: 0.5rem;
@@ -407,6 +406,14 @@
     box-shadow: var(--shadow-dark);
     padding: 0.5rem;
     border-radius: 10px;
+}
+
+.darkMode .member-managed {
+    color: var(--parchment-light);
+}
+
+.lightMode .member-managed {
+    color: var(--ink-dark);
 }
 
 /* ===== QUEST REPORTS ===== */
@@ -523,6 +530,67 @@
 
 .quest-participation-role {
     font-size: 0.9rem;
-    color: var(--glass-bg);
     margin-top: 0.3rem;
+}
+
+.darkMode .quest-participation-role {
+    color: var(--parchment-light);
+}
+
+.lightMode .quest-participation-role {
+    color: var(--ink-dark);
+}
+
+/* ===== PARTY MEMBER HEADER ===== */
+.party-member-header {
+    margin-bottom: 0.8rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.darkMode .party-member-header {
+    color: var(--parchment-light);
+}
+
+.lightMode .party-member-header {
+    color: var(--ink-dark);
+}
+
+/* ===== GUILD MEMBER DESCRIPTIONS ===== */
+.guild-member-description {
+    margin: 1rem 0;
+}
+
+.darkMode .guild-member-description {
+    color: var(--parchment-light);
+}
+
+.lightMode .guild-member-description {
+    color: var(--ink-dark);
+}
+
+/* ===== PARTY MEMBER DETAILS ===== */
+.party-member-details {
+    font-size: 0.9rem;
+}
+
+.darkMode .party-member-details {
+    color: var(--parchment-light);
+}
+
+.lightMode .party-member-details {
+    color: var(--ink-dark);
+}
+
+/* ===== QUEST PARTICIPATION SUMMARY ===== */
+.quest-participation-summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.darkMode .quest-participation-summary {
+    color: var(--ocean-blue);
+}
+
+.lightMode .quest-participation-summary {
+    color: var(--ocean-blue);
 }
