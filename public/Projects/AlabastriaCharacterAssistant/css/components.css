@@ -417,6 +417,10 @@ details[open] summary::before {
     color: var(--parchment-light);
 }
 
+p {
+    padding: 1rem;
+}
+
 .details-content-inner {
     padding: 1rem;
 }
