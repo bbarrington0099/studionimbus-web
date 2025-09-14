@@ -1059,8 +1059,8 @@ p {
 }
 
 .darkMode .relationship-name.primary {
-    background: rgba(61, 90, 42, 0.3);
-    color: var(--glass-bg);
+    background: var(--glass-bg);
+    color: var(--parchment-light);
     border-color: var(--glass-bg);
 }
 
