@@ -1808,16 +1808,16 @@ const app = {
                               <div class="member-class">Level ${member.level} ${member.class}</div>
                               <div class="member-managed">${member.managed_by}</div>
                               
-                              <div style="margin: 1rem 0;">
+                              <div class="guild-member-description">
                                  <strong>Status:</strong> ${member.status}
                               </div>
                               
-                              <div style="margin: 1rem 0;">
+                              <div class="guild-member-description">
                                  <strong>Specialization:</strong> ${member.specialization}
                               </div>
                               
                               ${member.deity ? `
-                                 <div style="margin: 1rem 0;">
+                                 <div class="guild-member-description">
                                     <strong>Deity:</strong> 
                                     <button class="deity-button" onclick="app.showDeityDetails('${member.deity}')" style="
                                        background: var(--gold-accent);
@@ -1842,7 +1842,7 @@ const app = {
                               
                               ${memberQuests.length > 0 ? `
                                  <details style="margin: 1rem 0;">
-                                    <summary style="cursor: pointer; font-weight: 600; color: var(--glass-bg);">Quest Participation (${memberQuests.length})</summary>
+                                    <summary class="quest-participation-summary">Quest Participation (${memberQuests.length})</summary>
                                     <div style="margin: 0.5rem 0;">
                                        ${memberQuests.map(quest => `
                                           <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--glass-bg); border-radius: 4px; background: rgba(74, 93, 35, 0.1);">
@@ -1850,7 +1850,7 @@ const app = {
                                                 <span><strong>${quest.quest_name}</strong> [${quest.quest_rank}]</span>
                                                 <button class="nav-btn" onclick="app.jumpToQuestReport('${quest.quest_name}')" style="margin: 0;">View Report</button>
                                              </div>
-                                             <div style="font-size: 0.9rem; color: var(--glass-bg); margin-top: 0.3rem;">
+                                             <div class="quest-participation-role">
                                                 Role: ${quest.party_members.find(p => p.name === member.name)?.role || 'Unknown'}
                                              </div>
                                           </div>
@@ -2001,14 +2001,14 @@ const app = {
                               </div>
 
                               <div style="border: 1px solid var(--mountain-brown); border-radius: 6px; padding: 1rem; background: rgba(74, 93, 35, 0.1);">
-                                 <h4 style="color: var(--glass-bg); margin-bottom: 0.8rem; font-family: 'Cinzel Decorative', serif;">Party Members</h4>
+                                 <h4 class="party-member-header">Party Members</h4>
                                  ${quest.party_members.map(member => `
                                     <div style="margin-bottom: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--glass-bg); background: rgba(74, 93, 35, 0.1);">
                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
                                           <strong>${member.name}</strong>
                                           <button class="nav-btn" onclick="app.jumpToGuildMember('${member.name}')" style="margin: 0; font-size: 0.7rem;">View Member</button>
                                        </div>
-                                       <span style="font-size: 0.9rem; color: var(--glass-bg);">${member.rank_at_time} - ${member.role}</span>
+                                       <span class="party-member-details">${member.rank_at_time} - ${member.role}</span>
                                     </div>
                                  `).join('')}
                               </div>

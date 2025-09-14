@@ -827,11 +827,20 @@ p {
     border-color: var(--glass-bg);
 }
 
+.lightMode .race-tag.primary {
+    color: var(--ocean-blue);
+    border-color: var(--ocean-blue);
+}
+
 .race-tag.primary:hover {
     background: var(--glass-bg);
     color: var(--parchment-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+}
+
+.lightMode .race-tag.primary:hover {
+    color: var(--parchment-light);
 }
 
 .race-tag.secondary {
@@ -865,6 +874,10 @@ p {
     margin-bottom: 0.5rem;
     font-style: italic;
     color: var(--ink-light);
+}
+
+.darkMode .reasoning-content p {
+    color: var(--parchment-light);
 }
 
 .reasoning-content p:last-child {
@@ -1578,6 +1591,14 @@ p {
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
+    color: var(--ocean-blue);
+}
+
+.lightMode .continent-summary,
+.lightMode .race-summary,
+.lightMode .subclass-summary,
+.lightMode .deity-count,
+.lightMode .subrace-description {
     color: var(--ocean-blue);
 }
 
