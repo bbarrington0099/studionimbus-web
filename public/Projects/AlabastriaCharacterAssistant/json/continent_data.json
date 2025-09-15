@@ -142,6 +142,174 @@
         ]
     },
     {
+        "continent": "Katman of Kamalatman",
+        "description": "Home to most of the kingdoms inhabitants, this land has a stretch of planes preluding a mass of swampy less populated areas.",
+        "colors": [
+            "Pink",
+            "Brown"
+        ],
+        "flag_symbol": "Swamp Lily",
+        "flag_description": "A pink swamp lily on a brown background, representing the swampy marshlands and the royal capital that governs the three Kamalatman continents.",
+        "capital": {
+            "name": "Swamp Crown",
+            "location": "Central plains, on elevated ground overlooking the vast swamplands",
+            "description": "A unique city built on stilts and elevated platforms above the swamps, with the royal palace constructed on the highest point, connected by rope bridges and wooden walkways.",
+            "ruler": {
+                "name": "High King Gorak Swampstrider",
+                "race": "Orc",
+                "title": "High King of Katman, Supreme Ruler of Kamalatman",
+                "personality": "Cunning and adaptable, with a deep understanding of both civilized politics and the wild nature of the swamps",
+                "ruling_style": "Unified monarchy with strong central authority, balancing the needs of the agricultural plains with the wild swamp territories",
+                "background": "A 55-year-old legendary warrior who began as a simple swamp guide but rose to become the most powerful ruler in Alabastria's history. During the Swamp Wars, Gorak single-handedly defeated the dreaded Swamp Dragon Malagaroth, whose death throes created the vast swamplands that now bear his name. This victory earned him the respect of all three Kamalatman kingdoms, and he was chosen to marry Princess Elara of Katman, uniting the royal bloodlines. When the previous High King fell in battle against the Kantra Incursions, Gorak's tactical genius and unbreakable will led the combined forces of all three continents to victory, saving Kamalatman from destruction. The grateful kingdoms unanimously declared him Supreme Ruler, making him the first Orc to hold such power and the only ruler to have personally saved the entire realm from annihilation.",
+                "appearance": "A powerful Orc with green-tinted skin and intelligent brown eyes, wearing a crown of twisted swamp vines and precious gems, dressed in royal robes of pink and brown that reflect his kingdom's colors, carrying a ceremonial staff topped with a carved swamp lily, his hands adorned with rings made from rare swamp minerals",
+                "deity": "Gruumsh One-Eye",
+                "deity_reasoning": "As an Orc ruler who balances civilized politics with wild nature, Gorak follows Gruumsh, the One-Eyed God and patron deity of orcs, who represents strength, survival, and the ability to thrive in harsh environments while maintaining the fierce independence that defines orcish culture."
+            }
+        },
+        "kingdom": "Kamalatman",
+        "kingdom_colors": [
+            "Gold",
+            "Crimson"
+        ],
+        "kingdom_symbol": "Triple Crown",
+        "kingdom_description": "Three interlocked crowns representing the unified rule of the three Kamalatman continents under one royal family.",
+        "languages": {
+            "primary": [
+                "Orcish",
+                "Common"
+            ],
+            "secondary": [
+                "Draconic",
+                "Lizardfolk",
+                "Yuan-ti"
+            ],
+            "rare": [
+                "Abyssal",
+                "Aquan",
+                "Druidic"
+            ],
+            "description": "The swamplands echo with Orcish war-cries from the tribal strongholds, while Common serves the kingdom's administration on the plains. Lizardfolk communities maintain their ancient reptilian tongue, and the secretive Yuan-ti speak their serpentine language in hidden enclaves. Draconic marks ancient ruins, while Aquan flows with the wetland waters and Druidic whispers through the marsh grasses."
+        },
+        "politics": {
+            "kingdoms": [
+                "Katman (part of Kamalatman)"
+            ],
+            "settlements": [
+                "Plains administrative centers",
+                "Swamp tribal strongholds",
+                "Frontier outposts"
+            ],
+            "dominant_races": [
+                "Orcs",
+                "Orcs",
+                "Lizardfolk",
+                "Yuan-ti"
+            ],
+            "notes": "Agricultural, part of Kamalatman kingdom",
+            "political_climate": "Katman kingdom focuses on swampy frontier defense as part of the greater Kamalatman realm, balancing agricultural plains with wild swampland territories."
+        },
+        "wars_conflicts": {
+            "current": [
+                {
+                    "name": "The Swamp Border Skirmishes",
+                    "description": "Frequent clashes with Alatman over control of the shared swamp regions and resource rights, with naval support from both sides.",
+                    "status": "Low-intensity",
+                    "participants": [
+                        "Katman Tribes",
+                        "Alatman Forces"
+                    ]
+                },
+                {
+                    "name": "The Southern Frontier Wars",
+                    "description": "Ongoing conflicts with Skratonia over trade tariffs and resource taxation, particularly affecting the southern maritime trade routes.",
+                    "status": "Active",
+                    "participants": [
+                        "Katman Merchants",
+                        "Skratonian Merchants"
+                    ]
+                }
+            ],
+            "historical": [
+                {
+                    "name": "The Swamp Wars (500-600 Cycles)",
+                    "description": "Major conflicts over control of the swamp regions, establishing Katman as the primary agricultural center of Kamalatman.",
+                    "outcome": "Katman victory - established current agricultural territories"
+                }
+            ]
+        },
+        "treaties_alliances": [
+            {
+                "name": "The Kamalatman Internal Trade Agreement",
+                "description": "Internal trade agreement between the three Kamalatman regions for resource sharing and mutual defense.",
+                "partners": [
+                    "Maltman",
+                    "Alatman"
+                ],
+                "type": "Trade and Military",
+                "status": "Active"
+            },
+            {
+                "name": "The Southern Trade Pact",
+                "description": "Trade agreement with Skratonia for agricultural goods and manufactured items in exchange for raw materials and swamp resources.",
+                "partners": [
+                    "Skratonia"
+                ],
+                "type": "Trade",
+                "status": "Active"
+            }
+        ],
+        "trade_routes": [
+            {
+                "name": "The Southern Swamp Route",
+                "description": "Dangerous overland route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions, carrying swamp goods and raw materials.",
+                "type": "Overland to Maritime",
+                "goods": [
+                    "Swamp goods",
+                    "Raw materials",
+                    "Agricultural products",
+                    "Military equipment"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Swamp Passage",
+                "description": "Dangerous overland route through the swamps connecting to coastal ports, where goods are then transported by sea to Alatman, used for internal Kamalatman trade.",
+                "type": "Overland to Maritime",
+                "goods": [
+                    "Raw materials",
+                    "Food supplies",
+                    "Military equipment",
+                    "Swamp resources"
+                ],
+                "frequency": "Weekly"
+            },
+            {
+                "name": "The Central Plains Route",
+                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Maltman's mining regions, carrying raw materials and manufactured goods.",
+                "type": "Overland to Maritime",
+                "goods": [
+                    "Mining equipment",
+                    "Raw materials",
+                    "Agricultural products",
+                    "Manufactured goods"
+                ],
+                "frequency": "Bi-weekly"
+            },
+            {
+                "name": "The Eastern Sea Route",
+                "description": "Maritime route across the eastern seas connecting to Skratonia and other eastern continents, carrying high-value swamp goods.",
+                "type": "Maritime",
+                "goods": [
+                    "Swamp goods",
+                    "Rare materials",
+                    "Agricultural products",
+                    "Military equipment"
+                ],
+                "frequency": "Bi-weekly"
+            }
+        ]
+    },
+    {
         "continent": "Alatman of Kamalatman",
         "description": "Land grouped of grey forests, flat swamps, and a timely volcano, exploring this land is quite popular due to the great natural riches that can be sent back, but settling there has proven quite difficult with the royal family's great taxes placed on the land with claims of wanting to regulate the removal of the materials found.",
         "colors": [
@@ -938,174 +1106,6 @@
                     "Defense materials"
                 ],
                 "frequency": "All routes"
-            }
-        ]
-    },
-    {
-        "continent": "Katman of Kamalatman",
-        "description": "Home to most of the kingdoms inhabitants, this land has a stretch of planes preluding a mass of swampy less populated areas.",
-        "colors": [
-            "Pink",
-            "Brown"
-        ],
-        "flag_symbol": "Swamp Lily",
-        "flag_description": "A pink swamp lily on a brown background, representing the swampy marshlands and the royal capital that governs the three Kamalatman continents.",
-        "capital": {
-            "name": "Swamp Crown",
-            "location": "Central plains, on elevated ground overlooking the vast swamplands",
-            "description": "A unique city built on stilts and elevated platforms above the swamps, with the royal palace constructed on the highest point, connected by rope bridges and wooden walkways.",
-            "ruler": {
-                "name": "High King Gorak Swampstrider",
-                "race": "Orc",
-                "title": "High King of Katman, Supreme Ruler of Kamalatman",
-                "personality": "Cunning and adaptable, with a deep understanding of both civilized politics and the wild nature of the swamps",
-                "ruling_style": "Unified monarchy with strong central authority, balancing the needs of the agricultural plains with the wild swamp territories",
-                "background": "A 55-year-old legendary warrior who began as a simple swamp guide but rose to become the most powerful ruler in Alabastria's history. During the Swamp Wars, Gorak single-handedly defeated the dreaded Swamp Dragon Malagaroth, whose death throes created the vast swamplands that now bear his name. This victory earned him the respect of all three Kamalatman kingdoms, and he was chosen to marry Princess Elara of Katman, uniting the royal bloodlines. When the previous High King fell in battle against the Kantra Incursions, Gorak's tactical genius and unbreakable will led the combined forces of all three continents to victory, saving Kamalatman from destruction. The grateful kingdoms unanimously declared him Supreme Ruler, making him the first Orc to hold such power and the only ruler to have personally saved the entire realm from annihilation.",
-                "appearance": "A powerful Orc with green-tinted skin and intelligent brown eyes, wearing a crown of twisted swamp vines and precious gems, dressed in royal robes of pink and brown that reflect his kingdom's colors, carrying a ceremonial staff topped with a carved swamp lily, his hands adorned with rings made from rare swamp minerals",
-                "deity": "Gruumsh One-Eye",
-                "deity_reasoning": "As an Orc ruler who balances civilized politics with wild nature, Gorak follows Gruumsh, the One-Eyed God and patron deity of orcs, who represents strength, survival, and the ability to thrive in harsh environments while maintaining the fierce independence that defines orcish culture."
-            }
-        },
-        "kingdom": "Kamalatman",
-        "kingdom_colors": [
-            "Gold",
-            "Crimson"
-        ],
-        "kingdom_symbol": "Triple Crown",
-        "kingdom_description": "Three interlocked crowns representing the unified rule of the three Kamalatman continents under one royal family.",
-        "languages": {
-            "primary": [
-                "Orcish",
-                "Common"
-            ],
-            "secondary": [
-                "Draconic",
-                "Lizardfolk",
-                "Yuan-ti"
-            ],
-            "rare": [
-                "Abyssal",
-                "Aquan",
-                "Druidic"
-            ],
-            "description": "The swamplands echo with Orcish war-cries from the tribal strongholds, while Common serves the kingdom's administration on the plains. Lizardfolk communities maintain their ancient reptilian tongue, and the secretive Yuan-ti speak their serpentine language in hidden enclaves. Draconic marks ancient ruins, while Aquan flows with the wetland waters and Druidic whispers through the marsh grasses."
-        },
-        "politics": {
-            "kingdoms": [
-                "Katman (part of Kamalatman)"
-            ],
-            "settlements": [
-                "Plains administrative centers",
-                "Swamp tribal strongholds",
-                "Frontier outposts"
-            ],
-            "dominant_races": [
-                "Orcs",
-                "Orcs",
-                "Lizardfolk",
-                "Yuan-ti"
-            ],
-            "notes": "Agricultural, part of Kamalatman kingdom",
-            "political_climate": "Katman kingdom focuses on swampy frontier defense as part of the greater Kamalatman realm, balancing agricultural plains with wild swampland territories."
-        },
-        "wars_conflicts": {
-            "current": [
-                {
-                    "name": "The Swamp Border Skirmishes",
-                    "description": "Frequent clashes with Alatman over control of the shared swamp regions and resource rights, with naval support from both sides.",
-                    "status": "Low-intensity",
-                    "participants": [
-                        "Katman Tribes",
-                        "Alatman Forces"
-                    ]
-                },
-                {
-                    "name": "The Southern Frontier Wars",
-                    "description": "Ongoing conflicts with Skratonia over trade tariffs and resource taxation, particularly affecting the southern maritime trade routes.",
-                    "status": "Active",
-                    "participants": [
-                        "Katman Merchants",
-                        "Skratonian Merchants"
-                    ]
-                }
-            ],
-            "historical": [
-                {
-                    "name": "The Swamp Wars (500-600 Cycles)",
-                    "description": "Major conflicts over control of the swamp regions, establishing Katman as the primary agricultural center of Kamalatman.",
-                    "outcome": "Katman victory - established current agricultural territories"
-                }
-            ]
-        },
-        "treaties_alliances": [
-            {
-                "name": "The Kamalatman Internal Trade Agreement",
-                "description": "Internal trade agreement between the three Kamalatman regions for resource sharing and mutual defense.",
-                "partners": [
-                    "Maltman",
-                    "Alatman"
-                ],
-                "type": "Trade and Military",
-                "status": "Active"
-            },
-            {
-                "name": "The Southern Trade Pact",
-                "description": "Trade agreement with Skratonia for agricultural goods and manufactured items in exchange for raw materials and swamp resources.",
-                "partners": [
-                    "Skratonia"
-                ],
-                "type": "Trade",
-                "status": "Active"
-            }
-        ],
-        "trade_routes": [
-            {
-                "name": "The Southern Swamp Route",
-                "description": "Dangerous overland route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions, carrying swamp goods and raw materials.",
-                "type": "Overland to Maritime",
-                "goods": [
-                    "Swamp goods",
-                    "Raw materials",
-                    "Agricultural products",
-                    "Military equipment"
-                ],
-                "frequency": "Weekly"
-            },
-            {
-                "name": "The Swamp Passage",
-                "description": "Dangerous overland route through the swamps connecting to coastal ports, where goods are then transported by sea to Alatman, used for internal Kamalatman trade.",
-                "type": "Overland to Maritime",
-                "goods": [
-                    "Raw materials",
-                    "Food supplies",
-                    "Military equipment",
-                    "Swamp resources"
-                ],
-                "frequency": "Weekly"
-            },
-            {
-                "name": "The Central Plains Route",
-                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Maltman's mining regions, carrying raw materials and manufactured goods.",
-                "type": "Overland to Maritime",
-                "goods": [
-                    "Mining equipment",
-                    "Raw materials",
-                    "Agricultural products",
-                    "Manufactured goods"
-                ],
-                "frequency": "Bi-weekly"
-            },
-            {
-                "name": "The Eastern Sea Route",
-                "description": "Maritime route across the eastern seas connecting to Skratonia and other eastern continents, carrying high-value swamp goods.",
-                "type": "Maritime",
-                "goods": [
-                    "Swamp goods",
-                    "Rare materials",
-                    "Agricultural products",
-                    "Military equipment"
-                ],
-                "frequency": "Bi-weekly"
             }
         ]
     },

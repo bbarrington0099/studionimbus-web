@@ -1566,6 +1566,12 @@
             "subclass_reason": "versatile magical archery",
             "continent": "Skratonia",
             "continent_reason": "bridge between human and elf society"
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Ranged attacks from high vantage points",
+            "continent": "Skratonia",
+            "continent_reason": "Target enemies from cliffs and heights"
           }
         ],
         "prominent_continents": [
@@ -1603,6 +1609,12 @@
             "subclass_reason": "disciplined mountain warfare",
             "continent": "Maltman of Kamalatman",
             "continent_reason": "mountain miners and stoneworkers"
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Strategic combat with superior positioning",
+            "continent": "Skratonia",
+            "continent_reason": "Control key points across open terrain"
           }
         ],
         "prominent_continents": [
@@ -2108,6 +2120,12 @@
             "subclass_reason": "graceful combat techniques",
             "continent": "Kuriguer",
             "continent_reason": "native to magic forests and coasts"
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Unarmed combatants with exceptional mobility",
+            "continent": "Skratonia",
+            "continent_reason": "Fight across cliffs and rugged terrain"
           }
         ],
         "prominent_continents": [
@@ -2139,6 +2157,12 @@
             "subclass_reason": "feline stealth and shadow dancing",
             "continent": "Skratonia",
             "continent_reason": "hunters of the plains"
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Stealthy movement combined with gliding",
+            "continent": "Skratonia",
+            "continent_reason": "Scout unseen across plains and plateaus"
           }
         ],
         "prominent_continents": [
@@ -2571,7 +2595,13 @@
             "subclass_reason": "feline night hunting instincts",
             "continent": "Skratonia",
             "continent_reason": "hunters of the plains"
-          }
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Strike from shadows using gliding skills",
+            "continent": "Skratonia",
+            "continent_reason": "Ambush enemies on plains and cliffs"
+          },
         ],
         "prominent_continents": [
           {
@@ -2606,7 +2636,13 @@
             "subclass_reason": "fey realm border patrol",
             "continent": "Kuriguer",
             "continent_reason": "fae-tied magic groves"
-          }
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Fast repositioning using vertical mobility",
+            "continent": "Skratonia",
+            "continent_reason": "Move swiftly across open plains and plateaus"
+          },
         ],
         "prominent_continents": [
           {
@@ -2953,6 +2989,12 @@
             "subclass_reason": "nimble scouting and pathfinding",
             "continent": "Skratonia",
             "continent_reason": "farmers and caravan leaders"
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "Quick observers, excel at tactical positioning",
+            "continent": "Skratonia",
+            "continent_reason": "Traverse Skratonia’s diverse terrain efficiently"
           }
         ],
         "prominent_continents": [
@@ -3029,7 +3071,12 @@
             "subclass_reason": "infernal charisma and dramatic flair",
             "continent": "Skratonia",
             "continent_reason": "numerous across city-states"
-          }
+          },
+          {
+            "name": "Hadozee",
+            "subclass_reason": "excel in mobility and single-target combat",
+            "continent": "Skratonia",
+            "continent_reason": "various high-scapes"
         ],
         "prominent_continents": [
           {
