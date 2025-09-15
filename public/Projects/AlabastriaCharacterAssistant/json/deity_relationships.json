@@ -801,6 +801,21 @@
         "reasoning": "Goliaths in Bulsania, being mountain-dwelling and competitive, favor Tempus for strategy and battle, Lathander for renewal and hope, and Tymora for luck. Their competitive nature makes them favor war and luck deities."
     },
     {
+        "race": "Hadozee",
+        "continent": "Skratonia",
+        "primary_deities": [
+            "Tymora",
+            "Lathander",
+            "Tempus"
+        ],
+        "secondary_deities": [
+            "Selûne",
+            "Mystra",
+            "Kelemvor"
+        ],
+        "reasoning": "Hadozee in Skratonia, being agile scouts and sailors, favor Tymora for luck in their travels, Lathander for guidance and hope across open plains, and Tempus for protection in battle. Their adventurous lifestyle and constant movement make them drawn to deities of luck, guidance, and strategy."
+    },
+    {
         "race": "Harengon",
         "continent": "Skratonia",
         "primary_deities": [
