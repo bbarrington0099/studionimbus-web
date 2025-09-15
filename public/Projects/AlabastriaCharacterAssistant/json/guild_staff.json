@@ -3,7 +3,7 @@
         "name": "Tharos Raggenthraw",
         "race": "Leonin",
         "class": "War Domain Cleric",
-        "guild_role": "Guild Founder/Current Guild Master",
+        "guild_role": "Guild Founder / Current Guild Master",
         "rank": "Mithral",
         "image": "TharosRaggenthraw.png",
         "appearance": "A barrel-chested leonin with a thick dark mane streaked with silver. His face bears a scar across the muzzle and cheek, a mark of his legendary duel with a wyvern. He wears deep-blue mithral plate and wields Ruinbreaker, a massive greataxe etched with divine runes.",
@@ -15,7 +15,7 @@
         "name": "Kinris Morranfew",
         "race": "Kalashtar",
         "class": "Mentalist Tactician",
-        "guild_role": "Barkeep / Doctor / Brewer / Guild Confidante",
+        "guild_role": "Barkeep / Brewer",
         "rank": "Coal",
         "image": "KinrisMorranfew.png",
         "appearance": "A warm-eyed Kalashtar woman of 26 years, with intricate black tattoos swirling across her face and arms. She keeps her dark hair in a thick braid over her shoulder and wears a blue tunic beneath a leather apron. Her hands are calloused from both brewing and healing, and her ever-present smile carries both mischief and kindness.",
@@ -33,18 +33,42 @@
         "appearance": "A blue-skinned Vedalken male of 55 years, with sharp features, pale eyes that seem almost without pupils, and intricate black tattoos curling across his bald head. He wears deep silver robes trimmed in blue, and carries both a staff crowned with a glowing orb and a well-worn tome. His movements are precise, though he often appears distracted as if caught in thought.",
         "personality": "Thoughtful, eccentric, and prone to losing track of time. Ovlan has a passion for knowledge and the written word, speaking with excitement when inspiration strikes. He is kind-hearted, though absentminded, and has a habit of weeping at moving music. His friends know him as dependable, if always late.",
         "faith": "While he holds no personal god, he honors the War God Tempus as patron of the Huntbound Order, treating divine blessing with quiet respect rather than devotion.",
-        "background": "Once a youth of the Witchlight Carnival, Ovlan left its endless cycle of revelry when it lost its wonder, seeking greater meaning in study and service. Now he serves as the Huntbound Order’s librarian, with an uncanny memory for where every book lies. He aids hunters not by blade but by insight, scribing records of their deeds and providing arcane knowledge crucial for their survival. With his wisp companion ever at his side, he embodies the Order’s bond of camaraderie — a friend who would never leave another behind."
+        "background": "Once a youth of the Witchlight Carnival, Ovlan left its endless cycle of revelry when it lost its wonder, seeking greater meaning in study and service. He found the Huntbound Order suited his desires, and adventured for the Guild for many years, making his way up to Silver rank.Now he serves as the Huntbound Order’s librarian, with an uncanny memory for where every book lies. He aids hunters not by blade but by insight, scribing records of their deeds and providing arcane knowledge crucial for their survival. With his wisp companion ever at his side, he embodies the Order’s bond of camaraderie — a friend who would never leave another behind."
     },
     {
         "name": "Varon Tavis",
         "race": "Hobgoblin",
         "class": "Path of the Giants Barbarian",
-        "guild_role": "Forge-Master / Smithing Trainer",
+        "guild_role": "Forge-Master / Armory Manager",
         "rank": "Coal",
         "image": "VaronTavis.png",
         "appearance": "A tall, broad-shouldered Hobgoblin of 36 years, standing six feet tall with weathered, battle-marked red skin. His sharp features carry the stern intensity of one who has lived long in the wilds. He wears furs, leathers, and a blacksmith's apron of blue and silver. His arms are corded with muscle from years at the anvil, and his hands are scarred, calloused, and blackened from the forge.",
         "personality": "Blunt, wary, and slow to trust outsiders, Varon respects strength and survival above all. Though not cruel, he has little patience for wealth or refinement, believing only experience in the wild proves worth. Once his trust is earned, however, his loyalty is unwavering, rooted in clan bonds and hard-earned camaraderie. He takes pride in teaching others the craft of smithing, seeing the forge as both a crucible and a bond between warriors.",
         "faith": "He holds no faith in gods, but honors the strength of the wilds, storms, and mountains as forces that shape all beings.",
         "background": "Exiled from his clan for reasons he rarely speaks of, Varon carved out a life as an outlander, living by strength, grit, and knowledge of the land. His exile turned to belonging when he joined the Huntbound Order, where his tracking skill, endurance, and raw might found new purpose. Yet his truest gift lies in the forge: Varon serves as the guild’s blacksmith and smithing trainer, shaping weapons and armor that carry Huntbound hunters into battle. The clang of his hammer is as constant as the roar of beasts on the hunt, and his forge is open to any guildmate seeking to learn. Though quiet and guarded, he is a steadfast companion on the hunt and a shield for those he calls kin."
+    },
+    {
+        "name": "Caelum Riversong",
+        "race": "Half Wood Elf",
+        "class": "Life Domain Cleric",
+        "guild_role": "Doctor / Apothecary",
+        "rank": "Coal",
+        "image": "CaelumRiversong.png",
+        "appearance": "A 28-year-old half-elf man with warm brown skin, angular features softened by his human heritage, and dark, tightly curled hair often pushed back beneath a pair of spectacles. He is nimble in well-worn leather armor, his hands steady and precise from years of apothecary work. Though scholarly in demeanor, there is an alert sharpness to his movements that hints at both discipline and care.",
+        "personality": "Meticulous, thoughtful, and quietly compassionate. Caelum is a perfectionist who holds himself to the highest standards, especially in his healing craft. While often serious, he carries a dry wit and deep patience that put others at ease. He believes in community, care, and the quiet strength of doing things properly.",
+        "faith": "A devoted follower of Lathander, god of dawn, renewal, and vitality. Caelum sees each life saved as a chance for rebirth and believes healing is a sacred act of honoring new beginnings.",
+        "background": "The son of a wood elf father and a human mother from a proud artisan family, Caelum was trained as an apothecary and healer under his guild’s guidance. Skilled in alchemy, remedies, and clerical healing, he became the guild’s Doctor — tending wounds with both divine grace and crafted remedies. His perfectionism sometimes makes him linger over details, but his steady hands and steady heart have saved many lives. To his fellow guild members, Caelum is both a healer of the body and a quiet anchor of community."
+    },
+    {
+        "name": "Risha Swiftdancer",
+        "race": "Hadozee",
+        "class": "Armorer Artificer",
+        "guild_role": "Artificer / Fence",
+        "rank": "Coal",
+        "image": "RishaSwiftdancer.png",
+        "appearance": "A wiry Hadozee woman in her early 30s, with sharp eyes that dart constantly as if always calculating. Her fur is dark and unkempt, often streaked with soot and grease from her tinkering. She wears studded leather armor hidden beneath a patched and scorched apron, with belts full of tools and trinkets jangling at her sides. Her quick hands and restless stance give the impression of someone always ready to steal, fix, or break something.",
+        "personality": "Defiant, hot-tempered, and fiercely loyal to those she calls friends. Risha thrives on proving others wrong and takes insults personally, often lashing out in bursts of temper. She has little patience for plans or authority, preferring to improvise and follow her instincts. Despite her criminal past, she values bonds of loyalty above all else and will fight tooth and claw for those she owes her trust.",
+        "faith": "Not particularly devout. Risha places her faith in her skills, her tools, and the guild that gave her a second chance.",
+        "background": "Once a criminal and fence in the underworld, Risha made her name by stealing, tinkering, and reselling goods with clever improvements. Her reckless streak nearly ended at the gallows until the guildmaster himself spared her life after she stole and modified his greataxe, impressing him enough to grant her a place in the guild. Now serving as the guild’s artificer and black-market contact, she repays her old debt through loyalty and craft, while never quite losing the chaotic spark that first carried her into trouble."
     }
 ]
