@@ -2601,7 +2601,7 @@
             "subclass_reason": "Strike from shadows using gliding skills",
             "continent": "Skratonia",
             "continent_reason": "Ambush enemies on plains and cliffs"
-          },
+          }
         ],
         "prominent_continents": [
           {
@@ -2642,7 +2642,7 @@
             "subclass_reason": "Fast repositioning using vertical mobility",
             "continent": "Skratonia",
             "continent_reason": "Move swiftly across open plains and plateaus"
-          },
+          }
         ],
         "prominent_continents": [
           {
