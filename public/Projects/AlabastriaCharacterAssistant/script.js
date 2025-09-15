@@ -121,13 +121,22 @@ const app = {
         // Add click listeners to all images
         document.addEventListener('click', (event) => {
             if (event.target.tagName === 'IMG' && !event.target.classList.contains('no-fullscreen')) {
-                this.showImageFullscreen(event.target.src, event.target.alt);
+                // Check if this is a staff image and get additional info
+                let additionalCaption = '';
+                if (event.target.classList.contains('staff-image')) {
+                    const staffName = event.target.alt;
+                    const staffMember = this.guildStaffData.find(staff => staff.name === staffName);
+                    if (staffMember) {
+                        additionalCaption = staffMember.guild_role;
+                    }
+                }
+                this.showImageFullscreen(event.target.src, event.target.alt, additionalCaption);
             }
         });
     },
 
     // Show image in fullscreen modal
-    showImageFullscreen(imageSrc, imageAlt) {
+    showImageFullscreen(imageSrc, imageAlt, additionalCaption = '') {
         // Create fullscreen image modal if it doesn't exist
         let imageModal = document.getElementById('image-fullscreen-modal');
         if (!imageModal) {
@@ -168,7 +177,13 @@ const app = {
 
         img.src = imageSrc;
         img.alt = imageAlt;
-        caption.textContent = imageAlt;
+
+        // Display name and guild role if available
+        if (additionalCaption) {
+            caption.innerHTML = `<div style="font-weight: bold; margin-bottom: 0.5rem;">${imageAlt}</div><div style="font-style: italic; color: var(--ocean-blue);">${additionalCaption}</div>`;
+        } else {
+            caption.textContent = imageAlt;
+        }
 
         // Show modal
         imageModal.style.display = 'block';
