@@ -22,9 +22,23 @@
     transform: translateY(-2px);
 }
 
+.lightMode .guild-nav-btn.active {
+    background: var(--gold-accent);
+    border-color: var(--volcanic-red);
+}
+
+.darkMode .guild-nav-btn.active {
+    background: var(--dark-accent);
+    border-color: var(--dark-accent-2);
+}
+
 .guild-nav-btn.active .filter-btn-text {
     color: var(--ink-dark);
     font-weight: 700;
+}
+
+.darkMode .guild-nav-btn.active .filter-btn-text {
+    color: var(--dark-text);
 }
 
 /* ===== GUILD CONTAINER ===== */
@@ -54,14 +68,14 @@
 }
 
 .darkMode .guild-info {
-    background: var(--glass-dark-bg);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--glass-dark-border);
+    background: var(--dark-surface);
+    box-shadow: var(--shadow-dark-lg);
+    border-color: var(--dark-border);
 }
 
 .lightMode .guild-info {
     background: var(--glass-bg);
-    box-shadow: var(--shadow-light-lg);
+    box-shadow: var(--shadow-lg);
     border-color: var(--glass-border);
 }
 
@@ -154,11 +168,13 @@
 }
 
 .darkMode .rank-card {
-    background: rgba(44, 36, 22, 0.6);
+    background: var(--dark-surface-2);
+    border-color: var(--dark-border);
 }
 
 .lightMode .rank-card {
-    background: rgba(244, 241, 232, 0.8);
+    background: rgba(248, 244, 230, 0.8);
+    border-color: var(--glass-border);
 }
 
 .rank-card:hover {
@@ -233,11 +249,13 @@
 }
 
 .darkMode .operation-card {
-    background: rgba(44, 36, 22, 0.6);
+    background: var(--dark-surface-2);
+    border-color: var(--dark-border);
 }
 
 .lightMode .operation-card {
-    background: rgba(244, 241, 232, 0.8);
+    background: rgba(248, 244, 230, 0.8);
+    border-color: var(--glass-border);
 }
 
 .operation-card:hover {
@@ -262,8 +280,8 @@
 }
 
 .status-primary {
-    background: var(--glass-bg);
-    color: var(--parchment-light);
+    background: var(--gold-accent);
+    color: var(--parchment-dark);
 }
 
 .status-secondary {
@@ -272,8 +290,8 @@
 }
 
 .status-expedition {
-    background: var(--gold-accent);
-    color: var(--ink-dark);
+    background: var(--mountain-brown);
+    color: var(--parchment-light);
 }
 
 .status-dangerous {
@@ -305,15 +323,15 @@
 
 .darkMode .staff-card,
 .darkMode .member-card {
-    background: var(--glass-dark-bg);
-    box-shadow: var(--shadow-md);
-    border-color: var(--glass-dark-border);
+    background: var(--dark-surface);
+    box-shadow: var(--shadow-dark-md);
+    border-color: var(--dark-border);
 }
 
 .lightMode .staff-card,
 .lightMode .member-card {
     background: var(--glass-bg);
-    box-shadow: var(--shadow-light-md);
+    box-shadow: var(--shadow-md);
     border-color: var(--glass-border);
 }
 
@@ -588,9 +606,11 @@
 }
 
 .darkMode .quest-participation-summary {
-    color: var(--ocean-blue);
+    color: var(--dark-text);
+    background: rgba(139, 115, 85, 0.1);
 }
 
 .lightMode .quest-participation-summary {
     color: var(--ocean-blue);
+    background: rgba(30, 74, 95, 0.1);
 }

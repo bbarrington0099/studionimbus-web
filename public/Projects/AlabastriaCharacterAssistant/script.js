@@ -959,8 +959,8 @@ const app = {
     },
 
     renderContinents(container) {
-        // Filter out the world entry and render continents
-        const continents = this.continentData.filter(item => item.continent);
+        // Filter out the world entry and Kingdom of Kamalatman, render continents
+        const continents = this.continentData.filter(item => item.continent && item.continent !== 'Kingdom of Kamalatman');
 
         continents.forEach(continent => {
             const card = document.createElement('div');
@@ -1312,7 +1312,6 @@ const app = {
     showDetailsSection() {
         const title = document.getElementById('details-title');
         const info = document.getElementById('details-info');
-        const relationships = document.getElementById('relationships-table');
 
         title.textContent = this.currentSelection;
 
@@ -1320,13 +1319,13 @@ const app = {
         this.updateSectionHeader();
 
         if (this.currentFilter === 'continent') {
-            this.renderContinentDetails(info, relationships);
+            this.renderContinentDetails(info);
         } else if (this.currentFilter === 'race') {
-            this.renderRaceDetails(info, relationships);
+            this.renderRaceDetails(info);
         } else if (this.currentFilter === 'class') {
-            this.renderClassDetails(info, relationships);
+            this.renderClassDetails(info);
         } else if (this.currentFilter === 'playstyle') {
-            this.renderPlaystyleDetails(info, relationships);
+            this.renderPlaystyleDetails(info);
         }
 
         this.showSection('details-section');
@@ -1825,7 +1824,7 @@ const app = {
                                     <strong>Deity:</strong> 
                                     <button class="deity-button" onclick="app.showDeityDetails('${member.deity}')" style="
                                        background: var(--gold-accent);
-                                       color: var(--dark-text);
+                                       color: var(--parchment-dark);
                                        border: none;
                                        padding: 0.3rem 0.6rem;
                                        border-radius: 4px;
@@ -1942,7 +1941,7 @@ const app = {
                         <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--mountain-brown);">
                            <strong>Quest Ranks:</strong><br>
                            ${Object.entries(stats.questRanks).map(([rank, count]) => `
-                              <span style="display: inline-block; margin: 0.2rem 0.5rem 0.2rem 0; padding: 0.2rem 0.5rem; background: var(--glass-bg); color: var(--parchment-light); border-radius: 10px; font-size: 0.8rem;">
+                              <span style="display: inline-block; margin: 0.2rem 0.5rem 0.2rem 0; padding: 0.2rem 0.5rem; background: var(--ocean-blue); color: var(--parchment-light); border-radius: 10px; font-size: 0.8rem;">
                                  ${rank}: ${count}
                               </span>
                            `).join('')}
@@ -2271,8 +2270,8 @@ const app = {
                         <span class="deity-modal-icon">📜</span> ${period.period}: ${period.title}
                     </h2>
                     <button class="deity-modal-close" onclick="document.getElementById('backup-timeline-modal').remove()">&times;</button>
-                </div>
-                
+         </div>
+
                 <div class="deity-modal-body">
                     <div class="deity-history-section">
                         <h3>Overview</h3>
@@ -2281,26 +2280,26 @@ const app = {
 
                     <div class="deity-history-section">
                         <h3>Major Events</h3>
-                        ${period.details.events.map(event => `
+            ${period.details.events.map(event => `
                            <div class="deity-history-period">
                               <h4>${event.name}</h4>
                               <p>${event.description}</p>
-                           </div>
-                        `).join('')}
-                    </div>
+               </div>
+            `).join('')}
+         </div>
 
                     <div class="deity-history-section">
                         <h3>Continental Developments</h3>
-                        ${Object.entries(period.details.continents).map(([continent, description]) => `
+            ${Object.entries(period.details.continents).map(([continent, description]) => `
                            <div class="deity-info-card">
                               <h4>${continent}</h4>
                               <p>${description}</p>
-                           </div>
-                        `).join('')}
+               </div>
+            `).join('')}
                     </div>
                 </div>
-            </div>
-        `;
+         </div>
+      `;
 
         document.body.appendChild(backupModal);
     },
@@ -2322,6 +2321,35 @@ const app = {
         if (backupDeityModal) {
             backupDeityModal.remove();
         }
+    },
+
+    adjustFlagHeights() {
+        // Get the continent map image
+        const mapImage = document.getElementById('continent-map');
+        if (!mapImage) {
+            return;
+        }
+
+        // Get the actual height of the map image
+        const mapHeight = mapImage.offsetHeight;
+
+        if (mapHeight === 0) {
+            setTimeout(() => this.adjustFlagHeights(), 50);
+            return;
+        }
+
+        // Calculate the size for flags and ruler portraits (should be square and fit with the map)
+        // With 4 images max (map + kingdom flag + continent flag + ruler), each should be roughly equal
+        const flagSize = Math.min(mapHeight, 200); // Cap at 200px to ensure they fit in the row
+
+        // Find all flag images and ruler portraits, set their height to match the calculated size
+        const flagImages = document.querySelectorAll('.flag-image');
+
+        flagImages.forEach(flag => {
+            flag.style.height = flagSize + 'px';
+            flag.style.width = flagSize + 'px'; // Make them square
+            flag.style.objectFit = 'cover';
+        });
     },
 
     // Render pantheon and deities
@@ -2626,6 +2654,123 @@ const app = {
     getContinentGradient(continentName) {
         const colors = this.getContinentColors(continentName);
         return `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)`;
+    },
+
+    // Get most revered deity for a continent
+    getMostReveredDeity(continentName) {
+        const continent = this.continentData.find(c => c.continent === continentName);
+        if (!continent) return null;
+
+        // Check if pantheon data is loaded
+        if (!this.pantheonData || this.pantheonData.length === 0) {
+            return null;
+        }
+
+        // Find deities whose context mentions this continent or whose domains match continent characteristics
+        const deityScores = new Map();
+
+        // Use the loaded pantheon data
+        const allPantheons = this.pantheonData;
+
+        allPantheons.forEach(pantheon => {
+            pantheon.deities?.forEach(deity => {
+                let score = 0;
+
+                // Check if deity's context mentions this continent
+                if (deity.alabastria_context && deity.alabastria_context.toLowerCase().includes(continentName.toLowerCase())) {
+                    score += 5; // Direct mention gets highest score
+                }
+
+                // Check if deity's followers match continent characteristics
+                if (deity.followers) {
+                    deity.followers.forEach(follower => {
+                        // Check for general matches based on continent characteristics
+                        const followerLower = follower.toLowerCase();
+                        const continentDesc = continent.description.toLowerCase();
+
+                        // Match based on continent themes
+                        if (continentDesc.includes('magic') && (followerLower.includes('mage') || followerLower.includes('wizard') || followerLower.includes('sorcerer'))) {
+                            score += 2;
+                        }
+                        if (continentDesc.includes('war') && (followerLower.includes('warrior') || followerLower.includes('soldier') || followerLower.includes('fighter'))) {
+                            score += 2;
+                        }
+                        if (continentDesc.includes('nature') && (followerLower.includes('druid') || followerLower.includes('ranger') || followerLower.includes('nature'))) {
+                            score += 2;
+                        }
+                        if ((continentDesc.includes('mining') || continentDesc.includes('volcanic') || continentDesc.includes('forge') || continentDesc.includes('resource')) && (followerLower.includes('dwarf') || followerLower.includes('miner') || followerLower.includes('smith') || followerLower.includes('forge'))) {
+                            score += 2;
+                        }
+                        if (continentDesc.includes('agriculture') && (followerLower.includes('farmer') || followerLower.includes('peasant') || followerLower.includes('commoner'))) {
+                            score += 2;
+                        }
+                        if (continentDesc.includes('ice') && (followerLower.includes('giant') || followerLower.includes('barbarian'))) {
+                            score += 2;
+                        }
+                        if (continentDesc.includes('swamp') && (followerLower.includes('druid') || followerLower.includes('ranger') || followerLower.includes('nature'))) {
+                            score += 2;
+                        }
+                    });
+                }
+
+                // Check if deity's domains match continent characteristics
+                if (deity.domains) {
+                    deity.domains.forEach(domain => {
+                        const domainLower = domain.toLowerCase();
+                        const continentDesc = continent.description.toLowerCase();
+
+                        if (continentDesc.includes('magic') && (domainLower.includes('magic') || domainLower.includes('arcana'))) {
+                            score += 1;
+                        }
+                        if (continentDesc.includes('war') && domainLower.includes('war')) {
+                            score += 1;
+                        }
+                        if (continentDesc.includes('nature') && (domainLower.includes('nature') || domainLower.includes('life'))) {
+                            score += 1;
+                        }
+                        if ((continentDesc.includes('mining') || continentDesc.includes('volcanic') || continentDesc.includes('forge') || continentDesc.includes('resource')) && (domainLower.includes('forge') || domainLower.includes('craft') || domainLower.includes('war'))) {
+                            score += 1;
+                        }
+                        if (continentDesc.includes('agriculture') && (domainLower.includes('life') || domainLower.includes('nature'))) {
+                            score += 1;
+                        }
+                        if (continentDesc.includes('swamp') && (domainLower.includes('nature') || domainLower.includes('life'))) {
+                            score += 1;
+                        }
+                    });
+                }
+
+                if (score > 0) {
+                    deityScores.set(deity.name, {
+                        deity: deity,
+                        pantheon: pantheon.pantheon,
+                        score: score
+                    });
+                }
+            });
+        });
+
+        // Return the deity with the highest score
+        let mostRevered = null;
+        let highestScore = 0;
+
+        deityScores.forEach((data, deityName) => {
+            if (data.score > highestScore) {
+                highestScore = data.score;
+                mostRevered = data;
+            }
+        });
+
+        // If no matches found, return the first deity from the first pantheon as a fallback
+        if (!mostRevered && allPantheons.length > 0 && allPantheons[0].deities && allPantheons[0].deities.length > 0) {
+            mostRevered = {
+                deity: allPantheons[0].deities[0],
+                pantheon: allPantheons[0].pantheon,
+                score: 0
+            };
+        }
+
+        return mostRevered;
     },
 
     // Show deity details
@@ -3180,7 +3325,7 @@ const app = {
             const regex = new RegExp(`\\b${deity}\\b`, 'gi');
             result = result.replace(regex, `<button class="deity-button" onclick="app.showDeityDetails('${deity}')" style="
                 background: var(--gold-accent);
-                color: var(--dark-text);
+                color: var(--parchment-dark);
                 border: none;
                 padding: 0.2rem 0.4rem;
                 border-radius: 3px;
@@ -3478,34 +3623,256 @@ const app = {
         }
     },
 
-    renderContinentDetails(infoContainer, relationshipsContainer) {
+    renderContinentDetails(infoContainer) {
         // Find continent data using full name
         const continent = this.continentData.find(c => c.continent === this.currentSelection);
 
         infoContainer.innerHTML = `
-            <div class="sticky-info">
                 <h3>About ${this.currentSelection}</h3>
                 <p>${continent.description}</p>
-                ${continent.colors ? `
-                    <div class="continent-colors-section" style="margin: 1rem 0;">
-                        <h4 style="color: var(--ocean-blue); font-family: 'Cinzel Decorative', serif; margin-bottom: 0.5rem;">Colors</h4>
-                        <div style="display: flex; gap: 1rem; align-items: center;">
-                            ${continent.colors.map(color => `
-                                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <div class="color-swatch" style="background-color: ${this.getDeityColorCSS(color)}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--mountain-brown);"></div>
-                                    <span style="font-weight: 600; color: var(--ocean-blue);">${color}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                ` : ''}
+                
+                <div class="continent-image-row" style="display: flex; gap: 1rem; align-items: flex-start; margin-top: 1rem; flex-wrap: wrap;">
                 <img src="continent_images/${this.currentSelection.split(" ")[0]}.png" 
                      alt="${this.currentSelection}" 
-                     style="width: 100%; max-width: 300px; border-radius: 8px; margin-top: 1rem; border: 2px solid var(--mountain-brown);"
-                     onerror="this.style.display='none'">
-                ${continent.languages ? this.renderLanguageInfo(continent.languages) : ''}
+                         style="width: 100%; max-width: 200px; border-radius: 8px; border: 2px solid var(--mountain-brown);"
+                         onerror="this.style.display='none'"
+                         id="continent-map"
+                         onload="app.adjustFlagHeights()">
+                    ${continent.kingdom ? `
+                        <img src="flagImages/KamalatmanFlag.png" 
+                             alt="Kingdom of Kamalatman Flag" 
+                             style="border-radius: 8px; border: 2px solid var(--mountain-brown);"
+                             onerror="this.style.display='none'"
+                             class="flag-image kingdom-flag">
+                    ` : ''}
+                    <img src="flagImages/${this.currentSelection.split(" ")[0]}Flag.png" 
+                         alt="${this.currentSelection} Flag" 
+                         style="border-radius: 8px; border: 2px solid var(--mountain-brown);"
+                         onerror="this.style.display='none'"
+                         class="flag-image continent-flag">
+                    ${continent.capital && continent.capital.ruler ? `
+                        <img src="rulerImages/${this.currentSelection.split(" ")[0]}Ruler.png" 
+                             alt="${continent.capital.ruler.name}" 
+                             style="border-radius: 8px; border: 2px solid var(--mountain-brown);"
+                             onerror="this.style.display='none'"
+                             class="flag-image ruler-portrait">
+                    ` : ''}
+                </div>
+                
+                ${continent.capital && continent.capital.ruler ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Current Ruler
+                    </summary>
+                    <div class="language-content">
+                        <div class="language-category">
+                            <strong>Name:</strong> ${continent.capital.ruler.name}
+                        </div>
+                        <div class="language-category">
+                            <strong>Title:</strong> ${continent.capital.ruler.title} (${continent.capital.ruler.race})
+                        </div>
+                        <div class="language-category">
+                            <strong>Personality:</strong> ${continent.capital.ruler.personality}
+                        </div>
+                        <div class="language-category">
+                            <strong>Ruling Style:</strong> ${continent.capital.ruler.ruling_style}
+                        </div>
+                        <div class="language-category">
+                            <strong>Background:</strong> ${continent.capital.ruler.background}
+                        </div>
+                        <div class="language-category">
+                            <strong>Appearance:</strong> ${continent.capital.ruler.appearance}
+                        </div>
+                        ${continent.capital.ruler.deity ? `
+                        <div class="language-category">
+                            <strong>Deity:</strong> ${continent.capital.ruler.deity} - ${continent.capital.ruler.deity_reasoning}
+                        </div>
+                        ` : ''}
+                        ${continent.languages ? `
+                        <div class="language-category">
+                            <strong>Known Languages:</strong><br>
+                            <strong>Primary:</strong> ${continent.languages.primary ? continent.languages.primary.join(', ') : 'None'}<br>
+                            ${continent.languages.secondary ? `<strong>Secondary:</strong> ${continent.languages.secondary.join(', ')}<br>` : ''}
+                            ${continent.languages.rare ? `<strong>Rare:</strong> ${continent.languages.rare.join(', ')}` : ''}
+                        </div>
+                        ` : ''}
+                        ${continent.capital.ruler.subordinate_rulers ? `
+                        <div class="language-category">
+                            <strong>Subordinate Rulers:</strong><br>
+                            ${continent.capital.ruler.subordinate_rulers.map(sub => `
+                                <strong>${sub.name}</strong> - ${sub.title} (${sub.race})<br>
+                                <span style="font-size: 0.9rem;">${sub.responsibility}</span><br><br>
+                            `).join('')}
+                        </div>
+                        ` : ''}
+                    </div>
+                </details>
+                ` : ''}
+                
+                ${continent.capital ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Capital City
+                    </summary>
+                    <div class="language-content">
+                        <div class="language-category">
+                            <strong>City:</strong> ${continent.capital.name}
+                        </div>
+                        <div class="language-category">
+                            <strong>Location:</strong> ${continent.capital.location}
+                        </div>
+                        <div class="language-category">
+                            <strong>Description:</strong> ${continent.capital.description}
+                        </div>
+                    </div>
+                </details>
+                ` : ''}
+                
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Flag Details
+                    </summary>
+                    <div class="language-content">
+                        ${continent.colors ? `
+                            <div class="language-category">
+                                <strong>Flag Colors:</strong><br>
+                                <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+                                    ${continent.colors.map(color => `
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div class="color-swatch" style="background-color: ${this.getDeityColorCSS(color)}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--mountain-brown);"></div>
+                                            <span style="font-weight: 600; color: var(--ocean-blue);">${color}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        ${continent.flag_symbol ? `
+                            <div class="language-category">
+                                <strong>Flag Symbol:</strong> ${continent.flag_symbol}
+                            </div>
+                            <div class="language-category">
+                                <strong>Symbol Description:</strong> ${continent.flag_description}
+                            </div>
+                        ` : ''}
+                        ${continent.kingdom ? `
+                            <div class="language-category">
+                                <strong>Kingdom:</strong> ${continent.kingdom}
+                            </div>
+                            <div class="language-category">
+                                <strong>Kingdom Colors:</strong><br>
+                                <div style="display: flex; gap: 0.5rem; align-items: center; margin-top: 0.5rem;">
+                                    ${continent.kingdom_colors.map(color => `
+                                        <div style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <div class="color-swatch" style="background-color: ${this.getDeityColorCSS(color)}; width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--mountain-brown);"></div>
+                                            <span style="font-size: 0.9rem; color: var(--ocean-blue);">${color}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div class="language-category">
+                                <strong>Kingdom Symbol:</strong> ${continent.kingdom_symbol} - ${continent.kingdom_description}
+                            </div>
+                        ` : ''}
+                    </div>
+                </details>
+                ${(() => {
+                const mostRevered = this.getMostReveredDeity(this.currentSelection);
+                return mostRevered ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Most Revered Deity
+                    </summary>
+                    <div class="language-content">
+                            <div class="language-category">
+                                <strong>Deity:</strong> ${mostRevered.deity.name}
+                            </div>
+                            <div class="language-category">
+                                <strong>Title:</strong> ${mostRevered.deity.title}
+                            </div>
+                            <div class="language-category">
+                                <strong>Pantheon:</strong> ${mostRevered.pantheon}
+                            </div>
+                            <div class="language-category">
+                                <strong>Reason:</strong> Most revered in ${this.currentSelection} due to their followers among the ${continent.languages?.primary?.join(', ') || 'local populations'}.
+                            </div>
+                            <div class="language-category">
+                                <button class="nav-btn" onclick="app.showDeityDetails('${mostRevered.deity.name}')" style="font-size: 0.8rem;">
+                                    <i class="fas fa-info-circle"></i> View Deity Details
+                                </button>
+                            </div>
+                    </div>
+                </details>
+                    ` : '';
+            })()}
+                ${continent.wars_conflicts ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Wars & Conflicts (${continent.wars_conflicts.current.length + continent.wars_conflicts.historical.length})
+                    </summary>
+                    <div class="language-content">
+                        ${continent.wars_conflicts.current.length > 0 ? `
+                            <div class="language-category">
+                                <strong>Current Conflicts:</strong><br>
+                                ${continent.wars_conflicts.current.map(conflict => `
+                                    <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--mountain-brown); border-radius: 4px;">
+                                        <strong>${conflict.name}</strong> - <span style="color: var(--ocean-blue);">${conflict.status}</span><br>
+                                        ${conflict.description}<br>
+                                        <strong>Participants:</strong> ${conflict.participants.join(', ')}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        
+                        ${continent.wars_conflicts.historical.length > 0 ? `
+                            <div class="language-category">
+                                <strong>Historical Conflicts:</strong><br>
+                                ${continent.wars_conflicts.historical.map(conflict => `
+                                    <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--mountain-brown); border-radius: 4px; background: rgba(139, 69, 19, 0.1);">
+                                        <strong>${conflict.name}</strong> - <span style="color: var(--ocean-blue);">${conflict.outcome}</span><br>
+                                        ${conflict.description}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </details>
+                ` : ''}
+                
                 ${continent.politics ? this.renderPoliticalInfo(continent.politics) : ''}
-            </div>
+                
+                ${continent.trade_routes ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Trade Routes (${continent.trade_routes.length})
+                    </summary>
+                    <div class="language-content">
+                        ${continent.trade_routes.map(route => `
+                            <div class="language-category">
+                                <strong>${route.name}</strong> - <span style="color: var(--ocean-blue);">${route.type}</span> - <span style="color: var(--ocean-blue);">${route.frequency}</span><br>
+                                ${route.description}<br>
+                                <strong>Goods:</strong> ${route.goods.join(', ')}
+                            </div>
+                        `).join('')}
+                    </div>
+                </details>
+                ` : ''}
+                
+                ${continent.treaties_alliances ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Treaties & Alliances (${continent.treaties_alliances.length})
+                    </summary>
+                    <div class="language-content">
+                        ${continent.treaties_alliances.map(treaty => `
+                            <div class="language-category">
+                                <strong>${treaty.name}</strong> - <span style="color: var(--ocean-blue);">${treaty.type}</span> - <span style="color: var(--ocean-blue);">${treaty.status}</span><br>
+                                ${treaty.description}<br>
+                                <strong>Partners:</strong> ${treaty.partners.join(', ')}
+                            </div>
+                        `).join('')}
+                    </div>
+                </details>
+                ` : ''}
         `;
 
         // Find only races and classes that actually exist in this continent
@@ -3552,157 +3919,67 @@ const app = {
             });
         });
 
-        relationshipsContainer.innerHTML = `
-            <h3>${this.currentSelection} Information</h3>
-            
-            ${continent.wars_conflicts ? `
-                <details>
-                    <summary>Wars & Conflicts (${continent.wars_conflicts.current.length + continent.wars_conflicts.historical.length})</summary>
-                    <div class="details-content-inner">
-                        ${continent.wars_conflicts.current.length > 0 ? `
-                            <h4>Current Conflicts</h4>
-                            ${continent.wars_conflicts.current.map(conflict => `
-                                <div class="conflict-item">
-                                    <div class="conflict-header">
-                                        <h5>${conflict.name}</h5>
-                                        <span class="conflict-status status-${conflict.status.toLowerCase().replace(' ', '-')}">${conflict.status}</span>
-                                    </div>
-                                    <p class="conflict-description">${conflict.description}</p>
-                                    <div class="conflict-participants">
-                                        <strong>Participants:</strong> ${conflict.participants.join(', ')}
-                                    </div>
-                                </div>
-                            `).join('')}
-                        ` : ''}
-                        
-                        ${continent.wars_conflicts.historical.length > 0 ? `
-                            <h4>Historical Conflicts</h4>
-                            ${continent.wars_conflicts.historical.map(conflict => `
-                                <div class="conflict-item historical">
-                                    <div class="conflict-header">
-                                        <h5>${conflict.name}</h5>
-                                        <span class="conflict-outcome">${conflict.outcome}</span>
-                                    </div>
-                                    <p class="conflict-description">${conflict.description}</p>
-                                </div>
-                            `).join('')}
-                        ` : ''}
-                    </div>
-                </details>
-            ` : ''}
-            
-            ${continent.treaties_alliances ? `
-                <details>
-                    <summary>Treaties & Alliances (${continent.treaties_alliances.length})</summary>
-                    <div class="details-content-inner">
-                        ${continent.treaties_alliances.map(treaty => `
-                            <div class="treaty-item">
-                                <div class="treaty-header">
-                                    <h5>${treaty.name}</h5>
-                                    <span class="treaty-type">${treaty.type}</span>
-                                    <span class="treaty-status status-${treaty.status.toLowerCase()}">${treaty.status}</span>
-                                </div>
-                                <p class="treaty-description">${treaty.description}</p>
-                                <div class="treaty-partners">
-                                    <strong>Partners:</strong> ${treaty.partners.join(', ')}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </details>
-            ` : ''}
-            
-            ${continent.trade_routes ? `
-                <details>
-                    <summary>Trade Routes (${continent.trade_routes.length})</summary>
-                    <div class="details-content-inner">
-                        ${continent.trade_routes.map(route => `
-                            <div class="trade-route-item">
-                                <div class="trade-route-header">
-                                    <h5>${route.name}</h5>
-                                    <span class="trade-route-type">${route.type}</span>
-                                    <span class="trade-route-frequency">${route.frequency}</span>
-                                </div>
-                                <p class="trade-route-description">${route.description}</p>
-                                <div class="trade-route-goods">
-                                    <strong>Goods:</strong> ${route.goods.join(', ')}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </details>
-            ` : ''}
-            
-            <details>
-                <summary>Native Races (${raceRelations.size})</summary>
-                <div class="details-content-inner">
-                    ${Array.from(raceRelations.entries()).map(([race, relations]) => `
-                        <details>
-                            <summary class="relationship-item emphasized">
-                                <div class="relationship-header">
-                                    <span class="relationship-name">${race}</span>
-                                    <div class="nav-buttons">
-                                        ${this.createNavButton('race', race, '→')}
-                                        <small>(${relations.length} specialization${relations.length > 1 ? 's' : ''})</small>
-                                    </div>
-                                </div>
+        // Add the remaining sections to the sticky-info
+        const additionalContent = `
+            <details class="language-info language-details">
+                <summary class="language-summary">
+                    Native Races (${raceRelations.size})
                             </summary>
-                            <div class="details-content-inner">
-                                <div class="relationship-reason">
+                <div class="language-content">
+                    ${Array.from(raceRelations.entries()).map(([race, relations]) => `
+                        <div class="language-category">
+                            <strong>${race}</strong><br>
                                     <strong>Native to ${this.currentSelection} because:</strong> ${relations[0].reason}<br><br>
                                     <strong>Class Specializations:</strong><br>
                                     ${relations.map(rel => `
-                                        <div class="relationship-item emphasized">
-                                            <div class="relationship-header">
-                                                <span><strong>${rel.class} (${rel.subclass})</strong>: ${rel.subclassReason}</span>
+                                <div style="margin: 0.25rem 0; padding: 0.25rem; border-left: 3px solid var(--ocean-blue); padding-left: 0.5rem;">
+                                    <strong>${rel.class} (${rel.subclass})</strong>: ${rel.subclassReason}
                                                 ${this.createNavButton('class', rel.class, rel.subclass, rel.subclass)}
-                                            </div>
                                         </div>
                                     `).join('')}
                                 </div>
-                            </div>
-                        </details>
-                    `).join('')}
-                </div>
-            </details>
-            <details>
-                <summary>Prominent Classes (${classRelations.size})</summary>
-                <div class="details-content-inner">
-                    ${Array.from(classRelations.entries()).map(([className, subclasses]) => `
-                        <details>
-                            <summary class="relationship-item emphasized">
-                                <div class="relationship-header">
-                                    <span class="relationship-name">${className}</span>
-                                    <div class="nav-buttons">
-                                        ${this.createNavButton('class', className, '→')}
-                                        <small>(${subclasses.length} subclass${subclasses.length > 1 ? 'es' : ''})</small>
-                                    </div>
-                                </div>
-                            </summary>
-                            <div class="details-content-inner">
-                                <div class="relationship-reason">
-                                    ${subclasses.map(sc => `
-                                        <div class="relationship-item emphasized">
-                                            <div class="relationship-header">
-                                                <span><strong>${sc.subclass}:</strong> ${sc.reason}</span>
-                                                ${this.createNavButton('class', className, sc.subclass, sc.subclass)}
-                                            </div>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </details>
                     `).join('')}
                 </div>
             </details>
             
-            <details>
-                <summary>Deity Recommendations</summary>
-                <div class="details-content-inner">
+            ${continent.languages ? this.renderLanguageInfo(continent.languages) : ''}
+            
+            <details class="language-info language-details">
+                <summary class="language-summary">
+                    Prominent Classes (${classRelations.size})
+                            </summary>
+                <div class="language-content">
+                    ${Array.from(classRelations.entries()).map(([className, subclasses]) => `
+                        <div class="language-category">
+                            <strong>${className}</strong><br>
+                                    ${subclasses.map(sc => `
+                                <div style="margin: 0.25rem 0; padding: 0.25rem; border-left: 3px solid var(--ocean-blue); padding-left: 0.5rem;">
+                                    <strong>${sc.subclass}:</strong> ${sc.reason}
+                                                ${this.createNavButton('class', className, sc.subclass, sc.subclass)}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                    `).join('')}
+                </div>
+            </details>
+            
+            <details class="language-info language-details">
+                <summary class="language-summary">
+                    Deities with Continental Temples
+                </summary>
+                <div class="language-content">
                     ${this.renderContinentDeityRecommendations(this.currentSelection)}
                 </div>
             </details>
         `;
+
+        // Append the additional content to the existing sticky-info
+        infoContainer.innerHTML += additionalContent;
+
+        // Adjust flag heights after DOM is updated
+        setTimeout(() => {
+            this.adjustFlagHeights();
+        }, 100);
     },
 
     // Helper function to render continent deity recommendations
@@ -3822,7 +4099,7 @@ const app = {
         `;
     },
 
-    renderRaceDetails(infoContainer, relationshipsContainer) {
+    renderRaceDetails(infoContainer) {
         const raceData = this.raceInformationData.find(r => r.race === this.currentSelection);
 
         if (!raceData) {
@@ -3830,20 +4107,19 @@ const app = {
             return;
         }
 
-        infoContainer.innerHTML = `
-            <div class="sticky-info">
-                <h3>About ${this.currentSelection}</h3>
-                <p class="race-description">${raceData.description}</p>
-                <p class="alabastria-lore"><strong>In Alabastria:</strong> ${raceData.alabastria_lore}</p>
-                <p class="playstyle-info"><strong>Playstyle:</strong> ${raceData.playstyle}</p>
-                <div class="recommended-classes">
-                    <strong>Recommended Classes:</strong> ${raceData.recommended_classes.join(', ')}
-                </div>
+        infoContainer.innerHTML = `      
+            <h3>About ${this.currentSelection}</h3>
+            <p class="race-description">${raceData.description}</p>
+            <p class="alabastria-lore"><strong>In Alabastria:</strong> ${raceData.alabastria_lore}</p>
+            <p class="playstyle-info"><strong>Playstyle:</strong> ${raceData.playstyle}</p>
+            <div class="recommended-classes">
+                <strong>Recommended Classes:</strong> ${raceData.recommended_classes.join(', ')}
             </div>
+            <hr><br>
         `;
 
         // Render comprehensive race information
-        relationshipsContainer.innerHTML = `
+        infoContainer.innerHTML += `
             <h3>${this.currentSelection} Race Information</h3>
             
             <details>
@@ -4278,7 +4554,7 @@ const app = {
         `;
     },
 
-    renderClassDetails(infoContainer, relationshipsContainer) {
+    renderClassDetails(infoContainer) {
         const classData = this.classInformationData.find(c => c.class === this.currentSelection);
         const relationData = this.relationData.find(c => c.class === this.currentSelection);
 
@@ -4288,16 +4564,15 @@ const app = {
         }
 
         infoContainer.innerHTML = `
-            <div class="sticky-info">
-                <h3>About ${this.currentSelection}</h3>
-                <p class="class-description">${classData.description}</p>
-                <p class="alabastria-lore"><strong>In Alabastria:</strong> ${classData.alabastria_lore}</p>
-                <p class="playstyle-info"><strong>Playstyle:</strong> ${classData.playstyle}</p>
-            </div>
+            <h3>About ${this.currentSelection}</h3>
+            <p class="class-description">${classData.description}</p>
+            <p class="alabastria-lore"><strong>In Alabastria:</strong> ${classData.alabastria_lore}</p>
+            <p class="playstyle-info"><strong>Playstyle:</strong> ${classData.playstyle}</p>
+            <hr><br>
         `;
 
         // Render comprehensive class information
-        relationshipsContainer.innerHTML = `
+        infoContainer.innerHTML += `
             <h3>${this.currentSelection} Class Information</h3>
             
             <details>
@@ -4501,7 +4776,7 @@ const app = {
         `;
     },
 
-    renderPlaystyleDetails(infoContainer, relationshipsContainer) {
+    renderPlaystyleDetails(infoContainer) {
         if (!this.playstyleGuideData) {
             infoContainer.innerHTML = `<p>Playstyle guide not available.</p>`;
             return;
@@ -4510,9 +4785,9 @@ const app = {
         const guide = this.playstyleGuideData;
 
         if (this.currentSelection === 'Ability Scores') {
-            this.renderAbilityScoreDetails(infoContainer, relationshipsContainer, guide);
+            this.renderAbilityScoreDetails(infoContainer, guide);
         } else if (this.currentSelection === 'Complexity Levels') {
-            this.renderComplexityDetails(infoContainer, relationshipsContainer, guide);
+            this.renderComplexityDetails(infoContainer, guide);
         } else {
             // Render specific playstyle category
             const category = guide.playstyle_categories.find(cat => cat.name === this.currentSelection);
@@ -4522,13 +4797,12 @@ const app = {
             }
 
             infoContainer.innerHTML = `
-                <div class="sticky-info">
-                    <h3>${category.name}</h3>
-                    <p class="playstyle-description">${category.description}</p>
-                </div>
+                <h3>${category.name}</h3>
+                <p class="playstyle-description">${category.description}</p>
+                <hr><br>
             `;
 
-            relationshipsContainer.innerHTML = `
+            infoContainer.innerHTML += `
                 <h3>Recommended Classes for ${category.name}</h3>
                 <div class="recommended-classes-list">
                     ${category.recommended_classes.map(rec => `
@@ -4545,16 +4819,14 @@ const app = {
         }
     },
 
-    renderAbilityScoreDetails(infoContainer, relationshipsContainer, guide) {
+    renderAbilityScoreDetails(infoContainer, guide) {
         infoContainer.innerHTML = `
-            <div class="sticky-info">
-                <h3>Ability Score Priorities</h3>
-                <p>Understanding which abilities are most important for each class and what they do</p>
-
-            </div>
+            <h3>Ability Score Priorities</h3>
+            <p>Understanding which abilities are most important for each class and what they do</p>
+            <hr><br>
         `;
 
-        relationshipsContainer.innerHTML = `
+        infoContainer.innerHTML += `
             <h3>Ability Score Guide</h3>
             <div class="ability-scores-grid">
                 ${Object.entries(guide.ability_score_priorities).map(([ability, data]) => `
@@ -4581,16 +4853,14 @@ const app = {
         `;
     },
 
-    renderComplexityDetails(infoContainer, relationshipsContainer, guide) {
+    renderComplexityDetails(infoContainer, guide) {
         infoContainer.innerHTML = `
-            <div class="sticky-info">
-                <h3>Class Complexity Levels</h3>
-                <p>Find classes that match your experience level and preferred complexity</p>
-
-            </div>
+            <h3>Class Complexity Levels</h3>
+            <p>Find classes that match your experience level and preferred complexity</p>
+            <hr><br>
         `;
 
-        relationshipsContainer.innerHTML = `
+        infoContainer.innerHTML += `
             <h3>Complexity Guide</h3>
             <div class="complexity-levels">
                 ${Object.entries(guide.complexity_levels).map(([level, data]) => `

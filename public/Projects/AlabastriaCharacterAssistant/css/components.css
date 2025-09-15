@@ -28,11 +28,13 @@
 }
 
 .darkMode .filter-btn {
-    box-shadow: var(--shadow-md);
+    background: var(--dark-accent);
+    border-color: var(--dark-accent);
+    box-shadow: var(--shadow-dark-md);
 }
 
 .lightMode .filter-btn {
-    box-shadow: var(--shadow-light-md);
+    box-shadow: var(--shadow-md);
 }
 
 .filter-btn::before {
@@ -48,9 +50,18 @@
 
 .filter-btn:hover {
     transform: translateY(-2px);
-    background: var(--glass-bg);
-    border-color: var(--glass-bg);
     box-shadow: var(--shadow-lg);
+}
+
+.lightMode .filter-btn:hover {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+}
+
+.darkMode .filter-btn:hover {
+    background: var(--dark-accent-2);
+    border-color: var(--dark-accent-2);
+    box-shadow: var(--shadow-dark-lg);
 }
 
 .filter-btn:hover::before {
@@ -204,6 +215,7 @@ span.filter-btn-text.darkMode {
 .subclass-btn {
     background: var(--gold-accent);
     border-color: var(--gold-accent);
+    color: var(--parchment-dark);
     font-weight: 700;
 }
 
@@ -434,11 +446,13 @@ p {
 }
 
 .darkMode .language-info {
-    background: rgba(139, 69, 19, 0.15);
+    background: var(--dark-surface);
+    border-color: var(--dark-border);
 }
 
 .lightMode .language-info {
-    background: rgba(139, 69, 19, 0.1);
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
 }
 
 .language-summary {
@@ -452,15 +466,17 @@ p {
 }
 
 .darkMode .language-summary {
-    background: rgba(44, 36, 22, 0.8);
-    color: var(--desert-tan);
+    background: var(--dark-surface-2);
+    color: var(--dark-text);
     text-shadow: var(--text-shadow-dark);
+    border-bottom-color: var(--dark-border);
 }
 
 .lightMode .language-summary {
-    background: rgba(244, 241, 232, 0.9);
-    color: var(--mountain-brown);
+    background: rgba(248, 244, 230, 0.9);
+    color: var(--ocean-blue);
     text-shadow: var(--text-shadow-light);
+    border-bottom-color: var(--glass-border);
 }
 
 .language-summary:hover {
@@ -469,10 +485,20 @@ p {
     text-shadow: var(--text-shadow-dark);
 }
 
+.darkMode .language-summary:hover {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+}
+
 .language-details[open] .language-summary {
     background: var(--glass-bg);
     color: var(--parchment-light);
     text-shadow: var(--text-shadow-dark);
+}
+
+.darkMode .language-details[open] .language-summary {
+    background: var(--dark-accent);
+    color: var(--dark-text);
 }
 
 .language-content {
@@ -802,6 +828,10 @@ p {
     color: var(--ink-light);
     font-size: 0.9rem;
     font-style: italic;
+}
+
+.darkMode .race-count {
+    color: var(--parchment-light);
 }
 
 .race-tags {
@@ -1261,15 +1291,15 @@ p {
 
 /* Dark mode deity tag colors */
 .darkMode .deity-tag.primary {
-    background: var(--ocean-blue);
-    color: var(--parchment-light);
-    border-color: var(--ocean-blue);
+    background: var(--dark-accent);
+    color: var(--dark-text);
+    border-color: var(--dark-accent);
 }
 
 .darkMode .deity-tag.secondary {
-    background: var(--mountain-brown);
-    color: var(--parchment-light);
-    border-color: var(--mountain-brown);
+    background: var(--dark-accent-2);
+    color: var(--dark-text);
+    border-color: var(--dark-accent-2);
 }
 
 /* Light mode deity tag colors */
@@ -1962,5 +1992,35 @@ p {
     .deity-symbols-group,
     .deity-colors-group {
         padding: 1rem;
+    }
+}
+
+/* ===== FLAG IMAGES ===== */
+
+.flag-image {
+    /* Styles will be set dynamically by JavaScript */
+    border-radius: 8px;
+    border: 2px solid var(--mountain-brown);
+}
+
+/* Mobile responsive styles for continent image row */
+@media (max-width: 768px) {
+    .continent-image-row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .continent-image-row img {
+        width: 100% !important;
+        max-width: 300px !important;
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .continent-image-row .flag-image {
+        width: 100% !important;
+        max-width: 300px !important;
+        height: 300px !important;
+        object-fit: cover;
     }
 }
