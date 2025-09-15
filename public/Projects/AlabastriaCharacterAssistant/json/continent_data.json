@@ -10,6 +10,24 @@
             "Purple",
             "Silver"
         ],
+        "flag_symbol": "Mystical Tree",
+        "flag_description": "A silver tree with purple leaves representing the magical forests and elven coastal settlements, symbolizing the balance between nature and arcane knowledge.",
+        "capital": {
+            "name": "Silverleaf Harbor",
+            "location": "Northern coast, nestled between the magical forests and the sea",
+            "description": "A beautiful elven city built into the cliffs and trees, where natural architecture blends seamlessly with arcane engineering.",
+            "ruler": {
+                "name": "High Archmage Elara Moonwhisper",
+                "race": "High Elf",
+                "title": "Archmage of the Coastal Council",
+                "personality": "Wise and contemplative, with a deep love for magical research and nature preservation",
+                "ruling_style": "Consensus-based governance through magical councils, emphasizing scholarly debate and environmental protection",
+                "background": "A 300-year-old legendary archmage who single-handedly saved Kuriguer from the Great Wyvern Migration by creating the Living Barrier - a massive magical forest that moves and defends itself. During the Wyvern Wars, when all seemed lost, Elara performed the most complex ritual in elven history, binding her life force to the very essence of the forest itself. This sacrifice not only repelled the wyverns but made her immortal and gave her the ability to communicate with all living things in Kuriguer. Her wisdom and power are so great that even the ancient treants bow to her authority, and her magical research has unlocked secrets that have been lost for millennia. She is considered the greatest living archmage in Alabastria's history.",
+                "appearance": "Tall and graceful with silver hair that shimmers like moonlight, piercing blue eyes that seem to hold ancient wisdom, wearing flowing robes of deep purple and silver that seem to shift with the light, carrying an ornate staff topped with a crystal that pulses with magical energy",
+                "deity": "Corellon Larethian",
+                "deity_reasoning": "As a High Elf archmage focused on magical research and nature preservation, Elara follows Corellon, the patron deity of elves and magic, who represents artistry, magic, and the protection of elven culture and natural beauty."
+            }
+        },
         "languages": {
             "primary": [
                 "Common",
@@ -47,8 +65,8 @@
         "wars_conflicts": {
             "current": [
                 {
-                    "name": "Forest Border Disputes",
-                    "description": "Ongoing tensions with Skratonia over logging rights in the northern coastal forests. Skratonian settlers occasionally encroach on elven territory.",
+                    "name": "Coastal Forest Disputes",
+                    "description": "Ongoing tensions with Skratonia over logging rights in the northern coastal forests. Skratonian settlers occasionally arrive by sea to encroach on elven territory.",
                     "status": "Low-intensity",
                     "participants": [
                         "Kuriguer Elves",
@@ -67,7 +85,7 @@
         "treaties_alliances": [
             {
                 "name": "The Magical Research Accord",
-                "description": "Agreement with Skratonia to share magical knowledge in exchange for agricultural goods and trade access.",
+                "description": "Maritime trade agreement with Skratonia to share magical knowledge in exchange for agricultural goods and trade access across the seas.",
                 "partners": [
                     "Skratonia"
                 ],
@@ -76,7 +94,7 @@
             },
             {
                 "name": "The Northern Defense Pact",
-                "description": "Mutual defense agreement with Bulsania against threats from Kantra and unknown northern dangers.",
+                "description": "Mutual maritime defense agreement with Bulsania against threats from Kantra and unknown northern dangers across the seas.",
                 "partners": [
                     "Bulsania"
                 ],
@@ -87,7 +105,7 @@
         "trade_routes": [
             {
                 "name": "The Magical Coast Route",
-                "description": "Primary trade route connecting Kuriguer's coastal towns to Skratonia's major cities, carrying magical components and research materials.",
+                "description": "Primary maritime trade route across the seas connecting Kuriguer's coastal towns to Skratonia's major cities, carrying magical components and research materials.",
                 "type": "Maritime",
                 "goods": [
                     "Magical components",
@@ -99,7 +117,7 @@
             },
             {
                 "name": "The Northern Air Route",
-                "description": "Aerial trade route using flying ships to connect with Bulsania, avoiding the dangerous Kantra region.",
+                "description": "Aerial trade route using flying ships to cross the northern seas and connect with Bulsania, avoiding the dangerous Kantra region.",
                 "type": "Aerial",
                 "goods": [
                     "Magical artifacts",
@@ -111,8 +129,8 @@
             },
             {
                 "name": "The Forest Path",
-                "description": "Overland route through the dangerous interior forests to reach the Kamalatman regions, used by brave traders and the Huntbound Order.",
-                "type": "Overland",
+                "description": "Dangerous overland route through the interior forests to reach coastal ports, where goods are then transported by sea to the Kamalatman regions. Used by brave traders and the Huntbound Order.",
+                "type": "Overland to Coastal Port",
                 "goods": [
                     "Magical research",
                     "Rare herbs",
@@ -130,6 +148,31 @@
             "Orange",
             "Yellow"
         ],
+        "flag_symbol": "Volcanic Crown",
+        "flag_description": "A golden crown with orange flames rising from it, representing the volcanic nature and the royal family's control over the natural riches of the land.",
+        "capital": {
+            "name": "Volcanic Throne",
+            "location": "Central volcanic plateau, overlooking the grey forests and swamps",
+            "description": "A fortress city built around the active volcano, with forges and workshops carved into the mountainside, where the royal palace sits atop the volcanic peak.",
+            "ruler": {
+                "name": "King Thorne Ironforge",
+                "race": "Warforged",
+                "title": "King of Alatman, Prince of Kamalatman",
+                "personality": "Stoic and methodical, with an obsession for efficiency and order, but surprisingly fair in his judgments",
+                "ruling_style": "Meritocratic monarchy with strict resource management, using advanced taxation systems to fund infrastructure and military",
+                "background": "A 200-year-old legendary Warforged who was originally created as a prototype by the ancient artificers of Alatman, but gained true sentience and free will through a divine miracle during the Great Forge Awakening. Thorne not only achieved consciousness but developed emotions and creativity, becoming the first Warforged to fall in love and marry a human princess. His tactical genius during the Volcanic Wars saved Alatman from being overrun by fire elementals, and his invention of the Forgeheart Engine revolutionized mining and metalworking across all three Kamalatman continents. His rule has brought unprecedented prosperity and technological advancement, making him the most successful ruler in Alatman's history and proving that artificial beings can possess greater wisdom and compassion than many organic rulers.",
+                "appearance": "A massive Warforged construct standing 7 feet tall, with a body of dark iron and brass, glowing blue eyes that pulse with inner light, wearing a crown of volcanic glass and a royal cloak of crimson and gold, his metal frame etched with ancient runes that occasionally spark with magical energy",
+                "deity": "Dugmaren Brightmantle",
+                "deity_reasoning": "As a Warforged ruler focused on efficiency, order, and resource management, Thorne follows Dugmaren Brightmantle, the dwarf god of invention and discovery, who represents the perfect union of magic and technology that created the Warforged race and inspires all forms of mechanical innovation."
+            }
+        },
+        "kingdom": "Kamalatman",
+        "kingdom_colors": [
+            "Gold",
+            "Crimson"
+        ],
+        "kingdom_symbol": "Triple Crown",
+        "kingdom_description": "Three interlocked crowns representing the unified rule of the three Kamalatman continents under one royal family.",
         "languages": {
             "primary": [
                 "Common",
@@ -176,7 +219,7 @@
                 },
                 {
                     "name": "Swamp Border Skirmishes",
-                    "description": "Frequent clashes with Katman over control of the shared swamp regions and resource rights.",
+                    "description": "Frequent clashes with Katman over control of the shared swamp regions and resource rights, with naval support from both sides.",
                     "status": "Low-intensity",
                     "participants": [
                         "Alatman Forces",
@@ -216,8 +259,8 @@
         "trade_routes": [
             {
                 "name": "The Volcanic Supply Route",
-                "description": "Primary trade route connecting Alatman's volcanic forges to the other Kamalatman regions and beyond.",
-                "type": "Maritime and Overland",
+                "description": "Primary maritime trade route connecting Alatman's volcanic forges to the other Kamalatman regions and beyond via sea travel.",
+                "type": "Maritime",
                 "goods": [
                     "Volcanic glass",
                     "Magical metals",
@@ -228,8 +271,8 @@
             },
             {
                 "name": "The Swamp Passage",
-                "description": "Dangerous overland route through the swamps connecting to Katman, used for internal Kamalatman trade.",
-                "type": "Overland",
+                "description": "Dangerous overland route through the swamps connecting to Katman's coastal ports, where goods are then transported by sea for internal Kamalatman trade.",
+                "type": "Overland to Coastal Port",
                 "goods": [
                     "Raw materials",
                     "Food supplies",
@@ -240,7 +283,7 @@
             },
             {
                 "name": "The Eastern Sea Route",
-                "description": "Maritime route connecting to Skratonia and other eastern continents, carrying high-value volcanic goods.",
+                "description": "Maritime route across the eastern seas connecting to Skratonia and other eastern continents, carrying high-value volcanic goods.",
                 "type": "Maritime",
                 "goods": [
                     "Magical components",
@@ -259,6 +302,31 @@
             "Steel gray",
             "Blue"
         ],
+        "flag_symbol": "Mountain Pickaxe",
+        "flag_description": "A steel pickaxe crossed with a blue mountain peak, symbolizing the mining industry and the mountainous terrain that defines this continent's economy.",
+        "capital": {
+            "name": "Deepforge Citadel",
+            "location": "Deep within the central mountain range, built into the heart of the largest peak",
+            "description": "A massive dwarven stronghold carved directly into the mountain, with multiple levels descending deep underground, where the royal halls are surrounded by the most productive mines.",
+            "ruler": {
+                "name": "Queen Bronwyn Stonebeard",
+                "race": "Mountain Dwarf",
+                "title": "Queen of Maltman, Princess of Kamalatman",
+                "personality": "Gruff but fair, with a deep respect for hard work and craftsmanship, known for her practical wisdom and no-nonsense approach",
+                "ruling_style": "Traditional dwarven clan-based governance with strong emphasis on mining efficiency and trade agreements",
+                "background": "A 150-year-old legendary master smith who forged the legendary Hammer of the Deep, a weapon so powerful it can reshape mountains and control the very earth itself. During the Great Mining Wars, when her father fell in battle against the Stone Giants, Bronwyn single-handedly defended the Deepforge Citadel for three days and nights, wielding her hammer to collapse entire mountain passages and trap the enemy forces. Her mastery of both combat and craftsmanship is unmatched, and she has personally forged weapons and armor for every major leader in Kamalatman. Her trade negotiations have brought such prosperity to Maltman that the continent has become the wealthiest in all of Alabastria, and her deep mine inspections have uncovered veins of precious metals that were thought to be mythical. She is revered as the greatest smith in recorded history.",
+                "appearance": "A sturdy dwarf woman with auburn hair braided with gold and gems, wearing a crown of mountain gems and a royal tunic of deep blue and steel gray, her calloused hands always stained with soot from the forges, carrying a massive warhammer that doubles as a smithing tool",
+                "deity": "Moradin",
+                "deity_reasoning": "As a Mountain Dwarf master smith and queen focused on mining and craftsmanship, Bronwyn follows Moradin, the Soul Forger and patron deity of dwarves, who represents smithing, mining, and the traditional dwarven values of hard work and craftsmanship."
+            }
+        },
+        "kingdom": "Kamalatman",
+        "kingdom_colors": [
+            "Gold",
+            "Crimson"
+        ],
+        "kingdom_symbol": "Triple Crown",
+        "kingdom_description": "Three interlocked crowns representing the unified rule of the three Kamalatman continents under one royal family.",
         "languages": {
             "primary": [
                 "Dwarvish",
@@ -354,8 +422,8 @@
         "trade_routes": [
             {
                 "name": "The Great Mining Road",
-                "description": "Primary overland trade route connecting Maltman's mining villages to the other Kamalatman regions and major trade centers.",
-                "type": "Overland",
+                "description": "Primary overland trade route connecting Maltman's mining villages to coastal ports, where goods are then transported by sea to other Kamalatman regions and major trade centers.",
+                "type": "Overland to Coastal Port",
                 "goods": [
                     "Raw ores",
                     "Refined metals",
@@ -379,8 +447,8 @@
             },
             {
                 "name": "The Central Plains Route",
-                "description": "Major trade route connecting to Skratonia's agricultural regions, carrying raw materials and manufactured goods.",
-                "type": "Overland and Maritime",
+                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions, carrying raw materials and manufactured goods.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Mining equipment",
                     "Raw materials",
@@ -391,8 +459,8 @@
             },
             {
                 "name": "The Underground Passage",
-                "description": "Secret underground trade route connecting to Kuriguer through ancient dwarven tunnels, used for magical research materials.",
-                "type": "Underground",
+                "description": "Secret underground trade route connecting to coastal ports, where goods are then transported by sea to Kuriguer, used for magical research materials.",
+                "type": "Underground to Maritime",
                 "goods": [
                     "Magical metals",
                     "Ancient artifacts",
@@ -410,6 +478,24 @@
             "Green",
             "Gold"
         ],
+        "flag_symbol": "Golden Wheat Sheaf",
+        "flag_description": "A golden sheaf of wheat on a green field, representing the agricultural prosperity and the fertile plains that make this the most populated continent.",
+        "capital": {
+            "name": "Golden Fields",
+            "location": "Central plains, at the crossroads of all major trade routes",
+            "description": "A sprawling metropolis built around a massive central marketplace, where the Council Halls rise above the bustling trade districts and agricultural warehouses.",
+            "ruler": {
+                "name": "High Speaker Marcus Goldfield",
+                "race": "Human",
+                "title": "High Speaker of the Skratonian Alliance",
+                "personality": "Charismatic and diplomatic, with a talent for bringing diverse groups together and finding common ground",
+                "ruling_style": "Democratic council-based governance with rotating leadership, emphasizing trade agreements and cultural exchange",
+                "background": "A 45-year-old legendary merchant-diplomat who single-handedly prevented the Great Continental War by negotiating the impossible - a peace treaty between all seven continents during the height of the Wyvern Wars. Marcus began as a simple trader but his gift for languages and understanding of different cultures made him the only person who could communicate with every race and nation. When war threatened to destroy all of Alabastria, Marcus spent three years traveling between continents, learning every language, understanding every culture, and finally brokering the historic Treaty of Golden Fields that united all nations against the wyvern threat. His diplomatic skills are so legendary that even sworn enemies will sit at the same table when he mediates, and his trade networks span every continent, making Skratonia the wealthiest and most influential region in the world.",
+                "appearance": "A distinguished human man with graying brown hair and kind hazel eyes, wearing elegant robes of green and gold that reflect his agricultural heritage, a golden chain of office around his neck, and carrying a ceremonial staff topped with a sheaf of wheat made from precious metals",
+                "deity": "Vergadain",
+                "deity_reasoning": "As a former merchant and diplomatic leader focused on trade agreements and cultural exchange, Marcus follows Vergadain, the dwarf god of wealth, commerce, and trade, who represents the prosperity and cooperation that comes from successful trade relationships and fair business dealings."
+            }
+        },
         "languages": {
             "primary": [
                 "Common",
@@ -450,8 +536,8 @@
         "wars_conflicts": {
             "current": [
                 {
-                    "name": "The Plains Expansion Disputes",
-                    "description": "Ongoing tensions with Kuriguer over logging rights and territorial expansion into forested coasts.",
+                    "name": "The Coastal Expansion Disputes",
+                    "description": "Ongoing tensions with Kuriguer over logging rights and territorial expansion into forested coasts, with Skratonian settlers arriving by sea.",
                     "status": "Low-intensity",
                     "participants": [
                         "Skratonian Settlers",
@@ -460,7 +546,7 @@
                 },
                 {
                     "name": "The Taxation Wars",
-                    "description": "Ongoing conflicts with Kamalatman over trade tariffs and resource taxation, particularly affecting the central trade routes.",
+                    "description": "Ongoing conflicts with Kamalatman over trade tariffs and resource taxation, particularly affecting the maritime trade routes across the seas.",
                     "status": "Active",
                     "participants": [
                         "Skratonian Merchants",
@@ -471,8 +557,8 @@
             "historical": [
                 {
                     "name": "The First Continental War (100-130 Cycles)",
-                    "description": "Major conflict with Bulsania over control of northern trade routes, establishing Skratonia as the central trade hub.",
-                    "outcome": "Skratonia victory - established current trade dominance"
+                    "description": "Major naval conflict with Bulsania over control of northern maritime trade routes, establishing Skratonia as the central trade hub.",
+                    "outcome": "Skratonia victory - established current maritime trade dominance"
                 },
                 {
                     "name": "The Wyvern Wars (300-600 Cycles)",
@@ -524,8 +610,8 @@
         "trade_routes": [
             {
                 "name": "The Great Central Highway",
-                "description": "Primary overland trade route connecting all major Skratonian cities and extending to other continents.",
-                "type": "Overland",
+                "description": "Primary overland trade route connecting all major Skratonian cities to coastal ports, where goods are then transported by sea to other continents.",
+                "type": "Overland to Coastal Port",
                 "goods": [
                     "Agricultural products",
                     "Manufactured goods",
@@ -560,8 +646,8 @@
             },
             {
                 "name": "The Central Plains Route",
-                "description": "Major trade route connecting to Maltman's mining regions, carrying raw materials and manufactured goods.",
-                "type": "Overland and Maritime",
+                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Maltman's mining regions, carrying raw materials and manufactured goods.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Mining equipment",
                     "Raw materials",
@@ -572,8 +658,8 @@
             },
             {
                 "name": "The Southern Swamp Route",
-                "description": "Dangerous overland route connecting to the Kamalatman regions, used for internal trade and resource exchange.",
-                "type": "Overland",
+                "description": "Dangerous overland route connecting to coastal ports, where goods are then transported by sea to the Kamalatman regions, used for internal trade and resource exchange.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Agricultural products",
                     "Swamp goods",
@@ -591,6 +677,24 @@
             "Light blue",
             "White"
         ],
+        "flag_symbol": "Frozen Mountain",
+        "flag_description": "A white mountain peak against a light blue sky, representing the frozen Noxious Mountain and the icy landscape that defines this harsh northern continent.",
+        "capital": {
+            "name": "Frosthold",
+            "location": "Western coast, built into the base of the Noxious Mountain",
+            "description": "A massive fortress city carved from ice and stone, with towering walls that blend into the mountain itself, where the royal halls are warmed by geothermal springs.",
+            "ruler": {
+                "name": "High Chief Thane Icewind",
+                "race": "Goliath",
+                "title": "High Chief of the Icebound Confederacy",
+                "personality": "Stoic and honorable, with a deep sense of duty and an unshakeable commitment to protecting his people from the harsh elements and unknown threats",
+                "ruling_style": "Tribal confederation with strong military leadership, emphasizing survival, defense, and mutual protection against external threats",
+                "background": "A 60-year-old veteran of the Wyvern Wars who united the scattered tribes under one banner, known for his tactical brilliance and personal courage in the face of overwhelming odds. During the final battle against the Wyvern Queen, Thane was struck by her devastating frost breath, which should have killed him instantly. However, through sheer willpower and divine intervention from Tempus, he survived but was permanently transformed - his skin turned to the pale blue-gray of ice, his eyes became piercing ice-blue, and his very essence became bound to the frozen elements. This transformation, seen as a blessing by his people, made him the perfect leader for the harsh frozen lands of Bulsania, where he can endure the most extreme cold and command the respect of both the elements and his people.",
+                "appearance": "A towering Goliath standing over 8 feet tall with pale blue-gray skin marked with white tribal tattoos, piercing ice-blue eyes, wearing a cloak of white fur and a crown of carved ice crystals, carrying a massive ice-forged axe and wearing armor made from the hide of a frost giant",
+                "deity": "Tempus",
+                "deity_reasoning": "As a military leader and veteran warrior focused on protecting his people through strength and honor, Thane follows Tempus, the Lord of Battles, who represents honorable combat, military strategy, and the protection of the innocent through martial prowess."
+            }
+        },
         "languages": {
             "primary": [
                 "Giant",
@@ -628,8 +732,8 @@
         "wars_conflicts": {
             "current": [
                 {
-                    "name": "The Northern Border Disputes",
-                    "description": "Ongoing territorial disputes with Maltman over mountain ranges and mining rights in the southern regions.",
+                    "name": "The Northern Maritime Disputes",
+                    "description": "Ongoing territorial disputes with Maltman over maritime access to mountain ranges and mining rights in the southern coastal regions.",
                     "status": "Low-intensity",
                     "participants": [
                         "Bulsania Giants",
@@ -638,7 +742,7 @@
                 },
                 {
                     "name": "The Kantra Watch",
-                    "description": "Constant vigilance against threats from the mysterious Kantra region, requiring significant military resources.",
+                    "description": "Constant maritime vigilance against threats from the mysterious Kantra region across the northern seas, requiring significant naval resources.",
                     "status": "Active",
                     "participants": [
                         "Bulsania Military",
@@ -649,8 +753,8 @@
             "historical": [
                 {
                     "name": "The First Continental War (100-130 Cycles)",
-                    "description": "Major conflict with Skratonia over control of northern trade routes, establishing current territorial boundaries.",
-                    "outcome": "Skratonia victory - established current trade dominance"
+                    "description": "Major naval conflict with Skratonia over control of northern maritime trade routes, establishing current territorial boundaries.",
+                    "outcome": "Skratonia victory - established current maritime trade dominance"
                 },
                 {
                     "name": "The Wyvern Wars (300-600 Cycles)",
@@ -715,8 +819,8 @@
             },
             {
                 "name": "The Central Plains Route",
-                "description": "Major trade route connecting to Skratonia's agricultural regions, carrying frozen goods and rare materials.",
-                "type": "Overland and Maritime",
+                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions, carrying frozen goods and rare materials.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Frozen goods",
                     "Rare materials",
@@ -746,6 +850,8 @@
             "Crimson",
             "Dark"
         ],
+        "flag_symbol": "Burning Skull",
+        "flag_description": "A crimson skull wreathed in dark flames, representing the dangerous and uncharted nature of this hellish region where no explorers have returned.",
         "languages": {
             "primary": [
                 "Infernal",
@@ -842,6 +948,31 @@
             "Pink",
             "Brown"
         ],
+        "flag_symbol": "Swamp Lily",
+        "flag_description": "A pink swamp lily on a brown background, representing the swampy marshlands and the royal capital that governs the three Kamalatman continents.",
+        "capital": {
+            "name": "Swamp Crown",
+            "location": "Central plains, on elevated ground overlooking the vast swamplands",
+            "description": "A unique city built on stilts and elevated platforms above the swamps, with the royal palace constructed on the highest point, connected by rope bridges and wooden walkways.",
+            "ruler": {
+                "name": "High King Gorak Swampstrider",
+                "race": "Orc",
+                "title": "High King of Katman, Supreme Ruler of Kamalatman",
+                "personality": "Cunning and adaptable, with a deep understanding of both civilized politics and the wild nature of the swamps",
+                "ruling_style": "Unified monarchy with strong central authority, balancing the needs of the agricultural plains with the wild swamp territories",
+                "background": "A 55-year-old legendary warrior who began as a simple swamp guide but rose to become the most powerful ruler in Alabastria's history. During the Swamp Wars, Gorak single-handedly defeated the dreaded Swamp Dragon Malagaroth, whose death throes created the vast swamplands that now bear his name. This victory earned him the respect of all three Kamalatman kingdoms, and he was chosen to marry Princess Elara of Katman, uniting the royal bloodlines. When the previous High King fell in battle against the Kantra Incursions, Gorak's tactical genius and unbreakable will led the combined forces of all three continents to victory, saving Kamalatman from destruction. The grateful kingdoms unanimously declared him Supreme Ruler, making him the first Orc to hold such power and the only ruler to have personally saved the entire realm from annihilation.",
+                "appearance": "A powerful Orc with green-tinted skin and intelligent brown eyes, wearing a crown of twisted swamp vines and precious gems, dressed in royal robes of pink and brown that reflect his kingdom's colors, carrying a ceremonial staff topped with a carved swamp lily, his hands adorned with rings made from rare swamp minerals",
+                "deity": "Gruumsh One-Eye",
+                "deity_reasoning": "As an Orc ruler who balances civilized politics with wild nature, Gorak follows Gruumsh, the One-Eyed God and patron deity of orcs, who represents strength, survival, and the ability to thrive in harsh environments while maintaining the fierce independence that defines orcish culture."
+            }
+        },
+        "kingdom": "Kamalatman",
+        "kingdom_colors": [
+            "Gold",
+            "Crimson"
+        ],
+        "kingdom_symbol": "Triple Crown",
+        "kingdom_description": "Three interlocked crowns representing the unified rule of the three Kamalatman continents under one royal family.",
         "languages": {
             "primary": [
                 "Orcish",
@@ -870,7 +1001,7 @@
             ],
             "dominant_races": [
                 "Orcs",
-                "Half-Orcs",
+                "Orcs",
                 "Lizardfolk",
                 "Yuan-ti"
             ],
@@ -881,7 +1012,7 @@
             "current": [
                 {
                     "name": "The Swamp Border Skirmishes",
-                    "description": "Frequent clashes with Alatman over control of the shared swamp regions and resource rights.",
+                    "description": "Frequent clashes with Alatman over control of the shared swamp regions and resource rights, with naval support from both sides.",
                     "status": "Low-intensity",
                     "participants": [
                         "Katman Tribes",
@@ -890,7 +1021,7 @@
                 },
                 {
                     "name": "The Southern Frontier Wars",
-                    "description": "Ongoing conflicts with Skratonia over trade tariffs and resource taxation, particularly affecting the southern trade routes.",
+                    "description": "Ongoing conflicts with Skratonia over trade tariffs and resource taxation, particularly affecting the southern maritime trade routes.",
                     "status": "Active",
                     "participants": [
                         "Katman Merchants",
@@ -930,8 +1061,8 @@
         "trade_routes": [
             {
                 "name": "The Southern Swamp Route",
-                "description": "Dangerous overland route connecting to Skratonia's agricultural regions, carrying swamp goods and raw materials.",
-                "type": "Overland",
+                "description": "Dangerous overland route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions, carrying swamp goods and raw materials.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Swamp goods",
                     "Raw materials",
@@ -942,8 +1073,8 @@
             },
             {
                 "name": "The Swamp Passage",
-                "description": "Dangerous overland route through the swamps connecting to Alatman, used for internal Kamalatman trade.",
-                "type": "Overland",
+                "description": "Dangerous overland route through the swamps connecting to coastal ports, where goods are then transported by sea to Alatman, used for internal Kamalatman trade.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Raw materials",
                     "Food supplies",
@@ -954,8 +1085,8 @@
             },
             {
                 "name": "The Central Plains Route",
-                "description": "Major trade route connecting to Maltman's mining regions, carrying raw materials and manufactured goods.",
-                "type": "Overland and Maritime",
+                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Maltman's mining regions, carrying raw materials and manufactured goods.",
+                "type": "Overland to Maritime",
                 "goods": [
                     "Mining equipment",
                     "Raw materials",
@@ -966,7 +1097,7 @@
             },
             {
                 "name": "The Eastern Sea Route",
-                "description": "Maritime route connecting to Skratonia and other eastern continents, carrying high-value swamp goods.",
+                "description": "Maritime route across the eastern seas connecting to Skratonia and other eastern continents, carrying high-value swamp goods.",
                 "type": "Maritime",
                 "goods": [
                     "Swamp goods",
@@ -977,5 +1108,83 @@
                 "frequency": "Bi-weekly"
             }
         ]
+    },
+    {
+        "continent": "Kingdom of Kamalatman",
+        "description": "The unified kingdom encompassing the three continents of Alatman, Maltman, and Katman, ruled by a single royal family with regional princes governing each continent.",
+        "colors": [
+            "Gold",
+            "Crimson"
+        ],
+        "flag_symbol": "Triple Crown",
+        "flag_description": "Three interlocked crowns representing the unified rule of the three Kamalatman continents under one royal family.",
+        "capital": {
+            "name": "Swamp Crown",
+            "location": "Central plains of Katman, on elevated ground overlooking the vast swamplands",
+            "description": "The supreme capital of the entire Kingdom of Kamalatman, where the High King rules over all three continents from the most elevated palace in the realm.",
+            "ruler": {
+                "name": "High King Gorak Swampstrider",
+                "race": "Orc",
+                "title": "High King of Katman, Supreme Ruler of Kamalatman",
+                "personality": "Cunning and adaptable, with a deep understanding of both civilized politics and the wild nature of the swamps",
+                "ruling_style": "Unified monarchy with strong central authority, balancing the needs of the agricultural plains with the wild swamp territories",
+                "background": "A 55-year-old legendary warrior who began as a simple swamp guide but rose to become the most powerful ruler in Alabastria's history. During the Swamp Wars, Gorak single-handedly defeated the dreaded Swamp Dragon Malagaroth, whose death throes created the vast swamplands that now bear his name. This victory earned him the respect of all three Kamalatman kingdoms, and he was chosen to marry Princess Elara of Katman, uniting the royal bloodlines. When the previous High King fell in battle against the Kantra Incursions, Gorak's tactical genius and unbreakable will led the combined forces of all three continents to victory, saving Kamalatman from destruction. The grateful kingdoms unanimously declared him Supreme Ruler, making him the first Orc to hold such power and the only ruler to have personally saved the entire realm from annihilation.",
+                "appearance": "A powerful Orc with green-tinted skin and intelligent brown eyes, wearing a crown of twisted swamp vines and precious gems, dressed in royal robes of pink and brown that reflect his kingdom's colors, carrying a ceremonial staff topped with a carved swamp lily, his hands adorned with rings made from rare swamp minerals",
+                "deity": "Gruumsh One-Eye",
+                "deity_reasoning": "As an Orc ruler who balances civilized politics with wild nature, Gorak follows Gruumsh One-Eye, the One-Eyed God and patron deity of orcs, who represents strength, survival, and the ability to thrive in harsh environments while maintaining the fierce independence that defines orcish culture.",
+                "subordinate_rulers": [
+                    {
+                        "name": "King Thorne Ironforge",
+                        "title": "King of Alatman, Prince of Kamalatman",
+                        "race": "Warforged",
+                        "responsibility": "Oversees volcanic resource extraction and forge operations"
+                    },
+                    {
+                        "name": "Queen Bronwyn Stonebeard",
+                        "title": "Queen of Maltman, Princess of Kamalatman",
+                        "race": "Mountain Dwarf",
+                        "responsibility": "Manages mining operations and mountain territories"
+                    }
+                ]
+            }
+        },
+        "languages": {
+            "primary": [
+                "Common",
+                "Orcish"
+            ],
+            "secondary": [
+                "Dwarvish",
+                "Draconic",
+                "Gnomish"
+            ],
+            "rare": [
+                "Infernal",
+                "Abyssal",
+                "Primordial"
+            ],
+            "description": "As the unified kingdom, Common serves as the primary language for administration and trade between the three continents. Each region maintains its traditional languages while contributing to the kingdom's linguistic diversity."
+        },
+        "politics": {
+            "kingdoms": [
+                "Kingdom of Kamalatman (Unified)"
+            ],
+            "settlements": [
+                "Swamp Crown (Supreme Capital)",
+                "Volcanic Throne (Alatman Capital)",
+                "Deepforge Citadel (Maltman Capital)",
+                "Various regional settlements across all three continents"
+            ],
+            "dominant_races": [
+                "Orcs",
+                "Orcs",
+                "Dwarves",
+                "Warforged",
+                "Lizardfolk",
+                "Yuan-ti"
+            ],
+            "notes": "Unified kingdom with regional autonomy",
+            "political_climate": "Centralized monarchy with regional princes, balancing unified rule with local governance and cultural preservation."
+        }
     }
 ]
