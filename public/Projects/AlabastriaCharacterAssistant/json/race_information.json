@@ -1681,6 +1681,75 @@
         }
     },
     {
+      "race": "Hadozee",
+      "description": "Simian humanoids with patagial skin flaps between their arms and legs, Hadozee are natural climbers, sailors, and gliders. They are often called “deck apes,” moving with agility through ships’ rigging or across rugged terrain. Their prehensile feet grant extra dexterity, and in the air they can glide to safety from falls. In Skratonia, they are known for navigating between open plains and sky-scoured plateaus, often serving as scouts, sailors, or wanderers between towns.",
+      "size": "Medium (you may choose Small in some variants)",
+      "speed": "30 feet walking; climbing speed equal to walking speed",
+      "ability_score_increase": {
+        "Dexterity": 2,
+        "Any other": 1
+      },
+      "age": "Hadozee mature at about the same rate as humans (late teens) and often live somewhat longer, up to around 90 years.",
+      "alignment": "Tending toward neutrality, often mercenary or wanderlust-driven. Exceptions lean more chaotic than lawful and more often good than evil.",
+      "languages": [
+        "Common",
+        "Hadozee"
+      ],
+      "height_weight": {
+        "height_range": "5′0″ to 6′4″",
+        "weight_range": "150 to 200 lbs"
+      },
+      "traits": [
+        {
+          "name": "Dexterous Feet",
+          "description": "As a bonus action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object."
+        },
+        {
+          "name": "Glide",
+          "description": "When you fall at least 10 feet, you can use your reaction to extend your skin membranes to glide horizontally a number of feet equal to your walking speed, and you take no damage from the fall. You choose the direction of the glide."
+        },
+        {
+          "name": "Hadozee Dodge",
+          "description": "When you take damage, you can use your reaction to roll a d6 and add your proficiency bonus; reduce the damage by that total (minimum 0). You can use this trait a number of times equal to your proficiency bonus, and regain all uses after a long rest."
+        }
+      ],
+      "alabastria_lore": "In the plains and sky-scrub plateaus of Skratonia, Hadozee make their homes near cliff-edged oases and rigged lookout towers, gliding from heights to scout the terrain below. Their prehensile feet let them navigate planks, ropes, and the rigging of ships or nomadic caravans with ease. Many join the wind-flecked trading fleets of Skratonia, serving aboard sail-ships or sky-vessels, guiding them along trade routes between major towns carved across open plains.",
+      "playstyle": "Mobile scouts and utility characters. Good for players who like vertical movement (glide), creative positioning, and surviving falls. Excellent with classes that benefit from mobility, dexterity, or reactions.",
+      "recommended_classes": [
+        "Rogue",
+        "Ranger",
+        "Monk",
+        "Fighter"
+      ],
+      "subraces": [],
+      "names": {
+        "male_names": [
+          "Bansh",
+          "Darsh",
+          "Grath",
+          "Groh",
+          "Polth",
+          "Marn"
+        ],
+        "female_names": [
+          "Bahasha",
+          "Bannithi",
+          "Dashi",
+          "Kalla",
+          "Risha",
+          "Yasha"
+        ],
+        "last_names": [
+          "Nightdream",
+          "Swiftson",
+          "Wave-dancer",
+          "Dawnchaser",
+          "Cloudjumper",
+          "Swordstorm"
+        ]
+      },
+    },
+    {
         "race": "Half-Elf",
         "description": "The offspring of humans and elves, combining the best traits of both races. Half-elves are versatile and charismatic, often serving as diplomats and mediators.",
         "size": "Medium",
