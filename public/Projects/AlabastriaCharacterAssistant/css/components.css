@@ -2183,6 +2183,58 @@ p {
     border-left: 4px solid var(--ocean-blue);
 }
 
+.legendary-creature-details {
+    margin-bottom: 1rem;
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    background: var(--glass-bg);
+}
+
+.legendary-creature-details.past {
+    border-left: 4px solid var(--gold-accent);
+}
+
+.legendary-creature-details.present {
+    border-left: 4px solid var(--ocean-blue);
+}
+
+.legendary-creature-summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ocean-blue);
+    background: linear-gradient(135deg, var(--glass-bg), var(--parchment-light));
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+    list-style: none;
+}
+
+.legendary-creature-summary::-webkit-details-marker {
+    display: none;
+}
+
+.legendary-creature-summary::before {
+    content: '▶';
+    color: var(--ocean-blue);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.legendary-creature-details[open] .legendary-creature-summary::before {
+    transform: rotate(90deg);
+}
+
+.legendary-creature-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-bg));
+    color: var(--parchment-light);
+}
+
+.creature-content {
+    padding: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+}
+
 .creature-header {
     padding: 1rem;
     background: linear-gradient(135deg, var(--glass-bg), var(--parchment-light));
@@ -2296,4 +2348,103 @@ p {
 
 .darkMode .filter-btn-text-small {
     background: transparent;
+}
+
+.darkMode .legendary-creature-details {
+    background: var(--glass-dark-bg);
+    border-color: var(--mountain-brown);
+}
+
+.darkMode .legendary-creature-details.past {
+    border-left-color: var(--gold-accent);
+}
+
+.darkMode .legendary-creature-details.present {
+    border-left-color: var(--ocean-blue);
+}
+
+.darkMode .legendary-creature-summary {
+    background: linear-gradient(135deg, var(--glass-dark-bg), var(--parchment-dark));
+    color: var(--ocean-blue);
+}
+
+.darkMode .legendary-creature-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-dark-bg));
+    color: var(--parchment-light);
+}
+
+.darkMode .creature-content {
+    border-top-color: var(--mountain-brown);
+}
+
+.darkMode .legendary-creature-summary::before {
+    color: var(--ocean-blue);
+}
+
+.clickable-name {
+    color: var(--ocean-blue);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.clickable-name:hover {
+    color: var(--gold-accent);
+    text-shadow: var(--text-shadow-light);
+}
+
+.darkMode .clickable-name {
+    color: var(--ocean-blue);
+}
+
+.darkMode .clickable-name:hover {
+    color: var(--gold-accent);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.threat-level {
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.threat-level.low {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+}
+
+.threat-level.medium {
+    background: var(--gold-accent);
+    color: var(--parchment-dark);
+}
+
+.threat-level.high {
+    background: var(--volcanic-red);
+    color: var(--parchment-light);
+}
+
+.threat-level.critical {
+    background: var(--mountain-brown);
+    color: var(--parchment-light);
+}
+
+.darkMode .threat-level.low {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+}
+
+.darkMode .threat-level.medium {
+    background: var(--gold-accent);
+    color: var(--parchment-dark);
+}
+
+.darkMode .threat-level.high {
+    background: var(--volcanic-red);
+    color: var(--parchment-light);
+}
+
+.darkMode .threat-level.critical {
+    background: var(--mountain-brown);
+    color: var(--parchment-light);
 }
