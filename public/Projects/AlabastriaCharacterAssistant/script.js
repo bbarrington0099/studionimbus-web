@@ -3639,8 +3639,28 @@ const app = {
     },
 
     renderContinentDetails(infoContainer) {
-        // Find continent data using full name
-        const continent = this.continentData.find(c => c.continent === this.currentSelection);
+        // Find continent data using improved matching logic
+        let continent = this.continentData.find(c => c.continent === this.currentSelection);
+
+        // If exact match fails, try partial matching for Kamalatman regions
+        if (!continent) {
+            if (this.currentSelection === 'Kamalatman') {
+                // Default to Kingdom of Kamalatman for general Kamalatman references
+                continent = this.continentData.find(c => c.continent === 'Kingdom of Kamalatman');
+            } else if (this.currentSelection.includes('Kamalatman')) {
+                // Try to find the specific Kamalatman region
+                continent = this.continentData.find(c => c.continent.includes(this.currentSelection.split(' ')[0]));
+            }
+        }
+
+        // Safety check - if still no continent found, show error
+        if (!continent) {
+            infoContainer.innerHTML = `
+                <h3>Continent Not Found</h3>
+                <p>Sorry, we couldn't find information for "${this.currentSelection}". Please try selecting a different continent.</p>
+            `;
+            return;
+        }
 
         infoContainer.innerHTML = `
                 <h3>About ${this.currentSelection}</h3>
@@ -3900,8 +3920,8 @@ const app = {
                                 <strong>Primary Creature Types:</strong><br>
                                 ${continent.creature_types.primary.map(creature => `
                                     <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--mountain-brown); border-radius: 4px; background: rgba(139, 69, 19, 0.1);">
-                                        <strong style="color: var(--ocean-blue);">${creature.type}</strong><br>
-                                        <span style="font-size: 0.9rem; font-style: italic;">${creature.reasoning}</span>
+                                        <div style="font-weight: bold; color: var(--ocean-blue); font-size: 1.1rem;">${creature.type}</div>
+                                        <div style="font-size: 0.9rem; font-style: italic; margin-top: 0.25rem;">${creature.reasoning}</div>
                                     </div>
                                 `).join('')}
                             </div>
@@ -3911,8 +3931,8 @@ const app = {
                                 <strong>Secondary Creature Types:</strong><br>
                                 ${continent.creature_types.secondary.map(creature => `
                                     <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--mountain-brown); border-radius: 4px; background: rgba(139, 69, 19, 0.05);">
-                                        <strong style="color: var(--ocean-blue);">${creature.type}</strong><br>
-                                        <span style="font-size: 0.9rem; font-style: italic;">${creature.reasoning}</span>
+                                        <div style="font-weight: bold; color: var(--ocean-blue); font-size: 1.1rem;">${creature.type}</div>
+                                        <div style="font-size: 0.9rem; font-style: italic; margin-top: 0.25rem;">${creature.reasoning}</div>
                                     </div>
                                 `).join('')}
                             </div>
