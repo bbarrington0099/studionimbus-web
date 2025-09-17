@@ -42,7 +42,7 @@
                                 <span class="filter-btn-text">Race</span>
                             </button>
                             <button class="filter-btn" onclick="app.setFilter('class')">
-                                <span class="icon">⚔️</span>
+                                <span class="icon">🛡️</span>
                                 <span class="filter-btn-text">Class</span>
                             </button>
                             <button class="filter-btn" onclick="app.setFilter('playstyle')">
@@ -65,6 +65,11 @@
                             <button class="filter-btn" onclick="app.showPantheon()">
                                 <span class="icon">🏛️</span>
                                 <span class="filter-btn-text">Gods & Pantheons</span>
+                            </button>
+                            <button class="filter-btn" onclick="app.showMonsterSlayersGuide()">
+                                <span class="icon">🐉</span>
+                                <span class="filter-btn-text">Monster Slayers Guide</span>
+                                <span class="filter-btn-text-small">Ovlan Kalek</span>
                             </button>
                         </div>
                     </div>
@@ -144,6 +149,19 @@
                 <div class="pantheon-container">
                     <div class="pantheon-content" id="pantheon-content">
                         <!-- Pantheon content will be generated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Monster Slayers Guide Section -->
+            <section id="monster-slayers-guide-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn" onclick="app.goBack()">← Back</button>
+                    <h2>Monster Slayers Guide</h2>
+                </div>
+                <div class="monster-guide-container">
+                    <div id="monster-slayers-guide-content">
+                        <!-- Monster Slayers Guide content will be generated here -->
                     </div>
                 </div>
             </section>

@@ -104,7 +104,7 @@ body {
 }
 
 /* ===== THEME CLASSES ===== */
-.darkMode:not(#title, #colorModeContainer, footer p, .filter-btn-text) {
+.darkMode:not(#title, #colorModeContainer, footer p, .filter-btn-text, .filter-btn-text-small) {
     background: var(--dark-bg);
     color: var(--dark-text);
     position: relative;
@@ -126,7 +126,7 @@ body {
     z-index: -1;
 }
 
-.lightMode:not(#title, #colorModeContainer, footer p, .filter-btn-text) {
+.lightMode:not(#title, #colorModeContainer, footer p, .filter-btn-text, .filter-btn-text-small) {
     background: var(--parchment-light);
     color: var(--ink-dark);
     position: relative;

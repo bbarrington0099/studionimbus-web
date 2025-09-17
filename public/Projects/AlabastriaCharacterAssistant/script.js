@@ -18,6 +18,7 @@ const app = {
     currentGuildView: 'overview', // Track current guild view
     pantheonData: [], // Pantheon and deity data
     deityRelationshipsData: [], // Deity relationships data
+    monsterSlayersGuideData: null, // Monster Slayers Guide data
     raceHierarchy: {
         "Aarakocra": [],
         "Aasimar": ["Fallen", "Protector", "Scourge"],
@@ -84,6 +85,7 @@ const app = {
         this.loadGuildData();
         await this.loadGuildStaffAndMembers();
         await this.loadPantheonData();
+        await this.loadMonsterSlayersGuideData();
         this.setupModalListeners();
         this.showSection('welcome-section');
     },
@@ -676,6 +678,16 @@ const app = {
             this.filteredDeityRelationships = [...this.deityRelationshipsData];
         } catch (error) {
             console.error('Error loading pantheon data:', error);
+        }
+    },
+
+    // Load Monster Slayers Guide data
+    async loadMonsterSlayersGuideData() {
+        try {
+            const response = await fetch('json/monster_slayers_guide.json');
+            this.monsterSlayersGuideData = await response.json();
+        } catch (error) {
+            console.error('Error loading monster slayers guide data:', error);
         }
     },
 
@@ -1433,6 +1445,12 @@ const app = {
     showPantheon() {
         this.showSection('pantheon-section');
         this.renderPantheon();
+    },
+
+    // Show Monster Slayers Guide
+    showMonsterSlayersGuide() {
+        this.showSection('monster-slayers-guide-section');
+        this.renderMonsterSlayersGuide();
     },
 
     // Show specific guild view
@@ -2429,6 +2447,103 @@ const app = {
                     
                     <div id="deity-relationships-results" class="deity-relationships-grid">
                         ${this.renderDeityRelationships()}
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    // Render Monster Slayers Guide
+    renderMonsterSlayersGuide() {
+        const guideContent = document.getElementById('monster-slayers-guide-content');
+        if (!guideContent || !this.monsterSlayersGuideData) return;
+
+        const guide = this.monsterSlayersGuideData;
+
+        guideContent.innerHTML = `
+            <div class="monster-guide-info">
+                <h2>${guide.title}</h2>
+                <p class="guide-author">by ${guide.author}</p>
+                <p class="guide-description">${guide.description}</p>
+                
+                <div class="creature-types-section">
+                    <h3>Creature Types</h3>
+                    <p>Understanding the different types of creatures you may encounter in your travels across Alabastria.</p>
+                    
+                    ${Object.entries(guide.creature_types).map(([type, data]) => `
+                        <details class="creature-type-details">
+                            <summary class="creature-type-summary">
+                                <strong>${type}</strong>
+                            </summary>
+                            <div class="creature-type-content">
+                                <p class="creature-type-description">${data.description}</p>
+                                
+                                <div class="tactical-info">
+                                    <h4>Habits & Behavior:</h4>
+                                    <p>${data.habits}</p>
+                                    
+                                    <h4>Combat Tactics:</h4>
+                                    <p>${data.tactics}</p>
+                                    
+                                    <h4>Weaknesses & Vulnerabilities:</h4>
+                                    <p>${data.weaknesses}</p>
+                                </div>
+                                
+                                <div class="continent-locations">
+                                    <h4>Common Locations:</h4>
+                                    ${data.continents.map(location => `
+                                        <div class="continent-location">
+                                            <strong>${location.name}:</strong> ${location.reasoning}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </details>
+                    `).join('')}
+                </div>
+                
+                <div class="legendary-creatures-section">
+                    <h3>Legendary Creatures</h3>
+                    
+                    <div class="past-creatures">
+                        <h4>Creatures of the Past (Defeated)</h4>
+                        <p>These legendary creatures once terrorized the lands but have been defeated by brave heroes.</p>
+                        
+                        ${guide.legendary_creatures.past.map(creature => `
+                            <div class="legendary-creature past">
+                                <div class="creature-header">
+                                    <h5>${creature.name}</h5>
+                                    <span class="creature-type">${creature.type}</span>
+                                    <span class="creature-location">${creature.continent}</span>
+                                </div>
+                                <div class="creature-description">
+                                    <p><strong>Description:</strong> ${creature.description}</p>
+                                    <p><strong>Defeated by:</strong> ${creature.defeated_by}, ${creature.defeated_by_title}</p>
+                                    <p><strong>Defeat Story:</strong> ${creature.defeat_story}</p>
+                                    <p><strong>Legacy:</strong> ${creature.legacy}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="present-creatures">
+                        <h4>Current Threats</h4>
+                        <p>These legendary creatures still roam the lands and pose significant threats to adventurers.</p>
+                        
+                        ${guide.legendary_creatures.present.map(creature => `
+                            <div class="legendary-creature present">
+                                <div class="creature-header">
+                                    <h5>${creature.name}</h5>
+                                    <span class="creature-type">${creature.type}</span>
+                                    <span class="creature-location">${creature.continent}</span>
+                                    <span class="threat-level ${creature.threat_level.toLowerCase()}">${creature.threat_level} Threat</span>
+                                </div>
+                                <div class="creature-description">
+                                    <p><strong>Description:</strong> ${creature.description}</p>
+                                    <p><strong>Quest Potential:</strong> ${creature.quest_potential}</p>
+                                </div>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
             </div>
@@ -3912,7 +4027,7 @@ const app = {
                 ${continent.creature_types ? `
                 <details class="language-info language-details">
                     <summary class="language-summary">
-                        Common Creature Types
+                        Common Questing Encounters
                     </summary>
                     <div class="language-content">
                         ${continent.creature_types.primary && continent.creature_types.primary.length > 0 ? `
