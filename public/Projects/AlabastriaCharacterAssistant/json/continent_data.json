@@ -139,7 +139,33 @@
                 ],
                 "frequency": "Irregular"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Fey",
+                    "reasoning": "The magical forests are fey-touched areas with Sylvan language, and the dominant races include fey creatures. The Living Barrier created by Elara is a magical forest that moves and defends itself."
+                },
+                {
+                    "type": "Plant",
+                    "reasoning": "The continent is heavily forested with magical trees, and the ruler can communicate with all living things. The flag features a mystical tree symbol."
+                },
+                {
+                    "type": "Aberration",
+                    "reasoning": "The magical nature and research institutions attract scholars studying ancient and alien knowledge, with 'secrets that have been lost for millennia.'"
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Elemental",
+                    "reasoning": "Primordial language is spoken, and the magical nature suggests elemental forces are present throughout the forests."
+                },
+                {
+                    "type": "Dragon",
+                    "reasoning": "Draconic is a secondary language, and the Wyvern Wars involved dragon-like creatures that threatened the continent."
+                }
+            ]
+        }
     },
     {
         "continent": "Katman of Kamalatman",
@@ -307,7 +333,33 @@
                 ],
                 "frequency": "Bi-weekly"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Dragon",
+                    "reasoning": "The Swamp Dragon Malagaroth's death throes created the vast swamplands, and Draconic is a secondary language spoken throughout the region."
+                },
+                {
+                    "type": "Ooze",
+                    "reasoning": "The swampy marshlands with 'mass of swampy less populated areas' provide the perfect environment for ooze creatures that thrive in wet, decaying conditions."
+                },
+                {
+                    "type": "Plant",
+                    "reasoning": "Swamplands naturally support plant creatures adapted to wetland environments, with the flag featuring a swamp lily symbol."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Monstrosity",
+                    "reasoning": "The dangerous swamps and frontier areas harbor strange, unnatural creatures that have adapted to the harsh swamp environment."
+                },
+                {
+                    "type": "Undead",
+                    "reasoning": "Swamp environments often contain undead creatures due to the death and decay present in the marshlands, with the dangerous nature suggesting supernatural threats."
+                }
+            ]
+        }
     },
     {
         "continent": "Alatman of Kamalatman",
@@ -461,7 +513,33 @@
                 ],
                 "frequency": "Bi-weekly"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Elemental",
+                    "reasoning": "Active volcano with 'timely volcano' and fire elementals mentioned in the Volcanic Wars. Primordial language is spoken, and the volcanic environment creates elemental forces."
+                },
+                {
+                    "type": "Construct",
+                    "reasoning": "Warforged ruler and Autognomes are dominant races, with construct workshops and artificial beings created in the volcanic forges."
+                },
+                {
+                    "type": "Fiend",
+                    "reasoning": "Infernal and Abyssal languages are spoken, and the 'dangerous forests harbor darker creatures' suggesting infernal influences."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Dragon",
+                    "reasoning": "Draconic is the primary language, and the volcanic environment could support fire dragons and other draconic creatures."
+                },
+                {
+                    "type": "Aberration",
+                    "reasoning": "Deep Speech is spoken, suggesting alien influences in the dangerous areas and ancient ruins."
+                }
+            ]
+        }
     },
     {
         "continent": "Maltman of Kamalatman",
@@ -637,7 +715,33 @@
                 ],
                 "frequency": "Monthly"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Giant",
+                    "reasoning": "Mountain ranges with 'cloud towering Noxious Mountain' and Giant language is spoken. The Great Mining Wars involved Stone Giants, and the mountainous terrain is ideal for giant creatures."
+                },
+                {
+                    "type": "Construct",
+                    "reasoning": "Deep Gnomes and Kobolds work in the mines, and the efficient mining operations suggest constructed tools, guardians, and mechanical beings created for mining purposes."
+                },
+                {
+                    "type": "Dragon",
+                    "reasoning": "Draconic is a secondary language, and ancient draconic runes mark the deepest mines, suggesting dragons once inhabited or still inhabit the mountain depths."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Elemental",
+                    "reasoning": "Terran language is spoken, and the deep mining operations could disturb earth elementals and other elemental creatures that dwell in the mountain depths."
+                },
+                {
+                    "type": "Aberration",
+                    "reasoning": "Deep Speech is spoken, suggesting alien creatures in the deepest mines and ancient underground areas that have been uncovered by mining operations."
+                }
+            ]
+        }
     },
     {
         "continent": "Skratonia",
@@ -836,7 +940,33 @@
                 ],
                 "frequency": "Weekly"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Humanoid",
+                    "reasoning": "The most diverse and populated continent with humans, halflings, tieflings, aasimar, centaurs, and leonin as dominant races, making it the center of humanoid civilization."
+                },
+                {
+                    "type": "Beast",
+                    "reasoning": "Agricultural plains with 'decent crops' and pastoral communities would support various beasts that thrive in open grasslands and agricultural areas."
+                },
+                {
+                    "type": "Celestial",
+                    "reasoning": "Aasimar populations and Celestial language suggest celestial influences, with divine beings likely drawn to the most populated and prosperous region."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Fiend",
+                    "reasoning": "Tieflings are a dominant race, and Infernal is a secondary language, suggesting infernal influences in the diverse population."
+                },
+                {
+                    "type": "Fey",
+                    "reasoning": "The diverse population and agricultural nature could support some fey creatures, especially in the more rural and pastoral areas."
+                }
+            ]
+        }
     },
     {
         "continent": "Bulsania",
@@ -1009,7 +1139,33 @@
                 ],
                 "frequency": "Daily"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Giant",
+                    "reasoning": "'Frozen land left to giants and titans' with Giant as the primary language and giants as dominant races. The mountainous terrain is ideal for giant creatures."
+                },
+                {
+                    "type": "Dragon",
+                    "reasoning": "Draconic is a primary language with militarized Dragonborn settlements, and the frozen environment could support ice dragons and other draconic creatures."
+                },
+                {
+                    "type": "Elemental",
+                    "reasoning": "Frozen environment with Primordial and Auran languages, and the ruler is bound to frozen elements, suggesting strong elemental influences in the icy landscape."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Monstrosity",
+                    "reasoning": "The harsh frozen frontier would harbor strange creatures adapted to extreme cold conditions and the dangerous mountain environment."
+                },
+                {
+                    "type": "Celestial",
+                    "reasoning": "Celestial language is spoken, suggesting some celestial influence in the frozen lands, possibly related to the divine transformation of the ruler."
+                }
+            ]
+        }
     },
     {
         "continent": "Kantra",
@@ -1107,7 +1263,33 @@
                 ],
                 "frequency": "All routes"
             }
-        ]
+        ],
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Fiend",
+                    "reasoning": "'Land of fiery cracking earth and ash filled sky' with Infernal and Abyssal as primary languages, suggesting a hellish region dominated by infernal creatures."
+                },
+                {
+                    "type": "Elemental",
+                    "reasoning": "Fire elementals with Ignan language and 'raw elemental chaos' suggest strong elemental forces, particularly fire-based creatures."
+                },
+                {
+                    "type": "Aberration",
+                    "reasoning": "'Creatures not known by the lands around it' and Deep Speech language suggest alien creatures that have never been catalogued or understood."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Monstrosity",
+                    "reasoning": "'Monsterfolk' are listed as dominant races, and the uncharted nature suggests strange, unnatural creatures that defy normal classification."
+                },
+                {
+                    "type": "Undead",
+                    "reasoning": "The hellish nature and 'ash filled sky' could support undead creatures, with the infernal environment creating conditions for undeath."
+                }
+            ]
+        }
     },
     {
         "continent": "Kingdom of Kamalatman",
@@ -1185,6 +1367,32 @@
             ],
             "notes": "Unified kingdom with regional autonomy",
             "political_climate": "Centralized monarchy with regional princes, balancing unified rule with local governance and cultural preservation."
+        },
+        "creature_types": {
+            "primary": [
+                {
+                    "type": "Dragon",
+                    "reasoning": "The unified kingdom encompasses all three Kamalatman continents, each with strong draconic influences - from the Swamp Dragon Malagaroth in Katman to ancient draconic runes in Maltman's mines."
+                },
+                {
+                    "type": "Construct",
+                    "reasoning": "The kingdom includes Alatman's volcanic forges and Maltman's mining operations, with Warforged leadership and extensive construct workshops creating artificial beings."
+                },
+                {
+                    "type": "Elemental",
+                    "reasoning": "The unified kingdom spans volcanic regions (Alatman), mountainous terrain (Maltman), and swampy areas (Katman), each with strong elemental influences from fire, earth, and water."
+                }
+            ],
+            "secondary": [
+                {
+                    "type": "Giant",
+                    "reasoning": "Maltman's mountainous regions and the Great Mining Wars with Stone Giants, plus the diverse terrain across all three continents supporting various giant types."
+                },
+                {
+                    "type": "Plant",
+                    "reasoning": "The swampy regions of Katman and the diverse ecosystems across the three continents support various plant creatures adapted to different environments."
+                }
+            ]
         }
     }
 ]

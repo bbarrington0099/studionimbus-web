@@ -3888,6 +3888,38 @@ const app = {
                     </div>
                 </details>
                 ` : ''}
+                
+                ${continent.creature_types ? `
+                <details class="language-info language-details">
+                    <summary class="language-summary">
+                        Common Creature Types
+                    </summary>
+                    <div class="language-content">
+                        ${continent.creature_types.primary && continent.creature_types.primary.length > 0 ? `
+                            <div class="language-category">
+                                <strong>Primary Creature Types:</strong><br>
+                                ${continent.creature_types.primary.map(creature => `
+                                    <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--mountain-brown); border-radius: 4px; background: rgba(139, 69, 19, 0.1);">
+                                        <strong style="color: var(--ocean-blue);">${creature.type}</strong><br>
+                                        <span style="font-size: 0.9rem; font-style: italic;">${creature.reasoning}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        ${continent.creature_types.secondary && continent.creature_types.secondary.length > 0 ? `
+                            <div class="language-category">
+                                <strong>Secondary Creature Types:</strong><br>
+                                ${continent.creature_types.secondary.map(creature => `
+                                    <div style="margin: 0.5rem 0; padding: 0.5rem; border: 1px solid var(--mountain-brown); border-radius: 4px; background: rgba(139, 69, 19, 0.05);">
+                                        <strong style="color: var(--ocean-blue);">${creature.type}</strong><br>
+                                        <span style="font-size: 0.9rem; font-style: italic;">${creature.reasoning}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </details>
+                ` : ''}
         `;
 
         // Find only races and classes that actually exist in this continent
