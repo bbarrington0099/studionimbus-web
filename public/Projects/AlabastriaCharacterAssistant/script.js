@@ -1453,6 +1453,82 @@ const app = {
         this.renderMonsterSlayersGuide();
     },
 
+    navigateToGuildStaff(memberName) {
+        // First close any open modals
+        this.closeModal();
+        this.closeDeityModal();
+        this.closeBackupModals();
+
+        // Directly go to guild staff view
+        this.currentGuildView = 'staff';
+        this.showSection('guild-history-section');
+        this.renderGuildHistory();
+
+        // Set the filter and apply it
+        setTimeout(() => {
+            const roleFilter = document.getElementById('staff-role-filter');
+            if (roleFilter) {
+                roleFilter.value = 'Librarian / Keeper of Records';
+                this.filterGuildStaff();
+            }
+
+            // Finally jump to the specific member
+            setTimeout(() => {
+                this.jumpToGuildStaffMember(memberName);
+            }, 500);
+        }, 500);
+    },
+
+    jumpToGuildStaffMember(memberName) {
+        // Close any open modals
+        this.closeModal();
+        this.closeDeityModal();
+        this.closeBackupModals();
+
+        // Wait for render, then find and highlight the specific staff member
+        setTimeout(() => {
+            const staffContainer = document.getElementById('staff-results');
+            if (staffContainer) {
+                const staffCards = staffContainer.querySelectorAll('.staff-card');
+                staffCards.forEach(card => {
+                    const nameElement = card.querySelector('h3');
+                    if (nameElement && nameElement.textContent.trim() === memberName) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        card.style.border = '2px solid var(--ocean-blue)';
+                        card.style.boxShadow = '0 0 10px rgba(30, 74, 95, 0.5)';
+
+                        // Remove highlight after 3 seconds
+                        setTimeout(() => {
+                            card.style.border = '';
+                            card.style.boxShadow = '';
+                        }, 3000);
+                    }
+                });
+            } else {
+                // If staff container not found, try again after a longer delay
+                setTimeout(() => {
+                    const retryContainer = document.getElementById('staff-results');
+                    if (retryContainer) {
+                        const retryCards = retryContainer.querySelectorAll('.staff-card');
+                        retryCards.forEach(card => {
+                            const nameElement = card.querySelector('h3');
+                            if (nameElement && nameElement.textContent.trim() === memberName) {
+                                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                card.style.border = '2px solid var(--ocean-blue)';
+                                card.style.boxShadow = '0 0 10px rgba(30, 74, 95, 0.5)';
+
+                                setTimeout(() => {
+                                    card.style.border = '';
+                                    card.style.boxShadow = '';
+                                }, 3000);
+                            }
+                        });
+                    }
+                }, 500);
+            }
+        }, 500);
+    },
+
     // Show specific guild view
     showGuildView(viewType) {
         this.currentGuildView = viewType;
@@ -1770,7 +1846,7 @@ const app = {
                            
                            <details style="margin: 1rem 0;">
                               <summary style="cursor: pointer; font-weight: 600; color: var(--ocean-blue);">Background</summary>
-                              <p style="margin: 0.5rem 0; line-height: 1.6;">${staff.background}</p>
+                              <p style="margin: 0.5rem 0; line-height: 1.6;">${this.makeBookTitlesClickable(staff.background)}</p>
                            </details>
                         </div>
                      </div>
@@ -2461,10 +2537,10 @@ const app = {
         const guide = this.monsterSlayersGuideData;
 
         guideContent.innerHTML = `
-            <div class="monster-guide-info">
-                <h2>${guide.title}</h2>
-                <p class="guide-author">by ${guide.author}</p>
-                <p class="guide-description">${guide.description}</p>
+                    <div class="monster-guide-info">
+                        <h2>${guide.title}</h2>
+                        <p class="guide-author">by <span class="clickable-name" onclick="app.navigateToGuildStaff('Ovlan Kalek')">${guide.author}</span></p>
+                        <p class="guide-description">${guide.description}</p>
                 
                 <div class="creature-types-section">
                     <h3>Creature Types</h3>
@@ -2505,44 +2581,43 @@ const app = {
                 <div class="legendary-creatures-section">
                     <h3>Legendary Creatures</h3>
                     
-                    <div class="past-creatures">
-                        <h4>Creatures of the Past (Defeated)</h4>
-                        <p>These legendary creatures once terrorized the lands but have been defeated by brave heroes.</p>
-                        
-                        ${guide.legendary_creatures.past.map(creature => `
-                            <div class="legendary-creature past">
-                                <div class="creature-header">
-                                    <h5>${creature.name}</h5>
-                                    <span class="creature-type">${creature.type}</span>
-                                    <span class="creature-location">${creature.continent}</span>
-                                </div>
-                                <div class="creature-description">
-                                    <p><strong>Description:</strong> ${creature.description}</p>
-                                    <p><strong>Defeated by:</strong> ${creature.defeated_by}, ${creature.defeated_by_title}</p>
-                                    <p><strong>Defeat Story:</strong> ${creature.defeat_story}</p>
-                                    <p><strong>Legacy:</strong> ${creature.legacy}</p>
-                                </div>
+                            <div class="past-creatures">
+                                <h4>Creatures of the Past (Defeated)</h4>
+                                <p>These legendary creatures once terrorized the lands but have been defeated by brave heroes.</p>
+                                
+                                ${guide.legendary_creatures.past.map(creature => `
+                                    <details class="legendary-creature-details past">
+                                        <summary class="legendary-creature-summary">
+                                            <strong>${creature.name}</strong> - ${creature.type} (${creature.continent})
+                                        </summary>
+                                        <div class="creature-content">
+                                            <div class="creature-description">
+                                                <p><strong>Description:</strong> ${creature.description}</p>
+                                                <p><strong>Defeated by:</strong> ${creature.defeated_by}, ${creature.defeated_by_title}</p>
+                                                <p><strong>Defeat Story:</strong> ${creature.defeat_story}</p>
+                                                <p><strong>Legacy:</strong> ${creature.legacy}</p>
+                                            </div>
+                                        </div>
+                                    </details>
+                                `).join('')}
                             </div>
-                        `).join('')}
-                    </div>
                     
                     <div class="present-creatures">
                         <h4>Current Threats</h4>
-                        <p>These legendary creatures still roam the lands and pose significant threats to adventurers.</p>
+                        <p>These legendary creatures still roam the lands as of 800AB and pose significant threats to adventurers.</p>
                         
                         ${guide.legendary_creatures.present.map(creature => `
-                            <div class="legendary-creature present">
-                                <div class="creature-header">
-                                    <h5>${creature.name}</h5>
-                                    <span class="creature-type">${creature.type}</span>
-                                    <span class="creature-location">${creature.continent}</span>
-                                    <span class="threat-level ${creature.threat_level.toLowerCase()}">${creature.threat_level} Threat</span>
+                            <details class="legendary-creature-details present">
+                                <summary class="legendary-creature-summary">
+                                    <strong>${creature.name}</strong> - ${creature.type} (${creature.continent}) - <span class="threat-level ${creature.threat_level.toLowerCase()}">${creature.threat_level} Threat</span>
+                                </summary>
+                                <div class="creature-content">
+                                    <div class="creature-description">
+                                        <p><strong>Description:</strong> ${creature.description}</p>
+                                        <p><strong>Quest Potential:</strong> ${creature.quest_potential}</p>
+                                    </div>
                                 </div>
-                                <div class="creature-description">
-                                    <p><strong>Description:</strong> ${creature.description}</p>
-                                    <p><strong>Quest Potential:</strong> ${creature.quest_potential}</p>
-                                </div>
-                            </div>
+                            </details>
                         `).join('')}
                     </div>
                 </div>
@@ -3466,6 +3541,36 @@ const app = {
                 display: inline;
                 font-size: inherit;
             " onmouseover="this.style.background='var(--ocean-blue)'" onmouseout="this.style.background='var(--gold-accent)'">${deity}</button>`);
+        });
+
+        return result;
+    },
+
+    // Make book titles clickable in text
+    makeBookTitlesClickable(text) {
+        if (!text) return text;
+
+        // Make Monster Slayers Guide clickable
+        const bookTitles = [
+            'Monster Slayers Guide'
+        ];
+
+        let result = text;
+        bookTitles.forEach(book => {
+            const regex = new RegExp(`'${book}'`, 'gi');
+            result = result.replace(regex, `<button class="book-button" onclick="app.showMonsterSlayersGuide()" style="
+                background: var(--gold-accent);
+                color: var(--parchment-dark);
+                border: none;
+                padding: 0.2rem 0.4rem;
+                border-radius: 3px;
+                cursor: pointer;
+                font-weight: 600;
+                margin: 0 0.2rem;
+                transition: var(--transition);
+                display: inline;
+                font-size: inherit;
+            " onmouseover="this.style.background='var(--ocean-blue)'" onmouseout="this.style.background='var(--gold-accent)'">'${book}'</button>`);
         });
 
         return result;
