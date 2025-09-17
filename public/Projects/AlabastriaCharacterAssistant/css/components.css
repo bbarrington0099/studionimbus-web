@@ -18,9 +18,11 @@
     cursor: pointer;
     transition: var(--transition);
     min-width: 150px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     text-shadow: var(--text-shadow-dark);
     position: relative;
@@ -96,6 +98,17 @@
     font-size: 1rem;
     font-weight: 600;
     background: transparent;
+}
+
+.filter-btn-text-small {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--mountain-brown);
+    background: transparent;
+}
+
+.darkMode .filter-btn-text-small {
+    color: var(--dark-text-secondary);
 }
 
 span.filter-btn-text.lightMode {
@@ -2023,4 +2036,264 @@ p {
         height: 300px !important;
         object-fit: cover;
     }
+}
+
+/* Monster Slayers Guide Styles */
+.monster-guide-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.monster-guide-info h2 {
+    color: var(--ocean-blue);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.guide-author {
+    text-align: center;
+    font-style: italic;
+    color: var(--mountain-brown);
+    margin-bottom: 1rem;
+}
+
+.guide-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.creature-types-section,
+.legendary-creatures-section {
+    margin-bottom: 3rem;
+}
+
+.creature-types-section h3,
+.legendary-creatures-section h3 {
+    color: var(--ocean-blue);
+    border-bottom: 2px solid var(--ocean-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.creature-type-details {
+    margin-bottom: 1rem;
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    background: var(--glass-bg);
+}
+
+.creature-type-summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ocean-blue);
+    background: linear-gradient(135deg, var(--glass-bg), var(--parchment-light));
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+}
+
+.creature-type-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-bg));
+    color: var(--parchment-light);
+}
+
+.creature-type-content {
+    padding: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+}
+
+.creature-type-description {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--mountain-brown);
+}
+
+.continent-locations h4 {
+    color: var(--ocean-blue);
+    margin-bottom: 0.5rem;
+}
+
+.continent-location {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    border-left: 3px solid var(--ocean-blue);
+    border-radius: 4px;
+}
+
+.continent-location strong {
+    color: var(--ocean-blue);
+}
+
+.tactical-info {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(30, 74, 95, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--ocean-blue);
+}
+
+.tactical-info h4 {
+    color: var(--ocean-blue);
+    margin-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+}
+
+.tactical-info p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--mountain-brown);
+}
+
+.tactical-info p:last-child {
+    margin-bottom: 0;
+}
+
+.past-creatures,
+.present-creatures {
+    margin-bottom: 2rem;
+}
+
+.past-creatures h4,
+.present-creatures h4 {
+    color: var(--ocean-blue);
+    margin-bottom: 1rem;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.legendary-creature {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    overflow: hidden;
+}
+
+.legendary-creature.past {
+    border-left: 4px solid var(--gold-accent);
+}
+
+.legendary-creature.present {
+    border-left: 4px solid var(--ocean-blue);
+}
+
+.creature-header {
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--glass-bg), var(--parchment-light));
+    border-bottom: 1px solid var(--mountain-brown);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.creature-header h5 {
+    color: var(--ocean-blue);
+    margin: 0;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+}
+
+.creature-type,
+.creature-location {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.threat-level {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.threat-level.medium {
+    background: var(--gold-accent);
+    color: var(--mountain-brown);
+}
+
+.threat-level.high {
+    background: #ff6b35;
+    color: var(--parchment-light);
+}
+
+.threat-level.extreme {
+    background: #dc2626;
+    color: var(--parchment-light);
+}
+
+.creature-description {
+    padding: 1rem;
+}
+
+.creature-description p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.creature-description strong {
+    color: var(--ocean-blue);
+}
+
+.filter-btn-text-small {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--mountain-brown);
+}
+
+/* Dark mode styles for Monster Slayers Guide */
+.darkMode .creature-type-details,
+.darkMode .legendary-creature {
+    background: var(--glass-dark-bg);
+    border-color: var(--mountain-brown);
+}
+
+.darkMode .creature-type-summary {
+    background: linear-gradient(135deg, var(--glass-dark-bg), var(--parchment-dark));
+    color: var(--ocean-blue);
+}
+
+.darkMode .creature-type-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-dark-bg));
+    color: var(--parchment-light);
+}
+
+.darkMode .creature-type-content {
+    border-top-color: var(--mountain-brown);
+}
+
+.darkMode .continent-location {
+    background: rgba(139, 69, 19, 0.2);
+}
+
+.darkMode .creature-header {
+    background: linear-gradient(135deg, var(--glass-dark-bg), var(--parchment-dark));
+    border-bottom-color: var(--mountain-brown);
+}
+
+.darkMode .tactical-info {
+    background: rgba(30, 74, 95, 0.2);
+    border-left-color: var(--ocean-blue);
+}
+
+.darkMode .tactical-info h4 {
+    color: var(--ocean-blue);
+}
+
+.darkMode .tactical-info p {
+    color: var(--dark-text-secondary);
+}
+
+.darkMode .filter-btn-text-small {
+    background: transparent;
 }
