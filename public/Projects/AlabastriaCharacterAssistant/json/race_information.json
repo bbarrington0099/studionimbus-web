@@ -605,12 +605,37 @@
                     "height_range": "5'6\" to 7'2\"",
                     "weight_range": "175 to 247 lbs"
                 },
-                "traits": [
-                    {
-                        "name": "Chromatic Ancestry",
-                        "description": "You can choose from Black, Blue, Green, Red, or White dragon ancestry, each with different breath weapon and resistance types."
-                    }
-                ],
+                "affinity": {
+                    "name": "Chromatic Ancestry",
+                    "description": "You can choose from Black, Blue, Green, Red, or White dragon ancestry, each with different breath weapon and resistance types.",
+                    "options": [
+                        {
+                            "name": "Black Dragon",
+                            "damage_resistance": "Acid",
+                            "breath_weapon": "Acid (5 by 30 ft. line)"
+                        },
+                        {
+                            "name": "Blue Dragon", 
+                            "damage_resistance": "Lightning",
+                            "breath_weapon": "Lightning (5 by 30 ft. line)"
+                        },
+                        {
+                            "name": "Green Dragon",
+                            "damage_resistance": "Poison", 
+                            "breath_weapon": "Poison (15 ft. cone)"
+                        },
+                        {
+                            "name": "Red Dragon",
+                            "damage_resistance": "Fire",
+                            "breath_weapon": "Fire (15 ft. cone)"
+                        },
+                        {
+                            "name": "White Dragon",
+                            "damage_resistance": "Cold",
+                            "breath_weapon": "Cold (15 ft. cone)"
+                        }
+                    ]
+                },
                 "alabastria_context": "Chromatic Dragonborn in Bulsania's military often serve as shock troops, their destructive breath weapons making them feared on the battlefield. Some seek redemption through the Huntbound Order, channeling their destructive power against true evil.",
                 "playstyle": "Offensive warriors with destructive elemental powers. Great for players who want to deal elemental damage and intimidate enemies."
             },
@@ -621,12 +646,37 @@
                     "height_range": "5'6\" to 7'2\"",
                     "weight_range": "175 to 247 lbs"
                 },
-                "traits": [
-                    {
-                        "name": "Metallic Ancestry",
-                        "description": "You can choose from Brass, Bronze, Copper, Gold, or Silver dragon ancestry, each with different breath weapon and resistance types."
-                    }
-                ],
+                "affinity": {
+                    "name": "Metallic Ancestry",
+                    "description": "You can choose from Brass, Bronze, Copper, Gold, or Silver dragon ancestry, each with different breath weapon and resistance types.",
+                    "options": [
+                        {
+                            "name": "Brass Dragon",
+                            "damage_resistance": "Fire",
+                            "breath_weapon": "Fire (5 by 30 ft. line)"
+                        },
+                        {
+                            "name": "Bronze Dragon",
+                            "damage_resistance": "Lightning",
+                            "breath_weapon": "Lightning (5 by 30 ft. line)"
+                        },
+                        {
+                            "name": "Copper Dragon",
+                            "damage_resistance": "Acid",
+                            "breath_weapon": "Acid (5 by 30 ft. line)"
+                        },
+                        {
+                            "name": "Gold Dragon",
+                            "damage_resistance": "Fire",
+                            "breath_weapon": "Fire (15 ft. cone)"
+                        },
+                        {
+                            "name": "Silver Dragon",
+                            "damage_resistance": "Cold",
+                            "breath_weapon": "Cold (15 ft. cone)"
+                        }
+                    ]
+                },
                 "alabastria_context": "Metallic Dragonborn in Alabastria's temples and noble houses serve as protectors and leaders. Their noble heritage and protective abilities make them natural leaders in the Huntbound Order's quest to protect the innocent.",
                 "playstyle": "Defensive warriors with protective elemental powers. Perfect for players who want to be noble protectors with draconic abilities."
             },
@@ -637,12 +687,37 @@
                     "height_range": "5'6\" to 7'2\"",
                     "weight_range": "175 to 247 lbs"
                 },
-                "traits": [
-                    {
-                        "name": "Gem Ancestry",
-                        "description": "You can choose from Amethyst, Crystal, Emerald, Sapphire, or Topaz dragon ancestry, each with different breath weapon and resistance types."
-                    }
-                ],
+                "affinity": {
+                    "name": "Gem Ancestry",
+                    "description": "You can choose from Amethyst, Crystal, Emerald, Sapphire, or Topaz dragon ancestry, each with different breath weapon and resistance types.",
+                    "options": [
+                        {
+                            "name": "Amethyst Dragon",
+                            "damage_resistance": "Force",
+                            "breath_weapon": "Force (15 ft. cone)"
+                        },
+                        {
+                            "name": "Crystal Dragon",
+                            "damage_resistance": "Radiant",
+                            "breath_weapon": "Radiant (15 ft. cone)"
+                        },
+                        {
+                            "name": "Emerald Dragon",
+                            "damage_resistance": "Psychic",
+                            "breath_weapon": "Psychic (15 ft. cone)"
+                        },
+                        {
+                            "name": "Sapphire Dragon",
+                            "damage_resistance": "Thunder",
+                            "breath_weapon": "Thunder (5 by 30 ft. line)"
+                        },
+                        {
+                            "name": "Topaz Dragon",
+                            "damage_resistance": "Necrotic",
+                            "breath_weapon": "Necrotic (5 by 30 ft. line)"
+                        }
+                    ]
+                },
                 "alabastria_context": "Gem Dragonborn in Kuriguer's magical academies and Skratonia's scholarly institutions study the mysteries of the mind. Their psionic heritage and intellectual abilities make them valuable researchers and strategists in the Huntbound Order.",
                 "playstyle": "Intellectual warriors with psionic abilities. Ideal for players who want to combine martial prowess with mental powers."
             }
