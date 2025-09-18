@@ -265,7 +265,7 @@
                 "description": "A massive black dragon that terrorized the swamplands for centuries, breathing clouds of toxic gas that turned the very air into poison. Its lair was a vast network of flooded caves beneath the swamps, where it hoarded the treasures of countless victims.",
                 "defeated_by": "Gorak the Swamp Guide",
                 "defeated_by_title": "Supreme Ruler of Kamalatman",
-                "defeat_story": "During the Swamp Wars, when Gorak was in his 40s (793AB), he single-handedly defeated the dreaded Swamp Dragon Malagaroth, whose death throes created the vast swamplands that now bear his name. This victory earned him the respect of all three Kamalatman kingdoms, and he was chosen to marry Princess Elara of Katman, uniting the royal bloodlines. His tactical genius and unbreakable will later led the combined forces of all three continents to victory against the Kantra Incursions.",
+                "defeat_story": "During the Swamp Wars, when Gorak was in his 40s (793AB), he single-handedly defeated the dreaded Swamp Dragon Malagaroth, whose death throes created the vast swamplands that now bear his name. This victory earned him the respect of all three Kamalatman kingdoms, and he was chosen to marry Princess Elara of Katman, uniting the royal bloodlines.",
                 "legacy": "The dragon's death created the vast swamplands that now define the region, and its bones are said to still lie beneath the murky waters, occasionally causing the ground to tremble."
             },
             {
@@ -326,7 +326,7 @@
                 "defeated_by": "The Radiant Paladin",
                 "defeated_by_title": "Champion of the Light",
                 "defeat_story": "The Radiant Paladin, whose true name has been lost to history, led a crusade against the Plague Lord, gathering paladins and clerics from across the continent. Through divine magic and sheer determination, they were able to destroy the lich's phylactery and banish his spirit to the lower planes, ending the plague.",
-                "legacy": "The Radiant Paladin's sacrifice saved countless lives, and their name is still spoken with reverence by those who follow the light. The continent of Kantra, while still cursed, is no longer plagued by the undead curse."
+                "legacy": "The Radiant Paladin's sacrifice saved countless lives, and their name is still spoken with reverence by those who follow the light. The continent of Katman, while still cursed, is no longer plagued by the undead curse."
             }
         ],
         "present": [
@@ -341,7 +341,7 @@
             {
                 "name": "The Crimson Reaper",
                 "type": "Fiend",
-                "continent": "Kantra",
+                "continent": "Alatman of Kamalatman",
                 "description": "A powerful demon that has established a cult in the cursed lands, using its infernal powers to corrupt the local population. It appears as a massive figure wreathed in flames, wielding a scythe that can cut through both flesh and soul.",
                 "threat_level": "Extreme",
                 "quest_potential": "Infiltrate the cult, gather information about the demon's weaknesses, and either banish it back to the lower planes or destroy it permanently."
@@ -405,7 +405,7 @@
             {
                 "name": "The Cult of the Void",
                 "type": "Humanoid",
-                "continent": "Kantra",
+                "continent": "Kuriguer",
                 "description": "A secretive cult that worships the concept of nothingness and seeks to unravel the very fabric of reality. They have been performing dark rituals that are causing reality to become unstable in certain areas, creating dangerous zones where the laws of physics no longer apply.",
                 "threat_level": "Extreme",
                 "quest_potential": "Investigate the cult's activities, stop their reality-warping rituals, and either capture or eliminate the cult leaders before they can cause irreparable damage to the world."
