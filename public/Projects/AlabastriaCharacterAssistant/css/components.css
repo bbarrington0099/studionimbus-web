@@ -2448,3 +2448,286 @@ p {
     background: var(--mountain-brown);
     color: var(--parchment-light);
 }
+
+.class-specializations-details {
+    margin: 1rem 0;
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    background: var(--glass-bg);
+}
+
+.class-specializations-summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ocean-blue);
+    background: linear-gradient(135deg, var(--glass-bg), var(--parchment-light));
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+    list-style: none;
+}
+
+.class-specializations-summary::-webkit-details-marker {
+    display: none;
+}
+
+.class-specializations-summary::before {
+    content: '▶';
+    color: var(--ocean-blue);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.class-specializations-details[open] .class-specializations-summary::before {
+    transform: rotate(90deg);
+}
+
+.class-specializations-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-bg));
+    color: var(--parchment-light);
+}
+
+.class-specializations-content {
+    padding: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+}
+
+.class-specialization-item {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-left: 3px solid var(--ocean-blue);
+    padding-left: 0.75rem;
+    background: rgba(30, 74, 95, 0.05);
+    border-radius: 4px;
+}
+
+.darkMode .class-specializations-details {
+    background: var(--glass-dark-bg);
+    border-color: var(--mountain-brown);
+}
+
+.darkMode .class-specializations-summary {
+    background: linear-gradient(135deg, var(--glass-dark-bg), var(--parchment-dark));
+    color: var(--ocean-blue);
+}
+
+.darkMode .class-specializations-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-dark-bg));
+    color: var(--parchment-light);
+}
+
+.darkMode .class-specializations-content {
+    border-top-color: var(--mountain-brown);
+}
+
+.darkMode .class-specialization-item {
+    background: rgba(30, 74, 95, 0.1);
+    border-left-color: var(--ocean-blue);
+}
+
+/* Home Button Styles */
+#navControls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+}
+
+.home-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+    background: var(--gold-accent);
+    color: var(--parchment-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.home-icon {
+    font-size: 1rem;
+}
+
+.home-text {
+    font-size: 0.9rem;
+}
+
+.darkMode .home-btn {
+    background: var(--ocean-blue);
+    color: var(--parchment-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.darkMode .home-btn:hover {
+    background: var(--gold-accent);
+    color: var(--parchment-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Dragonborn Affinity Styles */
+.affinity-details {
+    margin: 1rem 0;
+    border: 1px solid var(--mountain-brown);
+    border-radius: 8px;
+    background: var(--glass-bg);
+}
+
+.affinity-summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ocean-blue);
+    background: linear-gradient(135deg, var(--glass-bg), var(--parchment-light));
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+    list-style: none;
+}
+
+.affinity-summary::-webkit-details-marker {
+    display: none;
+}
+
+.affinity-summary::before {
+    content: '▶';
+    color: var(--ocean-blue);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.affinity-details[open] .affinity-summary::before {
+    transform: rotate(90deg);
+}
+
+.affinity-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-bg));
+    color: var(--parchment-light);
+}
+
+.affinity-content {
+    padding: 1rem;
+    border-top: 1px solid var(--mountain-brown);
+}
+
+.affinity-description {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--mountain-brown);
+}
+
+.affinity-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dragon-option-details {
+    border: 1px solid var(--ocean-blue);
+    border-radius: 6px;
+    background: rgba(30, 74, 95, 0.05);
+}
+
+.dragon-option-summary {
+    padding: 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ocean-blue);
+    background: rgba(30, 74, 95, 0.1);
+    border-radius: 6px 6px 0 0;
+    transition: all 0.3s ease;
+    list-style: none;
+}
+
+.dragon-option-summary::-webkit-details-marker {
+    display: none;
+}
+
+.dragon-option-summary::before {
+    content: '▶';
+    color: var(--ocean-blue);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.dragon-option-details[open] .dragon-option-summary::before {
+    transform: rotate(90deg);
+}
+
+.dragon-option-summary:hover {
+    background: rgba(30, 74, 95, 0.2);
+}
+
+.dragon-option-content {
+    padding: 0.75rem;
+    border-top: 1px solid var(--ocean-blue);
+}
+
+.dragon-option-info p {
+    margin: 0.5rem 0;
+    padding: 0.25rem 0;
+}
+
+.dragon-option-info strong {
+    color: var(--ocean-blue);
+}
+
+/* Dark Mode for Affinity */
+.darkMode .affinity-details {
+    background: var(--glass-dark-bg);
+    border-color: var(--mountain-brown);
+}
+
+.darkMode .affinity-summary {
+    background: linear-gradient(135deg, var(--glass-dark-bg), var(--parchment-dark));
+    color: var(--ocean-blue);
+}
+
+.darkMode .affinity-summary:hover {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--glass-dark-bg));
+    color: var(--parchment-light);
+}
+
+.darkMode .affinity-content {
+    border-top-color: var(--mountain-brown);
+}
+
+.darkMode .affinity-description {
+    color: var(--dark-text-secondary);
+}
+
+.darkMode .dragon-option-details {
+    background: rgba(30, 74, 95, 0.1);
+    border-color: var(--ocean-blue);
+}
+
+.darkMode .dragon-option-summary {
+    background: rgba(30, 74, 95, 0.2);
+    color: var(--ocean-blue);
+}
+
+.darkMode .dragon-option-summary:hover {
+    background: rgba(30, 74, 95, 0.3);
+}
+
+.darkMode .dragon-option-content {
+    border-top-color: var(--ocean-blue);
+}
+
+.darkMode .dragon-option-info strong {
+    color: var(--ocean-blue);
+}

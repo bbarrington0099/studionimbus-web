@@ -12,9 +12,15 @@
     <nav class="reverse">
         <img src="../../Projects/AlabastriaCharacterAssistant/alabastriaFavicon.png" alt="Logo" id="logo" class="reverse">
         <h1 id="title" class="reverse">Alabastria - Lore of the Land</h1>
-        <div id="colorModeContainer" class="reverse">
-            <input type="checkbox" id="colorModeCheckbox" onchange="app.changeColorMode()" class="reverse">
-            <label for="colorModeCheckbox" id="colorModeLabel" class="reverse"></label>
+        <div id="navControls" class="reverse">
+            <button id="homeButton" onclick="app.goHome()" class="home-btn reverse" style="display: none;">
+                <span class="home-icon">🏠</span>
+                <span class="home-text">Home</span>
+            </button>
+            <div id="colorModeContainer" class="reverse">
+                <input type="checkbox" id="colorModeCheckbox" onchange="app.changeColorMode()" class="reverse">
+                <label for="colorModeCheckbox" id="colorModeLabel" class="reverse"></label>
+            </div>
         </div>
     </nav>
 

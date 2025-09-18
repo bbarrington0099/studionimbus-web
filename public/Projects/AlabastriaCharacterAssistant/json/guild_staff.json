@@ -27,7 +27,7 @@
         "name": "Ovlan Kalek",
         "race": "Vedalken",
         "class": "Order of Scribes Wizard",
-        "guild_role": "Librarian / Keeper of Records",
+        "guild_role": "Librarian / Researcher",
         "rank": "Silver",
         "image": "OvlanKalek.png",
         "appearance": "A blue-skinned Vedalken male of 55 years, with sharp features, pale eyes that seem almost without pupils, and intricate black tattoos curling across his bald head. He wears deep silver robes trimmed in blue, and carries both a staff crowned with a glowing orb and a well-worn tome. His movements are precise, though he often appears distracted as if caught in thought.",
@@ -70,5 +70,41 @@
         "personality": "Defiant, hot-tempered, and fiercely loyal to those she calls friends. Risha thrives on proving others wrong and takes insults personally, often lashing out in bursts of temper. She has little patience for plans or authority, preferring to improvise and follow her instincts. Despite her criminal past, she values bonds of loyalty above all else and will fight tooth and claw for those she owes her trust.",
         "faith": "Not particularly devout. Risha places her faith in her skills, her tools, and the guild that gave her a second chance.",
         "background": "Once a criminal and fence in the underworld, Risha made her name by stealing, tinkering, and reselling goods with clever improvements. Her reckless streak nearly ended at the gallows until the guildmaster himself spared her life after she stole and modified his greataxe, impressing him enough to grant her a place in the guild. Now serving as the guild’s artificer and black-market contact, she repays her old debt through loyalty and craft, while never quite losing the chaotic spark that first carried her into trouble."
-    }
+    },
+    {
+        "name": "Lemun Silverflock",
+        "race": "Protector Aasimar",
+        "class": "Fighter",
+        "guild_role": "Butler / Trainee",
+        "rank": "Copper",
+        "image": "LemunSilverflock.png",
+        "appearance": "An 11-year-old boy with pale skin touched by a faint celestial glow, silver-white hair that falls into his eyes, and wings that only flicker into view when he is deeply moved or frightened. His eyes are a soft gray, carrying the weight of grief beyond his years. He wears plain but well-kept shirt with a brown leather vest, and keeps a wooden practice sword at his side wherever he goes.",
+        "personality": "Quiet but determined, Lemun carries himself with a sense of responsibility rare for his age. The loss of his family has made him mature quickly, but underneath his stoic front lies the heart of a child who still longs for safety and belonging. He has developed a strong sense of justice and fairness, sometimes stubbornly so, and looks up to the guild members as both mentors and surrogate family.",
+        "faith": "Having studied in the guild’s temple and learned from many members’ different devotions, Lemun chose to follow Kelemvor, Lord of the Dead and Justice. He prays to him not only for the safe passage of souls, but for the strength to ensure justice for the living and the fallen. His faith is quiet but resolute, rooted in the belief that death should be honored and justice always served.",
+        "background": "Lemun was only eight years old when his village was attacked and burned by a horde of goblins, leaving his parents dead. Hiding alone among the ruins for days, he was eventually found by a Huntbound Order guild party sent to investigate. They rescued him, and while accompanying them he learned much about goblins and their ways. Taken back to the guild hall, he was given the rank of Copper with the understanding that he would serve, train, and grow within the guild until he could properly take up the adventuring mantle. Now, at 11 years old, Lemun works as the guild’s butler — tending to the hall, helping with chores, and assisting the members as needed. Though still young, he has already shown a fierce devotion to justice and carries within him the promise of a protector destined to rise."
+    },
+    {
+        "name": "Bolagor Bonejaw",
+        "race": "Orc",
+        "class": "College of Lore Bard",
+        "guild_role": "Cook / Negotiator",
+        "rank": "Coal",
+        "image": "BolagorBonejaw.png",
+        "appearance": "A towering orc of 48 years, standing 6’4” and weighing 235 pounds, with broad shoulders and a strong frame built from years in the kitchen. His tusks are slightly worn, and one bears a small chip from a long-forgotten scuffle. His skin is a muted green-gray, marked with faint scars, and his black hair is kept shaved close to the scalp for practicality. His deep-set eyes gleam with shrewd intelligence. He typically wears a heavy apron, with knives and spice pouches hanging from his belt like weapons of his trade.",
+        "personality": "Gruff but generous, Bolagor has a practical nature shaped by years of hard work. He is stubborn when it comes to coin and haggles relentlessly, yet he does so for the good of the guild rather than selfish gain. Despite his grumbling tone, he takes pride in feeding the Huntbound Order and making sure they are never short of supplies. He enjoys telling exaggerated tales of culinary duels and merchant bargains won, often to entertain the younger members of the hall.",
+        "faith": "Bolagor follows no god, placing his trust instead in skill, hard work, and the bonds of his guild. He respects faith in others but sees his craft and cleverness as his guiding lights.",
+        "background": "Born into the mercantile circles of artisans, Bolagor trained under a master cook in his youth, learning both the art of food and the art of negotiation. The workshop where he apprenticed remains sacred to him, a place he believes forged his identity. Never content to settle, he sought greater purpose beyond simple trade, eventually finding a place within the Huntbound Order. There, he became the guild’s cook and negotiator, ensuring not only that the members are well-fed but also that their supplies and expenses are managed with keen efficiency. Though gruff with his coin, he is ultimately generous, viewing his skills as gifts meant to benefit the world. He is known among the guild as a man who can turn the humblest of rations into feasts and the harshest of merchants into allies."
+    },
+    {
+        "name": "Jade Clearrock",
+        "race": "Emerald Gem Dragonborn",
+        "class": "Warlock of the Archfey",
+        "guild_role": "Quest Receptionist / Records Keeper",
+        "rank": "Iron",
+        "image": "JadeClearrock.png",
+        "appearance": "A gem dragonborn whose crystalline scales shimmer in hues of emerald and silver under the light, giving her a calm and commanding presence. Her features are sharp and refined, often softened by a faint, knowing smile. Though age has dulled some of Her vibrancy, Her movements remain deliberate and graceful. Her attire is well-kept yet practical: layered robes with subtle embroidery, a ledger always in hand, and a faint scent of ink and herbs lingering about her.",
+        "personality": "Unflappable and composed, Jade is known for remaining calm in even the most chaotic situations. her voice is measured, never raised, and she prefer diplomacy over confrontation. A natural negotiator, Jade has a knack for turning potential conflict into cooperation. She are kind but guarded, and though her past is filled with shadows, she now channel her sharp wit and keen perception into keeping the Huntbound Order running smoothly.",
+        "faith": "Jade places her faith in Tymora, Lady Luck. Once a patron prayed to in secrecy before dangerous missions, Tymora is now a source of comfort and guidance in Jade’s retirement, representing the risks and chances that shaped her life.",
+        "background": "Jade began her life in the shadows, working as a spy and blackmailer, dealing in secrets and political leverage. However, the constant web of lies and danger grew wearisome, and Jade sought a new path. Leaving espionage behind, she joined the Huntbound Order, turning her skills toward adventuring and monster hunting. It was during this period that Jade formed a pact with an Archfey patron, honing her powers as a warlock. Age and experience, however, eventually led Jade to retire from field work. With retirement came the dissolution of her fey contract, the bond fading as she stepped away from the life of quests and combat. Now, Jade serves the Huntbound Order as its quest receptionist and records keeper, managing missions, tracking reports, and ensuring the guild’s operations run with precision. Though no longer wielding eldritch power, Jade’s sharp mind, calm demeanor, and gift for subtle persuasion make her just as valuable as ever."
+    }        
 ]

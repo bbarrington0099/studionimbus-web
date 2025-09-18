@@ -88,6 +88,9 @@ const app = {
         await this.loadMonsterSlayersGuideData();
         this.setupModalListeners();
         this.showSection('welcome-section');
+
+        // Initialize home button visibility
+        this.updateHomeButton('welcome-section');
     },
 
     // Setup modal event listeners
@@ -755,11 +758,33 @@ const app = {
         });
         document.getElementById(sectionId).classList.add('active');
 
+        // Show/hide home button based on current section
+        this.updateHomeButton(sectionId);
+
         // Scroll to top when showing a new section
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
+    },
+
+    updateHomeButton(sectionId) {
+        const homeButton = document.getElementById('homeButton');
+        if (homeButton) {
+            if (sectionId === 'welcome-section') {
+                homeButton.style.display = 'none';
+            } else {
+                homeButton.style.display = 'flex';
+            }
+        }
+    },
+
+    goHome() {
+        this.currentFilter = null;
+        this.currentSelection = null;
+        this.navigationHistory = [];
+        this.currentSubclass = null;
+        this.showSection('welcome-section');
     },
 
     setFilter(filterType) {
@@ -4216,15 +4241,22 @@ const app = {
                     ${Array.from(raceRelations.entries()).map(([race, relations]) => `
                         <div class="language-category">
                             <strong>${race}</strong><br>
-                                    <strong>Native to ${this.currentSelection} because:</strong> ${relations[0].reason}<br><br>
-                                    <strong>Class Specializations:</strong><br>
+                            <strong>Native to ${this.currentSelection} because:</strong> ${relations[0].reason}<br><br>
+                            
+                            <details class="class-specializations-details">
+                                <summary class="class-specializations-summary">
+                                    <strong>Class Specializations (${relations.length})</strong>
+                                </summary>
+                                <div class="class-specializations-content">
                                     ${relations.map(rel => `
-                                <div style="margin: 0.25rem 0; padding: 0.25rem; border-left: 3px solid var(--ocean-blue); padding-left: 0.5rem;">
-                                    <strong>${rel.class} (${rel.subclass})</strong>: ${rel.subclassReason}
-                                                ${this.createNavButton('class', rel.class, rel.subclass, rel.subclass)}
+                                        <div class="class-specialization-item">
+                                            <strong>${rel.class} (${rel.subclass})</strong>: ${rel.subclassReason}
+                                            ${this.createNavButton('class', rel.class, rel.subclass, rel.subclass)}
                                         </div>
                                     `).join('')}
                                 </div>
+                            </details>
+                        </div>
                     `).join('')}
                 </div>
             </details>
@@ -4479,21 +4511,50 @@ const app = {
                                             <p class="subrace-context"><strong>In Alabastria:</strong> ${subrace.alabastria_context}</p>
                                             <p class="subrace-playstyle"><strong>Playstyle:</strong> ${subrace.playstyle}</p>
                                         </div>
-                                        <details>
-                                            <summary>Traits</summary>
-                                            <div class="details-content-inner">
-                                                ${subrace.traits.map(trait => `
-                                                    <div class="trait-item">
-                                                        <h5>${trait.name}</h5>
-                                                        <p>${trait.description}</p>
+                                        ${subrace.affinity ? `
+                                            <details class="affinity-details">
+                                                <summary class="affinity-summary">
+                                                    <strong>${subrace.affinity.name}</strong>
+                                                </summary>
+                                                <div class="affinity-content">
+                                                    <p class="affinity-description">${subrace.affinity.description}</p>
+                                                    
+                                                    <div class="affinity-options">
+                                                        ${subrace.affinity.options.map(option => `
+                                                            <details class="dragon-option-details">
+                                                                <summary class="dragon-option-summary">
+                                                                    <strong>${option.name}</strong>
+                                                                </summary>
+                                                                <div class="dragon-option-content">
+                                                                    <div class="dragon-option-info">
+                                                                        <p><strong>Damage Resistance:</strong> ${option.damage_resistance}</p>
+                                                                        <p><strong>Breath Weapon:</strong> ${option.breath_weapon}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </details>
+                                                        `).join('')}
                                                     </div>
-                                                `).join('')}
-                                            </div>
-                                        </details>
+                                                </div>
+                                            </details>
+                                        ` : subrace.traits ? `
+                                            <details>
+                                                <summary>Traits</summary>
+                                                <div class="details-content-inner">
+                                                    ${subrace.traits.map(trait => `
+                                                        <div class="trait-item">
+                                                            <h5>${trait.name}</h5>
+                                                            <p>${trait.description}</p>
+                                                        </div>
+                                                    `).join('')}
+                                                </div>
+                                            </details>
+                                        ` : ''}
                                         
-                                        <details>
-                                            <summary>Deity Relationships</summary>
-                                            <div class="details-content-inner">
+                                        <details class="affinity-details">
+                                            <summary class="affinity-summary">
+                                                <strong>Deity Relationships</strong>
+                                            </summary>
+                                            <div class="affinity-content">
                                                 ${this.renderSubraceDeityRecommendations(raceData.race, subrace.name)}
                                             </div>
                                         </details>
@@ -4540,9 +4601,11 @@ const app = {
                 </div>
             </details>
             
-            <details>
-                <summary>Deity Recommendations</summary>
-                <div class="details-content-inner">
+            <details class="affinity-details">
+                <summary class="affinity-summary">
+                    <strong>Deity Recommendations</strong>
+                </summary>
+                <div class="affinity-content">
                     ${this.renderRaceDeityRecommendations(raceData.race, this.currentSubrace)}
                 </div>
             </details>
@@ -4976,9 +5039,11 @@ const app = {
                 </details>
             ` : ''}
             
-            <details>
-                <summary>Deity Recommendations</summary>
-                <div class="details-content-inner">
+            <details class="affinity-details">
+                <summary class="affinity-summary">
+                    <strong>Deity Recommendations</strong>
+                </summary>
+                <div class="affinity-content">
                     ${this.renderClassDeityRecommendations(classData.class)}
                 </div>
             </details>
