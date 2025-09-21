@@ -437,6 +437,20 @@
         "reasoning": "Vengeance Paladins, specializing in retribution and justice, favor Tempus for strategy and battle, Bane for tyranny and conquest, and Tymora for luck. Their vengeful nature makes them favor war and justice deities."
     },
     {
+        "class": "Paladin",
+        "subclass": "Oath of the Crown",
+        "primary_deities": [
+            "Lathander",
+            "Tymora",
+            "Vergadain"
+        ],
+        "secondary_deities": [
+            "Tempus",
+            "Bahamut"
+        ],
+        "reasoning": "Crown Paladins, serving law and civilization, favor Lathander for renewal and hope in governance, Tymora for good fortune in civic matters, and Vergadain for wealth and commerce that supports civilization. Their lawful nature makes them favor light and prosperity deities."
+    },
+    {
         "class": "Barbarian",
         "subclass": "Berserker",
         "primary_deities": [

@@ -41,6 +41,11 @@
                     "reason": "Tank with healing, divine smite for burst damage"
                 },
                 {
+                    "class": "Paladin",
+                    "subclass": "Oath of the Crown",
+                    "reason": "Lawful protector with ally defense and civic duty focus"
+                },
+                {
                     "class": "Barbarian",
                     "subclass": "Path of the Totem Warrior",
                     "reason": "Damage resistance, high HP, versatile totems"
@@ -179,6 +184,11 @@
                     "class": "Cleric",
                     "subclass": "War Domain",
                     "reason": "Healing, combat, and divine magic"
+                },
+                {
+                    "class": "Paladin",
+                    "subclass": "Oath of the Crown",
+                    "reason": "Law enforcement, civic protection, and divine magic"
                 }
             ]
         },
@@ -437,6 +447,10 @@
                 {
                     "class": "Paladin",
                     "subclass": "Oath of Devotion"
+                },
+                {
+                    "class": "Paladin",
+                    "subclass": "Oath of the Crown"
                 },
                 {
                     "class": "Ranger",
