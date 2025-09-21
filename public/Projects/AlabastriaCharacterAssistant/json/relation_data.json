@@ -2459,6 +2459,51 @@
         ],
         "alabastria_context": "Paladins of the Oath of the Watchers in Alabastria are the vigilant warriors who combine superior combat skills with divine magic, representing the perfect fusion of vigilance and sword. They are particularly common among the watch orders and elite guard units, where their vigilant abilities are highly valued. Many serve as vigilant warriors and watchers, using their unique combination of abilities to protect others. Their ability to excel in divine magic and combat has made them invaluable for both vigilance and practical purposes.",
         "playstyle": "Vigilant martial character with divine magic and superior combat skills. You excel at divine magic through your Sacred Oath and Channel Divinity features, while your Divine Smite provides additional combat options. Your Aura of the Sentinel protects against extraplanar threats, while your martial abilities make you effective in combat. You're most effective when you can use divine magic and when you can excel in combat through both physical and divine means."
+      },
+      {
+        "subclass": "Oath of the Crown",
+        "races": [
+          {
+            "name": "Human",
+            "subclass_reason": "civic duty and law enforcement",
+            "continent": "Skratonia",
+            "continent_reason": "dominant city-state populace with civic traditions"
+          },
+          {
+            "name": "Dragonborn",
+            "subclass_reason": "draconic honor and royal service",
+            "continent": "Bulsania",
+            "continent_reason": "militarized society with strong hierarchies"
+          },
+          {
+            "name": "Dwarf",
+            "subclass_reason": "traditional loyalty and mountain stronghold defense",
+            "continent": "Maltman of Kamalatman",
+            "continent_reason": "mountain strongholds require royal guards"
+          },
+          {
+            "name": "Orc",
+            "subclass_reason": "tribal loyalty and unified kingdom service",
+            "continent": "Katman of Kamalatman",
+            "continent_reason": "swamp kingdom under unified rule"
+          }
+        ],
+        "prominent_continents": [
+          {
+            "continent": "Skratonia",
+            "reason": "city-states require civic protectors and law enforcers"
+          },
+          {
+            "continent": "Katman of Kamalatman",
+            "reason": "unified kingdom needs loyal defenders of the crown"
+          },
+          {
+            "continent": "Bulsania",
+            "reason": "militarized society values loyalty and hierarchy"
+          }
+        ],
+        "alabastria_context": "Paladins of the Oath of the Crown in Alabastria are the lawful protectors who combine superior combat skills with divine magic, representing the perfect fusion of law and sword. They are particularly common among the royal guards and civic protectors, where their lawful abilities are highly valued. Many serve as royal guards and civic enforcers, using their unique combination of abilities to protect others. Their ability to excel in divine magic and combat has made them invaluable for both civic duty and practical purposes.",
+        "playstyle": "Lawful martial character with divine magic and superior combat skills. You excel at divine magic through your Sacred Oath and Channel Divinity features, while your Divine Smite provides additional combat options. Your Divine Allegiance protects allies by taking damage for them, while your martial abilities make you effective in combat. You're most effective when you can use divine magic and when you can excel in combat through both physical and divine means."
       }
     ]
   },

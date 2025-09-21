@@ -1259,6 +1259,34 @@
                 ],
                 "alabastria_context": "Half-Orc Vengeance Paladins in Katman's frontier pursue justice with savage determination. Tiefling paladins seek to overcome their infernal heritage through righteous action, while Human avengers hunt down those who prey on the innocent.",
                 "playstyle": "Aggressive paladin focused on hunting down evil. Ideal for players who want to be a relentless force of justice."
+            },
+            {
+                "name": "Oath of the Crown",
+                "description": "Paladins who serve the law and civilization, defending the social order and protecting the innocent through loyalty to crown and country.",
+                "key_features": [
+                    {
+                        "name": "Channel Divinity: Champion Challenge",
+                        "level": 3,
+                        "description": "Challenge a creature to fight you, imposing disadvantage on attacks against others"
+                    },
+                    {
+                        "name": "Channel Divinity: Turn the Tide",
+                        "level": 3,
+                        "description": "Use reaction to heal and rally nearby allies when they're reduced to 0 hit points"
+                    },
+                    {
+                        "name": "Divine Allegiance",
+                        "level": 7,
+                        "description": "Use reaction to take damage meant for an ally within 5 feet"
+                    },
+                    {
+                        "name": "Unbreakable Majesty",
+                        "level": 15,
+                        "description": "Cast compulsion as a bonus action and gain immunity to being charmed or frightened"
+                    }
+                ],
+                "alabastria_context": "Human Crown Paladins in Skratonia's city-states serve as royal guards and civic protectors, upholding the law and defending the democratic councils. Dragonborn Crown Paladins in Bulsania's militarized society embody draconic honor and loyalty to the Icebound Confederacy. Dwarven Crown Paladins in Maltman serve as elite royal guards for Queen Bronwyn, while Orc Crown Paladins in Katman defend High King Gorak's unified kingdom. These paladins often serve as diplomats, judges, and elite military officers, bridging the gap between divine righteousness and civic duty.",
+                "playstyle": "Lawful protector focused on defending allies and maintaining order. Perfect for players who want to be a noble guardian of civilization and law."
             }
         ]
     },
