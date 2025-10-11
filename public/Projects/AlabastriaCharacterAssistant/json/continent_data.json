@@ -1,10 +1,23 @@
 [
     {
         "world": "Alabastria",
-        "description": "This world of wonders was once a beastly plane simply consisting of wild creatures within its forests, mountains, deserts, and plains. It is unknown in record what was responsible or how it happened, but groups of creatures and peoples from all different manner of realms and worlds of existence began reappearing in this new land and its various continents. Through much loss and areal infighting, not understanding or knowing what had happened to their homes, as the quickest to adapt and recover rose to establish the beginnings of control, now many starting new generations, permanent homes, their own ways of life, making Alabastria what it is today. <hr> It has now been 800 cycles since The Bringing, most races are multiple generations deep, empires have risen and fallen, villages have become towns and towns have become capital cities, politics from whatever land their ancestors hailed from are long forgotten for this current worlds kingdoms."
+        "description": "This world of wonders was once a beastly plane simply consisting of wild creatures within its forests, mountains, deserts, and plains. It is unknown in record what was responsible or how it happened, but groups of creatures and peoples from all different manner of realms and worlds of existence began reappearing in this new land and its various continents. Through much loss and areal infighting, not understanding or knowing what had happened to their homes, as the quickest to adapt and recover rose to establish the beginnings of control, now many starting new generations, permanent homes, their own ways of life, making Alabastria what it is today. <hr> It has now been 800 cycles since The Bringing, most races are multiple generations deep, empires have risen and fallen, villages have become towns and towns have become capital cities, politics from whatever land their ancestors hailed from are long forgotten for this current worlds kingdoms.",
+        "circumference_mi": 15000,
+        "diameter_mi": 4775,
+        "age_cycles": 800,
+        "surface_area_sq_mi": 716100000
     },
     {
         "continent": "Kuriguer",
+        "length_mi": 2200,
+        "width_mi": 1400,
+        "surface_area_sq_mi": 2300000,
+        "voyage": [
+            {"to": "Maltman", "distance_mi": 800, "travel_days": 16, "travel_hours": 16, "travel_minutes": 0},
+            {"to": "Bulsania", "distance_mi": 1500, "travel_days": 31, "travel_hours": 6, "travel_minutes": 0},
+            {"to": "Skratonia", "distance_mi": 2100, "travel_days": 43, "travel_hours": 18, "travel_minutes": 0},
+            {"to": "Kantra", "distance_mi": 2800, "travel_days": 58, "travel_hours": 8, "travel_minutes": 0}
+        ],
         "description": "Here is the land of magic, far from a fairytale sense. With the establishment of two fine towns along the coast and smaller settlements leading South, the rest of this land is shrouded beyond a forest not typically kind to strangers.",
         "colors": [
             "Purple",
@@ -169,6 +182,14 @@
     },
     {
         "continent": "Katman of Kamalatman",
+        "width_mi": 1100,
+        "height_mi": 800,
+        "surface_area_sq_mi": 700000,
+        "voyage": [
+            {"to": "Skratonia", "distance_mi": 1400, "travel_days": 29, "travel_hours": 4, "travel_minutes": 0},
+            {"to": "Maltman", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0},
+            {"to": "Alatman", "distance_mi": 800, "travel_days": 16, "travel_hours": 16, "travel_minutes": 0}
+        ],
         "description": "Home to most of the kingdoms inhabitants, this land has a stretch of planes preluding a mass of swampy less populated areas.",
         "colors": [
             "Pink",
@@ -193,6 +214,7 @@
             }
         },
         "kingdom": "Kamalatman",
+        "kingdom_surface_area_sq_mi": 2130000,
         "kingdom_colors": [
             "Gold",
             "Crimson"
@@ -363,6 +385,14 @@
     },
     {
         "continent": "Alatman of Kamalatman",
+        "width_mi": 900,
+        "height_mi": 600,
+        "surface_area_sq_mi": 430000,
+        "voyage": [
+            {"to": "Bulsania", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0},
+            {"to": "Katman", "distance_mi": 800, "travel_days": 16, "travel_hours": 16, "travel_minutes": 0},
+            {"to": "Maltman", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0}
+        ],
         "description": "Land grouped of grey forests, flat swamps, and a timely volcano, exploring this land is quite popular due to the great natural riches that can be sent back, but settling there has proven quite difficult with the royal family's great taxes placed on the land with claims of wanting to regulate the removal of the materials found.",
         "colors": [
             "Orange",
@@ -387,6 +417,7 @@
             }
         },
         "kingdom": "Kamalatman",
+        "kingdom_surface_area_sq_mi": 2130000,
         "kingdom_colors": [
             "Gold",
             "Crimson"
@@ -543,6 +574,15 @@
     },
     {
         "continent": "Maltman of Kamalatman",
+        "width_mi": 1400,
+        "height_mi": 900,
+        "surface_area_sq_mi": 1000000,
+        "voyage": [
+            {"to": "Bulsania", "distance_mi": 900, "travel_days": 18, "travel_hours": 18, "travel_minutes": 0},
+            {"to": "Kuriguer", "distance_mi": 800, "travel_days": 16, "travel_hours": 16, "travel_minutes": 0},
+            {"to": "Alatman", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0},
+            {"to": "Katman", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0}
+        ],
         "description": "A very mountainous region, the kingdom sends ships to collect and spread many ores and materials across the world from the vastly efficient yet seemingly small mining villages.",
         "colors": [
             "Steel gray",
@@ -567,6 +607,7 @@
             }
         },
         "kingdom": "Kamalatman",
+        "kingdom_surface_area_sq_mi": 2130000,
         "kingdom_colors": [
             "Gold",
             "Crimson"
@@ -745,6 +786,14 @@
     },
     {
         "continent": "Skratonia",
+        "width_mi": 1800,
+        "height_mi": 1300,
+        "surface_area_sq_mi": 1800000,
+        "voyage": [
+            {"to": "Kuriguer", "distance_mi": 2100, "travel_days": 43, "travel_hours": 18, "travel_minutes": 0},
+            {"to": "Katman", "distance_mi": 1400, "travel_days": 29, "travel_hours": 4, "travel_minutes": 0},
+            {"to": "Kantra", "distance_mi": 2300, "travel_days": 47, "travel_hours": 22, "travel_minutes": 0}
+        ],
         "description": "While other worlds would likely consider this a desert wasteland, in Alabastria, Skratonia is the most populated land due to its' many open planes, and moderate temperate compared to much of the commoner welcome options or the swampy marshlands of the triontinental Kingdom of Kamalatman, allowing the growth of decent crops, leading to a very diverse mix of people of small settlements connected through major towns.",
         "colors": [
             "Green",
@@ -970,6 +1019,14 @@
     },
     {
         "continent": "Bulsania",
+        "width_mi": 800,
+        "height_mi": 500,
+        "surface_area_sq_mi": 320000,
+        "voyage": [
+            {"to": "Maltman", "distance_mi": 900, "travel_days": 18, "travel_hours": 18, "travel_minutes": 0},
+            {"to": "Alatman", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0},
+            {"to": "Kuriguer", "distance_mi": 1500, "travel_days": 31, "travel_hours": 6, "travel_minutes": 0}
+        ],
         "description": "The resident continent of ice and tough inhabitants holds few settlements on its' West coast before reaching a group of mountain ranges including the cloud towering Noxious Mountain, leading into a frozen land left to giants and titans.",
         "colors": [
             "Light blue",
@@ -1169,6 +1226,13 @@
     },
     {
         "continent": "Kantra",
+        "width_mi": 600,
+        "height_mi": 400,
+        "surface_area_sq_mi": 190000,
+        "voyage": [
+            {"to": "Kuriguer", "distance_mi": 2800, "travel_days": 58, "travel_hours": 8, "travel_minutes": 0},
+            {"to": "Skratonia", "distance_mi": 2300, "travel_days": 47, "travel_hours": 22, "travel_minutes": 0}
+        ],
         "description": "A counter to Bulsania, this land of fiery cracking earth and ash filled sky is home to creatures not known by the lands around it as no attempted explorations have returned, leading to quite the rumors of this hellish region. (No map as the land is uncharted)",
         "colors": [
             "Crimson",
@@ -1293,6 +1357,7 @@
     },
     {
         "continent": "Kingdom of Kamalatman",
+        "kingdom_surface_area_sq_mi": 2130000,
         "description": "The unified kingdom encompassing the three continents of Alatman, Maltman, and Katman, ruled by a single royal family with regional princes governing each continent.",
         "colors": [
             "Gold",
