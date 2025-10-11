@@ -3883,9 +3883,21 @@ const app = {
         }
     },
 
+    formatNumber(num) {
+        switch (typeof num) {
+            case 'number':
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            case 'string':
+                return num.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            default:
+                return num;
+        }
+    },
+
     renderContinentDetails(infoContainer) {
         // Find continent data using improved matching logic
         let continent = this.continentData.find(c => c.continent === this.currentSelection);
+        let world = this.continentData.find(c => c.world);
 
         // If exact match fails, try partial matching for Kamalatman regions
         if (!continent) {
@@ -3910,6 +3922,21 @@ const app = {
         infoContainer.innerHTML = `
                 <h3>About ${this.currentSelection}</h3>
                 <p>${continent.description}</p>
+                <p>
+                <strong><em>Size/Distance:</em></strong><br>
+                <em>Length - ${this.formatNumber(continent.height_mi)} miles</em><br>
+                <em>Width - ${this.formatNumber(continent.width_mi)} miles</em><br>
+                <em>Area - ${this.formatNumber(continent.surface_area_sq_mi)} square miles</em><br>
+                ${this.formatNumber(continent.kingdom_surface_area_sq_mi) ? `Kingdom - ${this.formatNumber(continent.kingdom_surface_area_sq_mi)} square miles<br>` : ''}<br>
+                <strong><em>Voyages</em></strong><br>
+                ${continent.voyage ? continent.voyage.map(voyage => `
+                    <em>To ${voyage.to}:</em> Approx. ${voyage.distance_mi} miles in ${voyage.travel_days} days, ${voyage.travel_hours} hours and ${voyage.travel_minutes} minutes
+                `).join('<br>') : 'No notable voyages recorded.'}<br><br>
+                <strong><em>World Size:</em></strong><br>
+                <em>Circumferece - ${this.formatNumber(world.circumference_mi)} miles</em><br>
+                <em>Diameter - ${this.formatNumber(world.diameter_mi)} miles</em><br>
+                <em>Surface Area - ${this.formatNumber(world.surface_area_sq_mi)} square miles</em><br>
+                </p>
                 
                 <div class="continent-image-row" style="display: flex; gap: 1rem; align-items: flex-start; margin-top: 1rem; flex-wrap: wrap;">
                 <img src="continent_images/${this.currentSelection.split(" ")[0]}.png" 
