@@ -4,16 +4,166 @@
         "rank": "Mithral",
         "level": 20,
         "class": "War Domain Cleric",
+        "race": "Leonin",
         "managed_by": "@ironclad57",
         "image": "TharosRaggenthraw.png",
         "status": "Active",
         "specialization": "Monster Hunting Leadership",
+        "tags": [
+            "melee",
+            "healer",
+            "dragon slayer",
+            "protector",
+            "folk legend",
+            "honorable"
+        ],
         "notable_achievements": [
             "Founded the Huntbound Order",
             "Slayed the Terror Wyvern of Skratonia",
             "United diverse adventurers under one cause"
         ],
+        "background_summary": "A battle-hardened cleric who served in the Alliance Military before founding the Huntbound Order. Known for his unwavering faith in Tempus and his strategic mind in monster hunting.",
         "deity": "Tempus",
         "deity_reasoning": "As a War Domain Cleric and founder of the Huntbound Order, Tharos follows Tempus, the Lord of Battles, who represents honor, strategy, and the glory of combat."
+    },
+    {
+        "name": "Xandros Kirvath",
+        "rank": "Iron",
+        "level": 6,
+        "class": "Life Domain Cleric",
+        "race": "Kalashtar",
+        "managed_by": "@qwerty1337x",
+        "image": "XandrosKirvath.png",
+        "status": "Active",
+        "specialization": "Tank Healer",
+        "tags": [
+            "healer",
+            "tank",
+            "justiciar",
+            "peacemaker",
+            "spiritual speacialist"
+        ],
+        "notable_achievements": [
+            "Uncovered the attrocities of House Vellorien"
+        ],
+        "background_summary": "Xandros Kirvath, a Kalashtar bound to the wise Hashalaq Quori Ishara, grew up in the secluded lands of Skratonia guided by prophetic dreams and spiritual counsel.\nThese shared visions—often of destruction and suffering—pushed him toward action rather than quiet contemplation, shaping him into a protector driven by foresight.\nGrowing up among elves, he became a cleric of Labelas Enoreth, embracing teachings of time, planning, and longevity that aligned with his strategic nature.\n\nXandros is friendly in daily life but becomes focused and silent during missions, communicating mainly through tactical commands or quiet exchanges with Ishara.\nThree years ago, recurring visions of catastrophe led him to join The Huntbound Order, where his careful planning and prophetic insight made him a valuable, if unconventional, member.\nMany unfamiliar with Kalashtar assume he is mad when they hear him speaking to Ishara aloud.\n\nAlthough disciplined, Xandros struggles to contain the powerful emotional energies he absorbs, sometimes manifesting in glowing eyes or surges of amplified power.\nHis purpose is unwavering: protect the innocent, confront the nightmares threatening the waking world, and use his connection to time and foresight to shape a safer future.",
+        "deity": "Labelas Enoreth",
+        "deity_reasoning": "Xandros follows Labelas Enoreth, the Elven deity of time, longevity, and wisdom, respecting the god's teachings on foresight and the preservation of what might yet be saved resonate deeply with his own prophetic visions and strategic calling.."
+    },
+    {
+        "name": "Verdi SapKnot",
+        "rank": "Iron",
+        "level": 5,
+        "class": "Warlock of the Archfey",
+        "race": "Warforged",
+        "managed_by": "@hobonthedge",
+        "image": "VerdiSapKnot.png",
+        "status": "Active",
+        "specialization": "Making things Better",
+        "tags": [
+            "ranged",
+            "area effect",
+            "justiciar",
+            "peacemaker",
+            "spiritual speacialist"
+        ],
+        "notable_achievements": [
+            "Uncovered the attrocities of House Vellorien"
+        ],
+        "background_summary": "Verdi Sapknot began as a warforged core carried into the world during The Bringing.\nOver decades, his inert core lay buried until a young tree grew around it, eventually forming a full wooden body that awakened with no memory—only the fierce instinct that his continued existence was vitally important.\nIn his earliest moments he forged a pact with a Dryad, whether through salvation or opportunistic manipulation, and her magic bound his soul into the living wood that became his new form.\n\nNow a wooden warlock with a heart shaped by nature's whim, Verdi is both emotionally fragile and passionately protective of life, often overwhelmed by strong feelings and prone to dramatic outbursts.\nHe serves faithfully as the Dryad's emissary—returning to the grove every fifty years to report on the world—yet moves among people with bright, hopeful energy and an earnest desire to belong.\nDespite lacking a mouth, savoring no mead, and sometimes resorting to sticking a root or two into a mug to “blend in,” he remains cheerful, honest-hearted, and hilariously cursed with a nose that grows when he lies.\n\nVerdi dreams of becoming truly alive, clinging to the belief that something great would be lost if he ever perished.\nThough his past is a mystery, his future is driven by curiosity, devotion to his patron, and a Pinocchio-like longing to be a real boy.",
+        "deity": "Corellon Larethian",
+        "deity_reasoning": "Verdi's existence is tied to nature and life—his wooden body, pact with a dryad, and role as the guardian eyes of the grove all reflect a deep connection to the natural world. Corellon, as the elven god of magic, art, and nature, aligns with Verdi's desire to preserve life, respect its value, and interact with the living world despite his artificial form. The god's domain over creation, beauty, and the balance of life resonates with Verdi's struggle to maintain his own survival while protecting others and seeking a sense of “living” identity."
+    },
+    {
+        "name": "Krak of the Frostmarch Company",
+        "rank": "Iron",
+        "level": 5,
+        "class": "Drakewarden Ranger",
+        "race": "Hobgoblin",
+        "managed_by": "@x_seth_x.",
+        "image": "KrakFrostmarchCompany.png",
+        "status": "Active",
+        "specialization": "Close Combat Survivalist",
+        "tags": [
+            "melee",
+            "survivor",
+            "haunted",
+            "justiciar",
+            "peacemaker",
+            "spiritual speacialist"
+        ],
+        "notable_achievements": [
+            "Uncovered the attrocities of House Vellorien"
+        ],
+        "background_summary": "Krak was born into the Frostmarch Company, a hobgoblin clan of mercenaries and monster hunters in the frozen wastes of Bulsania. He grew up unsure of his true parentage, finding solace only in his two brothers, Zrar and Sabaak, while learning the harsh lessons of survival in a land where war was life itself. His early hunts, like facing a small Rimebeast, taught him resilience and the brutal reality of the frostbound wilderness.\n\nDuring a scouting mission with Zrar, Krak encountered a supernatural blizzard that seemed to hunt them with violent, almost sentient intent. Zrar sacrificed himself to save Krak, embedding him in a crater and shielding him with his cloak. Krak survived, carrying Zrar's warhammer and pauldron, haunted by nightmares of the blizzard and the grotesque apparitions of his fallen brother, who began to appear in fleeting glimpses and even manipulate the material world to aid him.\n\nOver time, Krak became a lethal and disciplined warrior, fueled by pain, hatred, and the desire to honor Zrar's sacrifice. Participating in raids like the one against the Icemaw tribe, he adhered strictly to the company's brutal rules while honing his skills in combat and survival. The experiences shaped him into a determined and haunted fighter, bound to both the memory of his brother and the unforgiving landscape of the Frostmarch."
+    },
+    {
+        "name": "Sabaak of the Frostmarch Company",
+        "rank": "Iron",
+        "level": 6,
+        "class": "College of Swords Bard",
+        "race": "Hobgoblin",
+        "managed_by": "@captaindonjulio",
+        "image": "SabaakFrostmarchCompany.png",
+        "status": "Active",
+        "specialization": "Support Melee Combatant",
+        "tags": [
+            "melee",
+            "support",
+            "haunted",
+            "justiciar",
+            "peacemaker",
+            "spiritual speacialist"
+        ],
+        "notable_achievements": [
+            "Uncovered the attrocities of House Vellorien"
+        ],
+        "background_summary": "Sabaak grew up alongside his brothers in the Frostmarch Company, trained from an early age to be a mercenary in the harsh, frozen wastes of Bulsania. Life was brutal, with every contract a deadly test of skill and survival, and Sabaak often compared his fate to the more comfortable lives of traveling bards he encountered. This contrast sparked an interest in the art of performance, and he began secretly learning music and storytelling, hoping to leave the mercenary life behind. \n\nHowever, the death of his eldest brother, Zrar, on a dangerous mission solidified his resolve to act; he realized that the mercenary life was both inescapable and unforgiving. Sabaak's path became one of balance—honoring the bonds and lessons of his clan while nurturing his own talents and dreams beyond the icy battlefield."
+    },
+    {
+        "name": "Varkun Tarlok",
+        "rank": "Iron",
+        "level": 5,
+        "class": "Path of the Berserker Barbarian",
+        "race": "Half-Orc",
+        "managed_by": "@therealdylboi",
+        "image": "VarkunTarlok.png",
+        "status": "Active",
+        "specialization": "Swing",
+        "tags": [
+            "melee",
+            "tank",
+            "berserker",
+            "justiciar",
+            "peacemaker",
+            "spiritual speacialist"
+        ],
+        "notable_achievements": [
+            "Uncovered the attrocities of House Vellorien"
+        ],
+        "background_summary": "Varkun Tarlok, a half-orc, was born into The Huntbound Order, with his father serving as a respected elder until his death on a dangerous mission. With no other family, the guild took him in, raising him among its members while assigning him chores like cleaning armor and fetching mead and food, teaching him discipline and the harsh realities of guild life from a young age. \n\nAs he grew, Varkun began formal training, learning the ways of the Path of the Berserker, channeling his natural half-orc strength and ferocity into combat prowess. The guild became both his family and his proving ground, shaping him into a loyal, battle-hardened warrior eager to prove himself on the battlefield. \n\nDespite the rigors of his upbringing, Varkun developed a deep sense of camaraderie with his fellow guild members, understanding that survival and honor in the Iron guild require both strength and loyalty. His father's legacy, combined with his own relentless drive, fuels his path as a formidable barbarian, ever ready to defend the guild and assert his place among its ranks."
+    },
+    {
+        "name": "Whisper",
+        "rank": "Iron",
+        "level": 5,
+        "class": "Arcane Trickster Rogue",
+        "race": "Kenku",
+        "managed_by": "@dr.buckets13",
+        "image": "Whisper.png",
+        "status": "Active",
+        "specialization": "Becoming a Shadow",
+        "tags": [
+            "stealth",
+            "ranged",
+            "spy",
+            "justiciar",
+            "peacemaker",
+            "spiritual speacialist"
+        ],
+        "notable_achievements": [
+            "Uncovered the attrocities of House Vellorien"
+        ],
+        "background_summary": "Whisper hasn't revealed much about his past, maintaining an air of mystery that intrigues and unsettles those around them. As a Kenku, Whisper's origins are shrouded in secrecy, with few knowing where he came from or how he acquired his unique skills. His ability to mimic sounds and voices has made them an invaluable asset to The Huntbound Order, often undertaking covert missions that require stealth and cunning.\n\nDespite his enigmatic nature, Whisper has proven to be a loyal and resourceful member of the guild, using his talents to gather intelligence and execute precise strikes against formidable foes. His quiet demeanor belies a sharp mind and a fierce determination to protect his comrades and uphold the guild's honor."
     }
 ]

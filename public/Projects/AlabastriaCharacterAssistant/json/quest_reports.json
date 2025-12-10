@@ -43,11 +43,106 @@
                 "significance": "Original guild standard, still displayed in the Great Hall"
             }
         ],
+        "member_reports": [
+            {
+                "member_name": "Tharos Raggenthraw",
+                "report": "The battle was fierce, but my faith in Tempus and my resolve to protect the innocent saw me through. The wyvern was a formidable foe, but I was able to exploit its weaknesses and ultimately bring it down. This victory is not just mine; it belongs to all who will join the Huntbound Order in the future."
+            }
+        ],
         "fallen_members": [],
         "extra_notes": "This was not technically a guild quest since the guild didn't exist yet, but it is considered the foundational moment of the Huntbound Order. Tharos fought alone with only his faith in Tempus and his determination to protect the innocent. His armor was torn, his face scarred, but his resolve was unbroken. The victory speech he gave while standing over the wyvern's corpse became the guild's founding oath. The village he saved, Millhaven, later became one of the guild's strongest supporters and a major recruitment center. This solo victory also established Tharos's core philosophy: that those putting their lives on the line should determine their own methods, as long as the innocent are protected. When founding the guild, he welcomed hunters of all stripes - soldiers and sellswords, druids and rangers, rogues and mages - many bringing methods he might never use himself, including poison, forbidden magics, and merciless execution. He saw the necessity in diverse approaches to monster hunting.",
         "date": "755 Cycles After The Bringing",
         "location": "Millhaven Village, Central Skratonia",
         "duration": "Single day battle",
         "outcome": "Complete Success - Wyvern slain, village saved, guild founded"
+    },
+    {
+        "quest_name": "Ashen Whispers",
+        "quest_summary": "A Huntbound Order trial in which the party investigates hauntings near Tuinton, uncovering a vengeful spirit born from an injustice committed by House Vellorien during the First Continental War.",
+        "party_members": [
+            {
+                "name": "Xandros Kirvath",
+                "rank_at_time": "Copper",
+                "role": "Healer of ALL and Crowd Control"
+            },
+            {
+                "name": "Verdi SapKnot",
+                "rank_at_time": "Copper",
+                "role": "Ranged Support and Civilian Liaison"
+            },
+            {
+                "name": "Krak of the Frostmarch Company",
+                "rank_at_time": "Copper",
+                "role": "Frontline and... Ghost Hunter"
+            },
+            {
+                "name": "Sabaak of the Frostmarch Company",
+                "rank_at_time": "Copper",
+                "role": "Ranged Support and Proper Entertainment"
+            },
+            {
+                "name": "Varkun Tarlok",
+                "rank_at_time": "Copper",
+                "role": "Absorber of Damage and Wielder of Big Weapons"
+            },
+            {
+                "name": "Whisper",
+                "rank_at_time": "Copper",
+                "role": "Stealth Operative and Voice of Whoever"
+            }
+        ],
+        "quest_rank": "Iron",
+        "commissioned_by": "Warden Thalos of Suetonon",
+        "enemies": [
+            {
+                "name": "Elyndra Moonsigh",
+                "type": "Vengeful Spirit / Greater Banshee",
+                "threat_level": "High",
+                "description": "An elven devotee of Sehanine Moonbow murdered in secret by House Vellorien generations ago. Her rage, fueled by betrayal and the desecration of her shrine, manifests as nightmare-warping spiritual power."
+            },
+            {
+                "name": "Specters of the Shrine",
+                "type": "Undead Spirits",
+                "threat_level": "Moderate",
+                "description": "Spiritual fragments awakened and twisted by Elyndra Moonsigh's anguish. They phase through the shrine ruins to disrupt would be ruiners of her quest for justice."
+            },
+            {
+                "name": "Possessed Fallen Guards",
+                "type": "Wights and Specters",
+                "threat_level": "Moderate",
+                "description": "Corpses animated by Elyndra's psychic lashings, acting as her outer defenses around the ruined shrine."
+            }
+        ],
+        "special_awards_promotions": [
+            {
+                "recipient": "All Party Members",
+                "award": "Rank Promotion to Iron",
+                "description": "Passing this trial demonstrated their ability to handle complex hunts involving moral judgment, teamwork, and non-traditional threats. Each member showed growth in their roles, proving their readiness for greater challenges."
+            }
+        ],
+        "notable_loot_decor": [
+            {
+                "item": "Iron Horn of Valhalla",
+                "description": "Left as an offering to Sehanine Moonbow at the ruined shrine after the hunt, this horn is said to call on the spirits of fallen explorers.",
+                "significance": "A legendary item now in the hands of a member of the guild, ensuring that the spirits are only called on for honorable purposes."
+            }
+        ],
+        "member_reports": [
+            {
+                "member_name": "Official Guild Report",
+                "report": "I. Mission Summary\n\nA six-member party of Huntbound Copper Rank Adventurers was deployed to Tuinton following reports of spectral whisperings, violent possessions, and livestock panic. The proximity to the Ashen City—where spiritual anomalies are known to linger—necessitated guild intervention. City Guard declined involvement due to jurisdictional limitations regarding supernatural entities.\n\nThe assignment served both as a field trial and as an assessment of the members' capacity to engage a spiritual threat requiring judgment, restraint, and investigative reasoning.\n\nII. Findings & Investigation\n\nInitial signs within the village included:\n\nDomestic animals exhibiting fear responses and immobility.\n\nVillagers reporting whispered compulsions urging self-harm or violence.\n\nOne confirmed possession incident involving a farmer's son.\n\nArcane and religious inspection revealed spectral residue and ghostly presence, both indicators of unrest tied to an anchor-point. Trails of ash and claw scoring led toward a ruined shrine northeast of Tuinton.\n\nThe shrine was determined to have once been consecrated to Sehanine Moonbow, later destroyed during the First Continental War. Further evidence suggested intentional desecration rather than incidental war damage.\n\nIII. Hostile Encounters\nEncounter 1 — Outer Perimeter\n\nThe party engaged animated corpses and lesser specters surrounding the shrine ruins. Hostile entities included:\n\n2 Wights\n\n6 Specters\n\nEncounter 2 — Inner Sanctuary\n\nWithin the shrine's sunken altar chamber, the party made contact with:\n\nElyndra Moonsigh — Greater Banshee\nFormerly an elven devotee of Sehanine, her spirit was bound through violent death and betrayal. The desecrated altar served as her locus of torment.\n\nTwo additional specters manifested as protective extensions of her anguish.\n\nEnvironmental anomalies (ash-rippling ground, flickering ghostlight, and a crumbling ceiling) complicated combat conditions, indicating heightened spiritual agitation.\n\nIV. Historical Discovery\n\nThrough analysis of shrine markings, personal effects, and the spirit's fragmented recollections, the party uncovered evidence that:\n\nHouse Vellorien, a noble line with longstanding holdings in Tuinton, murdered Elyndra Moonsigh during the First Continental War.\nMotivation: land seizure through orchestrated civilian deaths.\n\nThe shrine was intentionally desecrated to obscure the deed and prevent further investigation with the greater conflicts causing distraction.\n\nV. Spirit Resolution\n\nThe party battled Elyndra, making attempts to reason with her to no avail.\n\nThrough great struggle, the party was able to defeat her spirit in battle. Afterwards they were able to speak with what was still attached to her remains that rested in the shrine and gather her reasoning, promsing her that justice would still be distributed.\n\nUpon releaving all of the active spirits and clensing the shrine, the spiritual instability has ceased. No further hauntings reported."
+            },
+            {
+                "member_name": "Krak of the Frostmarch Company",
+                "report": "The following report was recorded on a magiscript quill as the reporter stated they don't know how to write.\n\n\"Right Krak here, so got mission for haunted town, makes sense to send my brother and me, as spirits are undoubtedly my speciality. Met with the guild leader for debrief but wasn't really listening, was busy trying to figure out how far we were from the town using a sextant, wasn't very effective, the group rebriefed me on the road. Got to the village, used my knowledge to confirm that undead were indeed in the area, saw tratgrav standing near the edge, one of the afflicted I've known for some time with his head lopped sideways like it usually is, told him to be careful of ghosts in the area. Went to town pub, needed a drink after the travel, and someone said something about getting information or something. Had to leave Yedros outside cause 'No Pets'\" guttural snort sound \"like she's a pet. Anyway, somewhere in town was haunted and met some guy absolutely about to pop his melon saying the ghosts got to him and was gonna kill his family. Being the expert on the situation I performed the type 3 temporary exorcism to put a temporary binding ritual on him to spare his life, and found lovely transportation for the unconscious mate that I made a fine trade for. These ghosts are tricky, one even took the form of a demon standing in the middle of town, cloven hooves standing on four, shaggy hair and twisted vile horns, baying in some foul language, creature not to be trusted. I was about to take it down when Verdi could speak the foulspawn's language, directing us to its devious masters. Knew it was a trap right there, should've taken it down but the group needed to press on so I will save that treacherous beast for another hunt.\"\n\n\"right got to the place and was absolutely filled with the ailed, wanted to ask them what was going on in the area but to my surprise they were off their shit, wanting to suck out faces off and drain us for all we are, know it sounds like a good time but didnt feel good so definately responded with self defense... dont give me that look it was they attacked us, wasn't me starting anything and all you did was sit there and watch, didn't have a single helpful thing to say while we were fighting... thats right what I thought, go in the corner and groan over there. Anyway dealt with those nasty ill people but right after we were done, I heard creaks and moaning in the walls and floor so knew this place was still haunted, so busted out my handy undead detector tap tap and started to investigate the area, using it and my intuition I found the next area leading to the basement for the group, always the spookiest place in a house, besides the attic, or the third room on third floor, or utility closet, sometimes the bathrooms after im done with them eh! no? alright so some really uppity elf lady was down there, probably cause no one was feeling all that well, but was no reason to scream at us and almost die. My ears were bleeding, but then couldnt really hear anything at all, lady was scary but had to right to be telling her goons to be fucking with the town. right almost killed me but got we got it done, started investigating area again and retrieved some loot, got my trusty horn now.\"\n\nKrak requests to be sent on a \"raid\" once a week with his \"clansmen\"."
+
+            }
+        ],
+        "fallen_members": [],
+        "extra_notes": "It seems that one Civilian joined the party on the journey to the shrine, while it's unclear why, reports say it had something to do with helping him protect his family and the inside of a barrel? It is also noted that the Oxen in the area were very helpful in investigating the town, and that many residents in the area were educated on home safety, particuilarly around locking their doors.",
+        "date": "800 Cycles After The Bringing",
+        "location": "Tuinton Village and the Ruined Shrine of Sehanine, Near the Ashen City",
+        "duration": "Half-day investigation, two major encounters",
+        "outcome": "Success - Hauntings ended, Elyndra Moonsigh pacified, truth of House Vellorien uncovered"
     }
 ]
