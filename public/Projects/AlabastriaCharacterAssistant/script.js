@@ -1961,7 +1961,7 @@ const app = {
                               
                               ${member.background_summary ? `
                                  <details style="margin: 1rem 0;">
-                                    <summary class="quest-participation-summary>Background Summary</summary>
+                                    <summary class="quest-participation-summary">Background Summary</summary>
                                     <div style="margin: 0.5rem 0; font-style: italic; color: var(--text-muted); font-size: 0.9rem;">
                                        ${member.background_summary}
                                     </div>
