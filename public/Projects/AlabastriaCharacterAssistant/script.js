@@ -2242,8 +2242,10 @@ const app = {
                                     <div style="padding: 1rem;">
                                        ${quest.member_reports.map(report => `
                                           <div style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--ocean-blue); border-radius: 6px; background: rgba(0, 123, 255, 0.05);">
-                                             <h5 style="color: var(--ocean-blue); margin-bottom: 0.5rem;">${report.member_name}</h5>
+                                             <details style="margin-bottom: 0.5rem;">
+                                             <summary style="padding: 1rem; color: var(--ocean-blue); cursor: pointer; font-weight: 400; margin-bottom: 0.5rem;">As Reported by ${report.member_name}</summary>
                                              <p style="margin: 0; line-height: 1.6; font-style: italic;">${report.report}</p>
+                                             </details>
                                           </div>
                                        `).join('')}
                                     </div>
