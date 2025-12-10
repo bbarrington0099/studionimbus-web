@@ -1027,7 +1027,7 @@
             {"to": "Alatman", "distance_mi": 700, "travel_days": 14, "travel_hours": 14, "travel_minutes": 0},
             {"to": "Kuriguer", "distance_mi": 1500, "travel_days": 31, "travel_hours": 6, "travel_minutes": 0}
         ],
-        "description": "The resident continent of ice and tough inhabitants holds few settlements on its' West coast before reaching a group of mountain ranges including the cloud towering Noxious Mountain, leading into a frozen land left to giants and titans.",
+        "description": "The resident continent of ice and tough inhabitants holds few settlements on its' West coast before reaching a group of mountain ranges including the cloud towering Noxious Mountain, leading into a frozen land left to giants and titans. The wastes are prowled by mercenary companies like the Frostmarch Company, who make their living as hired blades and monster hunters in this unforgiving landscape where survival itself is a form of warfare.",
         "colors": [
             "Light blue",
             "White"
@@ -1037,13 +1037,13 @@
         "capital": {
             "name": "Frosthold",
             "location": "Western coast, built into the base of the Noxious Mountain",
-            "description": "A massive fortress city carved from ice and stone, with towering walls that blend into the mountain itself, where the royal halls are warmed by geothermal springs.",
+            "description": "A massive fortress city carved from ice and stone, with towering walls that blend into the mountain itself, where the royal halls are warmed by geothermal springs. The city relies heavily on mercenary companies like the Frostmarch Company to protect food caravans from raider tribes such as the Icemaw.",
             "ruler": {
                 "name": "High Chief Thane Icewind",
                 "race": "Goliath",
                 "title": "High Chief of the Icebound Confederacy",
                 "personality": "Stoic and honorable, with a deep sense of duty and an unshakeable commitment to protecting his people from the harsh elements and unknown threats",
-                "ruling_style": "Tribal confederation with strong military leadership, emphasizing survival, defense, and mutual protection against external threats",
+                "ruling_style": "Tribal confederation with strong military leadership, emphasizing survival, defense, and mutual protection against external threats. Frequently employs mercenary companies for dangerous work beyond the city walls.",
                 "background": "A 60-year-old veteran of the Wyvern Wars who united the scattered tribes under one banner, known for his tactical brilliance and personal courage in the face of overwhelming odds. During the final battle against the Wyvern Queen, Thane was struck by her devastating frost breath, which should have killed him instantly. However, through sheer willpower and divine intervention from Tempus, he survived but was permanently transformed - his skin turned to the pale blue-gray of ice, his eyes became piercing ice-blue, and his very essence became bound to the frozen elements. This transformation, seen as a blessing by his people, made him the perfect leader for the harsh frozen lands of Bulsania, where he can endure the most extreme cold and command the respect of both the elements and his people.",
                 "appearance": "A towering Goliath standing over 8 feet tall with pale blue-gray skin marked with white tribal tattoos, piercing ice-blue eyes, wearing a cloak of white fur and a crown of carved ice crystals, carrying a massive ice-forged axe and wearing armor made from the hide of a frost giant",
                 "deity": "Tempus",
@@ -1065,7 +1065,7 @@
                 "Primordial",
                 "Auran"
             ],
-            "description": "The harsh frozen landscape is dominated by Giant, spoken by the titans and giants that rule the interior. Draconic echoes from the militarized Dragonborn settlements, while Aarakocra calls ring from the mountain peaks. The few coastal settlements use Common for trade, and Primordial whispers through the eternal storms. Goliath tribal dialects blend elements of Giant and Common."
+            "description": "The harsh frozen landscape is dominated by Giant, spoken by the titans and giants that rule the interior. Draconic echoes from the militarized Dragonborn settlements, while Aarakocra calls ring from the mountain peaks. The few coastal settlements use Common for trade, and Primordial whispers through the eternal storms. Goliath tribal dialects blend elements of Giant and Common. Mercenary clans like the Frostmarch Company often speak a mix of Goblin and Common for their operations."
         },
         "politics": {
             "kingdoms": [
@@ -1073,16 +1073,19 @@
             ],
             "settlements": [
                 "Icy strongholds",
-                "Few western coastal settlements"
+                "Few western coastal settlements",
+                "Mercenary clan camps",
+                "Raider tribe territories"
             ],
             "dominant_races": [
                 "Giants",
                 "Dragonborn",
                 "Goliaths",
-                "Aarakocra"
+                "Aarakocra",
+                "Hobgoblins"
             ],
-            "notes": "Harsh icy frontier; militarized",
-            "political_climate": "Confederation of icy strongholds; isolationist, wary of outsiders, militarized society."
+            "notes": "Harsh icy frontier; militarized. Mercenary companies provide essential services for monster hunting and protection. Raider tribes like the Icemaw pose constant threats to trade routes.",
+            "political_climate": "Confederation of icy strongholds; isolationist, wary of outsiders, militarized society. Power dynamics include not just traditional rulers but also influential mercenary companies and raider tribes vying for control of resources."
         },
         "wars_conflicts": {
             "current": [
@@ -1102,6 +1105,17 @@
                     "participants": [
                         "Bulsania Military",
                         "Unknown Kantra Threats"
+                    ]
+                },
+                {
+                    "name": "The Caravan Wars",
+                    "description": "Ongoing conflict between Frosthold and raider tribes like the Icemaw who regularly attack food caravans. Mercenary companies such as the Frostmarch Company are frequently hired to hunt down and eliminate raider camps.",
+                    "status": "Active",
+                    "participants": [
+                        "Frosthold",
+                        "Mercenary Companies",
+                        "Icemaw Tribe",
+                        "Various Raider Tribes"
                     ]
                 }
             ],
@@ -1162,7 +1176,7 @@
             },
             {
                 "name": "The Northern Sea Route",
-                "description": "Maritime route connecting to Maltman and other northern regions, carrying high-value frozen goods and rare materials.",
+                "description": "Maritime route connecting to Maltman and other regions, carrying high-value frozen goods and rare materials.",
                 "type": "Maritime",
                 "goods": [
                     "Rare metals",
@@ -1174,7 +1188,7 @@
             },
             {
                 "name": "The Central Plains Route",
-                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions, carrying frozen goods and rare materials.",
+                "description": "Major trade route connecting to coastal ports, where goods are then transported by sea to Skratonia's agricultural regions. Frequently targeted by raider tribes, requiring mercenary escorts.",
                 "type": "Overland to Maritime",
                 "goods": [
                     "Frozen goods",
@@ -1195,6 +1209,18 @@
                     "Defense materials"
                 ],
                 "frequency": "Daily"
+            },
+            {
+                "name": "The Frosthold Supply Lines",
+                "description": "Critical food and supply caravans running from outlying settlements to Frosthold. Protected by hired mercenary companies due to constant raider attacks.",
+                "type": "Overland",
+                "goods": [
+                    "Food supplies",
+                    "Survival gear",
+                    "Hunting trophies",
+                    "Monster parts"
+                ],
+                "frequency": "Weekly"
             }
         ],
         "creature_types": {
@@ -1209,17 +1235,21 @@
                 },
                 {
                     "type": "Elemental",
-                    "reasoning": "The frozen landscape pulses with elemental energy, and travelers often witness storms that seem to have minds of their own. Ice elementals dance in the blizzards, and the very ground sometimes shifts as if the earth itself is alive beneath the permafrost."
+                    "reasoning": "The frozen landscape pulses with elemental energy, and travelers often witness storms that seem to have minds of their own. Ice elementals dance in the blizzards, and the very ground sometimes shifts as if the earth itself is alive beneath the permafrost. The far northern spires are haunted by a particularly terrifying phenomenon - sentient blizzards that hunt living creatures, composed of tortured souls trapped within swirling ice and snow, their screams echoing through the winds as they tear apart any who venture too close."
                 }
             ],
             "secondary": [
                 {
                     "type": "Monstrosity",
-                    "reasoning": "The extreme cold has twisted the creatures that call this land home, creating beings that are neither wholly natural nor wholly magical. Travelers report encountering beasts with too many eyes and too many limbs, their forms adapted to survive in conditions that would kill ordinary creatures."
+                    "reasoning": "The extreme cold has twisted the creatures that call this land home, creating beings that are neither wholly natural nor wholly magical. Travelers report encountering beasts with too many eyes and too many limbs, their forms adapted to survive in conditions that would kill ordinary creatures. Rimebeasts prowl the wastes - small but vicious predators that hunt in packs and are a common target for mercenary hunting parties, though they should never be underestimated."
                 },
                 {
                     "type": "Celestial",
                     "reasoning": "The divine transformation of the ruler has left its mark on the land, and travelers sometimes witness celestial beings moving through the frozen wastes. The very air occasionally shimmers with divine light, and those who are pure of heart often find themselves guided by unseen hands through the treacherous terrain."
+                },
+                {
+                    "type": "Undead",
+                    "reasoning": "The harsh conditions and violent deaths in the frozen wastes mean that not all spirits find peace. Restless souls occasionally manifest, bound to the material realm by unfinished business, powerful emotions, or connections to items they held dear in life. Some appear in the periphery of vision, while others gain enough strength to manipulate the physical world, watching over loved ones or seeking to complete their final missions."
                 }
             ]
         }
