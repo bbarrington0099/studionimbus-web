@@ -644,6 +644,26 @@ const app = {
         };
     },
 
+    convertNewlinesToBr(obj) {
+        if (typeof obj === 'string') {
+            return obj.replace(/\n/g, '<br>');
+        }
+        
+        if (Array.isArray(obj)) {
+            return obj.map(item => this.convertNewlinesToBr(item));
+        }
+        
+        if (obj !== null && typeof obj === 'object') {
+            const converted = {};
+            for (const key in obj) {
+                converted[key] = this.convertNewlinesToBr(obj[key]);
+            }
+            return converted;
+        }
+        
+        return obj;
+    },
+
     // Load guild staff and members data
     async loadGuildStaffAndMembers() {
         try {
@@ -653,9 +673,9 @@ const app = {
                 fetch('json/quest_reports.json')
             ]);
 
-            this.guildStaffData = await staffResponse.json();
-            this.guildMembersData = await membersResponse.json();
-            this.questReportsData = await questsResponse.json();
+            this.guildStaffData = this.convertNewlinesToBr(await staffResponse.json());
+            this.guildMembersData = this.convertNewlinesToBr(await membersResponse.json());
+            this.questReportsData = this.convertNewlinesToBr(await questsResponse.json());
         } catch (error) {
             console.error('Error loading guild data:', error);
         }
@@ -672,12 +692,12 @@ const app = {
                 fetch('json/deity_relationships.json')
             ]);
 
-            const pantheonData1 = await pantheonResponse.json();
-            const pantheonData2 = await pantheonPart2Response.json();
-            const pantheonData3 = await pantheonPart3Response.json();
-            const pantheonData4 = await pantheonPart4Response.json();
+            const pantheonData1 = this.convertNewlinesToBr(await pantheonResponse.json());
+            const pantheonData2 = this.convertNewlinesToBr(await pantheonPart2Response.json());
+            const pantheonData3 = this.convertNewlinesToBr(await pantheonPart3Response.json());
+            const pantheonData4 = this.convertNewlinesToBr(await pantheonPart4Response.json());
             this.pantheonData = [...pantheonData1, ...pantheonData2, ...pantheonData3, ...pantheonData4];
-            this.deityRelationshipsData = await relationshipsResponse.json();
+            this.deityRelationshipsData = this.convertNewlinesToBr(await relationshipsResponse.json());
             this.filteredDeityRelationships = [...this.deityRelationshipsData];
         } catch (error) {
             console.error('Error loading pantheon data:', error);
@@ -688,7 +708,7 @@ const app = {
     async loadMonsterSlayersGuideData() {
         try {
             const response = await fetch('json/monster_slayers_guide.json');
-            this.monsterSlayersGuideData = await response.json();
+            this.monsterSlayersGuideData = this.convertNewlinesToBr(await response.json());
         } catch (error) {
             console.error('Error loading monster slayers guide data:', error);
         }
@@ -705,11 +725,11 @@ const app = {
                 fetch('json/playstyle_guide.json')
             ]);
 
-            this.continentData = await continentResponse.json();
-            this.relationData = await relationResponse.json();
-            this.classInformationData = await classInfoResponse.json();
-            this.raceInformationData = await raceInfoResponse.json();
-            this.playstyleGuideData = await playstyleResponse.json();
+            this.continentData = this.convertNewlinesToBr(await continentResponse.json());
+            this.relationData = this.convertNewlinesToBr(await relationResponse.json());
+            this.classInformationData = this.convertNewlinesToBr(await classInfoResponse.json());
+            this.raceInformationData = this.convertNewlinesToBr(await raceInfoResponse.json());
+            this.playstyleGuideData = this.convertNewlinesToBr(await playstyleResponse.json());
         } catch (error) {
             console.error('Error loading data:', error);
         }
