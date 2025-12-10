@@ -1942,7 +1942,7 @@ const app = {
                                     </div>
                                  </div>
                               </div>
-                              <div class="member-class">Level ${member.level} ${member.class}</div>
+                              <div class="member-class">Level ${member.level} ${member.class} ${member.race}</div>
                               <div class="member-managed">${member.managed_by}</div>
                               
                               <div class="guild-member-description">
@@ -1952,6 +1952,21 @@ const app = {
                               <div class="guild-member-description">
                                  <strong>Specialization:</strong> ${member.specialization}
                               </div>
+
+                              ${member.tags && member.tags.length > 0 ? `
+                                 <div class="guild-member-description">
+                                    <strong>Tags:</strong> ${member.tags.join(', ')}
+                                 </div>
+                              ` : ''}
+                              
+                              ${member.background_summary ? `
+                                 <details style="margin: 1rem 0;">
+                                    <summary class="quest-participation-summary>Background Summary</summary>
+                                    <div style="margin: 0.5rem 0; font-style: italic; color: var(--text-muted); font-size: 0.9rem;">
+                                       ${member.background_summary}
+                                    </div>
+                                 </details>
+                              ` : ''}
                               
                               ${member.deity ? `
                                  <div class="guild-member-description">
@@ -2193,6 +2208,22 @@ const app = {
                                              <h5 style="color: var(--desert-tan); margin-bottom: 0.5rem;">${item.item}</h5>
                                              <div style="margin-bottom: 0.5rem;"><strong>Significance:</strong> ${item.significance}</div>
                                              <p style="margin: 0; line-height: 1.6;">${item.description}</p>
+                                          </div>
+                                       `).join('')}
+                                    </div>
+                                 </details>
+                              </div>
+                           ` : ''}
+
+                           ${quest.member_reports && quest.member_reports.length > 0 ? `
+                              <div style="margin: 1.5rem 0;">
+                                 <details style="border: 2px solid var(--ocean-blue); border-radius: 6px; margin-bottom: 1rem;">
+                                    <summary style="padding: 1rem; background: rgba(0, 123, 255, 0.1); cursor: pointer; font-weight: 600; color: var(--ocean-blue);">Member Reports</summary>
+                                    <div style="padding: 1rem;">
+                                       ${quest.member_reports.map(report => `
+                                          <div style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--ocean-blue); border-radius: 6px; background: rgba(0, 123, 255, 0.05);">
+                                             <h5 style="color: var(--ocean-blue); margin-bottom: 0.5rem;">${report.member_name}</h5>
+                                             <p style="margin: 0; line-height: 1.6; font-style: italic;">${report.report}</p>
                                           </div>
                                        `).join('')}
                                     </div>
