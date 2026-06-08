@@ -91,4 +91,4 @@ projectSpace.addProject('LiveUserFilter', 'a searchable user database', 'Pulling
 projectSpace.addProject('ABA_Flashcards', 'Flashcards for studying ABA terms', 'A simple flashcard app to help study ABA terms and definitions', 'ABA Flashcards');
 projectSpace.addProject('OurExperiencedParty', 'A custom experience system calculator for Dungeons & Dragons (not associated with)', 'Vibe coding to solve a quick need of a group of friends in a way that makes it available for others', 'Our Experienced Party');
 projectSpace.addProject('AlabastriaCharacterAssistant', 'A character assistant for Alabastria', 'A character assistant for Alabastria', 'Alabastria Character Assistant');
-projectSpace.addProject('pf2e-overlay, a custom overlay for Pathfinder 2e', 'A custom overlay for Pathfinder 2e', 'pf2e-overlay');
+projectSpace.addProject('pf2e-overlay', 'a custom overlay for Pathfinder 2e', 'A custom overlay for Pathfinder 2e', 'pf2e-overlay');
