@@ -36,14 +36,16 @@ html, body {
 #left-content {
     width: 358px;            
     height: 100%;
+}
+
+#top {
     background: var(--primary-color);
 }
 
 #description {
     padding: 12px;
     color: var(--text-color);
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
     line-height: 1.4;
     text-align: center;
 }
