@@ -1,4 +1,4 @@
-const ws = new WebSocket("ws://localhost:8080");
+const ws = new WebSocket(`wss://${window.location.host}/ws`);
 
 ws.onopen = () => console.log("Connected to bot WebSocket");
 ws.onerror = (err) => console.error("WebSocket error", err);

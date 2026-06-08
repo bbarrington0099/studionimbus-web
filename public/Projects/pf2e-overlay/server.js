@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const { joinVoiceChannel, getVoiceConnection, createAudioPlayer } = require("@discordjs/voice");
 const WebSocket = require("ws");
+const dotenv = require("dotenv");
 dotenv.config();
 
 const TOKEN = process.env.PF2E_BOT_TOKEN;
