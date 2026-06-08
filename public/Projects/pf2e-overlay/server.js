@@ -2,7 +2,9 @@ const { Client, GatewayIntentBits } = require("discord.js");
 const { joinVoiceChannel, getVoiceConnection, createAudioPlayer } = require("@discordjs/voice");
 const WebSocket = require("ws");
 const dotenv = require("dotenv");
-dotenv.config();
+dotenv.config({
+  path: "/root/studionimbus-web/public/Projects/pf2e-overlay/.env"
+});
 
 const TOKEN = process.env.PF2E_BOT_TOKEN;
 
@@ -15,6 +17,9 @@ const client = new Client({
 });
 
 const wss = new WebSocket.Server({ port: 8080 });
+wss.on("connection", (ws) => {
+    console.log("WebSocket client connected");
+});
 
 function broadcast(data) {
     const msg = JSON.stringify(data);
