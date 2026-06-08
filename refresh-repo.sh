@@ -47,5 +47,6 @@ echo "App will restart" >> "$LOG_FILE"
 
 if [ "$RESTART_APP" = true ]; then
   pm2 restart studionimbus-web
+  pm2 restart overlay-server
 fi
 echo "" >> "$LOG_FILE"
