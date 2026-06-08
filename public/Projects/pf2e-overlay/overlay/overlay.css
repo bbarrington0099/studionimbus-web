@@ -99,7 +99,6 @@ html, body {
 }
 
 .card.gm {
-    margin: 0;
     flex-direction: column;
     padding: 6px 0;
     border-color: var(--gm-color);
