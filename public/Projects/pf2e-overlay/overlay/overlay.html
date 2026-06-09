@@ -11,6 +11,16 @@
 <div id="overlay">
     <div id="left-content">
         <div id="top" class="smokey-bg">
+            <!-- Moving smoke effect for #top -->
+            <div class="moving-smoke">
+                <div class="smoke-wisp wisp-1"></div>
+                <div class="smoke-wisp wisp-2"></div>
+                <div class="smoke-wisp wisp-3"></div>
+                <div class="smoke-wisp wisp-4"></div>
+                <div class="smoke-wisp wisp-5"></div>
+            </div>
+            <div class="smoke-particle-heavy" style="width: 280px; height: 280px; top: 20%; left: 10%; animation-duration: 21s; animation-delay: -2s;"></div>
+            <div class="smoke-particle-heavy" style="width: 200px; height: 200px; bottom: 15%; right: 25%; animation-duration: 25s; animation-delay: -7s;"></div>
             <!-- GM card (static, kept as is) -->
             <div class="card gm" data-userid="670656351701303296">
                 <img src="../images/poor.png" alt="Game Master" onerror="this.src='https://via.placeholder.com/180x180?text=GM'">
@@ -34,12 +44,22 @@
             <!-- dynamic scene content placeholder -->
         </div>
         <div id="player-bar" class="smokey-bg">
+            <!-- Moving smoke effect for #player-bar -->
+            <div class="moving-smoke">
+                <div class="smoke-wisp wisp-1"></div>
+                <div class="smoke-wisp wisp-2"></div>
+                <div class="smoke-wisp wisp-3"></div>
+                <div class="smoke-wisp wisp-4"></div>
+                <div class="smoke-wisp wisp-5"></div>
+            </div>
+            <div class="smoke-particle-heavy" style="width: 280px; height: 280px; top: 20%; left: 10%; animation-duration: 21s; animation-delay: -2s;"></div>
+            <div class="smoke-particle-heavy" style="width: 200px; height: 200px; bottom: 15%; right: 25%; animation-duration: 25s; animation-delay: -7s;"></div>
             <!-- Player cards will be injected dynamically by JS -->
         </div>
     </div>
 </div>
 
-<!-- floating smoke particles -->
+<!-- floating smoke particles (global ambiance) -->
 <div class="smoke-particle" style="width: 320px; height: 320px; top: 10%; left: 5%; animation-duration: 34s;"></div>
 <div class="smoke-particle" style="width: 400px; height: 400px; bottom: 0%; right: 0%; animation-duration: 42s; animation-delay: -5s;"></div>
 <div class="smoke-particle" style="width: 280px; height: 280px; top: 50%; left: 60%; animation-duration: 28s; filter: blur(40px);"></div>
