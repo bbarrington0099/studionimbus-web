@@ -1,6 +1,4 @@
-// overlay.js
-// PF2e Fantasy Overlay - Dynamic Player Cards & WebSocket Speaking Detection
-
+// overlay.js - Fixed WebSocket Connection (via nginx proxy)
 // ========================
 // 1. PLAYER DATA (JS OBJECTS)
 // ========================
@@ -59,7 +57,6 @@ function renderPlayerCards() {
     const playerBar = document.getElementById("player-bar");
     if (!playerBar) return;
 
-    // Remove any existing player cards to avoid duplication
     const existingPlayers = playerBar.querySelectorAll(".card.player");
     existingPlayers.forEach(card => card.remove());
 
@@ -102,17 +99,30 @@ function renderPlayerCards() {
 }
 
 // ========================
-// 2. WEBSOCKET (SPEAKING DETECTION)
+// 2. WEBSOCKET (FIXED - use nginx proxy path)
 // ========================
 let ws = null;
 
 function initWebSocket() {
-    const ws = new WebSocket(`wss://${window.location.host}/ws`);
+    // Use the secure WebSocket endpoint provided by nginx.
+    // For HTTPS pages, this will be wss://studionimbus.dev/ws
+    // For local HTTP testing, it falls back to ws://.../ws
+    const wsUrl = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws`;
+    console.log(`Attempting WebSocket connection to ${wsUrl}`);
 
-    ws.onopen = () => console.log("🌙 PF2e Overlay connected to voice WebSocket");
-    ws.onerror = (err) => console.warn("WebSocket error", err);
-    ws.onclose = () => {
-        console.log("WebSocket closed, reconnecting in 3s...");
+    ws = new WebSocket(wsUrl);
+
+    ws.onopen = () => {
+        console.log("🌙 PF2e Overlay connected to voice WebSocket");
+    };
+
+    ws.onerror = (err) => {
+        console.error("WebSocket error:", err);
+        console.warn("Make sure the WebSocket server (server.js) is running and nginx is proxying /ws to port 8080.");
+    };
+
+    ws.onclose = (event) => {
+        console.log(`WebSocket closed (code: ${event.code}). Reconnecting in 3s...`);
         setTimeout(initWebSocket, 3000);
     };
 
@@ -131,13 +141,13 @@ function initWebSocket() {
                 targetCard.classList.remove("speaking");
             }
         } catch (e) {
-            console.warn("WebSocket parse error", e);
+            console.warn("WebSocket message parse error", e);
         }
     };
 }
 
 // ========================
-// 3. EXTRA FANTASY EFFECTS (AMBIENT GLINTS)
+// 3. EXTRA FANTASY EFFECTS
 // ========================
 function addAmbientEffects() {
     const mainContent = document.getElementById("main-content");
@@ -164,7 +174,6 @@ function addAmbientEffects() {
         }, 11000);
     }
 
-    // Subtle description border shimmer
     const desc = document.getElementById("description");
     if (desc) {
         setInterval(() => {
@@ -177,15 +186,13 @@ function addAmbientEffects() {
 }
 
 // ========================
-// 4. INITIALIZE ON DOM READY
+// 4. INITIALIZE
 // ========================
 function initialize() {
     renderPlayerCards();
-    // Give a tiny delay to ensure cards are in DOM before WebSocket tries to target them
     setTimeout(initWebSocket, 100);
     addAmbientEffects();
 
-    // Fix GM avatar fallback
     const gmImg = document.querySelector(".card.gm img");
     if (gmImg && gmImg.src.includes("poor.png")) {
         gmImg.onerror = function() {
