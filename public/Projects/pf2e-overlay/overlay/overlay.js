@@ -107,9 +107,7 @@ function renderPlayerCards() {
 let ws = null;
 
 function initWebSocket() {
-    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const wsUrl = `${protocol}//${window.location.hostname}:8080/ws`;
-    ws = new WebSocket(wsUrl);
+    const ws = new WebSocket(`wss://${window.location.host}/ws`);
 
     ws.onopen = () => console.log("🌙 PF2e Overlay connected to voice WebSocket");
     ws.onerror = (err) => console.warn("WebSocket error", err);
