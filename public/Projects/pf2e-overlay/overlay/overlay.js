@@ -47,10 +47,28 @@ const playersData = [
         classSkill: "Rogue",
         avatar: "../images/rapha.jpg",
         cssClass: "rapha"
+    },
+    {
+        id: "gordak",
+        userId: "223573302176645121",
+        name: "Gordak",
+        bloodline: "Hold-Scarred Orc",
+        classSkill: "Barbarian",
+        avatar: "../images/gordak.png",
+        cssClass: "gordak"
+    },
+    {
+        id: "pravish",
+        userId: "653001503023562774",
+        name: "Pravish",
+        bloodline: "Hungerseed Vanara",
+        classSkill: "Inventor",
+        avatar: "../images/pravish.png",
+        cssClass: "pravish"
     }
 ];
 
-const DEFAULT_AVATAR = "https://via.placeholder.com/100x130?text=Hero";
+const DEFAULT_AVATAR = "../images/the-party.png";
 
 // Render player cards into #player-bar
 function renderPlayerCards() {
@@ -65,37 +83,31 @@ function renderPlayerCards() {
         card.className = `card player ${player.cssClass}`;
         card.setAttribute("data-userid", player.userId);
 
+        // ---- name (top) ----
+        const nameDiv = document.createElement("div");
+        nameDiv.className = "name";
+        nameDiv.textContent = player.name;
+
+        // ---- image (middle) ----
         const img = document.createElement("img");
         img.src = player.avatar;
         img.alt = `${player.name} avatar`;
         img.onerror = () => { img.src = DEFAULT_AVATAR; };
 
-        const infoDiv = document.createElement("div");
-        infoDiv.className = "info";
-
-        const nameDiv = document.createElement("div");
-        nameDiv.className = "name";
-        nameDiv.textContent = player.name;
-
-        const hrLine = document.createElement("hr");
-        const bloodDiv = document.createElement("div");
-        bloodDiv.className = "blood";
-        bloodDiv.textContent = player.bloodline;
+        // ---- skill (bottom) ----
         const skillDiv = document.createElement("div");
         skillDiv.className = "skill";
         skillDiv.textContent = player.classSkill;
 
-        infoDiv.appendChild(nameDiv);
-        infoDiv.appendChild(hrLine);
-        infoDiv.appendChild(bloodDiv);
-        infoDiv.appendChild(skillDiv);
-
+        // Wrap name and skill in an optional container? Not needed, just append.
+        card.appendChild(nameDiv);
         card.appendChild(img);
-        card.appendChild(infoDiv);
+        card.appendChild(skillDiv);
+
         playerBar.appendChild(card);
     });
 
-    console.log("✅ Fantasy player cards dynamically generated!");
+    console.log("✅ Fantasy player cards dynamically generated (compact vertical layout)!");
 }
 
 // ========================
