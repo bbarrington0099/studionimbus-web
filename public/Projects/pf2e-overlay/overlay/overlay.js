@@ -139,6 +139,7 @@ const charAliases = {
 let overlayEnabled = false;
 let chibiItems = {};
 let gmTimeout = null;
+let gmRemovalTimer = null; 
 let activeNPC = null;
 let activeEffects = {};
 
@@ -616,6 +617,15 @@ function compactSide(side) {
 // --- Handle speaking start ---
 function handleSpeakingStart(userId) {
     if (userId === GM_USER_ID) {
+        // Cancel both GM timers
+        if (gmTimeout) {
+            clearTimeout(gmTimeout);
+            gmTimeout = null;
+        }
+        if (gmRemovalTimer) {
+            clearTimeout(gmRemovalTimer);
+            gmRemovalTimer = null;
+        }
         showGM(true);
         if (activeNPC) showNPC(true, activeNPC);
         return;
@@ -624,10 +634,8 @@ function handleSpeakingStart(userId) {
     const player = playersData.find(p => p.userId === userId);
     if (!player) return;
 
-    // If chibi already exists, cancel removal and keep it visible
     if (chibiItems[userId]) {
         const item = chibiItems[userId];
-        // Clear both timers
         if (item.timeout) {
             clearTimeout(item.timeout);
             item.timeout = null;
@@ -636,7 +644,6 @@ function handleSpeakingStart(userId) {
             clearTimeout(item.removalTimer);
             item.removalTimer = null;
         }
-        // Restore visibility (in case it was fading out)
         item.element.classList.add('show');
         item.element.style.opacity = '1';
         return;
@@ -651,7 +658,6 @@ function handleSpeakingStart(userId) {
     const element = createChibiElement(userId, slot.slotId);
     if (!element) return;
     updateChibiAppearance(userId, element, slot.slotId);
-    // Set initial transform (no offset)
     setChibiTranslate(element, 0, 0, false);
     requestAnimationFrame(() => {
         element.classList.add('show');
@@ -664,30 +670,31 @@ function handleSpeakingStart(userId) {
         side: slot.side,
         index: slot.index,
         timeout: null,
-        removalTimer: null   // <-- new property
+        removalTimer: null
     };
 }
 
 // --- Handle speaking end ---
 function handleSpeakingEnd(userId) {
     if (userId === GM_USER_ID) {
-        if (gmTimeout) clearTimeout(gmTimeout);
+        if (gmTimeout) {
+            clearTimeout(gmTimeout);
+            gmTimeout = null;
+        }
         gmTimeout = setTimeout(() => {
             showGM(false);
             showNPC(false);
             gmTimeout = null;
-        }, 6000);
+        }, 3000);
         return;
     }
 
     const item = chibiItems[userId];
     if (!item) return;
-    // Clear any existing timers to avoid duplicates
     if (item.timeout) {
         clearTimeout(item.timeout);
         item.timeout = null;
     }
-    // Start a new 3‑second countdown before removal
     item.timeout = setTimeout(() => {
         removeUser(userId);
     }, 3000);
@@ -734,6 +741,11 @@ let npcChibiElement = null;
 
 function showGM(show) {
     if (show) {
+        // Cancel any pending removal timer
+        if (gmRemovalTimer) {
+            clearTimeout(gmRemovalTimer);
+            gmRemovalTimer = null;
+        }
         if (!gmChibiElement) {
             gmChibiElement = createChibiElement(GM_USER_ID, 'gm', true);
             updateGMChibi(gmChibiElement);
@@ -747,11 +759,13 @@ function showGM(show) {
         if (gmChibiElement) {
             gmChibiElement.classList.remove('show');
             gmChibiElement.style.opacity = '0';
-            setTimeout(() => {
+            // Store the removal timer so we can cancel it if GM starts again
+            gmRemovalTimer = setTimeout(() => {
                 if (gmChibiElement && gmChibiElement.parentNode) {
                     gmChibiElement.parentNode.removeChild(gmChibiElement);
                 }
                 gmChibiElement = null;
+                gmRemovalTimer = null;
             }, 400);
         }
     }
