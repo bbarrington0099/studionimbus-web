@@ -407,6 +407,182 @@ body {
 	text-shadow: 0 0 4px #ffd68a;
 }
 
+#chibi-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ---- Chibi items ---- */
+.chibi-item {
+	width: 160px;
+	height: 160px;
+	transition: left 0.4s ease, top 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+	opacity: 0;
+	transform: scale(0.8);
+	will-change: left, top, opacity, transform;
+}
+.chibi-item.show {
+	opacity: 1;
+	transform: scale(1);
+}
+.chibi-item.hide {
+	opacity: 0;
+	transform: scale(0.6);
+}
+.chibi-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	position: relative;
+	z-index: 5;
+	/* border-radius: 50%; */
+	/* box-shadow: 0 0 12px rgba(255, 215, 0, 0.3); */
+}
+.chibi-item.mirrored img {
+	transform: scaleX(-1);
+}
+.chibi-item .companion {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: -20px;
+	left: -10px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 3;
+}
+.chibi-item .companion.mirrored {
+	left: 120px;
+}
+.chibi-item .companion.show {
+	opacity: 1;
+}
+.chibi-item .companion img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	/* border-radius: 50%; */
+	/* border: 2px solid gold; */
+}
+/* GM slot specific */
+.chibi-item.gm-slot {
+	width: 200px;
+	height: 200px;
+}
+/* NPC slot specific */
+.chibi-item.npc-slot {
+	width: 160px;
+	height: 160px;
+}
+
+/* ---- Effects ---- */
+.chibi-effect {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	pointer-events: none;
+}
+.chibi-effect.show {
+	opacity: 1;
+}
+.chibi-effect img {
+	width: 100%;
+	height: 100%;
+	object-fit: scale-down;
+}
+
+/* ---- Player cards layout (unchanged) ---- */
+#chibi-overlay #chibi-over-bar {
+	width: 100%;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+}
+
+#chibi-overlay #chibi-over-bar #chibi-slot-gm {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 180px;
+	width: 180px;
+}
+
+#chibi-overlay #chibi-over-bar #chibi-over-effect-left {
+	height: 140px;
+	width: 350px;
+	position: absolute;
+	top: -15px;
+	left: 150px;
+	transform: rotate(-12deg);
+	z-index: 2;
+}
+
+#chibi-overlay #chibi-over-bar #chibi-over-effect-right {
+	height: 140px;
+	width: 350px;
+	position: absolute;
+	top: -15px;
+	right: 150px;
+	transform: rotate(12deg);
+	z-index: 2;
+}
+
+#chibi-overlay #chibi-main-bar {
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+#chibi-overlay #chibi-main-bar .chibi-main-slot {
+	height: 160px;
+	width: 160px;
+	margin: 0 2px;
+}
+
+#chibi-overlay #chibi-main-bar #chibi-slot-effect {
+	position: relative;
+	height: 400px;
+	z-index: 2;
+}
+
+#chibi-overlay #chibi-main-bar .chibi-main-slot .chibi-slot-companion {
+	height: 60px;
+	width: 60px;
+	position: relative;
+	top: -20px;
+}
+
+#chibi-overlay #chibi-main-bar .chibi-main-slot .chibi-slot-companion.chibi-companion-left {
+	left: -20px;
+}
+
+#chibi-overlay #chibi-main-bar .chibi-main-slot .chibi-slot-companion.chibi-companion-right {
+	left: 120px;
+}
+
+#chibi-overlay #chibi-under-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
 #player-bar {
 	height: 210px;
 	width: 1562px;
@@ -457,7 +633,7 @@ body {
 	height: 160px;
 	width: 160px;
 	border-radius: 50%;
-	object-fit: cover;
+	object-fit: fill;
 	border: 3px solid var(--gm-color);
 	box-shadow: 0 0 12px var(--gm-color);
 }
