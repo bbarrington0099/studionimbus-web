@@ -624,8 +624,21 @@ function handleSpeakingStart(userId) {
     const player = playersData.find(p => p.userId === userId);
     if (!player) return;
 
+    // If chibi already exists, cancel removal and keep it visible
     if (chibiItems[userId]) {
-        clearTimeout(chibiItems[userId].timeout);
+        const item = chibiItems[userId];
+        // Clear both timers
+        if (item.timeout) {
+            clearTimeout(item.timeout);
+            item.timeout = null;
+        }
+        if (item.removalTimer) {
+            clearTimeout(item.removalTimer);
+            item.removalTimer = null;
+        }
+        // Restore visibility (in case it was fading out)
+        item.element.classList.add('show');
+        item.element.style.opacity = '1';
         return;
     }
 
@@ -650,7 +663,8 @@ function handleSpeakingStart(userId) {
         slotId: slot.slotId,
         side: slot.side,
         index: slot.index,
-        timeout: null
+        timeout: null,
+        removalTimer: null   // <-- new property
     };
 }
 
@@ -662,13 +676,18 @@ function handleSpeakingEnd(userId) {
             showGM(false);
             showNPC(false);
             gmTimeout = null;
-        }, 3000);
+        }, 6000);
         return;
     }
 
     const item = chibiItems[userId];
     if (!item) return;
-    if (item.timeout) clearTimeout(item.timeout);
+    // Clear any existing timers to avoid duplicates
+    if (item.timeout) {
+        clearTimeout(item.timeout);
+        item.timeout = null;
+    }
+    // Start a new 3‑second countdown before removal
     item.timeout = setTimeout(() => {
         removeUser(userId);
     }, 3000);
@@ -677,9 +696,23 @@ function handleSpeakingEnd(userId) {
 function removeUser(userId) {
     const item = chibiItems[userId];
     if (!item) return;
+    // Clear any pending removal timer to avoid conflicts
+    if (item.removalTimer) {
+        clearTimeout(item.removalTimer);
+        item.removalTimer = null;
+    }
+    // Also clear the main timeout (just in case)
+    if (item.timeout) {
+        clearTimeout(item.timeout);
+        item.timeout = null;
+    }
+
+    // Start fade-out
     item.element.classList.remove('show');
     item.element.style.opacity = '0';
-    setTimeout(() => {
+
+    // Schedule actual removal after fade
+    item.removalTimer = setTimeout(() => {
         if (item.element.parentNode) {
             item.element.parentNode.removeChild(item.element);
         }
@@ -687,8 +720,12 @@ function removeUser(userId) {
         const side = item.side;
         freeSlot(userId);
         compactSide(side);
+        // Clear the timer reference
+        if (item.removalTimer) {
+            clearTimeout(item.removalTimer);
+            item.removalTimer = null;
+        }
     }, 400);
-    clearTimeout(item.timeout);
 }
 
 // --- GM and NPC visibility (using containers too) ---
