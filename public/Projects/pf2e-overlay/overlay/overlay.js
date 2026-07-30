@@ -777,8 +777,10 @@ function handleCommand(rawCommand) {
             overlayEnabled = false;
             document.getElementById('chibi-overlay').style.display = 'none';
         } else if (args[0] === 'test' || args[0] === 't') {
+            if (!overlayEnabled) return;
             fillTestSlots();
         } else if (args[0] === 'testoff' || args[0] === 'to') {
+            if (!overlayEnabled) return;
             clearTestSlots();
         }
         return;

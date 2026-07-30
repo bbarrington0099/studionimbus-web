@@ -7,7 +7,7 @@ dotenv.config({
 });
 
 const TOKEN = process.env.PF2E_BOT_TOKEN;
-const COMMAND_CHANNEL_ID = 1532404346266849400;
+const COMMAND_CHANNEL_ID = "1532404346266849400";
 
 const client = new Client({
     intents: [
