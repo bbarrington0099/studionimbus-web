@@ -240,7 +240,7 @@ function initWebSocket() {
     ws.onmessage = (event) => {
         try {
             const msg = JSON.parse(event.data);
-            const userId = msg.userId;
+                    const userId = msg.userId;
 
             if (userId) {
                 const targetCard = document.querySelector(`.card[data-userid="${userId}"]`);
@@ -298,7 +298,6 @@ function repositionContainer(slotId, container) {
         container.style.right = defaults.fromSide + randomSideOffset + "px";
         container.style.left = "auto";
     }
-    // Center the chibi inside using flex
     container.style.display = "flex";
     container.style.justifyContent = "center";
     container.style.alignItems = "center";
@@ -317,7 +316,6 @@ function createChibiElement(userId, slotId, isGM = false, isNPC = false) {
     if (!isGM && !isNPC) {
         repositionContainer(slotId, container);
     } else {
-        // For GM/NPC, we keep them in their dedicated containers with flex centering
         container.style.display = "flex";
         container.style.justifyContent = "center";
         container.style.alignItems = "center";
@@ -330,7 +328,6 @@ function createChibiElement(userId, slotId, isGM = false, isNPC = false) {
     div.dataset.userId = userId;
     div.dataset.slotId = slotId;
 
-    // Use transform for positioning (will be manipulated for sliding)
     div.style.transform = 'translate(0, 0)';
     div.style.transition = 'transform 0.4s ease, opacity 0.3s ease';
 
@@ -353,7 +350,6 @@ function setChibiTranslate(element, dx, dy, animate = true) {
     }
     element.style.transform = `translate(${dx}px, ${dy}px)`;
     if (!animate) {
-        // Force reflow to apply the change immediately
         void element.offsetHeight;
         element.style.transition = '';
     }
@@ -628,12 +624,13 @@ function handleSpeakingStart(userId) {
         }
         showGM(true);
         if (activeNPC) showNPC(true, activeNPC);
+        playAnimation(userId, 'speak');
         return;
     }
-
+    
     const player = playersData.find(p => p.userId === userId);
-    if (!player) return;
-
+    if (!player || player.muted) return;
+    
     if (chibiItems[userId]) {
         const item = chibiItems[userId];
         if (item.timeout) {
@@ -646,15 +643,16 @@ function handleSpeakingStart(userId) {
         }
         item.element.classList.add('show');
         item.element.style.opacity = '1';
+        item.element.classList.add('chibi-speaking');
         return;
     }
-
+    
     const slot = assignSlot(userId);
     if (!slot) {
         console.warn("No free slot for user", userId);
         return;
     }
-
+    
     const element = createChibiElement(userId, slot.slotId);
     if (!element) return;
     updateChibiAppearance(userId, element, slot.slotId);
@@ -662,6 +660,7 @@ function handleSpeakingStart(userId) {
     requestAnimationFrame(() => {
         element.classList.add('show');
         element.style.opacity = '1';
+        element.classList.add('chibi-speaking');
     });
 
     chibiItems[userId] = {
@@ -691,6 +690,7 @@ function handleSpeakingEnd(userId) {
 
     const item = chibiItems[userId];
     if (!item) return;
+    item.element.classList.remove('chibi-speaking');
     if (item.timeout) {
         clearTimeout(item.timeout);
         item.timeout = null;
@@ -703,22 +703,18 @@ function handleSpeakingEnd(userId) {
 function removeUser(userId) {
     const item = chibiItems[userId];
     if (!item) return;
-    // Clear any pending removal timer to avoid conflicts
     if (item.removalTimer) {
         clearTimeout(item.removalTimer);
         item.removalTimer = null;
     }
-    // Also clear the main timeout (just in case)
     if (item.timeout) {
         clearTimeout(item.timeout);
         item.timeout = null;
     }
 
-    // Start fade-out
     item.element.classList.remove('show');
     item.element.style.opacity = '0';
 
-    // Schedule actual removal after fade
     item.removalTimer = setTimeout(() => {
         if (item.element.parentNode) {
             item.element.parentNode.removeChild(item.element);
@@ -727,7 +723,6 @@ function removeUser(userId) {
         const side = item.side;
         freeSlot(userId);
         compactSide(side);
-        // Clear the timer reference
         if (item.removalTimer) {
             clearTimeout(item.removalTimer);
             item.removalTimer = null;
@@ -741,7 +736,6 @@ let npcChibiElement = null;
 
 function showGM(show) {
     if (show) {
-        // Cancel any pending removal timer
         if (gmRemovalTimer) {
             clearTimeout(gmRemovalTimer);
             gmRemovalTimer = null;
@@ -759,7 +753,6 @@ function showGM(show) {
         if (gmChibiElement) {
             gmChibiElement.classList.remove('show');
             gmChibiElement.style.opacity = '0';
-            // Store the removal timer so we can cancel it if GM starts again
             gmRemovalTimer = setTimeout(() => {
                 if (gmChibiElement && gmChibiElement.parentNode) {
                     gmChibiElement.parentNode.removeChild(gmChibiElement);
@@ -883,7 +876,6 @@ function handleCommand(rawCommand) {
         }
         const resolved = resolveCharacter(npcName);
         if (resolved && resolved.type === 'npc') {
-            // Remove existing NPC immediately (skip the fade-out)
             if (npcChibiElement) {
                 if (npcChibiElement.parentNode) {
                     npcChibiElement.parentNode.removeChild(npcChibiElement);
@@ -970,12 +962,33 @@ function handleCommand(rawCommand) {
         const resolved = resolveCharacter(charName);
         if (resolved && resolved.type === 'player') {
             const userId = resolved.data.userId;
+            if (chibiItems[userId]) {
+                chibiItems[userId].element.classList.toggle('chibi-speaking');
+                return;
+            }
+            let muted = resolved.data.muted || false;
+            //resolved.data.muted = false;
             handleSpeakingStart(userId);
+            if (muted) {
+                resolved.data.muted = true;
+            }
         }
         return;
     }
 
-        // ---- /animation command ----
+    if (cmd === 'mute' || cmd === '/m') {
+        const charName = args.join(' ');
+        if (!charName) return;
+        const resolved = resolveCharacter(charName);
+        if (resolved && resolved.type === 'player') {
+            const userId = resolved.data.userId;
+            removeUser(userId);
+            resolved.data.muted = true;
+        }
+        return;
+    }
+
+    // ---- /animation command ----
     if (cmd === '/animation' || cmd === '/a') {
         if (args.length < 2) {
             console.warn('Usage: /animation <name> <character>');
@@ -1143,7 +1156,6 @@ function addAmbientEffects() {
 function injectAnimationStyles() {
     const style = document.createElement('style');
     style.textContent = `
-        /* Shake animation */
         @keyframes shake {
             0%, 100% { transform: translate(0, 0); }
             10%, 30%, 50%, 70%, 90% { transform: translate(-8px, 0); }
@@ -1152,8 +1164,6 @@ function injectAnimationStyles() {
         .chibi-item.anim-shake {
             animation: shake 0.6s ease-in-out !important;
         }
-
-        /* Bounce animation */
         @keyframes bounce {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(0, -20px); }
@@ -1161,7 +1171,19 @@ function injectAnimationStyles() {
         .chibi-item.anim-bounce {
             animation: bounce 0.5s ease-in-out !important;
         }
-
+        @keyframes speak {
+            0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+            20%  { transform: translate(0, -3px) rotate(-1deg) scale(1.02); }
+            50%  { transform: translate(0, -8px) rotate(1deg) scale(1.04); }
+            80%  { transform: translate(0, -3px) rotate(-0.5deg) scale(1.02); }
+            100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        }
+        .chibi-item.anim-speak {
+            animation: speak 3s ease-in-out !important;
+        }
+        .chibi-item.chibi-speaking {
+            animation: speak 0.9s ease-in-out infinite;
+        }
         /* Spin animation (rotate) */
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -1170,8 +1192,6 @@ function injectAnimationStyles() {
         .chibi-item.anim-spin {
             animation: spin 1s linear !important;
         }
-
-        /* Glow animation (opacity + scale) */
         @keyframes glow {
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.1); opacity: 0.8; }
@@ -1179,8 +1199,6 @@ function injectAnimationStyles() {
         .chibi-item.anim-glow {
             animation: glow 0.8s ease-in-out !important;
         }
-
-        /* Jump (vertical) */
         @keyframes jump {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(0, -30px); }
@@ -1200,17 +1218,14 @@ function playAnimation(userId, animationName) {
         return;
     }
     const element = item.element;
-    // Remove any previous animation classes
     element.classList.forEach(cls => {
         if (cls.startsWith('anim-')) {
             element.classList.remove(cls);
         }
     });
-    // Add the new animation class
     const animClass = `anim-${animationName}`;
     element.classList.add(animClass);
 
-    // Remove the class after the animation ends to avoid lingering
     const onEnd = () => {
         element.classList.remove(animClass);
         element.removeEventListener('animationend', onEnd);

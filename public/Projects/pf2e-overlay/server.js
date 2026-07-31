@@ -7,7 +7,7 @@ dotenv.config({
 });
 
 const TOKEN = process.env.PF2E_BOT_TOKEN;
-const COMMAND_CHANNEL_ID = "1532404346266849400";
+const COMMAND_CHANNEL_ID = "1532404346266849400"; 
 
 const client = new Client({
     intents: [
@@ -182,7 +182,7 @@ Available: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`
             case 'animations':
             case 'an':
                 reply = `
-Available animations: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`
+Available animations: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`, \`speak\`
                 `;
                 break;
             case 'effects':
