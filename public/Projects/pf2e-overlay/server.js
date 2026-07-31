@@ -20,11 +20,31 @@ const client = new Client({
 
 const wss = new WebSocket.Server({ port: 8080 });
 wss.on("connection", (ws) => {
-    console.log("WebSocket client connected");
+    console.log("🔗 WebSocket client connected");
+
+    ws.on("message", (message) => {
+        try {
+            const data = JSON.parse(message);
+            console.log("📩 Received from WebSocket:", data);
+
+            // If it's a command, broadcast it to all clients
+            if (data.type === "command") {
+                broadcast({ type: "command", command: data.command });
+            }
+            // You can handle other message types here if needed
+        } catch (err) {
+            console.error("❌ WebSocket parse error:", err);
+        }
+    });
+
+    ws.on("close", () => {
+        console.log("🔌 WebSocket client disconnected");
+    });
 });
 
 function broadcast(data) {
     const msg = JSON.stringify(data);
+    console.log(`📢 Broadcasting to ${wss.clients.size} clients:`, data);
     wss.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN) {
             client.send(msg);
