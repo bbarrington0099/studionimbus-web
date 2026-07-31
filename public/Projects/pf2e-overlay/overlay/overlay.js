@@ -112,6 +112,7 @@ const npcs = [
     { id: "voidsever-group", name: "Voidsever Group", image: "../images/chibi/enemies/voidsever_group.png", aliases: ["vsg"] },
     { id: "wolves", name: "Wolves", image: "../images/chibi/enemies/wolves.png", aliases: ["ws"] },
     { id: "basilisk", name: "Basilisk", image: "../images/chibi/enemies/basilisk.png", aliases: ["bk"] },
+    { id: "enemy", name: "Enemy", image: "../images/chibi/enemies/enemy.png", aliases: ["nme"] },
 ];
 
 // Effect definitions
