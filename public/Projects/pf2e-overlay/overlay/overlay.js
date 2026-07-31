@@ -688,6 +688,9 @@ function handleSpeakingEnd(userId) {
         return;
     }
 
+    const player = playersData.find(p => p.userId === userId);
+    if (!player || player.muted) return;
+    
     const item = chibiItems[userId];
     if (!item) return;
     item.element.classList.remove('chibi-speaking');
