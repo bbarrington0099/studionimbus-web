@@ -109,6 +109,9 @@ const npcs = [
     { id: "mira", name: "Mira", image: "../images/chibi/npcs/mira.png", aliases: ["m"] },
     { id: "elowen", name: "Elowen", image: "../images/chibi/companions/elowen.png", aliases: ["e"] },
     { id: "sortin", name: "Sortin", image: "../images/chibi/npcs/sortin.png", aliases: ["s"] },
+    { id: "voidsever-group", name: "Voidsever Group", image: "../images/chibi/enemies/voidsever_group.png", aliases: ["vsg"] },
+    { id: "wolves", name: "Wolves", image: "../images/chibi/enemies/wolves.png", aliases: ["ws"] },
+    { id: "basilisk", name: "Basilisk", image: "../images/chibi/enemies/basilisk.png", aliases: ["bk"] },
 ];
 
 // Effect definitions
@@ -121,6 +124,9 @@ const effects = [
         {id: 'campl', duration: 3},
         {id: 'campr', duration: 4}
     ] },
+    { id: "critf", image: "../images/chibi/effects/critical-fail.png", slot: "under", duration: 3 },
+    { id: "crits", image: "../images/chibi/effects/critical-success.png", slot: "under", duration: 3 },
+    { id: "downed", image: "../images/chibi/effects/downed.png", slot: "main", duration: 3 },
 ];
 
 // Character aliases
@@ -717,6 +723,7 @@ function removeUser(userId) {
     }
 
     item.element.classList.remove('show');
+    item.element.classList.remove('chibi-speaking');
     item.element.style.opacity = '0';
 
     item.removalTimer = setTimeout(() => {
@@ -1241,6 +1248,30 @@ function injectAnimationStyles() {
         }
         .chibi-item.anim-jump {
             animation: jump 0.7s ease-in-out !important;
+        }
+        @keyframes attack-left {
+            0%   { transform: translate(0, 0) scale(1); }
+            15%  { transform: translate(-20px, 5px) scale(1.1) rotate(-5deg); }
+            30%  { transform: translate(-15px, 8px) scale(1.05) rotate(3deg); }
+            45%  { transform: translate(-25px, 5px) scale(1.1) rotate(-2deg); }
+            60%  { transform: translate(-20px, 8px) scale(1.05) rotate(4deg); }
+            75%  { transform: translate(-15px, 5px) scale(1.1) rotate(-3deg); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        @keyframes attack-right {
+            0%   { transform: translate(0, 0) scale(1); }
+            15%  { transform: translate(20px, 5px) scale(1.1) rotate(5deg); }
+            30%  { transform: translate(15px, 8px) scale(1.05) rotate(-3deg); }
+            45%  { transform: translate(25px, 5px) scale(1.1) rotate(2deg); }
+            60%  { transform: translate(20px, 8px) scale(1.05) rotate(-4deg); }
+            75%  { transform: translate(15px, 5px) scale(1.1) rotate(3deg); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        .chibi-item.anim-attack-left {
+            animation: attack-left 0.6s ease-in-out !important;
+        }
+        .chibi-item.anim-attack-right {
+            animation: attack-right 0.6s ease-in-out !important;
         }
     `;
     document.head.appendChild(style);

@@ -180,7 +180,6 @@ client.on("messageCreate", async (message) => {
 
 **Animations**  
 \`/<animation/a> <name> <character>\` – Play an animation  
-Available: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`  
 
 **Lists**  
 \`/<list/l> <animations/an>\` – Show all animation names  
@@ -203,7 +202,7 @@ Available: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`
             case 'animations':
             case 'an':
                 reply = `
-Available animations: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`, \`speak\`
+Available animations: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`, \`speak\`, \`attack-<left/right>\`
                 `;
                 break;
             case 'effects':
@@ -231,6 +230,10 @@ Character aliases:
 NPC aliases: 
     \`m\`→Mira, 
     \`e\`→Elowen
+    \`s\`→Sortin
+    \`vsg\`→Voidsever Group
+    \`w\`→Wolves
+    \`bk\`→Basilisk
                 `;
                 break;
             default:

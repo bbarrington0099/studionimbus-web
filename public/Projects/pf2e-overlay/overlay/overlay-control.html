@@ -222,6 +222,9 @@
             { id: "mira", name: "Mira" },
             { id: "elowen", name: "Elowen" },
             { id: "sortin", name: "Sortin" },
+            { id: "voidsever-group", name: "Voidsever Group" },
+            { id: "wolves", name: "Wolves" },
+            { id: "basilisk", name: "Basilisk" },
         ];
 
         const effects = [
@@ -229,14 +232,18 @@
             { id: "campm", group: "camp", name: "Campfire Main" },
             { id: "campl", group: "camp", name: "Campfire Left" },
             { id: "campr", group: "camp", name: "Campfire Right" },
-            { id: "campd", group: "camp", name: "Campfire Top" }
+            { id: "campd", group: "camp", name: "Campfire Top" },
+            { id: "campd", group: "camp", name: "Campfire Top" },
+            { id: "critf", name: "Crit Fail" },
+            { id: "crits", name: "Crit Success" },
+            { id: "downed", name: "Downed" },
         ];
 
         const effectGroups = [
             { id: "camp", name: "Campfire" }
         ];
 
-        const animations = ["shake", "bounce", "spin", "glow", "jump", "speak"];
+        const animations = ["shake", "bounce", "spin", "glow", "jump", "speak", "attack-left", "attack-right"];
 
         // ==========================================================
         // 2. WebSocket – just send commands, no state
