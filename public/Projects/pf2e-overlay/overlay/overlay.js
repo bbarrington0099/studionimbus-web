@@ -942,6 +942,10 @@ function handleCommand(rawCommand) {
     if (cmd === '/pop' || cmd === '/p') {
         const charName = args.join(' ');
         if (!charName) return;
+        if (charName == "gm") {
+            showGM(false);
+            return;
+        }
         const resolved = resolveCharacter(charName);
         if (resolved && resolved.type === 'player') {
             const userId = resolved.data.userId;
@@ -959,6 +963,10 @@ function handleCommand(rawCommand) {
     if (cmd === '/impersonate' || cmd === '/i') {
         const charName = args.join(' ');
         if (!charName) return;
+        if (charName == "gm") {
+            showGM(true);
+            return;
+        }
         const resolved = resolveCharacter(charName);
         if (resolved && resolved.type === 'player') {
             const userId = resolved.data.userId;

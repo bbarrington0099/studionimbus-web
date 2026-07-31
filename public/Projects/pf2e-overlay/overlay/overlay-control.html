@@ -338,26 +338,20 @@
                 }
 
                 // Impersonate
-                if (p.id != "gm") {
-                    const impBtn = document.createElement('button');
-                    impBtn.textContent = '🗣️ Speak';
-                    impBtn.addEventListener('click', () => sendCommand(`/impersonate ${p.id}`));
-                    controls.appendChild(impBtn);
-                }
+                const impBtn = document.createElement('button');
+                impBtn.textContent = '🗣️ Speak';
+                impBtn.addEventListener('click', () => sendCommand(`/impersonate ${p.id}`));
+                controls.appendChild(impBtn);
 
                 // Pop
-                if (p.id != "gm") {
-                    const popBtn = document.createElement('button');
-                    popBtn.textContent = '⏹️ Pop';
-                    popBtn.style.borderColor = '#b55a5a';
-                    popBtn.style.color = '#f0b0b0';
-                    popBtn.addEventListener('click', () => sendCommand(`/pop ${p.id}`));
-                    controls.appendChild(popBtn);
-                }
+                const popBtn = document.createElement('button');
+                popBtn.textContent = '⏹️ Pop';
+                popBtn.style.borderColor = '#b55a5a';
+                popBtn.style.color = '#f0b0b0';
+                popBtn.addEventListener('click', () => sendCommand(`/pop ${p.id}`));
+                controls.appendChild(popBtn);
 
-                if (p.id != "gm") {
-                    card.appendChild(controls);
-                }
+                card.appendChild(controls);
 
                 // Animations
                 const animContainer = document.createElement('div');
