@@ -136,7 +136,7 @@ const charAliases = {
 // ==========================================================
 // 2. STATE FOR CHIBI OVERLAY
 // ==========================================================
-let overlayEnabled = false;
+let overlayEnabled = true;
 let chibiItems = {};
 let gmTimeout = null;
 let gmRemovalTimer = null; 
@@ -279,7 +279,7 @@ function repositionContainer(slotId, container) {
         2: {fromTop: 20, fromSide: 0},
         3: {fromTop: 120, fromSide: 50},
         4: {fromTop: 130, fromSide: 250},
-        5: {fromTop: 120, fromSide: 300},
+        5: {fromTop: 170, fromSide: 315},
         6: {fromTop: 150, fromSide: 300},
         7: {fromTop: 0, fromSide: 370},
     };
@@ -593,8 +593,8 @@ function compactSide(side) {
 
     if (moves.length === 0) return;
 
-    // Stagger the FLIP moves with delays (0, 500, 1000, ...)
-    let delay = 0;
+    // Stagger the FLIP moves with delays 
+    let delay = 500;
     const timers = [];
     moves.forEach(move => {
         const timer = setTimeout(() => {
@@ -643,7 +643,7 @@ function handleSpeakingStart(userId) {
         }
         item.element.classList.add('show');
         item.element.style.opacity = '1';
-        item.element.classList.add('chibi-speaking');
+        playAnimation(userId, 'speak');
         return;
     }
     
@@ -967,11 +967,16 @@ function handleCommand(rawCommand) {
                 return;
             }
             let muted = resolved.data.muted || false;
-            //resolved.data.muted = false;
+            resolved.data.muted = false;
             handleSpeakingStart(userId);
             if (muted) {
                 resolved.data.muted = true;
             }
+            setTimeout(() => {
+                if (chibiItems[userId]) {
+                    chibiItems[userId].element.classList.remove('chibi-speaking');
+                }
+            }, 2000);
         }
         return;
     }
@@ -997,12 +1002,17 @@ function handleCommand(rawCommand) {
         const animName = args[0].toLowerCase();
         const charName = args.slice(1).join(' ');
         const resolved = resolveCharacter(charName);
-        if (resolved && resolved.type === 'player') {
-            const userId = resolved.data.userId;
-            if (chibiItems[userId]) {
-                playAnimation(userId, animName);
+        if ((resolved && resolved.type === 'player' || charName === "gm" || charName === "npc")) {
+            if (charName === "gm" || charName === "npc") {
+                playAnimation(charName, animName);
+                return;
             } else {
-                console.warn(`No chibi found for "${charName}"`);
+                const userId = resolved.data.userId;
+                if (chibiItems[userId]) {
+                    playAnimation(userId, animName);
+                } else {
+                    console.warn(`No chibi found for "${charName}"`);
+                }
             }
         } else {
             console.warn(`Character "${charName}" not found.`);
@@ -1011,46 +1021,60 @@ function handleCommand(rawCommand) {
     }
 }
 
+function shuffleArray(arr) {
+    const a = [...arr]; // copy so original isn't modified
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
 // --- Test fill and clear (adapted) ---
 function fillTestSlots() {
     clearTestSlots();
     let idx = 0;
-    const allPlayerIds = playersData.map(p => p.userId);
+    const allPlayerIds = shuffleArray(playersData.map(p => p.userId));
     for (let i = 0; i < leftSlots.length && idx < allPlayerIds.length; i++) {
-        const userId = allPlayerIds[idx];
-        const slotId = leftSlots[i];
-        const element = createChibiElement(userId, slotId);
-        if (element) {
-            const player = playersData.find(p => p.userId === userId);
-            updateChibiAppearance(userId, element, slotId);
-            setChibiTranslate(element, 0, 0, false);
-            requestAnimationFrame(() => {
-                element.classList.add('show');
-                element.style.opacity = '1';
-            });
-            leftOccupants[i] = userId;
-            slotOccupancy[userId] = { slotId, side: 'left', index: i };
-            chibiItems[userId] = { element, slotId, side: 'left', index: i, timeout: null };
-            idx++;
-        }
+        setTimeout(() => {
+            const userId = allPlayerIds[idx];
+            const slotId = leftSlots[i];
+            const element = createChibiElement(userId, slotId);
+            if (element) {
+                const player = playersData.find(p => p.userId === userId);
+                updateChibiAppearance(userId, element, slotId);
+                setChibiTranslate(element, 0, 0, false);
+                requestAnimationFrame(() => {
+                    element.classList.add('show');
+                    element.style.opacity = '1';
+                });
+                leftOccupants[i] = userId;
+                slotOccupancy[userId] = { slotId, side: 'left', index: i };
+                chibiItems[userId] = { element, slotId, side: 'left', index: i, timeout: null };
+                idx++;
+            }
+        }, i * 200);
     }
     for (let i = 0; i < rightSlots.length && idx < allPlayerIds.length; i++) {
-        const userId = allPlayerIds[idx];
-        const slotId = rightSlots[i];
-        const element = createChibiElement(userId, slotId);
-        if (element) {
-            const player = playersData.find(p => p.userId === userId);
-            updateChibiAppearance(userId, element, slotId);
-            setChibiTranslate(element, 0, 0, false);
-            requestAnimationFrame(() => {
-                element.classList.add('show');
-                element.style.opacity = '1';
-            });
-            rightOccupants[i] = userId;
-            slotOccupancy[userId] = { slotId, side: 'right', index: i };
-            chibiItems[userId] = { element, slotId, side: 'right', index: i, timeout: null };
-            idx++;
-        }
+        setTimeout(() => {
+            const userId = allPlayerIds[idx];
+            const slotId = rightSlots[i];
+            const element = createChibiElement(userId, slotId);
+            if (element) {
+                const player = playersData.find(p => p.userId === userId);
+                updateChibiAppearance(userId, element, slotId);
+                setChibiTranslate(element, 0, 0, false);
+                requestAnimationFrame(() => {
+                    element.classList.add('show');
+                    element.style.opacity = '1';
+                });
+                rightOccupants[i] = userId;
+                slotOccupancy[userId] = { slotId, side: 'right', index: i };
+                chibiItems[userId] = { element, slotId, side: 'right', index: i, timeout: null };
+                idx++;
+            }
+
+        }, i * 200);
     }
     showGM(true);
 }
@@ -1212,11 +1236,16 @@ function injectAnimationStyles() {
 
 // --- Apply an animation to a chibi element ---
 function playAnimation(userId, animationName) {
-    const item = chibiItems[userId];
-    if (!item) {
-        console.warn(`No chibi found for user ${userId}`);
-        return;
+    let item;
+    if (userId == "gm" || userId == "npc") {
+        item = { element: document.getElementsByClassName(`${userId}-slot`)[0] }
+    } else {
+        item = chibiItems[userId];
+        if (!item) {
+            console.warn(`No chibi found for user ${userId}`);
+        }
     }
+    
     const element = item.element;
     element.classList.forEach(cls => {
         if (cls.startsWith('anim-')) {

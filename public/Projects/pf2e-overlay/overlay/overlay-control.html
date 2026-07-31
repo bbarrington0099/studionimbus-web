@@ -41,6 +41,17 @@
             border-bottom: 1px solid #4a3f4a;
             padding-bottom: 6px;
         }
+        .testBtn {
+            margin-left: auto;
+            background: #3a2e3a;
+            border: 1px solid #5a4d5a;
+            color: #dfd6c9;
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.15s;
+        }
         .player-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -167,7 +178,13 @@
     <h1>⚔️ PF2e Overlay Control</h1>
 
     <div class="section" id="playersSection">
-        <div class="section-title">👥 Characters</div>
+        <div class="section-title">
+            👥 Characters
+            <button id="chibiOn" class="testBtn">🟢 Chibi On</button>
+            <button id="chibiOff" class="testBtn">🔴 Chibi Off</button>
+            <button id="testFillBtn" class="testBtn">🧪 Test Fill</button>
+            <button id="testClearBtn" class="testBtn">🧹 Clear Test</button>
+        </div>
         <div class="player-grid" id="playerGrid"></div>
     </div>
 
@@ -197,7 +214,8 @@
             { id: "azzahd", userId: "399287336937979905", name: "Azzahd", avatar: "../images/chibi/pcs/azzahd.png", compFlip: true },
             { id: "rapha", userId: "601987485513547817", name: "Rapha", avatar: "../images/chibi/pcs/rapha.png" },
             { id: "gordak", userId: "223573302176645121", name: "Gordak", avatar: "../images/chibi/pcs/gordak.png", flip: true },
-            { id: "pravish", userId: "653001503023562774", name: "Pravish", avatar: "../images/chibi/pcs/pravish.png", flip: true }
+            { id: "pravish", userId: "653001503023562774", name: "Pravish", avatar: "../images/chibi/pcs/pravish.png", flip: true },
+            { id: "gm", userId: "670656351701303296", name: "Game Master", avatar: "../images/chibi/gm.png" },
         ];
 
         const npcs = [
@@ -256,6 +274,22 @@
             renderNPCs();
             renderEffects();
             renderGroups();
+            const chibiOnBtn = document.getElementById('chibiOn');
+            const chibiOffBtn = document.getElementById('chibiOff');
+            const testFillBtn = document.getElementById('testFillBtn');
+            const testClearBtn = document.getElementById('testClearBtn');
+            chibiOnBtn.addEventListener('click', () => {
+                sendCommand(`/chibi on`);
+            });
+            chibiOffBtn.addEventListener('click', () => {
+                sendCommand(`/chibi off`);
+            });
+            testFillBtn.addEventListener('click', () => {
+                sendCommand(`/chibi test`);
+            });
+            testClearBtn.addEventListener('click', () => {
+                sendCommand(`/chibi testoff`);
+            });
         }
 
         // --- Players ---
@@ -280,10 +314,12 @@
                 controls.className = 'controls';
 
                 // Mute
-                const muteBtn = document.createElement('button');
-                muteBtn.textContent = '🔇 Mute';
-                muteBtn.addEventListener('click', () => sendCommand(`/mute ${p.id}`));
-                controls.appendChild(muteBtn);
+                if (p.id != "gm") {
+                    const muteBtn = document.createElement('button');
+                    muteBtn.textContent = '🔇 Mute';
+                    muteBtn.addEventListener('click', () => sendCommand(`/mute ${p.id}`));
+                    controls.appendChild(muteBtn);
+                }
 
                 // Flip
                 if (p.flip) {
@@ -302,20 +338,26 @@
                 }
 
                 // Impersonate
-                const impBtn = document.createElement('button');
-                impBtn.textContent = '🗣️ Speak';
-                impBtn.addEventListener('click', () => sendCommand(`/impersonate ${p.id}`));
-                controls.appendChild(impBtn);
+                if (p.id != "gm") {
+                    const impBtn = document.createElement('button');
+                    impBtn.textContent = '🗣️ Speak';
+                    impBtn.addEventListener('click', () => sendCommand(`/impersonate ${p.id}`));
+                    controls.appendChild(impBtn);
+                }
 
                 // Pop
-                const popBtn = document.createElement('button');
-                popBtn.textContent = '⏹️ Pop';
-                popBtn.style.borderColor = '#b55a5a';
-                popBtn.style.color = '#f0b0b0';
-                popBtn.addEventListener('click', () => sendCommand(`/pop ${p.id}`));
-                controls.appendChild(popBtn);
+                if (p.id != "gm") {
+                    const popBtn = document.createElement('button');
+                    popBtn.textContent = '⏹️ Pop';
+                    popBtn.style.borderColor = '#b55a5a';
+                    popBtn.style.color = '#f0b0b0';
+                    popBtn.addEventListener('click', () => sendCommand(`/pop ${p.id}`));
+                    controls.appendChild(popBtn);
+                }
 
-                card.appendChild(controls);
+                if (p.id != "gm") {
+                    card.appendChild(controls);
+                }
 
                 // Animations
                 const animContainer = document.createElement('div');
@@ -347,6 +389,16 @@
             clearBtn.className = 'clear';
             clearBtn.addEventListener('click', () => sendCommand('/npc clear'));
             grid.appendChild(clearBtn);
+            // Animations
+            const animContainer = document.createElement('div');
+            animContainer.className = 'animations';
+            animations.forEach(anim => {
+                const btn = document.createElement('button');
+                btn.textContent = `NPC ${anim}`;
+                btn.addEventListener('click', () => sendCommand(`/animation ${anim} npc`));
+                animContainer.appendChild(btn);
+            });
+            grid.appendChild(animContainer);
         }
 
         // --- Effects ---

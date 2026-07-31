@@ -169,6 +169,7 @@ client.on("messageCreate", async (message) => {
 \`/<pop/p> <name>\` – Remove chibi immediately  
 \`/<flip/f> <name>\` – Toggle main image (crossfade)  
 \`/<compflip/cf> <name>\` – Toggle companion image (crossfade)  
+\`/<mute/m> <name>\` – Mute chibi (chibi does not respond to voice)
 
 **NPC & Effects**  
 \`/<npc/n> <npc>\` – Show NPC (e.g. \`/npc mira\`)  
