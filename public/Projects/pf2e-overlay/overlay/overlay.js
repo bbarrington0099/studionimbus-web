@@ -1004,6 +1004,19 @@ function handleCommand(rawCommand) {
     if (cmd === 'mute' || cmd === '/m') {
         const charName = args.join(' ');
         if (!charName) return;
+        if (charName == "alloff") {
+            playersData.forEach(p => {
+                removeUser(p.userId);
+                p.muted = true;
+                return;
+            })
+        }
+        if (charName == "allon") {
+            playersData.forEach(p => {
+                p.muted = false;
+                return;
+            })
+        }
         const resolved = resolveCharacter(charName);
         if (resolved && resolved.type === 'player') {
             const userId = resolved.data.userId;

@@ -184,6 +184,8 @@
             <button id="chibiOff" class="testBtn">🔴 Chibi Off</button>
             <button id="testFillBtn" class="testBtn">🧪 Test Fill</button>
             <button id="testClearBtn" class="testBtn">🧹 Clear Test</button>
+            <button id="muteAllBtn" class="testBtn">🔇 Mute All</button>
+            <button id="unmuteAllBtn" class="testBtn">🔊 Unmute All</button>
         </div>
         <div class="player-grid" id="playerGrid"></div>
     </div>
@@ -287,6 +289,8 @@
             const chibiOffBtn = document.getElementById('chibiOff');
             const testFillBtn = document.getElementById('testFillBtn');
             const testClearBtn = document.getElementById('testClearBtn');
+            const muteAllBtn = document.getElementById('muteAllBtn');
+            const unmuteAllBtn = document.getElementById('unmuteAllBtn');
             chibiOnBtn.addEventListener('click', () => {
                 sendCommand(`/chibi on`);
             });
@@ -298,6 +302,12 @@
             });
             testClearBtn.addEventListener('click', () => {
                 sendCommand(`/chibi testoff`);
+            });
+            muteAllBtn.addEventListener('click', () => {
+                sendCommand(`/mute allon`);
+            });
+            unmuteAllBtn.addEventListener('click', () => {
+                sendCommand(`/mute alloff`);
             });
         }
 
