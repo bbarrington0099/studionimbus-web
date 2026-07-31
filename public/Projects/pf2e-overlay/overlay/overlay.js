@@ -108,6 +108,7 @@ const GM_COMPANION_IMG = null;
 const npcs = [
     { id: "mira", name: "Mira", image: "../images/chibi/npcs/mira.png", aliases: ["m"] },
     { id: "elowen", name: "Elowen", image: "../images/chibi/companions/elowen.png", aliases: ["e"] },
+    { id: "sortin", name: "Sortin", image: "../images/chibi/npcs/sortin.png", aliases: ["s"] },
 ];
 
 // Effect definitions
