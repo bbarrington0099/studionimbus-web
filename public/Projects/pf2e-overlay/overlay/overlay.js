@@ -886,7 +886,6 @@ class OverlayManager {
             this.overlayEl.style.backgroundImage = '';
         }
         this.overlayEl.style.display = 'block';
-        this.chibiManager.showGM(true);
     }
 
     disable() {
@@ -908,7 +907,7 @@ class OverlayManager {
         this.overlayEl.classList.remove('scenic-mode');
         this.clearTestSlots();
         this.dataManager.gmData.alternateSet = 'combat';
-        this.chibiManager.showGM(true);
+        this.chibiManager.showGM(false);
         this.renderCombatChibis();
     }
 
@@ -917,7 +916,7 @@ class OverlayManager {
         this.combatMode = false;
         this.clearCombatChibis();
         this.dataManager.gmData.alternateSet = 'default';
-        this.chibiManager.showGM(true);
+        this.chibiManager.showGM(false);
         this.overlayEl.classList.add('scenic-mode');
         const defaultBg = this.dataManager.getBackground(this.lastBackgroundId || 'default');
         if (defaultBg) {

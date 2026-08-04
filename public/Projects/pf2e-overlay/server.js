@@ -1,5 +1,5 @@
-const { Client, GatewayIntentBits } = require("discord.js");
-const { joinVoiceChannel, getVoiceConnection, createAudioPlayer } = require("@discordjs/voice");
+const { Client, GatewayIntentBits, ChannelType } = require("discord.js");
+const { joinVoiceChannel, getVoiceConnection, createAudioPlayer, VoiceConnectionStatus } = require("@discordjs/voice");
 const WebSocket = require("ws");
 const dotenv = require("dotenv");
 dotenv.config({
@@ -7,8 +7,10 @@ dotenv.config({
 });
 
 const TOKEN = process.env.PF2E_BOT_TOKEN;
-const COMMAND_CHANNEL_ID = "1532404346266849400"; 
+const COMMAND_CHANNEL_ID = "1532404346266849400";
+const VOICE_CHANNEL_ID = "1496296627617534106";
 
+process.on('unhandledRejection', (reason) => console.error('❌ Unhandled Rejection:', reason));
 
 const client = new Client({
     intents: [
@@ -22,30 +24,21 @@ const client = new Client({
 const wss = new WebSocket.Server({ port: 8080 });
 wss.on("connection", (ws) => {
     console.log("🔗 WebSocket client connected");
-
     ws.on("message", (message) => {
         try {
             const data = JSON.parse(message);
-            console.log("📩 Received from WebSocket:", data);
-
-            // If it's a command, broadcast it to all clients
             if (data.type === "command") {
                 broadcast({ type: "command", command: data.command });
             }
-            // You can handle other message types here if needed
         } catch (err) {
             console.error("❌ WebSocket parse error:", err);
         }
     });
-
-    ws.on("close", () => {
-        console.log("🔌 WebSocket client disconnected");
-    });
+    ws.on("close", () => console.log("🔌 WebSocket client disconnected"));
 });
 
 function broadcast(data) {
     const msg = JSON.stringify(data);
-    console.log(`📢 Broadcasting to ${wss.clients.size} clients:`, data);
     wss.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN) {
             client.send(msg);
@@ -53,52 +46,47 @@ function broadcast(data) {
     });
 }
 
-// Track active speaking timeouts (to debounce end events)
+// Track speaking debounce and guild readiness
 const speakingTimeouts = new Map();
+const guildReady = new Map(); // guildId -> boolean (true when voice connection is ready)
 
-client.once("ready", () => {
-    console.log(`Logged in as ${client.user.tag}`);
-});
+// ---------- Join function ----------
+function joinVoiceAndSetup(guild, channel) {
+    if (channel.id !== VOICE_CHANNEL_ID) return;
 
-client.on("voiceStateUpdate", async (oldState, newState) => {
-    if (newState.member?.user?.bot) return;
+    const me = guild.members.me;
+    if (!me.permissionsIn(channel).has("Connect")) {
+        console.error(`❌ No "Connect" permission for ${channel.name}`);
+        return;
+    }
 
-    const isTrackedUser = (member) => !member.user.bot;
+    // If already connected, do nothing
+    if (getVoiceConnection(guild.id)) {
+        console.log(`ℹ️ Already connected to voice, skipping.`);
+        return;
+    }
 
-    // User joined a voice channel
-    if (newState.channelId && !oldState.channelId && isTrackedUser(newState.member)) {
-        const channel = newState.channel;
-        const guild = channel.guild;
+    const connection = joinVoiceChannel({
+        channelId: channel.id,
+        guildId: guild.id,
+        adapterCreator: guild.voiceAdapterCreator,
+        selfDeaf: false
+    });
+    console.log(`🔊 Attempting to join ${channel.name}...`);
 
-        let connection = getVoiceConnection(guild.id);
-        if (!connection) {
-            connection = joinVoiceChannel({
-                channelId: channel.id,
-                guildId: guild.id,
-                adapterCreator: guild.voiceAdapterCreator,
-                selfDeaf: false   // important: we must hear audio to detect speaking
-            });
+    const player = createAudioPlayer();
+    connection.subscribe(player);
 
-            // Add a dummy player to keep connection alive (optional but recommended)
-            const player = createAudioPlayer();
-            connection.subscribe(player);
+    // Mark as not ready until 'ready' fires
+    guildReady.set(guild.id, false);
 
-            connection.on("ready", () => {
-                console.log(`Bot joined ${channel.name} in ${guild.name}`);
-            });
+    connection.on(VoiceConnectionStatus.Ready, () => {
+        console.log(`✅ Bot joined ${channel.name}`);
+        guildReady.set(guild.id, true);
 
-            connection.on("disconnect", () => {
-                console.log(`Bot disconnected from ${guild.name}`);
-            });
-        }
-
-        // ✅ CORRECT WAY: listen to speaking events on the receiver
         const receiver = connection.receiver;
-
-        // 'start' event – user starts speaking
         receiver.speaking.on("start", (userId) => {
             if (userId === client.user.id) return;
-            // Clear any pending end timeout for this user
             if (speakingTimeouts.has(userId)) {
                 clearTimeout(speakingTimeouts.get(userId));
                 speakingTimeouts.delete(userId);
@@ -106,10 +94,8 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
             broadcast({ type: "speaking_start", userId });
         });
 
-        // 'end' event – user stops speaking
         receiver.speaking.on("end", (userId) => {
             if (userId === client.user.id) return;
-            // Debounce: if multiple end events fire rapidly, only send one after a short delay
             if (speakingTimeouts.has(userId)) return;
             const timeout = setTimeout(() => {
                 broadcast({ type: "speaking_end", userId });
@@ -117,47 +103,140 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
             }, 200);
             speakingTimeouts.set(userId, timeout);
         });
-    }
-});
+    });
 
-// Optional: leave voice channel when empty
-client.on("voiceStateUpdate", (oldState, newState) => {
-    const guild = newState.guild || oldState.guild;
-    const connection = getVoiceConnection(guild.id);
-    if (connection) {
-        const botChannelId = connection.joinConfig.channelId;
-        const voiceChannel = guild.channels.cache.get(botChannelId);
-        if (voiceChannel) {
-            const humanMembers = voiceChannel.members.filter(m => !m.user.bot);
-            if (humanMembers.size === 0) {
-                connection.destroy();
-                console.log(`Left empty voice channel in ${guild.name}`);
-                speakingTimeouts.clear();
-            }
+    connection.on(VoiceConnectionStatus.Disconnected, () => {
+        console.log(`🔌 Disconnected, attempting to reconnect...`);
+        // The library will auto-reconnect; we just log.
+    });
+
+    connection.on(VoiceConnectionStatus.Destroyed, () => {
+        console.log(`❌ Voice connection destroyed.`);
+        guildReady.delete(guild.id);
+        speakingTimeouts.clear();
+    });
+
+    connection.on("error", (error) => {
+        console.error(`❌ Voice error:`, error);
+        // If error occurs, we rely on voiceStateUpdate to re-trigger.
+    });
+
+    return connection;
+}
+
+// ---------- Startup ----------
+client.once("ready", () => {
+    console.log(`Logged in as ${client.user.tag}`);
+    // Debug listing (optional)
+    for (const guild of client.guilds.cache.values()) {
+        const voiceChannels = guild.channels.cache.filter(c => c.type === ChannelType.GuildVoice || c.type === 'GUILD_VOICE');
+        for (const [id, channel] of voiceChannels) {
+            const members = channel.members.map(m => m.user.tag).join(', ');
+            console.log(`🎤 ${channel.name} (${id}) - Members: ${members || 'none'}`);
+        }
+    }
+
+    // Auto-join if human in target channel
+    for (const guild of client.guilds.cache.values()) {
+        const voiceChannel = guild.channels.cache.get(VOICE_CHANNEL_ID);
+        if (!voiceChannel) continue;
+        const hasHuman = voiceChannel.members.some(m => !m.user.bot);
+        if (hasHuman && !getVoiceConnection(guild.id)) {
+            console.log(`🔊 Auto‑joining ${voiceChannel.name}`);
+            joinVoiceAndSetup(guild, voiceChannel);
         }
     }
 });
 
-// ==========================================
-// Discord command listener (updated)
-// ==========================================
+// ---------- Voice state updates ----------
+client.on("voiceStateUpdate", async (oldState, newState) => {
+    const guild = newState.guild || oldState.guild;
+    if (!guild) return;
+
+    const targetChannelId = VOICE_CHANNEL_ID;
+
+    // 1. User joined the target channel (and is not a bot)
+    if (newState.channelId === targetChannelId && !oldState.channelId && !newState.member.user.bot) {
+        const channel = newState.channel;
+        let connection = getVoiceConnection(guild.id);
+        if (!connection) {
+            console.log(`👤 User joined target channel, joining...`);
+            joinVoiceAndSetup(guild, channel);
+        } else {
+            console.log(`ℹ️ Already connected, no action.`);
+        }
+    }
+
+    // 2. Leave if the channel becomes empty (only after bot is ready)
+    const connection = getVoiceConnection(guild.id);
+    if (!connection) return;
+    if (connection.joinConfig.channelId !== targetChannelId) return;
+
+    // Only check if the bot is ready (to avoid destroying during connection)
+    if (!guildReady.get(guild.id)) {
+        console.log(`⏳ Bot not ready yet, skipping empty check.`);
+        return;
+    }
+
+    const voiceChannel = guild.channels.cache.get(targetChannelId);
+    if (!voiceChannel) return;
+
+    // Wait 2 seconds before checking emptiness (allows for quick re-joins)
+    setTimeout(() => {
+        const conn = getVoiceConnection(guild.id);
+        if (!conn) return;
+        if (conn.joinConfig.channelId !== targetChannelId) return;
+
+        // If connection is still connecting, don't destroy
+        if (conn.state.status === VoiceConnectionStatus.Connecting) {
+            console.log(`⏳ Still connecting, not leaving yet.`);
+            return;
+        }
+
+        const humans = voiceChannel.members.filter(m => !m.user.bot);
+        if (humans.size === 0) {
+            console.log(`👋 Channel empty, leaving...`);
+            conn.destroy();
+            guildReady.delete(guild.id);
+            speakingTimeouts.clear();
+        } else {
+            console.log(`👥 ${humans.size} human(s) still in channel, staying.`);
+        }
+    }, 2000);
+});
+
+// ---------- Discord command listener ----------
 client.on("messageCreate", async (message) => {
-    // Ignore bots and messages not in the designated channel
     if (message.author.bot) return;
     if (message.channel.id !== COMMAND_CHANNEL_ID) return;
-    
+
     const content = message.content.trim();
-    if (!content.startsWith("/")) return; // Only commands
-    
+    if (!content.startsWith("/")) return;
+
     const parts = content.split(/\s+/);
-    const cmd = parts[0].toLowerCase().slice(1); // remove leading "/"
+    const cmd = parts[0].toLowerCase().slice(1);
     const args = parts.slice(1);
-    
+
+    // ---- /voice - force join ----
+    if (cmd === 'voice') {
+        const guild = message.guild;
+        if (!guild) return message.reply('Use in a server.');
+        const voiceChannel = guild.channels.cache.get(VOICE_CHANNEL_ID);
+        if (!voiceChannel) return message.reply('Channel not found.');
+        const connection = getVoiceConnection(guild.id);
+        if (connection) {
+            return message.reply(`Already connected (status: ${connection.state.status})`);
+        }
+        joinVoiceAndSetup(guild, voiceChannel);
+        return message.reply(`Attempting to join...`);
+    }
+
     // ---- /help ----
     if (cmd === 'help' || cmd === 'h') {
         const helpMessage = `
 **📖 Available Commands**  
 \`/<help/h>\` – Show this help message
+\`/join\` – Force the bot to join the configured voice channel
 
 **General** 
 \`/<chibi/c> <on/y>\` – Enable overlay  
@@ -208,8 +287,6 @@ Available animations: \`shake\`, \`bounce\`, \`spin\`, \`glow\`, \`jump\`, \`spe
                 break;
             case 'effects':
             case 'e':
-                // Build list from your client-side effects array (mirror it on server or send from client)
-                // We'll just send a placeholder; the client will also list them on console.
                 reply = `
 Effects: 
     \`campu\`, \`campm\`, \`campl\`, \`campr\`, \`campd\` 
@@ -244,7 +321,7 @@ NPC aliases:
         return;
     }
 
-    // ---- Broadcast all other commands to WebSocket clients ----
+    // ---- Broadcast all other commands ----
     console.log(`Broadcasting command: ${content} from ${message.author.tag}`);
     broadcast({
         type: "command",
