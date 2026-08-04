@@ -415,6 +415,17 @@ body {
 	height: 100%;
 }
 
+#chibi-overlay.scenic-mode {
+	background: radial-gradient(
+		ellipse at 30% 40%,
+		rgba(0, 0, 0, 0.3),
+		rgba(0, 0, 0, 0.65)
+	);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 /* ---- Chibi items ---- */
 .chibi-item {
 	width: 160px;
@@ -464,8 +475,6 @@ body {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-	/* border-radius: 50%; */
-	/* border: 2px solid gold; */
 }
 /* GM slot specific */
 .chibi-item.gm-slot {
@@ -476,6 +485,15 @@ body {
 .chibi-item.npc-slot {
 	width: 160px;
 	height: 160px;
+}
+
+.combat-companion {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: -20px;
+	left: -10px;
+	z-index: 1;
 }
 
 /* ---- Effects ---- */
@@ -583,12 +601,57 @@ body {
 	z-index: 1;
 }
 
+#chibi-overlay #chibi-under-bar .chibi-effect.show img {
+	object-fit: cover;
+}
+
+#chibi-player-bar {
+	height: 210px;
+	width: 1562px;
+	flex-shrink: 0;
+	display: flex;
+	gap: 18px;
+	padding: 14px 20px;
+	justify-content: space-evenly;
+	align-items: center;
+	position: absolute;
+	bottom: 120px;
+}
+
+.combat-chibi {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	position: relative;
+	z-index: 2;
+	flex-direction: column;
+	height: 172px;
+	width: 150px;
+	flex: 1;
+	padding: 6px 12px 6px 18px;
+}
+
+.combat-chibi.ikyki {
+	position: relative;
+	bottom: 10px;
+}
+
+.combat-chibi.gordak {
+	position: relative;
+	bottom: 10px;
+}
+
+.combat-chibi-inner {
+	z-index: 2;
+}
+
 #player-bar {
 	height: 210px;
 	width: 1562px;
 	flex-shrink: 0;
 	display: flex;
 	gap: 18px;
+	z-index: 2;
 	padding: 14px 20px;
 	justify-content: space-evenly;
 	align-items: center;
@@ -808,4 +871,117 @@ hr {
 		var(--rune-glow),
 		transparent
 	);
+}
+
+@keyframes shake {
+	0%, 100% { transform: translate(0, 0); }
+	10%, 30%, 50%, 70%, 90% { transform: translate(-8px, 0); }
+	20%, 40%, 60%, 80% { transform: translate(8px, 0); }
+}
+.anim-shake {
+	animation: shake 0.6s ease-in-out !important;
+}
+@keyframes bounce {
+	0%, 100% { transform: translate(0, 0); }
+	50% { transform: translate(0, -20px); }
+}
+.anim-bounce {
+	animation: bounce 0.5s ease-in-out !important;
+}
+@keyframes speak {
+	0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+	20%  { transform: translate(0, -3px) rotate(-1deg) scale(1.02); }
+	50%  { transform: translate(0, -8px) rotate(1deg) scale(1.04); }
+	80%  { transform: translate(0, -3px) rotate(-0.5deg) scale(1.02); }
+	100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+.anim-speak {
+	animation: speak 3s ease-in-out !important;
+}
+.chibi-speaking {
+	animation: speak 0.9s ease-in-out infinite;
+}
+/* Spin animation (rotate) */
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+.anim-spin {
+	animation: spin 1s linear !important;
+}
+@keyframes glow {
+	0%, 100% { transform: scale(1); opacity: 1; }
+	50% { transform: scale(1.1); opacity: 0.8; }
+}
+.anim-glow {
+	animation: glow 0.8s ease-in-out !important;
+}
+@keyframes jump {
+	0%, 100% { transform: translate(0, 0); }
+	50% { transform: translate(0, -30px); }
+}
+.anim-jump {
+	animation: jump 0.7s ease-in-out !important;
+}
+@keyframes attack-left {
+	0%   { transform: translate(0, 0) scale(1); }
+	15%  { transform: translate(-20px, 5px) scale(1.1) rotate(-5deg); }
+	30%  { transform: translate(-15px, 8px) scale(1.05) rotate(3deg); }
+	45%  { transform: translate(-25px, 5px) scale(1.1) rotate(-2deg); }
+	60%  { transform: translate(-20px, 8px) scale(1.05) rotate(4deg); }
+	75%  { transform: translate(-15px, 5px) scale(1.1) rotate(-3deg); }
+	100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes attack-right {
+	0%   { transform: translate(0, 0) scale(1); }
+	15%  { transform: translate(20px, 5px) scale(1.1) rotate(5deg); }
+	30%  { transform: translate(15px, 8px) scale(1.05) rotate(-3deg); }
+	45%  { transform: translate(25px, 5px) scale(1.1) rotate(2deg); }
+	60%  { transform: translate(20px, 8px) scale(1.05) rotate(-4deg); }
+	75%  { transform: translate(15px, 5px) scale(1.1) rotate(3deg); }
+	100% { transform: translate(0, 0) scale(1); }
+}
+.anim-attack-left {
+	animation: attack-left 0.6s ease-in-out !important;
+}
+.anim-attack-right {
+	animation: attack-right 0.6s ease-in-out !important;
+}
+@keyframes melee {
+	0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+	10%  { transform: translate(5px, -2px) scale(0.9) rotate(-1deg); }
+	20%  { transform: translate(10px, -5px) scale(0.8) rotate(-2deg); }
+	30%  { transform: translate(15px, -8px) scale(0.9) rotate(-3deg); }
+	40%  { transform: translate(25px, -12px) scale(1.0) rotate(-4deg); }
+	50%  { transform: translate(40px, -20px) scale(1.1) rotate(5deg); }
+	60%  { transform: translate(55px, -30px) scale(1.15) rotate(15deg); }
+	70%  { transform: translate(65px, -25px) scale(1.12) rotate(12deg); }
+	80%  { transform: translate(45px, -18px) scale(1.05) rotate(6deg); }
+	90%  { transform: translate(20px, -10px) scale(0.95) rotate(0deg); }
+	95%  { transform: translate(10px, -5px) scale(0.85) rotate(-1deg); }
+	100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+.anim-melee {
+	animation: melee 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+@keyframes ranged {
+	0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+	/* slight prep / focus */
+	10%  { transform: translate(-3px, 0px) scale(0.98) rotate(-1deg); }
+	20%  { transform: translate(-6px, 0px) scale(0.95) rotate(-2deg); }
+	/* draw / wind-up */
+	30%  { transform: translate(-10px, 2px) scale(0.93) rotate(-3deg); }
+	40%  { transform: translate(-12px, 4px) scale(0.92) rotate(-4deg); }
+	/* release (quick forward snap) */
+	50%  { transform: translate(8px, -2px) scale(1.05) rotate(2deg); }
+	/* follow-through */
+	60%  { transform: translate(12px, -1px) scale(1.03) rotate(1deg); }
+	70%  { transform: translate(6px, 0px) scale(1.01) rotate(0deg); }
+	/* recoil settle */
+	80%  { transform: translate(-2px, 0px) scale(0.99) rotate(-0.5deg); }
+	90%  { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+	100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+.anim-ranged {
+  animation: ranged 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
 }

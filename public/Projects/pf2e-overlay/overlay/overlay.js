@@ -1,1342 +1,1839 @@
-// overlay.js - Full functionality including chibi overlay (FLIP sliding with container offsets)
 // ==========================================================
-// 1. PLAYER DATA (JS OBJECTS)
+// 1. DATA MANAGER 
 // ==========================================================
-const GM_USER_ID = "670656351701303296";
-
-const playersData = [
-    {
-        id: "uri",
-        userId: "798680850958647307",
-        name: "Uri",
-        bloodline: "Yaksha Human",
-        classSkill: "Champion",
-        avatar: "../images/avatars/uri.png",
-        cssClass: "uri",
-        chibiImg: "../images/chibi/pcs/uri.png",
-        companionImg: null,
-        flipImg: null,
-        flipped: false
-    },
-    {
-        id: "oryn",
-        userId: "389262794480025601",
-        name: "Oryn",
-        bloodline: "Skilled Human",
-        classSkill: "Ranger",
-        avatar: "../images/avatars/oryn.jpg",
-        cssClass: "oryn",
-        chibiImg: "../images/chibi/pcs/oryn.png",
-        companionImg: "../images/chibi/companions/jack.png",
-        flipImg: null,
-        flipped: false
-    },
-    {
-        id: "ikyki",
-        userId: "710641511154319393",
-        name: "Ikyki",
-        bloodline: "Poisonhide Tripkee",
-        classSkill: "Alchemist",
-        avatar: "../images/avatars/ikyki.png",
-        cssClass: "ikyki",
-        chibiImg: "../images/chibi/pcs/ikyki.png",
-        companionImg: null,
-        flipImg: null,
-        flipped: false
-    },
-    {
-        id: "azzahd",
-        userId: "399287336937979905",
-        name: "Azzahd",
-        bloodline: "Dromaar Dragonet",
-        classSkill: "Summoner",
-        avatar: "../images/avatars/azzahd.png",
-        cssClass: "azzahd",
-        chibiImg: "../images/chibi/pcs/azzahd.png",
-        companionImg: "../images/chibi/companions/elowen.png",
-        companionFlipImg: "../images/chibi/flips/elowen_rage.png",
-        flipImg: null,
-        flipped: false,
-        companionFlipped: false
-    },
-    {
-        id: "rapha",
-        userId: "601987485513547817",
-        name: "Rapha",
-        bloodline: "Anadi Human",
-        classSkill: "Rogue",
-        avatar: "../images/avatars/rapha.jpg",
-        cssClass: "rapha",
-        chibiImg: "../images/chibi/pcs/rapha.png",
-        companionImg: null,
-        flipImg: null,
-        flipped: false
-    },
-    {
-        id: "gordak",
-        userId: "223573302176645121",
-        name: "Gordak",
-        bloodline: "Hold-Scarred Orc",
-        classSkill: "Barbarian",
-        avatar: "../images/avatars/gordak.png",
-        cssClass: "gordak",
-        chibiImg: "../images/chibi/pcs/gordak.png",
-        companionImg: null,
-        flipImg: "../images/chibi/flips/gordak_rage.png",
-        flipped: false
-    },
-    {
-        id: "pravish",
-        userId: "653001503023562774",
-        name: "Pravish",
-        bloodline: "Hungerseed Vanara",
-        classSkill: "Inventor",
-        avatar: "../images/avatars/pravish.png",
-        cssClass: "pravish",
-        chibiImg: "../images/chibi/pcs/pravish.png",
-        companionImg: "../images/chibi/companions/pravish_construct.png",
-        flipImg: "../images/chibi/flips/pravish_unleashed.png",
-        flipped: false
+class DataManager {
+    constructor() {
+        const DATA = window.SHARED_DATA || {};
+        this.gmData = DATA.gmData || {};
+        this.playersData = DATA.playersData || [];
+        this.npcs = DATA.npcs || [];
+        this.backgrounds = DATA.backgrounds || [];
+        this.animations = DATA.animations || [];
+        this.effects = DATA.effects || [];
+        this.defaultAvatar = DATA.defaultAvatar || '';
     }
-];
 
-const DEFAULT_AVATAR = "../images/the-party.png";
-const GM_CHIBI_IMG = "../images/chibi/gm.png";
-const GM_COMPANION_IMG = null;
+    getPlayerById(id) {
+        return this.playersData.find(p => p.id === id);
+    }
 
-// NPC definitions
-const npcs = [
-    { id: "mira", name: "Mira", image: "../images/chibi/npcs/mira.png", aliases: ["m"] },
-    { id: "elowen", name: "Elowen", image: "../images/chibi/companions/elowen.png", aliases: ["e"] },
-    { id: "sortin", name: "Sortin", image: "../images/chibi/npcs/sortin.png", aliases: ["s"] },
-    { id: "voidsever-group", name: "Voidsever Group", image: "../images/chibi/enemies/voidsever_group.png", aliases: ["vsg"] },
-    { id: "wolves", name: "Wolves", image: "../images/chibi/enemies/wolves.png", aliases: ["ws"] },
-    { id: "basilisk", name: "Basilisk", image: "../images/chibi/enemies/basilisk.png", aliases: ["bk"] },
-    { id: "enemy", name: "Enemy", image: "../images/chibi/enemies/enemy.png", aliases: ["nme"] },
-];
+    getPlayerByName(name) {
+        return this.playersData.find(p => p.name.toLowerCase() === name.toLowerCase());
+    }
 
-// Effect definitions
-const effects = [
-    { id: "campu", group: "camp", image: "../images/chibi/effects/chibi-campfire.png", slot: "under", duration: 10 },
-    { id: "campm", group: "camp", image: "../images/chibi/effects/chibi-campfire.png", slot: "main", duration: 3 },
-    { id: "campl", group: "camp", image: "../images/chibi/effects/chibi-campfire.png", slot: "left", duration: 3 },
-    { id: "campr", group: "camp", image: "../images/chibi/effects/chibi-campfire.png", slot: "right", duration: 3 },
-    { id: "campd", multiple: true, effects: [
-        {id: 'campl', duration: 3},
-        {id: 'campr', duration: 4}
-    ] },
-    { id: "critf", image: "../images/chibi/effects/critical-fail.png", slot: "under", duration: 3 },
-    { id: "crits", image: "../images/chibi/effects/critical-success.png", slot: "under", duration: 3 },
-    { id: "downed", image: "../images/chibi/effects/downed.png", slot: "main", duration: 3 },
-];
+    getPlayerByUserId(userId) {
+        return this.playersData.find(p => p.userId === userId);
+    }
 
-// Character aliases
-const charAliases = {
-    "g": "gordak",
-    "a": "azzahd",
-    "p": "pravish",
-    "o": "oryn",
-    "i": "ikyki",
-    "r": "rapha",
-    "u": "uri"
-};
+    getNPC(id) {
+        return this.npcs.find(n => n.id === id);
+    }
 
-// ==========================================================
-// 2. STATE FOR CHIBI OVERLAY
-// ==========================================================
-let overlayEnabled = true;
-let chibiItems = {};
-let gmTimeout = null;
-let gmRemovalTimer = null; 
-let activeNPC = null;
-let activeEffects = {};
+    getNPCByName(name) {
+        return this.npcs.find(n => n.name.toLowerCase() === name.toLowerCase());
+    }
 
-// Slot IDs – these match the actual HTML element IDs
-const leftSlots = ['player-1', 'player-3', 'player-5', 'player-7'];
-const rightSlots = ['player-2', 'player-4', 'player-6'];
-const effectSlotMap = {
-    'left': 'chibi-over-effect-left',
-    'right': 'chibi-over-effect-right',
-    'main': 'chibi-slot-effect',
-    'under': 'chibi-under-bar'
-};
-// All slots for position computation – use the actual element IDs
-const allSlotIds = [
-    ...leftSlots.map(s => `chibi-slot-${s}`),
-    ...rightSlots.map(s => `chibi-slot-${s}`),
-    'chibi-slot-gm',
-    'chibi-slot-npc',
-    'chibi-over-effect-left',
-    'chibi-over-effect-right',
-    'chibi-slot-effect',
-    'chibi-under-bar'
-];
+    getBackground(id) {
+        return this.backgrounds.find(b => b.id === id);
+    }
 
-let leftOccupants = [null, null, null, null];
-let rightOccupants = [null, null, null];
-let slotOccupancy = {};
+    getEffect(id) {
+        return this.effects.find(e => e.id === id);
+    }
 
-// For staggering moves
-let reflowTimers = { left: [], right: [] };
+    getEffectsByGroup(group) {
+        return this.effects.filter(e => e.group === group);
+    }
 
-// ==========================================================
-// 3. RENDER PLAYER CARDS (unchanged)
-// ==========================================================
-function renderPlayerCards() {
-    const playerBar = document.getElementById("player-bar");
-    if (!playerBar) return;
+    resolveCharacter(input) {
+        let player = this.playersData.find(p =>
+            p.id === input ||
+            p.name.toLowerCase() === input.toLowerCase() ||
+            (p.aliases && p.aliases.includes(input))
+        );
+        if (player) return { type: 'player', data: player };
 
-    const existingPlayers = playerBar.querySelectorAll(".card.player");
-    existingPlayers.forEach(card => card.remove());
+        let npc = this.npcs.find(n =>
+            n.id === input ||
+            n.name.toLowerCase() === input.toLowerCase() ||
+            (n.aliases && n.aliases.includes(input))
+        );
+        if (npc) return { type: 'npc', data: npc };
 
-    playersData.forEach(player => {
-        const card = document.createElement("div");
-        card.className = `card player ${player.cssClass}`;
-        card.setAttribute("data-userid", player.userId);
+        return null;
+    }
 
-        const nameDiv = document.createElement("div");
-        nameDiv.className = "name";
-        nameDiv.textContent = player.name;
-
-        const img = document.createElement("img");
-        img.src = player.avatar;
-        img.alt = `${player.name} avatar`;
-        img.onerror = () => { img.src = DEFAULT_AVATAR; };
-
-        const skillDiv = document.createElement("div");
-        skillDiv.className = "skill";
-        skillDiv.textContent = player.classSkill;
-
-        card.appendChild(nameDiv);
-        card.appendChild(img);
-        card.appendChild(skillDiv);
-
-        playerBar.appendChild(card);
-    });
-
-    console.log("✅ Fantasy player cards dynamically generated (compact vertical layout)!");
+    shuffleArray(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
 }
 
 // ==========================================================
-// 4. WEBSOCKET (extended)
+// 2. SLOT MANAGER 
 // ==========================================================
-let ws = null;
+class SlotManager {
+    constructor() {
+        this.leftSlots = ['player-1', 'player-3', 'player-5', 'player-7'];
+        this.rightSlots = ['player-2', 'player-4', 'player-6'];
+        this.leftOccupants = [null, null, null, null];
+        this.rightOccupants = [null, null, null];
+        this.slotOccupancy = {};
+        this.pendingRemovals = {};
+        this.reflowTimers = { left: [], right: [] };
+        this.pendingMovesMap = {}; 
+        this.staggerTimers = []; 
+    }
 
-function initWebSocket() {
-    // Use the secure WebSocket endpoint provided by nginx.
-    // For HTTPS pages, this will be wss://studionimbus.dev/ws
-    // For local HTTP testing, it falls back to ws://.../ws
-    const wsUrl = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws`;
-    console.log(`Attempting WebSocket connection to ${wsUrl}`);
+    assignSlot(userId) {
+        if (this.slotOccupancy[userId]) {
+            return this.slotOccupancy[userId];
+        }
+        const leftCount = this.leftOccupants.filter(id => id !== null || this.pendingRemovals[id]).length;
+        const rightCount = this.rightOccupants.filter(id => id !== null || this.pendingRemovals[id]).length;
+        let side, occupants, slotIds;
+        if (leftCount <= rightCount) {
+            side = 'left';
+            occupants = this.leftOccupants;
+            slotIds = this.leftSlots;
+        } else {
+            side = 'right';
+            occupants = this.rightOccupants;
+            slotIds = this.rightSlots;
+        }
+        this.cancelReflow(side);
 
-    ws = new WebSocket(wsUrl);
+        const index = occupants.indexOf(null);
+        if (index === -1) return null;
+        const slotId = slotIds[index];
+        occupants[index] = userId;
+        this.slotOccupancy[userId] = { slotId, side, index };
+        return { slotId, side, index };
+    }
 
-    ws.onopen = () => {
-        console.log("🌙 PF2e Overlay connected to voice WebSocket");
-    };
+    freeSlot(userId) {
+        const occ = this.slotOccupancy[userId];
+        if (!occ) return;
+        const { side, index } = occ;
+        if (side === 'left') {
+            this.leftOccupants[index] = null;
+        } else {
+            this.rightOccupants[index] = null;
+        }
+        delete this.slotOccupancy[userId];
+        delete this.pendingRemovals[userId];
+    }
 
-    ws.onerror = (err) => {
-        console.error("WebSocket error:", err);
-        console.warn("Make sure the WebSocket server (server.js) is running and nginx is proxying /ws to port 8080.");
-    };
+    getOccupancy(userId) {
+        return this.slotOccupancy[userId] || null;
+    }
 
-    ws.onclose = (event) => {
-        console.log(`WebSocket closed (code: ${event.code}). Reconnecting in 3s...`);
-        setTimeout(initWebSocket, 3000);
-    };
+    cancelReflow(side) {
+        if (this.reflowTimers[side]) {
+            this.reflowTimers[side].forEach(t => clearTimeout(t));
+            this.reflowTimers[side] = [];
+        }
+        Object.keys(this.pendingMovesMap).forEach(key => {
+            clearTimeout(this.pendingMovesMap[key].timer);
+            delete this.pendingMovesMap[key];
+        });
+    }
 
-    ws.onmessage = (event) => {
-        try {
-            const msg = JSON.parse(event.data);
-                    const userId = msg.userId;
+    compactSide(side) {
+        const occupants = side === 'left' ? this.leftOccupants : this.rightOccupants;
+        const slotIds = side === 'left' ? this.leftSlots : this.rightSlots;
 
-            if (userId) {
-                const targetCard = document.querySelector(`.card[data-userid="${userId}"]`);
-                if (targetCard) {
-                    if (msg.type === "speaking_start") {
-                        targetCard.classList.add("speaking");
-                    } else if (msg.type === "speaking_end") {
-                        targetCard.classList.remove("speaking");
-                    }
+        this.cancelReflow(side);
+
+        let firstNull = occupants.indexOf(null);
+        if (firstNull === -1) return [];
+
+        const moves = [];
+        
+        const tempOccupants = [...occupants];
+        for (let i = firstNull + 1; i < tempOccupants.length; i++) {
+            const userId = tempOccupants[i];
+            if (userId !== null && !this.pendingRemovals[userId]) {
+                const newIndex = firstNull;
+                const newSlotId = slotIds[newIndex];
+                moves.push({
+                    userId,
+                    fromIndex: i,
+                    toIndex: newIndex,
+                    slotId: newSlotId
+                });
+                tempOccupants[newIndex] = userId;
+                tempOccupants[i] = null;
+                firstNull = i;
+            }
+        }
+        return moves;
+    }
+
+    scheduleReflow(side, moves, onMove) {
+        if (moves.length === 0) return;
+        let delay = 500;
+        const timers = [];
+        moves.forEach(move => {
+            const timer = setTimeout(() => {
+                const occupants = side === 'left' ? this.leftOccupants : this.rightOccupants;
+                const occ = this.slotOccupancy[move.userId];
+                if (occ) {
+                    occupants[move.toIndex] = move.userId;
+                    occupants[move.fromIndex] = null;
+                    occ.index = move.toIndex;
+                    occ.slotId = move.slotId;
                 }
-            }
+                onMove(move);
+                delete this.pendingMovesMap[move.userId];
+            }, delay);
+            timers.push(timer);
+            this.pendingMovesMap[move.userId] = { move, timer, onMove };
+            delay += 500;
+        });
+        this.reflowTimers[side] = timers;
+    }
 
-            if (!overlayEnabled && (msg.type !== "command")) return;
-
-            if (msg.type === "speaking_start") {
-                handleSpeakingStart(userId);
-            } else if (msg.type === "speaking_end") {
-                handleSpeakingEnd(userId);
-            } else if (msg.type === "command") {
-                handleCommand(msg.command);
+    forceExecuteMove(userId) {
+        if (this.pendingMovesMap[userId]) {
+            const { move, timer, onMove } = this.pendingMovesMap[userId];
+            clearTimeout(timer);
+            delete this.pendingMovesMap[userId];
+            const side = move.slotId.startsWith('player-') && (move.slotId.includes('player-1') || move.slotId.includes('player-3') || move.slotId.includes('player-5') || move.slotId.includes('player-7')) ? 'left' : 'right';
+            const occupants = side === 'left' ? this.leftOccupants : this.rightOccupants;
+            const occ = this.slotOccupancy[move.userId];
+            if (occ) {
+                occupants[move.toIndex] = move.userId;
+                occupants[move.fromIndex] = null;
+                occ.index = move.toIndex;
+                occ.slotId = move.slotId;
             }
-        } catch (e) {
-            console.warn("WebSocket message parse error", e);
+            onMove(move);
+            return true;
         }
-    };
+        return false;
+    }
+
+    clearStaggerTimers() {
+        this.staggerTimers.forEach(t => clearTimeout(t));
+        this.staggerTimers = [];
+    }
+
+    clearAll() {
+        this.leftOccupants.fill(null);
+        this.rightOccupants.fill(null);
+        this.slotOccupancy = {};
+        this.pendingRemovals = {};
+        Object.keys(this.pendingMovesMap).forEach(key => {
+            clearTimeout(this.pendingMovesMap[key].timer);
+            delete this.pendingMovesMap[key];
+        });
+        this.clearStaggerTimers();
+        this.cancelReflow('left');
+        this.cancelReflow('right');
+    }
 }
 
 // ==========================================================
-// 5. CHIBI LOGIC (container offsets + FLIP sliding)
+// 3. CHIBI MANAGER 
 // ==========================================================
-
-// --- Randomize container offsets (your original function) ---
-function repositionContainer(slotId, container) {
-    const containerDefaults = {
-        1: {fromTop: -20, fromSide: 0},
-        2: {fromTop: 20, fromSide: 0},
-        3: {fromTop: 120, fromSide: 50},
-        4: {fromTop: 130, fromSide: 250},
-        5: {fromTop: 170, fromSide: 315},
-        6: {fromTop: 150, fromSide: 300},
-        7: {fromTop: 0, fromSide: 370},
-    };
-
-    const slot = Number(slotId.replace("player-", ""));
-    const defaults = containerDefaults[slot] || {fromTop: 0, fromSide: 0};
-    // Ensure container is positioned relative for offset
-    container.style.position = "relative";
-    const randomTopOffset = Math.floor(Math.random() * 30) - 15; // ±15px
-    const randomSideOffset = Math.floor(Math.random() * 30) - 15; // ±15px
-    container.style.top = defaults.fromTop + randomTopOffset + "px";
-    if (slot === 1 || slot === 3 || slot === 5 || slot === 7) {
-        container.style.left = defaults.fromSide + randomSideOffset + "px";
-        container.style.right = "auto";
-    } else {
-        container.style.right = defaults.fromSide + randomSideOffset + "px";
-        container.style.left = "auto";
+class ChibiManager {
+    constructor(dataManager, slotManager) {
+        this.dataManager = dataManager;
+        this.slotManager = slotManager;
+        this.chibiItems = {};
+        this.gmChibiElement = null;
+        this.npcChibiElement = null;
+        this.effectSlotMap = {
+            'left': 'chibi-over-effect-left',
+            'right': 'chibi-over-effect-right',
+            'main': 'chibi-slot-effect',
+            'under': 'chibi-under-bar'
+        };
     }
-    container.style.display = "flex";
-    container.style.justifyContent = "center";
-    container.style.alignItems = "center";
-}
 
-// --- Get center of an element (relative to viewport) ---
-function getCenter(el) {
-    const rect = el.getBoundingClientRect();
-    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
-}
-
-// --- Create chibi element (no absolute positioning) ---
-function createChibiElement(userId, slotId, isGM = false, isNPC = false) {
-    const container = document.getElementById('chibi-slot-' + slotId);
-    if (!container) return null;
-    if (!isGM && !isNPC) {
-        repositionContainer(slotId, container);
-    } else {
-        container.style.display = "flex";
-        container.style.justifyContent = "center";
-        container.style.alignItems = "center";
-        container.style.position = "relative";
-    }
-    const div = document.createElement('div');
-    div.className = 'chibi-item';
-    if (isGM) div.classList.add('gm-slot');
-    if (isNPC) div.classList.add('npc-slot');
-    div.dataset.userId = userId;
-    div.dataset.slotId = slotId;
-
-    div.style.transform = 'translate(0, 0)';
-    div.style.transition = 'transform 0.4s ease, opacity 0.3s ease';
-
-    const img = document.createElement('img');
-    div.appendChild(img);
-    const compDiv = document.createElement('div');
-    compDiv.className = 'companion';
-    const compImg = document.createElement('img');
-    compDiv.appendChild(compImg);
-    div.appendChild(compDiv);
-
-    container.appendChild(div);
-    return div;
-}
-
-// --- Helper: apply translate to chibi (with optional transition) ---
-function setChibiTranslate(element, dx, dy, animate = true) {
-    if (!animate) {
-        element.style.transition = 'none';
-    }
-    element.style.transform = `translate(${dx}px, ${dy}px)`;
-    if (!animate) {
-        void element.offsetHeight;
-        element.style.transition = '';
-    }
-}
-
-// --- Move a chibi to a new slot with FLIP animation ---
-function moveChibiToSlot(item, newSlotId, animate = true) {
-    const element = item.element;
-    const oldContainer = element.parentNode;
-    const newContainer = document.getElementById('chibi-slot-' + newSlotId);
-    if (!newContainer || oldContainer === newContainer) return;
-
-    // 1. Capture old position
-    const oldCenter = getCenter(element);
-
-    // 2. Move element to new container (this will place it at new container's center)
-    //    but the container may not have flex set, ensure it does
-    if (!newContainer.style.display || newContainer.style.display === '') {
-        newContainer.style.display = 'flex';
-        newContainer.style.justifyContent = 'center';
-        newContainer.style.alignItems = 'center';
-        newContainer.style.position = 'relative';
-    }
-    newContainer.appendChild(element);
-
-    // 3. Capture new position (after layout)
-    //    We need to measure after the move, but before any transition
-    //    Force a reflow
-    void element.offsetHeight;
-    const newCenter = getCenter(element);
-
-    // 4. Compute delta (old - new) -> translate to move back to old position
-    const dx = oldCenter.x - newCenter.x;
-    const dy = oldCenter.y - newCenter.y;
-
-    // 5. Set translate to snap back (no transition)
-    setChibiTranslate(element, dx, dy, false);
-
-    // 6. After a frame, remove translate with transition to slide
-    requestAnimationFrame(() => {
-        // For staggering, we may want to delay, but the caller uses setTimeout
-        if (animate) {
-            setChibiTranslate(element, 0, 0, true);
+    repositionContainer(slotId, container) {
+        const containerDefaults = {
+            1: { fromTop: -20, fromSide: 0 },
+            2: { fromTop: 20, fromSide: 0 },
+            3: { fromTop: 120, fromSide: 50 },
+            4: { fromTop: 130, fromSide: 250 },
+            5: { fromTop: 170, fromSide: 315 },
+            6: { fromTop: 150, fromSide: 300 },
+            7: { fromTop: 0, fromSide: 370 },
+        };
+        const slot = Number(slotId.replace('player-', ''));
+        const defaults = containerDefaults[slot] || { fromTop: 0, fromSide: 0 };
+        container.style.position = 'relative';
+        const randomTopOffset = Math.floor(Math.random() * 30) - 15;
+        const randomSideOffset = Math.floor(Math.random() * 30) - 15;
+        container.style.top = defaults.fromTop + randomTopOffset + 'px';
+        if (slot === 1 || slot === 3 || slot === 5 || slot === 7) {
+            container.style.left = defaults.fromSide + randomSideOffset + 'px';
+            container.style.right = 'auto';
         } else {
-            setChibiTranslate(element, 0, 0, false);
+            container.style.right = defaults.fromSide + randomSideOffset + 'px';
+            container.style.left = 'auto';
         }
-    });
-}
-
-// --- Update chibi appearance (unchanged) ---
-function updateChibiAppearance(userId, element, slotId) {
-    const player = playersData.find(p => p.userId === userId);
-    if (!player) return;
-
-    const img = element.querySelector('img');
-    const compDiv = element.querySelector('.companion');
-    const compImg = compDiv.querySelector('img');
-
-    let imgSrc = player.chibiImg;
-    if (player.flipped && player.flipImg) {
-        imgSrc = player.flipImg;
+        container.style.display = 'flex';
+        container.style.justifyContent = 'center';
+        container.style.alignItems = 'center';
     }
-    img.src = imgSrc;
-    img.alt = player.name;
 
-    if (player.companionImg) {
-        if (player.companionFlipped && player.companionFlipImg) {
-            compImg.src = player.companionFlipImg;
-        } else {
-            compImg.src = player.companionImg;
+    getCenter(el) {
+        const rect = el.getBoundingClientRect();
+        return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+    }
+
+    setTranslate(element, dx, dy, animate = true) {
+        if (!animate) {
+            element.style.transition = 'none';
         }
-        compDiv.classList.add('show');
-    } else {
+        element.style.transform = `translate(${dx}px, ${dy}px)`;
+        if (!animate) {
+            void element.offsetHeight;
+            element.style.transition = '';
+        }
+    }
+
+    createChibiElement(userId, slotId, isGM = false, isNPC = false) {
+        const container = document.getElementById('chibi-slot-' + slotId);
+        if (!container) return null;
+
+        if (!isGM && !isNPC) {
+            const others = container.querySelectorAll('.chibi-item:not([data-userid="' + userId + '"])');
+            others.forEach(el => {
+                if (!el.classList.contains('gm-slot') && !el.classList.contains('npc-slot')) {
+                    if (el.parentNode) el.parentNode.removeChild(el);
+                }
+            });
+        }
+
+        const existing = container.querySelector(`.chibi-item[data-userid="${userId}"]`);
+        if (existing) {
+            const item = this.chibiItems[userId];
+            if (item && item.removing) {
+                this.cancelRemoval(userId);
+            }
+            existing.classList.add('show');
+            existing.style.opacity = '1';
+            existing.dataset.slotId = slotId;
+            return existing;
+        }
+
+        if (!isGM && !isNPC) {
+            this.repositionContainer(slotId, container);
+        } else {
+            container.style.display = 'flex';
+            container.style.justifyContent = 'center';
+            container.style.alignItems = 'center';
+            container.style.position = 'relative';
+        }
+        const div = document.createElement('div');
+        div.className = 'chibi-item';
+        if (isGM) div.classList.add('gm-slot');
+        if (isNPC) div.classList.add('npc-slot');
+        div.dataset.userId = userId;
+        div.dataset.slotId = slotId;
+
+        div.style.transform = 'translate(0, 0)';
+        div.style.transition = 'transform 0.4s ease, opacity 0.3s ease';
+
+        const img = document.createElement('img');
+        div.appendChild(img);
+        const compDiv = document.createElement('div');
+        compDiv.className = 'companion';
+        const compImg = document.createElement('img');
+        compDiv.appendChild(compImg);
+        div.appendChild(compDiv);
+
+        container.appendChild(div);
+        return div;
+    }
+
+    updateChibiAppearance(userId, element, slotId) {
+        const player = this.dataManager.getPlayerByUserId(userId);
+        if (!player) return;
+
+        const img = element.querySelector('img');
+        const compDiv = element.querySelector('.companion');
+        const compImg = compDiv.querySelector('img');
+
+        let imgSrc = player.chibiImg;
+        const alternates = [{id: 'combat', name: 'Combat', img: player.combatImg || player.chibiImg}, {id: 'downed', name: 'Downed', img: player.downedImg}].concat(player.alternates || []);
+        if (player.alternateSet !== 'default' && alternates) {
+            const alternate = alternates.find(a => a.id === player.alternateSet);
+            if (alternate) {
+                imgSrc = alternate.img;
+            }
+        }
+        img.src = imgSrc;
+        img.alt = player.name;
+
+        if (player.companionImg) {
+            if (player.companionFlipped && player.companionFlipImg) {
+                compImg.src = player.companionFlipImg;
+            } else {
+                compImg.src = player.companionImg;
+            }
+            compDiv.classList.add('show');
+        } else {
+            compDiv.classList.remove('show');
+        }
+
+        const isRight = this.slotManager.rightSlots.includes(slotId);
+        element.classList.toggle('mirrored', isRight);
+        compDiv.classList.toggle('mirrored', isRight);
+    }
+
+    updateGMChibi(element) {
+        const gm = this.dataManager.gmData;
+        const img = element.querySelector('img');
+        
+        let imgSrc = gm.chibiImg;
+        const alternates = [
+            { id: 'combat', name: 'Combat', img: gm.combatImg || gm.chibiImg },
+            { id: 'downed', name: 'Downed', img: gm.downedImg || gm.chibiImg }
+        ].concat(gm.alternates || []);
+        if (gm.alternateSet !== 'default' && alternates) {
+            const alt = alternates.find(a => a.id === gm.alternateSet);
+            if (alt) imgSrc = alt.img;
+        }
+        img.src = imgSrc;
+
+        const compDiv = element.querySelector('.companion');
+        const compImg = compDiv.querySelector('img');
+        if (gm.companionImg) {
+            compImg.src = gm.companionFlipped && gm.companionFlipImg ? gm.companionFlipImg : gm.companionImg;
+            compDiv.classList.add('show');
+        } else {
+            compDiv.classList.remove('show');
+        }
+    }
+
+    updateNPCChibi(element, npcId) {
+        const npc = this.dataManager.getNPC(npcId);
+        if (!npc) return;
+        const img = element.querySelector('img');
+        img.src = npc.image;
+        img.alt = npc.name;
+        const compDiv = element.querySelector('.companion');
         compDiv.classList.remove('show');
+        element.classList.remove('mirrored');
     }
 
-    const isRight = rightSlots.includes(slotId);
-    element.classList.toggle('mirrored', isRight);
-    compDiv.classList.toggle('mirrored', isRight);
-}
+    moveChibiToSlot(item, newSlotId, animate = true) {
+        const element = item.element;
+        const oldContainer = element.parentNode;
+        const newContainer = document.getElementById('chibi-slot-' + newSlotId);
+        if (!newContainer || oldContainer === newContainer) return;
 
-// --- UPDATED: flip with crossfade (always animates) ---
-function flipChibiImage(userId, isCompanion = false) {
-    const item = chibiItems[userId];
-    if (!item) {
-        console.warn(`No chibi found for user ${userId}`);
-        return;
+        const oldCenter = this.getCenter(element);
+
+        if (!newContainer.style.display || newContainer.style.display === '') {
+            newContainer.style.display = 'flex';
+            newContainer.style.justifyContent = 'center';
+            newContainer.style.alignItems = 'center';
+            newContainer.style.position = 'relative';
+        }
+        newContainer.appendChild(element);
+
+        void element.offsetHeight;
+        const newCenter = this.getCenter(element);
+
+        const dx = oldCenter.x - newCenter.x;
+        const dy = oldCenter.y - newCenter.y;
+
+        this.setTranslate(element, dx, dy, false);
+
+        requestAnimationFrame(() => {
+            if (animate) {
+                this.setTranslate(element, 0, 0, true);
+            } else {
+                this.setTranslate(element, 0, 0, false);
+            }
+        });
     }
-    const player = playersData.find(p => p.userId === userId);
-    if (!player) return;
 
-    const element = item.element;
-    let targetImg;
-    let newSrc;
-
-    if (isCompanion) {
-        if (!player.companionImg) {
-            console.warn(`No companion for ${player.name}`);
+    flipChibiImage(userId, isCompanion = false, alternateId = null) {
+        const item = this.chibiItems[userId];
+        if (!item) {
+            console.warn(`No chibi found for user ${userId}`);
             return;
         }
-        const compDiv = element.querySelector('.companion');
-        targetImg = compDiv.querySelector('img');
-        // Toggle companion flip
-        player.companionFlipped = !player.companionFlipped;
-        newSrc = player.companionFlipped ? (player.companionFlipImg || player.companionImg) : player.companionImg;
-    } else {
-        // Toggle player flip
-        player.flipped = !player.flipped;
-        // If no flip image, fallback to normal (but we still toggle state for consistency)
-        newSrc = player.flipped ? (player.flipImg || player.chibiImg) : player.chibiImg;
-        targetImg = element.querySelector('img');
-    }
+        const player = this.dataManager.getPlayerByUserId(userId);
+        if (!player) return;
 
-    if (!targetImg) return;
+        const element = item.element;
+        let targetImg;
+        let newSrc;
 
-    // Crossfade: fade out, swap, fade in
-    targetImg.style.transition = 'opacity 0.3s ease';
-    targetImg.style.opacity = '0';
+        if (isCompanion) {
+            if (!player.companionImg) {
+                console.warn(`No companion for ${player.name}`);
+                return;
+            }
+            const compDiv = element.querySelector('.companion');
+            targetImg = compDiv.querySelector('img');
+            player.companionFlipped = !player.companionFlipped;
+            newSrc = player.companionFlipped ? (player.companionFlipImg || player.companionImg) : player.companionImg;
+        } else {
+            if (alternateId === 'combat') {
+                newSrc = player.combatImg || player.chibiImg;
+                player.alternateSet = 'default';
+            } else if (alternateId === 'downed') {
+                newSrc = player.downedImg || player.chibiImg;
+                player.alternateSet = 'downed';
+            } else {
+                player.alternateSet = alternateId || player.alternates[0]?.id;
+                newSrc = player.alternateSet === 'default' ? player.chibiImg : player.alternates.find(a => a.id === player.alternateSet)?.img || player.chibiImg;
+            }
+            targetImg = element.querySelector('img');
+        }
 
-    setTimeout(() => {
-        targetImg.src = newSrc;
-        // Force reflow
-        void targetImg.offsetHeight;
-        targetImg.style.opacity = '1';
-        // Remove transition after animation to avoid interfering
+        if (!targetImg) return;
+
+        targetImg.style.transition = 'opacity 0.3s ease';
+        targetImg.style.opacity = '0';
+
         setTimeout(() => {
-            targetImg.style.transition = '';
+            targetImg.src = newSrc;
+            void targetImg.offsetHeight;
+            targetImg.style.opacity = '1';
+            setTimeout(() => {
+                targetImg.style.transition = '';
+            }, 300);
         }, 300);
-    }, 300);
-}
-
-// --- Update GM chibi ---
-function updateGMChibi(element) {
-    const img = element.querySelector('img');
-    img.src = GM_CHIBI_IMG;
-    img.alt = 'Game Master';
-    const compDiv = element.querySelector('.companion');
-    if (GM_COMPANION_IMG) {
-        compDiv.querySelector('img').src = GM_COMPANION_IMG;
-        compDiv.classList.add('show');
-    } else {
-        compDiv.classList.remove('show');
     }
-    element.classList.remove('mirrored');
-}
 
-// --- Update NPC chibi ---
-function updateNPCChibi(element, npcId) {
-    const npc = npcs.find(n => n.id === npcId);
-    if (!npc) return;
-    const img = element.querySelector('img');
-    img.src = npc.image;
-    img.alt = npc.name;
-    const compDiv = element.querySelector('.companion');
-    compDiv.classList.remove('show');
-    element.classList.remove('mirrored');
-}
+    flipGMChibi(isCompanion = false, alternateId = null) {
+        const gm = this.dataManager.gmData;
+        const element = this.gmChibiElement;
+        if (!element) return;
 
-// --- Assign slot ---
-function assignSlot(userId) {
-    const leftCount = leftOccupants.filter(id => id !== null).length;
-    const rightCount = rightOccupants.filter(id => id !== null).length;
-    let side, occupants, slotIds;
-    if (leftCount <= rightCount) {
-        side = 'left';
-        occupants = leftOccupants;
-        slotIds = leftSlots;
-    } else {
-        side = 'right';
-        occupants = rightOccupants;
-        slotIds = rightSlots;
+        let targetImg;
+        let newSrc;
+
+        if (isCompanion) {
+            if (!gm.companionImg) return;
+            const compDiv = element.querySelector('.companion');
+            targetImg = compDiv.querySelector('img');
+            gm.companionFlipped = !gm.companionFlipped;
+            newSrc = gm.companionFlipped ? (gm.companionFlipImg || gm.companionImg) : gm.companionImg;
+        } else {
+            if (alternateId === 'combat') {
+                newSrc = gm.combatImg || gm.chibiImg;
+                gm.alternateSet = 'default';
+            } else if (alternateId === 'downed') {
+                newSrc = gm.downedImg || gm.chibiImg;
+                gm.alternateSet = 'downed';
+            } else {
+                gm.alternateSet = alternateId || 'default';
+                const alternates = [].concat(gm.alternates || []);
+                const alt = alternates.find(a => a.id === gm.alternateSet);
+                newSrc = (gm.alternateSet === 'default') ? gm.chibiImg : (alt ? alt.img : gm.chibiImg);
+            }
+            targetImg = element.querySelector('img');
+        }
+
+        if (!targetImg) return;
+
+        targetImg.style.transition = 'opacity 0.3s ease';
+        targetImg.style.opacity = '0';
+        setTimeout(() => {
+            targetImg.src = newSrc;
+            void targetImg.offsetHeight;
+            targetImg.style.opacity = '1';
+            setTimeout(() => targetImg.style.transition = '', 300);
+        }, 300);
     }
-    // Cancel any pending reflow on this side
-    cancelReflow(side);
 
-    const index = occupants.indexOf(null);
-    if (index === -1) return null;
-    const slotId = slotIds[index];
-    occupants[index] = userId;
-    slotOccupancy[userId] = { slotId, side, index };
-    return { slotId, side, index };
-}
-
-function freeSlot(userId) {
-    const occ = slotOccupancy[userId];
-    if (!occ) return;
-    const { side, index } = occ;
-    if (side === 'left') {
-        leftOccupants[index] = null;
-    } else {
-        rightOccupants[index] = null;
-    }
-    delete slotOccupancy[userId];
-}
-
-// --- Cancel pending reflow timers ---
-function cancelReflow(side) {
-    if (reflowTimers[side]) {
-        reflowTimers[side].forEach(t => clearTimeout(t));
-        reflowTimers[side] = [];
-    }
-}
-
-// --- Compact side with staggered FLIP moves ---
-function compactSide(side) {
-    const occupants = side === 'left' ? leftOccupants : rightOccupants;
-    const slotIds = side === 'left' ? leftSlots : rightSlots;
-
-    cancelReflow(side);
-
-    let firstNull = occupants.indexOf(null);
-    if (firstNull === -1) return;
-
-    const moves = [];
-    for (let i = firstNull + 1; i < occupants.length; i++) {
-        if (occupants[i] !== null) {
-            const userId = occupants[i];
-            const newIndex = firstNull;
-            const newSlotId = slotIds[newIndex];
-            moves.push({
-                userId,
-                fromIndex: i,
-                toIndex: newIndex,
-                slotId: newSlotId
+    showGM(show) {
+        if (show) {
+            if (this.gmChibiElement) {
+                this.updateGMChibi(this.gmChibiElement);
+                this.gmChibiElement.classList.add('show');
+                this.gmChibiElement.style.opacity = '1';
+                return;
+            }
+            const element = this.createChibiElement(this.dataManager.gmData.userId, 'gm', true);
+            if (!element) return;
+            this.updateGMChibi(element);
+            this.setTranslate(element, 0, 0, false);
+            this.gmChibiElement = element;
+            requestAnimationFrame(() => {
+                element.classList.add('show');
+                element.style.opacity = '1';
             });
-            // Update state immediately
-            occupants[newIndex] = userId;
-            occupants[i] = null;
-            if (slotOccupancy[userId]) {
-                slotOccupancy[userId].index = newIndex;
-                slotOccupancy[userId].slotId = newSlotId;
+        } else {
+            if (this.gmChibiElement) {
+                this.gmChibiElement.classList.remove('show');
+                this.gmChibiElement.style.opacity = '0';
             }
-            const item = chibiItems[userId];
-            if (item) {
-                item.slotId = newSlotId;
-                item.index = newIndex;
-            }
-            firstNull = i;
         }
     }
 
-    if (moves.length === 0) return;
-
-    // Stagger the FLIP moves with delays 
-    let delay = 500;
-    const timers = [];
-    moves.forEach(move => {
-        const timer = setTimeout(() => {
-            const item = chibiItems[move.userId];
-            if (!item) return;
-            // Perform FLIP move to new slot (with animation)
-            moveChibiToSlot(item, move.slotId, true);
-        }, delay);
-        timers.push(timer);
-        delay += 500;
-    });
-
-    reflowTimers[side] = timers;
-}
-
-// --- Handle speaking start ---
-function handleSpeakingStart(userId) {
-    if (userId === GM_USER_ID) {
-        // Cancel both GM timers
-        if (gmTimeout) {
-            clearTimeout(gmTimeout);
-            gmTimeout = null;
+    showNPC(show, npcId) {
+        if (show && npcId) {
+            if (this.npcChibiElement) {
+                this.updateNPCChibi(this.npcChibiElement, npcId);
+                this.npcChibiElement.classList.add('show');
+                this.npcChibiElement.style.opacity = '1';
+                return;
+            }
+            const element = this.createChibiElement('npc', 'npc', false, true);
+            if (!element) return;
+            this.updateNPCChibi(element, npcId);
+            this.setTranslate(element, 0, 0, false);
+            this.npcChibiElement = element;
+            requestAnimationFrame(() => {
+                element.classList.add('show');
+                element.style.opacity = '1';
+            });
+        } else {
+            if (this.npcChibiElement) {
+                const el = this.npcChibiElement;
+                el.classList.remove('show');
+                el.style.opacity = '0';
+                setTimeout(() => {
+                    if (el.parentNode) {
+                        el.parentNode.removeChild(el);
+                    }
+                    if (this.npcChibiElement === el) {
+                        this.npcChibiElement = null;
+                    }
+                }, 400);
+            }
         }
-        if (gmRemovalTimer) {
-            clearTimeout(gmRemovalTimer);
-            gmRemovalTimer = null;
-        }
-        showGM(true);
-        if (activeNPC) showNPC(true, activeNPC);
-        playAnimation(userId, 'speak');
-        return;
     }
-    
-    const player = playersData.find(p => p.userId === userId);
-    if (!player || player.muted) return;
-    
-    if (chibiItems[userId]) {
-        const item = chibiItems[userId];
+
+    clearPlayerChibis() {
+        Object.keys(this.chibiItems).forEach(userId => {
+            const item = this.chibiItems[userId];
+            if (item.removalTimer) clearTimeout(item.removalTimer);
+            if (item.element && item.element.parentNode) {
+                item.element.parentNode.removeChild(item.element);
+            }
+            delete this.chibiItems[userId];
+        });
+        this.slotManager.clearAll();
+    }
+
+    cancelRemoval(userId) {
+        const item = this.chibiItems[userId];
+        if (!item) return false;
+        if (item.removalTimer) {
+            clearTimeout(item.removalTimer);
+            item.removalTimer = null;
+        }
+        if (item.removing) {
+            item.removing = false;
+            delete this.slotManager.pendingRemovals[userId];
+            this.slotManager.cancelReflow(item.side);
+            item.element.style.opacity = '1';
+            item.element.classList.add('show');
+            return true;
+        }
+        return false;
+    }
+
+    removeChibi(userId, callback) {
+        const item = this.chibiItems[userId];
+        if (!item) {
+            if (callback) callback();
+            return;
+        }
+        if (item.removing) {
+            if (callback) callback();
+            return;
+        }
+
+        if (item.removalTimer) {
+            clearTimeout(item.removalTimer);
+            item.removalTimer = null;
+        }
         if (item.timeout) {
             clearTimeout(item.timeout);
             item.timeout = null;
         }
-        if (item.removalTimer) {
-            clearTimeout(item.removalTimer);
-            item.removalTimer = null;
-        }
-        item.element.classList.add('show');
-        item.element.style.opacity = '1';
-        playAnimation(userId, 'speak');
-        return;
-    }
-    
-    const slot = assignSlot(userId);
-    if (!slot) {
-        console.warn("No free slot for user", userId);
-        return;
-    }
-    
-    const element = createChibiElement(userId, slot.slotId);
-    if (!element) return;
-    updateChibiAppearance(userId, element, slot.slotId);
-    setChibiTranslate(element, 0, 0, false);
-    requestAnimationFrame(() => {
-        element.classList.add('show');
-        element.style.opacity = '1';
-        element.classList.add('chibi-speaking');
-    });
 
-    chibiItems[userId] = {
-        element,
-        slotId: slot.slotId,
-        side: slot.side,
-        index: slot.index,
-        timeout: null,
-        removalTimer: null
-    };
-}
+        item.removing = true;
+        this.slotManager.pendingRemovals[userId] = true;
 
-// --- Handle speaking end ---
-function handleSpeakingEnd(userId) {
-    if (userId === GM_USER_ID) {
-        if (gmTimeout) {
-            clearTimeout(gmTimeout);
-            gmTimeout = null;
-        }
-        gmTimeout = setTimeout(() => {
-            showGM(false);
-            showNPC(false);
-            gmTimeout = null;
-        }, 3000);
-        return;
+        item.element.classList.remove('show');
+        item.element.classList.remove('chibi-speaking');
+        item.element.style.opacity = '0';
+
+        item.removalTimer = setTimeout(() => {
+            if (!item.removing) {
+                delete this.slotManager.pendingRemovals[userId];
+                return;
+            }
+            if (item.element.parentNode) {
+                item.element.parentNode.removeChild(item.element);
+            }
+            const side = item.side;
+            this.slotManager.freeSlot(userId);
+            delete this.slotManager.pendingRemovals[userId];
+            delete this.chibiItems[userId];
+
+            const moves = this.slotManager.compactSide(side);
+            if (moves.length > 0) {
+                this.slotManager.scheduleReflow(side, moves, (move) => {
+                    const itemToMove = this.chibiItems[move.userId];
+                    if (itemToMove) {
+                        this.moveChibiToSlot(itemToMove, move.slotId, true);
+                        itemToMove.slotId = move.slotId;
+                        itemToMove.index = move.toIndex;
+                    }
+                });
+            }
+            if (callback) callback();
+        }, 400);
     }
 
-    const player = playersData.find(p => p.userId === userId);
-    if (!player || player.muted) return;
-    
-    const item = chibiItems[userId];
-    if (!item) return;
-    item.element.classList.remove('chibi-speaking');
-    if (item.timeout) {
-        clearTimeout(item.timeout);
-        item.timeout = null;
-    }
-    item.timeout = setTimeout(() => {
-        removeUser(userId);
-    }, 3000);
-}
-
-function removeUser(userId) {
-    const item = chibiItems[userId];
-    if (!item) return;
-    if (item.removalTimer) {
-        clearTimeout(item.removalTimer);
-        item.removalTimer = null;
-    }
-    if (item.timeout) {
-        clearTimeout(item.timeout);
-        item.timeout = null;
+    getChibiElement(userId) {
+        const item = this.chibiItems[userId];
+        return item ? item.element : null;
     }
 
-    item.element.classList.remove('show');
-    item.element.classList.remove('chibi-speaking');
-    item.element.style.opacity = '0';
-
-    item.removalTimer = setTimeout(() => {
-        if (item.element.parentNode) {
-            item.element.parentNode.removeChild(item.element);
-        }
-        delete chibiItems[userId];
-        const side = item.side;
-        freeSlot(userId);
-        compactSide(side);
-        if (item.removalTimer) {
-            clearTimeout(item.removalTimer);
-            item.removalTimer = null;
-        }
-    }, 400);
-}
-
-// --- GM and NPC visibility (using containers too) ---
-let gmChibiElement = null;
-let npcChibiElement = null;
-
-function showGM(show) {
-    if (show) {
-        if (gmRemovalTimer) {
-            clearTimeout(gmRemovalTimer);
-            gmRemovalTimer = null;
-        }
-        if (!gmChibiElement) {
-            gmChibiElement = createChibiElement(GM_USER_ID, 'gm', true);
-            updateGMChibi(gmChibiElement);
-            setChibiTranslate(gmChibiElement, 0, 0, false);
-        }
-        requestAnimationFrame(() => {
-            gmChibiElement.classList.add('show');
-            gmChibiElement.style.opacity = '1';
+    clearAllChibis() {
+        Object.keys(this.chibiItems).forEach(userId => {
+            const item = this.chibiItems[userId];
+            if (item.removalTimer) clearTimeout(item.removalTimer);
+            if (item.element && item.element.parentNode) {
+                item.element.parentNode.removeChild(item.element);
+            }
+            delete this.chibiItems[userId];
         });
-    } else {
-        if (gmChibiElement) {
-            gmChibiElement.classList.remove('show');
-            gmChibiElement.style.opacity = '0';
-            gmRemovalTimer = setTimeout(() => {
-                if (gmChibiElement && gmChibiElement.parentNode) {
-                    gmChibiElement.parentNode.removeChild(gmChibiElement);
-                }
-                gmChibiElement = null;
-                gmRemovalTimer = null;
-            }, 400);
+        if (this.gmChibiElement && this.gmChibiElement.parentNode) {
+            this.gmChibiElement.parentNode.removeChild(this.gmChibiElement);
+            this.gmChibiElement = null;
         }
+        if (this.npcChibiElement && this.npcChibiElement.parentNode) {
+            this.npcChibiElement.parentNode.removeChild(this.npcChibiElement);
+            this.npcChibiElement = null;
+        }
+        this.slotManager.clearAll();
     }
 }
 
-function showNPC(show, npcId) {
-    if (show && npcId) {
-        if (!npcChibiElement) {
-            npcChibiElement = createChibiElement('npc', 'npc', false, true);
-            updateNPCChibi(npcChibiElement, npcId);
-            setChibiTranslate(npcChibiElement, 0, 0, false);
-        }
-        requestAnimationFrame(() => {
-            npcChibiElement.classList.add('show');
-            npcChibiElement.style.opacity = '1';
-        });
-    } else {
-        if (npcChibiElement) {
-            npcChibiElement.classList.remove('show');
-            npcChibiElement.style.opacity = '0';
+// ==========================================================
+// 4. EFFECT MANAGER 
+// ==========================================================
+class EffectManager {
+    constructor() {
+        this.effectSlotMap = {
+            'left': 'chibi-over-effect-left',
+            'right': 'chibi-over-effect-right',
+            'main': 'chibi-slot-effect',
+            'under': 'chibi-under-bar'
+        };
+        this.activeEffects = {};
+    }
+
+    triggerEffect(effect, duration) {
+        const actualId = this.effectSlotMap[effect.slot];
+        if (!actualId) return;
+
+        if (this.activeEffects[effect.slot]) {
+            const old = this.activeEffects[effect.slot];
+            old.element.classList.remove('show');
+            old.element.classList.add('hide');
+            clearTimeout(old.timeout);
             setTimeout(() => {
-                if (npcChibiElement && npcChibiElement.parentNode) {
-                    npcChibiElement.parentNode.removeChild(npcChibiElement);
+                if (old.element.parentNode) old.element.parentNode.removeChild(old.element);
+            }, 500);
+            delete this.activeEffects[effect.slot];
+        }
+
+        const container = document.getElementById(actualId);
+        const div = document.createElement('div');
+        div.className = 'chibi-effect';
+        const img = document.createElement('img');
+        img.src = effect.image;
+        img.alt = effect.name;
+        div.appendChild(img);
+        container.appendChild(div);
+
+        requestAnimationFrame(() => {
+            div.classList.add('show');
+        });
+
+        const timeout = setTimeout(() => {
+            div.classList.remove('show');
+            div.classList.add('hide');
+            setTimeout(() => {
+                if (div.parentNode) div.parentNode.removeChild(div);
+            }, 500);
+            delete this.activeEffects[effect.slot];
+        }, duration * 1000);
+
+        this.activeEffects[effect.slot] = { element: div, timeout };
+    }
+
+    clearAllEffects() {
+        Object.keys(this.activeEffects).forEach(slot => {
+            const old = this.activeEffects[slot];
+            old.element.classList.remove('show');
+            old.element.classList.add('hide');
+            clearTimeout(old.timeout);
+            setTimeout(() => {
+                if (old.element.parentNode) old.element.parentNode.removeChild(old.element);
+            }, 500);
+            delete this.activeEffects[slot];
+        });
+    }
+}
+
+// ==========================================================
+// 5. ANIMATION MANAGER 
+// ==========================================================
+class AnimationManager {
+    constructor(chibiManager, dataManager) {
+        this.chibiManager = chibiManager;
+        this.dataManager = dataManager;
+    }
+
+    playAnimation(userId, animationName) {
+        let element = null;
+
+        if (userId == this.dataManager.gmData.userId) {
+            userId = 'gm';
+        }
+        if (userId === 'gm' || userId === 'npc') {
+            const el = document.getElementsByClassName(`${userId}-slot`)[0];
+            if (el) element = el;
+            else {
+                console.warn(`No ${userId} slot found`);
+                return;
+            }
+        } else {
+            const combatEl = document.querySelector(`.combat-chibi[data-userid="${userId}"] .combat-chibi-inner`);
+            if (combatEl) {
+                element = combatEl;
+            } else {
+                const chibiEl = this.chibiManager.getChibiElement(userId);
+                if (chibiEl) element = chibiEl;
+                else {
+                    console.warn(`No chibi found for user ${userId}`);
+                    return;
                 }
-                npcChibiElement = null;
-            }, 400);
+            }
         }
+
+        const parent = element.parentElement;
+        if (!parent) return;
+
+        const targets = Array.from(parent.children);
+        targets.forEach(el => {
+            el.classList.forEach(cls => {
+                if (cls.startsWith('anim-')) {
+                    el.classList.remove(cls);
+                }
+            });
+
+            const animClass = `anim-${animationName}`;
+            el.classList.add(animClass);
+
+            const onEnd = () => {
+                el.classList.remove(animClass);
+                el.removeEventListener('animationend', onEnd);
+            };
+
+            el.addEventListener('animationend', onEnd);
+        });
     }
 }
 
 // ==========================================================
-// 6. COMMAND HANDLING
+// 6. OVERLAY MANAGER 
 // ==========================================================
-function resolveCharacter(input) {
-    let player = playersData.find(p => p.id === input || p.name.toLowerCase() === input.toLowerCase());
-    if (player) return { type: 'player', data: player };
-    let npc = npcs.find(n => n.id === input || n.name.toLowerCase() === input.toLowerCase() || (n.aliases && n.aliases.includes(input)));
-    if (npc) return { type: 'npc', data: npc };
-    const aliasTarget = charAliases[input];
-    if (aliasTarget) {
-        player = playersData.find(p => p.id === aliasTarget);
-        if (player) return { type: 'player', data: player };
-        npc = npcs.find(n => n.id === aliasTarget);
-        if (npc) return { type: 'npc', data: npc };
-    }
-    return null;
-}
-
-function handleCommand(rawCommand) {
-    console.log("Received command:", rawCommand);
-    const parts = rawCommand.trim().split(/\s+/);
-    const cmd = parts[0].toLowerCase();
-    const args = parts.slice(1);
-
-    if (cmd === '/chibi' || cmd === '/c') {
-        if (args[0] === 'on' || args[0] === 'y') {
-            overlayEnabled = true;
-            document.getElementById('chibi-overlay').style.display = 'block';
-        } else if (args[0] === 'off' || args[0] === 'n') {
-            overlayEnabled = false;
-            document.getElementById('chibi-overlay').style.display = 'none';
-        } else if (args[0] === 'test' || args[0] === 't') {
-            if (!overlayEnabled) return;
-            fillTestSlots();
-        } else if (args[0] === 'testoff' || args[0] === 'to') {
-            if (!overlayEnabled) return;
-            clearTestSlots();
-        }
-        return;
+class OverlayManager {
+    constructor(dataManager, slotManager, chibiManager, effectManager, animationManager) {
+        this.dataManager = dataManager;
+        this.slotManager = slotManager;
+        this.chibiManager = chibiManager;
+        this.effectManager = effectManager;
+        this.animationManager = animationManager;
+        this.overlayEnabled = false;
+        this.combatMode = false;
+        this.overlayEl = document.getElementById('chibi-overlay');
+        this.gmTimeout = null;
+        this.gmRemovalTimer = null;
+        this.activeNPC = null;
+        this.npcMuted = false;
+        this.combatChibiWrappers = {};
+        this.combatCompanionElements = {};
+        this.speakingTimeouts = {};
+        this.removalTimeouts = {};
+        this.lastBackgroundId = "default";
     }
 
-    // ---- /flip command with crossfade ----
-    if (cmd === '/flip' || cmd === '/f') {
-        const charName = args.join(' ');
-        if (!charName) return;
-        const resolved = resolveCharacter(charName);
-        if (resolved && resolved.type === 'player') {
-            const userId = resolved.data.userId;
-            if (chibiItems[userId]) {
-                flipChibiImage(userId, false);
-            } else {
-                console.warn(`No chibi found for "${charName}"`);
-            }
+    enable() {
+        if (this.overlayEnabled) return;
+        this.overlayEnabled = true;
+        this.combatMode = false;
+        this.overlayEl.classList.add('scenic-mode');
+        const defaultBg = this.dataManager.getBackground('default');
+        if (defaultBg) {
+            this.overlayEl.style.backgroundImage = `url('${defaultBg.image}')`;
         } else {
-            console.warn(`Character "${charName}" not found.`);
+            this.overlayEl.style.backgroundImage = '';
         }
-        return;
+        this.overlayEl.style.display = 'block';
+        this.chibiManager.showGM(true);
     }
 
-    // ---- /compflip command with crossfade ----
-    if (cmd === '/compflip' || cmd === '/cf') {
-        const charName = args.join(' ');
-        if (!charName) return;
-        const resolved = resolveCharacter(charName);
-        if (resolved && resolved.type === 'player') {
-            const userId = resolved.data.userId;
-            if (chibiItems[userId]) {
-                flipChibiImage(userId, true);
-            } else {
-                console.warn(`No chibi found for "${charName}"`);
-            }
+    disable() {
+        if (!this.overlayEnabled) return;
+        this.overlayEnabled = false;
+        this.overlayEl.classList.remove('scenic-mode');
+        this.overlayEl.style.backgroundImage = '';
+        this.combatMode = false;
+        this.clearTestSlots();
+        this.clearCombatChibis();
+        this.chibiManager.clearAllChibis();
+        this.overlayEl.style.display = 'none';
+    }
+
+    setCombatMode() {
+        if (!this.overlayEnabled) return;
+        this.overlayEl.style.backgroundImage = '';
+        this.combatMode = true;
+        this.overlayEl.classList.remove('scenic-mode');
+        this.clearTestSlots();
+        this.dataManager.gmData.alternateSet = 'combat';
+        this.chibiManager.showGM(true);
+        this.renderCombatChibis();
+    }
+
+    setScenicMode() {
+        if (!this.overlayEnabled) return;
+        this.combatMode = false;
+        this.clearCombatChibis();
+        this.dataManager.gmData.alternateSet = 'default';
+        this.chibiManager.showGM(true);
+        this.overlayEl.classList.add('scenic-mode');
+        const defaultBg = this.dataManager.getBackground(this.lastBackgroundId || 'default');
+        if (defaultBg) {
+            this.overlayEl.style.backgroundImage = `url('${defaultBg.image}')`;
         } else {
-            console.warn(`Character "${charName}" not found.`);
+            this.overlayEl.style.backgroundImage = '';
         }
-        return;
     }
 
-    if (cmd === '/npc' || cmd === '/n') {
-        const npcName = args.join(' ');
-        if (!npcName) return;
-        if (npcName.toLowerCase() === 'clear' || npcName.toLowerCase() === 'c') {
-            activeNPC = null;
-            showNPC(false);
+    setBackground(bgId) {
+        if (this.combatMode || !this.overlayEnabled) {
+            console.warn('Cannot change background while in combat mode.');
             return;
         }
-        const resolved = resolveCharacter(npcName);
-        if (resolved && resolved.type === 'npc') {
-            if (npcChibiElement) {
-                if (npcChibiElement.parentNode) {
-                    npcChibiElement.parentNode.removeChild(npcChibiElement);
-                }
-                npcChibiElement = null;
-            }
-            activeNPC = resolved.data.id;
-            showNPC(true, activeNPC);
+        if (!bgId || bgId.toLowerCase() === 'clear' || bgId.toLowerCase() === 'c') {
+            this.overlayEl.style.backgroundImage = '';
+            this.lastBackgroundId = 'clear';
+            return;
         }
-        return;
+        const bg = this.dataManager.getBackground(bgId);
+        this.lastBackgroundId = bgId;
+        if (bg) {
+            this.overlayEl.style.backgroundImage = `url('${bg.image}')`;
+        }
     }
 
-    if (cmd === '/effect' || cmd === '/e') {
-        const effectName = args[0];
-        let duration = parseInt(args[1]);
-        if (!effectName) return;
-        const effect = effects.find(e => e.id.toLowerCase() === effectName.toLowerCase());
+    renderCombatChibis() {
+        const chibiBar = document.getElementById('chibi-player-bar');
+        if (!chibiBar) return;
+        chibiBar.querySelectorAll('.combat-chibi').forEach(el => el.remove());
+        this.combatChibiWrappers = {};
+        this.combatCompanionElements = {};
+
+        const players = this.dataManager.playersData;
+        const playerCount = players.length;
+        let playerIndex = 1;
+
+        players.forEach(player => {
+            const wrapper = document.createElement('div');
+            wrapper.className = `combat-chibi ${player.cssClass}`;
+            wrapper.dataset.userid = player.userId;
+            wrapper.style.position = 'relative';
+            wrapper.style.width = '100%';
+            wrapper.style.height = '100%';
+
+            const isRight = playerIndex >= playerCount / 2;
+            if (isRight) {
+                wrapper.style.transform = 'scaleX(-1)';
+            }
+            playerIndex++;
+
+            const inner = document.createElement('div');
+            inner.className = 'combat-chibi-inner';
+            let imgSrc = player.combatImg || player.chibiImg;
+            if (player.alternateSet == 'downed') {
+                imgSrc = player.downedImg;
+            }
+            inner.style.backgroundImage = `url(${imgSrc})`;
+            inner.style.backgroundSize = 'contain';
+            inner.style.backgroundRepeat = 'no-repeat';
+            inner.style.backgroundPosition = 'center';
+            inner.style.width = '100%';
+            inner.style.height = '100%';
+            inner.style.position = 'absolute';
+            inner.style.top = '0';
+            inner.style.left = '0';
+
+            wrapper.appendChild(inner);
+
+            if (player.companionImg) {
+                const compImg = document.createElement('img');
+                compImg.className = 'combat-companion';
+                const src = player.companionFlipped && player.companionFlipImg ? player.companionFlipImg : player.companionImg;
+                compImg.src = src;
+                compImg.style.display = 'block';
+                wrapper.appendChild(compImg);
+                this.combatCompanionElements[player.userId] = compImg;
+            }
+
+            chibiBar.appendChild(wrapper);
+            this.combatChibiWrappers[player.userId] = wrapper;
+        });
+    }
+
+    clearCombatChibis() {
+        const chibiBar = document.getElementById('chibi-player-bar');
+        if (chibiBar) {
+            chibiBar.querySelectorAll('.combat-chibi').forEach(el => el.remove());
+        }
+        this.combatChibiWrappers = {};
+        this.combatCompanionElements = {};
+    }
+
+    fillTestSlots() {
+        this.clearTestSlots();
+        const allUserIds = this.dataManager.shuffleArray(this.dataManager.playersData.map(p => p.userId));
+        let idx = 0;
+        const leftSlots = this.slotManager.leftSlots;
+        const rightSlots = this.slotManager.rightSlots;
+
+        for (let i = 0; i < leftSlots.length && idx < allUserIds.length; i++) {
+            const userId = allUserIds[idx];
+            const slotId = leftSlots[i];
+            const element = this.chibiManager.createChibiElement(userId, slotId);
+            if (element) {
+                this.chibiManager.updateChibiAppearance(userId, element, slotId);
+                this.chibiManager.setTranslate(element, 0, 0, false);
+
+                this.slotManager.leftOccupants[i] = userId;
+                this.slotManager.slotOccupancy[userId] = { slotId, side: 'left', index: i };
+                this.chibiManager.chibiItems[userId] = { element, slotId, side: 'left', index: i, timeout: null, removalTimer: null, removing: false };
+                idx++;
+            }
+        }
+        for (let i = 0; i < rightSlots.length && idx < allUserIds.length; i++) {
+            const userId = allUserIds[idx];
+            const slotId = rightSlots[i];
+            const element = this.chibiManager.createChibiElement(userId, slotId);
+            if (element) {
+                this.chibiManager.updateChibiAppearance(userId, element, slotId);
+                this.chibiManager.setTranslate(element, 0, 0, false);
+                this.slotManager.rightOccupants[i] = userId;
+                this.slotManager.slotOccupancy[userId] = { slotId, side: 'right', index: i };
+                this.chibiManager.chibiItems[userId] = { element, slotId, side: 'right', index: i, timeout: null, removalTimer: null, removing: false };
+                idx++;
+            }
+        }
+
+        const itemKeys = Object.keys(this.chibiManager.chibiItems);
+        itemKeys.forEach((userId, index) => {
+            const item = this.chibiManager.chibiItems[userId];
+            const timer = setTimeout(() => {
+                requestAnimationFrame(() => {
+                    item.element.classList.add('show');
+                    item.element.style.opacity = '1';
+                });
+            }, index * 200);
+            this.slotManager.staggerTimers.push(timer);
+        });
+
+        this.chibiManager.showGM(true);
+    }
+
+    clearTestSlots() {
+        this.chibiManager.clearPlayerChibis();
+        this.chibiManager.showGM(false);
+        if (this.gmTimeout) clearTimeout(this.gmTimeout);
+        if (this.gmRemovalTimer) clearTimeout(this.gmRemovalTimer);
+        this.gmTimeout = null;
+        this.gmRemovalTimer = null;
+        this.activeNPC = null;
+        Object.keys(this.speakingTimeouts).forEach(k => clearTimeout(this.speakingTimeouts[k]));
+        Object.keys(this.removalTimeouts).forEach(k => clearTimeout(this.removalTimeouts[k]));
+        this.speakingTimeouts = {};
+        this.removalTimeouts = {};
+        this.slotManager.clearStaggerTimers();
+    }
+
+    handleSpeakingStart(userId) {
+        if (userId === this.dataManager.gmData.userId && !this.dataManager.gmData.muted) {
+            if (this.gmTimeout) {
+                clearTimeout(this.gmTimeout);
+                this.gmTimeout = null;
+            }
+            if (this.gmRemovalTimer) {
+                clearTimeout(this.gmRemovalTimer);
+                this.gmRemovalTimer = null;
+            }
+            this.chibiManager.showGM(true);
+            if (this.activeNPC && !this.npcMuted) {
+                this.chibiManager.showNPC(true, this.activeNPC);
+            }
+            this.animationManager.playAnimation(userId, 'speak');
+            return;
+        }
+
+        const player = this.dataManager.getPlayerByUserId(userId);
+        if (!player || player.muted) return;
+
+        if (this.combatMode) {
+            const wrapper = this.combatChibiWrappers[userId];
+            if (wrapper) {
+                const inner = wrapper.querySelector('.combat-chibi-inner');
+                if (inner) inner.classList.add('chibi-speaking');
+            }
+            return;
+        }
+
+        this.slotManager.forceExecuteMove(userId);
+
+        if (this.chibiManager.chibiItems[userId]) {
+            const item = this.chibiManager.chibiItems[userId];
+            const wasRemoving = item.removing;
+            if (wasRemoving) {
+                this.chibiManager.cancelRemoval(userId);
+            }
+            if (this.speakingTimeouts[userId]) {
+                clearTimeout(this.speakingTimeouts[userId]);
+                this.speakingTimeouts[userId] = null;
+            }
+            if (this.removalTimeouts[userId]) {
+                clearTimeout(this.removalTimeouts[userId]);
+                this.removalTimeouts[userId] = null;
+            }
+            item.element.classList.add('show');
+            item.element.style.opacity = '1';
+            this.animationManager.playAnimation(userId, 'speak');
+            return;
+        }
+
+        const slot = this.slotManager.assignSlot(userId);
+        if (!slot) {
+            console.warn('No free slot for user', userId);
+            return;
+        }
+
+        const element = this.chibiManager.createChibiElement(userId, slot.slotId);
+        if (!element) return;
+        this.chibiManager.updateChibiAppearance(userId, element, slot.slotId);
+        this.chibiManager.setTranslate(element, 0, 0, false);
+        requestAnimationFrame(() => {
+            element.classList.add('show');
+            element.style.opacity = '1';
+            element.classList.add('chibi-speaking');
+        });
+
+        this.chibiManager.chibiItems[userId] = {
+            element,
+            slotId: slot.slotId,
+            side: slot.side,
+            index: slot.index,
+            timeout: null,
+            removalTimer: null,
+            removing: false
+        };
+    }
+
+    handleSpeakingEnd(userId) {
+        if (userId === this.dataManager.gmData.userId && !this.dataManager.gmData.muted) {
+            if (this.gmTimeout) {
+                clearTimeout(this.gmTimeout);
+                this.gmTimeout = null;
+            }
+            this.gmTimeout = setTimeout(() => {
+                this.chibiManager.showGM(false);
+                if (!this.npcMuted) {
+                    this.chibiManager.showNPC(false);
+                }
+                this.gmTimeout = null;
+            }, 3000);
+            return;
+        }
+
+        const player = this.dataManager.getPlayerByUserId(userId);
+        if (!player || player.muted) return;
+
+        if (this.combatMode) {
+            const wrapper = this.combatChibiWrappers[userId];
+            if (wrapper) {
+                const inner = wrapper.querySelector('.combat-chibi-inner');
+                if (inner) inner.classList.remove('chibi-speaking');
+            }
+            return;
+        }
+
+        const item = this.chibiManager.chibiItems[userId];
+        if (!item) return;
+        item.element.classList.remove('chibi-speaking');
+        if (this.speakingTimeouts[userId]) {
+            clearTimeout(this.speakingTimeouts[userId]);
+            this.speakingTimeouts[userId] = null;
+        }
+        this.speakingTimeouts[userId] = setTimeout(() => {
+            this.removeSpeakingUser(userId);
+        }, 3000);
+    }
+
+    removeSpeakingUser(userId) {
+        if (this.removalTimeouts[userId]) {
+            clearTimeout(this.removalTimeouts[userId]);
+            this.removalTimeouts[userId] = null;
+        }
+        if (this.speakingTimeouts[userId]) {
+            clearTimeout(this.speakingTimeouts[userId]);
+            this.speakingTimeouts[userId] = null;
+        }
+        this.chibiManager.removeChibi(userId);
+    }
+
+    showNPC(npcId) {
+        if (npcId && npcId.toLowerCase() === 'clear') {
+            this.activeNPC = null;
+            this.chibiManager.showNPC(false);
+            return;
+        }
+        const resolved = this.dataManager.resolveCharacter(npcId);
+        if (resolved && resolved.type === 'npc') {
+            this.activeNPC = resolved.data.id;
+            this.chibiManager.showNPC(true, this.activeNPC);
+        }
+    }
+
+    impersonate(charName) {
+        if (charName === 'gm') {
+            this.chibiManager.showGM(true);
+            return;
+        }
+        const resolved = this.dataManager.resolveCharacter(charName);
+        if (resolved && resolved.type === 'player') {
+            const userId = resolved.data.userId;
+            this.slotManager.forceExecuteMove(userId);
+
+            if (this.chibiManager.chibiItems[userId]) {
+                const item = this.chibiManager.chibiItems[userId];
+                if (item.removing) {
+                    this.chibiManager.cancelRemoval(userId);
+                }
+                item.element.classList.toggle('chibi-speaking');
+                return;
+            }
+            if (this.combatMode) {
+                const wrapper = this.combatChibiWrappers[userId];
+                if (wrapper) {
+                    wrapper.classList.toggle('chibi-speaking');
+                }
+                return;
+            }
+            const wasMuted = resolved.data.muted;
+            resolved.data.muted = false;
+            this.handleSpeakingStart(userId);
+            if (wasMuted) resolved.data.muted = true;
+            setTimeout(() => {
+                const item = this.chibiManager.chibiItems[userId];
+                if (item) {
+                    item.element.classList.remove('chibi-speaking');
+                }
+            }, 2000);
+        }
+    }
+
+    mute(charName) {
+        if (charName === 'all') {
+            this.handleSpeakingEnd(gmData.userId);
+            this.dataManager.gmData.muted = true;
+            this.showNPC(false);
+            this.npcMuted = true;
+            this.dataManager.playersData.forEach(p => {
+                this.removeSpeakingUser(p.userId);
+                p.muted = true;
+            });
+            return;
+        }
+        if (charName === 'gm') {
+            this.handleSpeakingEnd(this.dataManager.gmData.userId);
+            this.dataManager.gmData.muted = true;
+            return;
+        }
+        if (charName === 'npc') {
+            this.showNPC('clear');
+            this.npcMuted = true;
+        }
+        const resolved = this.dataManager.resolveCharacter(charName);
+        if (resolved && resolved.type === 'player') {
+            const userId = resolved.data.userId;
+            this.removeSpeakingUser(userId);
+            resolved.data.muted = true;
+        }
+    }
+
+    unmute(charName) {
+        if (charName === 'gm') {
+            this.dataManager.gmData.muted = false;
+            return;
+        }
+        if (charName === 'npc') {
+            this.npcMuted = false;
+        }
+        if (charName === 'all') {
+            this.dataManager.gmData.muted = false;
+            this.npcMuted = false;
+            this.dataManager.playersData.forEach(p => p.muted = false);
+            return;
+        }
+        const resolved = this.dataManager.resolveCharacter(charName);
+        if (resolved && resolved.type === 'player') {
+            resolved.data.muted = false;
+        }
+    }
+
+    pop(charName) {
+        if (charName === 'gm') {
+            this.chibiManager.showGM(false);
+            return;
+        }
+        const resolved = this.dataManager.resolveCharacter(charName);
+        if (resolved && resolved.type === 'player') {
+            const userId = resolved.data.userId;
+            if (this.chibiManager.chibiItems[userId]) {
+                this.removeSpeakingUser(userId);
+            } else if (this.combatMode) {
+                const wrapper = this.combatChibiWrappers[userId];
+                if (wrapper) {
+                    const inner = wrapper.querySelector('.combat-chibi-inner');
+                    if (inner) inner.classList.remove('chibi-speaking');
+                }
+            }
+        }
+    }
+
+    flip(charName, alternateId) {
+        if (charName.toLowerCase() === 'gm') {
+            this.chibiManager.flipGMChibi(false, alternateId);
+            return;
+        }
+        const resolved = this.dataManager.resolveCharacter(charName);
+        if (!resolved || resolved.type !== 'player') return;
+        const userId = resolved.data.userId;
+        const player = resolved.data;
+
+        if (this.combatMode) {
+            const wrapper = this.combatChibiWrappers[userId];
+            if (!wrapper) {
+                console.warn(`No combat chibi found for "${charName}"`);
+                return;
+            }
+            const inner = wrapper.querySelector('.combat-chibi-inner');
+            if (!inner) return;
+
+            let newSrc = player.combatImg || player.chibiImg;
+            if (alternateId) {
+                switch (alternateId) {
+                    case 'default':
+                        newSrc = player.chibiImg;
+                        player.alternateSet = 'default';
+                        break;
+                    case 'combat':
+                        newSrc = player.combatImg;
+                        player.alternateSet = 'default';
+                        break;
+                    case 'downed':
+                        newSrc = player.downedImg;
+                        player.alternateSet = alternateId;
+                        break;
+                    default:
+                        newSrc = player.alternates.find(a => a.id === alternateId).img;
+                        player.alternateSet = alternateId;
+                }
+            } else {
+                newSrc = player.chibiImg;
+            }
+
+            inner.style.transition = 'opacity 0.3s ease';
+            inner.style.opacity = '0';
+            
+            setTimeout(() => {
+                inner.style.backgroundImage = `url(${newSrc})`;
+                void inner.offsetHeight;
+                inner.style.opacity = '1';
+                setTimeout(() => {
+                    inner.style.transition = '';
+                }, 300);
+            }, 300);
+
+            const compImg = this.combatCompanionElements[userId];
+            if (compImg && player.companionImg) {
+                const compSrc = player.companionFlipped && player.companionFlipImg ? player.companionFlipImg : player.companionImg;
+                if (compImg.src !== compSrc) {
+                    compImg.style.transition = 'opacity 0.3s ease';
+                    compImg.style.opacity = '0';
+                    setTimeout(() => {
+                        compImg.src = compSrc;
+                        void compImg.offsetHeight;
+                        compImg.style.opacity = '1';
+                        setTimeout(() => {
+                            compImg.style.transition = '';
+                        }, 300);
+                    }, 300);
+                }
+            }
+        } else {
+            if (this.chibiManager.chibiItems[userId]) {
+                this.chibiManager.flipChibiImage(userId, false, alternateId);
+            } else {
+                console.warn(`No chibi found for "${charName}"`);
+            }
+        }
+    }
+
+    compFlip(charName) {
+        if (charName.toLowerCase() === 'gm') {
+            this.chibiManager.flipGMChibi(true);
+            return;
+        }
+        const resolved = this.dataManager.resolveCharacter(charName);
+        if (!resolved || resolved.type !== 'player') return;
+        const userId = resolved.data.userId;
+        const player = resolved.data;
+
+        if (this.combatMode) {
+            const compImg = this.combatCompanionElements[userId];
+            if (!compImg) {
+                console.warn(`No companion for "${charName}"`);
+                return;
+            }
+            player.companionFlipped = !player.companionFlipped;
+            const newSrc = player.companionFlipped ? (player.companionFlipImg || player.companionImg) : player.companionImg;
+            compImg.style.transition = 'opacity 0.3s ease';
+            compImg.style.opacity = '0';
+            setTimeout(() => {
+                compImg.src = newSrc;
+                void compImg.offsetHeight;
+                compImg.style.opacity = '1';
+                setTimeout(() => {
+                    compImg.style.transition = '';
+                }, 300);
+            }, 300);
+        } else {
+            if (this.chibiManager.chibiItems[userId]) {
+                this.chibiManager.flipChibiImage(userId, true);
+            } else {
+                console.warn(`No chibi found for "${charName}"`);
+            }
+        }
+    }
+
+    triggerEffect(effectName, duration) {
+        const effect = this.dataManager.getEffect(effectName);
         if (!effect) return;
         if (effect.multiple) {
             effect.effects.forEach(eff => {
-                const subEffect = effects.find(e => e.id === eff.id);
+                const subEffect = this.dataManager.getEffect(eff.id);
                 if (subEffect) {
-                    triggerEffect(subEffect, eff.duration || subEffect.duration || 10);
+                    this.effectManager.triggerEffect(subEffect, eff.duration || subEffect.duration || 10);
                 }
             });
             return;
         }
         if (isNaN(duration)) duration = effect.duration || 10;
-        triggerEffect(effect, duration);
-        return;
+        this.effectManager.triggerEffect(effect, duration);
     }
 
-    if (cmd === '/effects' || cmd === '/es') {
-        if (args.length === 0) return;
-        const cleanedArgs = args.map(a => a.trim()).filter(a => a.length > 0);
-        if (cleanedArgs[0].toLowerCase() === 'clear' || cleanedArgs[0].toLowerCase() === 'c') {
-            Object.keys(activeEffects).forEach(slot => {
-                const old = activeEffects[slot];
-                old.element.classList.remove('show');
-                old.element.classList.add('hide');
-                clearTimeout(old.timeout);
-                setTimeout(() => {
-                    if (old.element.parentNode) old.element.parentNode.removeChild(old.element);
-                }, 500);
-                delete activeEffects[slot];
-            });
-            return;
-        }
-        const effectNames = cleanedArgs.join(' ').split(',').map(s => s.trim()).filter(s => s.length > 0);
-        effectNames.forEach(name => {
-            const matchedEffects = effects.filter(e => 
-                e.id === name || e.group === name
-            );
-            if (matchedEffects.length === 0) {
+    triggerMultipleEffects(names) {
+        if (names.length === 0) return;
+        const cleaned = names.join(' ').split(',').map(s => s.trim()).filter(s => s.length > 0);
+        cleaned.forEach(name => {
+            const matched = this.dataManager.getEffect(name) || this.dataManager.getEffectsByGroup(name);
+            if (!matched) {
                 console.warn(`No effect found for: ${name}`);
                 return;
             }
-            matchedEffects.forEach(effect => {
-                triggerEffect(effect, effect.duration || 10);
-            });
+            if (Array.isArray(matched)) {
+                matched.forEach(e => this.effectManager.triggerEffect(e, e.duration || 10));
+            } else {
+                this.effectManager.triggerEffect(matched, matched.duration || 10);
+            }
         });
     }
 
-    if (cmd === '/pop' || cmd === '/p') {
-        const charName = args.join(' ');
-        if (!charName) return;
-        if (charName == "gm") {
-            showGM(false);
-            return;
-        }
-        const resolved = resolveCharacter(charName);
+    clearEffects() {
+        this.effectManager.clearAllEffects();
+    }
+
+    playAnimationForChar(charName, animName) {
+        const resolved = this.dataManager.resolveCharacter(charName);
         if (resolved && resolved.type === 'player') {
             const userId = resolved.data.userId;
-            if (chibiItems[userId]) {
-                removeUser(userId);
-            } else {
-                console.warn(`No chibi found for "${charName}"`);
+            if (this.chibiManager.chibiItems[userId] || this.combatMode) {
+                this.animationManager.playAnimation(userId, animName);
             }
+        } else if (charName === 'gm' || charName === 'npc') {
+            this.animationManager.playAnimation(charName, animName);
         } else {
             console.warn(`Character "${charName}" not found.`);
         }
-        return;
+    }
+}
+
+// ==========================================================
+// 7. WEBSOCKET MANAGER 
+// ==========================================================
+class WebSocketManager {
+    constructor(overlayManager) {
+        this.overlayManager = overlayManager;
+        this.ws = null;
+        this.url = 'ws://127.0.0.1:8080';
+        this.init();
     }
 
-    if (cmd === '/impersonate' || cmd === '/i') {
+    init() {
+        const wsUrl = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws`;
+        this.url = wsUrl;
+        this.connect();
+    }
+
+    connect() {
+        try {
+            this.ws = new WebSocket(this.url);
+            this.ws.onopen = () => {
+                console.log('🌙 PF2e Overlay connected to voice WebSocket');
+            };
+            this.ws.onerror = (err) => {
+                console.error('WebSocket error:', err);
+                console.warn('Make sure the WebSocket server (server.js) is running and nginx is proxying /ws to port 8080.');
+            };
+            this.ws.onclose = (event) => {
+                console.log(`WebSocket closed (code: ${event.code}). Reconnecting in 3s...`);
+                setTimeout(() => this.connect(), 3000);
+            };
+            this.ws.onmessage = (event) => {
+                try {
+                    const msg = JSON.parse(event.data);
+                    const userId = msg.userId;
+
+                    if (userId) {
+                        const targetCard = document.querySelector(`.card[data-userid="${userId}"]`);
+                        if (targetCard) {
+                            if (msg.type === 'speaking_start') {
+                                targetCard.classList.add('speaking');
+                            } else if (msg.type === 'speaking_end') {
+                                targetCard.classList.remove('speaking');
+                            }
+                        }
+                    }
+
+                    if (!this.overlayManager.overlayEnabled && msg.type !== 'command') return;
+
+                    if (msg.type === 'speaking_start') {
+                        this.overlayManager.handleSpeakingStart(userId);
+                    } else if (msg.type === 'speaking_end') {
+                        this.overlayManager.handleSpeakingEnd(userId);
+                    } else if (msg.type === 'command') {
+                        if (window.commandProcessor) {
+                            window.commandProcessor.process(msg.command);
+                        } else {
+                            console.warn('Command processor not initialized');
+                        }
+                    }
+                } catch (e) {
+                    console.warn('WebSocket message parse error', e);
+                }
+            };
+        } catch (e) {
+            console.error('Failed to create WebSocket:', e);
+        }
+    }
+}
+
+// ==========================================================
+// 8. COMMAND PROCESSOR 
+// ==========================================================
+class CommandProcessor {
+    constructor(overlayManager) {
+        this.overlayManager = overlayManager;
+    }
+
+    process(rawCommand) {
+        console.log('Received command:', rawCommand);
+        const parts = rawCommand.trim().split(/\s+/);
+        const cmd = parts[0].toLowerCase();
+        const args = parts.slice(1);
+
+        switch (cmd) {
+            case '/chibi':
+            case '/c':
+                this.handleChibi(args);
+                break;
+            case '/flip':
+            case '/f':
+                this.handleFlip(args);
+                break;
+            case '/compflip':
+            case '/cf':
+                this.handleCompFlip(args);
+                break;
+            case '/npc':
+            case '/n':
+                this.handleNPC(args);
+                break;
+            case '/effect':
+            case '/e':
+                this.handleEffect(args);
+                break;
+            case '/effects':
+            case '/es':
+                this.handleEffects(args);
+                break;
+            case '/background':
+            case '/bg':
+                this.handleBackground(args);
+                break;
+            case '/pop':
+            case '/p':
+                this.handlePop(args);
+                break;
+            case '/impersonate':
+            case '/i':
+                this.handleImpersonate(args);
+                break;
+            case '/mute':
+            case '/m':
+                this.handleMute(args);
+                break;
+            case '/unmute':
+            case '/um':
+                this.handleUnmute(args);
+                break;
+            case '/animation':
+            case '/a':
+                this.handleAnimation(args);
+                break;
+            default:
+                console.warn(`Unknown command: ${cmd}`);
+        }
+    }
+
+    handleChibi(args) {
+        if (args.length === 0) return;
+        const sub = args[0].toLowerCase();
+        if (sub === 'on' || sub === 'y') {
+            this.overlayManager.enable();
+        } else if (sub === 'off' || sub === 'n') {
+            this.overlayManager.disable();
+        } else if (sub === 'test' || sub === 't') {
+            if (!this.overlayManager.overlayEnabled) return;
+            this.overlayManager.fillTestSlots();
+        } else if (sub === 'testoff' || sub === 'to') {
+            if (!this.overlayManager.overlayEnabled) return;
+            this.overlayManager.clearTestSlots();
+        } else if (sub === 'combat' || sub === 'cm') {
+            if (!this.overlayManager.overlayEnabled) return;
+            this.overlayManager.setCombatMode();
+        } else if (sub === 'scenic' || sub === 'sc') {
+            if (!this.overlayManager.overlayEnabled) return;
+            this.overlayManager.setScenicMode();
+        }
+    }
+
+    handleFlip(args) {
+        if (args.length === 0) return;
+        const charName = args[0];
+        const alternateId = args[1] || 'default';
+        this.overlayManager.flip(charName, alternateId);
+    }
+
+    handleCompFlip(args) {
+        if (args.length === 0) return;
         const charName = args.join(' ');
-        if (!charName) return;
-        if (charName == "gm") {
-            showGM(true);
+        this.overlayManager.compFlip(charName);
+    }
+
+    handleNPC(args) {
+        if (args.length === 0) return;
+        const npcName = args.join(' ');
+        this.overlayManager.showNPC(npcName);
+    }
+
+    handleEffect(args) {
+        if (args.length === 0) return;
+        const effectName = args[0];
+        let duration = parseInt(args[1]);
+        this.overlayManager.triggerEffect(effectName, duration);
+    }
+
+    handleEffects(args) {
+        if (args.length === 0) return;
+        if (args[0].toLowerCase() === 'clear' || args[0].toLowerCase() === 'c') {
+            this.overlayManager.clearEffects();
             return;
         }
-        const resolved = resolveCharacter(charName);
-        if (resolved && resolved.type === 'player') {
-            const userId = resolved.data.userId;
-            if (chibiItems[userId]) {
-                chibiItems[userId].element.classList.toggle('chibi-speaking');
-                return;
-            }
-            let muted = resolved.data.muted || false;
-            resolved.data.muted = false;
-            handleSpeakingStart(userId);
-            if (muted) {
-                resolved.data.muted = true;
-            }
-            setTimeout(() => {
-                if (chibiItems[userId]) {
-                    chibiItems[userId].element.classList.remove('chibi-speaking');
-                }
-            }, 2000);
-        }
-        return;
+        this.overlayManager.triggerMultipleEffects(args);
     }
 
-    if (cmd === 'mute' || cmd === '/m') {
+    handleBackground(args) {
+        if (args.length === 0) {
+            this.overlayManager.setBackground('clear');
+            return;
+        }
+        const bgId = args[0];
+        this.overlayManager.setBackground(bgId);
+    }
+
+    handlePop(args) {
+        if (args.length === 0) return;
         const charName = args.join(' ');
-        if (!charName) return;
-        if (charName == "alloff") {
-            playersData.forEach(p => {
-                removeUser(p.userId);
-                p.muted = true;
-                return;
-            })
-        }
-        if (charName == "allon") {
-            playersData.forEach(p => {
-                p.muted = false;
-                return;
-            })
-        }
-        const resolved = resolveCharacter(charName);
-        if (resolved && resolved.type === 'player') {
-            const userId = resolved.data.userId;
-            removeUser(userId);
-            resolved.data.muted = true;
-        }
-        return;
+        this.overlayManager.pop(charName);
     }
 
-    // ---- /animation command ----
-    if (cmd === '/animation' || cmd === '/a') {
+    handleImpersonate(args) {
+        if (args.length === 0) return;
+        const charName = args.join(' ');
+        this.overlayManager.impersonate(charName);
+    }
+
+    handleMute(args) {
+        if (args.length === 0) return;
+        const charName = args.join(' ');
+        this.overlayManager.mute(charName);
+    }
+
+    handleUnmute(args) {
+        if (args.length === 0) return;
+        const charName = args.join(' ');
+        this.overlayManager.unmute(charName);
+    }
+
+    handleAnimation(args) {
         if (args.length < 2) {
             console.warn('Usage: /animation <name> <character>');
             return;
         }
         const animName = args[0].toLowerCase();
         const charName = args.slice(1).join(' ');
-        const resolved = resolveCharacter(charName);
-        if ((resolved && resolved.type === 'player' || charName === "gm" || charName === "npc")) {
-            if (charName === "gm" || charName === "npc") {
-                playAnimation(charName, animName);
-                return;
-            } else {
-                const userId = resolved.data.userId;
-                if (chibiItems[userId]) {
-                    playAnimation(userId, animName);
-                } else {
-                    console.warn(`No chibi found for "${charName}"`);
-                }
-            }
-        } else {
-            console.warn(`Character "${charName}" not found.`);
-        }
-        return;
+        this.overlayManager.playAnimationForChar(charName, animName);
     }
-}
-
-function shuffleArray(arr) {
-    const a = [...arr]; // copy so original isn't modified
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
-// --- Test fill and clear (adapted) ---
-function fillTestSlots() {
-    clearTestSlots();
-    let idx = 0;
-    const allPlayerIds = shuffleArray(playersData.map(p => p.userId));
-    for (let i = 0; i < leftSlots.length && idx < allPlayerIds.length; i++) {
-        setTimeout(() => {
-            const userId = allPlayerIds[idx];
-            const slotId = leftSlots[i];
-            const element = createChibiElement(userId, slotId);
-            if (element) {
-                const player = playersData.find(p => p.userId === userId);
-                updateChibiAppearance(userId, element, slotId);
-                setChibiTranslate(element, 0, 0, false);
-                requestAnimationFrame(() => {
-                    element.classList.add('show');
-                    element.style.opacity = '1';
-                });
-                leftOccupants[i] = userId;
-                slotOccupancy[userId] = { slotId, side: 'left', index: i };
-                chibiItems[userId] = { element, slotId, side: 'left', index: i, timeout: null };
-                idx++;
-            }
-        }, i * 200);
-    }
-    for (let i = 0; i < rightSlots.length && idx < allPlayerIds.length; i++) {
-        setTimeout(() => {
-            const userId = allPlayerIds[idx];
-            const slotId = rightSlots[i];
-            const element = createChibiElement(userId, slotId);
-            if (element) {
-                const player = playersData.find(p => p.userId === userId);
-                updateChibiAppearance(userId, element, slotId);
-                setChibiTranslate(element, 0, 0, false);
-                requestAnimationFrame(() => {
-                    element.classList.add('show');
-                    element.style.opacity = '1';
-                });
-                rightOccupants[i] = userId;
-                slotOccupancy[userId] = { slotId, side: 'right', index: i };
-                chibiItems[userId] = { element, slotId, side: 'right', index: i, timeout: null };
-                idx++;
-            }
-
-        }, i * 200);
-    }
-    showGM(true);
-}
-
-function clearTestSlots() {
-    Object.keys(chibiItems).forEach(userId => {
-        const item = chibiItems[userId];
-        if (item.element && item.element.parentNode) {
-            item.element.parentNode.removeChild(item.element);
-        }
-        delete chibiItems[userId];
-    });
-    leftOccupants.fill(null);
-    rightOccupants.fill(null);
-    slotOccupancy = {};
-    cancelReflow('left');
-    cancelReflow('right');
-    showGM(false);
-    showNPC(false);
-}
-
-// --- Effects (unchanged) ---
-function triggerEffect(effect, duration) {
-    const actualId = effectSlotMap[effect.slot];
-    if (!actualId) return;
-
-    if (activeEffects[effect.slot]) {
-        const old = activeEffects[effect.slot];
-        old.element.classList.remove('show');
-        old.element.classList.add('hide');
-        clearTimeout(old.timeout);
-        setTimeout(() => {
-            if (old.element.parentNode) old.element.parentNode.removeChild(old.element);
-        }, 500);
-        delete activeEffects[effect.slot];
-    }
-
-    const container = document.getElementById(actualId);
-    const div = document.createElement('div');
-    div.className = 'chibi-effect';
-    const img = document.createElement('img');
-    img.src = effect.image;
-    img.alt = effect.name;
-    div.appendChild(img);
-    container.appendChild(div);
-
-    requestAnimationFrame(() => {
-        div.classList.add('show');
-    });
-
-    const timeout = setTimeout(() => {
-        div.classList.remove('show');
-        div.classList.add('hide');
-        setTimeout(() => {
-            if (div.parentNode) div.parentNode.removeChild(div);
-        }, 500);
-        delete activeEffects[effect.slot];
-    }, duration * 1000);
-
-    activeEffects[effect.slot] = { element: div, timeout };
 }
 
 // ==========================================================
-// 7. AMBIENT EFFECTS (unchanged)
+// 9. UI HELPERS 
 // ==========================================================
+function renderPlayerCards(dataManager) {
+    const playerBar = document.getElementById('player-bar');
+    if (!playerBar) return;
+
+    playerBar.querySelectorAll('.card.player').forEach(card => card.remove());
+
+    dataManager.playersData.forEach(player => {
+        const card = document.createElement('div');
+        card.className = `card player ${player.cssClass}`;
+        card.setAttribute('data-userid', player.userId);
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'name';
+        nameDiv.textContent = player.name;
+
+        const img = document.createElement('img');
+        img.src = player.avatar;
+        img.alt = `${player.name} avatar`;
+        img.onerror = () => { img.src = dataManager.defaultAvatar; };
+
+        const skillDiv = document.createElement('div');
+        skillDiv.className = 'skill';
+        skillDiv.textContent = player.classSkill;
+
+        card.appendChild(nameDiv);
+        card.appendChild(img);
+        card.appendChild(skillDiv);
+        playerBar.appendChild(card);
+    });
+    console.log('✅ Fantasy player cards dynamically generated (compact vertical layout)!');
+}
+
 function addAmbientEffects() {
-    const mainContent = document.getElementById("main-content");
+    const mainContent = document.getElementById('main-content');
     if (mainContent) {
         setInterval(() => {
-            const glint = document.createElement("div");
-            glint.style.position = "absolute";
-            glint.style.top = Math.random() * 80 + "%";
-            glint.style.left = Math.random() * 80 + "%";
-            glint.style.width = "40px";
-            glint.style.height = "40px";
-            glint.style.background = "radial-gradient(circle, rgba(255,220,140,0.5), transparent)";
-            glint.style.borderRadius = "50%";
-            glint.style.filter = "blur(8px)";
-            glint.style.pointerEvents = "none";
-            glint.style.opacity = "0";
-            glint.style.transition = "opacity 2s ease-out";
+            const glint = document.createElement('div');
+            glint.style.position = 'absolute';
+            glint.style.top = Math.random() * 80 + '%';
+            glint.style.left = Math.random() * 80 + '%';
+            glint.style.width = '40px';
+            glint.style.height = '40px';
+            glint.style.background = 'radial-gradient(circle, rgba(255,220,140,0.5), transparent)';
+            glint.style.borderRadius = '50%';
+            glint.style.filter = 'blur(8px)';
+            glint.style.pointerEvents = 'none';
+            glint.style.opacity = '0';
+            glint.style.transition = 'opacity 2s ease-out';
             mainContent.appendChild(glint);
-            requestAnimationFrame(() => { glint.style.opacity = "0.8"; });
+            requestAnimationFrame(() => { glint.style.opacity = '0.8'; });
             setTimeout(() => {
-                glint.style.opacity = "0";
+                glint.style.opacity = '0';
                 setTimeout(() => glint.remove(), 2100);
             }, 400);
         }, 11000);
     }
 
-    const desc = document.getElementById("description");
+    const desc = document.getElementById('description');
     if (desc) {
         setInterval(() => {
-            desc.style.borderLeftColor = "#e7c17e";
+            desc.style.borderLeftColor = '#e7c17e';
             setTimeout(() => {
-                if (desc) desc.style.borderLeftColor = "var(--rune-glow)";
+                if (desc) desc.style.borderLeftColor = 'var(--rune-glow)';
             }, 300);
         }, 4000);
     }
 }
 
-// --- Animation support ---
-function injectAnimationStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes shake {
-            0%, 100% { transform: translate(0, 0); }
-            10%, 30%, 50%, 70%, 90% { transform: translate(-8px, 0); }
-            20%, 40%, 60%, 80% { transform: translate(8px, 0); }
-        }
-        .chibi-item.anim-shake {
-            animation: shake 0.6s ease-in-out !important;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(0, -20px); }
-        }
-        .chibi-item.anim-bounce {
-            animation: bounce 0.5s ease-in-out !important;
-        }
-        @keyframes speak {
-            0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
-            20%  { transform: translate(0, -3px) rotate(-1deg) scale(1.02); }
-            50%  { transform: translate(0, -8px) rotate(1deg) scale(1.04); }
-            80%  { transform: translate(0, -3px) rotate(-0.5deg) scale(1.02); }
-            100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-        }
-        .chibi-item.anim-speak {
-            animation: speak 3s ease-in-out !important;
-        }
-        .chibi-item.chibi-speaking {
-            animation: speak 0.9s ease-in-out infinite;
-        }
-        /* Spin animation (rotate) */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .chibi-item.anim-spin {
-            animation: spin 1s linear !important;
-        }
-        @keyframes glow {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        .chibi-item.anim-glow {
-            animation: glow 0.8s ease-in-out !important;
-        }
-        @keyframes jump {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(0, -30px); }
-        }
-        .chibi-item.anim-jump {
-            animation: jump 0.7s ease-in-out !important;
-        }
-        @keyframes attack-left {
-            0%   { transform: translate(0, 0) scale(1); }
-            15%  { transform: translate(-20px, 5px) scale(1.1) rotate(-5deg); }
-            30%  { transform: translate(-15px, 8px) scale(1.05) rotate(3deg); }
-            45%  { transform: translate(-25px, 5px) scale(1.1) rotate(-2deg); }
-            60%  { transform: translate(-20px, 8px) scale(1.05) rotate(4deg); }
-            75%  { transform: translate(-15px, 5px) scale(1.1) rotate(-3deg); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-        @keyframes attack-right {
-            0%   { transform: translate(0, 0) scale(1); }
-            15%  { transform: translate(20px, 5px) scale(1.1) rotate(5deg); }
-            30%  { transform: translate(15px, 8px) scale(1.05) rotate(-3deg); }
-            45%  { transform: translate(25px, 5px) scale(1.1) rotate(2deg); }
-            60%  { transform: translate(20px, 8px) scale(1.05) rotate(-4deg); }
-            75%  { transform: translate(15px, 5px) scale(1.1) rotate(3deg); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-        .chibi-item.anim-attack-left {
-            animation: attack-left 0.6s ease-in-out !important;
-        }
-        .chibi-item.anim-attack-right {
-            animation: attack-right 0.6s ease-in-out !important;
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// --- Apply an animation to a chibi element ---
-function playAnimation(userId, animationName) {
-    let item;
-    if (userId == "gm" || userId == "npc") {
-        item = { element: document.getElementsByClassName(`${userId}-slot`)[0] }
-    } else {
-        item = chibiItems[userId];
-        if (!item) {
-            console.warn(`No chibi found for user ${userId}`);
-        }
-    }
-    
-    const element = item.element;
-    element.classList.forEach(cls => {
-        if (cls.startsWith('anim-')) {
-            element.classList.remove(cls);
-        }
-    });
-    const animClass = `anim-${animationName}`;
-    element.classList.add(animClass);
-
-    const onEnd = () => {
-        element.classList.remove(animClass);
-        element.removeEventListener('animationend', onEnd);
-    };
-    element.addEventListener('animationend', onEnd);
-}
-
 // ==========================================================
-// 8. INITIALIZE
+// 10. INITIALIZATION
 // ==========================================================
 function initialize() {
-    renderPlayerCards();
-    setTimeout(initWebSocket, 100);
+    const dataManager = new DataManager();
+    const slotManager = new SlotManager();
+    const chibiManager = new ChibiManager(dataManager, slotManager);
+    const effectManager = new EffectManager();
+    const animationManager = new AnimationManager(chibiManager, dataManager);
+    const overlayManager = new OverlayManager(dataManager, slotManager, chibiManager, effectManager, animationManager);
+    const commandProcessor = new CommandProcessor(overlayManager);
+    window.commandProcessor = commandProcessor;
+    const wsManager = new WebSocketManager(overlayManager);
+
+    renderPlayerCards(dataManager);
     addAmbientEffects();
-    injectAnimationStyles();
-    const gmImg = document.querySelector(".card.gm img");
-    if (gmImg && gmImg.src.includes("poor.png")) {
+
+    const gmImg = document.querySelector('.card.gm img');
+    if (gmImg && gmImg.src.includes('poor.png')) {
         gmImg.onerror = function() {
-            this.src = "https://via.placeholder.com/180x180?text=Game+Master";
+            this.src = 'https://via.placeholder.com/180x180?text=Game+Master';
         };
     }
+
+    console.log('✅ Overlay system initialized with synchronous test fill and race condition fixes.');
 }
 
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initialize);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
 } else {
     initialize();
 }
