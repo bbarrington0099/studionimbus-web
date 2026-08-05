@@ -44,7 +44,11 @@ const SHARED_DATA = {
             combatImg: "../images/chibi/pcs/combat/oryn-bow.png",
             downedImg: "../images/chibi/pcs/downed/oryn.png",
             companionImg: "../images/chibi/companions/jack.png",
+            projectileImgs: [
+                {id: "arrow", name: "Arrow", img: "../images/chibi/pcs/combat/projectiles/arrow.png"},
+            ],
             alternates: [
+                {id: "combat-override-melee", name: "Blades", img: "../images/chibi/flips/oryn_melee.png"},
                 {id: "tracking", name: "Tracking", img: "../images/chibi/flips/oryn_tracking.png"},
                 {id: "training", name: "Training", img: "../images/chibi/flips/oryn_training.png"},
             ],
@@ -61,6 +65,12 @@ const SHARED_DATA = {
             chibiImg: "../images/chibi/pcs/ikyki.png",
             combatImg: "../images/chibi/pcs/combat/ikyki-vial.png",
             downedImg: "../images/chibi/pcs/downed/ikyki.png",
+            projectileImgs: [
+                {id: "vial", name: "Vial", img: "../images/chibi/pcs/combat/projectiles/vial.png"},
+                {id: "lightning", name: "Lightning", img: "../images/chibi/pcs/combat/projectiles/bottled-lightning.png"},
+                {id: "stink", name: "Stink", img: "../images/chibi/pcs/combat/projectiles/stink-bomb.png"},
+                {id: "necrotic", name: "Necrotic", img: "../images/chibi/pcs/combat/projectiles/necrotic-bomb.png"},
+            ],
             alternates: [
                 {id: "mixing", name: "Mixing", img: "../images/chibi/flips/ikyki_mixing.png"}
             ],
@@ -79,6 +89,10 @@ const SHARED_DATA = {
             downedImg: "../images/chibi/pcs/downed/azzahd.png",
             companionImg: "../images/chibi/companions/elowen.png",
             companionFlipImg: "../images/chibi/flips/elowen_rage.png",
+            projectileImgs: [
+                {id: "sling-ball", name: "Sling Ball", img: "../images/chibi/pcs/combat/projectiles/sling-ball.png"},
+                {id: "water-bullet", name: "Water Bullet", img: "../images/chibi/pcs/combat/projectiles/water-bullet.png"},
+            ],
             alternates: [
                 {id: "reasoning", name: "Reasoning", img: "../images/chibi/flips/azzahd_reasoning.png"}
             ],
@@ -95,8 +109,12 @@ const SHARED_DATA = {
             chibiImg: "../images/chibi/pcs/rapha.png",
             combatImg: "../images/chibi/pcs/combat/rapha-shortsword.png",
             downedImg: "../images/chibi/pcs/downed/rapha.png",
+            projectileImgs: [
+                {id: "arrow", name: "Arrow", img: "../images/chibi/pcs/combat/projectiles/arrow.png"},
+            ],
             alternates: [
-                {id: "bush", name: "Bush", img: "../images/chibi/flips/rapha_bush.png"}
+                {id: "combat-override-bow", name: "Bow", img: "../images/chibi/flips/rapha_bow.png"},
+                {id: "bush", name: "Bush", img: "../images/chibi/flips/rapha_bush.png"},
             ],
             aliases: ["r"]
         },
@@ -148,7 +166,7 @@ const SHARED_DATA = {
         { id: "wolves", name: "Wolves", categories: ["act1enemy"], image: "../images/chibi/enemies/wolves.png" },
         { id: "basilisk", name: "Basilisk", categories: ["act1enemy"], image: "../images/chibi/enemies/basilisk.png" },
         { id: "boars", name: "Boars", categories: ["act1enemy"], image: "../images/chibi/enemies/boars.png" },
-        { id: "goblin-get", name: "Goblin Get Gang", categories: ["act1enemy"], image: "../images/chibi/enemies/goblin_get_gang.png" },
+        { id: "goblin-get", name: "Goblin Get Gang", categories: ["act1enemy"], image: "../images/chibi/enemies/goblin_get_gang.png", projectileImg: "../images/chibi/pcs/combat/projectiles/arrow.png" },
         { id: "tarantula-swarm", name: "Tarantula Swarm", categories: ["act1enemy"], image: "../images/chibi/enemies/tarantual_swarm.png" },
         { id: "dweomercat", name: "Dweomercat", categories: ["act1enemy"], image: "../images/chibi/enemies/dweomercat.png" },
         { id: "blodeuwedd", name: "Blodeuwedd", categories: ["act1enemy"], image: "../images/chibi/enemies/blodeuwedd.png" },

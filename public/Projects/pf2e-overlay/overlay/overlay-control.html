@@ -654,7 +654,24 @@
                         sendCommand(`/animation melee ${p.id}`)));
                     combatRow.appendChild(makeBtn('🏹 Ranged', 'btn btn-sm', () =>
                         sendCommand(`/animation ranged ${p.id}`)));
+                    if (Array.isArray(p.projectileImgs)) {
+                        p.projectileImgs.forEach(proj => {
+                            combatRow.appendChild(makeBtn(proj.name, 'btn btn-sm', () => sendCommand(`/animation ranged ${p.id} ${proj.id}`)))
+                        })
+                    }
                     card.appendChild(combatRow);
+
+                    const attackedRow = document.createElement('div');
+                    attackedRow.className = 'row';
+                    const atkLbl = document.createElement('span');
+                    atkLbl.className = 'row-label';
+                    atkLbl.textContent = 'Attacked:';
+                    attackedRow.appendChild(atkLbl);
+                    attackedRow.appendChild(makeBtn('⚔️ Melee', 'btn btn-sm', () =>
+                        sendCommand(`/animation melee npc ${p.id}`)));
+                    attackedRow.appendChild(makeBtn('🏹 Ranged', 'btn btn-sm', () =>
+                        sendCommand(`/animation ranged npc ${p.id}`)));
+                    card.appendChild(attackedRow);
                 }
 
                 grid.appendChild(card);

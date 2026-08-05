@@ -592,6 +592,14 @@ body {
 	left: 120px;
 }
 
+#chibi-overlay #chibi-main-bar #chibi-slot-npc {
+	transition: transform 0.5s;
+}
+
+#chibi-overlay #chibi-main-bar #chibi-slot-npc.enemy {
+	transform: translateY(120px);
+}
+
 #chibi-overlay #chibi-under-bar {
 	position: absolute;
 	bottom: 0;
