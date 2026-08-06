@@ -1620,9 +1620,7 @@ class OverlayManager {
         if (this.chibiManager.npcChibiElement) {
           this.chibiManager.npcChibiElement.classList.add('chibi-speaking');
         }
-        this.animationManager.playAnimation('npc', 'speak');
       }
-      this.animationManager.playAnimation(userId, 'speak');
       return;
     }
 
