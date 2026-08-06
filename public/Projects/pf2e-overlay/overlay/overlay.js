@@ -1610,8 +1610,16 @@ class OverlayManager {
         this.gmRemovalTimer = null;
       }
       this.chibiManager.showGM(true);
+
+      if (this.chibiManager.gmChibiElement) {
+        this.chibiManager.gmChibiElement.classList.add('chibi-speaking');
+      }
+
       if (this.activeNPC && !this.npcMuted) {
         this.chibiManager.showNPC(true, this.activeNPC);
+        if (this.chibiManager.npcChibiElement) {
+          this.chibiManager.npcChibiElement.classList.add('chibi-speaking');
+        }
         this.animationManager.playAnimation('npc', 'speak');
       }
       this.animationManager.playAnimation(userId, 'speak');
@@ -1694,6 +1702,13 @@ class OverlayManager {
         this.gmTimeout = null;
       }
       this.gmTimeout = setTimeout(() => {
+        if (this.chibiManager.gmChibiElement) {
+          this.chibiManager.gmChibiElement.classList.remove('chibi-speaking');
+        }
+        if (this.chibiManager.npcChibiElement) {
+          this.chibiManager.npcChibiElement.classList.remove('chibi-speaking');
+        }
+
         this.chibiManager.showGM(false);
         if (!this.npcMuted) {
           this.chibiManager.showNPC(false);
