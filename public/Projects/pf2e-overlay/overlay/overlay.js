@@ -1600,21 +1600,22 @@ class OverlayManager {
    */
   handleSpeakingStart(userId) {
     // GM handling
-    if (userId === this.dataManager.gmData.userId && !this.dataManager.gmData.muted) {
-      if (this.gmTimeout) {
-        clearTimeout(this.gmTimeout);
-        this.gmTimeout = null;
+    if (userId === this.dataManager.gmData.userId) {
+      if (!this.dataManager.gmData.muted) {
+        if (this.gmTimeout) {
+          clearTimeout(this.gmTimeout);
+          this.gmTimeout = null;
+        }
+        if (this.gmRemovalTimer) {
+          clearTimeout(this.gmRemovalTimer);
+          this.gmRemovalTimer = null;
+        }
+        this.chibiManager.showGM(true);
+  
+        if (this.chibiManager.gmChibiElement) {
+          this.chibiManager.gmChibiElement.classList.add('chibi-speaking');
+        }
       }
-      if (this.gmRemovalTimer) {
-        clearTimeout(this.gmRemovalTimer);
-        this.gmRemovalTimer = null;
-      }
-      this.chibiManager.showGM(true);
-
-      if (this.chibiManager.gmChibiElement) {
-        this.chibiManager.gmChibiElement.classList.add('chibi-speaking');
-      }
-
       if (this.activeNPC && !this.npcMuted) {
         this.chibiManager.showNPC(true, this.activeNPC);
         if (this.chibiManager.npcChibiElement) {
@@ -1694,24 +1695,26 @@ class OverlayManager {
    */
   handleSpeakingEnd(userId) {
     // GM handling
-    if (userId === this.dataManager.gmData.userId && !this.dataManager.gmData.muted) {
-      if (this.gmTimeout) {
-        clearTimeout(this.gmTimeout);
-        this.gmTimeout = null;
+    if (userId === this.dataManager.gmData.userId) {
+      if (!this.dataManager.gmData.muted) {
+        if (this.gmTimeout) {
+          clearTimeout(this.gmTimeout);
+          this.gmTimeout = null;
+        }
+        if (this.chibiManager.gmChibiElement) {
+          this.chibiManager.gmChibiElement.classList.remove('chibi-speaking');
+        }
+        this.gmTimeout = setTimeout(() => {
+          this.chibiManager.showGM(false);
+          if (!this.npcMuted) {
+            this.chibiManager.showNPC(false);
+          }
+          this.gmTimeout = null;
+        }, 3000);
       }
-      if (this.chibiManager.gmChibiElement) {
-        this.chibiManager.gmChibiElement.classList.remove('chibi-speaking');
-      }
-      if (this.chibiManager.npcChibiElement) {
+      if (this.chibiManager.npcChibiElement && !this.npcMuted) {
         this.chibiManager.npcChibiElement.classList.remove('chibi-speaking');
       }
-      this.gmTimeout = setTimeout(() => {
-        this.chibiManager.showGM(false);
-        if (!this.npcMuted) {
-          this.chibiManager.showNPC(false);
-        }
-        this.gmTimeout = null;
-      }, 3000);
       return;
     }
 
