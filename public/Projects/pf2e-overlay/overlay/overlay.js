@@ -1612,6 +1612,7 @@ class OverlayManager {
       this.chibiManager.showGM(true);
       if (this.activeNPC && !this.npcMuted) {
         this.chibiManager.showNPC(true, this.activeNPC);
+        this.animationManager.playAnimation('npc', 'speak');
       }
       this.animationManager.playAnimation(userId, 'speak');
       return;
