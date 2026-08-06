@@ -1699,14 +1699,13 @@ class OverlayManager {
         clearTimeout(this.gmTimeout);
         this.gmTimeout = null;
       }
+      if (this.chibiManager.gmChibiElement) {
+        this.chibiManager.gmChibiElement.classList.remove('chibi-speaking');
+      }
+      if (this.chibiManager.npcChibiElement) {
+        this.chibiManager.npcChibiElement.classList.remove('chibi-speaking');
+      }
       this.gmTimeout = setTimeout(() => {
-        if (this.chibiManager.gmChibiElement) {
-          this.chibiManager.gmChibiElement.classList.remove('chibi-speaking');
-        }
-        if (this.chibiManager.npcChibiElement) {
-          this.chibiManager.npcChibiElement.classList.remove('chibi-speaking');
-        }
-
         this.chibiManager.showGM(false);
         if (!this.npcMuted) {
           this.chibiManager.showNPC(false);
