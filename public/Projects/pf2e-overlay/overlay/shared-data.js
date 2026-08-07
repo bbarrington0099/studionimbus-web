@@ -170,6 +170,8 @@ const SHARED_DATA = {
         { id: "tarantula-swarm", name: "Tarantula Swarm", categories: ["act1enemy"], image: "../images/chibi/enemies/tarantual_swarm.png" },
         { id: "dweomercat", name: "Dweomercat", categories: ["act1enemy"], image: "../images/chibi/enemies/dweomercat.png" },
         { id: "blodeuwedd", name: "Blodeuwedd", categories: ["act1enemy"], image: "../images/chibi/enemies/blodeuwedd.png" },
+        { id: "bandits", name: "Bandits", categories: ["act1enemy"], image: "../images/chibi/enemies/bandits.png" },
+        { id: "cockatrice", name: "Cockatrice", categories: ["act1enemy"], image: "../images/chibi/enemies/cockatrice.png" },
         { id: "enemy", name: "Enemy", categories: ["generic"], image: "../images/chibi/enemies/enemy.png", aliases: ["nme"] },
     ],
 
