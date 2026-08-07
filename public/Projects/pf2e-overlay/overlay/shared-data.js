@@ -197,6 +197,12 @@ const SHARED_DATA = {
         { id: "wakeup-camp", category: "roadToDuskHarbor", name: "Morning Camp", image: "../images/chibi/backgrounds/wakeup-camp.png" },
         { id: "forest-road", category: "roadToDuskHarbor", name: "Forest Road", image: "../images/chibi/backgrounds/forest-road.png" },
         { id: "forest-road-lunch", category: "roadToDuskHarbor", name: "Forest Road Lunch", image: "../images/chibi/backgrounds/forest-road-lunch.png" },
+        { id: "dusk-harbor", category: "duskHarbor", name: "Dusk Harbor", image: "../images/chibi/backgrounds/dusk-harbor.png" },
+        { id: "dusk-harbor-sewer", category: "duskHarbor", name: "DH Sewer", image: "../images/chibi/backgrounds/dusk-harbor-sewer.png" },
+        { id: "dusk-harbor-dock", category: "duskHarbor", name: "DH Dock", image: "../images/chibi/backgrounds/dusk-harbor-dock.png" },
+        { id: "dusk-harbor-inn", category: "duskHarbor", name: "DH Inn", image: "../images/chibi/backgrounds/dusk-harbor-inn.png" },
+        { id: "dusk-harbor-market", category: "duskHarbor", name: "DH Market", image: "../images/chibi/backgrounds/dusk-harbor-market.png" },
+        { id: "dusk-harbor-office", category: "duskHarbor", name: "DH Office", image: "../images/chibi/backgrounds/dusk-harbor-office.png" },
     ],
 
     // Animations
