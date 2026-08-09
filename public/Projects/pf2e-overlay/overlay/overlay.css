@@ -719,6 +719,7 @@ body {
 }
 
 .card.player {
+	position: relative;
 	flex-direction: column;
 	height: 172px;
 	width: 150px;
@@ -730,10 +731,11 @@ body {
 }
 
 .card.player img {
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	border-radius: 28px 8px 28px 8px;
-	object-fit: contain;
+	object-fit: cover;
 	transition: 0.1s;
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 
@@ -752,6 +754,10 @@ body {
 }
 
 .name {
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	transform: translateX(-50%);
 	font-weight: bold;
 	font-size: 1.2rem;
 	letter-spacing: 1px;
@@ -778,6 +784,10 @@ body {
 }
 
 .skill {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translateX(-50%);
 	color: var(--rune-glow);
 	font-style: italic;
 	background-color: var(--card-bg);
