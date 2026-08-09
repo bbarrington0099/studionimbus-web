@@ -749,8 +749,6 @@ body {
 	-webkit-background-clip: text;
 	color: transparent;
 	text-shadow: none;
-	background-color: var(--card-bg);
-	border-radius: 5px;
 }
 
 .blood,
@@ -772,6 +770,10 @@ body {
 	transform: translateX(-50%);
 	color: var(--rune-glow);
 	font-style: italic;
+}
+
+.card.player.name, .card.player.skill {
+	padding: 5px;
 	background-color: var(--card-bg);
 	border-radius: 5px;
 }

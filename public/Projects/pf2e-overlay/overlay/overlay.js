@@ -2870,6 +2870,13 @@ function renderPlayerCards(dataManager) {
   playerBar.querySelectorAll('.card.player').forEach(card => card.remove());
 
   dataManager.playersData.forEach(player => {
+    const cardContainer = document.createElement('div');
+    cardContainer.className = `card container player ${player.cssClass}`;
+    cardContainer.style.backgroundSize = 'cover';
+    cardContainer.style.backgroundRepeat = 'no-repeat';
+    cardContainer.style.backgroundPosition = 'center';
+    cardContainer.style.backdropFilter = 'blur(10px)';
+
     const card = document.createElement('div');
     card.className = `card player ${player.cssClass}`;
     card.setAttribute('data-userid', player.userId);
