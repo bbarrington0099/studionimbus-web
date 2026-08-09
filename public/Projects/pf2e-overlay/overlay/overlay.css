@@ -772,7 +772,7 @@ body {
 	font-style: italic;
 }
 
-.card.player.name, .card.player.skill {
+.card.player .name, .card.player .skill {
 	padding: 5px;
 	background-color: var(--card-bg);
 	border-radius: 5px;

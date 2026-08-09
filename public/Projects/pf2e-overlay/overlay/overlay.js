@@ -2895,7 +2895,8 @@ function renderPlayerCards(dataManager) {
 
     card.appendChild(nameDiv);
     card.appendChild(skillDiv);
-    playerBar.appendChild(card);
+    cardContainer.appendChild(card);
+    playerBar.appendChild(cardContainer);
   });
   console.log('✅ Fantasy player cards dynamically generated (compact vertical layout)!');
 }
