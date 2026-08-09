@@ -730,24 +730,6 @@ body {
 	border-width: 2px;
 }
 
-.card.player img {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	border-radius: 28px 8px 28px 8px;
-	object-fit: cover;
-	transition: 0.1s;
-	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-
-	/* === SHARPNESS FIXES === */
-	filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.3));
-	image-rendering: crisp-edges; /* Fallback */
-	image-rendering: -webkit-optimize-contrast; /* Chrome/Safari (best for downscaling) */
-	image-rendering: high-quality; /* Firefox (non‑standard but works) */
-	transform: translateZ(0); /* Force GPU rendering */
-	backface-visibility: hidden; /* Reduce subpixel blur */
-}
-
 .info {
 	color: var(--text-gold);
 	text-shadow: 0 1px 3px black;

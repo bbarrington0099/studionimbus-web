@@ -2873,22 +2873,20 @@ function renderPlayerCards(dataManager) {
     const card = document.createElement('div');
     card.className = `card player ${player.cssClass}`;
     card.setAttribute('data-userid', player.userId);
-
+    card.style.backgroundImage = `url(${player.avatar})`;
+    card.style.backgroundSize = 'contain';
+    card.style.backgroundRepeat = 'no-repeat';
+    card.style.backgroundPosition = 'center';
+    
     const nameDiv = document.createElement('div');
     nameDiv.className = 'name';
     nameDiv.textContent = player.name;
-
-    const img = document.createElement('img');
-    img.src = player.avatar;
-    img.alt = `${player.name} avatar`;
-    img.onerror = () => { img.src = dataManager.defaultAvatar; };
 
     const skillDiv = document.createElement('div');
     skillDiv.className = 'skill';
     skillDiv.textContent = player.classSkill;
 
     card.appendChild(nameDiv);
-    card.appendChild(img);
     card.appendChild(skillDiv);
     playerBar.appendChild(card);
   });
