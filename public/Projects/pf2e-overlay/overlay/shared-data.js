@@ -165,7 +165,7 @@ const SHARED_DATA = {
             cssClass: "boros",
             chibiImg: "../images/chibi/pcs/boros.png",
             combatImg: "../images/chibi/pcs/combat/boros-hammer.png",
-            downedImage: "../images/chibi/pcs/downed/boros.png",
+            downedImg: "../images/chibi/pcs/downed/boros.png",
             alternates: [
                 {id: "taunt", name: "Taunt", img: "../images/chibi/flips/boros_taunt.png"}
             ],
