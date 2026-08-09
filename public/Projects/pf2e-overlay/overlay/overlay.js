@@ -506,7 +506,7 @@ class ChibiManager {
       5: { fromTop: 170, fromSide: 315 },
       6: { fromTop: 150, fromSide: 300 },
       7: { fromTop: 0, fromSide: 370 },
-      8: { fromTop: 10, fromSide: 340 }  
+      8: { fromTop: 10, fromSide: 370 }  
     };
     const slot = Number(slotId.replace('player-', ''));
     const defaults = containerDefaults[slot] || { fromTop: 0, fromSide: 0 };

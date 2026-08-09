@@ -730,9 +730,10 @@ body {
 }
 
 .card.player img {
-	min-height: 100px;
+	height: 100%;
+	width: 100%;
 	border-radius: 28px 8px 28px 8px;
-	object-fit: cover;
+	object-fit: contain;
 	transition: 0.1s;
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 
@@ -760,6 +761,8 @@ body {
 	-webkit-background-clip: text;
 	color: transparent;
 	text-shadow: none;
+	background-color: var(--card-bg);
+	border-radius: 5px;
 }
 
 .blood,
@@ -777,6 +780,8 @@ body {
 .skill {
 	color: var(--rune-glow);
 	font-style: italic;
+	background-color: var(--card-bg);
+	border-radius: 5px;
 }
 
 .card hr {
