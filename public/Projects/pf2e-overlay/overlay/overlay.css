@@ -17,6 +17,7 @@
 	--rapha-color: #66ccff;
 	--gordak-color: #3bfbfb;
 	--pravish-color: #e6fb03;
+	--boros-color: #ff0000;
 
 	--text-gold: #f7e5c2;
 	--card-bg: rgba(20, 18, 22, 0.75);
@@ -847,6 +848,14 @@ body {
 		0 0 24px 2px var(--pravish-color),
 		inset 0 0 6px var(--pravish-color);
 }
+.card.player.boros {
+	border-color: var(--boros-color);
+}
+.card.player.boros.speaking {
+	box-shadow:
+		0 0 24px 2px var(--boros-color),
+		inset 0 0 6px var(--boros-color);
+}
 
 .card.player.uri img {
 	border: 2px solid var(--uri-color);
@@ -868,6 +877,9 @@ body {
 }
 .card.player.pravish img {
 	border: 2px solid var(--pravish-color);
+}
+.card.player.boros img {
+	border: 2px solid var(--boros-color);
 }
 
 hr {

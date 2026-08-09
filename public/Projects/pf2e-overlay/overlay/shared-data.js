@@ -154,6 +154,23 @@ const SHARED_DATA = {
             ],
             alternateSet: "default",
             aliases: ["p"]
+        },
+        {
+            id: "boros",
+            userId: "960363595085021196",
+            name: "Boros",
+            bloodline: "Minotorc",
+            classSkill: "Guardian",
+            avatar: "../images/avatars/boros.png",
+            cssClass: "boros",
+            chibiImg: "../images/chibi/pcs/boros.png",
+            combatImg: "../images/chibi/pcs/combat/boros-hammer.png",
+            downedImage: "../images/chibi/pcs/downed/boros.png",
+            alternates: [
+                {id: "taunt", name: "Taunt", img: "../images/chibi/flips/boros_taunt.png"}
+            ],
+            alternateSet: "default",
+            aliases: ["b"]
         }
     ],
 

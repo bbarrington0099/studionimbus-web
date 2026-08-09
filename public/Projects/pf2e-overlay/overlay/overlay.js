@@ -198,7 +198,8 @@ class SlotManager {
      * IDs of the right‑side slot elements.
      * @type {string[]}
      */
-    this.rightSlots = ['player-2', 'player-4', 'player-6'];
+    // UPDATED: added 'player-8' to support 8 players
+    this.rightSlots = ['player-2', 'player-4', 'player-6', 'player-8'];
 
     /**
      * Current occupants (user IDs) of left slots. `null` indicates an empty slot.
@@ -210,7 +211,8 @@ class SlotManager {
      * Current occupants (user IDs) of right slots. `null` indicates an empty slot.
      * @type {Array<string|null>}
      */
-    this.rightOccupants = [null, null, null];
+    // UPDATED: right now has 4 slots
+    this.rightOccupants = [null, null, null, null];
 
     /**
      * Lookup table mapping each user ID to its slot occupancy details.
@@ -504,6 +506,7 @@ class ChibiManager {
       5: { fromTop: 170, fromSide: 315 },
       6: { fromTop: 150, fromSide: 300 },
       7: { fromTop: 0, fromSide: 370 },
+      8: { fromTop: 10, fromSide: 340 }  
     };
     const slot = Number(slotId.replace('player-', ''));
     const defaults = containerDefaults[slot] || { fromTop: 0, fromSide: 0 };
