@@ -28,6 +28,7 @@ const SHARED_DATA = {
             combatImg: "../images/chibi/pcs/combat/uri-mace.png",
             downedImg: "../images/chibi/pcs/downed/uri.png",
             alternates: [
+                {id: "howling-aspect", name: "Howling Aspect", img: "../images/chibi/flips/uri_rawr.png"},
                 {id: "healing-hands", name: "Healing Hands", img: "../images/chibi/flips/uri_healing_hands.png"}
             ],
             aliases: ["u"]
@@ -150,6 +151,7 @@ const SHARED_DATA = {
             companionImg: "../images/chibi/companions/construct.png",
             alternates: [
                 {id: "unleashed", name: "Unleased", img: "../images/chibi/flips/pravish_unleashed.png"},
+                {id: "oni", name: "Oni", img: "../images/chibi/flips/pravish_oni.png"},
                 {id: "tinkering", name: "Tinkering", img: "../images/chibi/flips/pravish_tinkering.png"},
             ],
             alternateSet: "default",
@@ -189,6 +191,8 @@ const SHARED_DATA = {
         { id: "blodeuwedd", name: "Blodeuwedd", categories: ["act1enemy"], image: "../images/chibi/enemies/blodeuwedd.png" },
         { id: "bandits", name: "Bandits", categories: ["act1enemy"], image: "../images/chibi/enemies/bandits.png" },
         { id: "cockatrice", name: "Cockatrice", categories: ["act1enemy"], image: "../images/chibi/enemies/cockatrice.png" },
+        { id: "twigjack", name: "Twigjack", categories: ["act1enemy"], image: "../images/chibi/enemies/twigjack.png" },
+        { id: "verdurous_ooze", name: "Verdurous Ooze", categories: ["act1enemy"], image: "../images/chibi/enemies/verdurous_ooze.png" },
         { id: "enemy", name: "Enemy", categories: ["generic"], image: "../images/chibi/enemies/enemy.png", aliases: ["nme"] },
     ],
 
