@@ -193,6 +193,7 @@ const SHARED_DATA = {
         { id: "cockatrice", name: "Cockatrice", categories: ["act1enemy"], image: "../images/chibi/enemies/cockatrice.png" },
         { id: "twigjack", name: "Twigjack", categories: ["act1enemy"], image: "../images/chibi/enemies/twigjack.png" },
         { id: "verdurous_ooze", name: "Verdurous Ooze", categories: ["act1enemy"], image: "../images/chibi/enemies/verdurous_ooze.png" },
+        { id: "bulette", name: "Bulette", categories: ["act1enemy"], image: "../images/chibi/enemies/bulette.png" },
         { id: "enemy", name: "Enemy", categories: ["generic"], image: "../images/chibi/enemies/enemy.png", aliases: ["nme"] },
     ],
 
