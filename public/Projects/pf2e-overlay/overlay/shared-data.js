@@ -119,7 +119,7 @@ const SHARED_DATA = {
             ],
             aliases: ["r"]
         },
-        {
+        /* {
             id: "gordak",
             userId: "223573302176645121",
             name: "Gordak",
@@ -136,7 +136,7 @@ const SHARED_DATA = {
             ],
             alternateSet: "default",
             aliases: ["g"]
-        },
+        }, */
         {
             id: "pravish",
             userId: "653001503023562774",
@@ -193,8 +193,8 @@ const SHARED_DATA = {
         { id: "cockatrice", name: "Cockatrice", categories: ["act1enemy"], image: "../images/chibi/enemies/cockatrice.png" },
         { id: "twigjack", name: "Twigjack", categories: ["act1enemy"], image: "../images/chibi/enemies/twigjack.png" },
         { id: "verdurous_ooze", name: "Verdurous Ooze", categories: ["act1enemy"], image: "../images/chibi/enemies/verdurous_ooze.png" },
-        { id: "bulette", name: "Bulette", categories: ["act1enemy"], image: "../images/chibi/enemies/bulette.png" },
-        { id: "awakened_tree", name: "Awakened Tree", categories: ["act1enemy"], image: "../images/chibi/enemies/awakened_tree.png" },
+        { id: "bulette", name: "Bulette", categories: ["act1enemy"], image: "../images/chibi/enemies/bulette.png", big: true },
+        { id: "awakened_tree", name: "Awakened Tree", categories: ["act1enemy"], image: "../images/chibi/enemies/awakened_tree.png", big: true },
         { id: "enemy", name: "Enemy", categories: ["generic"], image: "../images/chibi/enemies/enemy.png", aliases: ["nme"] },
     ],
 

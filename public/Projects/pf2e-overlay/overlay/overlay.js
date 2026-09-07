@@ -199,7 +199,7 @@ class SlotManager {
      * @type {string[]}
      */
     // UPDATED: added 'player-8' to support 8 players
-    this.rightSlots = ['player-2', 'player-4', 'player-6', 'player-8'];
+    this.rightSlots = ['player-2', 'player-4', 'player-6'/* , 'player-8' */];
 
     /**
      * Current occupants (user IDs) of left slots. `null` indicates an empty slot.
@@ -212,7 +212,7 @@ class SlotManager {
      * @type {Array<string|null>}
      */
     // UPDATED: right now has 4 slots
-    this.rightOccupants = [null, null, null, null];
+    this.rightOccupants = [null, null, null/* , null */];
 
     /**
      * Lookup table mapping each user ID to its slot occupancy details.
@@ -699,6 +699,11 @@ class ChibiManager {
   updateNPCChibi(element, npcId) {
     const npc = this.dataManager.getNPC(npcId);
     if (!npc) return;
+    if (npc.big) {
+      element.classList.add('big');
+    } else {
+      element.classList.remove('big');
+    }
     const img = element.querySelector('img');
     img.src = npc.image;
     img.alt = npc.name;
